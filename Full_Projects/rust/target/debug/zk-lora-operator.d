@@ -1,0 +1,1 @@
+C:\Users\DannyB\Downloads\zymatica_clone\34_ZK_LoRa_Privacy_Layer\Full_Projects\rust\target\debug\zk-lora-operator.exe: C:\Users\DannyB\Downloads\zymatica_clone\34_ZK_LoRa_Privacy_Layer\Full_Projects\rust\src\main.rs
