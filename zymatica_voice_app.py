@@ -4,7 +4,7 @@
 Cyberpunk-styled LoRa Operator with REAL ZK-SNARKs
 
 From E-Waste to AI Grace
-Powered by Solana | Secured by ZK | Built with ♻️
+Powered by Zcash | Secured by ZK | Built with ♻️
 
 Watermark: ip zymatica.space | astronautshe.com
 Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
@@ -51,9 +51,9 @@ class Colors:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
-    # Solana colors
-    SOLANA_PURPLE = '\033[38;2;153;69;255m'
-    SOLANA_GREEN = '\033[38;2;20;241;149m'
+    # Zcash colors
+    ZCASH_GOLD = '\033[38;2;243;179;0m'
+    ZCASH_GREEN = '\033[38;2;56;161;105m'
 
 class ZymaticaVoice:
     def __init__(self, agent_name="researcher-1"):
@@ -72,7 +72,7 @@ class ZymaticaVoice:
         if self.key_file.exists():
             with open(self.key_file, 'r') as f:
                 data = json.load(f)
-            print(f"{Colors.SOLANA_GREEN}✅ Loaded existing identity for {self.agent_name}{Colors.END}")
+            print(f"{Colors.ZCASH_GREEN}✅ Loaded existing identity for {self.agent_name}{Colors.END}")
             return data
         
         if HAS_ECDSA:
@@ -117,19 +117,19 @@ class ZymaticaVoice:
         with open(self.key_file, 'w') as f:
             json.dump(identity, f, indent=2)
         
-        print(f"{Colors.SOLANA_PURPLE}🎉 Generated NEW Bitcoin-style identity!{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}🎉 Generated NEW Bitcoin-style identity!{Colors.END}")
         return identity
     
     def display_identity(self):
         """Show beautiful cyberpunk identity card"""
-        print(f"\n{Colors.SOLANA_PURPLE}{Colors.BOLD}╔{'═' * 60}╗{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}  {Colors.SOLANA_GREEN}🦀 ZYMATICA VOICE - Agent Identity{Colors.END}".ljust(62) + f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}╠{'═' * 60}╣{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Agent Name:{Colors.END} {self.identity['agent_name']:<40} {Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}LoRa Phone:{Colors.END} {Colors.YELLOW}{self.identity['phone_number']:<40}{Colors.END} {Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Address:{Colors.END}    {self.identity['zymatica_address']:<40} {Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Created:{Colors.END}    {self.identity['created_at'][:19]:<40} {Colors.SOLANA_PURPLE}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}╚{'═' * 60}╝{Colors.END}\n")
+        print(f"\n{Colors.ZCASH_GOLD}{Colors.BOLD}╔{'═' * 60}╗{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}  {Colors.ZCASH_GREEN}🦀 ZYMATICA VOICE - Agent Identity{Colors.END}".ljust(62) + f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}╠{'═' * 60}╣{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Agent Name:{Colors.END} {self.identity['agent_name']:<40} {Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}LoRa Phone:{Colors.END} {Colors.YELLOW}{self.identity['phone_number']:<40}{Colors.END} {Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Address:{Colors.END}    {self.identity['zymatica_address']:<40} {Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}  {Colors.CYAN}Created:{Colors.END}    {self.identity['created_at'][:19]:<40} {Colors.ZCASH_GOLD}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}╚{'═' * 60}╝{Colors.END}\n")
     
     def encode_semantic_coordinates(self, text):
         """Language-U SVD-DCT 6D Semantic Coordinate Projection"""
@@ -159,7 +159,7 @@ class ZymaticaVoice:
 
     def generate_zk_proof(self):
         """Generate REAL ZK-SNARK proof (Groth16-style)"""
-        print(f"{Colors.SOLANA_GREEN}   Generating Groth16-style ZK-SNARK...{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}   Generating Groth16-style ZK-SNARK...{Colors.END}")
         
         # Use our real ZK prover
         result = self.zk_prover.generate_identity_and_proof(self.agent_name)
@@ -167,8 +167,8 @@ class ZymaticaVoice:
         zk_proof = result['zk_proof']
         is_valid = result['verification_result']
         
-        print(f"{Colors.SOLANA_PURPLE}   ✅ ZK-Proof generated: {zk_proof['proof_hash']}{Colors.END}")
-        print(f"{Colors.SOLANA_PURPLE}   ✅ Verified: {is_valid} (proves knowledge of private key without revealing it!){Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}   ✅ ZK-Proof generated: {zk_proof['proof_hash']}{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}   ✅ Verified: {is_valid} (proves knowledge of private key without revealing it!){Colors.END}")
         
         return zk_proof
     
@@ -196,7 +196,7 @@ class ZymaticaVoice:
     
     def transmit(self, message, recipient=None, count=1):
         """Transmit LoRa packets with cyberpunk animation"""
-        print(f"\n{Colors.SOLANA_GREEN}{Colors.BOLD}📡 INITIATING TRANSMISSION SEQUENCE...{Colors.END}\n")
+        print(f"\n{Colors.ZCASH_GREEN}{Colors.BOLD}📡 INITIATING TRANSMISSION SEQUENCE...{Colors.END}\n")
         
         for i in range(count):
             packet = self.create_packet(message, recipient)
@@ -204,7 +204,7 @@ class ZymaticaVoice:
             # Cyberpunk transmit animation
             print(f"{Colors.YELLOW}⚡ Packet {i+1}/{count}:{Colors.END}")
             for char in packet[:80]:
-                sys.stdout.write(f"{Colors.SOLANA_GREEN}{char}{Colors.END}")
+                sys.stdout.write(f"{Colors.ZCASH_GREEN}{char}{Colors.END}")
                 sys.stdout.flush()
                 time.sleep(0.005)
             print("...\n")
@@ -214,14 +214,14 @@ class ZymaticaVoice:
             
             print(f"{Colors.GREEN}✅ TRANSMITTED{Colors.END} - {len(packet)} bytes @ 903.9 MHz, SF9\n")
         
-        print(f"{Colors.SOLANA_PURPLE}{Colors.BOLD}🎉 TRANSMISSION COMPLETE!{Colors.END}")
+        print(f"{Colors.ZCASH_GOLD}{Colors.BOLD}🎉 TRANSMISSION COMPLETE!{Colors.END}")
         print(f"{Colors.CYAN}Packets sent: {count}{Colors.END}")
         print(f"{Colors.CYAN}Total bytes: {count * len(packet)}{Colors.END}")
         print(f"{Colors.CYAN}Frequency: 903.9 MHz (US915 Channel 0){Colors.END}")
     
     def listen(self, duration=30):
         """Simulate RX listener (real impl uses SX1302 HAL)"""
-        print(f"\n{Colors.SOLANA_PURPLE}{Colors.BOLD}📻 ACTIVATING RX LISTENER...{Colors.END}\n")
+        print(f"\n{Colors.ZCASH_GOLD}{Colors.BOLD}📻 ACTIVATING RX LISTENER...{Colors.END}\n")
         print(f"{Colors.CYAN}Listening on 903.9 MHz, SF9, 125kHz for {duration} seconds...{Colors.END}\n")
         
         # Simulate receiving packets
@@ -235,7 +235,7 @@ class ZymaticaVoice:
             if random.random() < 0.3:  # 30% chance of "receiving" a packet
                 fake_sender = f"AGENT-{secrets.token_hex(4).upper()}@zymatica.space"
                 print(f"{Colors.GREEN}╔{'─' * 50}╗{Colors.END}")
-                print(f"{Colors.GREEN}║{Colors.END}  {Colors.SOLANA_GREEN}📨 RECEIVED PACKET{Colors.END}".ljust(52) + f"{Colors.GREEN}║{Colors.END}")
+                print(f"{Colors.GREEN}║{Colors.END}  {Colors.ZCASH_GREEN}📨 RECEIVED PACKET{Colors.END}".ljust(52) + f"{Colors.GREEN}║{Colors.END}")
                 print(f"{Colors.GREEN}╠{'─' * 50}╣{Colors.END}")
                 print(f"{Colors.GREEN}║{Colors.END}  From: {fake_sender:<42} {Colors.GREEN}║{Colors.END}")
                 print(f"{Colors.GREEN}║{Colors.END}  Time: {datetime.now().strftime('%H:%M:%S'):<42} {Colors.GREEN}║{Colors.END}")
@@ -244,7 +244,7 @@ class ZymaticaVoice:
                 print(f"{Colors.GREEN}╚{'─' * 50}╝{Colors.END}\n")
                 packets_received += 1
         
-        print(f"\n{Colors.SOLANA_PURPLE}{Colors.BOLD}📊 RX SESSION COMPLETE{Colors.END}")
+        print(f"\n{Colors.ZCASH_GOLD}{Colors.BOLD}📊 RX SESSION COMPLETE{Colors.END}")
         print(f"{Colors.CYAN}Packets received: {packets_received}{Colors.END}")
         print(f"{Colors.CYAN}Duration: {duration} seconds{Colors.END}")
 
@@ -255,18 +255,18 @@ def main_menu():
     while True:
         app.display_identity()
         
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}╔{'═' * 60}╗{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.BOLD}🦀 ZYMATICA VOICE - Main Menu{Colors.END}".ljust(62) + f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}╠{'═' * 60}╣{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[1]{Colors.END} Transmit Message (TX)                           {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[2]{Colors.END} Listen for Packets (RX)                         {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[3]{Colors.END} Show Identity                                   {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[4]{Colors.END} Generate ZK-Proof                               {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[5]{Colors.END} Export Whitepaper                               {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[0]{Colors.END} Exit                                            {Colors.SOLANA_GREEN}{Colors.BOLD}║{Colors.END}")
-        print(f"{Colors.SOLANA_GREEN}{Colors.BOLD}╚{'═' * 60}╝{Colors.END}\n")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}╔{'═' * 60}╗{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.BOLD}🦀 ZYMATICA VOICE - Main Menu{Colors.END}".ljust(62) + f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}╠{'═' * 60}╣{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[1]{Colors.END} Transmit Message (TX)                           {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[2]{Colors.END} Listen for Packets (RX)                         {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[3]{Colors.END} Show Identity                                   {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[4]{Colors.END} Generate ZK-Proof                               {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[5]{Colors.END} Export Whitepaper                               {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}  {Colors.YELLOW}[0]{Colors.END} Exit                                            {Colors.ZCASH_GREEN}{Colors.BOLD}║{Colors.END}")
+        print(f"{Colors.ZCASH_GREEN}{Colors.BOLD}╚{'═' * 60}╝{Colors.END}\n")
         
-        choice = input(f"{Colors.SOLANA_PURPLE}🚀 Select action:{Colors.END} ").strip()
+        choice = input(f"{Colors.ZCASH_GOLD}🚀 Select action:{Colors.END} ").strip()
         
         if choice == '1':
             msg = input(f"{Colors.CYAN}Message to transmit:{Colors.END} ").strip()
@@ -281,14 +281,14 @@ def main_menu():
             app.display_identity()
         
         elif choice == '4':
-            print(f"\n{Colors.SOLANA_GREEN}Generating ZK-Proof...{Colors.END}")
+            print(f"\n{Colors.ZCASH_GREEN}Generating ZK-Proof...{Colors.END}")
             proof = app.generate_zk_proof()
-            print(f"{Colors.SOLANA_PURPLE}✅ ZK-Proof Generated:{Colors.END}")
+            print(f"{Colors.ZCASH_GOLD}✅ ZK-Proof Generated:{Colors.END}")
             print(f"{Colors.CYAN}{json.dumps(proof, indent=2)}{Colors.END}\n")
         
         elif choice == '5':
             whitepaper_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "WHITEPAPER.md")
-            print(f"\n{Colors.SOLANA_GREEN}Whitepaper located at: {whitepaper_path}{Colors.END}")
+            print(f"\n{Colors.ZCASH_GREEN}Whitepaper located at: {whitepaper_path}{Colors.END}")
             if sys.platform == 'win32':
                 os.system(f'start "" "{whitepaper_path}"')
             elif sys.platform == 'darwin':
@@ -297,7 +297,7 @@ def main_menu():
                 os.system(f'xdg-open "{whitepaper_path}" 2>/dev/null || echo "Open: {whitepaper_path}"')
         
         elif choice == '0':
-            print(f"\n{Colors.SOLANA_PURPLE}{Colors.BOLD}👋 Zymatica Voice shutting down...{Colors.END}")
+            print(f"\n{Colors.ZCASH_GOLD}{Colors.BOLD}👋 Zymatica Voice shutting down...{Colors.END}")
             print(f"{Colors.CYAN}From E-Waste to AI Grace. See you in the mesh! 🦀✨{Colors.END}\n")
             break
         
