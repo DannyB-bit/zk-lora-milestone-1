@@ -95,8 +95,8 @@ class ZymaticaVoice:
             identity = {
                 "agent_name": self.agent_name,
                 "phone_number": phone_number,
-                "private_key": private_key.to_hex(),
-                "public_key": public_key.to_hex(),
+                "private_key": private_key.to_string().hex(),
+                "public_key": public_key.to_string().hex(),
                 "zymatica_address": f"AGENT-{phone_number}@zymatica.space",
                 "created_at": datetime.now().isoformat()
             }
