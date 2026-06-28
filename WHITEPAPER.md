@@ -525,9 +525,8 @@ python3 /home/researcher/lora_rx_zk_listener.py
 **Version:** 1.0 (Bitcoin-style) → 2.0 (Zcash ZK-enabled, in development)  
 **Date:** June 19, 2026  
 **Authors:** zymatica.space | astronautshe.com | DevsOne | We Are TheAiCollective.art  
-**License:** Apache License 2.0  
-**Zcash Address (Treasury):** `zs1zcv863vsp2u0yq6uyp26r5uzywuxn8v4ncy6rt3m9m6mny26rt7nny6nny6r888mmyyy`  
-**Devnet Program ID:** `2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`  
+**License:** MIT License  
+**Zcash Address (Treasury):** `t1REhE28Dv8fuNDujN2GuEyhd6JLSS5TJkH`  
 **Contact:** zymatica.space | github.com/DannyB-bit/zymatica.space
 
 ---
