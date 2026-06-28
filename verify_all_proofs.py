@@ -166,7 +166,7 @@ def main():
 
     # 1-6: Already verified runtimes
     runtimes.append({"name": "Python", "cmd": f'python "{proofs_dir}/python/proof.py"', "desc": "Interpreted proof validation", "check": lambda: find_exe("python")})
-    runtimes.append({"name": "TypeScript", "cmd": f'npx tsx "{proofs_dir}/typescript/proof.ts"', "desc": "Compiled ES Module runtime verification", "check": lambda: find_exe("npx")})
+    runtimes.append({"name": "TypeScript", "cmd": f'node "{proofs_dir}/typescript/proof.js"', "desc": "Compiled ES Module runtime verification (JavaScript + WASM)", "check": lambda: find_exe("node")})
     runtimes.append({"name": "Rust", "cmd": f'cargo run --manifest-path "{proofs_dir}/rust/Cargo.toml" --quiet', "desc": "Native compiled systems verification", "check": lambda: find_exe("cargo")})
     runtimes.append({"name": "Java", "cmd": f'java "{proofs_dir}/java/Proof.java"', "desc": "JVM single-source file verification", "check": lambda: find_exe("javac")})
     runtimes.append({"name": "PowerShell", "cmd": f'powershell -ExecutionPolicy Bypass -File "{proofs_dir}/powershell/proof.ps1"', "desc": "Windows shell native script validation", "check": lambda: find_exe("powershell")})
