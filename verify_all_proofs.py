@@ -77,6 +77,20 @@ def find_windows_sdk():
     return os.path.join(include_base, sdk_ver), os.path.join(lib_base, sdk_ver)
 
 
+def find_swift_sdk():
+    """Find Swift SDK path on Windows."""
+    home = os.path.expanduser("~")
+    paths = [
+        os.path.join(home, "AppData", "Local", "Programs", "Swift", "Platforms", "6.3.2", "Windows.platform", "Developer", "SDKs", "Windows.sdk"),
+        os.path.join(home, "AppData", "Local", "Programs", "Swift", "Platforms", "6.3.1", "Windows.platform", "Developer", "SDKs", "Windows.sdk"),
+        r"C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
+    ]
+    for p in paths:
+        if os.path.exists(p):
+            return p
+    return None
+
+
 def run_command(cmd, cwd, env=None, timeout=120):
     """Run a command and capture output."""
     start = time.time()
@@ -145,7 +159,23 @@ def main():
     env["PYTHONIOENCODING"] = "utf-8"
     # Add locally-installed portable runtimes to BOTH os.environ and env copy
     # so shutil.which() in check lambdas can find them
+    home = os.path.expanduser("~")
+    scoop_shims = os.path.join(home, "scoop", "shims")
     local_paths = [
+        scoop_shims,                                                    # Scoop shims (all scoop apps)
+        os.path.join(home, "scoop", "apps", "ruby", "current", "bin"),  # Ruby
+        os.path.join(home, "scoop", "apps", "lua", "current"),          # Lua
+        os.path.join(home, "scoop", "apps", "zig", "current"),          # Zig
+        os.path.join(home, "scoop", "apps", "dart", "current", "bin"),  # Dart
+        os.path.join(home, "scoop", "apps", "kotlin", "current", "bin"),# Kotlin
+        os.path.join(home, "scoop", "apps", "julia", "current", "bin"),# Julia
+        os.path.join(home, "scoop", "apps", "swift", "current", "usr", "bin"),  # Swift (Scoop fallback)
+        os.path.join(home, "AppData", "Local", "Programs", "Swift", "Toolchains", "6.3.2+Asserts", "usr", "bin"), # Swift (User installation)
+        os.path.join(home, "AppData", "Local", "Programs", "Swift", "Runtimes", "6.3.2", "usr", "bin"), # Swift Runtime (needed on Windows for DLLs)
+        os.path.join(home, "scoop", "apps", "haskell", "current", "bin"),# Haskell GHC
+        os.path.join(home, "scoop", "apps", "elixir", "current", "bin"),# Elixir
+        os.path.join(home, "scoop", "apps", "erlang", "current", "bin"),# Erlang (for Elixir)
+        os.path.join(home, "scoop", "apps", "ruby", "current", "gems", "bin"),  # Ruby gems
         r"C:\Users\DannyB\go_local\go\bin",    # Go portable
         r"C:\Users\DannyB\php_local",           # PHP portable
         r"C:\Users\DannyB\lua_local",           # Lua portable
@@ -194,9 +224,15 @@ def main():
     runtimes.append({"name": "Lua", "cmd": f'lua "{proofs_dir}/lua/proof.lua"', "desc": "Interpreted Lua runtime verification", "check": lambda: find_exe("lua") is not None or find_exe("lua54") is not None})
     runtimes.append({"name": "Zig", "cmd": f'zig run "{proofs_dir}/zig/proof.zig"', "desc": "Compiled Zig native verification", "check": lambda: find_exe("zig") is not None})
     runtimes.append({"name": "Dart", "cmd": f'dart run "{proofs_dir}/dart/proof.dart"', "desc": "Dart VM runtime verification", "check": lambda: find_exe("dart") is not None})
-    runtimes.append({"name": "Kotlin", "cmd": f'kotlinc -script "{proofs_dir}/kotlin/proof.kt"', "desc": "Kotlin scripting runtime verification", "check": lambda: find_exe("kotlin") is not None or find_exe("kotlinc") is not None})
+    runtimes.append({"name": "Kotlin", "cmd": f'kotlinc -script "{proofs_dir}/kotlin/proof.kts"', "desc": "Kotlin scripting runtime verification", "check": lambda: find_exe("kotlin") is not None or find_exe("kotlinc") is not None})
     runtimes.append({"name": "Julia", "cmd": f'julia "{proofs_dir}/julia/proof.jl"', "desc": "Julia interpreted runtime verification", "check": lambda: find_exe("julia") is not None})
-    runtimes.append({"name": "Swift", "cmd": f'swift "{proofs_dir}/swift/proof.swift"', "desc": "Swift compiled runtime verification", "check": lambda: find_exe("swift") is not None or find_exe("swiftc") is not None})
+    swift_sdk = find_swift_sdk()
+    swift_cmd = f'swift "{proofs_dir}/swift/proof.swift"'
+    if sys.platform == "win32" and swift_sdk:
+        swift_exe = str(proofs_dir / "swift" / "proof.exe")
+        swift_cmd = f'swiftc -sdk "{swift_sdk}" "{proofs_dir}/swift/proof.swift" -o "{swift_exe}" && "{swift_exe}"'
+
+    runtimes.append({"name": "Swift", "cmd": swift_cmd, "desc": "Swift compiled runtime verification", "check": lambda: find_exe("swift") is not None or find_exe("swiftc") is not None})
     runtimes.append({"name": "Haskell", "cmd": f'runhaskell "{proofs_dir}/haskell/proof.hs"', "desc": "Haskell interpreted runtime verification", "check": lambda: find_exe("runhaskell") is not None or find_exe("ghc") is not None})
     runtimes.append({"name": "Elixir", "cmd": f'elixir "{proofs_dir}/elixir/proof.exs"', "desc": "Elixir scripting runtime verification", "check": lambda: find_exe("elixir") is not None})
 

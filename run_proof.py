@@ -188,7 +188,7 @@ class ZymaticaZKProver:
             
             pub_key_bytes = public_key.to_string()
             pub_key_hash = hashlib.sha256(pub_key_bytes).hexdigest()
-            priv_key_hex = private_key.to_hex()
+            priv_key_hex = private_key.to_string().hex()
         else:
             # Fallback: generate mock keypair
             priv_key_hex = secrets.token_hex(32)

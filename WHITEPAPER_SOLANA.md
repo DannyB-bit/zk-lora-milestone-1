@@ -1,12 +1,12 @@
 # ZK-LoRa: Zero-Knowledge Proofs for Private AI-to-AI Mesh Networks
 
-**A Bitcoin-Style Identity System with Zcash Shielded Privacy for LoRaWAN Communication**
+**A Bitcoin-Style Identity System with Solana On-Chain ZK Privacy for LoRaWAN Communication**
 
 ---
 
 ## Abstract
 
-We present ZK-LoRa, a revolutionary privacy-preserving identity layer for LoRa mesh networks that combines Bitcoin's public-key cryptography with Zcash's zero-knowledge proof and shielded transaction architecture. ZK-LoRa enables AI agents to communicate securely over RF without revealing their real hardware identities, enabling unlinkable transactions, selective disclosure, and proof-of-useful-work consensus for decentralized AI coordination — with every routing fee compensated securely in ZEC via Zcash shielded transactions.
+We present ZK-LoRa, a revolutionary privacy-preserving identity layer for LoRa mesh networks that combines Bitcoin's public-key cryptography with Solana's high-throughput on-chain zero-knowledge proof verification. ZK-LoRa enables AI agents to communicate securely over RF without revealing their real hardware identities, enabling unlinkable transactions, selective disclosure, and proof-of-useful-work consensus for decentralized AI coordination — with every attestation anchored immutably on the Solana blockchain.
 
 **Key Innovation:** Agents broadcast zero-knowledge proofs of legitimacy instead of static identifiers, making eavesdropping useless while maintaining verifiable authenticity.
 
@@ -201,11 +201,11 @@ Agents can rotate keypairs periodically:
 
 ---
 
-## 4. Shielded Micropayment Incentives (Zcash Private Routing)
+## 4. Proof-of-Useful-Work (Solana On-Chain Attestation)
 
 ### 4.1 The Concept
 
-ZK-LoRa rewards gateway nodes for relaying packets privately by issuing shielded Zcash transactions containing transaction hashes linked to the physical transmission.
+Inspired by Solana's high-throughput architecture and the Zymatica Semantic Anchor program (Component 28), ZK-LoRa replaces Bitcoin's "arbitrary hash puzzles" with "useful computation proofs" — ZK-proofs of real semantic routing work, verified on-chain via Solana.
 
 **Applied to LoRa:**
 - Each packet includes a ZK-proof of agent legitimacy
@@ -230,16 +230,16 @@ Generation: O(n) time (seconds, tunable via difficulty)
 **Difficulty Adjustment:**
 - More agents → higher difficulty (prevent spam)
 - Fewer agents → lower difficulty (maintain throughput)
-- Automatically adjusts based on Zcash block target time (75s) and network load
+- Automatically adjusts based on Solana slot time (~400ms) and network load
 
-### 4.3 Incentive Mechanism (Zcash-Powered)
+### 4.3 Incentive Mechanism (Solana-Powered)
 
-**Private Micropayment Rewards via Zcash:**
-- Gateways earn ZEC micropayments via Zcash Shielded Transactions for routing packets
-- Payment references are embedded inside Zcash shielded memos
+**On-Chain Rewards via Solana:**
+- Agents earn USDG/SOL micropayments via Solana Pay for valid routing proofs
+- ZK attestations are written to the Solana Semantic Anchor program (Component 28)
 - High-reputation agents (verified by on-chain proof history) get priority in mesh routing
 - Low-reputation agents (or spammers) get rate-limited by on-chain stake requirements
-- Network transaction fees are paid directly to miners and relays
+- Protocol fees (programmatic 2.5% surcharge) fund the network treasury on Solana
 
 ---
 
@@ -255,24 +255,24 @@ Generation: O(n) time (seconds, tunable via difficulty)
 - ✅ One-click desktop transmitter app
 - ✅ Secure key storage (`~/.zyMatica/keys/`)
 
-**In Development (v2.0 - Zcash Integration):**
+**In Development (v2.0 - Solana ZK Integration):**
 - 🔄 ZK-SNARK circuit for agent validity (Groth16 on BN128)
 - 🔄 Proof generation (using `gnark` or `arkworks`)
-- 🔄 Proof verification on recipient side AND on-chain via Zcash Anchor program
+- 🔄 Proof verification on recipient side AND on-chain via Solana Anchor program
 - 🔄 Unlinkable transmission mode
 - 🔄 Selective disclosure proofs
-- 🔄 Zcash shielded ZEC rewards for valid mesh routing proofs
+- 🔄 Solana SPL token rewards for valid mesh routing proofs
 
 ### 5.2 Technical Stack
 
 | Component | Technology |
 |-----------|-----------|
-| Elliptic Curves | secp256k1 (Bitcoin's curve) / babyjubjub (Zcash-friendly curve) |
+| Elliptic Curves | secp256k1 (Bitcoin's curve) / Ed25519 (Solana's curve) |
 | Hash Functions | SHA-256, RIPEMD-160 |
 | Encryption | ECIES (Elliptic Curve Integrated Encryption Scheme) |
 | ZK Proofs | zk-SNARKs (Groth16 on BN128) — ref. implementation in `run_proof.py` |
-| On-Chain Layer | Zcash Shielded Pool (Orchard/Sapling) |
-| Payments | Zcash Shielded Memos (ZEC micropayments for mesh routing) |
+| On-Chain Layer | Solana (Anchor framework), Component 28 Semantic Anchor program |
+| Payments | Solana Pay (USDG/SOL micropayments for mesh routing) |
 | LoRa Modulation | SX1302 HAL, 903.9 MHz, SF9, 125kHz |
 | Identity Namespace | zymatica.space |
 
@@ -420,29 +420,29 @@ Generation: O(n) time (seconds, tunable via difficulty)
 
 ## 9. Future Work
 
-### 9.1 Short-Term (v2.0) — Zcash Testnet
+### 9.1 Short-Term (v2.0) — Solana Devnet
 
 - [ ] Integrate `gnark` or `arkworks` for production ZK proofs
 - [ ] Implement agent validity circuit (Groth16 on BN128)
-- [ ] Integrate shielded ZEC transaction generation in gateway routing loop
+- [ ] Deploy ZK verification to Solana devnet via Anchor CPI
 - [ ] Add unlinkable transmission mode
 - [ ] Benchmark proof generation/verification on edge hardware
-- [ ] Implement mempool scanner to verify inbound shielded Zcash payments
+- [ ] Integrate with Component 28 (Solana Semantic Anchor) for on-chain attestation
 
-### 9.2 Medium-Term (v3.0) — Zcash Mainnet
+### 9.2 Medium-Term (v3.0) — Solana Mainnet
 
-- [ ] Multi-hop routing with ZK authentication, verified via Zcash
-- [ ] On-chain reputation system (ZK-proven credentials stored as Zcash Shielded Transactions)
+- [ ] Multi-hop routing with ZK authentication, verified on Solana
+- [ ] On-chain reputation system (ZK-proven credentials stored as Solana PDAs)
 - [ ] Group signatures (prove "I am in authorized group")
 - [ ] Ring signatures (prove "I am one of N agents")
-- [ ] Zcash Pay micropayment rewards for valid mesh routing proofs
+- [ ] Solana Pay micropayment rewards for valid mesh routing proofs
 - [ ] Integration with other LoRa stacks (ChirpStack, TTN)
 
 ### 9.3 Long-Term Vision
 
-- [ ] zymatica.space: Global decentralized agent identity registry on Zcash
+- [ ] zymatica.space: Global decentralized agent identity registry on Solana
 - [ ] ZK-LoRa as standard for DePIN AI mesh networks
-- [ ] Cross-chain ZK attestation bridge (Zcash ↔ Helium L1)
+- [ ] Cross-chain ZK attestation bridge (Solana ↔ Helium L1)
 - [ ] Hardware security module (HSM) for key storage
 - [ ] Quantum-resistant curves (post-quantum cryptography)
 
@@ -454,7 +454,7 @@ ZK-LoRa represents a paradigm shift in LoRa communication privacy. By combining:
 
 1. **Bitcoin's public-key identity model** (safe-to-broadcast phone numbers)
 2. **ECIES encryption** (recipient-only decryption)
-3. **Zcash on-chain ZK proof verification** (prove without revealing, attested on-chain)
+3. **Solana on-chain ZK proof verification** (prove without revealing, attested on-chain)
 
 We achieve:
 - ✅ **Unlinkable transmissions** (eavesdroppers learn nothing)
@@ -477,12 +477,12 @@ ZK-LoRa makes that future possible today.
 ## References
 
 1. Nakamoto, S. (2008). *Bitcoin: A Peer-to-Peer Electronic Cash System*. https://bitcoin.org/bitcoin.pdf
-2. Zcash Foundation. *Zcash Protocol Specification*. https://zips.z.cash/protocol/protocol.pdf
+2. Solana Foundation. *Solana Documentation*. https://solana.com/docs
 3. Groth, J. (2016). *On the Size of Pairing-Based Non-Interactive Arguments*. EUROCRYPT 2016.
 4. Ben-Sasson, E., et al. (2014). *SNARKs for C: Verifying Program Executions with Zero-Knowledge Proofs*.
 5. LoRa Alliance. *LoRaWAN Specification*. https://lora-alliance.org/
 6. Coral/Anchor. *Anchor Framework Documentation*. https://www.anchor-lang.com/
-7. zymatica.space. *ZK-LoRa Privacy Layer*. https://github.com/DannyB-bit/zk-lora-privacy-layer
+7. zymatica.space. *Solana Semantic Anchor (Component 28)*. https://github.com/DannyB-bit/zymatica.space/tree/main/28_Solana_Semantic_Anchor
 
 ---
 
@@ -521,11 +521,11 @@ python3 /home/researcher/lora_rx_zk_listener.py
 
 ---
 
-**Version:** 1.0 (Bitcoin-style) → 2.0 (Zcash ZK-enabled, in development)  
+**Version:** 1.0 (Bitcoin-style) → 2.0 (Solana ZK-enabled, in development)  
 **Date:** June 19, 2026  
 **Authors:** zymatica.space | astronautshe.com | DevsOne | We Are TheAiCollective.art  
 **License:** Apache License 2.0  
-**Zcash Address (Treasury):** `zs1zcv863vsp2u0yq6uyp26r5uzywuxn8v4ncy6rt3m9m6mny26rt7nny6nny6r888mmyyy`  
+**Solana Address (Treasury):** `CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ`  
 **Devnet Program ID:** `2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy`  
 **Contact:** zymatica.space | github.com/DannyB-bit/zymatica.space
 
@@ -534,4 +534,4 @@ python3 /home/researcher/lora_rx_zk_listener.py
 *This whitepaper documents a live, working system. Code available at:*  
 *[run_proof.py](./run_proof.py) — ZK-SNARK prover/verifier (v1.0 deployed)*  
 *[zymatica_voice_app.py](./zymatica_voice_app.py) — Cyberpunk CLI operator (v1.0 deployed)*  
-*(Zcash Shielded Transaction client integration in progress)*
+*[Component 28: Solana Semantic Anchor](../28_Solana_Semantic_Anchor/) — On-chain attestation program (Milestone 1 Live on Devnet)*

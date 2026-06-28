@@ -1,6 +1,7 @@
 # Watermark: ip zymatica.space | astronautshe.com
 # Copyright (c) 2026 Zymatica. Licensed under MIT License.
 using SHA
+using Printf
 
 function run_proof()
     println("==========================================================")
@@ -55,6 +56,4 @@ function run_proof()
     println("\e[38;2;56;161;105m[VERIFICATION] ZK-LoRa Julia runtime verification validated.\e[0m")
 end
 
-# Import printf formatting
-using Printf
 run_proof()

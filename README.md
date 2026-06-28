@@ -35,7 +35,8 @@ This component combines:
 
 | File | Purpose |
 | :--- | :--- |
-| [WHITEPAPER.md](./WHITEPAPER.md) | Full ZK-LoRa specification with threat model & security analysis |
+| [WHITEPAPER.md](./WHITEPAPER.md) | Full ZK-LoRa Zcash specification with threat model & security analysis |
+| [WHITEPAPER_SOLANA.md](./WHITEPAPER_SOLANA.md) | Solana variant of the ZK-LoRa whitepaper (archived) |
 | [verify_all_proofs.py](./verify_all_proofs.py) | Master orchestrator verifying ZK proofs across 20 programming languages |
 | [run_proof.py](./run_proof.py) | ZK-SNARK prover/verifier implementation + CI proof runner |
 | [zymatica_voice_app.py](./zymatica_voice_app.py) | Interactive cyberpunk CLI app (TX/RX/Identity/ZK) |

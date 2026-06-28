@@ -1,1 +1,0 @@
-C:\Users\DannyB\Downloads\zymatica_clone\34_ZK_LoRa_Privacy_Layer\Multi_Language_Proofs\typescript\wasm_verifier\target\wasm32-unknown-unknown\release\zk_lora_wasm_verifier.wasm: C:\Users\DannyB\Downloads\zymatica_clone\34_ZK_LoRa_Privacy_Layer\Multi_Language_Proofs\typescript\wasm_verifier\src\lib.rs
