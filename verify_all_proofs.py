@@ -2,7 +2,7 @@
 """
 ZK-LoRa Multi-Language Proof Suite Validator — FULL 20-Language Edition
 Watermark: ip zymatica.space | astronautshe.com
-Copyright (c) 2026 Zymatica. Licensed under Apache License 2.0.
+Copyright (c) 2026 Zymatica. Licensed under MIT License.
 
 Automates, builds, and verifies equivalent cryptographic proofs across ALL 20 runtimes.
 """
