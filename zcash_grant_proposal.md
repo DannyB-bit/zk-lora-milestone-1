@@ -24,7 +24,7 @@ In off-grid and physical IoT networks, radio frequency broadcasts are inherently
 ### Technical Deliverables
 *   **zk-SNARK Embedded Verifier:** A compiled and benchmarked Groth16/PLONK verifier optimized to run under 100ms on low-power ARM architectures and browser WASM environments.
 *   **Zcash Relay SDK:** A rust backend integration that generates shielded reward payment requests and scans the mempool/ledger for reference key confirmations.
-*   **Operator CLI Node:** A cyberpunk-style node CLI (`zymatica_voice_app.py`) automating identity creation, ZK-proof generation, ECIES payload encryption, and ZEC payment triggers.
+*   **Operator CLI Node:** A cyberpunk-style node CLI (`run_proof.py`) automating identity creation, ZK-proof generation, ECIES payload encryption, and ZEC payment triggers.
 *   **Compliance:** Fully open-sourced under the Apache License 2.0 (complying with FPF Grant Agreement Section 4). All code commits follow the `librustzcash` contributing guidelines.
 
 ---

@@ -39,7 +39,6 @@ This component combines:
 | [WHITEPAPER_SOLANA.md](./WHITEPAPER_SOLANA.md) | Solana variant of the ZK-LoRa whitepaper (archived) |
 | [verify_all_proofs.py](./verify_all_proofs.py) | Master orchestrator verifying ZK proofs across 20 programming languages |
 | [run_proof.py](./run_proof.py) | ZK-SNARK prover/verifier implementation + CI proof runner |
-| [zymatica_voice_app.py](./zymatica_voice_app.py) | Interactive cyberpunk CLI app (TX/RX/Identity/ZK) |
 | [QUICKSTART.md](./QUICKSTART.md) | Quick start guide for operators |
 
 ## Quick Start
@@ -47,10 +46,6 @@ This component combines:
 ```bash
 # Run the proof verification (CI mode)
 python run_proof.py --test
-
-# Launch the interactive Zymatica Voice app
-pip install ecdsa
-python zymatica_voice_app.py
 ```
 
 ## Security Properties

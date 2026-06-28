@@ -533,5 +533,4 @@ python3 /home/researcher/lora_rx_zk_listener.py
 
 *This whitepaper documents a live, working system. Code available at:*  
 *[run_proof.py](./run_proof.py) — ZK-SNARK prover/verifier (v1.0 deployed)*  
-*[zymatica_voice_app.py](./zymatica_voice_app.py) — Cyberpunk CLI operator (v1.0 deployed)*  
 *(Zcash Shielded Transaction client integration in progress)*

@@ -28,6 +28,3 @@ jobs:
         run: |
           python run_proof.py
 
-      - name: Run Voice App Non-Interactive Test Suite
-        run: |
-          python zymatica_voice_app.py --test
