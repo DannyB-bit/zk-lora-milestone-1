@@ -8,7 +8,7 @@ tags:
 - lora
 - privacy
 - depin
-license: apache-2.0
+license: mit
 ---
 
 # ZK-LoRa Privacy Layer
@@ -36,10 +36,8 @@ This component combines:
 | File | Purpose |
 | :--- | :--- |
 | [WHITEPAPER.md](./WHITEPAPER.md) | Full ZK-LoRa Zcash specification with threat model & security analysis |
-| [WHITEPAPER_SOLANA.md](./WHITEPAPER_SOLANA.md) | Solana variant of the ZK-LoRa whitepaper (archived) |
 | [verify_all_proofs.py](./verify_all_proofs.py) | Master orchestrator verifying ZK proofs across 20 programming languages |
 | [run_proof.py](./run_proof.py) | ZK-SNARK prover/verifier implementation + CI proof runner |
-| [QUICKSTART.md](./QUICKSTART.md) | Quick start guide for operators |
 
 ## Quick Start
 
@@ -60,4 +58,4 @@ python run_proof.py --test
 
 ## License
 
-Apache License 2.0 — see [LICENSE](../LICENSE)
+MIT License — see [LICENSE](./LICENSE)

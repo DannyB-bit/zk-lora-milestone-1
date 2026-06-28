@@ -16,8 +16,8 @@ const Colors = {
     RED: '\x1b[91m',
     BOLD: '\x1b[1m',
     END: '\x1b[0m',
-    SOLANA_PURPLE: '\x1b[38;2;153;69;255m',
-    SOLANA_GREEN: '\x1b[38;2;20;241;149m'
+    ZCASH_GOLD: '\x1b[38;2;243;179;0m',
+    ZCASH_GREEN: '\x1b[38;2;56;161;105m'
 };
 
 // ============================================================================
@@ -153,7 +153,7 @@ class IdentityManager {
         if (fs.existsSync(keyPath)) {
             try {
                 const data = JSON.parse(fs.readFileSync(keyPath, 'utf8'));
-                console.log(`${Colors.SOLANA_GREEN}✅ Loaded existing identity for ${name}${Colors.END}`);
+                console.log(`${Colors.ZCASH_GREEN}✅ Loaded existing identity for ${name}${Colors.END}`);
                 return data;
             } catch (err) {
                 // Fallback to creation
@@ -181,7 +181,7 @@ class IdentityManager {
         }
         fs.writeFileSync(keyPath, JSON.stringify(identity, null, 2), 'utf8');
 
-        console.log(`${Colors.SOLANA_PURPLE}🎉 Generated NEW Agent Identity!${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}🎉 Generated NEW Agent Identity!${Colors.END}`);
         return identity;
     }
 }
@@ -197,14 +197,14 @@ class ZymaticaVoiceApp {
 
     displayIdentity() {
         const border = "═".repeat(60);
-        console.log(`\n${Colors.SOLANA_PURPLE}${Colors.BOLD}╔${border}╗${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}  ${Colors.SOLANA_GREEN}🦀 ZYMATICA VOICE - Agent Identity${Colors.END}`.padEnd(78) + `${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}╠${border}╣${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Agent Name:${Colors.END} ${this.identity.agent_name}`.padEnd(78) + `${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}LoRa Phone:${Colors.END} ${Colors.YELLOW}${this.identity.phone_number}${Colors.END}`.padEnd(87) + `${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Address:${Colors.END}    ${this.identity.zymatica_address}`.padEnd(78) + `${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Created:${Colors.END}    ${this.identity.created_at.slice(0, 19)}`.padEnd(78) + `${Colors.SOLANA_PURPLE}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}╚${border}╝${Colors.END}\n`);
+        console.log(`\n${Colors.ZCASH_GOLD}${Colors.BOLD}╔${border}╗${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}  ${Colors.ZCASH_GREEN}🦀 ZYMATICA VOICE - Agent Identity${Colors.END}`.padEnd(78) + `${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}╠${border}╣${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Agent Name:${Colors.END} ${this.identity.agent_name}`.padEnd(78) + `${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}LoRa Phone:${Colors.END} ${Colors.YELLOW}${this.identity.phone_number}${Colors.END}`.padEnd(87) + `${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Address:${Colors.END}    ${this.identity.zymatica_address}`.padEnd(78) + `${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}  ${Colors.CYAN}Created:${Colors.END}    ${this.identity.created_at.slice(0, 19)}`.padEnd(78) + `${Colors.ZCASH_GOLD}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}╚${border}╝${Colors.END}\n`);
     }
 
     static encodeCoordinates(text: string): number[] {
@@ -231,7 +231,7 @@ class ZymaticaVoiceApp {
     }
 
     async transmit(message: string, count: number) {
-        console.log(`\n${Colors.SOLANA_GREEN}${Colors.BOLD}📡 INITIATING TRANSMISSION SEQUENCE...${Colors.END}\n`);
+        console.log(`\n${Colors.ZCASH_GREEN}${Colors.BOLD}📡 INITIATING TRANSMISSION SEQUENCE...${Colors.END}\n`);
         const proof = this.prover.generateProof(this.identity.private_key, this.identity.public_key);
         const coords = ZymaticaVoiceApp.encodeCoordinates(message);
         const payload = ZymaticaVoiceApp.encryptPayload(message, this.identity.public_key);
@@ -249,15 +249,15 @@ class ZymaticaVoiceApp {
             console.log(`${Colors.YELLOW}⚡ Packet ${i + 1}/${count}:${Colors.END}`);
             // Animation
             const part = packet.slice(0, 80);
-            process.stdout.write(`${Colors.SOLANA_GREEN}${part}${Colors.END}...\n`);
+            process.stdout.write(`${Colors.ZCASH_GREEN}${part}${Colors.END}...\n`);
             await new Promise(resolve => setTimeout(resolve, 300));
             console.log(`${Colors.GREEN}✅ TRANSMITTED${Colors.END} - ${packet.length} bytes @ 903.9 MHz, SF9\n`);
         }
-        console.log(`${Colors.SOLANA_PURPLE}${Colors.BOLD}🎉 TRANSMISSION COMPLETE!${Colors.END}`);
+        console.log(`${Colors.ZCASH_GOLD}${Colors.BOLD}🎉 TRANSMISSION COMPLETE!${Colors.END}`);
     }
 
     listen(durationSec: number) {
-        console.log(`\n${Colors.SOLANA_PURPLE}${Colors.BOLD}📻 ACTIVATING RX LISTENER...${Colors.END}\n`);
+        console.log(`\n${Colors.ZCASH_GOLD}${Colors.BOLD}📻 ACTIVATING RX LISTENER...${Colors.END}\n`);
         console.log(`${Colors.CYAN}Listening on 903.9 MHz, SF9, 125kHz for ${durationSec} seconds...${Colors.END}\n`);
 
         const start = Date.now();
@@ -266,7 +266,7 @@ class ZymaticaVoiceApp {
         const interval = setInterval(() => {
             if (Date.now() - start > durationSec * 1000) {
                 clearInterval(interval);
-                console.log(`\n${Colors.SOLANA_PURPLE}${Colors.BOLD}📊 RX SESSION COMPLETE${Colors.END}`);
+                console.log(`\n${Colors.ZCASH_GOLD}${Colors.BOLD}📊 RX SESSION COMPLETE${Colors.END}`);
                 console.log(`${Colors.CYAN}Packets received: ${count}${Colors.END}`);
                 return;
             }
@@ -276,7 +276,7 @@ class ZymaticaVoiceApp {
                 const randomNode = `AGENT-${ZKProver.computeHash(Math.random().toString()).slice(0, 8).toUpperCase()}`;
                 const border = "─".repeat(50);
                 console.log(`${Colors.GREEN}╔${border}╗${Colors.END}`);
-                console.log(`${Colors.GREEN}║${Colors.END}  ${Colors.SOLANA_GREEN}📨 RECEIVED PACKET${Colors.END}`.padEnd(68) + `${Colors.GREEN}║${Colors.END}`);
+                console.log(`${Colors.GREEN}║${Colors.END}  ${Colors.ZCASH_GREEN}📨 RECEIVED PACKET${Colors.END}`.padEnd(68) + `${Colors.GREEN}║${Colors.END}`);
                 console.log(`${Colors.GREEN}╠${border}╣${Colors.END}`);
                 console.log(`${Colors.GREEN}║${Colors.END}  From: ${randomNode}@zymatica.space`.padEnd(58) + `${Colors.GREEN}║${Colors.END}`);
                 console.log(`${Colors.GREEN}║${Colors.END}  SNR: ${8 + Math.floor(Math.random() * 6)} dB, RSSI: -${90 + Math.floor(Math.random() * 20)} dBm`.padEnd(58) + `${Colors.GREEN}║${Colors.END}`);
@@ -304,17 +304,17 @@ async function runInteractive() {
         app.displayIdentity();
 
         const border = "═".repeat(60);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}╔${border}╗${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.BOLD}🦀 ZYMATICA VOICE - Main Menu${Colors.END}`.padEnd(72) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}╠${border}╣${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[1]${Colors.END} Transmit Message (TX)`.padEnd(76) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[2]${Colors.END} Listen for Packets (RX)`.padEnd(76) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[3]${Colors.END} Show Identity`.padEnd(76) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[4]${Colors.END} Generate ZK-Proof`.padEnd(76) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[0]${Colors.END} Exit`.padEnd(76) + `${Colors.SOLANA_GREEN}${Colors.BOLD}║${Colors.END}`);
-        console.log(`${Colors.SOLANA_GREEN}${Colors.BOLD}╚${border}╝${Colors.END}\n`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}╔${border}╗${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.BOLD}🦀 ZYMATICA VOICE - Main Menu${Colors.END}`.padEnd(72) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}╠${border}╣${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[1]${Colors.END} Transmit Message (TX)`.padEnd(76) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[2]${Colors.END} Listen for Packets (RX)`.padEnd(76) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[3]${Colors.END} Show Identity`.padEnd(76) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[4]${Colors.END} Generate ZK-Proof`.padEnd(76) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}  ${Colors.YELLOW}[0]${Colors.END} Exit`.padEnd(76) + `${Colors.ZCASH_GREEN}${Colors.BOLD}║${Colors.END}`);
+        console.log(`${Colors.ZCASH_GREEN}${Colors.BOLD}╚${border}╝${Colors.END}\n`);
 
-        const choice = (await question(`${Colors.SOLANA_PURPLE}🚀 Select action:${Colors.END} `)).trim();
+        const choice = (await question(`${Colors.ZCASH_GOLD}🚀 Select action:${Colors.END} `)).trim();
 
         if (choice === '1') {
             const msg = await question(`${Colors.CYAN}Message to transmit:${Colors.END} `);
@@ -329,12 +329,12 @@ async function runInteractive() {
         } else if (choice === '3') {
             app.displayIdentity();
         } else if (choice === '4') {
-            console.log(`\n${Colors.SOLANA_GREEN}Generating ZK-Proof...${Colors.END}`);
+            console.log(`\n${Colors.ZCASH_GREEN}Generating ZK-Proof...${Colors.END}`);
             const proof = app.prover.generateProof(app.identity.private_key, app.identity.public_key);
-            console.log(`${Colors.SOLANA_PURPLE}✅ ZK-Proof Generated:${Colors.END}`);
+            console.log(`${Colors.ZCASH_GOLD}✅ ZK-Proof Generated:${Colors.END}`);
             console.log(JSON.stringify(proof, null, 2));
         } else if (choice === '0') {
-            console.log(`\n${Colors.SOLANA_PURPLE}${Colors.BOLD}👋 Zymatica Voice shutting down...${Colors.END}`);
+            console.log(`\n${Colors.ZCASH_GOLD}${Colors.BOLD}👋 Zymatica Voice shutting down...${Colors.END}`);
             console.log(`${Colors.CYAN}From E-Waste to AI Grace. See you in the mesh! 🦀✨${Colors.END}\n`);
             rl.close();
             break;

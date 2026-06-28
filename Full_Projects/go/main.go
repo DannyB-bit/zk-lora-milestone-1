@@ -28,8 +28,8 @@ const (
 	ColorRed          = "\x1b[91m"
 	ColorBold         = "\x1b[1m"
 	ColorEnd          = "\x1b[0m"
-	ColorSolanaPurple = "\x1b[38;2;153;69;255m"
-	ColorSolanaGreen  = "\x1b[38;2;20;241;149m"
+	ColorZcashPurple = "\x1b[38;2;243;179;0m"
+	ColorZcashGreen  = "\x1b[38;2;56;161;105m"
 )
 
 // ============================================================================
@@ -199,7 +199,7 @@ func LoadOrCreateIdentity(name string) AgentIdentity {
 		if content, err := os.ReadFile(keyPath); err == nil {
 			var identity AgentIdentity
 			if err := json.Unmarshal(content, &identity); err == nil {
-				fmt.Printf("%s✅ Loaded existing identity for %s%s\n", ColorSolanaGreen, name, ColorEnd)
+				fmt.Printf("%s✅ Loaded existing identity for %s%s\n", ColorZcashGreen, name, ColorEnd)
 				return identity
 			}
 		}
@@ -226,7 +226,7 @@ func LoadOrCreateIdentity(name string) AgentIdentity {
 		_ = os.WriteFile(keyPath, content, 0644)
 	}
 
-	fmt.Printf("%s🎉 Generated NEW Agent Identity!%s\n", ColorSolanaPurple, ColorEnd)
+	fmt.Printf("%s🎉 Generated NEW Agent Identity!%s\n", ColorZcashPurple, ColorEnd)
 	return identity
 }
 
@@ -244,14 +244,14 @@ func NewZymaticaVoiceApp(name string) *ZymaticaVoiceApp {
 
 func (app *ZymaticaVoiceApp) DisplayIdentity() {
 	border := strings.Repeat("═", 60)
-	fmt.Printf("\n%s%s╔%s╗%s\n", ColorSolanaPurple, ColorBold, border, ColorEnd)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorSolanaPurple, ColorBold, "  ", ColorSolanaGreen+"🦀 ZYMATICA VOICE - Agent Identity", strings.Repeat(" ", 24), ColorSolanaPurple, ColorBold)
-	fmt.Printf("%s%s╠%s╣%s\n", ColorSolanaPurple, ColorBold, border, ColorEnd)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorSolanaPurple, ColorBold, "  ", ColorCyan+"Agent Name:"+ColorEnd+" "+app.identity.AgentName, strings.Repeat(" ", 46-len(app.identity.AgentName)), ColorSolanaPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorSolanaPurple, ColorBold, "  ", ColorCyan+"LoRa Phone:"+ColorEnd+" "+ColorYellow+app.identity.PhoneNumber+ColorEnd, strings.Repeat(" ", 46-len(app.identity.PhoneNumber)), ColorSolanaPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorSolanaPurple, ColorBold, "  ", ColorCyan+"Address:"+ColorEnd+"    "+app.identity.ZymaticaAddress, strings.Repeat(" ", 42-len(app.identity.ZymaticaAddress)), ColorSolanaPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorSolanaPurple, ColorBold, "  ", ColorCyan+"Created:"+ColorEnd+"    "+app.identity.CreatedAt[:19], strings.Repeat(" ", 42-19), ColorSolanaPurple, ColorBold)
-	fmt.Printf("%s%s╚%s╝%s\n\n", ColorSolanaPurple, ColorBold, border, ColorEnd)
+	fmt.Printf("\n%s%s╔%s╗%s\n", ColorZcashPurple, ColorBold, border, ColorEnd)
+	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorZcashGreen+"🦀 ZYMATICA VOICE - Agent Identity", strings.Repeat(" ", 24), ColorZcashPurple, ColorBold)
+	fmt.Printf("%s%s╠%s╣%s\n", ColorZcashPurple, ColorBold, border, ColorEnd)
+	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Agent Name:"+ColorEnd+" "+app.identity.AgentName, strings.Repeat(" ", 46-len(app.identity.AgentName)), ColorZcashPurple, ColorBold)
+	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"LoRa Phone:"+ColorEnd+" "+ColorYellow+app.identity.PhoneNumber+ColorEnd, strings.Repeat(" ", 46-len(app.identity.PhoneNumber)), ColorZcashPurple, ColorBold)
+	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Address:"+ColorEnd+"    "+app.identity.ZymaticaAddress, strings.Repeat(" ", 42-len(app.identity.ZymaticaAddress)), ColorZcashPurple, ColorBold)
+	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Created:"+ColorEnd+"    "+app.identity.CreatedAt[:19], strings.Repeat(" ", 42-19), ColorZcashPurple, ColorBold)
+	fmt.Printf("%s%s╚%s╝%s\n\n", ColorZcashPurple, ColorBold, border, ColorEnd)
 }
 
 func EncodeCoordinates(text string) []float64 {
@@ -286,7 +286,7 @@ func EncryptPayload(text, publicKeyHex string) string {
 }
 
 func (app *ZymaticaVoiceApp) Transmit(message string, count int) {
-	fmt.Printf("\n%s%s📡 INITIATING TRANSMISSION SEQUENCE...%s\n\n", ColorSolanaGreen, ColorBold, ColorEnd)
+	fmt.Printf("\n%s%s📡 INITIATING TRANSMISSION SEQUENCE...%s\n\n", ColorZcashGreen, ColorBold, ColorEnd)
 	proof := app.prover.GenerateProof(app.identity.PrivateKey, app.identity.PublicKey)
 	coords := EncodeCoordinates(message)
 	payload := EncryptPayload(message, app.identity.PublicKey)
@@ -307,15 +307,15 @@ func (app *ZymaticaVoiceApp) Transmit(message string, count int) {
 		if len(part) > 80 {
 			part = part[:80]
 		}
-		fmt.Printf("%s%s%s...\n", ColorSolanaGreen, part, ColorEnd)
+		fmt.Printf("%s%s%s...\n", ColorZcashGreen, part, ColorEnd)
 		time.sleep(300 * time.Millisecond)
 		fmt.Printf("%s✅ TRANSMITTED%s - %d bytes @ 903.9 MHz, SF9\n\n", ColorGreen, ColorEnd, len(packet))
 	}
-	fmt.Printf("%s%s🎉 TRANSMISSION COMPLETE!%s\n", ColorSolanaPurple, ColorBold, ColorEnd)
+	fmt.Printf("%s%s🎉 TRANSMISSION COMPLETE!%s\n", ColorZcashPurple, ColorBold, ColorEnd)
 }
 
 func (app *ZymaticaVoiceApp) Listen(durationSec int) {
-	fmt.Printf("\n%s%s📻 ACTIVATING RX LISTENER...%s\n\n", ColorSolanaPurple, ColorBold, ColorEnd)
+	fmt.Printf("\n%s%s📻 ACTIVATING RX LISTENER...%s\n\n", ColorZcashPurple, ColorBold, ColorEnd)
 	fmt.Printf("%sListening on 903.9 MHz, SF9, 125kHz for %d seconds...%s\n\n", ColorCyan, durationSec, ColorEnd)
 
 	start := time.Now()
@@ -327,7 +327,7 @@ func (app *ZymaticaVoiceApp) Listen(durationSec int) {
 			randomNode := "AGENT-" + strings.ToUpper(ComputeHash(strconv.FormatFloat(rand.Float64(), 'f', 6, 64))[:8])
 			border := strings.Repeat("─", 50)
 			fmt.Printf("%s╔%s╗%s\n", ColorGreen, border, ColorEnd)
-			fmt.Printf("%s║  %s%s║\n", ColorGreen, (ColorSolanaGreen+"📨 RECEIVED PACKET").padRight(59), ColorGreen)
+			fmt.Printf("%s║  %s%s║\n", ColorGreen, (ColorZcashGreen+"📨 RECEIVED PACKET").padRight(59), ColorGreen)
 			fmt.Printf("%s╠%s╣%s\n", ColorGreen, border, ColorEnd)
 			fmt.Printf("%s║  From: %s@zymatica.space%s║\n", ColorGreen, randomNode, strings.Repeat(" ", 36-len(randomNode)))
 			snrStr := fmt.Sprintf("SNR: %d dB, RSSI: -%d dBm", 8+rand.Intn(6), 90+rand.Intn(20))
@@ -335,7 +335,7 @@ func (app *ZymaticaVoiceApp) Listen(durationSec int) {
 			fmt.Printf("%s╚%s╝%s\n\n", ColorGreen, border, ColorEnd)
 		}
 	}
-	fmt.Printf("\n%s%s📊 RX SESSION COMPLETE%s\n", ColorSolanaPurple, ColorBold, ColorEnd)
+	fmt.Printf("\n%s%s📊 RX SESSION COMPLETE%s\n", ColorZcashPurple, ColorBold, ColorEnd)
 	fmt.Printf("%sPackets received: %d%s\n", ColorCyan, count, ColorEnd)
 }
 
@@ -431,17 +431,17 @@ func main() {
 	for {
 		app.DisplayIdentity()
 		border := strings.Repeat("═", 60)
-		fmt.Printf("%s%s╔%s╗%s\n", ColorSolanaGreen, ColorBold, border, ColorEnd)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString("🦀 ZYMATICA VOICE - Main Menu").padRight(58), ColorSolanaGreen)
-		fmt.Printf("%s%s╠%s╣%s\n", ColorSolanaGreen, ColorBold, border, ColorEnd)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString(ColorYellow+"[1]"+ColorEnd+" Transmit Message (TX)").padRight(67), ColorSolanaGreen)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString(ColorYellow+"[2]"+ColorEnd+" Listen for Packets (RX)").padRight(67), ColorSolanaGreen)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString(ColorYellow+"[3]"+ColorEnd+" Show Identity").padRight(67), ColorSolanaGreen)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString(ColorYellow+"[4]"+ColorEnd+" Generate ZK-Proof").padRight(67), ColorSolanaGreen)
-		fmt.Printf("%s%s║  %s%s║\n", ColorSolanaGreen, ColorBold, padString(ColorYellow+"[0]"+ColorEnd+" Exit").padRight(67), ColorSolanaGreen)
-		fmt.Printf("%s%s╚%s╝%s\n\n", ColorSolanaGreen, ColorBold, border, ColorEnd)
+		fmt.Printf("%s%s╔%s╗%s\n", ColorZcashGreen, ColorBold, border, ColorEnd)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString("🦀 ZYMATICA VOICE - Main Menu").padRight(58), ColorZcashGreen)
+		fmt.Printf("%s%s╠%s╣%s\n", ColorZcashGreen, ColorBold, border, ColorEnd)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString(ColorYellow+"[1]"+ColorEnd+" Transmit Message (TX)").padRight(67), ColorZcashGreen)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString(ColorYellow+"[2]"+ColorEnd+" Listen for Packets (RX)").padRight(67), ColorZcashGreen)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString(ColorYellow+"[3]"+ColorEnd+" Show Identity").padRight(67), ColorZcashGreen)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString(ColorYellow+"[4]"+ColorEnd+" Generate ZK-Proof").padRight(67), ColorZcashGreen)
+		fmt.Printf("%s%s║  %s%s║\n", ColorZcashGreen, ColorBold, padString(ColorYellow+"[0]"+ColorEnd+" Exit").padRight(67), ColorZcashGreen)
+		fmt.Printf("%s%s╚%s╝%s\n\n", ColorZcashGreen, ColorBold, border, ColorEnd)
 
-		fmt.Printf("%s🚀 Select action:%s ", ColorSolanaPurple, ColorEnd)
+		fmt.Printf("%s🚀 Select action:%s ", ColorZcashPurple, ColorEnd)
 		if !scanner.Scan() {
 			break
 		}
@@ -472,13 +472,13 @@ func main() {
 		} else if choice == "3" {
 			app.DisplayIdentity()
 		} else if choice == "4" {
-			fmt.Printf("\n%sGenerating ZK-Proof...%s\n", ColorSolanaGreen, ColorEnd)
+			fmt.Printf("\n%sGenerating ZK-Proof...%s\n", ColorZcashGreen, ColorEnd)
 			proof := app.prover.GenerateProof(app.identity.PrivateKey, app.identity.PublicKey)
-			fmt.Printf("%s✅ ZK-Proof Generated:%s\n", ColorSolanaPurple, ColorEnd)
+			fmt.Printf("%s✅ ZK-Proof Generated:%s\n", ColorZcashPurple, ColorEnd)
 			data, _ := json.MarshalIndent(proof, "", "  ")
 			fmt.Println(string(data))
 		} else if choice == "0" {
-			fmt.Printf("\n%s👋 Zymatica Voice shutting down...%s\n", ColorSolanaPurple, ColorEnd)
+			fmt.Printf("\n%s👋 Zymatica Voice shutting down...%s\n", ColorZcashPurple, ColorEnd)
 			fmt.Printf("%sFrom E-Waste to AI Grace. See you in the mesh! 🦀✨%s\n\n", ColorCyan, ColorEnd)
 			break
 		} else {
