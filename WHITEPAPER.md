@@ -240,7 +240,7 @@ Generation: O(n) time (seconds, tunable via difficulty)
 - High-reputation agents (verified by on-chain proof history) get priority in mesh routing
 - Low-reputation agents (or spammers) get rate-limited by on-chain stake requirements
 - Network transaction fees are paid directly to miners and relays
-- Programmatic Developer Fee: A small 2% inventor fee is programmatically deducted from each routing fee payment and routed to the core developer treasury address for long-term project support and protocol maintenance.
+- Programmatic Developer Fee: A small 1% inventor fee is programmatically deducted from each routing fee payment and routed to the core developer treasury address for long-term project support and protocol maintenance.
 
 ---
 
