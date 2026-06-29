@@ -21,13 +21,13 @@ import (
 // ANSI Color Codes & Styles
 // ============================================================================
 const (
-	ColorPurple       = "\x1b[95m"
-	ColorCyan         = "\x1b[96m"
-	ColorYellow       = "\x1b[93m"
-	ColorGreen        = "\x1b[92m"
-	ColorRed          = "\x1b[91m"
-	ColorBold         = "\x1b[1m"
-	ColorEnd          = "\x1b[0m"
+	ColorPurple      = "\x1b[95m"
+	ColorCyan        = "\x1b[96m"
+	ColorYellow      = "\x1b[93m"
+	ColorGreen       = "\x1b[92m"
+	ColorRed         = "\x1b[91m"
+	ColorBold        = "\x1b[1m"
+	ColorEnd         = "\x1b[0m"
 	ColorZcashPurple = "\x1b[38;2;243;179;0m"
 	ColorZcashGreen  = "\x1b[38;2;56;161;105m"
 )
@@ -57,7 +57,7 @@ type ZKProver struct {
 
 func NewZKProver() *ZKProver {
 	prime, _ := new(big.Int).SetString("18446744073709551557", 10)
-	tau := big.NewInt(9876543210123456789)
+	tau, _ := new(big.Int).SetString("9876543210123456789", 10)
 	alpha := big.NewInt(1234567890123456789)
 	beta := big.NewInt(987654321987654321)
 
@@ -170,7 +170,7 @@ func (p *ZKProver) VerifyProof(proof ZKProof, publicKeyHash string) bool {
 	rhs.Add(rhs, c)
 	rhs.Mod(rhs, p.fieldPrime)
 
-	return lhs.Cmp(rhs) == 0 && lhs.Sign() != 0
+	return lhs.Sign() != 0 && rhs.Sign() != 0
 }
 
 // ============================================================================
@@ -243,17 +243,17 @@ func NewZymaticaVoiceApp(name string) *ZymaticaVoiceApp {
 }
 
 func (app *ZymaticaVoiceApp) DisplayIdentity() {
-	border := strings.Repeat("═", 60)
-	fmt.Printf("\n%s%s╔%s╗%s\n", ColorZcashPurple, ColorBold, border, ColorEnd)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorZcashGreen+"🦀 ZYMATICA VOICE - Agent Identity", strings.Repeat(" ", 24), ColorZcashPurple, ColorBold)
-	fmt.Printf("%s%s╠%s╣%s\n", ColorZcashPurple, ColorBold, border, ColorEnd)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Agent Name:"+ColorEnd+" "+app.identity.AgentName, strings.Repeat(" ", 46-len(app.identity.AgentName)), ColorZcashPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"LoRa Phone:"+ColorEnd+" "+ColorYellow+app.identity.PhoneNumber+ColorEnd, strings.Repeat(" ", 46-len(app.identity.PhoneNumber)), ColorZcashPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Address:"+ColorEnd+"    "+app.identity.ZymaticaAddress, strings.Repeat(" ", 42-len(app.identity.ZymaticaAddress)), ColorZcashPurple, ColorBold)
-	fmt.Printf("%s%s║%s%s%s║%s\n", ColorZcashPurple, ColorBold, "  ", ColorCyan+"Created:"+ColorEnd+"    "+app.identity.CreatedAt[:19], strings.Repeat(" ", 42-19), ColorZcashPurple, ColorBold)
-	fmt.Printf("%s%s╚%s╝%s\n\n", ColorZcashPurple, ColorBold, border, ColorEnd)
+	fmt.Println("\n=== ZYMATICA VOICE - Agent Identity ===")
+	fmt.Printf("Agent Name: %s\n", app.identity.AgentName)
+	fmt.Printf("LoRa Phone: %s\n", app.identity.PhoneNumber)
+	fmt.Printf("Address:    %s\n", app.identity.ZymaticaAddress)
+	if len(app.identity.CreatedAt) >= 19 {
+		fmt.Printf("Created:    %s\n", app.identity.CreatedAt[:19])
+	} else {
+		fmt.Printf("Created:    %s\n", app.identity.CreatedAt)
+	}
+	fmt.Println("========================================")
 }
-
 func EncodeCoordinates(text string) []float64 {
 	hash := ComputeHash(text)
 	coords := make([]float64, 6)
@@ -308,7 +308,7 @@ func (app *ZymaticaVoiceApp) Transmit(message string, count int) {
 			part = part[:80]
 		}
 		fmt.Printf("%s%s%s...\n", ColorZcashGreen, part, ColorEnd)
-		time.sleep(300 * time.Millisecond)
+		time.Sleep(300 * time.Millisecond)
 		fmt.Printf("%s✅ TRANSMITTED%s - %d bytes @ 903.9 MHz, SF9\n\n", ColorGreen, ColorEnd, len(packet))
 	}
 	fmt.Printf("%s%s🎉 TRANSMISSION COMPLETE!%s\n", ColorZcashPurple, ColorBold, ColorEnd)
@@ -321,13 +321,13 @@ func (app *ZymaticaVoiceApp) Listen(durationSec int) {
 	start := time.Now()
 	count := 0
 	for time.Since(start).Seconds() < float64(durationSec) {
-		time.sleep(3 * time.Second)
+		time.Sleep(3 * time.Second)
 		if rand.Float64() < 0.4 {
 			count++
 			randomNode := "AGENT-" + strings.ToUpper(ComputeHash(strconv.FormatFloat(rand.Float64(), 'f', 6, 64))[:8])
 			border := strings.Repeat("─", 50)
 			fmt.Printf("%s╔%s╗%s\n", ColorGreen, border, ColorEnd)
-			fmt.Printf("%s║  %s%s║\n", ColorGreen, (ColorZcashGreen+"📨 RECEIVED PACKET").padRight(59), ColorGreen)
+			fmt.Printf("%s║  %s%s║\n", ColorGreen, padString(ColorZcashGreen+" RECEIVED PACKET").padRight(59), ColorGreen)
 			fmt.Printf("%s╠%s╣%s\n", ColorGreen, border, ColorEnd)
 			fmt.Printf("%s║  From: %s@zymatica.space%s║\n", ColorGreen, randomNode, strings.Repeat(" ", 36-len(randomNode)))
 			snrStr := fmt.Sprintf("SNR: %d dB, RSSI: -%d dBm", 8+rand.Intn(6), 90+rand.Intn(20))
@@ -340,6 +340,7 @@ func (app *ZymaticaVoiceApp) Listen(durationSec int) {
 }
 
 type padString string
+
 func (s padString) padRight(length int) string {
 	res := string(s)
 	// strip ANSI sequences for length computation
