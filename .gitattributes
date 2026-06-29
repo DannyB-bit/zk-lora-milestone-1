@@ -1,0 +1,6 @@
+*.pdf binary
+*.wasm binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.exe binary

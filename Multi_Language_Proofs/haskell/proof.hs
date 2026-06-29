@@ -7,9 +7,10 @@ import Text.Printf (printf)
 
 simpleSha256 :: String -> String
 simpleSha256 input =
-    let hash = foldl (\acc c -> (((acc * 33) + ord c) `mod` 0xFFFFFFFFFFFFFFFF)) 5381 input
+    let modulus = 0xFFFFFFFFFFFFFFFF :: Integer
+        hash = foldl (\acc c -> (((acc * 33) + toInteger (ord c)) `mod` modulus)) 5381 input
         part1 = showHex hash ""
-        part2 = showHex (hash * 31 `mod` 0xFFFFFFFFFFFFFFFF) ""
+        part2 = showHex (hash * 31 `mod` modulus) ""
         pad hex = replicate (16 - length hex) '0' ++ hex
     in pad part1 ++ pad part2
 
@@ -17,7 +18,7 @@ main :: IO ()
 main = do
     putStrLn "=========================================================="
     -- Zcash Gold color style (\x1b[38;2;243;179;0m)
-    putStrLn "\x1b[38;2;243;179;0m🦀 ZK-LORA | Multi-Language Verification Proof (Haskell)\x1b[0m"
+    putStrLn "\x1b[38;2;243;179;0mZK-LORA | Multi-Language Verification Proof (Haskell)\x1b[0m"
     putStrLn "==========================================================\n"
 
     let agentName = "researcher-1"
