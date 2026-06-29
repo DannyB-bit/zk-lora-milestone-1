@@ -187,7 +187,7 @@ class IdentityManager {
 }
 
 class ZymaticaVoiceApp {
-    private identity: AgentIdentity;
+    public identity: AgentIdentity;
     public prover: ZKProver;
 
     constructor(name: string) {
