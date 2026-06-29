@@ -44,7 +44,27 @@ This component combines:
 ```bash
 # Run the proof verification (CI mode)
 python run_proof.py --test
+
+# Run the full multi-language verifier
+python verify_all_proofs.py
+
+# Run the Milestone 1 benchmark
+python benchmark_milestone1.py --iterations 250
 ```
+
+## Milestone 1 Artifact Pack
+
+Reviewer evidence is collected in [artifacts/milestone1](./artifacts/milestone1/README.md):
+
+| Artifact | Status |
+| :--- | :--- |
+| `verify_all_proofs.py` report | 20/20 runtimes passing |
+| C++ native verifier build/run report | Complete |
+| WASM verifier artifact and SHA-256 | Complete |
+| Proof generation and verification benchmark | Complete for local reference host |
+| 3-node RAK/Raspberry Pi hardware layout | Documented in [docs/milestone1_hardware_layout.md](./docs/milestone1_hardware_layout.md) |
+
+Scope note: this repo proves the Milestone 1 reference prototype and verifier portability. Production gnark/arkworks/halo2 proof integration and photo-backed RAK packet-forwarder capture remain future hardware/integration work.
 
 ## Security Properties
 

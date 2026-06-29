@@ -100,7 +100,9 @@ def run_command(cmd, cwd, env=None, timeout=120):
             shell=True, timeout=timeout, encoding='utf-8', errors='backslashreplace'
         )
         elapsed = time.time() - start
-        return res.returncode == 0, res.stdout, res.stderr, elapsed
+        stdout = res.stdout.replace("\x00", "")
+        stderr = res.stderr.replace("\x00", "")
+        return res.returncode == 0, stdout, stderr, elapsed
     except subprocess.TimeoutExpired:
         elapsed = time.time() - start
         return False, "", f"TIMEOUT after {timeout}s", elapsed
