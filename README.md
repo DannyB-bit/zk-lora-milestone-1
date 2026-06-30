@@ -68,6 +68,12 @@ python benchmark_milestone1.py --iterations 250
 
 Reviewer evidence is collected in [artifacts/milestone1](./artifacts/milestone1/README.md):
 
+Reviewer shortcut: the strongest hardware/security artifact is the secure packet RF result:
+[node-b-rx secure packet result](./artifacts/milestone1/hardware_capture/secure_packet_rf/node-b-rx_20260630T135643Z/result_summary.txt).
+It shows `END_TO_END_SECURE_PACKET_OK=YES`, `PACKET_AUTH_OK=YES`, `DECRYPT_OK=YES`,
+`ZK_REFERENCE_PROOF_VERIFY_OK=YES`, `TAMPER_REJECTED=YES`, `WRONG_KEY_REJECTED=YES`,
+`REPLAY_REJECTED=YES`, and matching TX/RX packet SHA-256.
+
 | Artifact | Status |
 | :--- | :--- |
 | `verify_all_proofs.py` report | 20/20 runtimes passing |
