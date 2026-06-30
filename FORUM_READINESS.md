@@ -13,11 +13,12 @@ Verified locally:
 - Go operator builds and runs `go test` plus `go run . --test`.
 - RAK Miner A hardware evidence shows SX1302 SPI access, chip `0x10`, and repeated LoRa TX bursts completed.
 - RAK Miner B hardware evidence shows SX1302 SPI access, chip `0x10`, and HAL RX bring-up.
+- End-to-end RF evidence shows RakMiner-B decoded CRC OK packets during RakMiner-A's TX window, with matching 240-byte payload SHA-256.
 
 Do not overclaim:
 - The proof code is a reference/structural prototype.
 - This milestone does not yet provide production Groth16, halo2, arkworks, or gnark proof artifacts.
-- The committed B-side RF attempts did not decode a valid packet; do not claim end-to-end A-to-B packet receipt until `artifacts/milestone1/hardware_capture/end_to_end_rf_success/` is populated with CRC/hash-match evidence.
+- The committed RF success is a raw LoRa payload transfer, not a production LoRaWAN, Helium, TTN, ChirpStack, or Zcash mainnet integration.
 - Zcash payment scanning belongs to later milestones.
 
 Forum checklist:
