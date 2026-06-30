@@ -4,7 +4,7 @@ This file is the reviewer-facing index for the Milestone 1 evidence package.
 
 ## Executive status
 
-Milestone 1 is complete as a reference prototype and hardware bring-up package:
+Milestone 1 is complete as a reference prototype, hardware bring-up package, and raw LoRa RF transfer proof:
 
 - The multi-language proof suite runs and passes.
 - The C++ verifier builds and runs.
@@ -12,9 +12,10 @@ Milestone 1 is complete as a reference prototype and hardware bring-up package:
 - The benchmark script records proof generation and verification timing.
 - RAK Miner A proves real SX1302/SPI LoRa transmit bring-up.
 - RAK Miner B proves real SX1302/SPI LoRa receive bring-up.
+- RAK Miner A and B prove one end-to-end raw LoRa RF payload transfer with CRC OK packets and matching payload SHA-256.
 - The hardware layout and capture process are documented.
 
-End-to-end A-to-B RF packet decode is not yet claimed in this repo. The current committed B-side RX attempts did not decode a valid packet, and that result is preserved honestly.
+Older failed B-side RX attempts are preserved honestly. The later committed success artifacts under `artifacts/milestone1/hardware_capture/end_to_end_rf_success/` are the reviewer-grade RF proof.
 
 ## Artifact map
 
@@ -30,7 +31,9 @@ End-to-end A-to-B RF packet decode is not yet claimed in this repo. The current 
 | RAK Miner A real TX | `artifacts/milestone1/hardware_capture/node-a-tx/interactive_privileged_retry/README.md` | SPI opened, SX1302 chip `0x10`, TX completed |
 | RAK Miner A repeated TX | `artifacts/milestone1/hardware_capture/node-a-tx/manual_tx_for_b_rx_20260630/repeated_tx_burst.log` | Five LoRa TX bursts completed with exit 0 |
 | RAK Miner B baseline | `artifacts/milestone1/hardware_capture/node-b-rx/README.md` | B host inventory and proof/benchmark run |
-| RAK Miner B RX attempts | `artifacts/milestone1/hardware_capture/node-b-rx/real_lora_rx_20260630/README.md` | RX hardware bring-up succeeded; no valid packet decoded |
+| RAK Miner B earlier RX attempts | `artifacts/milestone1/hardware_capture/node-b-rx/real_lora_rx_20260630/README.md` | RX hardware bring-up succeeded; no valid packet decoded in earlier attempts |
+| End-to-end RF success, A side | `artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-a-tx_20260630T012251Z/README.md` | A recovered concentrator and completed five TX bursts |
+| End-to-end RF success, B side | `artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260630T012005Z/result_summary.txt` | B decoded CRC OK packets and matched A payload SHA-256 |
 
 ## What the RAK evidence proves
 
@@ -49,42 +52,39 @@ RAK Miner B:
 - Opened SPI against the SX1302 concentrator.
 - Detected SX1302 chip version `0x10`.
 - Ran a corrected HAL RX command during a timestamped A TX window.
-- Preserved the receive result honestly: `Nb valid packets received: 0 CRC OK (1)`.
+- Preserved earlier failed RX attempts honestly.
+- In the final end-to-end run, decoded five CRC OK packets during A's TX window.
+- Verified a 240-byte received payload with SHA-256 `ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3f`, matching A's transmitted payload.
 
-## What is not claimed yet
+## What is not claimed
 
-This repository does not yet claim:
+This repository does not claim:
 
-- A valid packet was decoded by RAK Miner B.
-- TX payload SHA-256 equals RX payload SHA-256.
-- CRC-pass end-to-end A-to-B RF packet reconstruction.
+- Production LoRaWAN, Helium, TTN, ChirpStack, or Zcash mainnet integration.
 - Production Groth16, halo2, gnark, arkworks, or Zcash consensus proof verification.
 
-Those claims require an additional committed success folder with the actual B-side RX packet bytes, CRC pass, and hash match.
+The RF evidence is a raw LoRa transport proof: SX1302 TX on RakMiner-A, SX1302 RX on RakMiner-B, CRC OK packets, and matching payload SHA-256.
 
-## Success artifact import target
+## Success artifacts
 
-If Phase 15/16 evidence exists on the miners or USB evidence freeze, import it under:
+The reviewer-grade RF success evidence is committed under:
 
 `artifacts/milestone1/hardware_capture/end_to_end_rf_success/`
 
-Required files:
+Key files:
 
-- `README.md` with exact claim, UTC window, devices, and RF settings.
-- A-side TX log showing packet bytes/hash and TX completion.
-- B-side RX log showing packet bytes, RSSI/SNR, CRC pass, and RX completion.
-- `tx_payload.bin` and `rx_payload.bin`, or canonical hex dumps if binary capture is unavailable.
-- `tx_payload.sha256` and `rx_payload.sha256`.
-- Reconstruction output and hash, if compression/restore was used.
-- Service-stop/reset log showing conflicting gateway services were stopped and SX1302/SX1261 reset pins used.
-- `lora_chirp_recovery.log` from `tools/lora_chirp_recovery.sh` showing `LORA_CHIRP_RECOVERY_PASS=YES` on both nodes.
+- A-side TX evidence: `node-a-tx_20260630T012251Z/`
+- B-side RX evidence: `node-b-rx_20260630T012005Z/`
+- B machine-readable result: `node-b-rx_20260630T012005Z/result_summary.txt`
+- B raw HAL RX log: `node-b-rx_20260630T012005Z/raw_hal_rx_9039_sf9_125k.log`
 
-Minimum reviewer-safe success test:
+Reviewer-safe success test:
 
 ```text
-TX_SHA256 == RX_SHA256
-CRC_PASS == YES
-RX_PACKET_BYTES > 0
+CRC_OK_COUNT=5
+RX_PAYLOAD_BYTES=240
+A_PAYLOAD_SHA256=ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3f
+RX_PAYLOAD_SHA256=ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3f
+PAYLOAD_SHA256_MATCH=YES
+END_TO_END_RF_SUCCESS=YES
 ```
-
-Until that folder exists, use the current repo as a Milestone 1 prototype plus hardware bring-up proof, not an end-to-end RF decode proof.

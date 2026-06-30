@@ -65,7 +65,7 @@ Reviewer evidence is collected in [artifacts/milestone1](./artifacts/milestone1/
 | 3-node RAK/Raspberry Pi hardware layout | Documented in [docs/milestone1_hardware_layout.md](./docs/milestone1_hardware_layout.md) |
 | RAK Miner A/B hardware evidence | Indexed in [docs/MILESTONE_1_REVIEWER_EVIDENCE.md](./docs/MILESTONE_1_REVIEWER_EVIDENCE.md) |
 
-Scope note: this repo proves the Milestone 1 reference prototype, verifier portability, and RAK Miner TX/RX hardware bring-up. RAK Miner A completed real SX1302 TX bursts; RAK Miner B brought up SX1302 RX but did not decode a valid packet in the committed attempts. Production gnark/arkworks/halo2 proof integration and end-to-end RF decode remain future work unless success artifacts are added under `artifacts/milestone1/hardware_capture/end_to_end_rf_success/`.
+Scope note: this repo proves the Milestone 1 reference prototype, verifier portability, RAK Miner TX/RX hardware bring-up, and one end-to-end raw LoRa RF payload transfer. RAK Miner A completed repeated SX1302 TX bursts; RAK Miner B decoded CRC OK packets during the matching TX window, and the received 240-byte payload SHA-256 matched the transmitted payload SHA-256. Production gnark/arkworks/halo2 proof integration remains future work.
 
 ## Security Properties
 
