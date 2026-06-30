@@ -19,6 +19,17 @@ license: mit
 
 > *"The impossible is just code waiting to be written, physics waiting to be rewritten, math a work in progress, and truth waiting to be discovered."*
 
+## 🎥 Video Presentation
+
+An official video presentation introducing the ZK-LoRa Privacy Layer is available:
+
+- **Web Platform:** [Watch on Objkt (Tezos NFT #110)](https://objkt.com/tokens/KT1PMD1QSurTyVXxcYDUPAjQt8DNShkBiv4m/110)
+- **Decentralized Storage:** [Direct IPFS Video Stream (MP4)](https://ipfs.io/ipfs/bafybeig2duv7vbxjrww3vmcxkxjqaikyc3hexepauvhuaemepk42v37hji)
+
+<p align="center">
+  <video src="https://ipfs.io/ipfs/bafybeig2duv7vbxjrww3vmcxkxjqaikyc3hexepauvhuaemepk42v37hji" poster="https://ipfs.io/ipfs/bafkreihay7l4wsc5ztv3rbi3mvjsdydw5eiqvuznxvrujlsdtvppnzwefy" width="100%" controls></video>
+</p>
+
 ---
 
 ## Overview
