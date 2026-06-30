@@ -150,7 +150,7 @@ verify_chip_id() {
   return 30
 }
 
-helium_concentrator_recover() {
+lora_chirp_recover() {
   log "LORA_CHIRP_RECOVERY_BEGIN role=$ROLE spi=$SPI_DEV"
   log "RECOVERY_LOG=$RECOVERY_LOG"
 
@@ -163,6 +163,11 @@ helium_concentrator_recover() {
   return 0
 }
 
+# Backward-compatible alias for older local scripts that sourced the first draft.
+helium_concentrator_recover() {
+  lora_chirp_recover "$@"
+}
+
 if [ "${BASH_SOURCE[0]}" = "$0" ]; then
-  helium_concentrator_recover
+  lora_chirp_recover
 fi

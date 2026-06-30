@@ -5,3 +5,4 @@
 *.jpeg binary
 *.exe binary
 *.sh text eol=lf
+tools/zk_lora_secure_packet.py text eol=lf
