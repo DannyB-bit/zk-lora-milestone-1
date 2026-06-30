@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -u
 
-# Helium-style SX130x concentrator recovery for RAK/Semtech HAL test runs.
+# LoRa Chirp SX130x concentrator recovery for RAK/Semtech HAL test runs.
 # Source this file from RX/TX harnesses, or run it directly:
-#   bash tools/helium_concentrator_recovery.sh node-b-rx
+#   bash tools/lora_chirp_recovery.sh node-b-rx
 
 ROLE="${1:-${ROLE:-unknown-node}}"
 SPI_DEV="${SPI_DEV:-/dev/spidev0.0}"
-RECOVERY_LOG="${RECOVERY_LOG:-./concentrator_recovery_${ROLE}_$(date -u +%Y%m%dT%H%M%SZ).log}"
+RECOVERY_LOG="${RECOVERY_LOG:-./lora_chirp_recovery_${ROLE}_$(date -u +%Y%m%dT%H%M%SZ).log}"
 
 log() {
   printf '%s %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" | tee -a "$RECOVERY_LOG"
@@ -138,7 +138,7 @@ verify_chip_id() {
       sudo_logged "$tool" -d "$SPI_DEV"
       local status=$?
       if [ "$status" -eq 0 ] && grep -Eiq '0x10|SX1302|SX1303|concentrator' "$RECOVERY_LOG"; then
-        log "CONCENTRATOR_RECOVERY_PASS=YES"
+        log "LORA_CHIRP_RECOVERY_PASS=YES"
         return 0
       fi
       log "Verification tool did not prove a ready concentrator: $tool"
@@ -146,12 +146,12 @@ verify_chip_id() {
   done
 
   log "ERROR: no concentrator verification tool succeeded"
-  log "CONCENTRATOR_RECOVERY_PASS=NO"
+  log "LORA_CHIRP_RECOVERY_PASS=NO"
   return 30
 }
 
 helium_concentrator_recover() {
-  log "CONCENTRATOR_RECOVERY_BEGIN role=$ROLE spi=$SPI_DEV"
+  log "LORA_CHIRP_RECOVERY_BEGIN role=$ROLE spi=$SPI_DEV"
   log "RECOVERY_LOG=$RECOVERY_LOG"
 
   stop_conflicting_gateway_services
@@ -159,7 +159,7 @@ helium_concentrator_recover() {
   verify_spi_device || return "$?"
   verify_chip_id || return "$?"
 
-  log "CONCENTRATOR_RECOVERY_END role=$ROLE"
+  log "LORA_CHIRP_RECOVERY_END role=$ROLE"
   return 0
 }
 

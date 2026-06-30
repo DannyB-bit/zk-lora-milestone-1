@@ -28,7 +28,7 @@ Goal:
 Paste this as the task:
 
 ```text
-You are on RakMiner-B, the receiver. Pull latest zk-lora-milestone-1 main. Use tools/helium_concentrator_recovery.sh as the mandatory error-handling function before any RX attempt.
+You are on RakMiner-B, the receiver. Pull latest zk-lora-milestone-1 main. Use tools/lora_chirp_recovery.sh as the mandatory error-handling function before any RX attempt.
 
 Objective: collect honest end-to-end RX evidence for Milestone 1.
 
@@ -37,9 +37,9 @@ Steps:
 2. Create a new artifact folder:
    ARTIFACT="artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_$(date -u +%Y%m%dT%H%M%SZ)"
    mkdir -p "$ARTIFACT"
-3. Run the Helium-style concentrator recovery function and save its log in that folder:
-   RECOVERY_LOG="$ARTIFACT/concentrator_recovery.log" ROLE=node-b-rx bash tools/helium_concentrator_recovery.sh node-b-rx
-4. If recovery does not produce CONCENTRATOR_RECOVERY_PASS=YES, stop and commit only the failure evidence.
+3. Run the LoRa Chirp concentrator recovery function and save its log in that folder:
+   RECOVERY_LOG="$ARTIFACT/lora_chirp_recovery.log" ROLE=node-b-rx bash tools/lora_chirp_recovery.sh node-b-rx
+4. If recovery does not produce LORA_CHIRP_RECOVERY_PASS=YES, stop and commit only the failure evidence.
 5. Start raw HAL RX before A transmits. Use exactly 903.9 MHz / SF9 / 125 kHz. Do not use the old 903.0/SF7 path.
 6. Capture from before A TX through at least 60 seconds after A finishes.
 7. Extract and save:
@@ -66,7 +66,7 @@ Steps:
 Paste this as the task after B says it is listening:
 
 ```text
-You are on RakMiner-A, the transmitter. Pull latest zk-lora-milestone-1 main. Use tools/helium_concentrator_recovery.sh as the mandatory error-handling function before TX.
+You are on RakMiner-A, the transmitter. Pull latest zk-lora-milestone-1 main. Use tools/lora_chirp_recovery.sh as the mandatory error-handling function before TX.
 
 Objective: transmit the deterministic Milestone 1 payload while RakMiner-B is already listening.
 
@@ -83,9 +83,9 @@ Steps:
    - payload_path.txt
    - payload_stat.txt
    - payload_sha256.txt
-5. Run the Helium-style concentrator recovery function and save its log in that folder:
-   RECOVERY_LOG="$ARTIFACT/concentrator_recovery.log" ROLE=node-a-tx bash tools/helium_concentrator_recovery.sh node-a-tx
-6. If recovery does not produce CONCENTRATOR_RECOVERY_PASS=YES, stop and commit only the failure evidence.
+5. Run the LoRa Chirp concentrator recovery function and save its log in that folder:
+   RECOVERY_LOG="$ARTIFACT/lora_chirp_recovery.log" ROLE=node-a-tx bash tools/lora_chirp_recovery.sh node-a-tx
+6. If recovery does not produce LORA_CHIRP_RECOVERY_PASS=YES, stop and commit only the failure evidence.
 7. Tell the user/B the exact UTC second before TX starts.
 8. Transmit repeated payloads using exactly:
    903.9 MHz, SF9, 125 kHz, 14 dBm.
@@ -103,8 +103,8 @@ Steps:
 
 The final evidence folder should contain:
 
-- A recovery log with `CONCENTRATOR_RECOVERY_PASS=YES`.
-- B recovery log with `CONCENTRATOR_RECOVERY_PASS=YES`.
+- A recovery log with `LORA_CHIRP_RECOVERY_PASS=YES`.
+- B recovery log with `LORA_CHIRP_RECOVERY_PASS=YES`.
 - A TX log with chip detection and `A_LORA_TX_FILE_SEND_COMPLETE=YES`.
 - B RX log with at least one valid packet and CRC OK.
 - Matching payload byte count.
