@@ -14,7 +14,7 @@ Grant Application - ZK-LoRa: Shielded Micropayments & Privacy Layer
 ### What is the project?
 ZK-LoRa is an offline, privacy-preserving mesh communication layer that combines babyjubjub/secp256k1 elliptic curve cryptography, zk-SNARKs, and Zcash shielded payments. 
 
-In off-grid and physical IoT networks, radio frequency broadcasts are inherently public, exposing device hardware identifiers (UIDs/MACs) to physical triangulation and behavioral tracking. ZK-LoRa allows nodes to verify the legitimacy of packets via local zero-knowledge proofs without exposing device identities. Additionally, to incentivize gateway nodes for routing packets, the protocol integrates Zcash shielded micropayments (ZEC) into the relay loop. Relays receive private, shielded transactions for every packet routed, providing the world's first fully private physical DePIN mesh network. To support protocol sustainability and long-term maintenance, a tiny 2% programmatic developer fee is built into the relay reward transaction loop.
+In off-grid and physical IoT networks, radio frequency broadcasts are inherently public, exposing device hardware identifiers (UIDs/MACs) to physical triangulation and behavioral tracking. ZK-LoRa allows nodes to verify the legitimacy of packets via local zero-knowledge proofs without exposing device identities. Additionally, to incentivize gateway nodes for routing packets, the protocol integrates Zcash shielded micropayments (ZEC) into the relay loop. The current prototype demonstrates the core privacy-preserving relay concept and has now produced a CRC/hash-matched raw LoRa RF transfer between two RAK miners; the grant would fund the remaining Zcash wallet/light-client and production-proof integrations needed for a complete deployable privacy-preserving DePIN mesh. To support protocol sustainability and long-term maintenance, a tiny 2% programmatic developer fee is built into the relay reward transaction loop.
 
 ### How does it benefit the Zcash ecosystem?
 1. **Real-World DePIN Utility:** Introduces a functional utility case for Zcash (ZEC) in physical mesh networks and offline IoT setups, expanding the market scope of Zcash shielded pools.
@@ -43,9 +43,9 @@ In off-grid and physical IoT networks, radio frequency broadcasts are inherently
 * **User Story:** *"As a privacy-focused network operator, I want an optimized zk-SNARK verifier on-chip, so that my node can authenticate packets anonymously without execution lag."*
 * **Deliverables:**
     * Port Groth16 verifier library to C++ and compile to WASM/native binaries.
-    * Validate and benchmark local ZK proof generation under 150ms on Raspberry Pi.
+    * Validate the reference proof suite, native/WASM verifier artifacts, benchmark report, and physical RAK/LoRa RF transport evidence.
     * Stage and configure the base 3-node physical mesh gateway hardware layout.
-* **Acceptance Criteria:** Successful execution of the automated verification test script (`python verify_all_proofs.py`) proving mathematically correct Groth16 ZK proof verification on Raspberry Pi edge hardware in under 150ms.
+* **Acceptance Criteria:** Successful execution of the automated verification test script (`python verify_all_proofs.py`), committed native/WASM verifier artifacts, benchmark report, and a committed RAK Miner A/B RF evidence package showing CRC OK packet receipt and matching TX/RX payload SHA-256.
 
 ### 🎯 Milestone 2 (Months 3-4) — $5,500
 * **Expected Completion:** 2026-10-25
