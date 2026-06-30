@@ -4,7 +4,7 @@ This file is the reviewer-facing index for the Milestone 1 evidence package.
 
 ## Executive status
 
-Milestone 1 is complete as a reference prototype, hardware bring-up package, and raw LoRa RF transfer proof:
+Milestone 1 is complete as a reference prototype, hardware bring-up package, raw LoRa RF transfer proof, and encrypted proof-referenced secure packet RF proof:
 
 - The multi-language proof suite runs and passes.
 - The C++ verifier builds and runs.
@@ -13,6 +13,7 @@ Milestone 1 is complete as a reference prototype, hardware bring-up package, and
 - RAK Miner A proves real SX1302/SPI LoRa transmit bring-up.
 - RAK Miner B proves real SX1302/SPI LoRa receive bring-up.
 - RAK Miner A and B prove one end-to-end raw LoRa RF payload transfer with CRC OK packets and matching payload SHA-256.
+- RAK Miner A and B prove one end-to-end encrypted proof-referenced secure packet transfer with decrypt, reference-proof verify, tamper rejection, wrong-key rejection, replay rejection, and matching packet SHA-256.
 - The hardware layout and capture process are documented.
 
 Older failed B-side RX attempts are preserved honestly. The later committed success artifacts under `artifacts/milestone1/hardware_capture/end_to_end_rf_success/` are the reviewer-grade RF proof.
@@ -35,6 +36,8 @@ Older failed B-side RX attempts are preserved honestly. The later committed succ
 | RAK Miner B earlier RX attempts | `artifacts/milestone1/hardware_capture/node-b-rx/real_lora_rx_20260630/README.md` | RX hardware bring-up succeeded; no valid packet decoded in earlier attempts |
 | End-to-end RF success, A side | `artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-a-tx_20260630T012251Z/README.md` | A recovered concentrator and completed five TX bursts |
 | End-to-end RF success, B side | `artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260630T012005Z/result_summary.txt` | B decoded CRC OK packets and matched A payload SHA-256 |
+| Secure packet RF success, A side | `artifacts/milestone1/hardware_capture/secure_packet_rf/node-a-tx_20260630T135914Z/result_summary.txt` | A generated encrypted proof-referenced packet and completed five TX bursts |
+| Secure packet RF success, B side | `artifacts/milestone1/hardware_capture/secure_packet_rf/node-b-rx_20260630T135643Z/result_summary.txt` | B matched packet SHA-256, decrypted, verified reference proof, and rejected tamper/wrong-key/replay |
 
 ## What the RAK evidence proves
 
@@ -66,6 +69,8 @@ This repository does not claim:
 
 The RF evidence is a raw LoRa transport proof: SX1302 TX on RakMiner-A, SX1302 RX on RakMiner-B, CRC OK packets, and matching payload SHA-256.
 
+The secure packet evidence is a reference-prototype security proof: a 217-byte packet transmitted over raw LoRa, authenticated and decrypted by RakMiner-B, with reference proof verification and negative tests. It is not a production ECIES/AES/gnark/halo2 proof.
+
 ## Success artifacts
 
 The reviewer-grade RF success evidence is committed under:
@@ -88,4 +93,33 @@ A_PAYLOAD_SHA256=ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3
 RX_PAYLOAD_SHA256=ef4b31ae0f7f159078191ea6169487bb66063a96c6927b83fe4070dcca0b4d3f
 PAYLOAD_SHA256_MATCH=YES
 END_TO_END_RF_SUCCESS=YES
+```
+
+## Secure packet artifacts
+
+The strongest Milestone 1 security evidence is committed under:
+
+`artifacts/milestone1/hardware_capture/secure_packet_rf/`
+
+Key files:
+
+- A-side secure packet TX evidence: `node-a-tx_20260630T135914Z/`
+- B-side secure packet RX/verify evidence: `node-b-rx_20260630T135643Z/`
+- B machine-readable result: `node-b-rx_20260630T135643Z/result_summary.txt`
+- B verification JSON: `node-b-rx_20260630T135643Z/secure_packet_verify.json`
+- B replay rejection JSON: `node-b-rx_20260630T135643Z/replay_check.json`
+
+Reviewer-safe secure packet test:
+
+```text
+CRC_OK_COUNT=4
+RX_PACKET_BYTES=217
+RX_TX_PACKET_SHA256_MATCH=YES
+PACKET_AUTH_OK=YES
+DECRYPT_OK=YES
+ZK_REFERENCE_PROOF_VERIFY_OK=YES
+TAMPER_REJECTED=YES
+WRONG_KEY_REJECTED=YES
+REPLAY_REJECTED=YES
+END_TO_END_SECURE_PACKET_OK=YES
 ```
