@@ -25,6 +25,7 @@ End-to-end A-to-B RF packet decode is not yet claimed in this repo. The current 
 | WASM verifier | `artifacts/milestone1/wasm_verifier_build_report.md`, `artifacts/milestone1/zk_lora_wasm_verifier.wasm` | WASM artifact committed with SHA-256 |
 | Benchmark | `artifacts/milestone1/benchmark_report.md` | Local reference proof timing captured |
 | Hardware layout | `docs/milestone1_hardware_layout.md` | 3-node RAK/Raspberry Pi topology documented |
+| RF recovery/runbook | `tools/helium_concentrator_recovery.sh`, `docs/codex_a_b_rf_evidence_runbook.md` | Helium-style service stop, reset, chip check, and coordinated A/B capture procedure |
 | RAK Miner A baseline | `artifacts/milestone1/hardware_capture/node-a-tx/README.md` | A host inventory and proof/benchmark run |
 | RAK Miner A real TX | `artifacts/milestone1/hardware_capture/node-a-tx/interactive_privileged_retry/README.md` | SPI opened, SX1302 chip `0x10`, TX completed |
 | RAK Miner A repeated TX | `artifacts/milestone1/hardware_capture/node-a-tx/manual_tx_for_b_rx_20260630/repeated_tx_burst.log` | Five LoRa TX bursts completed with exit 0 |
@@ -76,6 +77,7 @@ Required files:
 - `tx_payload.sha256` and `rx_payload.sha256`.
 - Reconstruction output and hash, if compression/restore was used.
 - Service-stop/reset log showing conflicting gateway services were stopped and SX1302/SX1261 reset pins used.
+- `concentrator_recovery.log` from `tools/helium_concentrator_recovery.sh` showing `CONCENTRATOR_RECOVERY_PASS=YES` on both nodes.
 
 Minimum reviewer-safe success test:
 
