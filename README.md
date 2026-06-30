@@ -8,7 +8,7 @@ tags:
 - lora
 - privacy
 - depin
-license: mit
+license: conditional-grant
 ---
 
 # ZK-LoRa Privacy Layer
@@ -97,4 +97,4 @@ Scope note: this repo proves the Milestone 1 reference prototype, verifier porta
 
 ## License
 
-MIT License — see [LICENSE](./LICENSE)
+Conditional Open-Source Grant License — see [LICENSE](./LICENSE)
