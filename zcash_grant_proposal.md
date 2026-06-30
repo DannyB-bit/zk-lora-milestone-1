@@ -1,108 +1,24 @@
-# Zcash Community Grants Application — ZK-LoRa
+# ZCG Grant Proposal Reference
 
-## Title
-Grant Application - ZK-LoRa: Shielded Micropayments & Privacy Layer
+The current ZK-LoRa Zcash Community Grants application is maintained on the
+live ZCG issue:
 
-## Terms and Conditions
-*(Make sure to check all agreement boxes in the GitHub Issue form)*
+https://github.com/ZcashCommunityGrants/zcashcommunitygrants/issues/337
 
-## Application Owners
-@DannyB-bit
+The public community discussion is here:
 
-## Project Description
+https://forum.zcashcommunity.com/t/grant-application-zk-lora-zero-knowledge-privacy-layer-for-ai-to-ai-mesh-networks/56463
 
-### What is the project?
-ZK-LoRa is an offline, privacy-preserving mesh communication layer that combines babyjubjub/secp256k1 elliptic curve cryptography, zk-SNARKs, and Zcash shielded payments. 
+This repository is the public Milestone 1 evidence workspace. It contains the
+completed reference verifier artifacts, hardware layout documentation, raw RF
+capture evidence, and secure encrypted proof-referenced packet evidence.
 
-In off-grid and physical IoT networks, radio frequency broadcasts are inherently public, exposing device hardware identifiers (UIDs/MACs) to physical triangulation and behavioral tracking. ZK-LoRa allows nodes to verify the legitimacy of packets via local zero-knowledge proofs without exposing device identities. Additionally, to incentivize gateway nodes for routing packets, the protocol integrates Zcash shielded micropayments (ZEC) into the relay loop. The current prototype demonstrates the core privacy-preserving relay concept and has now produced a CRC/hash-matched raw LoRa RF transfer between two RAK miners; the grant would fund the remaining Zcash wallet/light-client and production-proof integrations needed for a complete deployable privacy-preserving DePIN mesh. To support protocol sustainability and long-term maintenance, a tiny 2% programmatic developer fee is built into the relay reward transaction loop.
+Reviewer entry points:
 
-### How does it benefit the Zcash ecosystem?
-1. **Real-World DePIN Utility:** Introduces a functional utility case for Zcash (ZEC) in physical mesh networks and offline IoT setups, expanding the market scope of Zcash shielded pools.
-2. **On-Chain Shielded Verification:** Integrates the Rust `zcash_client_backend` into edge nodes (Raspberry Pi/ESP32) and runs light client transaction verification locally, validating Zcash's portability.
-3. **ZK Cryptographic Alignment:** Porting and optimizing zk-SNARK verifiers for low-power edge microcontrollers aligns directly with Zcash's mission to advance state-of-the-art privacy-preserving zero-knowledge research.
+- `README.md`
+- `docs/MILESTONE_1_REVIEWER_EVIDENCE.md`
+- `artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260630T012005Z/result_summary.txt`
+- `artifacts/milestone1/hardware_capture/secure_packet_rf/node-b-rx_20260630T135643Z/result_summary.txt`
 
-### Technical Deliverables
-*   **zk-SNARK Embedded Verifier:** A compiled and benchmarked Groth16/PLONK verifier optimized to run under 100ms on low-power ARM architectures and browser WASM environments.
-*   **Zcash Relay SDK:** A rust backend integration that generates shielded reward payment requests and scans the mempool/ledger for reference key confirmations.
-*   **Operator CLI Node:** A cyberpunk-style node CLI (`run_proof.py`) automating identity creation, ZK-proof generation, ECIES payload encryption, and ZEC payment triggers.
-*   **Compliance:** Fully open-sourced under the MIT License (complying with FPF Grant Agreement Section 4). All code commits follow the `librustzcash` contributing guidelines.
-
----
-
-## 📅 Goals and Milestones (6-Month Plan)
-
-### 💰 Startup Funding — $7,500
-* **Purpose:** Upfront funding to cover initial hardware procurement, Month 1 staging lab lease, and Month 1 embedded engineering labor.
-* **Coverage:**
-    * Physical hardware components for 3 solar node gateways ($2,940).
-    * Initial 1-month staging lab lease and utilities ($1,500).
-    * Month 1 embedded cryptographic engineering labor ($2,500) and parts buffer ($560).
-
-### 🎯 Milestone 1 (Months 1-2) — $6,000
-* **Expected Completion:** 2026-08-25
-* **User Story:** *"As a privacy-focused network operator, I want an optimized zk-SNARK verifier on-chip, so that my node can authenticate packets anonymously without execution lag."*
-* **Deliverables:**
-    * Port Groth16 verifier library to C++ and compile to WASM/native binaries.
-    * Validate the reference proof suite, native/WASM verifier artifacts, benchmark report, and physical RAK/LoRa RF transport evidence.
-    * Stage and configure the base 3-node physical mesh gateway hardware layout.
-* **Acceptance Criteria:** Successful execution of the automated verification test script (`python verify_all_proofs.py`), committed native/WASM verifier artifacts, benchmark report, and a committed RAK Miner A/B RF evidence package showing CRC OK packet receipt and matching TX/RX payload SHA-256.
-
-### 🎯 Milestone 2 (Months 3-4) — $5,500
-* **Expected Completion:** 2026-10-25
-* **User Story:** *"As a mesh gateway owner, I want to scan incoming Zcash shielded payments, so that I can automatically verify relay rewards before forwarding physical LoRa packets."*
-* **Deliverables:**
-    * Integrate `zcash_client_backend` into the LoRa operator daemon.
-    * Create payment reference matching scripts to link incoming shielded ZEC transactions with routed packet hashes.
-    * Procure parts and assemble the remaining 2 solar-powered outdoor gateways (completing the 5-node topology).
-* **Acceptance Criteria:** Execution of the Zcash SDK mempool scanner validating that incoming shielded ZEC payments containing correct references are verified, triggering the local relay routing mechanism.
-
-### 🎯 Milestone 3 (Months 5-6) — $5,500
-* **Expected Completion:** 2026-12-25
-* **User Story:** *"As a ZK-LoRa developer, I want a thoroughly tested, open-source SDK, so that I can deploy private physical communication meshes across different terrains."*
-* **Deliverables:**
-    * Deploy the 5 physical nodes in the field and run 4 weeks of range/RF loops (state park, urban, Lake Ontario).
-    * Deploy ZK-verification program on mainnet and publish the SDK npm package.
-    * Publish open-source developer setup documentation and tutorials.
-* **Acceptance Criteria:** Successful field routing log reports showing 100+ end-to-end off-grid semantic coordinate packet transfers compensated with ZEC shielded payouts, and public npm/GitHub links to the open-source MIT-licensed SDK.
-
----
-
-## 💰 Thorough Budget Breakdown ($24,500 Total)
-
-The budget covers the development, hardware staging, and location lease costs for the 6-month operation:
-
-### 1. Hardware/Software Costs — $2,940
-*   **Hardware Parts:** $2,940 (Procuring parts for 3 devices @ $980 per device including RAK gateways, WisBlock LoRa modules, SD cards, solar panels, battery packs, and weather-proof outdoor enclosures).
-*   *Note:* The initial 2 physical gateway devices and testing nodes have been prefunded out-of-pocket.
-
-### 2. Service Costs — $6,000
-*   **Location Lease & Utilities ($4,500):** $3,900 for development computer lab lease + $600 for electricity and high-speed network connectivity. (The remaining 3 months of lease are prefunded out-of-pocket).
-*   **AI API Credits ($1,500):** Cloud GPU and dataset credits to map generative prior coordinates for Language-U. (The remaining 3 months of dataset credits are prefunded out-of-pocket).
-
-### 3. Compensation Costs — $15,560
-*   **Core ZK Cryptographic Engineering:** $7,000 (140 hours @ $50/hr for embedded Groth16 optimizations and rust verifier compilation).
-*   **Zcash SDK Node Integration:** $3,860 (77.2 hours @ $50/hr for shielded payment construction and mempool verification).
-*   **Field Testing Labor:** $3,200 (4 weeks of active range and RF loop experiments @ $800/week).
-*   **Node Assembly Labor:** $1,500 ($500 per device for physical wiring, mounting, OS flashing, and solar controller assembly of the 3 requested nodes).
-
-### Budget Verification
-| Category | Amount |
-| :--- | ---: |
-| Hardware/Software Costs | $2,940 |
-| Service Costs | $6,000 |
-| Compensation Costs | $15,560 |
-| **Total Budget** | **$24,500** |
-
-| Funding Stage | Amount |
-| :--- | ---: |
-| Startup Funding | $7,500 |
-| Milestone 1 | $6,000 |
-| Milestone 2 | $5,500 |
-| Milestone 3 | $5,500 |
-| **Total Disbursement** | **$24,500** |
-
----
-
-## Proof of Work / Previous Credentials
-* Main Repository: https://github.com/DannyB-bit/zk-lora-privacy-layer
-* Core Model (Hugging Face): https://huggingface.co/TheAiCollectiveART/zymatica.space
+Milestone 2 and Milestone 3 are proposed funded work. Their implementation
+will be opened and documented as grant deliverables progress.
