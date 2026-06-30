@@ -3,13 +3,13 @@
 ================================================================================
 
 🚀 Running Python (Interpreted proof validation)...
-   Status: ✅ PASS (took 0.12s)
+   Status: ✅ PASS (took 0.08s)
 
 🚀 Running TypeScript (Compiled ES Module runtime verification (JavaScript + WASM))...
-   Status: ✅ PASS (took 1.59s)
+   Status: ✅ PASS (took 0.54s)
 
 🚀 Running Rust (Native compiled systems verification)...
-   Status: ✅ PASS (took 4.55s)
+   Status: ✅ PASS (took 0.08s)
 
 ⏭️  SKIP Java — runtime not installed
 ⏭️  SKIP PowerShell — runtime not installed
@@ -21,7 +21,7 @@
 ⏭️  SKIP Ruby — runtime not installed
 ⏭️  SKIP PHP — runtime not installed
 🚀 Running Lua (Interpreted Lua runtime verification)...
-   Status: ✅ PASS (took 0.03s)
+   Status: ✅ PASS (took 0.01s)
 
 ⏭️  SKIP Zig — runtime not installed
 ⏭️  SKIP Dart — runtime not installed
