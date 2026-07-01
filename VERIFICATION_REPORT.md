@@ -1,7 +1,7 @@
 # ZK-LoRa: Multi-Language Proof Suite Verification Report 📋
 
 > **Watermark:** ip zymatica.space | astronautshe.com  
-> **Date:** 2026-06-29 18:59:06  
+> **Date:** 2026-06-30 20:00:58  
 > **Status:** ✅ 20/20 TESTED RUNTIMES PASSING  
 > **Language Ports:** 20 code-complete (see `Multi_Language_Proofs/`)  
 > **Execution-Verified:** 20 runtimes (Python, TypeScript, Rust, Java, PowerShell, Bash, C#, C, C++, Go, Ruby, PHP, Lua, Zig, Dart, Kotlin, Julia, Swift, Haskell, Elixir)
@@ -14,26 +14,26 @@ This report summarizes the verification run and execution logs for 20 of the 20 
 
 | Runtime | Status | Time (s) | Description |
 | :--- | :---: | :---: | :--- |
-| Python | ✅ PASS | 0.06s | Interpreted proof validation |
-| TypeScript | ✅ PASS | 0.07s | Compiled ES Module runtime verification (JavaScript + WASM) |
-| Rust | ✅ PASS | 0.56s | Native compiled systems verification |
-| Java | ✅ PASS | 0.66s | JVM single-source file verification |
-| PowerShell | ✅ PASS | 0.23s | Windows shell native script validation |
-| Bash | ✅ PASS | 16.19s | Linux shell script validation via WSL |
-| C# | ✅ PASS | 0.24s | Compiled .NET Framework verification |
-| C | ✅ PASS | 0.18s | MSVC native compiled verification |
-| C++ | ✅ PASS | 0.65s | MSVC C++17 native compiled verification |
-| Go | ✅ PASS | 1.08s | Compiled Go runtime verification |
-| Ruby | ✅ PASS | 0.26s | Interpreted Ruby runtime verification |
-| PHP | ✅ PASS | 0.05s | Interpreted PHP runtime verification |
-| Lua | ✅ PASS | 0.05s | Interpreted Lua runtime verification |
-| Zig | ✅ PASS | 0.11s | Compiled Zig native verification |
-| Dart | ✅ PASS | 0.37s | Dart VM runtime verification |
-| Kotlin | ✅ PASS | 5.06s | Kotlin scripting runtime verification |
-| Julia | ✅ PASS | 0.56s | Julia interpreted runtime verification |
-| Swift | ✅ PASS | 2.00s | Swift compiled runtime verification |
-| Haskell | ✅ PASS | 8.06s | Haskell interpreted runtime verification |
-| Elixir | ✅ PASS | 0.90s | Elixir scripting runtime verification |
+| Python | ✅ PASS | 0.08s | Interpreted proof validation |
+| TypeScript | ✅ PASS | 0.16s | Compiled ES Module runtime verification (JavaScript + WASM) |
+| Rust | ✅ PASS | 1.47s | Native compiled systems verification |
+| Java | ✅ PASS | 1.16s | JVM single-source file verification |
+| PowerShell | ✅ PASS | 0.48s | Windows shell native script validation |
+| Bash | ✅ PASS | 12.90s | Linux shell script validation via WSL |
+| C# | ✅ PASS | 0.26s | Compiled .NET Framework verification |
+| C | ✅ PASS | 0.21s | MSVC native compiled verification |
+| C++ | ✅ PASS | 0.75s | MSVC C++17 native compiled verification |
+| Go | ✅ PASS | 1.65s | Compiled Go runtime verification |
+| Ruby | ✅ PASS | 0.38s | Interpreted Ruby runtime verification |
+| PHP | ✅ PASS | 0.11s | Interpreted PHP runtime verification |
+| Lua | ✅ PASS | 0.07s | Interpreted Lua runtime verification |
+| Zig | ✅ PASS | 3.76s | Compiled Zig native verification |
+| Dart | ✅ PASS | 0.54s | Dart VM runtime verification |
+| Kotlin | ✅ PASS | 6.01s | Kotlin scripting runtime verification |
+| Julia | ✅ PASS | 0.68s | Julia interpreted runtime verification |
+| Swift | ✅ PASS | 2.29s | Swift compiled runtime verification |
+| Haskell | ✅ PASS | 5.94s | Haskell interpreted runtime verification |
+| Elixir | ✅ PASS | 0.67s | Elixir scripting runtime verification |
 
 ---
 
