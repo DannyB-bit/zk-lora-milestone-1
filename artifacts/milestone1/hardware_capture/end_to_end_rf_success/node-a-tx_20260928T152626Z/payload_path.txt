@@ -1,0 +1,1 @@
+/tmp/zk_lora_m1_payload.bin
