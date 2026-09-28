@@ -1,0 +1,69 @@
+RX_ARMED_UTC=2026-09-28T20:43:43Z
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 1
+[rak_gpio] holder on: READY (2453 on READY)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 1072108375
+  size:     23
+  chan:     0
+  status:   0x10
+  datr:     10
+  codr:     1
+  rf_chain  0
+  freq_hz   903500000
+  snr_avg:  -14.8
+  rssi_chan:83.0
+  rssi_sig :69.0
+  crc:      0x45F0
+00 A6 86 79 F4 66 EF 4E 6C 29 B7 41 06 15 E1 80 00 55 A1 CE B8 1D 06
+
+----- LoRa packet -----
+  count_us: 1072108375
+  size:     23
+  chan:     2
+  status:   0x10
+  datr:     10
+  codr:     1
+  rf_chain  0
+  freq_hz   903500000
+  snr_avg:  -14.8
+  rssi_chan:83.0
+  rssi_sig :69.0
+  crc:      0x45F0
+00 A6 86 79 F4 66 EF 4E 6C 29 B7 41 06 15 E1 80 00 55 A1 CE B8 1D 06
+
+----- LoRa packet -----
+  count_us: 1072108375
+  size:     13
+  chan:     1
+  status:   0x10
+  datr:     10
+  codr:     1
+  rf_chain  0
+  freq_hz   903500000
+  snr_avg:  -14.8
+  rssi_chan:83.0
+  rssi_sig :69.0
+  crc:      0x45F0
+TRUNCATED_IN_SOURCE (see README)
+
+----- LoRa packet -----
+  count_us: 1072108375
+  size:     23
+  chan:     3
+  status:   0x10
+  0x10 status line (CRC OK) with chan 1: see README for reconstruction note
+00 A6 86 79 F4 66 EF 4E 6C 29 B7 41 06 15 E1 80 00 55 A1 CE B8 1D 06
