@@ -1,0 +1,55 @@
+2026-09-28T14:36:06Z LORA_CHIRP_RECOVERY_BEGIN role=node-a-tx spi=/dev/spidev0.0
+2026-09-28T14:36:06Z RECOVERY_LOG=/home/researcher-alpha/fleet-repos/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-a-tx_20260928T143606Z/lora_chirp_recovery.log
+2026-09-28T14:36:06Z Stopping known gateway services so one process owns the concentrator
+2026-09-28T14:36:06Z RUN: sudo systemctl stop helium-gateway
+Failed to stop helium-gateway.service: Unit helium-gateway.service not loaded.
+2026-09-28T14:36:06Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-09-28T14:36:06Z RUN: sudo systemctl is-active helium-gateway
+inactive
+2026-09-28T14:36:06Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-09-28T14:36:06Z RUN: sudo systemctl stop packet-forwarder
+Failed to stop packet-forwarder.service: Unit packet-forwarder.service not loaded.
+2026-09-28T14:36:06Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-09-28T14:36:06Z RUN: sudo systemctl is-active packet-forwarder
+inactive
+2026-09-28T14:36:07Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-09-28T14:36:07Z RUN: sudo systemctl stop lora_pkt_fwd
+Failed to stop lora_pkt_fwd.service: Unit lora_pkt_fwd.service not loaded.
+2026-09-28T14:36:07Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-09-28T14:36:07Z RUN: sudo systemctl is-active lora_pkt_fwd
+inactive
+2026-09-28T14:36:07Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-09-28T14:36:07Z RUN: sudo systemctl stop lora-packet-forwarder
+Failed to stop lora-packet-forwarder.service: Unit lora-packet-forwarder.service not loaded.
+2026-09-28T14:36:07Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-09-28T14:36:07Z RUN: sudo systemctl is-active lora-packet-forwarder
+inactive
+2026-09-28T14:36:07Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-09-28T14:36:07Z RUN: sudo systemctl stop sx1302_hal
+Failed to stop sx1302_hal.service: Unit sx1302_hal.service not loaded.
+2026-09-28T14:36:07Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-09-28T14:36:07Z RUN: sudo systemctl is-active sx1302_hal
+inactive
+2026-09-28T14:36:07Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-09-28T14:36:08Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+Failed to stop chirpstack-gateway-bridge.service: Unit chirpstack-gateway-bridge.service not loaded.
+2026-09-28T14:36:08Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-09-28T14:36:08Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+inactive
+2026-09-28T14:36:08Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-09-28T14:36:08Z RUN: sudo systemctl stop miner
+Failed to stop miner.service: Unit miner.service not loaded.
+2026-09-28T14:36:08Z EXIT[5]: sudo systemctl stop miner
+2026-09-28T14:36:08Z RUN: sudo systemctl is-active miner
+inactive
+2026-09-28T14:36:08Z EXIT[4]: sudo systemctl is-active miner
+2026-09-28T14:36:08Z Using reset script: /home/researcher-alpha/sx1302_hal/libloragw/reset_lgw.sh
+2026-09-28T14:36:08Z RUN: sudo ./reset_lgw.sh stop
+2026-09-28T14:36:08Z EXIT[0]: sudo ./reset_lgw.sh stop
+2026-09-28T14:36:09Z RUN: sudo ./reset_lgw.sh start
+RESET_SEQUENCE_OK
+2026-09-28T14:36:13Z EXIT[0]: sudo ./reset_lgw.sh start
+2026-09-28T14:36:14Z SPI device exists: /dev/spidev0.0
+crw-rw---- 1 root spi 153, 0 Sep 28 08:34 /dev/spidev0.0
+2026-09-28T14:36:14Z ERROR: no concentrator verification tool succeeded
+2026-09-28T14:36:14Z LORA_CHIRP_RECOVERY_PASS=NO
