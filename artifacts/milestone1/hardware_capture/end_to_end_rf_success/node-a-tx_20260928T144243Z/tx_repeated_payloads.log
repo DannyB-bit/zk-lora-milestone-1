@@ -1,0 +1,20 @@
+RESET_SEQUENCE_OK
+Sending 5 LoRa packets on 903900000 Hz (BW 125 kHz, SF 9, CR 1, 39 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 14 dBm
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+TX done
+TX done
+TX done
+TX done
+TX done
+
+Nb packets sent: 5 (1)
+Closing SPI communication interface
+=========== Test End ===========

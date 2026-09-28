@@ -1,0 +1,23 @@
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/zk_lora_m1_payload.bin bytes=240 freq=903.9MHz SF9 BW125kHz 14dBm sends=5
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+ERROR: BANDWIDTH NOT SUPPORTED BY LORA TX
+A_LORA_TX_FILE_SEND_1_STATUS=SEND_FAIL
+ERROR: BANDWIDTH NOT SUPPORTED BY LORA TX
+A_LORA_TX_FILE_SEND_2_STATUS=SEND_FAIL
+ERROR: BANDWIDTH NOT SUPPORTED BY LORA TX
+A_LORA_TX_FILE_SEND_3_STATUS=SEND_FAIL
+ERROR: BANDWIDTH NOT SUPPORTED BY LORA TX
+A_LORA_TX_FILE_SEND_4_STATUS=SEND_FAIL
+ERROR: BANDWIDTH NOT SUPPORTED BY LORA TX
+A_LORA_TX_FILE_SEND_5_STATUS=SEND_FAIL
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=NO (0/5)
