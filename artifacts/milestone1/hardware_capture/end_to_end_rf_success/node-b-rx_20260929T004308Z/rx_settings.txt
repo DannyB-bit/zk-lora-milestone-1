@@ -1,0 +1,6 @@
+Target frequency: 903.9 MHz (radio A center 904.3 MHz, channel IF -400000 Hz)
+Spreading factor: SF9 (multi-SF demod, channel mode 0)
+Bandwidth: 125 kHz
+Concentrator: /dev/spidev0.0, radio type SX1250 (-r 1250), clock source 0
+Single input mode: yes (-j)
+Payload expected: 240 bytes, SHA256 6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d
