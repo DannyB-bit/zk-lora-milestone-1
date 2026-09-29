@@ -1,0 +1,52 @@
+{
+  "log": "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260929T035851Z/raw_hal_rx_9039_sf9_125k.log",
+  "total_packets": 3,
+  "crc_ok_packets": 0,
+  "expected_sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d",
+  "sha256_match": null,
+  "crc_ok": [],
+  "all_packets": [
+    {
+      "count_us": 236045267,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 904100000,
+      "snr_avg": "-15.2",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "572fb039ce99ee93cc25cf0338a060f6c17e3044061b55d58b55f00902de192d"
+    },
+    {
+      "count_us": 264973936,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 904700000,
+      "snr_avg": "-14.2",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "3a08078b46c323809a848f0ad2b0cde2973699b11de75360502fc0d33d60dbe2"
+    },
+    {
+      "count_us": 1074524452,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 904500000,
+      "snr_avg": "-14.5",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "09812614b6d55b64952a87bcf35dd7799b03da226bb3a66da712930487feb2f5"
+    }
+  ]
+}
