@@ -1,0 +1,12 @@
+TEST=groth16_pairing_verify
+VERIFIED_AT_UTC=2026-09-29T22:29Z (approx; run started 22:26:4xZ, elapsed 142.1s)
+NODE=RakMiner-B (ARM Cortex-A72, Raspberry Pi 4B)
+VERIFIER=zk-lorawan groth16 zk_lorawan_prove verify (arkworks, BN254)
+VERIFIED_PAYLOAD_SHA256=f8bec8809cdbe23e074ce6596345900e6ffcf3c5ef2c42d88c7dde5897ad8a04
+VERIFIED_PAYLOAD_SOURCE=rx_groth16_proof_128b.bin (captured OTA 15:44Z window, 5/5 CRC-OK)
+PUBLIC_INPUTS=spec v2 full vector (bus seq71): 4x32B hashes + gateway 0016c001ff18afa3+90390000+pad + deposit 100000 + firmware enclave-firmware-version-v1.0.2
+VK=repo-committed canon keys/verifying_key.bin (SHA 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824, identical to DannyB-bit/zk-lorawan master)
+VERDICT=VALID (exit 0)
+ELAPSED_S=142.1
+NOTE=DISK-KEY VERIFY ONLY — do NOT use ZK_LORAWAN_REPRODUCIBLE_SETUP=1 for canon checks; seed-42 regen VK produces INVALID for canon-bound proofs (proven this session).
+SETTLEMENT=Cuneiform devnet REGISTER TX 2q6y8cEn22hCj1TiXPkwEAMBtETn2dZtKjaS2bMwAq3YGaEU8gpvW1nEy6x2qP616u3goZzQg5L9MoY3qvWTk2ha, session f8bec8809cdbe23e, record PDA ZPs1D7s4DywWbMzkQdLFZjQtrsfcWQNsN1rTbPLXtdo, 100k lamport CPI fee.
