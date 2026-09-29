@@ -1,0 +1,24 @@
+{
+  "log": "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260929T000419Z/raw_hal_rx_9039_sf9_125k.log",
+  "total_packets": 1,
+  "crc_ok_packets": 0,
+  "expected_sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d",
+  "sha256_match": null,
+  "crc_ok": [],
+  "all_packets": [
+    {
+      "count_us": 365397903,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 904500000,
+      "snr_avg": "-15.2",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "485ce88792fc1a0eea4c9dbb10e5708b473d65f4174b85fb444490202e5b8904"
+    }
+  ]
+}
