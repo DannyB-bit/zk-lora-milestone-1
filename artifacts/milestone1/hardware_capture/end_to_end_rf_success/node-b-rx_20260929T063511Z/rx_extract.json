@@ -1,0 +1,97 @@
+{
+  "log": "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/artifacts/milestone1/hardware_capture/end_to_end_rf_success/node-b-rx_20260929T063511Z/raw_hal_rx_9039_sf9_125k.log",
+  "total_packets": 4,
+  "crc_ok_packets": 2,
+  "expected_sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d",
+  "sha256_match": true,
+  "crc_ok": [
+    {
+      "count_us": 204433644,
+      "size_field": 240,
+      "actual_bytes": 240,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "9",
+      "freq_hz": 903900000,
+      "snr_avg": "11.5",
+      "rssi_chan": "197.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d",
+      "hex": "5A 4B 2D 4C 4F 52 41 2D 4D 31 2D 44 45 54 45 52 4D 49 4E 49 53 54 49 43 2D 50 41 59 4C 4F 41 44 7C 66 72 6F 6D 3D 41 47 45 4E 54 2D 41 38 35 45 43 30 39 41 40 7A 79 6D 61 74 69 63 61 2E 73 70 61 63 65 7C 70 72 6F 6F 66 5F 68 61 73 68 3D 61 39 66 35 63 32 38 62 62 37 63 31 31 62 31 61 39 34 63 32 38 65 65 62 34 30 36 32 34 38 32 36 7C 76 3D 31 86 8A 5B 6A 04 29 EF C4 59 B9 9D 32 4E 98 9F 95 45 4B D9 81 F2 81 7C 9B 49 8B C0 9B 5F 49 F2 B6 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+    },
+    {
+      "count_us": 3982692,
+      "size_field": 240,
+      "actual_bytes": 240,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "9",
+      "freq_hz": 903900000,
+      "snr_avg": "11.8",
+      "rssi_chan": "197.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d",
+      "hex": "5A 4B 2D 4C 4F 52 41 2D 4D 31 2D 44 45 54 45 52 4D 49 4E 49 53 54 49 43 2D 50 41 59 4C 4F 41 44 7C 66 72 6F 6D 3D 41 47 45 4E 54 2D 41 38 35 45 43 30 39 41 40 7A 79 6D 61 74 69 63 61 2E 73 70 61 63 65 7C 70 72 6F 6F 66 5F 68 61 73 68 3D 61 39 66 35 63 32 38 62 62 37 63 31 31 62 31 61 39 34 63 32 38 65 65 62 34 30 36 32 34 38 32 36 7C 76 3D 31 86 8A 5B 6A 04 29 EF C4 59 B9 9D 32 4E 98 9F 95 45 4B D9 81 F2 81 7C 9B 49 8B C0 9B 5F 49 F2 B6 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+    }
+  ],
+  "all_packets": [
+    {
+      "count_us": 204433644,
+      "size_field": 240,
+      "actual_bytes": 240,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "9",
+      "freq_hz": 903900000,
+      "snr_avg": "11.5",
+      "rssi_chan": "197.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d"
+    },
+    {
+      "count_us": 3982692,
+      "size_field": 240,
+      "actual_bytes": 240,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "9",
+      "freq_hz": 903900000,
+      "snr_avg": "11.8",
+      "rssi_chan": "197.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d"
+    },
+    {
+      "count_us": 531549449,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 904100000,
+      "snr_avg": "-14.5",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "5787bf7738745af5defce0c75d7a7218f6bc79b8cf0534836ea503f0ac7abbb0"
+    },
+    {
+      "count_us": 534867611,
+      "size_field": 23,
+      "actual_bytes": 23,
+      "status": "0x10",
+      "crc_ok": true,
+      "datr": "10",
+      "freq_hz": 903900000,
+      "snr_avg": "-15.8",
+      "rssi_chan": "83.0",
+      "log_interleaved": true,
+      "recovery_strategy": "drop",
+      "sha256": "ba99961be39ba0f85001c5d92188a2ebf3e0f501f9070c637fff7e28d586bbf3"
+    }
+  ]
+}

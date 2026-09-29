@@ -1,0 +1,3 @@
+CRC OK packets: 2 of 4
+First CRC OK payload bytes: 240
+SHA256 match vs A TX: YES
