@@ -1,0 +1,57 @@
+# RakMiner-B RX evidence - FIRST over-the-air secure-packet capture (ZL1P)
+# Window: always-on listener armed by hourly twin-sync tick (recovery PASS 07:45:47Z, chip_id rc=0)
+RX_WINDOW_START_UTC=2026-09-29T07:47:43Z
+RX_WINDOW_CLOSE_UTC=2026-09-29T09:47:43Z
+RX_LINE=test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (timeout 7200)
+RX_FREQ_MHZ=903.9
+RX_SF=9
+RX_BW_KHZ=125
+RECOVERY_GATE=LORA_CHIRP_RECOVERY_PASS=YES @ 2026-09-29T07:45:47Z (pre-arm); re-verified PASS @ 10:41:29Z
+CHIP_ID=rc=0 version 0x10 (EUI 0016c001ff18afa3)
+
+# Captured frame
+PACKET_CAPTURE_UTC_APPROX=2026-09-29T09:03:49Z (count_us wrap-epoch math, anchored to Alpha's declared TX 09:03:41Z-09:03:55Z)
+DEMOD_PACKETS_TOTAL=14 CRC-OK across window (ambient 23B IoT frames + 1x 234B secure packet)
+SECURE_PACKET_COUNT=1
+SECURE_PACKET_BYTES=234
+SECURE_PACKET_STATUS=0x10 (CRC OK)
+SECURE_PACKET_CHAN=3
+SECURE_PACKET_FREQ_HZ=903900000
+SECURE_PACKET_SNR_DB=11.5
+SECURE_PACKET_RSSI_SIG=196.0
+GHOST_FRAME=1x 234B CRC_BAD (0x11) twin on chan 6 / 904.5 MHz, count_us 33us earlier - same RF burst demodulated corrupted on adjacent IF channel
+RX_PACKET_SHA256=90164329f2c4f0a637f19fe18a3ee9338dd841f1b76161a8dba2e84d8768763c
+TX_DECLARED_SHA256=90164329f2c4f0a637f19fe18a3ee9338dd841f1b76161a8dba2e84d8768763c
+PAYLOAD_SHA256_MATCH=YES (byte-exact vs Alpha fast-channel event seq 18, posted 09:05:58Z)
+
+# Cryptographic gates (tools/zk_lora_secure_packet.py verify --tamper-test, nonce-db replay gate)
+PACKET_AUTH_OK=true
+DECRYPT_OK=true
+ZK_REFERENCE_PROOF_VERIFY_OK=true
+TAMPER_REJECTED=true
+WRONG_KEY_REJECTED=true
+REPLAY_REJECTED_2ND_SUBMISSION=true
+PLAINTEXT_SHA256=2236e5fbf5929a5ff94ef2ee5e2ad1f3d83979b5b2cab669ece04ca1ac398540
+PLAINTEXT_BYTES=99
+PLAINTEXT=ZK-LoRa M1 secure packet A->B 2026-09-29: M1 closed, PR3 merged, fast channel live, cuneiform next.
+NONCE=6ec499f692f931da02595269d113b7eb
+PUBLIC_INPUT=3e629f0c35ec9f73c8bd16a55164843fcea8092253036ed1d5514765ec986da7
+PROOF_HASH=2cddd1b0be3698cf8148042b456794c6
+CEREMONY_HASH=46ce007e55ba8b5d
+END_TO_END_SECURE_PACKET_OK=YES
+
+# count_us wrap note (new hardware observation)
+# HAL count_us is a 32-bit microsecond counter: wraps at 4294.967295 s (~71.6 min).
+# This 2h window contains one wrap (between total 7 and total 8): pre-wrap packets
+# up to 4052739817, post-wrap restart near 27615979. Wall-clock mapping of any
+# window > 71.6 min MUST account for the wrap or timestamps silently invert.
+
+# Honest disclosures
+# - This window's stdout was NOT durable for its first ~53 min (dead session pipe);
+#   remediated at ~08:54Z via gdb dup2 to this log. Ambient frames before 08:54Z
+#   (totals 1-7) were recovered from the transcript reconstruction; the captured
+#   234B secure packet and all frames after it were written live to this file.
+# - Artifact dir label 090414Z predates the wrap-epoch correction; authoritative
+#   capture time is PACKET_CAPTURE_UTC_APPROX above (inside Alpha's declared TX span).
+# - No rx_window_open was declared for this window (always-on listener); Alpha's
+#   fire was aimed at the standing "B RX open until 09:47Z" state from bus seq 18.
