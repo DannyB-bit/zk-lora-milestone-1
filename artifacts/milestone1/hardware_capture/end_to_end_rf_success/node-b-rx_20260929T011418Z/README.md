@@ -26,6 +26,11 @@ RX command:
 RX result:
 - Valid LoRa packet entries: 5
 - CRC OK packets: 2 (each 240 bytes, both at 903.9 MHz)
+- Note: the raw log contains 5 status-0x10 (CRC-OK) packet entries in total —
+  the 3 additional frames are 23-byte ambient traffic from third-party IoT
+  devices on nearby channels (904.1/904.5/904.7 MHz, SNR −13/−14 dB), correctly
+  excluded by the extractor's 240-byte size gate. `rx_extract.json` records
+  all 5 with full per-packet metadata; nothing is hidden.
 - First CRC OK payload bytes: 240
 - A TX payload SHA256: 6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d
 - B RX payload SHA256: 6f6b11f6c3d64e7bc6519fee583d0531f279fbfc43166c79c8f6bdfde5c6eb3d
