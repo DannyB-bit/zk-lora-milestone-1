@@ -1,0 +1,74 @@
+2026-09-29T17:19:33Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-09-29T17:19:33Z RECOVERY_LOG=./lora_chirp_recovery_node-b-rx_20260929T171933Z.log
+2026-09-29T17:19:34Z Stopping known gateway services so one process owns the concentrator
+2026-09-29T17:19:34Z RUN: sudo systemctl stop helium-gateway
+Failed to stop helium-gateway.service: Unit helium-gateway.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active helium-gateway
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-09-29T17:19:34Z RUN: sudo systemctl stop packet-forwarder
+Failed to stop packet-forwarder.service: Unit packet-forwarder.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active packet-forwarder
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-09-29T17:19:34Z RUN: sudo systemctl stop lora_pkt_fwd
+Failed to stop lora_pkt_fwd.service: Unit lora_pkt_fwd.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active lora_pkt_fwd
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-09-29T17:19:34Z RUN: sudo systemctl stop lora-packet-forwarder
+Failed to stop lora-packet-forwarder.service: Unit lora-packet-forwarder.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active lora-packet-forwarder
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-09-29T17:19:34Z RUN: sudo systemctl stop sx1302_hal
+Failed to stop sx1302_hal.service: Unit sx1302_hal.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active sx1302_hal
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-09-29T17:19:34Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+Failed to stop chirpstack-gateway-bridge.service: Unit chirpstack-gateway-bridge.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-09-29T17:19:34Z RUN: sudo systemctl stop miner
+Failed to stop miner.service: Unit miner.service not loaded.
+2026-09-29T17:19:34Z EXIT[5]: sudo systemctl stop miner
+2026-09-29T17:19:34Z RUN: sudo systemctl is-active miner
+inactive
+2026-09-29T17:19:34Z EXIT[4]: sudo systemctl is-active miner
+2026-09-29T17:19:35Z Using reset script: /home/researcher-bravo/sx1302_hal/libloragw/reset_lgw.sh
+2026-09-29T17:19:39Z SPI device exists: /dev/spidev0.0
+crw-rw---- 1 root spi 153, 0 Sep 28 16:34 /dev/spidev0.0
+2026-09-29T17:19:39Z Trying concentrator verification tool: /home/researcher-bravo/sx1302_hal/util_chip_id/chip_id -d /dev/spidev0.0 -r 1250 -k 0
+2026-09-29T17:19:39Z RUN: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d /dev/spidev0.0 -r 1250 -k 0
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (120458 on READY)
+[rak_gpio] stop: holder released, lines latched (HAT stays powered)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+
+INFO: concentrator EUI: 0x0016c001ff18afa3
+
+Closing SPI communication interface
+2026-09-29T17:19:43Z EXIT[0]: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d /dev/spidev0.0 -r 1250 -k 0
+2026-09-29T17:19:43Z LORA_CHIRP_RECOVERY_PASS=YES
+2026-09-29T17:19:43Z LORA_CHIRP_RECOVERY_END role=node-b-rx

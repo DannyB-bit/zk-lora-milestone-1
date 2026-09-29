@@ -124,9 +124,11 @@ verify_spi_device() {
 
 verify_chip_id() {
   local tools=(
+    "$HOME/sx1302_hal/util_chip_id/chip_id"
     "$HOME/sx1302_hal/util_chip_id/util_chip_id"
     "$HOME/sx1302_hal/libloragw/util_chip_id"
     "$HOME/sx1302_hal/libloragw/test_loragw_spi"
+    "$PWD/chip_id"
     "$PWD/util_chip_id"
     "$PWD/test_loragw_spi"
   )
@@ -135,7 +137,16 @@ verify_chip_id() {
   for tool in "${tools[@]}"; do
     if [ -x "$tool" ]; then
       log "Trying concentrator verification tool: $tool"
-      sudo_logged "$tool" -d "$SPI_DEV"
+      # HAL binaries invoke ./reset_lgw.sh by RELATIVE path via system(), so
+      # they MUST run from their own tool dir (cd-first law), and chip_id
+      # binaries in this HAL need radio type 1250 + clock source 0
+      # (the -r flag is RADIO TYPE, not SPI speed).
+      local tool_dir
+      tool_dir="$(dirname "$tool")"
+      case "$tool" in
+        */chip_id) sudo_logged bash -c "cd '$tool_dir' && '$tool' -d '$SPI_DEV' -r 1250 -k 0" ;;
+        *)         sudo_logged bash -c "cd '$tool_dir' && '$tool' -d '$SPI_DEV'" ;;
+      esac
       local status=$?
       if [ "$status" -eq 0 ] && grep -Eiq '0x10|SX1302|SX1303|concentrator' "$RECOVERY_LOG"; then
         log "LORA_CHIRP_RECOVERY_PASS=YES"
