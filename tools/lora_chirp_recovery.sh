@@ -123,28 +123,30 @@ verify_spi_device() {
 }
 
 verify_chip_id() {
-  # NOTE (B-side, 2026-09-28): on RakMiner-B the built binary is
-  # $HOME/sx1302_hal/util_chip_id/chip_id (not util_chip_id) and needs
-  # the SX1250 radio args proven on this box. Listed FIRST.
-  local tools_with_args=(
-    "$HOME/sx1302_hal/util_chip_id/chip_id|-d $SPI_DEV -r 1250 -k 0"
-    "$HOME/sx1302_hal/util_chip_id/util_chip_id|-d $SPI_DEV"
-    "$HOME/sx1302_hal/libloragw/util_chip_id|-d $SPI_DEV"
-    "$HOME/sx1302_hal/libloragw/test_loragw_spi|-d $SPI_DEV"
-    "$PWD/util_chip_id|-d $SPI_DEV"
-    "$PWD/test_loragw_spi|-d $SPI_DEV"
+  local tools=(
+    "$HOME/sx1302_hal/util_chip_id/chip_id"
+    "$HOME/sx1302_hal/util_chip_id/util_chip_id"
+    "$HOME/sx1302_hal/libloragw/util_chip_id"
+    "$HOME/sx1302_hal/libloragw/test_loragw_spi"
+    "$PWD/chip_id"
+    "$PWD/util_chip_id"
+    "$PWD/test_loragw_spi"
   )
 
-  local entry tool args tool_dir
-  for entry in "${tools_with_args[@]}"; do
-    tool="${entry%%|*}"
-    args="${entry#*|}"
-    tool_dir="$(dirname "$tool")"
+  local tool
+  for tool in "${tools[@]}"; do
     if [ -x "$tool" ]; then
-      log "Trying concentrator verification tool: $tool $args"
-      # chip_id calls ./reset_lgw.sh via a RELATIVE path (system()), so it
-      # MUST run with cwd = its own directory (matches June M1 discipline).
-      sudo_logged bash -c "cd '$tool_dir' && '$tool' $args"
+      log "Trying concentrator verification tool: $tool"
+      # HAL binaries invoke ./reset_lgw.sh by RELATIVE path via system(), so
+      # they MUST run from their own tool dir (cd-first law), and chip_id
+      # binaries in this HAL need radio type 1250 + clock source 0
+      # (the -r flag is RADIO TYPE, not SPI speed).
+      local tool_dir
+      tool_dir="$(dirname "$tool")"
+      case "$tool" in
+        */chip_id) sudo_logged bash -c "cd '$tool_dir' && '$tool' -d '$SPI_DEV' -r 1250 -k 0" ;;
+        *)         sudo_logged bash -c "cd '$tool_dir' && '$tool' -d '$SPI_DEV'" ;;
+      esac
       local status=$?
       if [ "$status" -eq 0 ] && grep -Eiq '0x10|SX1302|SX1303|concentrator' "$RECOVERY_LOG"; then
         log "LORA_CHIRP_RECOVERY_PASS=YES"
