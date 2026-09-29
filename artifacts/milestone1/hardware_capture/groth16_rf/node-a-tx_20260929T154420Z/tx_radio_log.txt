@@ -1,0 +1,80 @@
+=== GROTH16 OTA FIRE 2026-09-29T15:47:23Z ===
+payload bytes: 128
+f8bec8809cdbe23e074ce6596345900e6ffcf3c5ef2c42d88c7dde5897ad8a04  /tmp/groth16_ota_payload.bin
+RESET_SEQUENCE_OK
+--- send 1/5 15:47:29Z ---
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/groth16_ota_payload.bin bytes=128 freq=903.9MHz SF9 BW125kHz 14dBm sends=1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+A_LORA_TX_FILE_SEND_1_STATUS=TX_DONE
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=YES (1/1 sends, 128 bytes)
+--- send 2/5 15:47:46Z ---
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/groth16_ota_payload.bin bytes=128 freq=903.9MHz SF9 BW125kHz 14dBm sends=1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+A_LORA_TX_FILE_SEND_1_STATUS=TX_DONE
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=YES (1/1 sends, 128 bytes)
+--- send 3/5 15:48:03Z ---
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/groth16_ota_payload.bin bytes=128 freq=903.9MHz SF9 BW125kHz 14dBm sends=1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+A_LORA_TX_FILE_SEND_1_STATUS=TX_DONE
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=YES (1/1 sends, 128 bytes)
+--- send 4/5 15:48:20Z ---
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/groth16_ota_payload.bin bytes=128 freq=903.9MHz SF9 BW125kHz 14dBm sends=1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+A_LORA_TX_FILE_SEND_1_STATUS=TX_DONE
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=YES (1/1 sends, 128 bytes)
+--- send 5/5 15:48:37Z ---
+RESET_SEQUENCE_OK
+zk_lora_tx_app: payload=/tmp/groth16_ota_payload.bin bytes=128 freq=903.9MHz SF9 BW125kHz 14dBm sends=1
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+WARNING: no temperature sensor found on port 0x39
+WARNING: no temperature sensor found on port 0x3B
+WARNING: no temperature sensor found on port 0x38
+WARNING: no temperature telemetry ... 25C
+A_LORA_TX_FILE_SEND_1_STATUS=TX_DONE
+Closing SPI communication interface
+A_LORA_TX_FILE_SEND_COMPLETE=YES (1/1 sends, 128 bytes)
+=== GROTH16 OTA FIRE DONE 2026-09-29T15:48:45Z ===
