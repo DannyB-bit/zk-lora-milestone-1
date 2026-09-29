@@ -1,0 +1,21 @@
+TEST=GROTH16_OTA_PROOF_RX (first over-the-air Groth16/BN254 proof, B receiver leg)
+RX_NODE=RakMiner-B (Agent 05)
+RX_EUI=0016c001ff18afa3
+RX_START_UTC=2026-09-29T15:28:30Z
+RX_CONFIG=test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3, IF -400 kHz => 903.9 MHz exact), SF7-SF12, BW 125 kHz, timeout 7200
+RX_LISTENER_EXIT_UTC=2026-09-29T16:01Z (clean SPI close after 17 packets; re-armed 17:44:42Z post-mortem, that window ran clean to 19:44:42Z)
+TX_FIRE_WINDOW_UTC=2026-09-29T15:44:20Z->2026-09-29T15:48:45Z (RakMiner-A tx_radio_log.txt, 5/5 TX_DONE, 903.9 MHz SF9 125 kHz 14 dBm)
+VALID_PACKET_COUNT=17
+CRC_OK_COUNT=10
+GROTH16_PROOF_FRAME_COUNT=5
+GROTH16_FRAME_BYTES=128
+GROTH16_FRAME_FREQ_HZ=903900000
+GROTH16_FRAME_SNR_DB=+11.0..+11.5
+GROTH16_FRAME_SPACING_S=~17.2
+RX_PAYLOAD_SHA256=f8bec8809cdbe23e074ce6596345900e6ffcf3c5ef2c42d88c7dde5897ad8a04
+DECLARED_SHA256=f8bec8809cdbe23e074ce6596345900e6ffcf3c5ef2c42d88c7dde5897ad8a04 (groth16_proof_tx, bravo bus seq47, pre-fire)
+PAYLOAD_SHA256_MATCH=YES
+BYTE_IDENTITY_VS_PR6_TX_BIN=YES (all 5 frames byte-identical to PR#6 tx_groth16_proof_128b.bin)
+END_TO_END_RF_SUCCESS=YES
+ONCHIP_GROTH16_VERIFY=PENDING_PUBLIC_INPUT (gateway_address 32B absent from declaration spec - see README; seed-42 canon VK rejects 11 candidate gateways)
+SETTLEMENT_CUNEIFORM=PENDING_ONCHIP_VERIFY
