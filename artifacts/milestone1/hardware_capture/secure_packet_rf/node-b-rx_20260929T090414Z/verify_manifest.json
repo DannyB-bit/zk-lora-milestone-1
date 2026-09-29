@@ -1,0 +1,18 @@
+{
+  "packet_auth_ok": true,
+  "replay_ok": true,
+  "decrypt_ok": true,
+  "zk_reference_proof_verify_ok": true,
+  "plaintext": "ZK-LoRa M1 secure packet A->B 2026-09-29: M1 closed, PR3 merged, fast channel live, cuneiform next.",
+  "packet_bytes": 234,
+  "packet_sha256": "90164329f2c4f0a637f19fe18a3ee9338dd841f1b76161a8dba2e84d8768763c",
+  "payload_sha256": "2236e5fbf5929a5ff94ef2ee5e2ad1f3d83979b5b2cab669ece04ca1ac398540",
+  "nonce": "6ec499f692f931da02595269d113b7eb",
+  "public_input": "3e629f0c35ec9f73c8bd16a55164843fcea8092253036ed1d5514765ec986da7",
+  "proof_hash": "2cddd1b0be3698cf8148042b456794c6",
+  "ceremony_hash": "46ce007e55ba8b5d",
+  "rx_plaintext_bytes": 99,
+  "end_to_end_secure_packet_ok": true,
+  "tamper_rejected": true,
+  "wrong_key_rejected": true
+}
