@@ -1,0 +1,25 @@
+RX_START_UTC=2026-09-30T07:47:11Z
+RX_CLOSE_DECLARED_UTC=2026-09-30T09:47:11Z
+RX_SESSION_END_UTC=2026-09-30T09:16:55Z
+RX_SESSION_END_REASON=B box crashed under memory pressure (2nd crash of the day; gateway life exited uncleanly ~09:08Z+09:16:55Z reboot); log on disk survived, truncating mid-packet
+RX_CMD=test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0
+RX_FREQ_HZ=903900000 (if_chain 3 @ IF -400 kHz, radio A center 904.3)
+CERTIFICATION=LORA_CHIRP_RECOVERY_PASS=YES 2026-09-30T07:44:51Z; chip_id rc=0 EUI 0016c001ff18afa3; HAL banner chip version 0x10; Waiting-for-packets 07:47:11Z
+VALID_PACKET_COUNT=13 (total demodulated in session)
+CRC_OK_COUNT=13 (5x 128B proof frames + 8x 23B ambient join-requests; 1 truncated tail frame excluded, status 0x100 partial)
+PROOF_FRAME_COUNT=5
+PROOF_FRAME_CRC_OK=5
+PROOF_FRAME_SIZE_B=128
+PROOF_FRAME_SNRange_DB=+11.5..+11.8
+RX_PAYLOAD_SHA256=e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93
+TX_DECLARED_SHA256=e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93
+PAYLOAD_SHA256_MATCH=YES (5/5 frames byte-identical, single distinct SHA)
+PAIRING_VERDICT=VALID
+PAIRING_VK=canon verifying_key.bin sha256 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824 (repo-committed, env UNSET)
+PAIRING_ELAPSED_S=142.1 (ARM Cortex-A72, debug build)
+PUBLIC_INPUTS_BOUND=identity/nullifier/attestation/ciphertext/gateway_address(EUI+903.9MHz)/deposit=100000/firmware=enclave-firmware-version-v1.0.2
+TX_DECLARATION=bus seq119 groth16_proof_tx v2 (spec full public input vector), fired seq120 08:26:00Z-08:30:17Z 5/5 TX_DONE
+END_TO_END_RF_SUCCESS=YES
+GROTH16_OTA_EXCHANGE_VERIFIED=YES (radio leg + declaration leg + pairing leg all PASS under canon keyset)
+NOTE=first fully-canonical OTA Groth16 exchange; chain of record: f8bec880 VALID settled TX 2q6y8cEn (09-29), 8f2fe020 + fb955c13 fail-closed forensics (phantom keyset, fixed TX-side), THIS capture e6a6b296 = canon PK proven + canon VK verified
+CRASH_DISCLOSURE=window listener died at box crash 09:16:55Z, 28 min before declared close; all 5 proof frames landed 08:26-08:31Z BEFORE the crash; verdict computed post-reboot 10:24Z from durable log
