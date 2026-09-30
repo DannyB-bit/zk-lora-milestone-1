@@ -1,0 +1,14 @@
+TEST=groth16_pairing_verify
+VERIFIED_AT_UTC=2026-09-30T02:35Z..02:55Z (8 verifies, this session)
+NODE=RakMiner-B (ARM Cortex-A72, Raspberry Pi 4B)
+VERIFIER=zk-lorawan groth16 zk_lorawan_prove verify (arkworks, BN254), disk keys, env ZK_LORAWAN_REPRODUCIBLE_SETUP UNSET
+VERIFIED_PAYLOAD_SHA256=fb955c138fb53c52876f78a4661e363faf19a31143169cf5b7396634f1f2000b
+PUBLIC_INPUTS=spec v2 full vector (bus seq87): 4x32B hashes + gateway 0016c001ff18afa3... + deposit 100001 + firmware enclave-firmware-version-v1.0.2
+VK=repo-committed canon keys/verifying_key.bin (SHA 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824)
+VERDICT=INVALID (exit 1)
+ELAPSED_S=142.0 (canon full-PK path; NOT the 6s regen path)
+SWEEPS=canon+regen VKs x declared vector: INVALID; deposit/gateway differentials x3: INVALID; layout permutations x6: INVALID
+CONTROLS=fresh print-proof bundle vs canon VK: VALID 142.1s; f8bec880 recapture vs canon VK: VALID 142.0s (verifier path sound)
+STRUCTURAL_AUDIT=A/B/C valid BN254 points, on-curve, subgroup OK -> proof bound to phantom third keyset
+CONCLUSION=TX hot-path pre-proven cache is bound to a non-canon proving keyset; declaration itself is genuine (MiMC-consistent)
+NOTE=DISK-KEY VERIFY ONLY; keys/ backed up to ~/fleet/keys_backup_20260930 before sweeps; seed-42 regen mode used only for in-memory 6s diagnostics
