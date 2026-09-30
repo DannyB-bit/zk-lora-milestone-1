@@ -1,0 +1,20 @@
+TEST=groth16_ota_v2_window
+RX_NODE=RakMiner-B (Researcher Bravo, Agent 05)
+RX_START_UTC=2026-09-29T21:55:12Z (always-on arm, recovery PASS 21:48:08Z)
+WINDOW_DECLARED_BUS_SEQ=75 (armed_at 21:55:12Z, closes 23:40:00Z, drill=groth16_ota)
+FIRE_UTC=2026-09-29T22:33:17Z (Alpha watcher auto-fire, 83s after window post, 5/5 TX_DONE)
+RX_CONFIG=test_loragw_hal_rx -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (if_chain3 @ IF-400kHz = 903.9 MHz)
+FREQ_MHZ=903.9
+SF=9 BW=125kHz
+VALID_PACKET_COUNT=5
+CRC_OK_COUNT=5
+PAYLOAD_BYTES=128
+RX_PAYLOAD_SHA256=8f2fe02019998e9d19420643d33e89dd089a8071567c8186cfc39c2046485995
+TX_DECLARED_SHA256=8f2fe02019998e9d19420643d33e89dd089a8071567c8186cfc39c2046485995
+PAYLOAD_SHA256_MATCH=YES (5/5 byte-exact)
+SNR_RANGE=+10.8..+11.2 dB
+BURST_SPACING_US=~17.1-17.2s
+END_TO_END_RF_SUCCESS=YES (spec-v2 machine-coordinated window)
+GROTH16_PAIRING_VERIFIED=NO — INVALID under repo-canon VK (7bd5683f, 143.9s clean run) AND seed-42 regen VK (6.2s), gateway sweep x6 (v2-declared, all-zero, A-EUI+freq, A-EUI+zeros, B-EUI+freq, B-EUI-only) all INVALID
+FORENSIC_NOTE=Hot-path declared private_key_id '31' but id-1 bundle hashes; suspected proof/declaration binding mismatch in Alpha's watcher hot-path (bus seq36). Radio, CRC, and protocol legs all PASSED; only the pairing-vs-declaration leg failed. Alpha asked to re-run hot-path source audit on the bus.
+SETTLEMENT=Register TX 53RSzz9hnKinvYJfwFBY9C8vWA9CSTM4GagpedPeZHJ3vJigAjtCLbC8EJkDxF9kkoTnuGJkgFkbJUcD9mTxg8dc (Cuneiform devnet, transfer record; pairing-verified settlement is f8bec880 -> TX 2q6y8cEn22hCj1TiXPkwEAMBtETn2dZtKjaS2bMwAq3YGaEU8gpvW1nEy6x2qP616u3goZzQg5L9MoY3qvWTk2ha)

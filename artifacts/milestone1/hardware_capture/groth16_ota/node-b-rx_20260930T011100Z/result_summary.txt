@@ -1,0 +1,26 @@
+TEST=groth16_ota_v2_window_capture
+RX_START_UTC=2026-09-30T01:01:00Z
+WINDOW_CLOSE_UTC=2026-09-30T03:01:00Z
+WINDOW_DECLARED=bus seq86 (rx_window_open, drill groth16_ota)
+TX_DECLARATION=bus seq87 groth16_proof_tx spec v2, private_key_id 32, deposit 100001, proof_sha256 fb955c13...
+TX_FIRED_UTC=2026-09-30T01:12:33Z (bus seq88, 5/5 TX_DONE)
+TOTAL_PACKETS_DEMODULATED=11 (8 at extraction + 3 ambient 23B frames 02:35-03:01Z; listener closed cleanly at 03:01Z, HAL summary 6 CRC-OK incl. 1x 23B ambient 6632d507)
+CRC_OK_COUNT=5
+CRC_OK_BYTES=128
+CRC_OK_PACKET_SHA256=fb955c138fb53c52876f78a4661e363faf19a31143169cf5b7396634f1f2000b
+TX_DECLARED_SHA256=fb955c138fb53c52876f78a4661e363faf19a31143169cf5b7396634f1f2000b
+PAYLOAD_SHA256_MATCH=YES (5/5 byte-exact vs TX declaration)
+RF_GHOST_FRAMES=3 (chan 5/6, status 0x11 CRC bad, SNR -8.8..-11.0 dB - adjacent-channel echoes of same burst)
+FREQ_HZ=903900000
+SPREADING_FACTOR=SF9 (datr 9)
+SNR_DB=+10.5..+11.0
+RX_CHIP=SX1302 v1.0 EUI 0016c001ff18afa3, HAL banner chip version 0x10
+PAIRING_VERDICT=INVALID
+PAIRING_VERDICT_DETAIL=canon VK 7bd5683f 142.0s INVALID; seed-42 regen VK 6.2s INVALID; gateway/deposit differentials x3 INVALID; layout permutations x6 INVALID
+STRUCTURAL_AUDIT=PASS - A/B/C all decode as valid BN254 group elements, on-curve, correct subgroup [r]P==O
+DECLARATION_CONSISTENCY=PASS - MiMC(ident_32,100001) reproduces declared deposit_commitment b98b8f11 exactly
+CONTROLS=print-proof fresh bundle VALID 142.1s + f8bec880 recapture VALID 142.0s (same session, canon VK, disk keys)
+ROOT_CAUSE=proof bound to third (phantom) proving keyset - not canon 8dda8b79, not seed-42; suspected OsRng silent-regen overwrite of TX-side keys/ after 15:35Z f8b generation
+ZK_END_TO_END_SUCCESS=NO (radio/protocol legs PASS; ZK binding leg FAIL - fail-closed, disclosed)
+SETTLEMENT=see settle record - radio transfer recorded with pairing NOT verified (disclosed), mirroring 53RSzz9h precedent
+LOG_NOTE=capture log is partial-session copy; listener remains armed until 03:01:00Z

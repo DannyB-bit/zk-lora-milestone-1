@@ -1,0 +1,17 @@
+# Canon-VK Groth16 pairing verification — RakMiner-B, 2026-09-30T10:24Z
+# runner: cd ~/fleet-repos/zk-lorawan && ./target/debug/zk_lorawan_prove verify <A> <B> <C> <id> <nul> <att> <cip> <gateway_hex> <deposit> <fw_hex>
+# env: ZK_LORAWAN_REPRODUCIBLE_SETUP UNSET (disk canon keys loaded, nothing regenerated; keys/ sha256 pre-verified:
+#   proving_key.bin   8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577
+#   verifying_key.bin 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824
+# inputs (from TX declaration bus seq119, payload split per skill: A=hex[0:64] B=hex[64:192] C=hex[192:256]):
+#   identity a4e31e4a6b54dc330381cd04cd83411e51d0d942c09e7e6808b888f44f912325
+#   nullifier 5f03c52102ed839f54a72189e5aa9086dfff06a07d08a69aa263f3b769cd6321
+#   attestation 2553a4112f9951b1381704a36efc4847faba707f3683a9e82050c3f06f572417
+#   ciphertext 2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005
+#   gateway_address_hex 0016c001ff18afa3903900000000000000000000000000000000000000000000
+#   deposit_value 100000
+#   firmware_hash_hex 656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32
+result: exit=0
+stdout: VALID
+elapsed_s: 142.1
+verdict: VALID

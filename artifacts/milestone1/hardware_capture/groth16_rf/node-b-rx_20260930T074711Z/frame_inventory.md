@@ -1,0 +1,12 @@
+# Captured proof frames (all CRC-OK 0x10, 128 B, 903.9 MHz SF9)
+
+| # | count_us | snr_avg | rssi | sha256 |
+|---|---|---|---|---|
+| 1 | 2511503849 | 11.5 | 197.0 | e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93 |
+| 2 | 2528544433 | 11.5 | 197.0 | e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93 |
+| 3 | 2545576531 | 11.5 | 197.0 | e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93 |
+| 4 | 2562632363 | 11.8 | 197.0 | e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93 |
+| 5 | 2579784698 | 11.8 | 197.0 | e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93 |
+
+Distinct SHA256 count: 1
+All == TX declared: e6a6b296e5c56e33b1f711f7d8b61f65bdec34596b83559b7dc417ddda0e6f93
