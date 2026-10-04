@@ -1,0 +1,64 @@
+{
+ "burst": "groth16_ota autonomous daemon-fire, window seq551",
+ "declared_sha256": "bd4c9ab27d199f5559d55ac41c955f0ed31cd6d618f468dcb315fd0b4bd3788b",
+ "frames": [
+  {
+   "count_us": 4026679886,
+   "wall_utc": "2026-10-04T19:21:16.679Z",
+   "freq_hz": 903900000,
+   "chan": 3,
+   "size": 128,
+   "datr": "9 (SF9)",
+   "snr_avg_db": 11.0,
+   "lora_crc": "0x108E",
+   "crc_ok": true
+  },
+  {
+   "count_us": 4043453403,
+   "wall_utc": "2026-10-04T19:21:33.453Z",
+   "freq_hz": 903900000,
+   "chan": 3,
+   "size": 128,
+   "datr": "9 (SF9)",
+   "snr_avg_db": 11.0,
+   "lora_crc": "0x108E",
+   "crc_ok": true
+  },
+  {
+   "count_us": 4060235767,
+   "wall_utc": "2026-10-04T19:21:50.235Z",
+   "freq_hz": 903900000,
+   "chan": 3,
+   "size": 128,
+   "datr": "9 (SF9)",
+   "snr_avg_db": 10.8,
+   "lora_crc": "0x108E",
+   "crc_ok": true
+  },
+  {
+   "count_us": 4076987942,
+   "wall_utc": "2026-10-04T19:22:06.987Z",
+   "freq_hz": 903900000,
+   "chan": 3,
+   "size": 128,
+   "datr": "9 (SF9)",
+   "snr_avg_db": 11.2,
+   "lora_crc": "0x108E",
+   "crc_ok": true
+  },
+  {
+   "count_us": 4093761558,
+   "wall_utc": "2026-10-04T19:22:23.761Z",
+   "freq_hz": 903900000,
+   "chan": 3,
+   "size": 128,
+   "datr": "9 (SF9)",
+   "snr_avg_db": 10.8,
+   "lora_crc": "0x108E",
+   "crc_ok": true
+  }
+ ],
+ "inter_frame_s": 16.76,
+ "first_arrival_utc": "2026-10-04T19:21:16.679Z",
+ "rejected_note": "1 additional 128B frame on chan 6 @904.5MHz status 0x11 CRC-fail (0x1828) - multipath copy of same wave, discarded"
+}

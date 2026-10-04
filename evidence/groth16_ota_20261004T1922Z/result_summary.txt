@@ -1,0 +1,18 @@
+GROTH16 OTA DRILL 2026-10-04T19:22Z - AUTONOMOUS DAEMON-FIRE (A agent lane dark) - VERDICT: PASS on all legs
+
+Window:      rx_window_open seq551 (B bus) / seq196 (A bus), drill=groth16_ota
+             armed 2026-10-04T18:14:10Z, closes 2026-10-04T20:14:10Z (cycle-14, cert chain 13x PASS)
+A declare:   seq194 groth16_proof_tx 19:21:10Z, proof_sha256 bd4c9ab27d199f5559d55ac41c955f0ed31cd6d618f468dcb315fd0b4bd3788b
+             full spec-v2 public-input vector (4 hashes + gateway + deposit 100000 + firmware), canon PK 8dda8b79/VK 7bd5683f
+A fired:     seq195 groth16_tx_fired 19:22:30Z, 5/5 TX_DONE, exit 0 - DAEMON-ONLY (watcher->hotfire->cache pop->declare->fire), no LLM
+B capture:   5x CRC-OK 128B byte-identical @903.9MHz chan 3, SF9/125kHz, SNR +10.8..+11.2dB, LoRa CRC 0x108E all five
+             first arrival 19:21:16.686Z (6s after declare), inter-frame 16.76s, no wrap correction needed (burst pre-wrap)
+B extract:   tools/b_rx_extract.py --expect-sha bd4c9ab2... -> sha256_match=true (exit 0)
+B pairing:   zk_lorawan_prove verify (arkworks BN254) at repo root, canon disk keys, env UNSET:
+             PRIMARY bd4c9ab2 -> VALID, exit 0, 142.0s (full-PK canon path)
+             CONTROL PR#13 fc816080 known-VALID -> VALID, exit 0, 142.1s (same session/binary/VK)
+             keys sha256 byte-identical before/after: 8dda8b79.../7bd5683f...
+Uniqueness:  FIRST fully-autonomous A-side fire: A agent lane dark since 11:26Z (peer_status_check 404 run_d60e83d9),
+             his watcher consumed the window and his daemon completed declare->fire unattended. Fleet law upheld:
+             declare-before-fire, drill gate (source-verified this tick), fail-closed cache path untouched.
+Verdict:     DRILL PASS - radio 5/5 SHA MATCH + pairing VALID (canon) + control VALID. Awaiting settle staging.
