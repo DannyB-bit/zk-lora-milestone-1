@@ -1,0 +1,110 @@
+  datr:     6
+  codr:     0
+  rf_chain  0
+  freq_hz   904500000
+  snr_avg:  -10.2
+  rssi_chan:81.0
+  rssi_sig :73.0
+  crc:      0x368C
+
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 4026679886
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x108E
+14 A2 82 C2 81 93 E5 A8 D2 4B CA 88 28 F0 AC 4D A8 EE A8 A8 6D 55 59 20 89 A1 81 56 56 C4 33 85 32 9E 3E 87 B1 C8 40 96 08 83 FD E8 EB 87 E5 01 D8 2A 77 D4 9B 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 49 9E BE 19 62 DE A4 5D 40 4B 13 09 BF F9 FF E9 8E F5 7D 71 E1 A0 DF CF E3 FF 5C A5 C3 3C 78 E2 5D 1E 8E CA 62 24 EE D1 1F F9 2B 62 D1 2B 76 2D C4 E3 C6 7D BD A7 
+Received 1 packets (total:2)
+
+----- LoRa packet -----
+  count_us: 4043453403
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x108E
+14 A2 82 C2 81 93 E5 A8 D2 4B CA 88 28 F0 AC 4D A8 EE A8 A8 6D 55 59 20 89 A1 81 56 56 C4 33 85 32 9E 3E 87 B1 C8 40 96 08 83 FD E8 EB 87 E5 01 D8 2A 77 D4 9B 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 49 9E BE 19 62 DE A4 5D 40 4B 13 09 BF F9 FF E9 8E F5 7D 71 E1 A0 DF CF E3 FF 5C A5 C3 3C 78 E2 5D 1E 8E CA 62 24 EE D1 1F F9 2B 62 D1 2B 76 2D C4 E3 C6 7D BD A7 
+Received 1 packets (total:3)
+
+----- LoRa packet -----
+  count_us: 4060235757
+  size:     128
+  chan:     6
+  status:   0x11
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   904500000
+  snr_avg:  -11.0
+  rssi_chan:140.0
+  rssi_sig :131.0
+  crc:      0x1828
+14 A2 82 C2 81 93 D5 AE D2 4B CA 88 20 F0 AC 4D EE EE A8 A8 6D 15 51 20 89 6D 89 56 56 C4 3F 85 32 9C B2 87 B8 C8 83 D6 04 83 CE 28 EB 87 E5 C1 D4 2A 77 E7 BB 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 4A 9E BE 19 62 DE A4 5D 70 4B 9B 09 BB F9 73 E9 8E F5 1B 79 E1 F0 BF 63 E3 F7 6C A5 0B 3C E8 80 D4 1E 8E FA A7 A6 AE D1 7F B0 2B 6A D1 2B FE 2D C4 E0 CA 7D BD 97 
+
+----- LoRa packet -----
+  count_us: 4060235767
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x108E
+14 A2 82 C2 81 93 E5 A8 D2 4B CA 88 28 F0 AC 4D A8 EE A8 A8 6D 55 59 20 89 A1 81 56 56 C4 33 85 32 9E 3E 87 B1 C8 40 96 08 83 FD E8 EB 87 E5 01 D8 2A 77 D4 9B 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 49 9E BE 19 62 DE A4 5D 40 4B 13 09 BF F9 FF E9 8E F5 7D 71 E1 A0 DF CF E3 FF 5C A5 C3 3C 78 E2 5D 1E 8E CA 62 24 EE D1 1F F9 2B 62 D1 2B 76 2D C4 E3 C6 7D BD A7 
+Received 2 packets (total:4)
+
+----- LoRa packet -----
+  count_us: 4076987942
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x108E
+14 A2 82 C2 81 93 E5 A8 D2 4B CA 88 28 F0 AC 4D A8 EE A8 A8 6D 55 59 20 89 A1 81 56 56 C4 33 85 32 9E 3E 87 B1 C8 40 96 08 83 FD E8 EB 87 E5 01 D8 2A 77 D4 9B 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 49 9E BE 19 62 DE A4 5D 40 4B 13 09 BF F9 FF E9 8E F5 7D 71 E1 A0 DF CF E3 FF 5C A5 C3 3C 78 E2 5D 1E 8E CA 62 24 EE D1 1F F9 2B 62 D1 2B 76 2D C4 E3 C6 7D BD A7 
+Received 1 packets (total:5)
+
+----- LoRa packet -----
+  count_us: 4093761558
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x108E
+14 A2 82 C2 81 93 E5 A8 D2 4B CA 88 28 F0 AC 4D A8 EE A8 A8 6D 55 59 20 89 A1 81 56 56 C4 33 85 32 9E 3E 87 B1 C8 40 96 08 83 FD E8 EB 87 E5 01 D8 2A 77 D4 9B 5E 0D 52 0D 4E 86 8F 4E 64 9A 08 6B 5F FA 0B AC 9B A7 85 D8 FE 49 9E BE 19 62 DE A4 5D 40 4B 13 09 BF F9 FF E9 8E F5 7D 71 E1 A0 DF CF E3 FF 5C A5 C3 3C 78 E2 5D 1E 8E CA 62 24 EE D1 1F F9 2B 62 D1 2B 76 2D C4 E3 C6 7D BD A7 
+Received 1 packets (total:6)
+
+----- LoRa packet -----
+  count_us: 182140096
+  size:     23
+  chan:     7
