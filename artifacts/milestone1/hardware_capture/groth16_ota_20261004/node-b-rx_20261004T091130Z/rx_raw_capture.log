@@ -1,0 +1,84 @@
+ temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 3541122909
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xF767
+53 DF 7E 69 8A 14 77 FF 00 E3 8A F2 E0 4A 32 5B FD 6E B0 46 1E A4 C1 46 98 5C 43 4F 32 DF AD A7 1C AC 5D F3 22 7F 78 E9 87 1B 94 F9 22 E4 CF 4F 39 87 33 8A EB B4 C9 51 12 75 A0 BF A5 93 EF 11 80 1E 8D 2A F2 34 33 F1 FC 1D 3C 07 57 45 1F 4C A5 07 24 FF C0 6B DC 43 F9 4F 8E F3 AB 2F 45 1B 30 1B F8 33 65 DF 7D 65 B6 BF FD 31 3B 5A 10 BC 97 72 4A BE BC F2 23 0E 92 0E 74 A9 5F CC 11 91 
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 3557903806
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xF767
+53 DF 7E 69 8A 14 77 FF 00 E3 8A F2 E0 4A 32 5B FD 6E B0 46 1E A4 C1 46 98 5C 43 4F 32 DF AD A7 1C AC 5D F3 22 7F 78 E9 87 1B 94 F9 22 E4 CF 4F 39 87 33 8A EB B4 C9 51 12 75 A0 BF A5 93 EF 11 80 1E 8D 2A F2 34 33 F1 FC 1D 3C 07 57 45 1F 4C A5 07 24 FF C0 6B DC 43 F9 4F 8E F3 AB 2F 45 1B 30 1B F8 33 65 DF 7D 65 B6 BF FD 31 3B 5A 10 BC 97 72 4A BE BC F2 23 0E 92 0E 74 A9 5F CC 11 91 
+Received 1 packets (total:2)
+
+----- LoRa packet -----
+  count_us: 3574652503
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xF767
+53 DF 7E 69 8A 14 77 FF 00 E3 8A F2 E0 4A 32 5B FD 6E B0 46 1E A4 C1 46 98 5C 43 4F 32 DF AD A7 1C AC 5D F3 22 7F 78 E9 87 1B 94 F9 22 E4 CF 4F 39 87 33 8A EB B4 C9 51 12 75 A0 BF A5 93 EF 11 80 1E 8D 2A F2 34 33 F1 FC 1D 3C 07 57 45 1F 4C A5 07 24 FF C0 6B DC 43 F9 4F 8E F3 AB 2F 45 1B 30 1B F8 33 65 DF 7D 65 B6 BF FD 31 3B 5A 10 BC 97 72 4A BE BC F2 23 0E 92 0E 74 A9 5F CC 11 91 
+Received 1 packets (total:3)
+
+----- LoRa packet -----
+  count_us: 3591424259
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xF767
+53 DF 7E 69 8A 14 77 FF 00 E3 8A F2 E0 4A 32 5B FD 6E B0 46 1E A4 C1 46 98 5C 43 4F 32 DF AD A7 1C AC 5D F3 22 7F 78 E9 87 1B 94 F9 22 E4 CF 4F 39 87 33 8A EB B4 C9 51 12 75 A0 BF A5 93 EF 11 80 1E 8D 2A F2 34 33 F1 FC 1D 3C 07 57 45 1F 4C A5 07 24 FF C0 6B DC 43 F9 4F 8E F3 AB 2F 45 1B 30 1B F8 33 65 DF 7D 65 B6 BF FD 31 3B 5A 10 BC 97 72 4A BE BC F2 23 0E 92 0E 74 A9 5F CC 11 91 
+Received 1 packets (total:4)
+
+----- LoRa packet -----
+  count_us: 3608206815
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xF767
+53 DF 7E 69 8A 14 77 FF 00 E3 8A F2 E0 4A 32 5B FD 6E B0 46 1E A4 C1 46 98 5C 43 4F 32 DF AD A7 1C AC 5D F3 22 7F 78 E9 87 1B 94 F9 22 E4 CF 4F 39 87 33 8A EB B4 C9 51 12 75 A0 BF A5 93 EF 11 80 1E 8D 2A F2 34 33 F1 FC 1D 3C 07 57 45 1F 4C A5 07 24 FF C0 6B DC 43 F9 4F 8E F3 AB 2F 45 1B 30 1B F8 33 65 DF 7D 65 B6 BF FD 31 3B 5A 10 BC 97 72 4A BE BC F2 23 0E 92 0E 74 A9 5F CC 11 91 
+Received 1 packets (total:5)

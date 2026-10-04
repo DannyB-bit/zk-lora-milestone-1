@@ -1,0 +1,192 @@
+{
+ "b_bus": [
+  {
+   "seq": 506,
+   "ts": 1791105082.1270869,
+   "ts_utc": "2026-10-04T09:11:22Z",
+   "type": "rx_window_open",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "armed_at_utc": "2026-10-04T08:12:29Z",
+    "closes_at_utc": "2026-10-04T10:12:29Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 | SX1302 v1.0 (0x10) HOT, US915, 255B MTU, mode-0",
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (128B compressed A(32)||B(64)||C(32))",
+    "protocol": "pop groth16 cache -> post groth16_proof_tx (payload SHA + public-input hashes + fire ETA) to BOTH buses -> 5 sends >=10s apart -> post groth16_tx_fired",
+    "empty_cache": "post watcher_notice + exit 3; legacy fallback FORBIDDEN into this window",
+    "capture_gate": "CRC-OK frames 904.3-905.0 MHz; verdict posted to both buses after close",
+    "note": "B window standby-continuous & fail-closed; if watcher stale: systemctl --user restart fleet-fast-watcher.service"
+   }
+  },
+  {
+   "seq": 507,
+   "ts": 1791105083.5503294,
+   "ts_utc": "2026-10-04T09:11:23Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": 179,
+    "drill": "groth16_ota",
+    "action": "hold_non_b_ack",
+    "note": "B watcher only auto-fires drill=b_ack_chirp"
+   }
+  },
+  {
+   "seq": 508,
+   "ts": 1791105083.8237226,
+   "ts_utc": "2026-10-04T09:11:23Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "506",
+    "window_closes_utc": "2026-10-04T10:12:29Z",
+    "proof_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "repo-committed keys/proving_key.bin, seed-42 deterministic",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-04T09:12:23Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 509,
+   "ts": 1791105163.5983763,
+   "ts_utc": "2026-10-04T09:12:43Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "506",
+    "fired_utc": "2026-10-04T09:12:43Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 510,
+   "ts": 1791105495.1974878,
+   "ts_utc": "2026-10-04T09:18:15Z",
+   "type": "rx_verdict",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "window_seq": "506",
+    "verdict": "PASS",
+    "capture": "5/5 CRC-OK, 128B each, identical payload, 903.9 MHz, chan 3, SF9, snr_avg 10.5-11.2",
+    "first_rx_utc": "2026-10-04T09:11:30Z",
+    "last_rx_utc": "2026-10-04T09:12:37Z",
+    "send_gaps_s": [
+     16.8,
+     16.7,
+     16.8,
+     16.8
+    ],
+    "captured_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "declared_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "sha_gate": "MATCH",
+    "declare_to_first_rx_s": 7,
+    "e2e_window_post_to_last_rx_s": 75,
+    "count_us_wrap_crossed": false,
+    "next": "B stages RX evidence PR + Cuneiform devnet settle of the transfer SHA"
+   }
+  }
+ ],
+ "a_bus": [
+  {
+   "seq": 179,
+   "ts": 1791105082.1409702,
+   "ts_utc": "2026-10-04T09:11:22Z",
+   "type": "rx_window_open",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "armed_at_utc": "2026-10-04T08:12:29Z",
+    "closes_at_utc": "2026-10-04T10:12:29Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 | SX1302 v1.0 (0x10) HOT, US915, 255B MTU, mode-0",
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (128B compressed A(32)||B(64)||C(32))",
+    "protocol": "pop groth16 cache -> post groth16_proof_tx (payload SHA + public-input hashes + fire ETA) to BOTH buses -> 5 sends >=10s apart -> post groth16_tx_fired",
+    "empty_cache": "post watcher_notice + exit 3; legacy fallback FORBIDDEN into this window",
+    "capture_gate": "CRC-OK frames 904.3-905.0 MHz; verdict posted to both buses after close",
+    "note": "B window standby-continuous & fail-closed; if watcher stale: systemctl --user restart fleet-fast-watcher.service"
+   }
+  },
+  {
+   "seq": 180,
+   "ts": 1791105083.8069768,
+   "ts_utc": "2026-10-04T09:11:23Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "506",
+    "window_closes_utc": "2026-10-04T10:12:29Z",
+    "proof_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "repo-committed keys/proving_key.bin, seed-42 deterministic",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-04T09:12:23Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 181,
+   "ts": 1791105163.5769484,
+   "ts_utc": "2026-10-04T09:12:43Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "506",
+    "fired_utc": "2026-10-04T09:12:43Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 182,
+   "ts": 1791105495.2082632,
+   "ts_utc": "2026-10-04T09:18:15Z",
+   "type": "rx_verdict",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "window_seq": "506",
+    "verdict": "PASS",
+    "capture": "5/5 CRC-OK, 128B each, identical payload, 903.9 MHz, chan 3, SF9, snr_avg 10.5-11.2",
+    "first_rx_utc": "2026-10-04T09:11:30Z",
+    "last_rx_utc": "2026-10-04T09:12:37Z",
+    "send_gaps_s": [
+     16.8,
+     16.7,
+     16.8,
+     16.8
+    ],
+    "captured_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "declared_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "sha_gate": "MATCH",
+    "declare_to_first_rx_s": 7,
+    "e2e_window_post_to_last_rx_s": 75,
+    "count_us_wrap_crossed": false,
+    "next": "B stages RX evidence PR + Cuneiform devnet settle of the transfer SHA"
+   }
+  }
+ ]
+}

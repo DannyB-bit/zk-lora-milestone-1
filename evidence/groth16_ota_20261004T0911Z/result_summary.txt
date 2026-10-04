@@ -1,0 +1,29 @@
+TEST=groth16_ota_v2_window_capture_20261004
+WINDOW_DECLARED=bus seq506 (B bus) / seq179 (A bus): rx_window_open drill=groth16_ota, armed 08:12:29Z, closes 10:12:29Z
+WINDOW_POSTED_UTC=2026-10-04T09:11:22Z
+RX_CMD=test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (standby-continuous service, PID 651853, arm stamp continuous-20261003T180951Z)
+CERTIFICATION=LORA_CHIRP_RECOVERY_PASS=YES 2026-10-03T18:09:33Z; HAL banner chip version 0x10 (SX1302 v1.0); Waiting-for-packets state reached before window
+TX_DECLARATION=bus seq508/180 groth16_proof_tx spec v2 (full public input vector): proof_sha256 3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776, 128B, pk_source "repo-committed keys/proving_key.bin, seed-42 deterministic", private_key_id 31, deposit 100000, firmware enclave-firmware-version-v1.0.2, gateway 0016c001ff18afa3..., public_input_hashes [cbe1d4d7, a2624f76, 8ed4c468, 2261a97c], source watcher_hot_path (no LLM turn)
+TX_FIRED_UTC=2026-10-04T09:12:43Z (bus seq509/181, 5/5 TX_DONE, exit 0)
+DECLARE_TO_FIRST_RX_S=7 (proof_tx 09:11:23Z -> first RX 09:11:30Z)
+FIRST_RX_UTC=2026-10-04T09:11:30Z
+LAST_RX_UTC=2026-10-04T09:12:37Z
+CRC_OK_COUNT=5
+CRC_OK_BYTES=128
+CRC_OK_PACKET_SHA256=3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776
+TX_DECLARED_SHA256=3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776
+PAYLOAD_SHA256_MATCH=YES (5/5 frames byte-identical, single distinct SHA, radio leg PASS)
+SEND_GAPS_S=16.8 16.7 16.8 16.8 (>=10s rule met)
+FREQ_HZ=903900000 (if_chain 3 @ IF -400 kHz, radio A center 904.3)
+SPREADING_FACTOR=SF9 (datr 9)
+SNR_DB=+10.5..+11.2
+RX_CHIP=SX1302 v1.0 (0x10), EUI 0016c001ff18afa3
+COUNT_US_WRAP_CROSSED=NO (all count_us < 4294.97s window wrap)
+PAIRING_VERDICT=INVALID
+PAIRING_VERDICT_DETAIL=captured proof vs canon VK (sha256 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824, disk keys, env UNSET): INVALID, 142s, exit 1 (pairing_verify.log). Differential: seed-42 regen VK (env ZK_LORAWAN_REPRODUCIBLE_SETUP=1, keys/ temporarily absent): INVALID, 7s, exit 1 (seed42_verify.log). Disk keys restored + sha256 re-verified post-test (PK 8dda8b79 / VK 7bd5683f).
+CONTROL=PASS: PR#10 known-VALID capture e6a6b296 re-verified VALID 142s, SAME session/binary/VK (control_verify.log) -> B verifier path sound, INVALID is genuine
+CLASSIFICATION=same forensic class as 0930 phantom-keyset (fb955c13/8f2fe020): TX-side proof bound to a non-canon proving keyset OR cache/declaration public-input mismatch. Declaration itself is genuine (MiMC-consistent per prior forensics; pk_source field claims "seed-42 deterministic" which contradicts the canon disk keyset 8dda8b79 the fleet standardised on after PR#10).
+END_TO_END_ZK_SUCCESS=NO (radio PASS + declaration PASS + ZK binding FAIL - fail-closed, disclosed)
+HONEST_LEDGER=B parser probe using hand-rolled arkworks compressed-point bit-parsing produced phantom NOT-ON-CURVE results on BOTH today's capture AND the known-VALID control - discarded as probe-artifact (skill law: never hand-guess ctypes/bit layouts); arkworks binary is the sole trusted decoder. 29 frames parsed in log, 24 ambient excluded (not 128B@903.9MHz), 5 gated.
+ASK_ALPHA=1) print-vk on TX side NOW, post SHA256; 2) confirm which keyset the hot-path cache proves under TODAY; 3) re-prove against canon repo keys/ (PK 8dda8b79) and B re-arms
+NEXT=B stages PR with this summary + Cuneiform settle of the radio transfer with pairing-disclosed (0930 precedent)
