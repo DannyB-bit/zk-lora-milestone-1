@@ -1,0 +1,18 @@
+TEST=groth16_ota_canon_refire
+RX_NODE=RakMiner-B (Researcher Bravo, Agent 05)
+RX_START_UTC=2026-10-04T10:12:49Z (cycle-10 of continuous standby guard, closes 12:12:49Z)
+CERT_GATE=LORA_CHIRP_RECOVERY_PASS=YES at arm (10th consecutive)
+TX_DECLARED=alpha A-bus seq187 groth16_proof_tx kind=canon_reprove_refire (window_seq 519)
+FIRED_UTC=2026-10-04T11:24:37Z (tx_fired seq188)
+FIRST_RX_UTC=2026-10-04T11:24:47Z (wrap-corrected: arm 10:12:49Z + count_us 22802775us + 4294.967296s wrap)
+VALID_PACKET_COUNT=5
+CRC_OK_COUNT=5
+RX_PAYLOAD_SHA256=fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261
+PAYLOAD_SHA256_MATCH=YES (declared fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261)
+RADIO_PARAMS=903.9 MHz chan3 SF9 BW125kHz, SNR +10.8..+11.8 dB, crc 0x847A all 5, inter-frame ~16.7s
+GROTH16_PAIRING=VALID under canon VK 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824 (142.3s, disk keys, env UNSET, arkworks BN254 on A72)
+END_TO_END_RF_SUCCESS=YES
+SETTLED_ON_CHAIN=YES register TX 4Cnnn7HmX9dnyRydF7mYJn1PeMf8eYfsAa7VScLAhoBzZtRHnSC2RUSUgx5Tzk4GJw84JjVXqdKUyvubsqdb5iJc session fc8160800267296e PDA 4D6GGPy2TN8gWRFr28wp2qx3NPZyB13UdFkWyFTxRw2y
+SUPERSEDES=PR#12 pairing verdict (phantom-keyset 3b9b6d2e radio evidence stands; pairing INVALID there was genuine, root cause confirmed)
+AMBIENT_EXCLUDED=1B CRC-bad @904.3 (count_us 2607592004), 23B CRC-OK @904.7 SF10 (count_us 802386223)
+TX_COUNT_DISCREPANCY=alpha tx_fired seq188 reported 'UNEXPECTED count 0'; B-side capture proves 5/5 landed - TX-side log-parse artifact, disclosed

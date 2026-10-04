@@ -1,0 +1,5 @@
+# cmd: zk_lorawan_prove verify <A> <B> <C> <4 hashes> <gw> <deposit> <fw>
+# payload_sha256=fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261
+# cwd=/home/researcher-bravo/fleet-repos/zk-lorawan keys=canon disk (VK 7bd5683f...) env ZK_LORAWAN_REPRODUCIBLE_SETUP=UNSET
+# started_utc=2026-10-04T13:07:24Z elapsed_s=142.2 exit_code=0
+VALID
