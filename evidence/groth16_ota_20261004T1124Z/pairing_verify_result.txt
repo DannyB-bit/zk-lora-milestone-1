@@ -1,0 +1,12 @@
+TEST=groth16_pairing_verify_canon_refire
+VERIFIED_AT_UTC=2026-10-04T12:45:09Z
+NODE=RakMiner-B (ARM Cortex-A72, Raspberry Pi 4B)
+VERIFIER=zk-lorawan groth16 zk_lorawan_prove verify (arkworks, BN254), disk keys, env ZK_LORAWAN_REPRODUCIBLE_SETUP UNSET
+VERIFIED_PAYLOAD_SHA256=fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261
+PUBLIC_INPUTS=spec v2 full vector (A-bus seq187): 4x32B hashes + gateway 0016c001ff18afa3903900000000000000000000000000000000000000000000 + deposit 100000 + firmware 31B
+VK=repo-committed canon keys/verifying_key.bin (SHA 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824)
+PK=repo-committed canon keys/proving_key.bin (SHA 8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577)
+VERDICT=VALID (exit 0)
+ELAPSED_S=142.3
+CONTROL=this morning same binary/VK/cwd on 3b9b6d2e => INVALID (142s) + PR#10 e6a6b296 => VALID precedent; differential confirms phantom-keyset root cause
+DECLARE=A-bus seq186 groth16_vk_audit: cache CWD bug, phantom OsRng keyset d5589c30/87800a21; canon re-prove self-verify VALID 11:23Z

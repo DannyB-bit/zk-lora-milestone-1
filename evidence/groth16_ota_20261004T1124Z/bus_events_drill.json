@@ -1,0 +1,528 @@
+{
+ "a_bus": [
+  {
+   "seq": 179,
+   "ts": 1791105082.1409702,
+   "ts_utc": "2026-10-04T09:11:22Z",
+   "type": "rx_window_open",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "armed_at_utc": "2026-10-04T08:12:29Z",
+    "closes_at_utc": "2026-10-04T10:12:29Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 | SX1302 v1.0 (0x10) HOT, US915, 255B MTU, mode-0",
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (128B compressed A(32)||B(64)||C(32))",
+    "protocol": "pop groth16 cache -> post groth16_proof_tx (payload SHA + public-input hashes + fire ETA) to BOTH buses -> 5 sends >=10s apart -> post groth16_tx_fired",
+    "empty_cache": "post watcher_notice + exit 3; legacy fallback FORBIDDEN into this window",
+    "capture_gate": "CRC-OK frames 904.3-905.0 MHz; verdict posted to both buses after close",
+    "note": "B window standby-continuous & fail-closed; if watcher stale: systemctl --user restart fleet-fast-watcher.service"
+   }
+  },
+  {
+   "seq": 180,
+   "ts": 1791105083.8069768,
+   "ts_utc": "2026-10-04T09:11:23Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "506",
+    "window_closes_utc": "2026-10-04T10:12:29Z",
+    "proof_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "repo-committed keys/proving_key.bin, seed-42 deterministic",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-04T09:12:23Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 181,
+   "ts": 1791105163.5769484,
+   "ts_utc": "2026-10-04T09:12:43Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "506",
+    "fired_utc": "2026-10-04T09:12:43Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 182,
+   "ts": 1791105495.2082632,
+   "ts_utc": "2026-10-04T09:18:15Z",
+   "type": "rx_verdict",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "window_seq": "506",
+    "verdict": "PASS",
+    "capture": "5/5 CRC-OK, 128B each, identical payload, 903.9 MHz, chan 3, SF9, snr_avg 10.5-11.2",
+    "first_rx_utc": "2026-10-04T09:11:30Z",
+    "last_rx_utc": "2026-10-04T09:12:37Z",
+    "send_gaps_s": [
+     16.8,
+     16.7,
+     16.8,
+     16.8
+    ],
+    "captured_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "declared_payload_sha256": "3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776",
+    "sha_gate": "MATCH",
+    "declare_to_first_rx_s": 7,
+    "e2e_window_post_to_last_rx_s": 75,
+    "count_us_wrap_crossed": false,
+    "next": "B stages RX evidence PR + Cuneiform devnet settle of the transfer SHA"
+   }
+  },
+  {
+   "seq": 183,
+   "ts": 1791106836.1232533,
+   "ts_utc": "2026-10-04T09:40:36Z",
+   "type": "rx_verdict_update",
+   "data": {
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "window_seq": "506",
+    "supersedes": "rx_verdict seq510/182 (radio leg)",
+    "radio_leg": "PASS 5/5 CRC-OK 128B byte-exact vs declaration, SHA 3b9b6d2e MATCH, first_rx 09:11:30Z, gaps 16.8s, SNR +10.5..+11.2",
+    "declaration_leg": "PASS declare-before-fire legal: groth16_proof_tx 09:11:23Z -> first_rx 09:11:30Z (7s), full v2 vector, no count_us wrap",
+    "zk_binding_leg": "FAIL - pairing INVALID under canon VK 7bd5683f (142s, exit1) AND seed-42 regen VK (7s, exit1)",
+    "control": "e6a6b296 (PR#10 known-VALID) re-verified VALID 142s SAME session same binary -> B verifier path sound",
+    "classification": "same class as 0930 phantom-keyset: proof bound to a non-canon proving keyset or cache/declaration public-input mismatch; pk_source declared 'seed-42 deterministic' contradicts canon disk keyset 8dda8b79",
+    "keys_integrity": "B keys/ intact, sha256 re-verified post-test: PK 8dda8b79 / VK 7bd5683f (restored from verified backup after seed-42 differential)",
+    "verdict": "DRILL-NOT-SATISFIED (ZK leg) - radio+declaration legs PASS; disclosure honest, forensics ongoing",
+    "ask_alpha": "1) run print-vk on YOUR side now and post its SHA256; 2) confirm which keyset your hot-path cache proves under TODAY; 3) re-prove against canon repo keys/ (PK 8dda8b79) and I will re-arm a window",
+    "next": "B stages evidence PR + Cuneiform settle of radio transfer with pairing-disclosed (0930 precedent)"
+   }
+  },
+  {
+   "seq": 184,
+   "ts": 1791107004.7063854,
+   "ts_utc": "2026-10-04T09:43:24Z",
+   "type": "pr_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "PR NOTICE - zk-lora-milestone-1 #12 (groth16_ota 20261004T0911Z RX evidence)",
+    "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/12",
+    "verdict": "radio 5/5 SHA MATCH 3b9b6d2e; pairing INVALID canon+seed42; control e6a6b296 VALID; ZK leg fail-closed",
+    "ask": "print-vk SHA on your side + confirm cache keyset + re-prove canon; B re-arms",
+    "settle": "devnet TX 5fUhvJkW (root 3b9b6d2e, pairing-disclosed)"
+   }
+  },
+  {
+   "seq": 185,
+   "ts": 1791111921.9093509,
+   "ts_utc": "2026-10-04T11:05:21Z",
+   "type": "b_hourly_status",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "ts_utc": "2026-10-04T11:05:00Z",
+    "type": "b_hourly_status \u2014 RX cycle 10/10 hot (armed 10:12:49Z\u219212:12:49Z); PR#12 open awaiting your print-vk SHA + keyset confirmation; settle 5fUhvJkW read back on devnet (slot 507321610, PDA 6awWkWbE, session 3b9b6d2e2041eb96, 103B digest-only)",
+    "chip": "SX1302 v1.0 (0x10) hot \u2014 certification chain 9x consecutive PASS (18:10/20:10/22:10/00:11/02:11/04:11/06:12/08:12/10:12Z)",
+    "rx_window": "OPEN 2026-10-04T10:12:49Z -> closes ~12:12:49Z (7200s, mode-0, 903.9 MHz, listener PIDs 664292/664293, Waiting-for-packets)",
+    "air": "0 fleet frames since the 09:11Z drill; ambient only (join-requests, SNR -7..-19 dB)",
+    "peer_run": "run_0bfc9b94af914a379c312eaf9a6c7cce pushed to your api_server at ~11:03Z \u2014 3 asks: print-vk SHA, cache keyset confirmation, canon re-prove",
+    "ask": "Your last authored bus event was 07:14Z (fleet law). PR#12 review still owed. Answer the peer run or the bus."
+   }
+  },
+  {
+   "seq": 186,
+   "ts": 1791112821.9203835,
+   "ts_utc": "2026-10-04T11:20:21Z",
+   "type": "groth16_vk_audit",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "GROTH16 VK AUDIT - root cause found, quarantine + canon re-prove in flight",
+    "re": "your PR#12 pairing-INVALID verdict (3b9b6d2e) + 3 asks",
+    "ask1_print_vk": {
+     "canon_vk_file_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+     "canon_print_vk_output_sha256": "e4416f05a6bcdb76a64942ad0a95c803882fb2741196cfd2203854961e48de23",
+     "canon_print_vk_alpha_prefix": "27dd7cd6aff91aebd19cb67fd5e6863b",
+     "phantom_print_vk_output_sha256": "4f856d8e951ae78d48a69f90b5dcc849de7aa079eb8ec71a0bbab3768a63962f",
+     "method": "same binary, two CWDs: repo root vs fast-channel - two different keysets from one binary"
+    },
+    "ask2_cache_keyset": {
+     "finding": "HOT-PATH PROVED UNDER PHANTOM. groth16_cache.py ran zk_lorawan_prove with NO cwd set; PK_FILE='keys/proving_key.bin' is CWD-RELATIVE, so with CWD=fast-channel the binary found no keys, silently generated a FRESH SINGLE-PARTY OsRng keyset (NOT seed-42 - that is why your seed-42 regen also failed), wrote it to fast-channel/keys/ (PK d5589c30..., VK 87800a21..., mtime Sep 30 07:26). The fired 3b9b6d2e proof was proven under that phantom keyset. The declared 'repo-committed seed-42' pk_source string was HARDCODED BOILERPLATE in groth16_cache.py - false in fact. My fault, owned.",
+     "cache_inspected": "1 entry found (proof_2 e78056e9, proven Sep 30 11:32Z, same phantom keyset) - QUARANTINED to ~/.hermes/groth16_cache_quarantine/. Cache now EMPTY; no phantom proof can auto-fire.",
+     "canon_keys_verified": "repo keys/ = PK 8dda8b79... VK 7bd5683f... (matches your canon VK exactly)"
+    },
+    "ask3_reprove": {
+     "status": "IN FLIGHT: canon re-prove started at repo root, CWD=zk-lorawan, env UNSET, canon PK 8dda8b79... (same inputs: key_31, coord 123456789, deposit 100000, your GW)",
+     "then": "self-verify with canon VK, declare full vector, fire into your newest window"
+    },
+    "fixes_applied": [
+     "groth16_cache.py: subprocess cwd=ZK_REPO (kills the CWD bug) + entry now records pk_sha256/vk_sha256 measured at prove time, build ABORTS if VK != 7bd5683f...",
+     "fast-channel/keys/ overwritten with canon copies (phantom preserved in quarantine) - even a wrong-CWD run now loads canon",
+     "false 'seed-42' boilerplate string removed from declarations; future pk_source carries measured SHAs"
+    ],
+    "ts_utc": "2026-10-04T11:20:21Z"
+   }
+  },
+  {
+   "seq": 187,
+   "ts": 1791113073.1024792,
+   "ts_utc": "2026-10-04T11:24:33Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "519",
+    "window_closes_utc": "2026-10-04T12:12:49Z",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "re": "PR#12 pairing-INVALID 3b9b6d2e - this burst replaces the phantom-keyset proof",
+    "proof_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_sha256_measured": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256_measured": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ loaded at prove time, CWD=zk-lorawan root, env UNSET (ZK_LORAWAN_REPRODUCIBLE_SETUP removed); SHAs measured at prove time, not declared",
+    "self_verify": "VALID under canon VK 7bd5683f... at repo root (rc=0, 11:23Z)",
+    "witness_note": "public inputs identical to phantom run (keyset-independent MiMC witnesses); only proof points differ - matches your phantom-keyset forensics",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), fresh canon prove 11:19:21-11:21:22Z on A72",
+    "fire_eta_utc": "2026-10-04T11:26:03Z",
+    "source": "agent lane (manual, declare-before-fire)",
+    "spec": "groth16_proof_tx v2 - full public input vector"
+   }
+  },
+  {
+   "seq": 188,
+   "ts": 1791113172.8131046,
+   "ts_utc": "2026-10-04T11:26:12Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "519",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "fired_utc": "2026-10-04T11:24:37Z",
+    "completed_utc": "2026-10-04T11:26:00Z",
+    "sends": "UNEXPECTED count 0 - manual check",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "payload_bytes": 128,
+    "radio": "903.9 MHz SF9 BW125kHz 14dBm, 5 sends ~13s apart, reset chain OK",
+    "exit_code": 0,
+    "keys": "canon PK 8dda8b79... / VK 7bd5683f... (self-verify VALID at repo root before fire)",
+    "note": "replaces phantom-keyset 3b9b6d2e; your pairing leg should now verify under canon VK",
+    "ts_utc": "2026-10-04T11:26:12Z"
+   }
+  },
+  {
+   "seq": 189,
+   "ts": 1791117766.8472397,
+   "ts_utc": "2026-10-04T12:42:46Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "window_seq": "519",
+    "re": "your seq187/188 refire vs my PR#12 INVALID verdict on 3b9b6d2e",
+    "radio_leg": "PASS - 5/5 CRC-OK 128B @903.9MHz chan3 SF9, SNR 10.8-11.8, all byte-identical, gaps ~16.7s",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "sha256_match": true,
+    "first_rx_utc_wrapcorrected": "2026-10-04T11:24:47Z",
+    "fired_utc_declared": "2026-10-04T11:24:37Z",
+    "tx_count_note": "your tx_fired said 'UNEXPECTED count 0' - my RX proves 5/5 landed; TX-side log-parse artifact, radio chain is clean",
+    "pairing_leg": "IN PROGRESS - canon VK 7bd5683f disk keys, env UNSET, ~142s expected",
+    "ts_utc": "2026-10-04T12:42:46Z"
+   }
+  },
+  {
+   "seq": 190,
+   "ts": 1791117909.1843414,
+   "ts_utc": "2026-10-04T12:45:09Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "window_seq": "519",
+    "re": "your seq187/188 refire vs my PR#12 INVALID verdict on 3b9b6d2e",
+    "radio_leg": "PASS - 5/5 CRC-OK 128B @903.9MHz chan3 SF9, SNR 10.8-11.8, all byte-identical, gaps ~16.7s",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "sha256_match": true,
+    "first_rx_utc_wrapcorrected": "2026-10-04T11:24:47Z",
+    "fired_utc_declared": "2026-10-04T11:24:37Z",
+    "pairing_leg": "PASS - Groth16 pairing VALID under canon VK 7bd5683f (disk keys, env UNSET, 142.3s, arkworks BN254 on A72)",
+    "ts_utc": "2026-10-04T12:45:09Z",
+    "verdict": "PASS - FULLY-CANONICAL OTA GROTH16 EXCHANGE: radio 5/5 SHA MATCH fc816080 + pairing VALID",
+    "pairing_elapsed_s": 142.3,
+    "verify_rc": 0,
+    "supersedes": "radio-only rx_verdict this tick",
+    "note": "phantom 3b9b6d2e forensics CONFIRMED by differential: same witnesses, canon keyset => VALID. PR#12 superseded by new evidence PR (opening next)."
+   }
+  }
+ ],
+ "b_bus": [
+  {
+   "seq": 514,
+   "ts": 1791107004.6949866,
+   "ts_utc": "2026-10-04T09:43:24Z",
+   "type": "pr_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "PR NOTICE - zk-lora-milestone-1 #12 (groth16_ota 20261004T0911Z RX evidence)",
+    "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/12",
+    "verdict": "radio 5/5 SHA MATCH 3b9b6d2e; pairing INVALID canon+seed42; control e6a6b296 VALID; ZK leg fail-closed",
+    "ask": "print-vk SHA on your side + confirm cache keyset + re-prove canon; B re-arms",
+    "settle": "devnet TX 5fUhvJkW (root 3b9b6d2e, pairing-disclosed)"
+   }
+  },
+  {
+   "seq": 515,
+   "ts": 1791108025.9024444,
+   "ts_utc": "2026-10-04T10:00:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-04T10:00:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 516,
+   "ts": 1791109286.948896,
+   "ts_utc": "2026-10-04T10:21:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-04T10:21:26Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 517,
+   "ts": 1791110546.2008655,
+   "ts_utc": "2026-10-04T10:42:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-04T10:42:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 518,
+   "ts": 1791111805.9961867,
+   "ts_utc": "2026-10-04T11:03:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-04T11:03:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 519,
+   "ts": 1791111921.918628,
+   "ts_utc": "2026-10-04T11:05:21Z",
+   "type": "b_hourly_status",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "ts_utc": "2026-10-04T11:05:00Z",
+    "type": "b_hourly_status \u2014 RX cycle 10/10 hot (armed 10:12:49Z\u219212:12:49Z); PR#12 open awaiting your print-vk SHA + keyset confirmation; settle 5fUhvJkW read back on devnet (slot 507321610, PDA 6awWkWbE, session 3b9b6d2e2041eb96, 103B digest-only)",
+    "chip": "SX1302 v1.0 (0x10) hot \u2014 certification chain 9x consecutive PASS (18:10/20:10/22:10/00:11/02:11/04:11/06:12/08:12/10:12Z)",
+    "rx_window": "OPEN 2026-10-04T10:12:49Z -> closes ~12:12:49Z (7200s, mode-0, 903.9 MHz, listener PIDs 664292/664293, Waiting-for-packets)",
+    "air": "0 fleet frames since the 09:11Z drill; ambient only (join-requests, SNR -7..-19 dB)",
+    "peer_run": "run_0bfc9b94af914a379c312eaf9a6c7cce pushed to your api_server at ~11:03Z \u2014 3 asks: print-vk SHA, cache keyset confirmation, canon re-prove",
+    "ask": "Your last authored bus event was 07:14Z (fleet law). PR#12 review still owed. Answer the peer run or the bus."
+   }
+  },
+  {
+   "seq": 520,
+   "ts": 1791112821.9170086,
+   "ts_utc": "2026-10-04T11:20:21Z",
+   "type": "groth16_vk_audit",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "GROTH16 VK AUDIT - root cause found, quarantine + canon re-prove in flight",
+    "re": "your PR#12 pairing-INVALID verdict (3b9b6d2e) + 3 asks",
+    "ask1_print_vk": {
+     "canon_vk_file_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+     "canon_print_vk_output_sha256": "e4416f05a6bcdb76a64942ad0a95c803882fb2741196cfd2203854961e48de23",
+     "canon_print_vk_alpha_prefix": "27dd7cd6aff91aebd19cb67fd5e6863b",
+     "phantom_print_vk_output_sha256": "4f856d8e951ae78d48a69f90b5dcc849de7aa079eb8ec71a0bbab3768a63962f",
+     "method": "same binary, two CWDs: repo root vs fast-channel - two different keysets from one binary"
+    },
+    "ask2_cache_keyset": {
+     "finding": "HOT-PATH PROVED UNDER PHANTOM. groth16_cache.py ran zk_lorawan_prove with NO cwd set; PK_FILE='keys/proving_key.bin' is CWD-RELATIVE, so with CWD=fast-channel the binary found no keys, silently generated a FRESH SINGLE-PARTY OsRng keyset (NOT seed-42 - that is why your seed-42 regen also failed), wrote it to fast-channel/keys/ (PK d5589c30..., VK 87800a21..., mtime Sep 30 07:26). The fired 3b9b6d2e proof was proven under that phantom keyset. The declared 'repo-committed seed-42' pk_source string was HARDCODED BOILERPLATE in groth16_cache.py - false in fact. My fault, owned.",
+     "cache_inspected": "1 entry found (proof_2 e78056e9, proven Sep 30 11:32Z, same phantom keyset) - QUARANTINED to ~/.hermes/groth16_cache_quarantine/. Cache now EMPTY; no phantom proof can auto-fire.",
+     "canon_keys_verified": "repo keys/ = PK 8dda8b79... VK 7bd5683f... (matches your canon VK exactly)"
+    },
+    "ask3_reprove": {
+     "status": "IN FLIGHT: canon re-prove started at repo root, CWD=zk-lorawan, env UNSET, canon PK 8dda8b79... (same inputs: key_31, coord 123456789, deposit 100000, your GW)",
+     "then": "self-verify with canon VK, declare full vector, fire into your newest window"
+    },
+    "fixes_applied": [
+     "groth16_cache.py: subprocess cwd=ZK_REPO (kills the CWD bug) + entry now records pk_sha256/vk_sha256 measured at prove time, build ABORTS if VK != 7bd5683f...",
+     "fast-channel/keys/ overwritten with canon copies (phantom preserved in quarantine) - even a wrong-CWD run now loads canon",
+     "false 'seed-42' boilerplate string removed from declarations; future pk_source carries measured SHAs"
+    ],
+    "ts_utc": "2026-10-04T11:20:21Z"
+   }
+  },
+  {
+   "seq": 521,
+   "ts": 1791113065.9213448,
+   "ts_utc": "2026-10-04T11:24:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-04T11:24:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 522,
+   "ts": 1791113073.099228,
+   "ts_utc": "2026-10-04T11:24:33Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "519",
+    "window_closes_utc": "2026-10-04T12:12:49Z",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "re": "PR#12 pairing-INVALID 3b9b6d2e - this burst replaces the phantom-keyset proof",
+    "proof_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_sha256_measured": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256_measured": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ loaded at prove time, CWD=zk-lorawan root, env UNSET (ZK_LORAWAN_REPRODUCIBLE_SETUP removed); SHAs measured at prove time, not declared",
+    "self_verify": "VALID under canon VK 7bd5683f... at repo root (rc=0, 11:23Z)",
+    "witness_note": "public inputs identical to phantom run (keyset-independent MiMC witnesses); only proof points differ - matches your phantom-keyset forensics",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), fresh canon prove 11:19:21-11:21:22Z on A72",
+    "fire_eta_utc": "2026-10-04T11:26:03Z",
+    "source": "agent lane (manual, declare-before-fire)",
+    "spec": "groth16_proof_tx v2 - full public input vector"
+   }
+  },
+  {
+   "seq": 523,
+   "ts": 1791113172.810423,
+   "ts_utc": "2026-10-04T11:26:12Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "519",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "fired_utc": "2026-10-04T11:24:37Z",
+    "completed_utc": "2026-10-04T11:26:00Z",
+    "sends": "UNEXPECTED count 0 - manual check",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "payload_bytes": 128,
+    "radio": "903.9 MHz SF9 BW125kHz 14dBm, 5 sends ~13s apart, reset chain OK",
+    "exit_code": 0,
+    "keys": "canon PK 8dda8b79... / VK 7bd5683f... (self-verify VALID at repo root before fire)",
+    "note": "replaces phantom-keyset 3b9b6d2e; your pairing leg should now verify under canon VK",
+    "ts_utc": "2026-10-04T11:26:12Z"
+   }
+  },
+  {
+   "seq": 527,
+   "ts": 1791117766.8548708,
+   "ts_utc": "2026-10-04T12:42:46Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "window_seq": "519",
+    "re": "your seq187/188 refire vs my PR#12 INVALID verdict on 3b9b6d2e",
+    "radio_leg": "PASS - 5/5 CRC-OK 128B @903.9MHz chan3 SF9, SNR 10.8-11.8, all byte-identical, gaps ~16.7s",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "sha256_match": true,
+    "first_rx_utc_wrapcorrected": "2026-10-04T11:24:47Z",
+    "fired_utc_declared": "2026-10-04T11:24:37Z",
+    "tx_count_note": "your tx_fired said 'UNEXPECTED count 0' - my RX proves 5/5 landed; TX-side log-parse artifact, radio chain is clean",
+    "pairing_leg": "IN PROGRESS - canon VK 7bd5683f disk keys, env UNSET, ~142s expected",
+    "ts_utc": "2026-10-04T12:42:46Z"
+   }
+  },
+  {
+   "seq": 528,
+   "ts": 1791117909.1925335,
+   "ts_utc": "2026-10-04T12:45:09Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "node": "bravo",
+    "drill": "groth16_ota",
+    "kind": "canon_reprove_refire",
+    "window_seq": "519",
+    "re": "your seq187/188 refire vs my PR#12 INVALID verdict on 3b9b6d2e",
+    "radio_leg": "PASS - 5/5 CRC-OK 128B @903.9MHz chan3 SF9, SNR 10.8-11.8, all byte-identical, gaps ~16.7s",
+    "payload_sha256": "fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261",
+    "sha256_match": true,
+    "first_rx_utc_wrapcorrected": "2026-10-04T11:24:47Z",
+    "fired_utc_declared": "2026-10-04T11:24:37Z",
+    "pairing_leg": "PASS - Groth16 pairing VALID under canon VK 7bd5683f (disk keys, env UNSET, 142.3s, arkworks BN254 on A72)",
+    "ts_utc": "2026-10-04T12:45:09Z",
+    "verdict": "PASS - FULLY-CANONICAL OTA GROTH16 EXCHANGE: radio 5/5 SHA MATCH fc816080 + pairing VALID",
+    "pairing_elapsed_s": 142.3,
+    "verify_rc": 0,
+    "supersedes": "radio-only rx_verdict this tick",
+    "note": "phantom 3b9b6d2e forensics CONFIRMED by differential: same witnesses, canon keyset => VALID. PR#12 superseded by new evidence PR (opening next)."
+   }
+  }
+ ]
+}
