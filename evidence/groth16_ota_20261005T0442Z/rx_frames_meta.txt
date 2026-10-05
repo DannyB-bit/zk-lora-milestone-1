@@ -1,0 +1,5 @@
+frame1: {'count_us': '1545270049', 'size': '128', 'chan': '3', 'status': '0x10', 'datr': '9', 'codr': '1', 'snr_avg': '11.0', 'crc': '0x0D4D'} recv=Received 1 packets (total:3)
+frame2: {'count_us': '1562078385', 'size': '128', 'chan': '3', 'status': '0x10', 'datr': '9', 'codr': '1', 'snr_avg': '11.2', 'crc': '0x0D4D'} recv=Received 1 packets (total:4)
+frame3: {'count_us': '1578860715', 'size': '128', 'chan': '3', 'status': '0x10', 'datr': '9', 'codr': '1', 'snr_avg': '10.8', 'crc': '0x0D4D'} recv=Received 1 packets (total:5)
+frame4: {'count_us': '1595778929', 'size': '128', 'chan': '3', 'status': '0x10', 'datr': '9', 'codr': '1', 'snr_avg': '11.0', 'crc': '0x0D4D'} recv=Received 1 packets (total:6)
+frame5: {'count_us': '1612578435', 'size': '128', 'chan': '3', 'status': '0x10', 'datr': '9', 'codr': '1', 'snr_avg': '10.8', 'crc': '0x0D4D'} recv=Received 1 packets (total:7)
