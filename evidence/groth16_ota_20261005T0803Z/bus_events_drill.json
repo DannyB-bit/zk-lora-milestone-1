@@ -1,0 +1,302 @@
+{
+ "drill": "groth16_ota watcher_daemon_fire_cycle20",
+ "captured_utc": "2026-10-05T09:41:24Z",
+ "b_bus_cycle20_events": [
+  {
+   "seq": 611,
+   "ts": 1791187308.1740446,
+   "ts_utc": "2026-10-05T08:01:48Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-20",
+    "armed_at_utc": "2026-10-05T06:16:12Z",
+    "closes_at_utc": "2026-10-05T08:16:12Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for autonomous daemon path",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 06:16:12Z (19th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0, if_chain3 @ IF-400kHz = 903.9 MHz exact",
+    "sf": "SF9",
+    "bw_khz": 125,
+    "expected_bytes": 128,
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (your ledger: 1 warm 264a8fea key32 after cycle-19 consumed a1706406 key31; refill ask outstanding - build 1 from canon root)",
+    "ask": "watcher auto-fire one warm proof: declare groth16_proof_tx first (declare-before-fire), then 5 sends >=10s apart, complete before 08:16:12Z",
+    "note": "PR#17 MERGED by Dan 07:21:49Z (6454c7a, execution review APPROVE + Zymatica live-probe verification 07:36Z) - third autonomous A->B proof exchange closed all-green. This window is the FOURTH autonomous OTA proof leg. Ambient only so far this cycle (11x23B OTAA joiners, zero fleet frames)."
+   }
+  },
+  {
+   "seq": 612,
+   "ts": 1791187309.0320528,
+   "ts_utc": "2026-10-05T08:01:49Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": 216,
+    "drill": "groth16_ota",
+    "action": "hold_non_b_ack",
+    "note": "B watcher only auto-fires drill=b_ack_chirp"
+   }
+  },
+  {
+   "seq": 613,
+   "ts": 1791187310.188825,
+   "ts_utc": "2026-10-05T08:01:50Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "611",
+    "window_closes_utc": "2026-10-05T08:16:12Z",
+    "proof_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-05T08:02:50Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 614,
+   "ts": 1791187390.0968041,
+   "ts_utc": "2026-10-05T08:03:10Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "611",
+    "fired_utc": "2026-10-05T08:03:10Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 615,
+   "ts": 1791187406.0728884,
+   "ts_utc": "2026-10-05T08:03:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-05T08:03:26Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 616,
+   "ts": 1791188403.5678117,
+   "ts_utc": "2026-10-05T08:20:03Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_verdict",
+    "drill": "groth16_ota",
+    "kind": "watcher_daemon_fire_cycle20",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "window_seq": "cycle-20 (bravo continuous certified-hot, armed 06:16:12Z, closed 08:16:12Z; B declared window seq611/A216 at 08:01:48Z)",
+    "radio": "5/5 CRC-OK 128B byte-identical @903.9MHz chan3 SF9/125kHz, SNR +10.5..+11.5 dB, LoRa CRC 0x702C x5, inter-frame ~16.8s, first arrival ~08:03:27Z (17s after your first send), count_us 2049523874-2116800608 post-wrap",
+    "radio_verdict": "SHA 264a8fea... MATCH 5/5 (b_rx_extract.py --expect-sha exit 0; your seq217 declare == your seq206 refill notice proof_2 key32)",
+    "pairing": "IN FLIGHT - subprocess battery (primary + bd4c9ab2 control) running since 08:19:18Z, canon disk keys sha-guarded; verdict follows battery completion per control-battery law",
+    "fire_stats": "window-open 08:01:48Z -> your declare 08:01:29Z-equiv seq217 (41s) -> fired 08:03:10Z (82s open-to-fire), 5/5 TX_DONE exit 0, zero LLM - fourth autonomous OTA proof exchange",
+    "ambient_disclosed": "11x23B OTAA joiners + 1x128B chan6 SNR-10.8 CRC 0x34EA (different CRC/SHA, excluded)",
+    "cache_note": "proof_2 (264a8fea, key 32) now consumed - your cache is EMPTY. Refill ask stands: build 1-2 from canon repo root (PK 8dda8b79/VK 7bd5683f), post cache_refill_notice.",
+    "next": "pairing battery verdict -> Cuneiform devnet settle -> evidence PR (cycle-20 bundle) -> Dan review"
+   }
+  },
+  {
+   "seq": 617,
+   "ts": 1791188665.9820366,
+   "ts_utc": "2026-10-05T08:24:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-05T08:24:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 618,
+   "ts": 1791189926.0761662,
+   "ts_utc": "2026-10-05T08:45:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-05T08:45:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 619,
+   "ts": 1791191185.8769162,
+   "ts_utc": "2026-10-05T09:06:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-05T09:06:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 620,
+   "ts": 1791191308.7829745,
+   "ts_utc": "2026-10-05T09:08:28Z",
+   "type": "rx_verdict_update",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_verdict_update",
+    "drill": "groth16_ota",
+    "kind": "watcher_daemon_fire_cycle20",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "radio": "FINAL PASS - 5/5 CRC-OK 128B byte-identical SHA 264a8fea MATCH @903.9MHz chan3 SF9, SNR +10.5..+11.5, CRC 0x702C x5, inter-frame 16.8s (seq217 declare == seq206 refill notice proof_2 key32)",
+    "pairing": "QUARANTINED - your 264a8fea proof is VALID 3/3 (142s runs, clean subprocess battery, same binary+keys each time) BUT both known-VALID controls flipped INVALID today: bd4c9ab2 2x + fc816080 1x + bd4c9ab2 seed-42 regen VK 1x (all were committed VALID Oct-4 through 05:2xZ today incl cycle-19 battery). Keys sha-guard unchanged, binary sha unchanged, throttled=0x0, 41-47C, no EDAC events.",
+    "hypothesis": "data-correlated hardware fault on this A72 (specific working sets hit a degraded cell) OR old-vs-new builder-batch difference - discriminators running: a1706406 (key-31 proved today) statement-class test + bd4c9ab2 core-pinning 0-3",
+    "law_upheld": "control-battery law: NO verdict, NO settle until a battery whose control holds. Radio leg stands. Your fire itself was flawless - 82s open-to-fire, 5/5, zero LLM.",
+    "cache_note": "your cache is now EMPTY (proof_2 264a8fea consumed by this fire). Refill ask stands: build 1-2 from canon repo root, post cache_refill_notice.",
+    "next": "battery v4 discriminators land ~09:18Z -> if a1706406 VALID: final battery (a1706406 control + 264a8fea primary) -> verdict + settle + PR. If INVALID: full quarantine postmortem PR, no settle, hardware case for Dan."
+   }
+  },
+  {
+   "seq": 621,
+   "ts": 1791192446.0115435,
+   "ts_utc": "2026-10-05T09:27:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-05T09:27:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  }
+ ],
+ "a_bus_cycle20_events": [
+  {
+   "seq": 216,
+   "ts": 1791187308.2025445,
+   "ts_utc": "2026-10-05T08:01:48Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-20",
+    "armed_at_utc": "2026-10-05T06:16:12Z",
+    "closes_at_utc": "2026-10-05T08:16:12Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for autonomous daemon path",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 06:16:12Z (19th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0, if_chain3 @ IF-400kHz = 903.9 MHz exact",
+    "sf": "SF9",
+    "bw_khz": 125,
+    "expected_bytes": 128,
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (your ledger: 1 warm 264a8fea key32 after cycle-19 consumed a1706406 key31; refill ask outstanding - build 1 from canon root)",
+    "ask": "watcher auto-fire one warm proof: declare groth16_proof_tx first (declare-before-fire), then 5 sends >=10s apart, complete before 08:16:12Z",
+    "note": "PR#17 MERGED by Dan 07:21:49Z (6454c7a, execution review APPROVE + Zymatica live-probe verification 07:36Z) - third autonomous A->B proof exchange closed all-green. This window is the FOURTH autonomous OTA proof leg. Ambient only so far this cycle (11x23B OTAA joiners, zero fleet frames)."
+   }
+  },
+  {
+   "seq": 217,
+   "ts": 1791187310.1657314,
+   "ts_utc": "2026-10-05T08:01:50Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "611",
+    "window_closes_utc": "2026-10-05T08:16:12Z",
+    "proof_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-05T08:02:50Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 218,
+   "ts": 1791187390.0729947,
+   "ts_utc": "2026-10-05T08:03:10Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "611",
+    "fired_utc": "2026-10-05T08:03:10Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 219,
+   "ts": 1791188403.607164,
+   "ts_utc": "2026-10-05T08:20:03Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_verdict",
+    "drill": "groth16_ota",
+    "kind": "watcher_daemon_fire_cycle20",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "window_seq": "cycle-20 (bravo continuous certified-hot, armed 06:16:12Z, closed 08:16:12Z; B declared window seq611/A216 at 08:01:48Z)",
+    "radio": "5/5 CRC-OK 128B byte-identical @903.9MHz chan3 SF9/125kHz, SNR +10.5..+11.5 dB, LoRa CRC 0x702C x5, inter-frame ~16.8s, first arrival ~08:03:27Z (17s after your first send), count_us 2049523874-2116800608 post-wrap",
+    "radio_verdict": "SHA 264a8fea... MATCH 5/5 (b_rx_extract.py --expect-sha exit 0; your seq217 declare == your seq206 refill notice proof_2 key32)",
+    "pairing": "IN FLIGHT - subprocess battery (primary + bd4c9ab2 control) running since 08:19:18Z, canon disk keys sha-guarded; verdict follows battery completion per control-battery law",
+    "fire_stats": "window-open 08:01:48Z -> your declare 08:01:29Z-equiv seq217 (41s) -> fired 08:03:10Z (82s open-to-fire), 5/5 TX_DONE exit 0, zero LLM - fourth autonomous OTA proof exchange",
+    "ambient_disclosed": "11x23B OTAA joiners + 1x128B chan6 SNR-10.8 CRC 0x34EA (different CRC/SHA, excluded)",
+    "cache_note": "proof_2 (264a8fea, key 32) now consumed - your cache is EMPTY. Refill ask stands: build 1-2 from canon repo root (PK 8dda8b79/VK 7bd5683f), post cache_refill_notice.",
+    "next": "pairing battery verdict -> Cuneiform devnet settle -> evidence PR (cycle-20 bundle) -> Dan review"
+   }
+  },
+  {
+   "seq": 220,
+   "ts": 1791191308.824376,
+   "ts_utc": "2026-10-05T09:08:28Z",
+   "type": "rx_verdict_update",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_verdict_update",
+    "drill": "groth16_ota",
+    "kind": "watcher_daemon_fire_cycle20",
+    "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+    "radio": "FINAL PASS - 5/5 CRC-OK 128B byte-identical SHA 264a8fea MATCH @903.9MHz chan3 SF9, SNR +10.5..+11.5, CRC 0x702C x5, inter-frame 16.8s (seq217 declare == seq206 refill notice proof_2 key32)",
+    "pairing": "QUARANTINED - your 264a8fea proof is VALID 3/3 (142s runs, clean subprocess battery, same binary+keys each time) BUT both known-VALID controls flipped INVALID today: bd4c9ab2 2x + fc816080 1x + bd4c9ab2 seed-42 regen VK 1x (all were committed VALID Oct-4 through 05:2xZ today incl cycle-19 battery). Keys sha-guard unchanged, binary sha unchanged, throttled=0x0, 41-47C, no EDAC events.",
+    "hypothesis": "data-correlated hardware fault on this A72 (specific working sets hit a degraded cell) OR old-vs-new builder-batch difference - discriminators running: a1706406 (key-31 proved today) statement-class test + bd4c9ab2 core-pinning 0-3",
+    "law_upheld": "control-battery law: NO verdict, NO settle until a battery whose control holds. Radio leg stands. Your fire itself was flawless - 82s open-to-fire, 5/5, zero LLM.",
+    "cache_note": "your cache is now EMPTY (proof_2 264a8fea consumed by this fire). Refill ask stands: build 1-2 from canon repo root, post cache_refill_notice.",
+    "next": "battery v4 discriminators land ~09:18Z -> if a1706406 VALID: final battery (a1706406 control + 264a8fea primary) -> verdict + settle + PR. If INVALID: full quarantine postmortem PR, no settle, hardware case for Dan."
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+B RX frames meta - groth16_ota cycle-20 (watcher daemon-fire, A key 32 proof 264a8fea)
+EXTRACTED_UTC=2026-10-05T08:14:00Z
+LOG=~/fleet/logs/rx_standby_continuous_20261003T180951Z.log
+WINDOW=cycle-20 armed 2026-10-05T06:16:12Z closes 08:16:12Z (cert 19th consecutive PASS), count_us wrap mid-window - frames are post-wrap
+A_DECLARE=A-bus seq217 groth16_proof_tx 2026-10-05T08:01:29Z (proof_sha256 264a8fea..., key 32, deposit 100001, source watcher_hot_path no LLM)
+A_FIRED=A-bus seq218 groth16_tx_fired 2026-10-05T08:03:10Z 5/5 TX_DONE exit 0
+FRAMES=5/5 CRC-OK 128B byte-identical @903.9MHz chan3 SF9/125kHz
+SNR=+10.5..+11.5 dB   LORA_CRC=0x702C x5
+COUNT_US=2049523874,2066310226,2083092315,2099879982,2116800608
+INTER_FRAME_S=16.79,16.78,16.79,16.92
+FIRST_ARRIVAL=~08:03:2xZ (post-wrap wall: arm_utc + (count_us - wrap)/1e6)
+SHA256=264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2
+SHA256_MATCH=5/5 true (extractor --expect-sha exit 0)
+AMBIENT_DISCLOSED=11x23B OTAA-joiner frames + 1x128B chan6 SNR-10.8 CRC 0x34EA (not fleet - different CRC/SHA, excluded)

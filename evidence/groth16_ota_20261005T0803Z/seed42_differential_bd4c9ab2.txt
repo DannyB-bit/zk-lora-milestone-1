@@ -1,0 +1,9 @@
+SEED42 DIFFERENTIAL - bd4c9ab2 - 2026-10-05T09:02Z
+# purpose: exonerate disk keys for the control-flip forensics
+# method: keys/proving_key.bin + verifying_key.bin moved aside (quar_bak),
+# ZK_LORAWAN_REPRODUCIBLE_SETUP=1 (in-memory seed-42 regen VK path, ~7s),
+# verify bd4c9ab2 with committed key-31 vector, then RESTORE keys + sha-guard.
+RESULT: exit=1 wall_s=6.4 stdout=INVALID
+CONCLUSION: bd4c9ab2 INVALID under regen VK too -> disk keys exonerated;
+the flip is in the compute path or the statement's data, not the key files.
+KEYS_RESTORED_AND_GUARDED: proving_key.bin 8dda8b798458bb5b... verifying_key.bin 7bd5683f13f35847...

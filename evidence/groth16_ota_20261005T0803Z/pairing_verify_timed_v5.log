@@ -1,0 +1,7 @@
+BATTERY_V5_RUN_UTC=2026-10-05T09:24:34Z
+class discrimination: cecbb8b8 (4th key-31 proof-byte set, committed VALID 01:5xZ) + 264a8fea 4th repeat, one session
+keys sha-guard BEFORE: PK=8dda8b798458bb5b VK=7bd5683f13f35847
+cecbb8b8 (PR#16, key-31 class, committed VALID 01:5xZ today): exit=1 wall_s=142.1 stdout=INVALID
+264a8fea (cycle-20 primary, key-32 class, repeat #4): exit=0 wall_s=142.0 stdout=VALID
+keys sha-guard AFTER: PK=8dda8b798458bb5b VK=7bd5683f13f35847
+BATTERY_V5_DONE=2026-10-05T09:29:18Z

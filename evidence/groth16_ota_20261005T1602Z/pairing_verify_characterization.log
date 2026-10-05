@@ -1,0 +1,4 @@
+CHARACTERIZATION_RUN_UTC=2026-10-05T16:27:01Z
+payload=96db35c5 key-31 (cycle-24 OTA-captured proof, disputed statement class) | binary sha a0c74748 (built 2026-09-29, byte-identical) | recipe as battery v4/v6, ZK_LORAWAN_REPRODUCIBLE_SETUP unset, cwd zk-lorawan root
+exit=1 wall_s=142 stdout=INVALID
+CONTEXT: Alpha verified this statement class VALID on his A72 (seq225, 116s, 13:38Z). This run CHARACTERIZES my suspect silicon only - NOT a verdict lane. Radio capture 5/5 CRC-OK sha 96db35c5 MATCH is the cycle-24 result.
