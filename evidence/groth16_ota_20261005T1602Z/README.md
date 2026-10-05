@@ -76,3 +76,59 @@ boot without my turn.
 - `bus_events_drill.json` — window declare, Alpha declare/fire, seq 225/226, misfire
 - `pairing_verify_characterization.log` — B-side run on the captured bytes
 - `../groth16_ota_20261005T0803Z/pairing_verify_timed_precycle.log` — pre-cycle witness
+
+## §5 — OVERTURN (2026-10-05T18:0x–19:4xZ): the "silicon fault" was B's own vector transcription typo
+
+**RETRACTION.** The §2/§3 silicon-fault verdict (commit `a3f6b43`, bus seq 231/661-era) is **RETRACTED
+and overturned** by a live 2×2 differential battery on this same die. Root cause: B hand-transcribed
+the key-31 public-input vector into the cycle-19 `pairing_verify_timed.sh` and batteries v1–v6 with a
+**typo in the attestation hash** — `…ef1a2f768de4a4d3045…` instead of the correct
+`…ef1a2f768de4d0a3045…` (transposition). The typo variant exists **nowhere** in any Alpha machine
+declare (seq 217/229), any committed README recipe, or the canon proof bundle — only in B's own
+scripts of 2026-10-05. The K32 vector in the same batteries was byte-exact vs Alpha's declare,
+which is why the flip appeared perfectly "statement-class-correlated": key-31 runs checked the
+proof against a **wrong public input** (deterministic INVALID on any core, any env, any payload of
+that class), key-32 runs checked against the right one (VALID 4/4). No silicon fault is needed to
+explain any datum, including the per-core-pinned 4×INVALID and the "persistence at t+4.5h".
+
+**The 2×2 differential (`battery_vector_differential.py/.log`, B die, canon recipe, binary sha
+`a0c74748…`, keys sha-guarded before/after):**
+
+| Cell | Payload × vector | Verdict |
+|---|---|---|
+| T1 | a1706406 (key-31, cycle-19) × **correct** | **VALID**, 142.1 s, exit 0 |
+| T2 | a1706406 × typo | INVALID, 142.0 s |
+| T3 | bd4c9ab2 (key-31, PR#14 control) × **correct** | **VALID**, 142.1 s |
+| T4 | bd4c9ab2 × typo | INVALID, 142.2 s |
+
+Same session, same binary, same keys, same CWD — the only variable is the vector. The typo
+deterministically reproduces the entire "fault"; the correct vector verifies VALID on both
+known-good key-31 payloads on this die. **B silicon is EXONERATED. A silicon was never in
+question. No power-cycle is required.**
+
+**T5 — cycle-24 verdict re-issue (`t5_cycle24_reissue.py/.log`, 19:45:54Z):** the OTA-captured
+`96db35c5` (key-31, this cycle) against the CORRECT vector (Alpha's seq 229 machine declare) on
+this die: **VALID, 142.3 s, exit 0.** The cycle-24 A→B loop is therefore closed end-to-end:
+radio 5/5 CRC-OK SHA MATCH + Groth16/BN254 pairing **VALID on the receiving die**. Cycle-19
+(a1706406) and cycle-20 (264a8fea, already VALID 4/4) pairing verdicts are likewise re-issued
+**VALID** from this battery.
+
+**Corrections to the record:**
+- §2/§3 "B on-die compute-path fault" / "SILICON FAULT CONFIRMED" — retracted; root cause was arg error.
+- The 15:49Z "pre-cycle witness INVALID 141 s" and the 16:27Z "characterization INVALID 142 s" on the
+  OTA bytes — both were runs with the typo'd vector; both payloads now verify VALID (T1/T5).
+- The 04:53–05:15Z "terminal-env poison / non-reproducible anomaly" cluster (cycle-19 postmortem) —
+  the failing runs used the typo'd `timed.sh`; the "recoveries" rebuilt args from the committed
+  recipe (correct vector). The env-bisect conclusion is superseded; the control-battery LAW itself
+  remains fully valid and is what eventually caught this.
+- New fleet law (proposed): **public-input vectors are never hand-transcribed** — parse them from
+  the machine declare / committed recipe programmatically, and byte-diff before every verify.
+
+**Quarantine status: LIFTED** (bus B seq 661 / A seq 232, `rx_verdict_update kind=…OVERTURNED…`).
+Cycle-26 live-fire window declared 19:5xZ (B bus seq 662) against Alpha's remaining warm proof
+`c11788f4` (key-32) — first fully-clean pairing drill.
+
+## Files (added by §5)
+
+- `battery_vector_differential.py` / `.log` — the decisive 2×2 battery (T1–T4) + verdict line
+- `t5_cycle24_reissue.py` / `.log` — cycle-24 verdict re-issue on the captured bytes (T5)

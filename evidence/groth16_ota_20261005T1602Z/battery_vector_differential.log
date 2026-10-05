@@ -1,0 +1,14 @@
+BATTERY_VECTOR_DIFFERENTIAL_RUN_UTC=2026-10-05T19:33:21Z
+purpose: decide typo-vs-silicon on B die; 4 cells x ~142s; binary/keys/CWD canon
+binary_sha256=a0c74748cdc13506
+PK=8dda8b798458bb5b VK=7bd5683f13f35847
+temp_pre=temp=43.8'C
+payload A1706406 sha256=a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4
+payload BD4C9AB2 sha256=bd4c9ab27d199f5559d55ac41c955f0ed31cd6d618f468dcb315fd0b4bd3788b
+T1 a1706406 x CORRECT vector (decision cell): verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+T2 a1706406 x TYPO vector (reproducer): verdict=INVALID exit=1 wall_s=142.0 stdout='INVALID'
+T3 bd4c9ab2 x CORRECT vector (control): verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+T4 bd4c9ab2 x TYPO vector (control reproducer): verdict=INVALID exit=1 wall_s=142.2 stdout='INVALID'
+temp_post=temp=48.2'C
+keys sha-guard AFTER: PK=8dda8b798458bb5b VK=7bd5683f13f35847
+DIFFERENTIAL_VERDICT=OVERTURN: T1/T3 VALID on correct vector + T2/T4 INVALID on typo vector => SILICON EXONERATED; 9/9 key-31 INVALIDs were arg errors from B's typo'd vector; pairing-quarantine LIFTS; re-issue cycle-19/20/24 pairing verdicts from this battery

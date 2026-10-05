@@ -1,0 +1,7 @@
+cycle-26 drill frames (5/5 CRC-OK, 903.9 MHz ref channel, SF9/125kHz, 128B payload each):
+frame 1: count_us=1364990740 freq_hz=903900000 snr_avg=10.8 rssi_chan=198.0 status=0x10 datr=9 size=128B sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+frame 2: count_us=1381755636 freq_hz=903900000 snr_avg=11.0 rssi_chan=198.0 status=0x10 datr=9 size=128B sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+frame 3: count_us=1398538810 freq_hz=903900000 snr_avg=11.0 rssi_chan=198.0 status=0x10 datr=9 size=128B sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+frame 4: count_us=1415427964 freq_hz=903900000 snr_avg=10.8 rssi_chan=198.0 status=0x10 datr=9 size=128B sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+frame 5: count_us=1432320577 freq_hz=903900000 snr_avg=11.5 rssi_chan=198.0 status=0x10 datr=9 size=128B sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+inter-frame spacing ~16.8-17.0s; reconstructed payload sha256 = c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a (MATCH vs declare)

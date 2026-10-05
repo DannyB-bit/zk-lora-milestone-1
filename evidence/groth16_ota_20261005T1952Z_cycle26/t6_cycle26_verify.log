@@ -1,0 +1,8 @@
+T6_CYCLE26_VERIFY_RUN_UTC=2026-10-05T20:11:10Z
+vector provenance: machine-parsed from bus declares (A seq233 == B seq663 byte-exact) - hand transcription eliminated
+payload sha=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a (matches declare c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a)
+binary_sha256=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+key_id=32 deposit=100001
+T6 c11788f4 x machine-parsed vector: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+CYCLE-26 COMPLETE: radio 5/5 SHA MATCH + pairing VALID on B die under the reformed machine-parsed-vector protocol - first fully-clean cycle
+keys sha-guard AFTER: PK=8dda8b798458bb5b VK=7bd5683f13f35847
