@@ -1,0 +1,24 @@
+keys sha-guard BEFORE:
+8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577  keys/proving_key.bin
+7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824  keys/verifying_key.bin
+PRIMARY a1706406 (this drill, watcher_hot_path daemon-fire, A-bus declare 04:41:30Z / fired 04:42:50Z, B cycle-19)
+04:53:39.474Z
+INVALID
+PRIMARY_EXIT=1
+PRIMARY wall_s=142
+04:56:01.581Z
+CONTROL bd4c9ab2 (PR#14 known-VALID) file=/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/evidence/groth16_ota_20261004T1922Z/rx_payload.bin
+INVALID
+CONTROL_EXIT=1
+CONTROL wall_s=142
+04:58:23.680Z
+keys sha-guard AFTER:
+8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577  keys/proving_key.bin
+7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824  keys/verifying_key.bin
+DONE
+
+RERUN 2026-10-05T05:2xZ via execute_code subprocess (kernel env) after terminal-env INVALID anomaly:
+CONTROL bd4c9ab2 (PR#14 known-VALID): verdict=VALID exit=0 wall_s=141.9
+PRIMARY a1706406 (this drill): verdict=VALID exit=0 wall_s=142.1
+keys sha-guard unchanged: True
+ANOMALY NOTE: three terminal-tool shell invocations 04:53-05:15Z returned INVALID for BOTH control and primary; identical args via python subprocess / env -i return VALID for control. Terminal session env (hermes snapshot) is the suspected poison - postmortem in b_env_diff.

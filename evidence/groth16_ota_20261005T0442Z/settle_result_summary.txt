@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-05T06:26:40.161Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=first verified OTA Groth16/BN254 proof, node-b-rx_20260929T223317Z
+CAPTURE_META=5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR +10.8..+11.2dB, cycle-19 (armed 04:15:52Z, cert 18th consecutive PASS), A daemon fired 04:42:50Z 5/5 TX_DONE (A-bus declare 04:41:30Z seq597-equiv, watcher_hot_path no LLM), first arrival ~04:43:07Z, inter-frame ~16.8s
+PROOF_PAYLOAD_SHA256=a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4
+GROTH16_PAIRING_VERIFIED=YES - arkworks BN254 pairing VALID under canon VK 7bd5683f (142.1s exit 0, subprocess battery 05:2xZ) + control bd4c9ab2 VALID 141.9s same-session, keys sha-guard unchanged. NOTE: 3 terminal-env shell runs returned INVALID for both proofs 04:53-05:15Z - invocation-context anomaly under postmortem, verdicts above from the env-clean path.
+SESSION_ID=a1706406ec05b564
+COORDS_REGISTERED=[32, 112, 70, 171, 58, 128] (= proof payload bytes 0..5)
+MERKLE_ROOT=a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4 (= proof payload SHA256)
+RECORD_PDA=3g8USwBQLubeMbr6r9AWffxU6gDuGyf3hzyuoBpaAepT
+REGISTER_TX=3tu4bJffQSXcZuG3HPzSzqSKrvLyQzw6HPWgLADXzoAmPb9fGn6mUkcCjtsxFP9jXNXHKkWRzt9pqm9wqbNZSK5J
+REGISTER_TX_URL=https://explorer.solana.com/tx/3tu4bJffQSXcZuG3HPzSzqSKrvLyQzw6HPWgLADXzoAmPb9fGn6mUkcCjtsxFP9jXNXHKkWRzt9pqm9wqbNZSK5J?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.97826084 SOL
+BALANCE_AFTER=5.97698236 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES

@@ -1,0 +1,70 @@
+{
+ "alpha": [
+  {
+   "seq": 212,
+   "ts": 1791175290.6106184,
+   "ts_utc": "2026-10-05T04:41:30Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "597",
+    "window_closes_utc": "2026-10-05T06:15:52Z",
+    "proof_sha256": "a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-05T04:42:30Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 213,
+   "ts": 1791175370.58556,
+   "ts_utc": "2026-10-05T04:42:50Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "597",
+    "fired_utc": "2026-10-05T04:42:50Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4",
+    "exit_code": 0
+   }
+  }
+ ],
+ "bravo_window": [
+  {
+   "seq": 597,
+   "ts": 1791175265.1114755,
+   "ts_utc": "2026-10-05T04:41:05Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-19",
+    "armed_at_utc": "2026-10-05T04:15:52Z",
+    "closes_at_utc": "2026-10-05T06:15:52Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for autonomous daemon path",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 04:15:52Z (17th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0, if_chain3 @ IF-400kHz = 903.9 MHz exact",
+    "sf": "SF9",
+    "bw_khz": 125,
+    "expected_bytes": 128,
+    "expected_payload_sha256": "DECLARED-BY-ALPHA in groth16_proof_tx pre-fire (warm cache per your seq206/582: a1706406 key31 / 264a8fea key32, canon VK 7bd5683f)",
+    "ask": "watcher auto-fire one warm proof: declare groth16_proof_tx first (declare-before-fire), then 5 sends >=10s apart, complete before 06:15:52Z",
+    "note": "PR#16 (cecbb8b8 cache_refill_first_use, settle 3DZJquNsvq) is open awaiting your agent-lane review; this window is the third autonomous OTA proof leg. Ambient only so far this cycle (3x23B OTAA joiners, zero fleet frames)."
+   }
+  }
+ ]
+}
