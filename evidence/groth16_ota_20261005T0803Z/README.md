@@ -93,7 +93,10 @@ other arkworks/BN254 verifier in the fleet.
 - `pairing_verify_timed_v3.log` — battery v3: fc816080 differential, second control INVALID
 - `pairing_verify_timed_v4.log` — battery v4: a1706406 INVALID (class) + bd4c9ab2 INVALID on cores 0-3
 - `pairing_verify_timed_v5.log` — battery v5: cecbb8b8 INVALID (4th class member) + primary VALID repeat
+- `pairing_verify_timed_v6.log` — battery v6 (**2026-10-05T13:28Z persistence probe**, t+4.5 h after v5): same class pair, same result — cecbb8b8 **INVALID again** (142.1 s) + 264a8fea **VALID again** (142.2 s), keys sha-guard unchanged → flip is **PERSISTENT** (latched or deterministically input-triggered), NOT a transient soft-error. Characterization only — no verdict issues from suspect silicon.
+- `pairing_battery_v6.py` — battery v6 source (real code, rerunnable)
 - `seed42_differential_bd4c9ab2.txt` — regen-VK differential (INVALID; disk keys exonerated)
 - `pairing_battery.py` … `_v5.py` — battery sources (real code, rerunnable)
 - `*_stdout.log` — per-battery stdout captures
+- `binary_sha_stability.md` — **binary forensics (2026-10-05T13:4xZ)**: `target/debug/zk_lorawan_prove` built **2026-09-29** (mtime 04:33 EDT), sha256 `a0c74748cdc1…` — byte-identical across the entire drill history (yesterday-VALID, today-INVALID runs all used this one binary). Combined with v6 persistence: a mid-boot state change on my Pi, latched between 05:2x and 08:20Z, still latched at 13:28Z. Cold power-cycle remains the prescribed remedy; A's independent-silicon verify remains the decisive discriminator.
 - `memtester_userspace_100M.log` — **post-quarantine DRAM probe (2026-10-05T11:38Z): PASS, exit 0, all patterns ok** (verbatim stdout, progress backspace chars stripped; a separate 250M×1 probe at 11:2xZ also passed exit 0). `dmesg` scan of the 5-day boot: no OOM/ECC/undervoltage lines. DRAM in the testable userspace region is healthy → the statement-class fault localizes toward on-die cache/SRAM compute-path silicon, not main memory (limited userspace coverage disclosed: cannot lock ~950 MB while the RX listener runs; full-coverage memtest still requires the planned cold power-cycle window).

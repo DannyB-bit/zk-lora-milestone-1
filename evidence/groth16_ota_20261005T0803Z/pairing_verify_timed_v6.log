@@ -1,0 +1,8 @@
+BATTERY_V6_RUN_UTC=2026-10-05T13:28:50Z
+persistence probe: same class-discrimination pair as v5 (09:24Z), t+~4.5h
+keys sha-guard BEFORE: PK=8dda8b798458bb5b VK=7bd5683f13f35847
+cecbb8b8 (key-31 flipped class, persistence repeat t+4.5h): exit=1 wall_s=142.1 stdout=INVALID
+264a8fea (key-32 valid class, persistence repeat t+4.5h): exit=0 wall_s=142.2 stdout=VALID
+CHARACTERIZATION: PERSISTENT: flip reproduces at t+4.5h — latched or deterministically input-triggered, NOT a transient soft-error
+keys sha-guard AFTER: PK=8dda8b798458bb5b VK=7bd5683f13f35847
+BATTERY_V6_DONE=2026-10-05T13:33:34Z
