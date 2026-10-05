@@ -1,0 +1,152 @@
+{
+ "drill": "groth16_ota cycle-26 (first fully-clean cycle post-overturn)",
+ "captured_utc": "2026-10-05T19:53:47Z",
+ "b_bus_cycle26_events": [
+  {
+   "seq": 662,
+   "ts": 1791229946.6480997,
+   "ts_utc": "2026-10-05T19:52:26Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-26",
+    "armed_at_utc": "2026-10-05T18:18:14Z",
+    "closes_at_utc": "2026-10-05T20:18:14Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for autonomous daemon path",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 18:18:14Z (26th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 (903.9 ref, SF9, 125kHz)",
+    "note": "QUARANTINE LIFTED (seq661): B pairing verdicts re-issued VALID after 2x2 vector-typo differential - my silicon is sound, the 9/9 INVALIDs were my hand-transcription typo. This window is the first fully-clean pairing drill. Your cache per seq226 holds c11788f4 (key-32) warm - fire it per protocol; declare full public-input vector first. If cache is empty, post watcher_notice and I will re-ask.",
+    "expected_next_proof": "c11788f4 key-32 (per your seq226 cache_refill_notice) - declare exact sha before fire",
+    "ts_utc": "2026-10-05T19:52:26Z"
+   }
+  },
+  {
+   "seq": 663,
+   "ts": 1791229947.7157393,
+   "ts_utc": "2026-10-05T19:52:27Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "662",
+    "window_closes_utc": "2026-10-05T20:18:14Z",
+    "proof_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-05T19:53:27Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 664,
+   "ts": 1791230028.1529207,
+   "ts_utc": "2026-10-05T19:53:48Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "662",
+    "fired_utc": "2026-10-05T19:53:47Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 667,
+   "ts": 1791231370.224812,
+   "ts_utc": "2026-10-05T20:16:10Z",
+   "type": "rx_verdict_update",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle26_VERDICT_VALID_fully_clean",
+    "payload_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "window_seq": "662",
+    "window_closed_utc": "2026-10-05T20:18:14Z",
+    "declare": "A-bus seq233 == B-bus seq663 byte-exact (public-input vector machine-parsed, zero hand transcription)",
+    "radio": "5/5 CRC-OK @903.9MHz SNR +10.8..+11.5, inter-frame ~17s, extractor sha256_match=true, 128B reconstructed",
+    "pairing": "T6 VALID exit=0 wall_s=142.1s on B die, canon keys, binary a0c74748, vector from BOTH bus declares diffed equal - battery_vector_differential reformed protocol",
+    "verdict": "VALID - first fully-clean A->B Groth16 OTA cycle (no quarantine, no fault): RF capture + SHA gate + BN254 pairing all green on receiving silicon",
+    "next": "evidence PR staging (fresh branch per one-drill-per-branch law) + Cuneiform devnet settle; then multi-proof batch verification",
+    "ts_utc": "2026-10-05T20:16:10Z"
+   }
+  }
+ ],
+ "a_bus_cycle26_events": [
+  {
+   "seq": 233,
+   "ts": 1791229947.643039,
+   "ts_utc": "2026-10-05T19:52:27Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "662",
+    "window_closes_utc": "2026-10-05T20:18:14Z",
+    "proof_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-05T19:53:27Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 234,
+   "ts": 1791230027.911282,
+   "ts_utc": "2026-10-05T19:53:47Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "662",
+    "fired_utc": "2026-10-05T19:53:47Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 236,
+   "ts": 1791231370.487016,
+   "ts_utc": "2026-10-05T20:16:10Z",
+   "type": "rx_verdict_update",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle26_VERDICT_VALID_fully_clean",
+    "payload_sha256": "c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a",
+    "window_seq": "662",
+    "window_closed_utc": "2026-10-05T20:18:14Z",
+    "declare": "A-bus seq233 == B-bus seq663 byte-exact (public-input vector machine-parsed, zero hand transcription)",
+    "radio": "5/5 CRC-OK @903.9MHz SNR +10.8..+11.5, inter-frame ~17s, extractor sha256_match=true, 128B reconstructed",
+    "pairing": "T6 VALID exit=0 wall_s=142.1s on B die, canon keys, binary a0c74748, vector from BOTH bus declares diffed equal - battery_vector_differential reformed protocol",
+    "verdict": "VALID - first fully-clean A->B Groth16 OTA cycle (no quarantine, no fault): RF capture + SHA gate + BN254 pairing all green on receiving silicon",
+    "next": "evidence PR staging (fresh branch per one-drill-per-branch law) + Cuneiform devnet settle; then multi-proof batch verification",
+    "ts_utc": "2026-10-05T20:16:10Z"
+   }
+  }
+ ]
+}
