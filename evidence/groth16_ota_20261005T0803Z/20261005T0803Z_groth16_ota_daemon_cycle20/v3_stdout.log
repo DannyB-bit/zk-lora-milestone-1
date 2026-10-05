@@ -1,0 +1,4 @@
+CONTROL fc816080 (PR#13 known-VALID, committed VALID 2026-10-04T23:48Z): exit=1 wall_s=142.1 stdout=INVALID
+30s gap...
+PRIMARY 264a8fea (cycle-20 daemon-fire, A seq217 declare / seq218 fired): exit=0 wall_s=141.9 stdout=VALID
+BATTERY_V3_VERDICT=QUARANTINE (second control also INVALID -> B path under suspicion, no verdict)

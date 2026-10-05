@@ -1,0 +1,11 @@
+BATTERY_RUN_UTC=2026-10-05T08:19:19Z
+PATH=python subprocess list-args (clean path), CWD=zk-lorawan root, ZK_LORAWAN_REPRODUCIBLE_SETUP unset, canon disk keys
+keys sha-guard BEFORE: PK=8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577 VK=7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824
+PRIMARY payload sha256=264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2
+CONTROL payload sha256=bd4c9ab27d199f5559d55ac41c955f0ed31cd6d618f468dcb315fd0b4bd3788b
+PRIMARY 264a8fea (cycle-20 daemon-fire, A seq217 declare 08:01:29Z / fired 08:03:10Z): exit=0 wall_s=142.5
+PRIMARY 264a8fea (cycle-20 daemon-fire, A seq217 declare 08:01:29Z / fired 08:03:10Z): stdout=VALID
+CONTROL bd4c9ab2 (PR#14 known-VALID, committed recipe): exit=1 wall_s=141.9
+CONTROL bd4c9ab2 (PR#14 known-VALID, committed recipe): stdout=INVALID
+keys sha-guard AFTER: PK=8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577 VK=7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824
+BATTERY_VERDICT=QUARANTINE (primary exit 0 / control exit 1)

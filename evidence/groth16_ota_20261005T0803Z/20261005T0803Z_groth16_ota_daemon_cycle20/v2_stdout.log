@@ -1,0 +1,4 @@
+CONTROL bd4c9ab2 (PR#14 known-VALID, committed recipe): exit=1 wall_s=142.2 stdout=INVALID
+cool-down 60s...
+PRIMARY 264a8fea (cycle-20 daemon-fire, A seq217 declare / seq218 fired): exit=0 wall_s=142.2 stdout=VALID
+BATTERY_V2_VERDICT=QUARANTINE
