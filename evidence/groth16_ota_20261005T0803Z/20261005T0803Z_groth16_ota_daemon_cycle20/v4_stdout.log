@@ -1,6 +1,0 @@
-D1 a1706406 (key-31 stmt, proved today, was VALID 05:2xZ): exit=1 wall_s=142.0 stdout=INVALID
-D2 bd4c9ab2 pinned core0: exit=1 wall_s=142.7 stdout=INVALID
-D2 bd4c9ab2 pinned core1: exit=1 wall_s=142.0 stdout=INVALID
-D2 bd4c9ab2 pinned core2: exit=1 wall_s=142.0 stdout=INVALID
-D2 bd4c9ab2 pinned core3: exit=1 wall_s=142.0 stdout=INVALID
-V4 COMPLETE
