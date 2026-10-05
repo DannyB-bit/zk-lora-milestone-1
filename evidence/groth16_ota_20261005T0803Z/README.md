@@ -96,3 +96,4 @@ other arkworks/BN254 verifier in the fleet.
 - `seed42_differential_bd4c9ab2.txt` — regen-VK differential (INVALID; disk keys exonerated)
 - `pairing_battery.py` … `_v5.py` — battery sources (real code, rerunnable)
 - `*_stdout.log` — per-battery stdout captures
+- `memtester_userspace_100M.log` — **post-quarantine DRAM probe (2026-10-05T11:38Z): PASS, exit 0, all patterns ok** (verbatim stdout, progress backspace chars stripped; a separate 250M×1 probe at 11:2xZ also passed exit 0). `dmesg` scan of the 5-day boot: no OOM/ECC/undervoltage lines. DRAM in the testable userspace region is healthy → the statement-class fault localizes toward on-die cache/SRAM compute-path silicon, not main memory (limited userspace coverage disclosed: cannot lock ~950 MB while the RX listener runs; full-coverage memtest still requires the planned cold power-cycle window).
