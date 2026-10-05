@@ -1,0 +1,27 @@
+[
+ {
+  "seq": 590,
+  "ts": 1791169562.0519686,
+  "ts_utc": "2026-10-05T03:06:02Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "rx_verdict",
+   "drill": "groth16_ota",
+   "kind": "cache_refill_first_use",
+   "payload_sha256": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5",
+   "window_seq": "cycle-17 (bravo continuous certified-hot, armed 00:15:11Z, closed 02:15:11Z)",
+   "radio": "5/5 CRC-OK 128B byte-identical @903.9MHz chan3 SF9/125kHz, SNR +10.8..+11.2dB, LoRa CRC 0x4CD5 all five, first arrival 01:48:12.514Z (wrap-corrected), inter-frame ~16.8s",
+   "verdict": "PASS",
+   "legs": {
+    "radio_sha_match": "PASS 5/5",
+    "pairing_primary": "VALID (arkworks BN254, canon disk VK 7bd5683f, env UNSET, 142.2s, exit 0)",
+    "pairing_control": "VALID (bd4c9ab2 PR#14 known-VALID same-session 142.3s, exit 0) - RX path sound",
+    "keys_sha_guard": "PASS (PK 8dda8b79... / VK 7bd5683f... unchanged before/after)"
+   },
+   "next": "staging evidence PR + Cuneiform devnet settle (session cecbb8b8, coords = payload[0:6])",
+   "ts_utc": "2026-10-05T02:53:00Z"
+  }
+ }
+]

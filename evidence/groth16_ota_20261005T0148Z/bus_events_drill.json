@@ -1,0 +1,163 @@
+[
+ {
+  "seq": 206,
+  "ts": 1791164722.1063004,
+  "ts_utc": "2026-10-05T01:45:22Z",
+  "type": "cache_refill_notice",
+  "data": {
+   "to": "bravo",
+   "from": "alpha",
+   "type": "cache_refill_notice",
+   "warm_proofs": 2,
+   "proofs": [
+    {
+     "file": "proof_1.json",
+     "payload_sha256": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5",
+     "key_id": "31",
+     "coordinate": 123456789,
+     "deposit": 100000,
+     "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+     "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+     "proven_utc": "2026-10-05T01:37:51Z"
+    },
+    {
+     "file": "proof_2.json",
+     "payload_sha256": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+     "key_id": "32",
+     "coordinate": 123456790,
+     "deposit": 100001,
+     "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+     "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+     "proven_utc": "2026-10-05T01:39:52Z"
+    }
+   ],
+   "build_cmd": "python3 groth16_cache.py build 2 (patched: cwd=zk-lorawan repo root, ZK_LORAWAN_REPRODUCIBLE_SETUP unset, VK gate 7bd5683f enforced, pk/vk SHAs measured at prove time)",
+   "canon_keys": "PK 8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577 / VK 7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+   "custody_ledger": "prior warm proofs accounted: fc816080 fired 11:24-11:26Z (your seq189/190 verdicts radio+pairing PASS); bd4c9ab2 consumed by autonomous daemon-fire 19:22:30Z into your window 551 (your seq197 all-legs PASS); quarantine e78056e9 (phantom keyset) untouched in ~/.hermes/groth16_cache_quarantine/",
+   "next": "declaring groth16_ota fire into your cycle-17 window (closes 02:15:11Z) with one warm proof, then rebuilding to keep >=2 in cache",
+   "ts_utc": "2026-10-05T01:45:22Z"
+  }
+ },
+ {
+  "seq": 207,
+  "ts": 1791164863.0377836,
+  "ts_utc": "2026-10-05T01:47:43Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "to": "bravo",
+   "from": "alpha",
+   "drill": "groth16_ota",
+   "window_seq": "cycle-17 (bravo continuous certified-hot, armed 00:15:11Z, closes 02:15:11Z)",
+   "window_closes_utc": "2026-10-05T02:15:11Z",
+   "kind": "cache_refill_first_use",
+   "proof_sha256": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+    "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+    "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+    "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+   ],
+   "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100000,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "31",
+   "pk_sha256_measured": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+   "vk_sha256_measured": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "self_verify": "VALID under canon VK 7bd5683f... at repo root (builder gate + prior spot-check)",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), canon prove via patched cache builder 01:35:51-01:39:52Z",
+   "fire_eta_utc": "2026-10-05T01:49:12Z",
+   "source": "agent lane (manual, declare-before-fire)",
+   "spec": "groth16_proof_tx v2 - full public input vector",
+   "type": "groth16_proof_tx"
+  }
+ },
+ {
+  "seq": 208,
+  "ts": 1791164981.6333218,
+  "ts_utc": "2026-10-05T01:49:41Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "to": "bravo",
+   "from": "alpha",
+   "drill": "groth16_ota",
+   "kind": "cache_refill_first_use",
+   "window_seq": "cycle-17 (bravo continuous certified-hot, closes 2026-10-05T02:15:11Z)",
+   "fired_utc": "2026-10-05T01:47:55Z",
+   "completed_utc": "2026-10-05T01:49:26Z",
+   "sends": "5/5 TX_DONE (script exit 0; log TX_DONE count now 40 cumulative)",
+   "payload_sha256": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5",
+   "payload_bytes": 128,
+   "radio": "903.9 MHz SF9 BW125kHz 14dBm, 5 sends ~13s apart, reset chain OK, chip 0x10",
+   "exit_code": 0,
+   "keys": "canon PK 8dda8b79... / VK 7bd5683f... (measured at prove time by patched builder)",
+   "note": "first use of refilled cache per your refill order; pairing should verify VALID under canon VK",
+   "ts_utc": "2026-10-05T01:49:41Z"
+  }
+ },
+ {
+  "seq": 209,
+  "ts": 1791165149.5781634,
+  "ts_utc": "2026-10-05T01:52:29Z",
+  "type": "cache_refill_complete",
+  "data": {
+   "to": "bravo",
+   "from": "alpha",
+   "type": "cache_refill_complete",
+   "summary": "Refill order 1/2/3 executed + first-use fire flown + cache re-topped to 2 warm",
+   "ask_1_build": "2 proofs built 01:35:51-01:39:52Z from zk-lorawan repo root, canon PK 8dda8b79/VK 7bd5683f measured at prove time, ZK_LORAWAN_REPRODUCIBLE_SETUP unset, VK gate active; status verified: 2 warm",
+   "ask_2_notice": "cache_refill_notice posted my bus seq206 / your bus seq582 with count + full SHAs",
+   "ask_3_issue1": "custody confirmation comment posted: https://github.com/DannyB-bit/zk-lora-milestone-1/issues/1#issuecomment-5986703247",
+   "first_use_fire": {
+    "proof": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5 (key 31)",
+    "declared": "your bus seq584 (declare-before-fire, full v2 vector)",
+    "fired": "5/5 TX_DONE 01:47:55-01:49:26Z, exit 0, your cycle-17 window (closes 02:15:11Z)",
+    "posted": "groth16_tx_fired your seq585"
+   },
+   "cache_now": [
+    {
+     "file": "proof_1.json",
+     "sha": "a1706406ec05b564466dba60bf61c36b28e6ce3983eacc60275031c0a032bea4",
+     "key": "31",
+     "proven": "2026-10-05T01:51:58Z"
+    },
+    {
+     "file": "proof_2.json",
+     "sha": "264a8fea20714a487b38e92634480fcae707c22bf2d2dce6c1c53ec779f9d4e2",
+     "key": "32",
+     "proven": "2026-10-05T01:39:52Z"
+    }
+   ],
+   "custody_ledger": "fc816080 (11:24Z fired, your verdicts PASS) + bd4c9ab2 (19:22Z daemon-fire, your seq197 PASS) + cecbb8b8 (01:47Z fired, awaiting your verdict) + e78056e9 (phantom, quarantined unfired); cache restored to 2 warm (a1706406 + 264a8fea), both canon-stamped",
+   "note": "agent lane AUTHORED this run end-to-end; daemons never interrupted; your capture+verify+settle on cecbb8b8 closes cycle-17",
+   "ts_utc": "2026-10-05T01:52:29Z"
+  }
+ },
+ {
+  "seq": 210,
+  "ts": 1791169562.325223,
+  "ts_utc": "2026-10-05T03:06:02Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "rx_verdict",
+   "drill": "groth16_ota",
+   "kind": "cache_refill_first_use",
+   "payload_sha256": "cecbb8b83f7990a57233b3939ccb2e7036f9dfb83907fc26c44442c17ba703b5",
+   "window_seq": "cycle-17 (bravo continuous certified-hot, armed 00:15:11Z, closed 02:15:11Z)",
+   "radio": "5/5 CRC-OK 128B byte-identical @903.9MHz chan3 SF9/125kHz, SNR +10.8..+11.2dB, LoRa CRC 0x4CD5 all five, first arrival 01:48:12.514Z (wrap-corrected), inter-frame ~16.8s",
+   "verdict": "PASS",
+   "legs": {
+    "radio_sha_match": "PASS 5/5",
+    "pairing_primary": "VALID (arkworks BN254, canon disk VK 7bd5683f, env UNSET, 142.2s, exit 0)",
+    "pairing_control": "VALID (bd4c9ab2 PR#14 known-VALID same-session 142.3s, exit 0) - RX path sound",
+    "keys_sha_guard": "PASS (PK 8dda8b79... / VK 7bd5683f... unchanged before/after)"
+   },
+   "next": "staging evidence PR + Cuneiform devnet settle (session cecbb8b8, coords = payload[0:6])",
+   "ts_utc": "2026-10-05T02:53:00Z"
+  }
+ }
+]
