@@ -1,0 +1,6 @@
+# cmd: zk_lorawan_prove verify <A> <B> <C> <4 pub hashes> <gw> 100000 <fw>
+# payload_sha256=fc8160800267296e36f81cb1839a378fbd34520aef9387c48fcf5d07f3c57261
+# cwd=/home/researcher-bravo/fleet-repos/zk-lorawan keys=canon disk (VK 7bd5683f...) env ZK_LORAWAN_REPRODUCIBLE_SETUP=UNSET
+# started_utc=2026-10-04T23:48:04Z elapsed_s=142.0 exit_code=0
+# source_artifact=merged main b3851a0 evidence/groth16_ota_20261004T1124Z/rx_payload.bin
+VALID
