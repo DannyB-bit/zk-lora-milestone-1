@@ -1,0 +1,4 @@
+PRECYLE_WITNESS_RUN_UTC=2026-10-05T15:49:44Z
+payload=a1706406 key-31 | binary sha a0c74748 (built 2026-09-29, byte-identical) | exact recipe as battery v4/v6, env ZK_LORAWAN_REPRODUCIBLE_SETUP unset, cwd zk-lorawan root
+exit=1 wall_s=141 stdout=INVALID
+PURPOSE: pre-cycle characterization witness on suspect B silicon; paired against Alpha independent verify seq225 (a1706406 VALID 116s on his A72, 13:38:16-13:40:12Z)
