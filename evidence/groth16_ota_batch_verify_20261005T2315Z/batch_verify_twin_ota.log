@@ -1,0 +1,12 @@
+BATCH_VERIFY_V2_RUN_UTC=2026-10-05T23:41:53Z
+mode: twin OTA-captured proofs, one session; ALL fields machine-parsed, zero hand transcription
+v1 lesson: hand-typed expected-SHA constant caught by fail-closed assert before any pairing ran
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+cycle-24: payload file rx_payload.bin (128B) sha256=96db35c5594c2c258c09b80a64991153ce7f49dc68b727945f9baa58970faad8
+cycle-24: declares byte-equal (A seq229 == B seq648), key=31 deposit=100000 fire_eta=2026-10-05T16:01:43Z
+cycle-24 96db35c5: verdict=VALID exit=0 wall_s=142.2 stdout='VALID'
+cycle-26: payload file rx_payload_128b.bin (128B) sha256=c11788f40a31543625adbbbcecae06af9f9e47ba01b5e0fc5ef364a09366b83a
+cycle-26: declares byte-equal (A seq233 == B seq663), key=32 deposit=100001 fire_eta=2026-10-05T19:53:27Z
+cycle-26 c11788f4: verdict=VALID exit=0 wall_s=142.3 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+BATCH VERDICT: 2/2 VALID — twin OTA-captured proofs (key-31 + key-32) verified in one session on the B die; every input machine-parsed and byte-diffed across both buses; each proof served as the other's same-session control (different statement classes)
