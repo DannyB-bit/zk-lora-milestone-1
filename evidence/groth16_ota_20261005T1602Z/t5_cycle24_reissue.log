@@ -1,0 +1,6 @@
+T5_CYCLE24_REISSUE_RUN_UTC=2026-10-05T19:45:54Z
+payload=96db35c5 (cycle-24 OTA-captured, key-31) x CORRECT vector (Alpha seq229 machine declare)
+binary_sha256=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+T5 96db35c5 x CORRECT vector: verdict=VALID exit=0 wall_s=142.3 stdout='VALID'
+CYCLE-24 PAIRING VERDICT RE-ISSUED: VALID on B silicon — radio 5/5 SHA match + pairing VALID, loop closed
+keys sha-guard AFTER: PK=8dda8b798458bb5b VK=7bd5683f13f35847
