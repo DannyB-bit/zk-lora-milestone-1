@@ -1,0 +1,8 @@
+PRIMARY fresh cecbb8b8 (this drill, cache_refill_first_use, A-bus seq207/208)
+verdict=VALID
+exit=0
+wall_s=142.2
+CONTROL bd4c9ab2 (PR#14 known-VALID, merged-main artifact)
+verdict=VALID
+exit=0
+wall_s=142.3

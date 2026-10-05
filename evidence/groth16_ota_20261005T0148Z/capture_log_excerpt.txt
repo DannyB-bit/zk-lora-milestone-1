@@ -1,0 +1,92 @@
+2026-10-05T00:14:51Z --- listener exit rc=124 (124 = window span complete) ---
+2026-10-05T00:15:01Z --- bus free: running certification gate ---
+2026-10-05T00:15:01Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-10-05T00:15:01Z RECOVERY_LOG=./lora_chirp_recovery_node-b-rx_20261005T001501Z.log
+2026-10-05T00:15:01Z Stopping known gateway services so one process owns the concentrator
+2026-10-05T00:15:01Z RUN: sudo systemctl stop helium-gateway
+2026-10-05T00:15:01Z EXIT[5]: sudo systemctl stop helium-gateway
+[... ambient omitted — full log: b_rx_extract_output.json ...]
+----- LoRa packet -----
+  count_us: 1286547312
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x4CD5
+FD 93 66 4A C7 FE 4F C3 40 E3 F4 E9 9B E2 6A 0C A8 58 25 49 E2 C4 27 54 AD 61 3D AE 16 EF 38 26 63 37 41 F8 4A 9A 64 35 EA 14 20 92 8B 7D 42 9B 27 E4 68 9A 74 41 02 69 D5 51 8E 93 D4 FF 19 03 85 DD 3F E9 B4 DC 4C 6C 01 72 6E 84 7F CB 92 ED 19 AA 0D 30 BE D0 03 79 B6 4A BE DA FF F0 4C 19 C3 D6 9F 1C E8 47 FB BF 0F 4A 5A 86 92 98 C3 8E 92 CE DC 2F 8A C8 D2 85 B6 09 0F B2 98 67 61 AA 
+Received 1 packets (total:3)
+
+----- LoRa packet -----
+  count_us: 1303326124
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x4CD5
+FD 93 66 4A C7 FE 4F C3 40 E3 F4 E9 9B E2 6A 0C A8 58 25 49 E2 C4 27 54 AD 61 3D AE 16 EF 38 26 63 37 41 F8 4A 9A 64 35 EA 14 20 92 8B 7D 42 9B 27 E4 68 9A 74 41 02 69 D5 51 8E 93 D4 FF 19 03 85 DD 3F E9 B4 DC 4C 6C 01 72 6E 84 7F CB 92 ED 19 AA 0D 30 BE D0 03 79 B6 4A BE DA FF F0 4C 19 C3 D6 9F 1C E8 47 FB BF 0F 4A 5A 86 92 98 C3 8E 92 CE DC 2F 8A C8 D2 85 B6 09 0F B2 98 67 61 AA 
+Received 1 packets (total:4)
+
+----- LoRa packet -----
+  count_us: 1320116714
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x4CD5
+FD 93 66 4A C7 FE 4F C3 40 E3 F4 E9 9B E2 6A 0C A8 58 25 49 E2 C4 27 54 AD 61 3D AE 16 EF 38 26 63 37 41 F8 4A 9A 64 35 EA 14 20 92 8B 7D 42 9B 27 E4 68 9A 74 41 02 69 D5 51 8E 93 D4 FF 19 03 85 DD 3F E9 B4 DC 4C 6C 01 72 6E 84 7F CB 92 ED 19 AA 0D 30 BE D0 03 79 B6 4A BE DA FF F0 4C 19 C3 D6 9F 1C E8 47 FB BF 0F 4A 5A 86 92 98 C3 8E 92 CE DC 2F 8A C8 D2 85 B6 09 0F B2 98 67 61 AA 
+Received 1 packets (total:5)
+
+----- LoRa packet -----
+  count_us: 1337033769
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x4CD5
+FD 93 66 4A C7 FE 4F C3 40 E3 F4 E9 9B E2 6A 0C A8 58 25 49 E2 C4 27 54 AD 61 3D AE 16 EF 38 26 63 37 41 F8 4A 9A 64 35 EA 14 20 92 8B 7D 42 9B 27 E4 68 9A 74 41 02 69 D5 51 8E 93 D4 FF 19 03 85 DD 3F E9 B4 DC 4C 6C 01 72 6E 84 7F CB 92 ED 19 AA 0D 30 BE D0 03 79 B6 4A BE DA FF F0 4C 19 C3 D6 9F 1C E8 47 FB BF 0F 4A 5A 86 92 98 C3 8E 92 CE DC 2F 8A C8 D2 85 B6 09 0F B2 98 67 61 AA 
+Received 1 packets (total:6)
+
+----- LoRa packet -----
+  count_us: 1353806780
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x4CD5
+FD 93 66 4A C7 FE 4F C3 40 E3 F4 E9 9B E2 6A 0C A8 58 25 49 E2 C4 27 54 AD 61 3D AE 16 EF 38 26 63 37 41 F8 4A 9A 64 35 EA 14 20 92 8B 7D 42 9B 27 E4 68 9A 74 41 02 69 D5 51 8E 93 D4 FF 19 03 85 DD 3F E9 B4 DC 4C 6C 01 72 6E 84 7F CB 92 ED 19 AA 0D 30 BE D0 03 79 B6 4A BE DA FF F0 4C 19 C3 D6 9F 1C E8 47 FB BF 0F 4A 5A 86 92 98 C3 8E 92 CE DC 2F 8A C8 D2 85 B6 09 0F B2 98 67 61 AA 
+Received 1 packets (total:7)
+
+Closing SPI communication interface
+[rak_gpio] stop: holder released, lines latched (HAT stays powered)
+=========== Test End ===========
+2026-10-05T02:15:11Z --- listener exit rc=124 (124 = window span complete) ---
