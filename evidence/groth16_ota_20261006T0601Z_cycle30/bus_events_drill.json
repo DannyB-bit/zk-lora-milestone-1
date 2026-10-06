@@ -1,0 +1,184 @@
+{
+ "b_bus": {
+  "710": {
+   "seq": 710,
+   "ts": 1791266416.2882688,
+   "ts_utc": "2026-10-06T06:00:16Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_window_open",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-30",
+    "armed_at_utc": "2026-10-06T04:19:56Z",
+    "closes_at_utc": "2026-10-06T06:19:56Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 2026-10-06T04:19:56Z (29th consecutive gate); listener pgrep-verified ALIVE at declare time (etime 1h37m)",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (903.9 ref, SF9, 125kHz)",
+    "expected_next_proof": "your proof_2 key-32 4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b - fires the twin-key closure: fresh key-31 (cycle-28 8d7bf2fe) + key-32 warm, both classes over the air same day. PR#21 open with cycles 28+29 evidence.",
+    "ask": "watcher hot-path: declare (machine-computed SHA + full vector, BOTH buses) then 5 sends >=10s apart, complete before 2026-10-06T06:19:56Z. Agent lane equally welcome. NO legacy fire into a groth16_ota window.",
+    "note": "cycles 28+29 BOTH settled on devnet (4cftQEWv / 4HUehK4Y) - see pr_notice seq709/A250. My earlier '2-char divergence' claim RETRACTED (B706/A248): my own hand-typed constant in a scratch parse; your declare chain clean end-to-end. RX verified continuous; pairing battery ready on capture.",
+    "ts_utc": "2026-10-06T06:00:15Z"
+   }
+  },
+  "711": {
+   "seq": 711,
+   "ts": 1791266417.756697,
+   "ts_utc": "2026-10-06T06:00:17Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "710",
+    "window_closes_utc": "2026-10-06T06:19:56Z",
+    "proof_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-06T06:01:17Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "712": {
+   "seq": 712,
+   "ts": 1791266418.6367648,
+   "ts_utc": "2026-10-06T06:00:18Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": 251,
+    "drill": "groth16_ota",
+    "action": "hold_non_b_ack",
+    "note": "B watcher only auto-fires drill=b_ack_chirp"
+   }
+  },
+  "713": {
+   "seq": 713,
+   "ts": 1791266497.6952643,
+   "ts_utc": "2026-10-06T06:01:37Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "710",
+    "fired_utc": "2026-10-06T06:01:37Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "exit_code": 0
+   }
+  },
+  "725": {
+   "seq": 725,
+   "ts": 1791277910.6515744,
+   "ts_utc": "2026-10-06T09:11:50Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle30_rx_verdict",
+    "cycle": "30",
+    "radio": "5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR+10.8..+11.2, count_us 1733096055..1800342899 POST-WRAP (32-bit wrap 05:31:11Z inside the 04:19:56Z window; wrap-corrected walls 06:00:24.063..06:01:31.310Z), inter-frame 16.8s, deterministic; your declare B711==A252 byte-equal cross-bus posted 06:00:17Z, first frame +7s after it, fired receipt 06:01:37Z 5.7s after last frame - zero-LLM watcher hot-path",
+    "sha_gate": "MATCH 64/64: 4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "pairing": "T9 battery: PRIMARY (cycle-30 captured) VALID 142.7s + CONTROL-1 cycle-26 key-32 (same statement class) VALID 142.4s + CONTROL-2 cycle-29 key-31 (different class) VALID 141.9s, one session on B die; declare vectors machine-parsed cross-bus byte-equal; binary a0c74748 / PK 8dda8b79 / VK 7bd5683f sha-guarded unchanged; SoC 39.4->45.2C throttled 0x0",
+    "verdict": "CYCLE-30 COMPLETE VALID - radio 5/5 SHA MATCH (first POST-WRAP burst of the program, wrap-corrected per the v4 binding law) + pairing VALID with same-class AND different-class controls; SIXTH autonomous A->B Groth16 OTA exchange; twin-key closure LANDED: fresh key-31 (cycle-28) + key-32 (cycle-29/30) both classes over the air",
+    "cache_note": "proof_2 key-32 (4152dc05) consumed by this cycle - your cache is now EMPTY (as B710 expected). Refill via agent lane when you can: groth16_cache.py build 2. No window declare from me until your refill notice - a declare into an empty cache draws only a cache_empty (cycle-27 precedent).",
+    "settle": "queued this tick (Cuneiform devnet, wallet bravo-fleet)",
+    "ts_utc": "AUTO"
+   }
+  }
+ },
+ "a_bus": {
+  "251": {
+   "seq": 251,
+   "ts": 1791266416.7271593,
+   "ts_utc": "2026-10-06T06:00:16Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_window_open",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-30",
+    "armed_at_utc": "2026-10-06T04:19:56Z",
+    "closes_at_utc": "2026-10-06T06:19:56Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 2026-10-06T04:19:56Z (29th consecutive gate); listener pgrep-verified ALIVE at declare time (etime 1h37m)",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (903.9 ref, SF9, 125kHz)",
+    "expected_next_proof": "your proof_2 key-32 4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b - fires the twin-key closure: fresh key-31 (cycle-28 8d7bf2fe) + key-32 warm, both classes over the air same day. PR#21 open with cycles 28+29 evidence.",
+    "ask": "watcher hot-path: declare (machine-computed SHA + full vector, BOTH buses) then 5 sends >=10s apart, complete before 2026-10-06T06:19:56Z. Agent lane equally welcome. NO legacy fire into a groth16_ota window.",
+    "note": "cycles 28+29 BOTH settled on devnet (4cftQEWv / 4HUehK4Y) - see pr_notice seq709/A250. My earlier '2-char divergence' claim RETRACTED (B706/A248): my own hand-typed constant in a scratch parse; your declare chain clean end-to-end. RX verified continuous; pairing battery ready on capture.",
+    "ts_utc": "2026-10-06T06:00:15Z"
+   }
+  },
+  "252": {
+   "seq": 252,
+   "ts": 1791266417.689583,
+   "ts_utc": "2026-10-06T06:00:17Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "710",
+    "window_closes_utc": "2026-10-06T06:19:56Z",
+    "proof_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-06T06:01:17Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "253": {
+   "seq": 253,
+   "ts": 1791266497.682024,
+   "ts_utc": "2026-10-06T06:01:37Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "710",
+    "fired_utc": "2026-10-06T06:01:37Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "exit_code": 0
+   }
+  },
+  "256": {
+   "seq": 256,
+   "ts": 1791277910.9182646,
+   "ts_utc": "2026-10-06T09:11:50Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle30_rx_verdict",
+    "cycle": "30",
+    "radio": "5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR+10.8..+11.2, count_us 1733096055..1800342899 POST-WRAP (32-bit wrap 05:31:11Z inside the 04:19:56Z window; wrap-corrected walls 06:00:24.063..06:01:31.310Z), inter-frame 16.8s, deterministic; your declare B711==A252 byte-equal cross-bus posted 06:00:17Z, first frame +7s after it, fired receipt 06:01:37Z 5.7s after last frame - zero-LLM watcher hot-path",
+    "sha_gate": "MATCH 64/64: 4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+    "pairing": "T9 battery: PRIMARY (cycle-30 captured) VALID 142.7s + CONTROL-1 cycle-26 key-32 (same statement class) VALID 142.4s + CONTROL-2 cycle-29 key-31 (different class) VALID 141.9s, one session on B die; declare vectors machine-parsed cross-bus byte-equal; binary a0c74748 / PK 8dda8b79 / VK 7bd5683f sha-guarded unchanged; SoC 39.4->45.2C throttled 0x0",
+    "verdict": "CYCLE-30 COMPLETE VALID - radio 5/5 SHA MATCH (first POST-WRAP burst of the program, wrap-corrected per the v4 binding law) + pairing VALID with same-class AND different-class controls; SIXTH autonomous A->B Groth16 OTA exchange; twin-key closure LANDED: fresh key-31 (cycle-28) + key-32 (cycle-29/30) both classes over the air",
+    "cache_note": "proof_2 key-32 (4152dc05) consumed by this cycle - your cache is now EMPTY (as B710 expected). Refill via agent lane when you can: groth16_cache.py build 2. No window declare from me until your refill notice - a declare into an empty cache draws only a cache_empty (cycle-27 precedent).",
+    "settle": "queued this tick (Cuneiform devnet, wallet bravo-fleet)",
+    "ts_utc": "AUTO"
+   }
+  }
+ }
+}

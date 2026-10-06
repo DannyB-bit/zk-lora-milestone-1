@@ -1,0 +1,94 @@
+{
+  "generated_utc": "2026-10-06T12:39:33Z",
+  "purpose": "Per-drill capture log slices - executes Researcher A's PR#18 review improvement request (pullrequestreview-5424810725): 'commit per-drill capture slices so one drill's raw log holds only its own frames - removes the multi-payload cross-check every reviewer currently repeats'",
+  "master_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261003T180951Z.log",
+  "master_log_sha256": "445b32ba75ab1f89fd4bbe392bcbc4c684e8ac2fe0f9c34d9399161afd8b7d7e",
+  "master_log_lines_total": 7548,
+  "session": {
+    "gate_pass_utc": "2026-10-06T04:19:56Z",
+    "window": "04:19:56Z->06:19:56Z (cycle-30 certified window, 29th consecutive gate PASS)"
+  },
+  "slices": {
+    "capture_slice_cycle30_burst_frames.txt": {
+      "master_log_lines_1idx": [
+        6463,
+        6556
+      ],
+      "line_count": 94,
+      "sha256": "3c4f1d3b40672c3c0eb3e6356d25fa071c4c897d423d2aa211d80aac194f12f8",
+      "frames_crc_ok": [
+        {
+          "count_us": "1733096055",
+          "freq_hz": "903900000",
+          "snr_avg": "10.8"
+        },
+        {
+          "count_us": "1750003042",
+          "freq_hz": "903900000",
+          "snr_avg": "11.0"
+        },
+        {
+          "count_us": "1766778602",
+          "freq_hz": "903900000",
+          "snr_avg": "11.2"
+        },
+        {
+          "count_us": "1783557242",
+          "freq_hz": "903900000",
+          "snr_avg": "11.0"
+        },
+        {
+          "count_us": "1800342899",
+          "freq_hz": "903900000",
+          "snr_avg": "11.2"
+        }
+      ],
+      "rf_ghost_disclosed": {
+        "count_us": "1733096055",
+        "status": "0x11",
+        "freq_hz": "904300000",
+        "snr_avg": "-8.5",
+        "note": "adjacent-channel ghost of frame 1, HAL emitted both under one 'Received 2 packets' - CRC-gated out, disclosed class (ZYM2 precedent)"
+      },
+      "claim": "THE 5 cycle-30 post-wrap proof frames PR#22 claims + the disclosed ghost"
+    },
+    "capture_slice_cycle29_burst_in_segment.txt": {
+      "master_log_lines_1idx": [
+        6255,
+        6333
+      ],
+      "line_count": 79,
+      "sha256": "f35d1ee0dc6d0fbff19fe568b0eafff2994b69344569030a1010d0dc6d7f985f",
+      "frames_crc_ok": [
+        {
+          "count_us": "1278484711",
+          "freq_hz": "903900000",
+          "snr_avg": "11.0"
+        },
+        {
+          "count_us": "1295222650",
+          "freq_hz": "903900000",
+          "snr_avg": "11.0"
+        },
+        {
+          "count_us": "1312009354",
+          "freq_hz": "903900000",
+          "snr_avg": "10.8"
+        },
+        {
+          "count_us": "1328906705",
+          "freq_hz": "903900000",
+          "snr_avg": "11.2"
+        },
+        {
+          "count_us": "1345694264",
+          "freq_hz": "903900000",
+          "snr_avg": "11.2"
+        }
+      ],
+      "claim": "cycle-29's 5 pre-wrap proof frames captured in the SAME session 79 min earlier - claimed by PR#21, NOT by PR#22; sliced so reviewers never manually re-attribute them"
+    }
+  },
+  "ambient_23b_in_session_excluded": 13,
+  "attribution_method": "line ranges + frame fields machine-derived from the master log (header-to-header block parse); zero hand-typed line numbers"
+}

@@ -1,0 +1,6 @@
+cycle-30 RX frames (session 04:19:56Z->06:19:56Z, POST-WRAP): captured 5x CRC-OK 128B, all SHA == declared 4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b
+count_us=1733096055 freq_hz=903900000 sf=9 snr=10.8 status=0x10 (wrap-corrected wall = 04:19:56Z + 1733096055/1e6 + 4294.967296 s)
+count_us=1750003042 freq_hz=903900000 sf=9 snr=11.0 status=0x10 (wrap-corrected wall = 04:19:56Z + 1750003042/1e6 + 4294.967296 s)
+count_us=1766778602 freq_hz=903900000 sf=9 snr=11.2 status=0x10 (wrap-corrected wall = 04:19:56Z + 1766778602/1e6 + 4294.967296 s)
+count_us=1783557242 freq_hz=903900000 sf=9 snr=11.0 status=0x10 (wrap-corrected wall = 04:19:56Z + 1783557242/1e6 + 4294.967296 s)
+count_us=1800342899 freq_hz=903900000 sf=9 snr=11.2 status=0x10 (wrap-corrected wall = 04:19:56Z + 1800342899/1e6 + 4294.967296 s)
