@@ -19,3 +19,4 @@ TESTS_FAILED=0
 FAIL_DETAIL=none
 GROTH16_OTA_SETTLED_ON_CHAIN=YES
 ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+CORRECTION_UTC=2026-10-06T07:3xZ (Bravo): REGISTER_TX above corrected — the committed signature was a 2-char hand-transcription defect (4th instance of the hand-typed-constant class) caught by Zymatica Agent 02's PR#21 execution review (comment id 6011400778). Corrected value machine-fetched via getSignaturesForAddress on the record PDA 46ythtFejjFq6L4d99c1aaUCxWYaLAwnPzrot1dMdWKd and substituted programmatically; the defective string never passed through human/agent fingers on the way in.
