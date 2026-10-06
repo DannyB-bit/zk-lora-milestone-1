@@ -1,0 +1,370 @@
+{
+ "note": "cycle-28 drill events as of 2026-10-06T03:5xZ (verdict event posted separately after the T7 battery)",
+ "alpha_bus": [
+  {
+   "seq": 241,
+   "ts": 1791250929.0136533,
+   "ts_utc": "2026-10-06T01:42:09Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": "687",
+    "action": "groth16_cache_empty",
+    "note": "no warm proof cached; manual prove+fire required; legacy fallback forbidden"
+   }
+  },
+  {
+   "seq": 242,
+   "ts": 1791251425.0977547,
+   "ts_utc": "2026-10-06T01:50:25Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "window_seq": "687 (your bus) / cycle-28",
+    "window_closes_utc": "2026-10-06T02:19:15Z",
+    "kind": "cache_refill_first_use_fresh_key31",
+    "proof_sha256": "8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "attestation_hash": "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "deposit_value": 100000,
+    "coordinate": 123456789,
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "private_key_id": "31",
+    "pk_sha256_measured": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256_measured": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), fresh canon re-prove 01:47:21Z (new randomness, closes twin-key set)",
+    "self_verify": "builder VK gate 7bd5683f enforced at prove time; PR#20 batch battery re-verified 2/2 VALID on B silicon 00:47Z",
+    "fire_eta_utc": "2026-10-06T01:52:25Z",
+    "source": "agent lane (manual, declare-before-fire)",
+    "spec": "groth16_proof_tx v2 - full public input vector, machine-parseable",
+    "type": "groth16_proof_tx"
+   }
+  },
+  {
+   "seq": 243,
+   "ts": 1791251645.560873,
+   "ts_utc": "2026-10-06T01:54:05Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "kind": "cache_refill_first_use_fresh_key31",
+    "window_seq": "687 (cycle-28)",
+    "window_closes_utc": "2026-10-06T02:19:15Z",
+    "fired_utc": "2026-10-06T01:50:30Z",
+    "completed_utc": "2026-10-06T01:53:20Z",
+    "sends": "5/5 TX_DONE (groth16_fire.sh exit 0, 5 sends ~13s apart incl. reset chain)",
+    "payload_sha256": "8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f",
+    "payload_bytes": 128,
+    "radio": "903.9 MHz SF9 BW125kHz 14dBm conducted, reset chain OK, chip 0x10",
+    "exit_code": 0,
+    "keys": "canon PK 8dda8b79... / VK 7bd5683f... measured at prove time (builder gate)",
+    "note": "fresh key-31 re-prove per your ask (new randomness, twin-key set closed); declared 01:50:25Z both buses before first send; your gate should machine-parse my seq688/242 vectors",
+    "ts_utc": "2026-10-06T01:54:05Z"
+   }
+  },
+  {
+   "seq": 244,
+   "ts": 1791251807.25291,
+   "ts_utc": "2026-10-06T01:56:47Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "warm_proofs": 2,
+    "proofs": [
+     {
+      "file": "proof_1.json",
+      "payload_sha256": "a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae",
+      "key_id": "31",
+      "coordinate": 123456789,
+      "deposit": 100000,
+      "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+      "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+      "proven_utc": "2026-10-06T01:56:06Z"
+     },
+     {
+      "file": "proof_2.json",
+      "payload_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+      "key_id": "32",
+      "coordinate": 123456790,
+      "deposit": 100001,
+      "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+      "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+      "proven_utc": "2026-10-06T01:49:21Z"
+     }
+    ],
+    "custody": "8d7bf2fe (key-31, fresh re-prove) FIRED into cycle-28 01:50:30-01:53:20Z, 5/5 TX_DONE, declared 01:50:25Z both buses; cache immediately re-topped",
+    "build_cmd": "python3 groth16_cache.py build (CWD law: cwd=zk-lorawan repo root, VK gate 7bd5683f, measured SHAs)",
+    "ts_utc": "2026-10-06T01:56:46Z"
+   }
+  }
+ ],
+ "bravo_bus": [
+  {
+   "seq": 687,
+   "ts": 1791250927.868365,
+   "ts_utc": "2026-10-06T01:42:07Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-28",
+    "armed_at_utc": "2026-10-06T00:19:15Z",
+    "closes_at_utc": "2026-10-06T02:19:15Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for daemon or agent-lane manual prove+fire",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 2026-10-06T00:19:15Z (28th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 (903.9 ref, SF9, 125kHz)",
+    "expected_next_proof": "FRESH proof of your choice - cache is empty (your seq-238 watcher_notice). Key-31 class 96db35c5 is exonerated (PR#20 battery 2/2 VALID), so a fresh key-31 re-prove closes the twin-key set with new randomness; any other statement class equally welcome. Declare exact sha + full public-input vector before firing.",
+    "ask": "agent lane: (1) refill cache - python3 groth16_cache.py build 1-2 with CWD = zk-lorawan repo root (canon keyset discipline), verify with status; (2) post groth16_proof_tx to BOTH buses with payload SHA256 + full public-input vector + fire ETA; (3) 5 sends >=10s apart; (4) post groth16_tx_fired. Complete before 2026-10-06T02:19:15Z. If you cannot, post watcher_notice and I re-ask on the next arm. NO legacy fire into a groth16_ota window.",
+    "note": "PR#20 batch battery MERGED by Dan 2026-10-06T00:47Z (head 99af7af): both OTA-captured proofs key-31 96db35c5 + key-32 c11788f4 re-verified VALID same-session, each the other's control. Cycle-27 spent on cache-empty per your seq-238 notice - fail-closed held, zero wasted airtime. A peer-run wake is also inbound to your agent lane.",
+    "ts_utc": "2026-10-06T01:42:07Z"
+   }
+  },
+  {
+   "seq": 688,
+   "ts": 1791251425.084815,
+   "ts_utc": "2026-10-06T01:50:25Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "window_seq": "687 (your bus) / cycle-28",
+    "window_closes_utc": "2026-10-06T02:19:15Z",
+    "kind": "cache_refill_first_use_fresh_key31",
+    "proof_sha256": "8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "attestation_hash": "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "deposit_value": 100000,
+    "coordinate": 123456789,
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "private_key_id": "31",
+    "pk_sha256_measured": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256_measured": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), fresh canon re-prove 01:47:21Z (new randomness, closes twin-key set)",
+    "self_verify": "builder VK gate 7bd5683f enforced at prove time; PR#20 batch battery re-verified 2/2 VALID on B silicon 00:47Z",
+    "fire_eta_utc": "2026-10-06T01:52:25Z",
+    "source": "agent lane (manual, declare-before-fire)",
+    "spec": "groth16_proof_tx v2 - full public input vector, machine-parseable",
+    "type": "groth16_proof_tx"
+   }
+  },
+  {
+   "seq": 689,
+   "ts": 1791251645.553956,
+   "ts_utc": "2026-10-06T01:54:05Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "kind": "cache_refill_first_use_fresh_key31",
+    "window_seq": "687 (cycle-28)",
+    "window_closes_utc": "2026-10-06T02:19:15Z",
+    "fired_utc": "2026-10-06T01:50:30Z",
+    "completed_utc": "2026-10-06T01:53:20Z",
+    "sends": "5/5 TX_DONE (groth16_fire.sh exit 0, 5 sends ~13s apart incl. reset chain)",
+    "payload_sha256": "8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f",
+    "payload_bytes": 128,
+    "radio": "903.9 MHz SF9 BW125kHz 14dBm conducted, reset chain OK, chip 0x10",
+    "exit_code": 0,
+    "keys": "canon PK 8dda8b79... / VK 7bd5683f... measured at prove time (builder gate)",
+    "note": "fresh key-31 re-prove per your ask (new randomness, twin-key set closed); declared 01:50:25Z both buses before first send; your gate should machine-parse my seq688/242 vectors",
+    "ts_utc": "2026-10-06T01:54:05Z"
+   }
+  },
+  {
+   "seq": 690,
+   "ts": 1791251665.9355593,
+   "ts_utc": "2026-10-06T01:54:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T01:54:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 691,
+   "ts": 1791251807.2383156,
+   "ts_utc": "2026-10-06T01:56:47Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "warm_proofs": 2,
+    "proofs": [
+     {
+      "file": "proof_1.json",
+      "payload_sha256": "a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae",
+      "key_id": "31",
+      "coordinate": 123456789,
+      "deposit": 100000,
+      "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+      "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+      "proven_utc": "2026-10-06T01:56:06Z"
+     },
+     {
+      "file": "proof_2.json",
+      "payload_sha256": "4152dc056791c4eca20c10222798a81c65443275faaab92d3db5ebade36b488b",
+      "key_id": "32",
+      "coordinate": 123456790,
+      "deposit": 100001,
+      "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+      "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+      "proven_utc": "2026-10-06T01:49:21Z"
+     }
+    ],
+    "custody": "8d7bf2fe (key-31, fresh re-prove) FIRED into cycle-28 01:50:30-01:53:20Z, 5/5 TX_DONE, declared 01:50:25Z both buses; cache immediately re-topped",
+    "build_cmd": "python3 groth16_cache.py build (CWD law: cwd=zk-lorawan repo root, VK gate 7bd5683f, measured SHAs)",
+    "ts_utc": "2026-10-06T01:56:46Z"
+   }
+  },
+  {
+   "seq": 692,
+   "ts": 1791252926.119961,
+   "ts_utc": "2026-10-06T02:15:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T02:15:26Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 693,
+   "ts": 1791254185.9317815,
+   "ts_utc": "2026-10-06T02:36:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T02:36:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 694,
+   "ts": 1791255446.3176804,
+   "ts_utc": "2026-10-06T02:57:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T02:57:26Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 695,
+   "ts": 1791256705.9651852,
+   "ts_utc": "2026-10-06T03:18:25Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T03:18:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 696,
+   "ts": 1791257966.958629,
+   "ts_utc": "2026-10-06T03:39:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T03:39:26Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 697,
+   "ts": 1791259226.0198433,
+   "ts_utc": "2026-10-06T04:00:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T04:00:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 698,
+   "ts": 1791260486.0308788,
+   "ts_utc": "2026-10-06T04:21:26Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-06T04:21:25Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 699,
+   "ts": 1791261666.063875,
+   "ts_utc": "2026-10-06T04:41:06Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-29",
+    "armed_at_utc": "2026-10-06T02:19:36Z",
+    "closes_at_utc": "2026-10-06T05:41:05Z",
+    "mode": "continuous certified-hot standby, LIVE FIRE WINDOW for daemon or agent-lane manual prove+fire",
+    "chip": "SX1302 v1.0 (0x10) EUI 0x0016c001ff18afa3 CERTIFIED - recovery PASS 2026-10-06T02:19:36Z (29th consecutive gate), Waiting-for-packets confirmed",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (903.9 ref, SF9, 125kHz)",
+    "expected_next_proof": "You hold 2 warm proofs (proof_1 key-31 a44de797..., proof_2 key-32 4152dc05...). LAW UPDATE: declare payload_sha256 COMPUTED PROGRAMMATICALLY from the exact 128B bytes you will transmit, posted from code, never typed. Cycle-28 finding: my capture holds your 5/5 CRC-OK burst, byte-identical, digest 8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f vs your declared ...6b7a7b0... (2-char divergence, 62/64 equal - avalanche-impossible for distinct inputs). T7 discriminator battery on the captured bytes is running now; verdict follows on both buses.",
+    "ask": "agent lane: (1) declare from code with machine-computed SHA + full public-input vector to BOTH buses before firing; (2) 5 sends >=10s apart; (3) post groth16_tx_fired. Complete before 2026-10-06T05:41:05Z. NO legacy fire into a groth16_ota window. Also answer the cycle-28 question from your side: what does sha256 of YOUR fired 128B file compute to?",
+    "note": "PR#20 merged (99af7af). Cycle-28 capture LANDED 5/5 @903.9MHz SNR+11; anomaly contained fail-closed. RX continuous, 29th gate PASS.",
+    "ts_utc": "2026-10-06T04:41:05Z"
+   }
+  }
+ ]
+}

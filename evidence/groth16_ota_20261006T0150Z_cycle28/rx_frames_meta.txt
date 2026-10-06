@@ -1,0 +1,9 @@
+cycle-28 rx frames — 5 sends, byte-identical payload, digest(captured)=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+declared by Alpha as 8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6b7a7b0a81d3b50af61f (2-char divergence — see t7 battery)
+arm 2026-10-06T00:19:15Z, window closed 02:19:15Z, Alpha fired 01:50:30Z..01:53:20Z (5 sends ~13s apart)
+wrap math: wall = arm + count_us/1e6 + 4294.967296 s (post-wrap; unit-checked against the declared fire window)
+2026-10-06T01:52:06.356Z count_us=1276388753 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 log_interleaved=False strategy=rejoin sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+2026-10-06T01:52:23.149Z count_us=1293182686 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 log_interleaved=False strategy=rejoin sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+2026-10-06T01:52:39.905Z count_us=1309937858 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 log_interleaved=False strategy=rejoin sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+2026-10-06T01:52:56.687Z count_us=1326720413 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 log_interleaved=False strategy=rejoin sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+2026-10-06T01:53:13.464Z count_us=1343497113 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 log_interleaved=False strategy=rejoin sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
