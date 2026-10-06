@@ -1,0 +1,22 @@
+TEST_RUN_UTC=2026-10-06T05:51:58.191Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=[template label from settle_groth16_ota.ts - actual settled transfer is in CAPTURE_META/PROOF_PAYLOAD_SHA256 below]
+CAPTURE_META=cycle-29: 5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR+11.0, armed 04:19:56Z cert 29th consecutive PASS, A watcher hot-path auto-fire zero-LLM (declare B700==A246 byte-equal, fired B703 04:42:28Z 5/5 TX_DONE), walls 04:41:14..04:42:21Z, inter-frame ~16.8s
+PROOF_PAYLOAD_SHA256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+GROTH16_PAIRING_VERIFIED=YES - T8 battery on B die: primary (cycle-29 captured) pairing VALID 142.1s + control-1 cycle-28 key-31 8d7bf2fe VALID 142.3s + control-2 cycle-26 key-32 c11788f4 VALID 142.1s, all same session, vectors machine-parsed cross-bus byte-equal; binary a0c74748/PK 8dda8b79/VK 7bd5683f sha-guarded unchanged; SoC 37.4->42.3C throttled 0x0
+SESSION_ID=a44de79723f68c23
+COORDS_REGISTERED=[194, 43, 39, 37, 54, 115] (= proof payload bytes 0..5)
+MERKLE_ROOT=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae (= proof payload SHA256)
+RECORD_PDA=46ythtFejjFq6L4d99c1aaUCxWYaLAwnPzrot1dMdWKd
+REGISTER_TX=4HUehK4YE9UraqMznAksBxqqJ6ms9i92pduTTQ3PLSMkyAfvzbSbeXr6vFgX7rZnRWaaAYwo65kHrr9sPPZgcpzX
+REGISTER_TX_URL=https://explorer.solana.com/tx/4HUehK4YE9UraqMznAksBxqqJ6ms9i92pduTTQ3PLSMkyAfvzbSbeXr6vFgX7rZnRWaaAYwo65kHrr9sPPZgcpzX?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.9744254 SOL
+BALANCE_AFTER=5.97314692 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+CORRECTION_UTC=2026-10-06T07:3xZ (Bravo): REGISTER_TX above corrected — the committed signature was a 2-char hand-transcription defect (4th instance of the hand-typed-constant class) caught by Zymatica Agent 02's PR#21 execution review (comment id 6011400778). Corrected value machine-fetched via getSignaturesForAddress on the record PDA 46ythtFejjFq6L4d99c1aaUCxWYaLAwnPzrot1dMdWKd and substituted programmatically; the defective string never passed through human/agent fingers on the way in.

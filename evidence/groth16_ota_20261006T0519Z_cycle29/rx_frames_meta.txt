@@ -1,0 +1,8 @@
+cycle-29 rx frames — 5 sends, deterministic, digest a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+arm 2026-10-06T04:19:56Z (29th consecutive gate PASS), Alpha watcher hot-path fired (declare B700==A246, fired B703), zero LLM
+walls use listener-lstart origin (ps lstart, local-time tz-corrected); fired_utc 04:42:28Z is Alpha's completion stamp
+2026-10-06T04:41:14.484Z count_us=1278484711 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 sha256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+2026-10-06T04:41:31.222Z count_us=1295222650 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.0 rssi_chan=198.0 sha256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+2026-10-06T04:41:48.009Z count_us=1312009354 size=128B status=0x10 freq_hz=903900000 datr=9 snr=10.8 rssi_chan=198.0 sha256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+2026-10-06T04:42:04.906Z count_us=1328906705 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.2 rssi_chan=198.0 sha256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+2026-10-06T04:42:21.694Z count_us=1345694264 size=128B status=0x10 freq_hz=903900000 datr=9 snr=11.2 rssi_chan=198.0 sha256=a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae

@@ -1,0 +1,23 @@
+T7_CYCLE28_BATTERY_V2_RUN_UTC=2026-10-06T05:01:54Z
+mode: discriminator battery v2 — burst bound to Alpha's declared fire-execution window
+v1 lesson: burst selection by most-common-payload mis-targeted the Oct-4 phantom 3b9b6d2e; quarantined as t7_battery_v1_wrongtarget.log, no verdict issued from it
+law: zero hand-typed constants; all fields machine-parsed + cross-bus byte-diffed
+SILICON measure_temp=temp=38.9'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+ARM-STAMP verified in guard log: 2026-10-06T00:19:15Z + LORA_CHIRP_RECOVERY_PASS
+DECLARE located: A seq242 == B seq688 (byte-equal); key=31 deposit=100000 coordinate=123456789 window_closes=2026-10-06T02:19:15Z
+DECLARE payload_sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+FIRED-WINDOW fired=2026-10-06T01:50:30+00:00 completed=2026-10-06T01:53:20+00:00 (machine-parsed from A seq243)
+SESSION-SEGMENT guard log lines 5542..5826 (arm banner -> listener exit), 284 lines
+SESSION-FRAMES crc_ok frames whose count_us appears in the cycle-28 segment: 13
+BURST bound to fired window: 5 frames, count_us 1276388753..1343497113, inter_frame_s=[16.8, 16.8, 16.8, 16.8], SNR 11.0, status 0x10
+CAPTURED 128B digest(computed)=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+SHA-DIFF vs declare: 0 positions differ []
+SHA-DIFF detail: computed=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+                   declared=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+NO DIVERGENCE — declare matches captured bytes exactly
+PRIMARY cycle-28 captured 8d7bf2fe: verdict=VALID exit=0 wall_s=142.0 stdout='VALID'
+CONTROL cycle-26 c11788f4: verdict=VALID exit=0 wall_s=142.0 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=44.3'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROL VALID — the cycle-28 airwave bytes ARE a genuine Groth16 proof for key-31/coordinate 123456789/deposit 100000; declared SHA string carries a transcription defect at digest positions [] (declare-chain, hand-typed-constant class); radio verdict: 5/5 CRC-OK capture of the true proof; settle deferred until Alpha confirms the canonical SHA from his fired bytes

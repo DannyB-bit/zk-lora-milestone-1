@@ -1,0 +1,18 @@
+T8_CYCLE29_BATTERY_RUN_UTC=2026-10-06T05:35:23Z
+mode: primary = cycle-29 captured burst; control = cycle-28 captured proof (different statement class)
+law: zero hand-typed constants (including throwaway analysis); session-bounded + window-bounded burst binding
+SILICON measure_temp=temp=37.4'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+DECLARE cross-bus byte-diff: public_input_hashes=EQ, gateway_address_hex=EQ, firmware_hash_hex=EQ, deposit_value=EQ, private_key_id=EQ, deposit_commitment=EQ, proof_sha256=EQ (watcher-path declare carries no 'coordinate' field — informational only, not verify-consumed)
+DECLARE located: A seq246 == B seq700 (byte-equal); key=31 deposit=100000 source=watcher_hot_path (no LLM turn) construction=A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache
+SESSION-SEGMENT arm=2026-10-06T04:19:56+00:00 guard log lines 6198..6413
+LISTENER-ORIGIN lstart=2026-10-06T04:19:56+00:00 (count_us origin; banner+0s)
+BURST: 5 frames, count_us 1278484711..1345694264, inter_frame_s=[16.7, 16.8, 16.9, 16.8], SNR 11.0, status 0x10
+BURST walls (lstart origin): 04:41:14.484Z..04:42:21.694Z vs your fired_utc=04:42:28Z (completion stamp; first send precedes it by up to ~5x17s)
+SHA GATE: digest(captured)==declare 64/64: a44de79723f68c23c6a8e0b26a2547ebfc57252b6a3b7c3408e3fe2fedac9cae
+PRIMARY cycle-29 captured a44de797: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+CONTROL-1 cycle-28 (key-31) 8d7bf2fe: verdict=VALID exit=0 wall_s=142.3 stdout='VALID'
+CONTROL-2 cycle-26 (key-32) c11788f4: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=42.3'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-29 A->B exchange COMPLETE: radio 5/5 SHA MATCH + pairing VALID on B die, watcher hot-path (no LLM), primary key-31 fresh proof with same-class + different-class controls both VALID; settle queued (Cuneiform devnet)

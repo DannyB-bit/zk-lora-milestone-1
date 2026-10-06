@@ -1,0 +1,17 @@
+T7_CYCLE28_BATTERY_RUN_UTC=2026-10-06T04:41:01Z
+mode: discriminator battery — captured-bytes pairing vs declared-SHA divergence
+law: zero hand-typed constants; all fields machine-parsed + cross-bus byte-diffed
+SILICON measure_temp=temp=39.9'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+BURST frames=5 count_us=3541122909..3608206815 inter_frame_s=[16.8, 16.7, 16.8, 16.8] snr=11.0 status=0x10 crc_field_present
+CAPTURED 128B digest(computed)=3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776
+DECLARE located: A seq242 == B seq688 (byte-equal, all fields); key=31 deposit=100000 coordinate=123456789
+DECLARE payload_sha256=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+SHA-DIFF positions=[0, 1, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 45, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 63] computed=3b9b6d2e2041eb9657737e3de7d1597594bf01fcc84f6492fba9378c2864f776 declared=8d7bf2fe46a9576a0da7bcdc2e0f6de8d87f804fbfce6c9a7b0a81d3b50af61f
+SHA-DIFF chars: pos0:declared'8'!=computed'3' pos1:declared'd'!=computed'b' pos2:declared'7'!=computed'9' pos4:declared'f'!=computed'6' pos5:declared'2'!=computed'd' pos6:declared'f'!=computed'2' pos8:declared'4'!=computed'2' pos9:declared'6'!=computed'0' pos10:declared'a'!=computed'4' pos11:declared'9'!=computed'1' pos12:declared'5'!=computed'e' pos13:declared'7'!=computed'b' pos14:declared'6'!=computed'9' pos15:declared'a'!=computed'6' pos16:declared'0'!=computed'5' pos17:declared'd'!=computed'7' pos18:declared'a'!=computed'7' pos19:declared'7'!=computed'3' pos20:declared'b'!=computed'7' pos21:declared'c'!=computed'e' pos22:declared'd'!=computed'3' pos23:declared'c'!=computed'd' pos24:declared'2'!=computed'e' pos25:declared'e'!=computed'7' pos26:declared'0'!=computed'd' pos27:declared'f'!=computed'1' pos28:declared'6'!=computed'5' pos29:declared'd'!=computed'9' pos30:declared'e'!=computed'7' pos31:declared'8'!=computed'5' pos32:declared'd'!=computed'9' pos33:declared'8'!=computed'4' pos34:declared'7'!=computed'b' pos36:declared'8'!=computed'0' pos37:declared'0'!=computed'1' pos38:declared'4'!=computed'f' pos39:declared'f'!=computed'c' pos40:declared'b'!=computed'c' pos41:declared'f'!=computed'8' pos42:declared'c'!=computed'4' pos43:declared'e'!=computed'f' pos45:declared'c'!=computed'4' pos47:declared'a'!=computed'2' pos48:declared'7'!=computed'f' pos50:declared'0'!=computed'a' pos51:declared'a'!=computed'9' pos52:declared'8'!=computed'3' pos53:declared'1'!=computed'7' pos54:declared'd'!=computed'8' pos55:declared'3'!=computed'c' pos56:declared'b'!=computed'2' pos57:declared'5'!=computed'8' pos58:declared'0'!=computed'6' pos59:declared'a'!=computed'4' pos61:declared'6'!=computed'7' pos62:declared'1'!=computed'7' pos63:declared'f'!=computed'6'
+AVALANCHE LAW: digests of two distinct 128B inputs cannot agree on 62/64 chars => the declared string was not computed from the captured bytes
+PRIMARY cycle-28 captured 3b9b6d2e: verdict=INVALID exit=1 wall_s=142.1 stdout='INVALID'
+CONTROL cycle-26 c11788f4: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=44.3'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY INVALID + CONTROL VALID — captured bytes corrupted on air (inside a curve point), cycle-28 capture FAILS: no settle; disclosed; re-fire ask

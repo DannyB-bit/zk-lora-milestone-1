@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/evidence/groth16_ota_20261006T0150Z_cycle28/t7_cycle28_battery_v2.py", line 162, in <module>
+    assert len(burst) == 5, f"expected 5 frames inside the fired window, found {len(burst)}"
+           ^^^^^^^^^^^^^^^
+AssertionError: expected 5 frames inside the fired window, found 12
