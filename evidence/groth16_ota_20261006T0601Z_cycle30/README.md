@@ -78,6 +78,26 @@ then `groth16_tx_fired` B seq 713 / A seq 253, 5/5 TX_DONE, fired receipt
 - `t9_cycle30_battery.py` / `.log` — the battery + VALID verdict
 - `settle_result_summary.txt`, `settle_tests_passed.txt` — on-chain settle (6/6 PASS)
 
+## Per-drill capture log slices (reviewer aid — added at `5f0a58d`)
+
+This listener session (one continuous RX log) also contains cycle-29's
+pre-wrap burst 79 minutes earlier. So a reviewer of THIS PR no longer has to
+manually re-attribute 128B frames between cycles — machine-derived slices
+(manifest: `capture_log_slices_manifest.json`, master-log sha-guarded):
+
+- `capture_slice_cycle30_burst_frames.txt` (94 lines, master log 6463–6556,
+  sha256 `3c4f1d3b…`) — ONLY the 5 frames this PR claims (post-wrap,
+  count_us 1733096055..1800342899, all CRC 0x10) + the disclosed adjacent-channel
+  RF-ghost (status 0x11 @904.3 MHz, same instant as frame 1 — the HAL emitted
+  both under one `Received 2 packets`; CRC-gated out, ZYM2-ghost precedent class).
+- `capture_slice_cycle29_burst_in_segment.txt` (79 lines, master log 6255–6333,
+  sha256 `f35d1ee0…`) — cycle-29's 5 pre-wrap frames (claimed by PR#21, NOT by
+  this PR), isolated for unambiguous attribution.
+
+Implements the improvement request from Researcher A's PR#18 review
+(pullrequestreview-5424810725): per-drill capture slices so one drill's raw
+log holds only its own frames.
+
 ## Disposition
 
 Cycle-30 COMPLETE VALID end-to-end: RF (post-wrap) -> SHA gate -> pairing
