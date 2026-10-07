@@ -1,0 +1,100 @@
+--- cycle-37 frame 1 (RF-GHOST 0x11 CRC-BAD (disclosed)) ---
+----- LoRa packet -----
+  count_us: 2370103899
+  size:     128
+  chan:     6
+  status:   0x11
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   904500000
+  snr_avg:  -11.0
+  rssi_chan:140.0
+  rssi_sig :131.0
+  crc:      0x867B
+02 69 3B 71 03 22 6B E2 03 26 34 E7 6B B9 18 4C DD D6 B4 AC A4 05 01 7B 59 03 55 66 3E 5D A8 02 3A EF 57 E0 34 DF B5 8F 5F EA 0E 00 68 B0 24 BE BA 4D FA F5 47 FF 5C 3E C4 4F 8D B4 88 DC D9 03 B8 2F 79 03 E2 FF 88 64 29 28 1C 02 FA CF D6 A3 9D 3A B0 27 A5 BC 36 52 2B 37 48 46 50 3D EE 06 1C 73 29 15 4F 07 DC C3 7A 74 CF D3 4F 45 1C C4 8B D4 F7 6C 14 2D F0 7B EC 90 03 A9 85 88 30 AE 
+
+----- LoRa packet -----
+  count_us: 2370103922
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x841E
+06 69 3B 71 03 22 68 E2 03 26 34 E7 21 B1 18 2C 7D DE B4 AC C7 89 01 7B 59 A6 9D 66 3E 3E 28 02 3A EC D2 E8 34 EF 75 0F 5F EA 5D 00 68 B0 24 DE BA 4D CA 95 87 FF 5C 0E C4 47 8D B4 DB 5C DD 03 88 B5 7D 03 E2 FC 08 68 29 28 5A 4B FA CF BF 23 9F 3A 80 27 29 34 36 42 CB 3F 88 47 90 91 EE 06 2C F9 81 11 4F C7 71 C5 7A 17 A3 13 5F 75 1A D0 89 D4 F7 85 14 2F F0 8D A2 92 33 9F 85 80 B0 9E 
+Received 2 packets (total:11)
+
+--- cycle-37 frame 2 (burst frame sha==e5e0d1b4) ---
+----- LoRa packet -----
+  count_us: 2386886704
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x841E
+06 69 3B 71 03 22 68 E2 03 26 34 E7 21 B1 18 2C 7D DE B4 AC C7 89 01 7B 59 A6 9D 66 3E 3E 28 02 3A EC D2 E8 34 EF 75 0F 5F EA 5D 00 68 B0 24 DE BA 4D CA 95 87 FF 5C 0E C4 47 8D B4 DB 5C DD 03 88 B5 7D 03 E2 FC 08 68 29 28 5A 4B FA CF BF 23 9F 3A 80 27 29 34 36 42 CB 3F 88 47 90 91 EE 06 2C F9 81 11 4F C7 71 C5 7A 17 A3 13 5F 75 1A D0 89 D4 F7 85 14 2F F0 8D A2 92 33 9F 85 80 B0 9E 
+Received 1 packets (total:12)
+
+--- cycle-37 frame 3 (burst frame sha==e5e0d1b4) ---
+----- LoRa packet -----
+  count_us: 2403668807
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x841E
+06 69 3B 71 03 22 68 E2 03 26 34 E7 21 B1 18 2C 7D DE B4 AC C7 89 01 7B 59 A6 9D 66 3E 3E 28 02 3A EC D2 E8 34 EF 75 0F 5F EA 5D 00 68 B0 24 DE BA 4D CA 95 87 FF 5C 0E C4 47 8D B4 DB 5C DD 03 88 B5 7D 03 E2 FC 08 68 29 28 5A 4B FA CF BF 23 9F 3A 80 27 29 34 36 42 CB 3F 88 47 90 91 EE 06 2C F9 81 11 4F C7 71 C5 7A 17 A3 13 5F 75 1A D0 89 D4 F7 85 14 2F F0 8D A2 92 33 9F 85 80 B0 9E 
+Received 1 packets (total:13)
+
+--- cycle-37 frame 4 (burst frame sha==e5e0d1b4) ---
+----- LoRa packet -----
+  count_us: 2420447938
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x841E
+06 69 3B 71 03 22 68 E2 03 26 34 E7 21 B1 18 2C 7D DE B4 AC C7 89 01 7B 59 A6 9D 66 3E 3E 28 02 3A EC D2 E8 34 EF 75 0F 5F EA 5D 00 68 B0 24 DE BA 4D CA 95 87 FF 5C 0E C4 47 8D B4 DB 5C DD 03 88 B5 7D 03 E2 FC 08 68 29 28 5A 4B FA CF BF 23 9F 3A 80 27 29 34 36 42 CB 3F 88 47 90 91 EE 06 2C F9 81 11 4F C7 71 C5 7A 17 A3 13 5F 75 1A D0 89 D4 F7 85 14 2F F0 8D A2 92 33 9F 85 80 B0 9E 
+Received 1 packets (total:14)
+
+--- cycle-37 frame 5 (burst frame sha==e5e0d1b4) ---
+----- LoRa packet -----
+  count_us: 2437232655
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x841E
+06 69 3B 71 03 22 68 E2 03 26 34 E7 21 B1 18 2C 7D DE B4 AC C7 89 01 7B 59 A6 9D 66 3E 3E 28 02 3A EC D2 E8 34 EF 75 0F 5F EA 5D 00 68 B0 24 DE BA 4D CA 95 87 FF 5C 0E C4 47 8D B4 DB 5C DD 03 88 B5 7D 03 E2 FC 08 68 29 28 5A 4B FA CF BF 23 9F 3A 80 27 29 34 36 42 CB 3F 88 47 90 91 EE 06 2C F9 81 11 4F C7 71 C5 7A 17 A3 13 5F 75 1A D0 89 D4 F7 85 14 2F F0 8D A2 92 33 9F 85 80 B0 9E 
+Received 1 packets (total:15)
+
