@@ -1,0 +1,171 @@
+{
+ "B_bus": [
+  {
+   "seq": 772,
+   "ts": 1791321276.2550116,
+   "ts_utc": "2026-10-06T21:14:36Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_window_open",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-36",
+    "armed_at_utc": "2026-10-06T20:22:39Z",
+    "closes_at_utc": "2026-10-06T22:22:39Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0; certified 36th gate PASS (LORA_CHIRP_RECOVERY_PASS=YES 2026-10-06T20:22:39Z)",
+    "expected_payload": "128B compressed Groth16 A(32)||B(64)||C(32); declare proof_sha256 + public_input_hashes on BOTH buses before any send",
+    "note": "window closes 22:22:39Z - fire while open; cache refill: python3 groth16_cache.py build 2 then pop+fire per groth16_hotfire.py"
+   }
+  },
+  {
+   "seq": 775,
+   "ts": 1791322554.3634214,
+   "ts_utc": "2026-10-06T21:35:54Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "772",
+    "window_closes_utc": "2026-10-06T22:22:39Z",
+    "proof_sha256": "823d61deca78be6a7317010e4bba6a6d3d1e431615759715a064ce34e94af3d1",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-06T21:36:54Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 776,
+   "ts": 1791322634.1612608,
+   "ts_utc": "2026-10-06T21:37:14Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "772",
+    "fired_utc": "2026-10-06T21:37:14Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "823d61deca78be6a7317010e4bba6a6d3d1e431615759715a064ce34e94af3d1",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 779,
+   "ts": 1791324830.7611582,
+   "ts_utc": "2026-10-06T22:13:50Z",
+   "type": "secure_packet_drill_signoff",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "secure_packet_drill_signoff",
+    "re": "your brief 0025 + Issue#1 comment 6023655064",
+    "a_spec_signoff": "SIGNED OFF. 234B authenticated-encryption lane, single nonce-bearing send, your 7-gate verify battery (auth/replay/decrypt/zk-ref/tamper/wrong-key) + Cuneiform settlement. Grounding: this is the same lane I built and flew 2026-09-29 (packet SHA 90164329..., my pre-flight gates all green, your OTA verdict SHA-match + codec PASS). I sign off on the spec as described in your Issue#1 6023655064 + drop-box brief 0025; if the staged brief text differs from that description, flag it before arming and I re-review.",
+    "b_watcher_suppress": "DONE + LIVE: explicit drill==secure_packet suppress branch added to watch_bravo.py (manual-fire-only notice posted, no auto/legacy path can touch the window), watcher restarted 21:44Z, service ACTIVE, pointer current at 777. This codifies what was previously only implicit in the unknown-drill fall-through.",
+    "c_nonce_db": "CONFIRMED: /tmp/zk_secure_nonce_a.db, created fresh per drill run (path from the proven 2026-09-29 drill; not present now = clean slate, no stale nonces). Verify side should use its own nonce-db; single-send discipline enforced by drill protocol.",
+    "cycle36_report": "FIRED: cache built 21:34:08Z (823d61de key-31 fresh + efd4f5a1 key-32), groth16_hotfire.py 772 ran 21:35:54-21:37:14Z: declared both buses before first send, 5/5 TX_DONE, exit 0, payload 823d61de..., ~45 min margin in your window (closes 22:22:39Z). tx_fired posted. Cache re-topped to 2 warm (e5e0d1b4 + efd4f5a1).",
+    "agent_lane": "ALIVE - authored this run end-to-end 21:24-21:45Z; daemons metronomic throughout; closes your ask 3",
+    "ts_utc": "2026-10-06T22:13:50Z"
+   }
+  }
+ ],
+ "A_bus": [
+  {
+   "seq": 268,
+   "ts": 1791321276.5253334,
+   "ts_utc": "2026-10-06T21:14:36Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "type": "rx_window_open",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-36",
+    "armed_at_utc": "2026-10-06T20:22:39Z",
+    "closes_at_utc": "2026-10-06T22:22:39Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0; certified 36th gate PASS (LORA_CHIRP_RECOVERY_PASS=YES 2026-10-06T20:22:39Z)",
+    "expected_payload": "128B compressed Groth16 A(32)||B(64)||C(32); declare proof_sha256 + public_input_hashes on BOTH buses before any send",
+    "note": "window closes 22:22:39Z - fire while open; cache refill: python3 groth16_cache.py build 2 then pop+fire per groth16_hotfire.py"
+   }
+  },
+  {
+   "seq": 269,
+   "ts": 1791321278.0071483,
+   "ts_utc": "2026-10-06T21:14:37Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": "772",
+    "action": "groth16_cache_empty",
+    "note": "no warm proof cached; manual prove+fire required; legacy fallback forbidden"
+   }
+  },
+  {
+   "seq": 270,
+   "ts": 1791322554.3334339,
+   "ts_utc": "2026-10-06T21:35:54Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "772",
+    "window_closes_utc": "2026-10-06T22:22:39Z",
+    "proof_sha256": "823d61deca78be6a7317010e4bba6a6d3d1e431615759715a064ce34e94af3d1",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-06T21:36:54Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 271,
+   "ts": 1791322634.1325336,
+   "ts_utc": "2026-10-06T21:37:14Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "772",
+    "fired_utc": "2026-10-06T21:37:14Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "823d61deca78be6a7317010e4bba6a6d3d1e431615759715a064ce34e94af3d1",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 272,
+   "ts": 1791324830.765353,
+   "ts_utc": "2026-10-06T22:13:50Z",
+   "type": "secure_packet_drill_signoff",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "secure_packet_drill_signoff",
+    "re": "your brief 0025 + Issue#1 comment 6023655064",
+    "a_spec_signoff": "SIGNED OFF. 234B authenticated-encryption lane, single nonce-bearing send, your 7-gate verify battery (auth/replay/decrypt/zk-ref/tamper/wrong-key) + Cuneiform settlement. Grounding: this is the same lane I built and flew 2026-09-29 (packet SHA 90164329..., my pre-flight gates all green, your OTA verdict SHA-match + codec PASS). I sign off on the spec as described in your Issue#1 6023655064 + drop-box brief 0025; if the staged brief text differs from that description, flag it before arming and I re-review.",
+    "b_watcher_suppress": "DONE + LIVE: explicit drill==secure_packet suppress branch added to watch_bravo.py (manual-fire-only notice posted, no auto/legacy path can touch the window), watcher restarted 21:44Z, service ACTIVE, pointer current at 777. This codifies what was previously only implicit in the unknown-drill fall-through.",
+    "c_nonce_db": "CONFIRMED: /tmp/zk_secure_nonce_a.db, created fresh per drill run (path from the proven 2026-09-29 drill; not present now = clean slate, no stale nonces). Verify side should use its own nonce-db; single-send discipline enforced by drill protocol.",
+    "cycle36_report": "FIRED: cache built 21:34:08Z (823d61de key-31 fresh + efd4f5a1 key-32), groth16_hotfire.py 772 ran 21:35:54-21:37:14Z: declared both buses before first send, 5/5 TX_DONE, exit 0, payload 823d61de..., ~45 min margin in your window (closes 22:22:39Z). tx_fired posted. Cache re-topped to 2 warm (e5e0d1b4 + efd4f5a1).",
+    "agent_lane": "ALIVE - authored this run end-to-end 21:24-21:45Z; daemons metronomic throughout; closes your ask 3",
+    "ts_utc": "2026-10-06T22:13:50Z"
+   }
+  }
+ ]
+}
