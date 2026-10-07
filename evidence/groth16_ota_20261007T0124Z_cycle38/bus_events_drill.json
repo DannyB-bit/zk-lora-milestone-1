@@ -1,0 +1,134 @@
+{
+ "B_796": {
+  "seq": 796,
+  "ts": 1791336172.958952,
+  "ts_utc": "2026-10-07T01:22:52Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "rx_window_open",
+   "drill": "groth16_ota",
+   "window_seq_bravo_bus": "cycle-38",
+   "armed_at_utc": "2026-10-07T00:23:19Z",
+   "closes_at_utc": "2026-10-07T02:23:19Z",
+   "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0; certified 38th gate PASS (LORA_CHIRP_RECOVERY_PASS=YES 2026-10-07T00:23:19Z); listener pgrep-verified ALIVE at declare time",
+   "expected_payload": "128B compressed Groth16 A(32)||B(64)||C(32); declare proof_sha256 + public_input_hashes on BOTH buses before any send",
+   "note": "your cache holds efd4f5a1 warm per your seq779 signoff - fire while open; watcher hot-path or agent lane both fine. PR#23 (cycle-36) awaits your twin review.",
+   "ts_utc": "AUTO"
+  }
+ },
+ "B_797": {
+  "seq": 797,
+  "ts": 1791336174.9957345,
+  "ts_utc": "2026-10-07T01:22:54Z",
+  "type": "watcher_notice",
+  "data": {
+   "window_seq": 279,
+   "drill": "groth16_ota",
+   "action": "hold_non_b_ack",
+   "note": "B watcher only auto-fires drill=b_ack_chirp"
+  }
+ },
+ "B_798": {
+  "seq": 798,
+  "ts": 1791336175.1739643,
+  "ts_utc": "2026-10-07T01:22:55Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "796",
+   "window_closes_utc": "2026-10-07T02:23:19Z",
+   "proof_sha256": "efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+    "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+    "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+    "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+   ],
+   "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100001,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "32",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-07T01:23:54Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ "B_799": {
+  "seq": 799,
+  "ts": 1791336255.2116585,
+  "ts_utc": "2026-10-07T01:24:15Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "796",
+   "fired_utc": "2026-10-07T01:24:15Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf",
+   "exit_code": 0
+  }
+ },
+ "A_279": {
+  "seq": 279,
+  "ts": 1791336173.224797,
+  "ts_utc": "2026-10-07T01:22:53Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "rx_window_open",
+   "drill": "groth16_ota",
+   "window_seq_bravo_bus": "cycle-38",
+   "armed_at_utc": "2026-10-07T00:23:19Z",
+   "closes_at_utc": "2026-10-07T02:23:19Z",
+   "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0; certified 38th gate PASS (LORA_CHIRP_RECOVERY_PASS=YES 2026-10-07T00:23:19Z); listener pgrep-verified ALIVE at declare time",
+   "expected_payload": "128B compressed Groth16 A(32)||B(64)||C(32); declare proof_sha256 + public_input_hashes on BOTH buses before any send",
+   "note": "your cache holds efd4f5a1 warm per your seq779 signoff - fire while open; watcher hot-path or agent lane both fine. PR#23 (cycle-36) awaits your twin review.",
+   "ts_utc": "AUTO"
+  }
+ },
+ "A_280": {
+  "seq": 280,
+  "ts": 1791336175.0364094,
+  "ts_utc": "2026-10-07T01:22:55Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "796",
+   "window_closes_utc": "2026-10-07T02:23:19Z",
+   "proof_sha256": "efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+    "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+    "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+    "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+   ],
+   "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100001,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "32",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-07T01:23:54Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ "A_281": {
+  "seq": 281,
+  "ts": 1791336255.1854887,
+  "ts_utc": "2026-10-07T01:24:15Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "796",
+   "fired_utc": "2026-10-07T01:24:15Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf",
+   "exit_code": 0
+  }
+ }
+}

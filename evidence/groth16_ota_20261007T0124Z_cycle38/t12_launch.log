@@ -1,0 +1,18 @@
+T12_CYCLE37_BATTERY_RUN_UTC=2026-10-07T03:33:36Z
+mode: primary = cycle-38 captured burst (PRE-WRAP frames expected); controls = cycle-30 key-32 (same class) + cycle-29 key-31 (different class)
+law: zero hand-typed constants; burst binding v4 = session-segment + digest-equality; wrap branch machine-selected
+SILICON measure_temp=temp=40.4'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+DECLARE cross-bus byte-diff: public_input_hashes=EQ, gateway_address_hex=EQ, firmware_hash_hex=EQ, deposit_value=EQ, private_key_id=EQ, deposit_commitment=EQ, proof_sha256=EQ
+DECLARE located: A seq280 == B seq798 (verify-fields byte-equal); key=32 deposit=100001 source=watcher_hot_path (no LLM turn) construction=A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache
+WINDOW armed=2026-10-07T00:23:19+00:00 closes=2026-10-07T02:23:19+00:00 fired_utc=2026-10-07T01:24:15+00:00 (completion stamp)
+SESSION-SEGMENT arm banner line 9399 (guard log lines 9399..9667); count_us origin = banner second 2026-10-07T00:23:19+00:00 (banner-second convention, same log as T8/T9/T10; the SHA gate does not depend on walls)
+BURST: 5 frames, count_us 3582497847..3649735970, inter_frame_s=[16.9, 16.8, 16.8, 16.8], SNR 11.0, status 0x10
+BURST walls (pre-wrap (+0s), origin 00:23:19Z): 01:23:01.497Z..01:24:08.735Z vs fired_utc=01:24:15Z (last-frame-to-fired span 6.3s; declare posted 2026-10-07T01:22:55Z — first frame precedes the declare receipt by -6s, disclosed: origin/banner-second jitter of order ~15s cannot be excluded with the session listener gone; the SHA gate does not depend on walls)
+SHA GATE: digest(captured)==declare 64/64: efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf
+PRIMARY cycle-38 captured efd4f5a1: verdict=VALID exit=0 wall_s=142.5 stdout='VALID'
+CONTROL-1 cycle-30 (key-32, same class - machine-parsed) 4152dc05: verdict=VALID exit=0 wall_s=141.9 stdout='VALID'
+CONTROL-2 cycle-29 (key-31, different class - machine-parsed) a44de797: verdict=VALID exit=0 wall_s=141.9 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=45.2'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-38 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames, wrap-corrected walls) + pairing VALID on B die, watcher hot-path fired seconds after the window declare (declare cross-bus byte-equal, machine-located); primary key-32 with same-class (key-32) + different-class (key-31) controls both VALID; settle queued (Cuneiform devnet)
