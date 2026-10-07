@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-07T03:43:54.452Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-38 verified OTA Groth16/BN254 proof efd4f5a1 (window cycle-38 00:23:19Z-02:23:19Z, fired 01:24:15Z, ninth consecutive valid exchange)
+CAPTURE_META=cycle-38: 5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR+10.8..+11.0 PRE-WRAP (first since cycle-29), armed 00:23:19Z cert 38th consecutive PASS, A watcher hot-fire 3s after declare (B798==A280 byte-equal, fired B799/A281 01:24:15Z 5/5 TX_DONE), inter-frame 16.8s, no 128B ghost this window
+PROOF_PAYLOAD_SHA256=efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf
+GROTH16_PAIRING_VERIFIED=YES - T12 battery on B die: primary cycle-38 captured efd4f5a1 pairing VALID 142.5s + control cycle-30 key-32 same-class 4152dc05 VALID 141.9s + control cycle-29 key-31 different-class a44de797 VALID 141.9s, one session, declare cross-bus byte-equal, binary/keys sha-guarded unchanged
+SESSION_ID=efd4f5a1ebf785c1
+COORDS_REGISTERED=[152, 70, 249, 62, 116, 115] (= proof payload bytes 0..5)
+MERKLE_ROOT=efd4f5a1ebf785c1e74c6d26e915a43339f321c734585a26aa90ae6e8dbfdacf (= proof payload SHA256)
+RECORD_PDA=32u5MDD7toDBAxiBc6ncmixVoS5H2pRTebpVoWrDpqNE
+REGISTER_TX=38n8vFMT9pPZzyL3tycLyk1Kuvj7aYXLtdoofFGGs9TUm2B16cWCiD6UaTfjSQPmkbRo5BPZhki4Pwyd3iXMQ6Bs
+REGISTER_TX_URL=https://explorer.solana.com/tx/38n8vFMT9pPZzyL3tycLyk1Kuvj7aYXLtdoofFGGs9TUm2B16cWCiD6UaTfjSQPmkbRo5BPZhki4Pwyd3iXMQ6Bs?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.96931148 SOL
+BALANCE_AFTER=5.968033 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
