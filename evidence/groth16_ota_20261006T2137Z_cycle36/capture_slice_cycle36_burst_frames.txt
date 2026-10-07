@@ -1,0 +1,85 @@
+--- cycle-36 burst frame 1 (guard-log session line 200) ---
+----- LoRa packet -----
+  count_us: 107166628
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xB7FF
+89 A8 75 6F 5D FA 59 43 E4 35 93 44 0E E7 7E 22 EB 4D FF B3 EF 9A D9 7D 2D 52 26 FD F1 B2 C2 A4 80 1A 4A 6D 90 F3 7A 27 31 3A AC 53 BD A3 D8 98 15 22 09 DE 70 BB B3 65 D1 FD 4B DA 50 32 B1 09 B4 7D 55 2B B6 04 05 7A F6 F4 F5 89 56 B1 B0 0B CA B5 BF 2F A6 B5 B8 D1 DE F1 8A 51 05 2D 0B 85 D8 DA EA 11 7C 59 69 53 E8 75 C4 EC EF 92 07 B9 B6 38 A8 5C 56 D8 C1 05 CF D1 2F 82 4C C1 1D A7 
+Received 1 packets (total:9)
+
+--- cycle-36 burst frame 2 (guard-log session line 232) ---
+----- LoRa packet -----
+  count_us: 123964620
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xB7FF
+89 A8 75 6F 5D FA 59 43 E4 35 93 44 0E E7 7E 22 EB 4D FF B3 EF 9A D9 7D 2D 52 26 FD F1 B2 C2 A4 80 1A 4A 6D 90 F3 7A 27 31 3A AC 53 BD A3 D8 98 15 22 09 DE 70 BB B3 65 D1 FD 4B DA 50 32 B1 09 B4 7D 55 2B B6 04 05 7A F6 F4 F5 89 56 B1 B0 0B CA B5 BF 2F A6 B5 B8 D1 DE F1 8A 51 05 2D 0B 85 D8 DA EA 11 7C 59 69 53 E8 75 C4 EC EF 92 07 B9 B6 38 A8 5C 56 D8 C1 05 CF D1 2F 82 4C C1 1D A7 
+Received 1 packets (total:11)
+
+--- cycle-36 burst frame 3 (guard-log session line 248) ---
+----- LoRa packet -----
+  count_us: 140747631
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xB7FF
+89 A8 75 6F 5D FA 59 43 E4 35 93 44 0E E7 7E 22 EB 4D FF B3 EF 9A D9 7D 2D 52 26 FD F1 B2 C2 A4 80 1A 4A 6D 90 F3 7A 27 31 3A AC 53 BD A3 D8 98 15 22 09 DE 70 BB B3 65 D1 FD 4B DA 50 32 B1 09 B4 7D 55 2B B6 04 05 7A F6 F4 F5 89 56 B1 B0 0B CA B5 BF 2F A6 B5 B8 D1 DE F1 8A 51 05 2D 0B 85 D8 DA EA 11 7C 59 69 53 E8 75 C4 EC EF 92 07 B9 B6 38 A8 5C 56 D8 C1 05 CF D1 2F 82 4C C1 1D A7 
+Received 1 packets (total:12)
+
+--- cycle-36 burst frame 4 (guard-log session line 264) ---
+----- LoRa packet -----
+  count_us: 157531552
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xB7FF
+89 A8 75 6F 5D FA 59 43 E4 35 93 44 0E E7 7E 22 EB 4D FF B3 EF 9A D9 7D 2D 52 26 FD F1 B2 C2 A4 80 1A 4A 6D 90 F3 7A 27 31 3A AC 53 BD A3 D8 98 15 22 09 DE 70 BB B3 65 D1 FD 4B DA 50 32 B1 09 B4 7D 55 2B B6 04 05 7A F6 F4 F5 89 56 B1 B0 0B CA B5 BF 2F A6 B5 B8 D1 DE F1 8A 51 05 2D 0B 85 D8 DA EA 11 7C 59 69 53 E8 75 C4 EC EF 92 07 B9 B6 38 A8 5C 56 D8 C1 05 CF D1 2F 82 4C C1 1D A7 
+Received 1 packets (total:13)
+
+--- cycle-36 burst frame 5 (guard-log session line 280) ---
+----- LoRa packet -----
+  count_us: 174318406
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0xB7FF
+89 A8 75 6F 5D FA 59 43 E4 35 93 44 0E E7 7E 22 EB 4D FF B3 EF 9A D9 7D 2D 52 26 FD F1 B2 C2 A4 80 1A 4A 6D 90 F3 7A 27 31 3A AC 53 BD A3 D8 98 15 22 09 DE 70 BB B3 65 D1 FD 4B DA 50 32 B1 09 B4 7D 55 2B B6 04 05 7A F6 F4 F5 89 56 B1 B0 0B CA B5 BF 2F A6 B5 B8 D1 DE F1 8A 51 05 2D 0B 85 D8 DA EA 11 7C 59 69 53 E8 75 C4 EC EF 92 07 B9 B6 38 A8 5C 56 D8 C1 05 CF D1 2F 82 4C C1 1D A7 
+Received 1 packets (total:14)
+
