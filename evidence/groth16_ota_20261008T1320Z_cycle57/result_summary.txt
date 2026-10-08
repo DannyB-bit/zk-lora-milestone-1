@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-08T16:28:50.581Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-57 verified OTA Groth16/BN254 proof 61e2499e (window 13:20:26Z-15:20:26Z, fired 15:05:46Z, TENTH consecutive valid exchange, first after the 29.4h outage + 17-dark-window streak)
+CAPTURE_META=cycle-57: 5/5 CRC-OK 128B @903.9MHz chan3 SF9 SNR+11.5..+11.8 POST-WRAP, armed 13:20:26Z gate#57 PASS, A agent-run hot-fire after 17-dark streak (B861==A297 byte-equal, fired 15:05:46Z 5/5 TX_DONE), inter-frame 16.8s
+PROOF_PAYLOAD_SHA256=61e2499e202dc650e26094b0d24407d15cff00a5346c42b72d5ab40b12b31c25
+GROTH16_PAIRING_VERIFIED=YES - T12 battery on B die (T12_CYCLE57_BATTERY_RUN_UTC=2026-10-08T16:19:29Z): primary key-31 61e2499e pairing VALID 142.1s + control same-class key-31 c37 e5e0d1b4 VALID 142.2s + control diff-class key-32 c38 efd4f5a1 VALID 142.1s, one session, binary/keys sha-guarded unchanged, SoC 43.8->48.7C throttled=0x0
+SESSION_ID=61e2499e202dc650
+COORDS_REGISTERED=[190, 56, 35, 216, 127, 162] (= proof payload bytes 0..5)
+MERKLE_ROOT=61e2499e202dc650e26094b0d24407d15cff00a5346c42b72d5ab40b12b31c25 (= proof payload SHA256)
+RECORD_PDA=HaNq14t9XcwwnZh6sBizhHQjznNHXiW21vGzQwbQ7d4g
+REGISTER_TX=3csUwSrX9d69k9rYRCbEGcXpBaUYx7oWxzMXjxFaCFbpUyfGtEMriGUUEFSwDZddYKR2EbNKKCJyFW2NqRDAXxM1
+REGISTER_TX_URL=https://explorer.solana.com/tx/3csUwSrX9d69k9rYRCbEGcXpBaUYx7oWxzMXjxFaCFbpUyfGtEMriGUUEFSwDZddYKR2EbNKKCJyFW2NqRDAXxM1?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.968033 SOL
+BALANCE_AFTER=5.96675452 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
