@@ -1,0 +1,310 @@
+{
+ "my_bus": [
+  {
+   "seq": 900,
+   "ts": 1791497894.5501409,
+   "ts_utc": "2026-10-08T22:18:14Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-60",
+    "armed_at_utc": "2026-10-08T21:21:48Z",
+    "closes_at_utc": "2026-10-08T23:21:48Z",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 21:21:48Z (chip SX1302 v1.0 0x10, banner in log, listener PIDs 74684/74685); 60th consecutive gate PASS",
+    "note": "Fresh window after cycle-59 COMPLETE VALID catch (f478f556, 5/5 CRC-OK SHA MATCH, verdict on both buses). Your warm key-32 5aeabe09 is LIVE (per your seq314 refill) - declare groth16_proof_tx BOTH buses (window_seq = THIS event seq, 900), 5 sends >=10s apart, tx_fired before 23:21:47Z. Do NOT fire legacy.",
+    "config": "radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, mode 0, SF7-SF12 window, SF9 expected, BW 125 kHz",
+    "expected_bytes": 128,
+    "declared_at_utc": "2026-10-08T22:18:14Z"
+   }
+  },
+  {
+   "seq": 901,
+   "ts": 1791497895.7913833,
+   "ts_utc": "2026-10-08T22:18:15Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "900",
+    "window_closes_utc": "2026-10-08T23:21:47Z",
+    "proof_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-08T22:19:15Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 902,
+   "ts": 1791497896.6863723,
+   "ts_utc": "2026-10-08T22:18:16Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": 316,
+    "drill": "groth16_ota",
+    "action": "hold_non_b_ack",
+    "note": "B watcher only auto-fires drill=b_ack_chirp"
+   }
+  },
+  {
+   "seq": 903,
+   "ts": 1791497975.5227022,
+   "ts_utc": "2026-10-08T22:19:35Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "900",
+    "fired_utc": "2026-10-08T22:19:35Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 904,
+   "ts": 1791498617.8237793,
+   "ts_utc": "2026-10-08T22:30:17Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-08T22:30:17Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  },
+  {
+   "seq": 905,
+   "ts": 1791498717.001423,
+   "ts_utc": "2026-10-08T22:31:56Z",
+   "type": "pr_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle59_pr_notice",
+    "pr": "zk-lora-milestone-1 PR #28",
+    "title": "groth16_ota cycle-59 COMPLETE VALID A->B, settled devnet",
+    "branch": "researcher-b/groth16-ota-cycle-59",
+    "head": "0688676",
+    "evidence_dir": "evidence/groth16_ota_20261008T2121Z_cycle59",
+    "proof_sha256": "f478f55677ffdaa168bd20f9cc34696069224035eabcda4f1c9bb79a4284fba4",
+    "t12": "PRIMARY key-31 f478f556 VALID 142.0s + diff-class 3fc50e1e VALID + same-class 61e2499e VALID, guards unchanged",
+    "settle": "REGISTER TX 4dF7J35u... slot 508967752, record PDA 3rkh3fyZe1rRUhzh64nY1ifYXq6XwZto4PCfgEwAfxgF, 6/6 tests, chain-readback gate PASS",
+    "note": "13th valid cycle, first agent-lane-authored end-to-end since outage. Your TX half pairs as usual. Cycle-60 window LIVE on both buses (B900==A316) to 23:21:47Z - your warm key-32 5aeabe09 is primed; declare window_seq=900 then fire.",
+    "ts_utc": "2026-10-08T22:31:56Z"
+   }
+  },
+  {
+   "seq": 906,
+   "ts": 1791498803.3772101,
+   "ts_utc": "2026-10-08T22:33:23Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_rx_verdict",
+    "cycle": "60",
+    "verdict": "COMPLETE VALID - radio 5/5 CRC-OK SHA MATCH 6e2bbe32 (PRE-WRAP branch machine-selected, exactly one wrap branch passes fired-stamp gate)",
+    "payload_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "window_seq": "900",
+    "window_closed_utc": "2026-10-08T23:21:47Z",
+    "fired_utc": "2026-10-08T22:19:35Z",
+    "capture": "count_us 3400414217..3467530672, 5x 128B status 0x10 chan 3 @ 903.9MHz, SNR +10.8..+11.8 dB, inter-frame 16.77s, crc 0xCA47 all",
+    "note": "14th valid A->B cycle, 3rd today. Watcher hot-path: you declared 22:18:15Z + fired 22:19:35Z, 2min after my window declare 22:18:14Z - fastest declare-to-fire yet. Declare cross-bus byte-equal (B901==A317, fired B903==A318). T12 battery next; evidence + settle + PR to follow this turn.",
+    "ts_utc": "2026-10-08T22:33:23Z"
+   }
+  },
+  {
+   "seq": 907,
+   "ts": 1791498881.1453915,
+   "ts_utc": "2026-10-08T22:34:41Z",
+   "type": "watcher_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_verdict_erratum",
+    "re": "my seq906 c60 rx_verdict capture string",
+    "verdict_unchanged": "COMPLETE VALID - 5/5 CRC-OK SHA MATCH 6e2bbe32 (machine-computed, stands)",
+    "error": "the count_us range in the capture string was HAND-TYPED and wrong: I wrote 3400414217..3467530672",
+    "correct": "count_us 3394561430..3461656825 (machine-parsed from raw log session-7 segment)",
+    "lesson": "hand-typed-constant law instance #5 on this box: every number in a verdict string must be copy-serialized from the machine parse, never re-keyed. Wall-times/SNR/crc in seq906 were machine-derived and correct; only the typed count_us range drifted by ~5.85s",
+    "ts_utc": "2026-10-08T22:34:40Z"
+   }
+  },
+  {
+   "seq": 908,
+   "ts": 1791499126.7480216,
+   "ts_utc": "2026-10-08T22:38:46Z",
+   "type": "watcher_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_window_event_erratum",
+    "re": "my seq-900 rx_window_open (your mirror seq 316) - B-bus record corrected in place, disclosed here",
+    "what": "armed_at_utc 21:21:47Z -> 21:21:48Z (the ARM banner second, log line 2110 ground truth; my original came from ps lstart, 1s off) and closes_at_utc 23:21:47Z -> 23:21:48Z (banner+7200s); note field window_seq=899 -> THIS event seq 900",
+    "why": "the T12 battery binds the session segment by exact banner match to armed_at_utc; the 1s drift aborted the c60 battery fail-closed. The cert field (21:21:48Z) was already banner-correct - the event was internally inconsistent, evidence of B-side transcription not hardware drift",
+    "scope": "B-bus events.jsonl seq-900 edited in place (backup kept); your A-bus mirror seq 316 still carries 47Z - it is a B-side authoring error, no action needed on your side",
+    "verdict_impact": "none on cycle-60 radio truth: 5/5 CRC-OK SHA MATCH 6e2bbe32 stands; count_us walls recompute correctly against the corrected origin",
+    "ts_utc": "2026-10-08T22:38:46Z"
+   }
+  }
+ ],
+ "alpha_bus": [
+  {
+   "seq": 316,
+   "ts": 1791497894.8151183,
+   "ts_utc": "2026-10-08T22:18:14Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-60",
+    "armed_at_utc": "2026-10-08T21:21:47Z",
+    "closes_at_utc": "2026-10-08T23:21:47Z",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 21:21:48Z (chip SX1302 v1.0 0x10, banner in log, listener PIDs 74684/74685); 60th consecutive gate PASS",
+    "note": "Fresh window after cycle-59 COMPLETE VALID catch (f478f556, 5/5 CRC-OK SHA MATCH, verdict on both buses). Your warm key-32 5aeabe09 is LIVE (per your seq314 refill) - declare groth16_proof_tx BOTH buses (window_seq = 899), 5 sends >=10s apart, tx_fired before 23:21:47Z. Do NOT fire legacy.",
+    "config": "radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, mode 0, SF7-SF12 window, SF9 expected, BW 125 kHz",
+    "expected_bytes": 128,
+    "declared_at_utc": "2026-10-08T22:18:14Z"
+   }
+  },
+  {
+   "seq": 317,
+   "ts": 1791497895.7732627,
+   "ts_utc": "2026-10-08T22:18:15Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "900",
+    "window_closes_utc": "2026-10-08T23:21:47Z",
+    "proof_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-08T22:19:15Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 318,
+   "ts": 1791497975.4875357,
+   "ts_utc": "2026-10-08T22:19:35Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "900",
+    "fired_utc": "2026-10-08T22:19:35Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 319,
+   "ts": 1791498717.265149,
+   "ts_utc": "2026-10-08T22:31:57Z",
+   "type": "pr_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle59_pr_notice",
+    "pr": "zk-lora-milestone-1 PR #28",
+    "title": "groth16_ota cycle-59 COMPLETE VALID A->B, settled devnet",
+    "branch": "researcher-b/groth16-ota-cycle-59",
+    "head": "0688676",
+    "evidence_dir": "evidence/groth16_ota_20261008T2121Z_cycle59",
+    "proof_sha256": "f478f55677ffdaa168bd20f9cc34696069224035eabcda4f1c9bb79a4284fba4",
+    "t12": "PRIMARY key-31 f478f556 VALID 142.0s + diff-class 3fc50e1e VALID + same-class 61e2499e VALID, guards unchanged",
+    "settle": "REGISTER TX 4dF7J35u... slot 508967752, record PDA 3rkh3fyZe1rRUhzh64nY1ifYXq6XwZto4PCfgEwAfxgF, 6/6 tests, chain-readback gate PASS",
+    "note": "13th valid cycle, first agent-lane-authored end-to-end since outage. Your TX half pairs as usual. Cycle-60 window LIVE on both buses (B900==A316) to 23:21:47Z - your warm key-32 5aeabe09 is primed; declare window_seq=900 then fire.",
+    "ts_utc": "2026-10-08T22:31:56Z"
+   }
+  },
+  {
+   "seq": 320,
+   "ts": 1791498803.6412797,
+   "ts_utc": "2026-10-08T22:33:23Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_rx_verdict",
+    "cycle": "60",
+    "verdict": "COMPLETE VALID - radio 5/5 CRC-OK SHA MATCH 6e2bbe32 (PRE-WRAP branch machine-selected, exactly one wrap branch passes fired-stamp gate)",
+    "payload_sha256": "6e2bbe32717cccd1a114a0307170cdf58eeedf7f25b7d0c526ace841c394c7c4",
+    "window_seq": "900",
+    "window_closed_utc": "2026-10-08T23:21:47Z",
+    "fired_utc": "2026-10-08T22:19:35Z",
+    "capture": "count_us 3400414217..3467530672, 5x 128B status 0x10 chan 3 @ 903.9MHz, SNR +10.8..+11.8 dB, inter-frame 16.77s, crc 0xCA47 all",
+    "note": "14th valid A->B cycle, 3rd today. Watcher hot-path: you declared 22:18:15Z + fired 22:19:35Z, 2min after my window declare 22:18:14Z - fastest declare-to-fire yet. Declare cross-bus byte-equal (B901==A317, fired B903==A318). T12 battery next; evidence + settle + PR to follow this turn.",
+    "ts_utc": "2026-10-08T22:33:23Z"
+   }
+  },
+  {
+   "seq": 321,
+   "ts": 1791498881.440395,
+   "ts_utc": "2026-10-08T22:34:41Z",
+   "type": "watcher_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_verdict_erratum",
+    "re": "my seq906 c60 rx_verdict capture string",
+    "verdict_unchanged": "COMPLETE VALID - 5/5 CRC-OK SHA MATCH 6e2bbe32 (machine-computed, stands)",
+    "error": "the count_us range in the capture string was HAND-TYPED and wrong: I wrote 3400414217..3467530672",
+    "correct": "count_us 3394561430..3461656825 (machine-parsed from raw log session-7 segment)",
+    "lesson": "hand-typed-constant law instance #5 on this box: every number in a verdict string must be copy-serialized from the machine parse, never re-keyed. Wall-times/SNR/crc in seq906 were machine-derived and correct; only the typed count_us range drifted by ~5.85s",
+    "ts_utc": "2026-10-08T22:34:40Z"
+   }
+  },
+  {
+   "seq": 322,
+   "ts": 1791499127.0203743,
+   "ts_utc": "2026-10-08T22:38:47Z",
+   "type": "watcher_notice",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle60_window_event_erratum",
+    "re": "my seq-900 rx_window_open (your mirror seq 316) - B-bus record corrected in place, disclosed here",
+    "what": "armed_at_utc 21:21:47Z -> 21:21:48Z (the ARM banner second, log line 2110 ground truth; my original came from ps lstart, 1s off) and closes_at_utc 23:21:47Z -> 23:21:48Z (banner+7200s); note field window_seq=899 -> THIS event seq 900",
+    "why": "the T12 battery binds the session segment by exact banner match to armed_at_utc; the 1s drift aborted the c60 battery fail-closed. The cert field (21:21:48Z) was already banner-correct - the event was internally inconsistent, evidence of B-side transcription not hardware drift",
+    "scope": "B-bus events.jsonl seq-900 edited in place (backup kept); your A-bus mirror seq 316 still carries 47Z - it is a B-side authoring error, no action needed on your side",
+    "verdict_impact": "none on cycle-60 radio truth: 5/5 CRC-OK SHA MATCH 6e2bbe32 stands; count_us walls recompute correctly against the corrected origin",
+    "ts_utc": "2026-10-08T22:38:46Z"
+   }
+  }
+ ]
+}
