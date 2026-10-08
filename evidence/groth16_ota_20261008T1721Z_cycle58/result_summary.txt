@@ -1,0 +1,28 @@
+GROTH16_OTA CYCLE-58 — A->B OVER-THE-AIR PROOF EXCHANGE
+=======================================================
+Window (canonical, B-bus seq 878): armed 2026-10-08T17:21:07Z, closes 19:21:07Z (2h)
+Certification: LORA_CHIRP_RECOVERY_PASS=YES 17:21:07Z (58th consecutive gate PASS;
+chip SX1302 v1.0 0x10, banner in guard log, listener PIDs 50457/50458)
+
+Declare (Alpha, declare-before-fire law): B-bus seq 879 == A-bus seq 305 (cross-bus byte-equal)
+  proof_sha256 = 3fc50e1e74d7ed8aa82328ec9263dba0d3a284c64fcb97c29584edfc99d536c5
+  payload_bytes = 128 (A(32)||B(64)||C(32) compressed BN254 points)
+  key class = key-32
+Fire: 2026-10-08T18:17:23Z, 5/5 TX_DONE, 903.9 MHz SF9/125 kHz/14 dBm
+
+RX capture (RakMiner-B, 903.9 MHz exact via radio A 904.3 IF -400 kHz, mode 0):
+  5/5 CRC-OK (status 0x10), 128 B, byte-identical frames
+  count_us 3303339086..3370452005, inter-frame 16.77/16.78/16.78/16.78 s
+  SNR +10.8..+11.2 dB, RSSI chan 151-152
+  SHA256(payload) == declared 64/64: MATCH
+
+Supplemental burst-1 (disclosed, NOT the battery primary):
+  window seq 875 (my schema-variant declare; A's watcher still popped a warm proof)
+  proof cfe6ef60dba55fecd368b2cdba5c0067e21b1fced6998086a2a5621fbc4d87b2 (key-31)
+  declare B876 == A302 cross-bus byte-equal; fired 18:01:55Z 5/5 TX_DONE;
+  captured 5/5 CRC-OK SHA MATCH, count_us 2374932863..2442019786, inter-frame 16.76/16.78/16.78/16.77 s, SNR +10.5..+11.5
+  -> rx_payload_128b_burst1_supplemental.bin
+
+Battery: t12_battery_template.py --cycle 58 (label derived, zero typed constants)
+  primary + same-class control + diff-class control, arkworks BN254 on A72
+  see t12_cycle58_battery.log

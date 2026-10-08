@@ -1,0 +1,10 @@
+TESTS_PASSED (settle_groth16_ota, devnet, 2026-10-08T18:33Z): 6/6
+- captured proof is 128 bytes
+- captured proof SHA == TX-declared SHA (byte-tied to airwave)
+- register_coordinates TX confirmed (24ZyD8EjaCpwieQu76q1LL59m9dy96zJT24M9tzKik7kPwX9c4wybdXWPYjNZm5SUiHgLFDrfWY8bdPYRpftuoD8)
+- on-chain coords == on-air proof leading bytes
+- on-chain merkle root == proof SHA256
+- treasury fee collected: 100000 lamports (>= 100k)
+Chain readback gate (getSignaturesForAddress on record PDA CoLFiKDDkKMVyK1uyW3Cm7KDKcsfxb4nsWZJJzTnvZEz):
+REGISTER_TX machine-verified on-chain, slot 508908462, err=None.
+T12 battery gate: PRIMARY VALID + CONTROLS VALID (see t12_cycle58_battery.log).
