@@ -20,10 +20,14 @@ cycle end-to-end** (refill 21:06:15–21:10:16Z → declare → fire): key-31 pr
   primary key-31 `f478f556` VALID 142.0 s; diff-class control key-32 c58 `3fc50e1e` VALID 141.9 s;
   same-class control key-31 c57 `61e2499e` VALID 142.4 s; guards unchanged before/after
   (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); SoC 49.1 °C, throttled 0x0
-- **settle (Cuneiform Devnet)**: PENDING this turn — REGISTER TX to be executed after
-  commit; signature + slot + record PDA will be machine-fetched via
-  getSignaturesForAddress and byte-compared before being written anywhere (settle-
-  signature chain-readback gate). This README will be updated with the real values only.
+- **settle (Cuneiform Devnet)**: REGISTER TX
+  `4dF7J35uNjD5KwViMqCDEpEPJnYLrtokyUGKkePUVCHwaSR9Qgrs472H1yxnxdaiCFEss3oWd1vsddX3wyQ1v8e2`
+  slot 508967752, record PDA `3rkh3fyZe1rRUhzh64nY1ifYXq6XwZto4PCfgEwAfxgF`,
+  coords [6, 2, 172, 87, 212, 122] (= proof payload[0:6], byte-confirmed at account offset 56),
+  merkle root = proof SHA256 `f478f556…` (byte-confirmed in account data), 100,000-lamport
+  fee via CPI to treasury, 6/6 settle tests PASS. Chain-readback gate PASS: signature
+  machine-fetched via getSignaturesForAddress on the record PDA and byte-compared
+  (slot 508967752, err=None) BEFORE pasting here.
 - **Window mechanics**: burst landed POST-WRAP inside the window (wrap at 20:33:01.967296Z,
   fired 21:11:44Z); first frame 21:10:30.9Z −73.1 s before the completion stamp, last frame
   −6.0 s — consistent with the fired stamp being a post-5/5 completion stamp.
