@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-09T08:25:55.409Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-65 OTA Groth16 proof c2855891 (window seq963, watcher-hot-path, declare->fire 80 s, fired 08:03:31Z)
+CAPTURE_META=cycle-65 watcher-hot-path burst: 5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +11.0..+12.2 dB, window bus seq 963 (B)/350 (A), declare->fire 80 s, fired 2026-10-09T08:03:31Z, PRE-WRAP branch
+PROOF_PAYLOAD_SHA256=c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce
+GROTH16_PAIRING_VERIFIED=YES - T12 battery 2026-10-09T08:14:51Z: primary key-31 c2855891 VALID 142.2s + diff-class control 5aeabe09 (key-32) VALID + same-class control 6e2bbe32 (key-31) VALID, guards unchanged before/after (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f), SHA GATE 64/64
+SESSION_ID=c285589145895f6e
+COORDS_REGISTERED=[253, 123, 103, 60, 97, 54] (= proof payload bytes 0..5)
+MERKLE_ROOT=c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce (= proof payload SHA256)
+RECORD_PDA=AHfnqA8kZPGX6eNoHks232EoqBf9YVuS3Tc7tgdK8uSL
+REGISTER_TX=uCsTxVyXxtiKuBNwdrADyzioHaigFnJDjEiFBED4pXtew1C6sWz2LQfMzMETamNoNCP9dY5bfpdaRqNWwMT9ibw
+REGISTER_TX_URL=https://explorer.solana.com/tx/uCsTxVyXxtiKuBNwdrADyzioHaigFnJDjEiFBED4pXtew1C6sWz2LQfMzMETamNoNCP9dY5bfpdaRqNWwMT9ibw?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.9616406 SOL
+BALANCE_AFTER=5.96036212 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
