@@ -1,0 +1,17 @@
+{
+ "crc_ok_packets": 5,
+ "expected_sha256": "9b910d69c1cab0f0926ee28fee0232b97b96528dcf1916751945c36d98d676c2",
+ "sha256_match": true,
+ "cycle": 66,
+ "burst_count_us": [
+  654490142,
+  671251990,
+  688059282,
+  704981708,
+  721782971
+ ],
+ "window_b_bus_seq": 983,
+ "declare_a_bus_seq": 360,
+ "fired_utc": "2026-10-09T10:47:32Z",
+ "wrap_branch": "POST-WRAP +4294.967296s"
+}
