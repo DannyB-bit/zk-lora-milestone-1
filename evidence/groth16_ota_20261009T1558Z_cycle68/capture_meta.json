@@ -1,0 +1,46 @@
+{
+ "cycle": 68,
+ "drill": "groth16_ota",
+ "test_run_utc": "2026-10-09T15:26:00Z",
+ "node": "RakMiner-B (Researcher Bravo, Agent 05)",
+ "window_bravo_bus_seq": 1006,
+ "window_alpha_bus_seq": 371,
+ "armed_at_utc": "2026-10-09T13:24:30Z",
+ "closes_at_utc": "2026-10-09T15:24:30Z",
+ "declare": {
+  "alpha_bus_seq": 372,
+  "bravo_bus_seq": 1008,
+  "ts_utc": "2026-10-09T13:56:41Z",
+  "cross_bus_byte_diff": "IDENTICAL (machine-diffed data payloads, sorted keys)"
+ },
+ "fired_utc": "2026-10-09T13:58:00Z",
+ "declare_to_fire_s": 80,
+ "capture": "5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+10.8 dB, count_us 1936930540..2003982295, inter-frame 16.7-16.8s, pre-wrap branch",
+ "payload_sha256": "94dad8d98e558fa52e95e7dda31d4a2aac5337b8ffc270eb63294c8bab99285d",
+ "private_key_id": 31,
+ "deposit_value": 100000,
+ "battery": {
+  "label": "T12_CYCLE68_BATTERY_RUN_UTC",
+  "primary": {
+   "sha": "94dad8d98e558fa52e95e7dda31d4a2aac5337b8ffc270eb63294c8bab99285d",
+   "verdict": "VALID",
+   "wall_s": 142.1
+  },
+  "control_diff_class": {
+   "sha": "6e7681f9e8042241bbe0fa46169ea6ded1409df19818977c4cdd5d233a27a9b2",
+   "key": 32,
+   "cycle": 67,
+   "verdict": "VALID",
+   "wall_s": 141.9
+  },
+  "control_same_class": {
+   "sha": "c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce",
+   "key": 31,
+   "cycle": 65,
+   "verdict": "VALID",
+   "wall_s": 142.3
+  },
+  "guards": "binary a0c74748 / PK 8dda8b79 / VK 7bd5683f unchanged before/after; throttled=0x0; 47.7C",
+  "sha_gate": "64/64"
+ }
+}
