@@ -1,0 +1,10 @@
+{
+ "pda": "GJzUAxmmzczu8832ybYqM735yPfwktXZr9avChzcuhnf",
+ "claimed_register_tx": "qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi",
+ "chain_match": true,
+ "err": null,
+ "slot": 509335451,
+ "blockTime": 1791586300,
+ "confirmationStatus": "finalized",
+ "signature_count_on_pda": 1
+}

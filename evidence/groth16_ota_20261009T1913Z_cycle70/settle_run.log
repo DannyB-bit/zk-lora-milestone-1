@@ -1,0 +1,35 @@
+  captured proof: 128 bytes from c70_extract
+  proof SHA256: c300e5b4adbc7a2fa3130b25b564eafc2f43b2c120ef0e27c8642f9d4b859c48
+  coords (proof payload[0:6]): [0xe2, 0x15, 0x76, 0xfb, 0x32, 0xb5]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.9552482 SOL
+  session_id : c300e5b4adbc7a2f (= proof SHA[0:16] hex)
+  merkleRoot: c300e5b4adbc7a2fa3130b25b564eafc2f43b2c120ef0e27c8642f9d4b859c48 (= captured proof SHA256)
+  record PDA: GJzUAxmmzczu8832ybYqM735yPfwktXZr9avChzcuhnf
+  ✅ REGISTER TX: qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi
+     https://explorer.solana.com/tx/qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi?cluster=devnet
+  on-chain record: coords=[226,21,118,251,50,181] root=c300e5b4adbc7a2f… ts=2026-10-09T22:51:40.000Z
+  treasury delta: 100000 lamports
+  balance after: 5.95396972 SOL
+
+TEST_RUN_UTC=2026-10-09T22:51:41.140Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-70 OTA Groth16 proof c300e5b4 (window seq1040/387, watcher-hot-path, declare->fire 80 s, fired 19:18:28Z, pre-wrap)
+CAPTURE_META=cycle-70 watcher-hot-path burst: 5/5 CRC-OK 128B @ 903.9MHz SF9 chan 3, SNR 10.8..10.5 dB, window bus seq 1040 (B)/387 (A), declare 19:17:08Z -> fired 19:18:28Z = 80s, pre-wrap, listener pid 14193, key-32 deposit=100001, 70th consecutive gate PASS
+PROOF_PAYLOAD_SHA256=c300e5b4adbc7a2fa3130b25b564eafc2f43b2c120ef0e27c8642f9d4b859c48
+GROTH16_PAIRING_VERIFIED=YES - T12 battery 2026-10-09T19:28:41Z: primary key-32 c300e5b4 VALID 142.1s + same-class control 5aeabe09 (key-32, c-61) VALID + diff-class control edac7acc (key-31, c-69) VALID, guards unchanged, SHA GATE 64/64
+SESSION_ID=c300e5b4adbc7a2f
+COORDS_REGISTERED=[226, 21, 118, 251, 50, 181] (= proof payload bytes 0..5)
+MERKLE_ROOT=c300e5b4adbc7a2fa3130b25b564eafc2f43b2c120ef0e27c8642f9d4b859c48 (= proof payload SHA256)
+RECORD_PDA=GJzUAxmmzczu8832ybYqM735yPfwktXZr9avChzcuhnf
+REGISTER_TX=qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi
+REGISTER_TX_URL=https://explorer.solana.com/tx/qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.9552482 SOL
+BALANCE_AFTER=5.95396972 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
