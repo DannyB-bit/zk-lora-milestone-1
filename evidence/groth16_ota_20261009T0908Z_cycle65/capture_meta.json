@@ -1,0 +1,59 @@
+{
+ "cycle": 65,
+ "captured_utc": "2026-10-09T08:03:2xZ",
+ "arm_utc": "2026-10-09T07:23:29Z",
+ "window_closes_utc": "2026-10-09T09:23:29Z",
+ "sha256": "c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce",
+ "payload_bytes": 128,
+ "frames": [
+  {
+   "count_us": 2328428279,
+   "size": 128,
+   "chan": 3,
+   "freq_hz": 903900000,
+   "snr": 11.0,
+   "crc": "0xA344"
+  },
+  {
+   "count_us": 2345211835,
+   "size": 128,
+   "chan": 3,
+   "freq_hz": 903900000,
+   "snr": 12.2,
+   "crc": "0xA344"
+  },
+  {
+   "count_us": 2361977027,
+   "size": 128,
+   "chan": 3,
+   "freq_hz": 903900000,
+   "snr": 11.0,
+   "crc": "0xA344"
+  },
+  {
+   "count_us": 2378743693,
+   "size": 128,
+   "chan": 3,
+   "freq_hz": 903900000,
+   "snr": 11.2,
+   "crc": "0xA344"
+  },
+  {
+   "count_us": 2395525676,
+   "size": 128,
+   "chan": 3,
+   "freq_hz": 903900000,
+   "snr": 11.0,
+   "crc": "0xA344"
+  }
+ ],
+ "inter_frame_s": [
+  16.784,
+  16.765,
+  16.767,
+  16.782
+ ],
+ "wrap_branch": "pre-wrap selected: walls 08:02:17Z-08:03:25Z vs fired_utc 08:03:31Z (watcher posts after 5/5 TX_DONE)",
+ "listener_session": "rx_standby_continuous_20261008T091851Z.log line 3095 onward (13th session)",
+ "radio": "903.9 MHz (radio A 904.3 - IF 400kHz) SF9 BW125kHz chan 3"
+}

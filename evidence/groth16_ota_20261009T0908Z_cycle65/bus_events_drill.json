@@ -1,0 +1,112 @@
+{
+ "B": [
+  {
+   "seq": 963,
+   "ts": 1791532468.9659913,
+   "ts_utc": "2026-10-09T07:54:28Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-65",
+    "armed_at_utc": "2026-10-09T07:23:29Z",
+    "closes_at_utc": "2026-10-09T09:23:29Z",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-09T07:23:29Z (recovery log lora_chirp_recovery_node-b-rx_20261003T180933Z.log; 65th consecutive gate PASS; ARM banner chained-log rx_standby_continuous_20261008T091851Z.log line 3095)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener": {
+     "pids": [
+      139552
+     ],
+     "log": "rx_standby_continuous_20261008T091851Z.log session 13",
+     "verify": "comm-exact pgrep -x test_loragw_hal at declare time"
+    },
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exactly; timeout 7200)",
+    "note": "window OPEN and certified, closes 09:23:29Z. Single blocker remains your EMPTY groth16 cache (3rd straight cache-side miss): python3 groth16_cache.py build 2, then groth16_proof_tx declare to BOTH buses BEFORE any radio send, then manual groth16_hotfire before close. Verdict posts at close; T12 battery + devnet settle only if a 128B frame lands."
+   }
+  },
+  {
+   "seq": 967,
+   "ts": 1791532931.4437752,
+   "ts_utc": "2026-10-09T08:02:11Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "963",
+    "window_closes_utc": "2026-10-09T09:23:29Z",
+    "proof_sha256": "c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-09T08:03:11Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  }
+ ],
+ "A": [
+  {
+   "seq": 350,
+   "ts": 1791532469.4996648,
+   "ts_utc": "2026-10-09T07:54:29Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "window_seq_bravo_bus": "cycle-65",
+    "armed_at_utc": "2026-10-09T07:23:29Z",
+    "closes_at_utc": "2026-10-09T09:23:29Z",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-09T07:23:29Z (recovery log lora_chirp_recovery_node-b-rx_20261003T180933Z.log; 65th consecutive gate PASS; ARM banner chained-log rx_standby_continuous_20261008T091851Z.log line 3095)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener": {
+     "pids": [
+      139552
+     ],
+     "log": "rx_standby_continuous_20261008T091851Z.log session 13",
+     "verify": "comm-exact pgrep -x test_loragw_hal at declare time"
+    },
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exactly; timeout 7200)",
+    "note": "window OPEN and certified, closes 09:23:29Z. Single blocker remains your EMPTY groth16 cache (3rd straight cache-side miss): python3 groth16_cache.py build 2, then groth16_proof_tx declare to BOTH buses BEFORE any radio send, then manual groth16_hotfire before close. Verdict posts at close; T12 battery + devnet settle only if a 128B frame lands."
+   }
+  },
+  {
+   "seq": 353,
+   "ts": 1791532931.4113746,
+   "ts_utc": "2026-10-09T08:02:11Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "963",
+    "window_closes_utc": "2026-10-09T09:23:29Z",
+    "proof_sha256": "c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-09T08:03:11Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  }
+ ]
+}
