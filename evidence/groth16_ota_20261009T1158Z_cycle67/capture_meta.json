@@ -1,0 +1,18 @@
+{
+ "crc_ok_packets": 5,
+ "expected_sha256": "6e7681f9e8042241bbe0fa46169ea6ded1409df19818977c4cdd5d233a27a9b2",
+ "sha256_match": true,
+ "cycle": 67,
+ "window_b_bus_seq": 994,
+ "declare_a_bus_seq": 364,
+ "fired_utc": "2026-10-09T11:59:55Z",
+ "wrap_branch": "pre-wrap",
+ "burst_count_us": [
+  2071856401,
+  2088636992,
+  2105423421,
+  2122208851,
+  2138992152
+ ],
+ "ghost_frame": "1x 128B status 0x11 CRC-bad @ count_us 2071856417 (+16us after frame 1), rejected by CRC gate"
+}
