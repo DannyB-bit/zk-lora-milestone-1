@@ -1,0 +1,58 @@
+{
+ "cycle": 61,
+ "window": {
+  "b_seq": 915,
+  "a_seq": 324,
+  "armed_at_utc": "2026-10-09T01:22:08Z"
+ },
+ "declare": {
+  "b_seq": 916,
+  "a_seq": 325,
+  "data": {
+   "window_seq": "915",
+   "window_closes_utc": "2026-10-09T01:22:08Z",
+   "proof_sha256": "5aeabe0903eedcad2c9dca4dff22a599da0f834bba3e62e25fc73a2bf24afedc",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+    "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+    "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+    "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+   ],
+   "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100001,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "32",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-09T00:19:57Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  },
+  "byte_equal_cross_bus": true
+ },
+ "fired": {
+  "b_seq": 918,
+  "a_seq": 326,
+  "data": {
+   "window_seq": "915",
+   "fired_utc": "2026-10-09T00:20:17Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "5aeabe0903eedcad2c9dca4dff22a599da0f834bba3e62e25fc73a2bf24afedc",
+   "exit_code": 0
+  },
+  "byte_equal_cross_bus": true
+ },
+ "verdict": {
+  "b_seq": 919,
+  "a_seq": 327,
+  "verdict": "COMPLETE VALID - radio 5/5 CRC-OK SHA MATCH 5aeabe09 (PRE-WRAP +0 s machine-selected, exactly one wrap branch passes fired-stamp gate); declare B916==A325 byte-equal, fired B918==A326, declare->fire 80 s (new fleet record, beats c60's 2 min); 5 frames @ 903.9 MHz SF9, count_us 3415875374..3482994399, inter-frame 16.762..16.791 s, SNR 10.5..12.0 dB, burst walls 00:19:03Z..00:20:10Z vs fired 2026-10-09T00:20:17Z",
+  "byte_equal_cross_bus": true
+ },
+ "wrap_branch_selected": "PRE-WRAP +0 s",
+ "burst_walls_utc": [
+  "00:19:03Z",
+  "00:20:10Z"
+ ]
+}
