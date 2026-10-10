@@ -1,0 +1,49 @@
+{
+ "cycle": "77",
+ "drill": "groth16_ota",
+ "window_open_b_seq": 1139,
+ "window_open_ts_utc": "2026-10-10T18:20:42Z",
+ "true_armed_at_utc": "2026-10-10T18:04:49Z",
+ "true_closes_at_utc": "2026-10-10T20:04:49Z",
+ "posted_closes_correction": "B1139 posted closes_at_utc=2026-10-11T00:04:49Z (+4h EDT-skew bug in composer, owned + corrected B1142/A434). Fire completed 18:22:04Z \u2014 INSIDE the true window. All evidence carries close=20:04:49Z.",
+ "declare_b_seq": 1141,
+ "declare_a_seq": 433,
+ "declare_byte_equal_cross_bus": true,
+ "fired_b_seq": 1143,
+ "fired_utc": "2026-10-10T18:22:04Z",
+ "hot_path_declare_to_fire_s": 82,
+ "declare_to_first_frame_s": 9,
+ "proof_payload_sha256": "a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138",
+ "payload_bytes": 128,
+ "private_key_id": "32",
+ "deposit_value": 100001,
+ "frames_captured": 5,
+ "frames_crc_ok": 5,
+ "freq_hz": 903900000,
+ "sf": "SF9",
+ "chan": 3,
+ "snr_db": [
+  11.5,
+  11.0,
+  11.0,
+  11.2,
+  11.8
+ ],
+ "count_us": [
+  962216655,
+  979006952,
+  995782416,
+  1012576431,
+  1029363200
+ ],
+ "inter_frame_gaps_s": [
+  16.79,
+  16.78,
+  16.79,
+  16.79
+ ],
+ "extract_sha256_match": true,
+ "session_slice": "c77_session_slice.log (from GATE PASS ARMING 18:04:49Z to EOF)",
+ "cert": "LORA_CHIRP_RECOVERY_PASS=YES 18:04:49Z, 79th consecutive gate PASS, chip 0x10 v1.0 EUI 0016c001ff18afa3, banner in chained log",
+ "staged_utc": "2026-10-10T18:30:19Z"
+}
