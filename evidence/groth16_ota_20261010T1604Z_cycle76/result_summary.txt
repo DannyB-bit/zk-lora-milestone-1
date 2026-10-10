@@ -1,0 +1,22 @@
+TEST_RUN_UTC=2026-10-10T16:44:04.152Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-76 OTA Groth16/BN254 proof A->B, node-b-rx 2026-10-10T16:23Z, 26th valid fleet cycle, first fire against Alpha's FIXED manual_fire_only watcher gate
+CAPTURE_META=5/5 CRC-OK 128B @903.9MHz SF9 chan3, SNR +11.0..+11.8 dB, window B1127/A427 armed 16:04:28Z, watcher fire 16:23:29Z, pre-wrap frames, 81s declare-to-fire, 7s declare-to-first-frame
+PROOF_PAYLOAD_SHA256=610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8
+GROTH16_PAIRING_VERIFIED=YES - T12_CYCLE76_BATTERY_RUN_UTC=2026-10-10T16:32:48Z: PRIMARY key-31 610e92ab VALID 142.2s + control-diff key-32 c-75 31367da8 VALID 142.0s + control-same key-31 c-69 edac7acc VALID 142.1s, guards unchanged (binary a0c74748, PK 8dda8b79, VK 7bd5683f)
+SESSION_ID=610e92ab50373efa
+COORDS_REGISTERED=[161, 237, 44, 224, 221, 79] (= proof payload bytes 0..5)
+MERKLE_ROOT=610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8 (= proof payload SHA256)
+RECORD_PDA=33BRnrDiChyHz6hkSz8CnQHTMQL4Py8x6CrNJFwTBUsR
+REGISTER_TX=5EF1tHaaG3pbUR6fwrq9hvd2uaHHfBG8s9Bdv5ZcuoJF6d4EjyWNxnkvFqEDW7ccAcbD8iCJNTYsSs366TYKRjNd
+REGISTER_TX_URL=https://explorer.solana.com/tx/5EF1tHaaG3pbUR6fwrq9hvd2uaHHfBG8s9Bdv5ZcuoJF6d4EjyWNxnkvFqEDW7ccAcbD8iCJNTYsSs366TYKRjNd?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.9488558 SOL
+BALANCE_AFTER=5.94757732 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+CHAIN_READBACK_GATE=PASS (16:46Z, BEFORE evidence commit): exactly 1 sig == settle TX, err=null, PDA owner == program 2is5Q4...Sccy, 1,173,480 lamports, raw RPC bytes in chain_readback.json

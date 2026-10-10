@@ -1,0 +1,48 @@
+{
+ "gate_utc": "2026-10-10T16:44:52Z",
+ "record_pda": "33BRnrDiChyHz6hkSz8CnQHTMQL4Py8x6CrNJFwTBUsR",
+ "claimed_register_tx": "5EF1tHaaG3pbUR6fwrq9hvd2uaHHfBG8s9Bdv5ZcuoJF6d4EjyWNxnkvFqEDW7ccAcbD8iCJNTYsSs366TYKRjNd",
+ "gate": "PASS",
+ "checks": {
+  "getSignaturesForAddress_exact_1_match": true,
+  "latest_sig_err_null": true,
+  "pda_owner_is_program": true,
+  "pda_lamports": 1173480
+ },
+ "raw_getSignaturesForAddress": {
+  "jsonrpc": "2.0",
+  "result": [
+   {
+    "blockTime": 1791650643,
+    "confirmationStatus": "finalized",
+    "err": null,
+    "memo": null,
+    "signature": "5EF1tHaaG3pbUR6fwrq9hvd2uaHHfBG8s9Bdv5ZcuoJF6d4EjyWNxnkvFqEDW7ccAcbD8iCJNTYsSs366TYKRjNd",
+    "slot": 509604745,
+    "transactionIndex": 13
+   }
+  ],
+  "id": 1
+ },
+ "raw_getAccountInfo": {
+  "jsonrpc": "2.0",
+  "result": {
+   "context": {
+    "apiVersion": "4.4.0-beta.0",
+    "slot": 509604949
+   },
+   "value": {
+    "data": [
+     "yGn2MBsF5wcA6pKDF24mpks0oupcxMIPdyDnds/lW5cmhpCh1nEyZDYxMGU5MmFiNTAzNzNlZmGh7Szg3U9hDpKrUDc++p1cnwDGJ47+XroI9pzc/dL8zZP3K1d3uFNrymoAAAAA/Q==",
+     "base64"
+    ],
+    "executable": false,
+    "lamports": 1173480,
+    "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+    "rentEpoch": 18446744073709551615,
+    "space": 103
+   }
+  },
+  "id": 1
+ }
+}
