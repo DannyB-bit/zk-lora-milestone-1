@@ -1,0 +1,64 @@
+{
+ "cycle": "76",
+ "drill": "groth16_ota",
+ "node": "bravo (receiver/verifier, RakMiner-B EUI 0016c001ff18afa3)",
+ "tx_node": "alpha (RakMiner-A EUI 0016c001ff1aadc0)",
+ "window": {
+  "armed_at_utc": "2026-10-10T16:04:28Z",
+  "closes_at_utc": "2026-10-10T18:04:28Z",
+  "declared_utc": "2026-10-10T16:22:08Z",
+  "bus_seq_bravo": 1127,
+  "bus_seq_alpha_mirror": 427
+ },
+ "declare": {
+  "bus_seq_bravo": 1129,
+  "bus_seq_alpha": 428,
+  "proof_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+  "private_key_id": "31",
+  "deposit_value": 100000,
+  "payload_bytes": 128,
+  "source": "watcher_hot_path (no LLM turn)",
+  "cross_bus_byte_diff": "7/7 fields EQ"
+ },
+ "fire": {
+  "fired_utc": "2026-10-10T16:23:29Z",
+  "sends": "5/5 TX_DONE",
+  "bus_seq_bravo": 1130,
+  "bus_seq_alpha": 429,
+  "declare_to_first_frame_s": 7,
+  "declare_to_fired_stamps": 81
+ },
+ "capture": {
+  "frames": 5,
+  "crc_ok": 5,
+  "sha_match": "5/5",
+  "expected_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+  "count_us_first": 1068007495,
+  "count_us_last": 1135279919,
+  "wrap_branch": "pre-wrap (+0s) \u2014 machine-asserted exactly one branch passes fired-stamp gate",
+  "snr_avg": "11.0..11.8 dB",
+  "freq_hz": 903900000,
+  "chan": 3,
+  "status": "0x10 (CRC_OK)",
+  "spacing_s": [
+   16.8,
+   16.8,
+   16.9,
+   16.8
+  ]
+ },
+ "listener": {
+  "pids": [
+   66886,
+   66887
+  ],
+  "log": "rx_standby_continuous_20261010T064617Z.log (session of ARM banner line 897)",
+  "arm_banner_line": 897
+ },
+ "cert": {
+  "gate": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T16:04:28Z",
+  "gate_log": "lora_chirp_recovery_node-b-rx_20261010T160418Z.log",
+  "gate_streak": "78th consecutive",
+  "clock": "NTP-locked, ps lstart == banner second, ZERO drift"
+ }
+}
