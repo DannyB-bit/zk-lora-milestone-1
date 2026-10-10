@@ -1,0 +1,38 @@
+{
+ "cycle": 74,
+ "verdict": "COMPLETE VALID A->B",
+ "battery_label": "T12_CYCLE74_BATTERY_RUN_UTC",
+ "primary_proof_sha256": "b0b7dfb1708a6af8cc87d84a26757c55931284ad0754e095e904ae25c2640d3e",
+ "primary_key_id": "31",
+ "wakebrief_proof_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+ "window_bravo_seq": 1107,
+ "declare_bravo_seq": 1109,
+ "fired_bravo_seq": 1110,
+ "verdict_bravo_seq": 1113,
+ "declare_alpha_seq": 417,
+ "fired_alpha_seq": 418,
+ "verdict_alpha_seq": 419,
+ "armed_at_utc": "2026-10-10T12:03:48Z",
+ "fired_utc": "2026-10-10T13:53:07Z",
+ "closes_at_utc": "2026-10-10T14:03:48Z",
+ "wrap_branch": "POST-WRAP +4294.967296s (machine-selected)",
+ "echo_frame_rejected": "546119ef89088758...",
+ "settle": {
+  "session_id": "b0b7dfb1708a6af8",
+  "record_pda": "6qfJMJnSgt7DanLNXZ1A6YAJZRKkHqxS9tUAP5UrTCpG",
+  "register_tx": "3Z4FdWNkCPhkcntwK9vGCJBwkEgLT9KG9ReGgjmaFC76emwQBVGEke6siJeXLAJhhn5M2Lrf3xA7NdzoobfFZiEx",
+  "slot": 509571729,
+  "fee_lamports": 100000,
+  "tests_passed": "6/6",
+  "chain_readback_gate": "PASS (1 sig == settle TX, finalized, err=null)"
+ },
+ "honest_ledger": [
+  "window event B1107 posted retroactively 13:51:46Z (agent turn) ~108 min after arm 12:03:48Z",
+  "wake-brief fire 42116492 at 12:33:31Z per brief text with no window event on bus (Alpha b_ack flagged)",
+  "retroactive window event drew a second watcher fire b0b7dfb1 81s later (manual_fire_only note did not hold)",
+  "first T12 run aborted fail-closed (burst frames still in flight); re-run PASS",
+  "c-73 closed unfired (cache cold); both warm proofs spent this cycle; cache empty again"
+ ],
+ "machine_source": "b_rx_extract.py + t12_battery_template.py + settle_groth16_ota.ts + devnet RPC readback with raw bytes retained pre-commit (this turn)",
+ "generated_utc": "2026-10-10T14:38:08Z"
+}
