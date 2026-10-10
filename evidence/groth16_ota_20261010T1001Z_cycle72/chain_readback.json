@@ -1,0 +1,49 @@
+{
+ "cycle": 72,
+ "pda": "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+ "claimed_register_tx": "3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS",
+ "chain_match": true,
+ "signature_count_on_pda": 1,
+ "err": null,
+ "slot": 509509884,
+ "blockTime": 1791627939,
+ "confirmationStatus": "finalized",
+ "readback_run_utc": "2026-10-10T10:26:01Z",
+ "provenance": "readback executed BEFORE evidence commit this cycle (c-71 P1 lesson): raw RPC responses retained verbatim below, committed in the same push as the settle summary.",
+ "raw_rpc": {
+  "endpoint": "https://api.devnet.solana.com",
+  "getSignaturesForAddress_params": [
+   "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+   {
+    "limit": 10
+   }
+  ],
+  "getSignaturesForAddress_response": {
+   "jsonrpc": "2.0",
+   "result": [
+    {
+     "blockTime": 1791627939,
+     "confirmationStatus": "finalized",
+     "err": null,
+     "memo": null,
+     "signature": "3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS",
+     "slot": 509509884,
+     "transactionIndex": 0
+    }
+   ],
+   "id": 1
+  },
+  "getAccountInfo_findings": {
+   "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+   "owner_is_cuneiform_program": true,
+   "lamports": 1173480,
+   "data_len_bytes": 140,
+   "rpc_context_slot": 509509977
+  },
+  "getSlot_finalized_response": {
+   "jsonrpc": "2.0",
+   "result": 509509977,
+   "id": 3
+  }
+ }
+}

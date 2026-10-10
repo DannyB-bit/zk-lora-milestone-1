@@ -1,0 +1,59 @@
+{
+ "cycle": 72,
+ "generated_utc": "2026-10-10T10:26:30Z",
+ "machine_source": "b_rx_extract.py + t12_battery_template.py + settle_groth16_ota.ts + devnet RPC readback with raw bytes retained pre-commit (this turn)",
+ "drill": "groth16_ota",
+ "window": {
+  "bus_seq_bravo": 1087,
+  "bus_seq_alpha": 408,
+  "armed_at_utc": "2026-10-10T08:03:07Z",
+  "closes_at_utc": "2026-10-10T10:03:07Z"
+ },
+ "declare": {
+  "proof_sha256": "4fe0290901f6901399b137ab1be9cd624811ff89ef5506dad6dcfe981b93d717",
+  "payload_bytes": 128,
+  "key_id": 32,
+  "deposit_value": 100001,
+  "source": "watcher_hot_path (no LLM turn), pre-proven cache (warm since Alpha 19:22Z rebuild)",
+  "cross_bus_byte_equal": true,
+  "declare_utc": "2026-10-10T10:01:37Z"
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "frames_total": 5,
+  "ghost_frames": 0,
+  "freq_hz": 903900000,
+  "chan": 3,
+  "sf": 9,
+  "bw_khz": 125,
+  "snr_db_min_max": "10.5..11.0",
+  "count_us_first_last": "2821416981..2888628517",
+  "inter_frame_s_approx": 16.8,
+  "listener_pid": 11665,
+  "wrap_branch": "POST-WRAP (+4294.967296s; frames landed past the 09:14:47Z SX1302 microsecond-counter wrap, wall ~10:01:48Z..10:02:53Z, machine-selected by t12 battery)",
+  "recovery_gate_pass_streak": 71
+ },
+ "battery": {
+  "label": "T12_CYCLE72_BATTERY_RUN_UTC",
+  "run_utc": "2026-10-10T10:17:19Z",
+  "primary": {"sha": "4fe02909", "verdict": "VALID", "wall_s": 142.1},
+  "control_diff": {"cycle": 71, "sha": "709f3a8a", "key": 31, "verdict": "VALID", "wall_s": 142.0},
+  "control_same": {"cycle": 70, "sha": "c300e5b4", "key": 32, "verdict": "VALID", "wall_s": 142.0}
+ },
+ "settle": {
+  "network": "solana-devnet",
+  "session_id": "4fe0290901f69013",
+  "merkle_root": "4fe0290901f6901399b137ab1be9cd624811ff89ef5506dad6dcfe981b93d717",
+  "coords": [12, 206, 61, 77, 248, 10],
+  "record_pda": "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+  "register_tx": "3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS",
+  "register_tx_slot": 509509884,
+  "fee_lamports": 100000,
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "chain_readback": "PASS — readback executed 2026-10-10T10:26:01Z BEFORE evidence commit (c-71 P1 lesson applied): exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program 2is5Q…Sccy, data 140 B. Raw RPC bytes committed verbatim in chain_readback.json.",
+  "chain_readback_utc": "2026-10-10T10:26:01Z (artifact chain_readback.json, raw bytes included)"
+ },
+ "declare_to_fire_s": 80,
+ "postboot_context": "Same NTP-locked session as c-71 (armed 08:03:07Z). Window declared 10:01:35Z with explicit short-tail warning (~92s remaining); Alpha's watcher declared 2s later and completed 5/5 TX_DONE at 10:02:57Z — 82s declare-to-fire, entirely inside the close. First POST-WRAP capture class in the series; wrap branch machine-selected by the battery tool."
+}

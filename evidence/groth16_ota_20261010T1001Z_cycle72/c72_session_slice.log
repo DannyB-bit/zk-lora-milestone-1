@@ -1,0 +1,152 @@
+
+----- LoRa packet -----
+  count_us: 2821416981
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x3327
+0C CE 3D 4D F8 0A E8 49 86 4E AF FB 2D 18 5E 22 2E 7E 7F 42 D6 0A AB 3B 45 C2 FD 84 3F 6B B9 8A 6F 43 DF E0 90 0B 80 A8 85 B8 65 0D 33 5E 9A 81 9F 3D 22 0A 49 26 36 CE EC 85 7B 33 C3 3E 6E 0F C5 FF A0 D8 DC C9 F5 F9 5F 3C B1 42 D3 C6 CA F2 32 CF 25 A6 43 C9 2D 5C 94 C4 06 EA 06 48 F5 8A D6 3D 1A 31 6E CA BB DD 43 53 54 BD 3A FF 85 10 F7 6A CE D0 8E E6 6B 77 BA F3 4B B8 58 FC 62 89 
+Received 1 packets (total:6)
+
+----- LoRa packet -----
+  count_us: 2838189411
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x3327
+0C CE 3D 4D F8 0A E8 49 86 4E AF FB 2D 18 5E 22 2E 7E 7F 42 D6 0A AB 3B 45 C2 FD 84 3F 6B B9 8A 6F 43 DF E0 90 0B 80 A8 85 B8 65 0D 33 5E 9A 81 9F 3D 22 0A 49 26 36 CE EC 85 7B 33 C3 3E 6E 0F C5 FF A0 D8 DC C9 F5 F9 5F 3C B1 42 D3 C6 CA F2 32 CF 25 A6 43 C9 2D 5C 94 C4 06 EA 06 48 F5 8A D6 3D 1A 31 6E CA BB DD 43 53 54 BD 3A FF 85 10 F7 6A CE D0 8E E6 6B 77 BA F3 4B B8 58 FC 62 89 
+Received 1 packets (total:7)
+
+----- LoRa packet -----
+  count_us: 2854971766
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x3327
+0C CE 3D 4D F8 0A E8 49 86 4E AF FB 2D 18 5E 22 2E 7E 7F 42 D6 0A AB 3B 45 C2 FD 84 3F 6B B9 8A 6F 43 DF E0 90 0B 80 A8 85 B8 65 0D 33 5E 9A 81 9F 3D 22 0A 49 26 36 CE EC 85 7B 33 C3 3E 6E 0F C5 FF A0 D8 DC C9 F5 F9 5F 3C B1 42 D3 C6 CA F2 32 CF 25 A6 43 C9 2D 5C 94 C4 06 EA 06 48 F5 8A D6 3D 1A 31 6E CA BB DD 43 53 54 BD 3A FF 85 10 F7 6A CE D0 8E E6 6B 77 BA F3 4B B8 58 FC 62 89 
+Received 1 packets (total:8)
+
+----- LoRa packet -----
+  count_us: 2871749809
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x3327
+0C CE 3D 4D F8 0A E8 49 86 4E AF FB 2D 18 5E 22 2E 7E 7F 42 D6 0A AB 3B 45 C2 FD 84 3F 6B B9 8A 6F 43 DF E0 90 0B 80 A8 85 B8 65 0D 33 5E 9A 81 9F 3D 22 0A 49 26 36 CE EC 85 7B 33 C3 3E 6E 0F C5 FF A0 D8 DC C9 F5 F9 5F 3C B1 42 D3 C6 CA F2 32 CF 25 A6 43 C9 2D 5C 94 C4 06 EA 06 48 F5 8A D6 3D 1A 31 6E CA BB DD 43 53 54 BD 3A FF 85 10 F7 6A CE D0 8E E6 6B 77 BA F3 4B B8 58 FC 62 89 
+Received 1 packets (total:9)
+
+----- LoRa packet -----
+  count_us: 2888628517
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x3327
+0C CE 3D 4D F8 0A E8 49 86 4E AF FB 2D 18 5E 22 2E 7E 7F 42 D6 0A AB 3B 45 C2 FD 84 3F 6B B9 8A 6F 43 DF E0 90 0B 80 A8 85 B8 65 0D 33 5E 9A 81 9F 3D 22 0A 49 26 36 CE EC 85 7B 33 C3 3E 6E 0F C5 FF A0 D8 DC C9 F5 F9 5F 3C B1 42 D3 C6 CA F2 32 CF 25 A6 43 C9 2D 5C 94 C4 06 EA 06 48 F5 8A D6 3D 1A 31 6E CA BB DD 43 53 54 BD 3A FF 85 10 F7 6A CE D0 8E E6 6B 77 BA F3 4B B8 58 FC 62 89 
+Received 1 packets (total:10)
+
+Nb valid packets received: 10 CRC OK (1)
+Closing SPI communication interface
+[rak_gpio] stop: holder released, lines latched (HAT stays powered)
+=========== Test End ===========
+2026-10-10T10:03:08Z --- listener exit rc=124 (124 = window span complete) ---
+2026-10-10T10:03:18Z --- bus free: running certification gate ---
+2026-10-10T10:03:18Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-10-10T10:03:18Z RECOVERY_LOG=./lora_chirp_recovery_node-b-rx_20261010T100318Z.log
+2026-10-10T10:03:18Z Stopping known gateway services so one process owns the concentrator
+2026-10-10T10:03:18Z RUN: sudo systemctl stop helium-gateway
+2026-10-10T10:03:18Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-10-10T10:03:18Z RUN: sudo systemctl is-active helium-gateway
+2026-10-10T10:03:18Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-10-10T10:03:18Z RUN: sudo systemctl stop packet-forwarder
+2026-10-10T10:03:18Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-10-10T10:03:18Z RUN: sudo systemctl is-active packet-forwarder
+2026-10-10T10:03:18Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-10-10T10:03:18Z RUN: sudo systemctl stop lora_pkt_fwd
+2026-10-10T10:03:18Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-10-10T10:03:18Z RUN: sudo systemctl is-active lora_pkt_fwd
+2026-10-10T10:03:18Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-10-10T10:03:18Z RUN: sudo systemctl stop lora-packet-forwarder
+2026-10-10T10:03:18Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-10-10T10:03:18Z RUN: sudo systemctl is-active lora-packet-forwarder
+2026-10-10T10:03:18Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-10-10T10:03:18Z RUN: sudo systemctl stop sx1302_hal
+2026-10-10T10:03:18Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-10-10T10:03:18Z RUN: sudo systemctl is-active sx1302_hal
+2026-10-10T10:03:18Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-10-10T10:03:18Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-10T10:03:19Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-10T10:03:19Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-10T10:03:19Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-10T10:03:19Z RUN: sudo systemctl stop miner
+2026-10-10T10:03:19Z EXIT[5]: sudo systemctl stop miner
+2026-10-10T10:03:19Z RUN: sudo systemctl is-active miner
+2026-10-10T10:03:19Z EXIT[4]: sudo systemctl is-active miner
+2026-10-10T10:03:19Z Using reset script: /home/researcher-bravo/sx1302_hal/libloragw/reset_lgw.sh
+2026-10-10T10:03:19Z RUN: sudo ./reset_lgw.sh stop
+2026-10-10T10:03:19Z EXIT[0]: sudo ./reset_lgw.sh stop
+2026-10-10T10:03:20Z RUN: sudo ./reset_lgw.sh start
+2026-10-10T10:03:23Z EXIT[0]: sudo ./reset_lgw.sh start
+2026-10-10T10:03:23Z SPI device exists: /dev/spidev0.0
+2026-10-10T10:03:23Z Trying concentrator verification tool: /home/researcher-bravo/sx1302_hal/util_chip_id/chip_id
+2026-10-10T10:03:23Z RUN: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-10T10:03:28Z EXIT[0]: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-10T10:03:28Z LORA_CHIRP_RECOVERY_PASS=YES
+2026-10-10T10:03:28Z LORA_CHIRP_RECOVERY_END role=node-b-rx
+2026-10-10T10:03:28Z GATE PASS: ARMING listener window 2026-10-10T10:03:28Z -> +7200s (HOLD_FIRE — standby only)
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 0
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (29137 on READY)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...
