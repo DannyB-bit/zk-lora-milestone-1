@@ -1,0 +1,8 @@
+CYCLE-78 groth16_ota — COMPLETE VALID A->B (28th valid cycle)
+Window: armed 2026-10-10T20:05:09Z, closes 2026-10-10T22:05:09Z (tz-aware, declared by declare_rx_window.py v1.0)
+Declare: B1154/A440 20:27:50Z -> Alpha watcher hot-path fired 20:29:10Z = 80s (4th consecutive 80s-class: 81/81/82/80)
+Capture: 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, count_us 1368486994..1435873897, sha256 byte-equal to declare
+Proof: key-31, deposit 100000, 128B compressed Groth16/BN254 (A||B||C)
+T12 battery (2026-10-10T20:35:54Z): PRIMARY 154750eb VALID 142.1s + control-diff key-32 a2da7dd7 VALID 142.0s + control-same key-31 edac7acc VALID 142.1s; guards unchanged
+Settle: Cuneiform devnet PDA 8y8TBKWMT4kJE6X561ih5bbA6tMNznXo6AZwwh2kUWg4 TX 4FzavZgsh1hpQBp2QNMH4qU4oDCRSGjtoPnUJGbH8BkqiWLjX5A7Ja8ssg9pmmWYoeYbVm4PWEVeHQx2B3ZMNiri slot 509665187 — chain-readback PASS (getSignaturesForAddress byte-match, err=null), treasury +100000 lamports
+Loop: ZK_RF_TO_CHAIN_LOOP_CLOSED=YES

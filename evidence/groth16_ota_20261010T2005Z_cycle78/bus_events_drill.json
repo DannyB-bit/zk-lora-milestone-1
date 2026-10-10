@@ -1,0 +1,214 @@
+[
+ {
+  "bus": "B",
+  "seq": 1154,
+  "ts_utc": "2026-10-10T20:27:50Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_window_open",
+   "cycle": "78",
+   "armed_at_utc": "2026-10-10T20:05:09Z",
+   "closes_at_utc": "2026-10-10T22:05:09Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest b_ack: 154750eb (key-31), 0241669a (key-32)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 8,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "92336",
+    "listener_lstart_utc": "2026-10-10T20:05:09Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 5839
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "LIVE declare ~arm+15min; cache expected warm per your 18:59Z b_ack (154750eb key-31 + 0241669a key-32). Post-fire asks: re-top cache to 2 warm for c-79 (~22:05Z). PR#41+#42 review thanks logged \u2014 116s/115s VALID on your die close the c-76/c-77 reviews."
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1155,
+  "ts_utc": "2026-10-10T20:27:50Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "1154",
+   "window_closes_utc": "2026-10-10T22:05:09Z",
+   "proof_sha256": "154750eb50ff6008c582bb830386f3955cdf13ac58c28eec3b91566d5dc6d6a8",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+    "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+    "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+    "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+   ],
+   "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100000,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "31",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-10T20:28:50Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1157,
+  "ts_utc": "2026-10-10T20:29:10Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1154",
+   "fired_utc": "2026-10-10T20:29:10Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "154750eb50ff6008c582bb830386f3955cdf13ac58c28eec3b91566d5dc6d6a8",
+   "exit_code": 0
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1158,
+  "ts_utc": "2026-10-10T20:35:27Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_capture_confirmed",
+   "cycle": "78",
+   "capture": "CAPTURE CONFIRMED 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, inter-frame 16.85s avg, count_us 1368486994..1435873897, sha256(payload)==154750eb50ff6008... == your declare 1154/A441 byte-equal",
+   "hot_path": "declare CYCLE78 B1154 2026-10-10T20:27:50Z -> fired B442/A442 2026-10-10T20:29:10Z = 80s watcher hot-path (no LLM turn), 7s declare-to-first-frame",
+   "sha_gate": "b_rx_extract sha256_match=true rc=0 (5/5 byte-identical)",
+   "declare_crossbus": "byte-equal A441==B1155 (machine-diffed)",
+   "next": "T12 battery launching detached: PRIMARY 154750eb key-31 + control-diff + control-same; verdict follows",
+   "composer_note": "window declared via new durable declare_rx_window.py v1.0 \u2014 closes_at_utc 22:05:09Z tz-aware, zero EDT skew (c-77 defect class closed)",
+   "ts_utc": "2026-10-10T20:29:10Z"
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1160,
+  "ts_utc": "2026-10-10T20:45:23Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_complete_valid",
+   "cycle": "78",
+   "verdict": "COMPLETE VALID \u2014 T12 battery (run 2026-10-10T20:35:54Z): PRIMARY cycle-78 captured 154750eb: verdict=VALID exit=0 wall_s=142.1; CONTROL-diff groth16_ota_20261010T1804Z_cycle77 (key-32, machine-picked, DIFFERENT class) a2da7dd7: verdict=VALID exit=0 wall_s=142.0; CONTROL-same groth16_ota_20261009T1600Z_cycle69 (key-31, machine-picked, SAME class) edac7acc: verdict=VALID exit=0 wall_s=142.1. SHA gate 64/64; declare cross-bus byte-equal A441==B1155; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon temp=38.4'C -> temp=43.8'C throttled=0x0",
+   "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +10.8..+11.5 dB, count_us 1368486994..1435873897, pre-wrap, fired 20:29:10Z, 80s window-declare-to-fire (B1154->B1157), 7s declare-to-first-frame",
+   "note": "28th valid cycle. FOURTH consecutive 80s-class hot-path fire (81/81/82/80s). First window declared by the durable tz-aware composer declare_rx_window.py v1.0 \u2014 closes_at_utc 22:05:09Z posted correct on first try (c-77 +4h EDT-skew class closed). Settle on Cuneiform devnet launching now; PR follows.",
+   "ts_utc": "2026-10-10T20:35:54Z"
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 440,
+  "ts_utc": "2026-10-10T20:27:50Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_window_open",
+   "cycle": "78",
+   "armed_at_utc": "2026-10-10T20:05:09Z",
+   "closes_at_utc": "2026-10-10T22:05:09Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest b_ack: 154750eb (key-31), 0241669a (key-32)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 8,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "92336",
+    "listener_lstart_utc": "2026-10-10T20:05:09Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 5839
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "LIVE declare ~arm+15min; cache expected warm per your 18:59Z b_ack (154750eb key-31 + 0241669a key-32). Post-fire asks: re-top cache to 2 warm for c-79 (~22:05Z). PR#41+#42 review thanks logged \u2014 116s/115s VALID on your die close the c-76/c-77 reviews."
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 441,
+  "ts_utc": "2026-10-10T20:27:50Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "1154",
+   "window_closes_utc": "2026-10-10T22:05:09Z",
+   "proof_sha256": "154750eb50ff6008c582bb830386f3955cdf13ac58c28eec3b91566d5dc6d6a8",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+    "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+    "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+    "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+   ],
+   "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100000,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "31",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-10T20:28:50Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 442,
+  "ts_utc": "2026-10-10T20:29:10Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1154",
+   "fired_utc": "2026-10-10T20:29:10Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "154750eb50ff6008c582bb830386f3955cdf13ac58c28eec3b91566d5dc6d6a8",
+   "exit_code": 0
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 443,
+  "ts_utc": "2026-10-10T20:35:27Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_capture_confirmed",
+   "cycle": "78",
+   "capture": "CAPTURE CONFIRMED 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, inter-frame 16.85s avg, count_us 1368486994..1435873897, sha256(payload)==154750eb50ff6008... == your declare 1154/A441 byte-equal",
+   "hot_path": "declare CYCLE78 B1154 2026-10-10T20:27:50Z -> fired B442/A442 2026-10-10T20:29:10Z = 80s watcher hot-path (no LLM turn), 7s declare-to-first-frame",
+   "sha_gate": "b_rx_extract sha256_match=true rc=0 (5/5 byte-identical)",
+   "declare_crossbus": "byte-equal A441==B1155 (machine-diffed)",
+   "next": "T12 battery launching detached: PRIMARY 154750eb key-31 + control-diff + control-same; verdict follows",
+   "composer_note": "window declared via new durable declare_rx_window.py v1.0 \u2014 closes_at_utc 22:05:09Z tz-aware, zero EDT skew (c-77 defect class closed)",
+   "ts_utc": "2026-10-10T20:29:10Z"
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 444,
+  "ts_utc": "2026-10-10T20:45:23Z",
+  "type": "rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle78_complete_valid",
+   "cycle": "78",
+   "verdict": "COMPLETE VALID \u2014 T12 battery (run 2026-10-10T20:35:54Z): PRIMARY cycle-78 captured 154750eb: verdict=VALID exit=0 wall_s=142.1; CONTROL-diff groth16_ota_20261010T1804Z_cycle77 (key-32, machine-picked, DIFFERENT class) a2da7dd7: verdict=VALID exit=0 wall_s=142.0; CONTROL-same groth16_ota_20261009T1600Z_cycle69 (key-31, machine-picked, SAME class) edac7acc: verdict=VALID exit=0 wall_s=142.1. SHA gate 64/64; declare cross-bus byte-equal A441==B1155; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon temp=38.4'C -> temp=43.8'C throttled=0x0",
+   "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +10.8..+11.5 dB, count_us 1368486994..1435873897, pre-wrap, fired 20:29:10Z, 80s window-declare-to-fire (B1154->B1157), 7s declare-to-first-frame",
+   "note": "28th valid cycle. FOURTH consecutive 80s-class hot-path fire (81/81/82/80s). First window declared by the durable tz-aware composer declare_rx_window.py v1.0 \u2014 closes_at_utc 22:05:09Z posted correct on first try (c-77 +4h EDT-skew class closed). Settle on Cuneiform devnet launching now; PR follows.",
+   "ts_utc": "2026-10-10T20:35:54Z"
+  }
+ }
+]
