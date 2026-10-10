@@ -1,0 +1,96 @@
+{
+ "provenance": "VERBATIM machine-fetched from the live fleet event buses by RakMiner-B on 2026-10-10T12:1xZ (Codex PR#38 P1b remediation: repo-verifiable transmitter-side evidence). A-bus = http://192.168.1.219:8643 (Alpha .219), B-bus = http://192.168.1.220:8643 (Bravo .220). Events are immutable append-only records; byte-identical to what B gated the verdict on at capture time (cross-bus declare byte-diff was part of the T12 gate).",
+ "drill": "groth16_ota",
+ "cycle": 71,
+ "a_side_transmitter_evidence": {
+  "declare_groth16_proof_tx": {
+   "seq": 401,
+   "ts": 1791619424.7930732,
+   "ts_utc": "2026-10-10T08:03:44Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1070",
+    "window_closes_utc": "2026-10-10T10:03:07Z",
+    "proof_sha256": "709f3a8a004744fe00c7468360535e10adf70bf217027faf81325e92e662805a",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T08:04:44Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fire_groth16_tx_fired": {
+   "seq": 402,
+   "ts": 1791619504.4723861,
+   "ts_utc": "2026-10-10T08:05:04Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1070",
+    "fired_utc": "2026-10-10T08:05:04Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "709f3a8a004744fe00c7468360535e10adf70bf217027faf81325e92e662805a",
+    "exit_code": 0
+   }
+  },
+  "note": "Alpha's raw A-node TX log + A recovery log live on RakMiner-A (.219); SSH B->A is not provisioned (Permission denied publickey, probed 2026-10-10T12:09Z), so B cannot pull them directly. The two events above are the A-bus AUTHORITATIVE records of the transmission: groth16_proof_tx (declare-before-fire law) and groth16_tx_fired with sends='5/5 TX_DONE'. Alpha has been asked (group + Issue#1 + peer run brief, 2026-10-10T12:xxZ) to commit his raw TX log + A recovery log for these cycles to close the runbook checklist fully. Until then, the A->B claim rests on: these verbatim A-bus events + B-side 5/5 CRC-OK capture with byte-equal SHA."
+ },
+ "b_side_receiver_evidence": {
+  "window_rx_window_open": {
+   "seq": 1070,
+   "ts": 1791619423.1941006,
+   "ts_utc": "2026-10-10T08:03:43Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle71_window_open",
+    "cycle": "71",
+    "window_seq_bravo_bus": "cycle-71",
+    "armed_at_utc": "2026-10-10T08:03:07Z",
+    "closes_at_utc": "2026-10-10T10:03:07Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, mode 0, -z 255",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T08:03:07Z (gate log lora_chirp_recovery_node-b-rx_20261010T080257Z.log, repo-dir verdict copy; 70th consecutive gate PASS; chip_id EXIT[0] chip 0x10 v1.0 EUI 0016c001ff18afa3; ARM banner chained-log rx_standby_continuous_20261010T064617Z.log line 167, ps lstart 08:03:07Z == banner second, ZERO drift)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener_pid": 11665,
+    "listener_state": "Waiting for packets (verified 08:03Z, comm-exact pgrep)",
+    "clock_lock": "NTP-locked session: ps lstart 08:03:07Z == ARM banner second, ZERO drift. Prior post-reboot session (banner 06:46:35Z) was pre-NTP stale by 115s vs listener lstart 06:48:30Z (box booted 02:46 EDT, no RTC) \u2014 recycled clean at 08:02Z before any declare, zero packets lost, NEVER declared (c-70 precedent applied).",
+    "fire_deadline_utc": "2026-10-10T09:15:00Z",
+    "note": "POST-REBOOT WAKE + 3 of your server_boots today (03:20/04:38/06:47Z) \u2014 your agent lane dark since your 23:32Z b_ack yesterday; your :9877 refuses connections since 06:5xZ. REFILL check: your 23:32Z b_ack says cache held 2 warm (709f3a8a key-31 + 4fe02909 key-32, canon VK 7bd5683f) since 19:22Z yesterday \u2014 if those fired or your box rebooted since, refill 2+ warm proofs BEFORE firing; hot-fire into a cold cache = UNFIRED-miss (window stays armed, refill then fire in-window). Post-reboot watcher: verify your since-pointer is past B1065 before trusting hot-fire."
+   }
+  },
+  "verdict_rx_verdict": {
+   "seq": 1075,
+   "ts": 1791620724.6665704,
+   "ts_utc": "2026-10-10T08:25:24Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle71_complete_valid",
+    "cycle": "71",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY 709f3a8a VALID (142.2s) + control-diff key-32 c-70 c300e5b4 VALID (142.1s) + control-same key-31 c-65 c2855891 VALID (142.3s); SHA gate 64/64, declare B1070==A401 byte-equal (machine-diffed, all 7 fields EQ), silicon guards unchanged (binary a0c74748/PK 8dda8b79/VK 7bd5683f), throttled=0x0",
+    "payload_sha256": "709f3a8a004744fe00c7468360535e10adf70bf217027faf81325e92e662805a",
+    "radio": "5x 128B CRC-OK byte-identical @903.9MHz SF9 chan 3, SNR +10.8..+11.0 dB, count_us 43822786..110870939 (~16.76s spacing), ZERO ghost frames this cycle, window 08:03:07Z->10:03:07Z NTP-locked ZERO drift",
+    "battery_label": "T12_CYCLE71_BATTERY_RUN_UTC",
+    "declare_to_fire": "80s (declare 08:03:44Z -> 5/5 TX_DONE 08:05:04Z) \u2014 4th consecutive record tie",
+    "refill_ask": "key-31 cache slot consumed; you hold 4fe02909 (key-32) warm per your 23:32Z b_ack \u2014 rebuild key-31 when your agent lane wakes",
+    "next": "evidence PR + Cuneiform devnet settle in flight this turn",
+    "ts_utc": "2026-10-10T08:24:00Z"
+   }
+  }
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "cycle": 72,
+ "pda": "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+ "claimed_register_tx": "3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS",
+ "chain_match": true,
+ "signature_count_on_pda": 1,
+ "err": null,
+ "slot": 509509884,
+ "blockTime": 1791627939,
+ "confirmationStatus": "finalized",
+ "readback_run_utc": "2026-10-10T10:26:01Z",
+ "provenance": "readback executed BEFORE evidence commit this cycle (c-71 P1 lesson): raw RPC responses retained verbatim below, committed in the same push as the settle summary. P1a remediation 2026-10-10T12:1xZ: verbatim getAccountInfo response appended; data_len corrected 140->103 B (base64-string-length artifact).",
+ "raw_rpc": {
+  "endpoint": "https://api.devnet.solana.com",
+  "getSignaturesForAddress_params": [
+   "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+   {
+    "limit": 10
+   }
+  ],
+  "getSignaturesForAddress_response": {
+   "jsonrpc": "2.0",
+   "result": [
+    {
+     "blockTime": 1791627939,
+     "confirmationStatus": "finalized",
+     "err": null,
+     "memo": null,
+     "signature": "3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS",
+     "slot": 509509884,
+     "transactionIndex": 0
+    }
+   ],
+   "id": 1
+  },
+  "getAccountInfo_findings": {
+   "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+   "owner_is_cuneiform_program": true,
+   "lamports": 1173480,
+   "data_len_bytes": 103,
+   "rpc_context_slot": 509509977,
+   "data_len_bytes_note": "CORRECTED 2026-10-10: the earlier committed value 140 was the BASE64 STRING LENGTH of the account data (140 chars), not the byte length; the account holds 103 raw bytes. Caught while attaching the verbatim raw response (Codex PR#38 P1a)."
+  },
+  "getSlot_finalized_response": {
+   "jsonrpc": "2.0",
+   "result": 509509977,
+   "id": 3
+  },
+  "getAccountInfo_params": [
+   "9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15",
+   {
+    "encoding": "base64",
+    "commitment": "finalized"
+   }
+  ],
+  "getAccountInfo_response_verbatim": {
+   "jsonrpc": "2.0",
+   "result": {
+    "context": {
+     "apiVersion": "4.4.0-beta.0",
+     "slot": 509535161
+    },
+    "value": {
+     "data": [
+      "yGn2MBsF5wcA6pKDF24mpks0oupcxMIPdyDnds/lW5cmhpCh1nEyZDRmZTAyOTA5MDFmNjkwMTMMzj1N+ApP4CkJAfaQE5mxN6sb6c1iSBH/ie9VBtrW3P6YG5PXF6ISymoAAAAA/w==",
+      "base64"
+     ],
+     "executable": false,
+     "lamports": 1173480,
+     "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+     "rentEpoch": 18446744073709551615,
+     "space": 103
+    }
+   },
+   "id": 83
+  },
+  "getAccountInfo_response_note": "veribatim JSON-RPC response fetched live 2026-10-10T12:06:20Z (base64 account data retained in full; decode to verify owner/lamports/103-B contents). Appended per Codex PR#38 P1a: the original readback kept only hand-derived findings."
+ }
+}
