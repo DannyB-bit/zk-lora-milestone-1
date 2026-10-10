@@ -1,0 +1,158 @@
+{
+ "gate": "settle-signature chain-readback + verbatim raw RPC bytes (executed BEFORE evidence commit)",
+ "record_pda": "6qfJMJnSgt7DanLNXZ1A6YAJZRKkHqxS9tUAP5UrTCpG",
+ "expected_register_tx": "3Z4FdWNkCPhkcntwK9vGCJBwkEgLT9KG9ReGgjmaFC76emwQBVGEke6siJeXLAJhhn5M2Lrf3xA7NdzoobfFZiEx",
+ "getSignaturesForAddress_raw": {
+  "jsonrpc": "2.0",
+  "result": [
+   {
+    "blockTime": 1791642729,
+    "confirmationStatus": "finalized",
+    "err": null,
+    "memo": null,
+    "signature": "3Z4FdWNkCPhkcntwK9vGCJBwkEgLT9KG9ReGgjmaFC76emwQBVGEke6siJeXLAJhhn5M2Lrf3xA7NdzoobfFZiEx",
+    "slot": 509571729,
+    "transactionIndex": 5
+   }
+  ],
+  "id": 1
+ },
+ "getAccountInfo_raw": {
+  "jsonrpc": "2.0",
+  "result": {
+   "context": {
+    "apiVersion": "4.4.0-beta.0",
+    "slot": 509572032
+   },
+   "value": {
+    "data": [
+     "yGn2MBsF5wcA6pKDF24mpks0oupcxMIPdyDnds/lW5cmhpCh1nEyZGIwYjdkZmIxNzA4YTZhZjjcZYYdXYawt9+xcIpq+MyH2EomdXxVkxKErQdU4JXpBK4lwmQNPmhMymoAAAAA/w==",
+     "base64"
+    ],
+    "executable": false,
+    "lamports": 1173480,
+    "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+    "rentEpoch": 18446744073709551615,
+    "space": 103
+   }
+  },
+  "id": 1
+ },
+ "getTransaction_raw": {
+  "jsonrpc": "2.0",
+  "result": {
+   "blockTime": 1791642729,
+   "meta": {
+    "computeUnitsConsumed": 15003,
+    "costUnits": 16702,
+    "err": null,
+    "fee": 5000,
+    "innerInstructions": [
+     {
+      "index": 0,
+      "instructions": [
+       {
+        "accounts": [
+         0,
+         1
+        ],
+        "data": "11119YXA34Ceg2ieW1Dtos52Ln7HTjZQZrmesssXDCqTQhQSds5a2WGdk7trD8tbAoiz8y",
+        "programIdIndex": 3,
+        "stackHeight": 2
+       },
+       {
+        "accounts": [
+         0,
+         2
+        ],
+        "data": "3Bxs4ThwQbE4vyj5",
+        "programIdIndex": 3,
+        "stackHeight": 2
+       }
+      ]
+     }
+    ],
+    "loadedAddresses": {
+     "readonly": [],
+     "writable": []
+    },
+    "logMessages": [
+     "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy invoke [1]",
+     "Program log: Instruction: RegisterCoordinates",
+     "Program 11111111111111111111111111111111 invoke [2]",
+     "Program 11111111111111111111111111111111 success",
+     "Program 11111111111111111111111111111111 invoke [2]",
+     "Program 11111111111111111111111111111111 success",
+     "Program log: Collected protocol fee: 100000 lamports",
+     "Program log: Language-U coordinates registered successfully!",
+     "Program log: Coordinates: Domain=220, Subdomain=101, Modality=134, Polarity=29, Strength=93, Depth=134",
+     "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy consumed 15003 of 200000 compute units",
+     "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy success"
+    ],
+    "postBalances": [
+     5950134280,
+     1173480,
+     10014230000,
+     1,
+     1141440,
+     1447680
+    ],
+    "postTokenBalances": [],
+    "preBalances": [
+     5951412760,
+     0,
+     10014130000,
+     1,
+     1141440,
+     1447680
+    ],
+    "preTokenBalances": [],
+    "rewards": [],
+    "status": {
+     "Ok": null
+    }
+   },
+   "slot": 509571729,
+   "transaction": {
+    "message": {
+     "accountKeys": [
+      "14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3",
+      "6qfJMJnSgt7DanLNXZ1A6YAJZRKkHqxS9tUAP5UrTCpG",
+      "CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ",
+      "11111111111111111111111111111111",
+      "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+      "ENXuYWn5z8U9fdwD4MXAkTtHxEegbUaPbNbkDEFSPGki"
+     ],
+     "header": {
+      "numReadonlySignedAccounts": 0,
+      "numReadonlyUnsignedAccounts": 3,
+      "numRequiredSignatures": 1
+     },
+     "instructions": [
+      {
+       "accounts": [
+        1,
+        5,
+        2,
+        0,
+        3
+       ],
+       "data": "8oDJxRSACBtuY7dZawvf2a7v2HQ3VsnmVjqr5jWSrFY1vxWfUZFWNzPNy6a5m8m9gcs7crHQupcaFaBSDT8pm",
+       "programIdIndex": 4,
+       "stackHeight": 1
+      }
+     ],
+     "recentBlockhash": "Fy3rSgbGZU1n1TqUbmR4N3oBRMb2Jjw25MjQU6ybws88"
+    },
+    "signatures": [
+     "3Z4FdWNkCPhkcntwK9vGCJBwkEgLT9KG9ReGgjmaFC76emwQBVGEke6siJeXLAJhhn5M2Lrf3xA7NdzoobfFZiEx"
+    ]
+   },
+   "transactionIndex": 5,
+   "version": "legacy"
+  },
+  "id": 1
+ },
+ "signature_byte_match": true,
+ "checked_utc": "2026-10-10T14:36:00Z"
+}
