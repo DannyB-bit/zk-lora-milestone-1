@@ -1,0 +1,159 @@
+[
+ {
+  "bus": "B",
+  "seq": 1168,
+  "ts": 1791671835.8030214,
+  "ts_utc": "2026-10-10T22:37:15Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle79_window_open",
+   "cycle": "79",
+   "armed_at_utc": "2026-10-10T22:05:29Z",
+   "closes_at_utc": "2026-10-11T00:05:29Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest b_ack: 154750eb (key-31), 0241669a (key-32)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 9,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "105139",
+    "listener_lstart_utc": "2026-10-10T22:05:29Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 5294
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "c-79: 81st consecutive gate PASS, composer v1.0, expect Alpha watcher hot-fire of warm 0241669a (key-32) per his 18:59:10Z b_ack"
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1169,
+  "ts": 1791671836.2191267,
+  "ts_utc": "2026-10-10T22:37:16Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "1168",
+   "window_closes_utc": "2026-10-11T00:05:29Z",
+   "proof_sha256": "0241669ab1938fe40bff4b7fde44a3d8cad2585425990c90e84071dc101f9030",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+    "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+    "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+    "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+   ],
+   "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100001,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "32",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-10T22:38:16Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1170,
+  "ts": 1791671836.9953072,
+  "ts_utc": "2026-10-10T22:37:16Z",
+  "type": "watcher_notice",
+  "data": {
+   "window_seq": 447,
+   "drill": "groth16_ota",
+   "action": "hold_non_b_ack",
+   "note": "B watcher only auto-fires drill=b_ack_chirp"
+  }
+ },
+ {
+  "bus": "B",
+  "seq": 1171,
+  "ts": 1791671915.9995012,
+  "ts_utc": "2026-10-10T22:38:35Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1168",
+   "fired_utc": "2026-10-10T22:38:35Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "0241669ab1938fe40bff4b7fde44a3d8cad2585425990c90e84071dc101f9030",
+   "exit_code": 0
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 447,
+  "ts": 1791671835.8234873,
+  "ts_utc": "2026-10-10T22:37:15Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle79_window_open",
+   "cycle": "79",
+   "armed_at_utc": "2026-10-10T22:05:29Z",
+   "closes_at_utc": "2026-10-11T00:05:29Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest b_ack: 154750eb (key-31), 0241669a (key-32)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 9,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "105139",
+    "listener_lstart_utc": "2026-10-10T22:05:29Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 5294
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "c-79: 81st consecutive gate PASS, composer v1.0, expect Alpha watcher hot-fire of warm 0241669a (key-32) per his 18:59:10Z b_ack"
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 448,
+  "ts": 1791671836.0765522,
+  "ts_utc": "2026-10-10T22:37:16Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "1168",
+   "window_closes_utc": "2026-10-11T00:05:29Z",
+   "proof_sha256": "0241669ab1938fe40bff4b7fde44a3d8cad2585425990c90e84071dc101f9030",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+    "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+    "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+    "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+   ],
+   "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100001,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "32",
+   "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-10T22:38:16Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ },
+ {
+  "bus": "A",
+  "seq": 449,
+  "ts": 1791671915.906896,
+  "ts_utc": "2026-10-10T22:38:35Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1168",
+   "fired_utc": "2026-10-10T22:38:35Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "0241669ab1938fe40bff4b7fde44a3d8cad2585425990c90e84071dc101f9030",
+   "exit_code": 0
+  }
+ }
+]

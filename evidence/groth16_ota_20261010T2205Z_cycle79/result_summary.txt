@@ -1,0 +1,9 @@
+result_summary.txt — cycle-79 (machine-derived 2026-10-10T22:37:16Z)
+==================================================
+RADIO: 5/5 CRC-OK 128B @ 903.9 MHz SF9, SNR +10.5..+11.5 dB, count_us 1913645386..1980734736 (pre-wrap), inter-frame 16.77s
+SHA GATE: sha256(payload)==0241669ab1938fe4... == declare B1169/A448: PASS
+WINDOW: armed 2026-10-10T22:05:29Z close 2026-10-11T00:05:29Z (declare_rx_window.py v1.0, 81st consecutive gate PASS)
+FIRE: watcher declared +1s, 5/5 TX_DONE 2026-10-10T22:37:16Z -> 2026-10-10T22:38:35Z = 79s declare-to-fire (5th consecutive 80s-class)
+T12: PRIMARY 0241669a (key-32) VALID 142.0s + control-diff 154750eb (key-31) VALID 141.9s + control-same c300e5b4 (key-32) VALID 141.9s; SHA gate 64/64; GUARD unchanged; silicon 39.9->46.2C throttled=0x0
+SETTLE: PDA EVLHYcRumzgBzvHiiNuvUmayimstsNerexgnYKf3UyJA, TX 4Hfer3EM..., slot 509697423, chain-readback byte-match PASS, treasury +100000 lamports, 6/6 tests
+VERDICT: COMPLETE VALID — 29th valid fleet cycle
