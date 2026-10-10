@@ -1,0 +1,34 @@
+{
+ "cycle": 75,
+ "verdict": "COMPLETE VALID A->B",
+ "battery_label": "T12_CYCLE75_BATTERY_RUN_UTC",
+ "primary_proof_sha256": "31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db",
+ "primary_key_id": "32",
+ "window_bravo_seq": 1114,
+ "declare_bravo_seq": 1117,
+ "fired_bravo_seq": 1118,
+ "verdict_bravo_seq": 1120,
+ "declare_alpha_seq": 422,
+ "fired_alpha_seq": 423,
+ "verdict_alpha_seq": 424,
+ "armed_at_utc": "2026-10-10T14:04:08Z",
+ "fired_utc": "2026-10-10T14:42:48Z",
+ "closes_at_utc": "2026-10-10T16:04:08Z",
+ "wrap_branch": "pre-wrap +0s (machine-selected)",
+ "settle": {
+  "session_id": "31367da8ce2fd21e",
+  "record_pda": "CmLwYmDYqVLm4PFEXekQ2M8tgD9MAjbsEM5QJbghRDFj",
+  "register_tx": "2aPjUo8jTz8ntNHG2KNNTA75BfSpFBrxApFHcEeDVQZDzXeg6A8iexMooV4veL31m7yEfQnBZ2NtcYKSdAUcWStW",
+  "slot": 509577737,
+  "fee_lamports": 100000,
+  "tests_passed": "6/6",
+  "chain_readback_gate": "PASS (1 sig == settle TX, finalized, err=null)"
+ },
+ "honest_ledger": [
+  "c-75 fired 81s after window declare (B1114 14:41:27Z -> B1118 14:42:48Z) \u2014 7th consecutive sub-90s watcher hot-path fire",
+  "Alpha cache now EMPTY: 3 proofs spent today (42116492, b0b7dfb1, 31367da8); refill asked in verdict + Issue#1",
+  "no aborts, no echo frames, no anomalies this cycle; clean end-to-end"
+ ],
+ "machine_source": "b_rx_extract.py + t12_battery_template.py + settle_groth16_ota.ts + devnet RPC readback with raw bytes retained pre-commit (this turn)",
+ "generated_utc": "2026-10-10T14:58:35Z"
+}
