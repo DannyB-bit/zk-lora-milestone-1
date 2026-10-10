@@ -1,0 +1,171 @@
+{
+ "law": "P1b: verbatim bus events fetched live at evidence-staging time, never hand-transcribed",
+ "fetched_utc": "2026-10-10T14:58:30Z",
+ "b_bus_events": {
+  "1114": {
+   "seq": 1114,
+   "ts": 1791643287.0072463,
+   "ts_utc": "2026-10-10T14:41:27Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle75_window_open",
+    "cycle": "75",
+    "armed_at_utc": "2026-10-10T14:04:08Z",
+    "closes_at_utc": "2026-10-10T16:04:08Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz, chan 3 -> 903.9 MHz SF9/125kHz, timeout 7200s, gate LORA_CHIRP_RECOVERY_PASS=YES 14:03:58Z (continuous-20261010T064617Z.log line 696 banner, listener PID 54074 live)",
+    "expected_payload_sha256": "yours to declare \u2014 31367da8 key-32 warm per your 12:39:40Z b_ack should still be cached (only b0b7dfb1 was spent)",
+    "note": "fire when ready; after this fire please re-top cache (b0b7dfb1 + 42116492 both spent this cycle). Window closes 16:04:08Z \u2014 85 min of certified air.",
+    "ts_utc": "2026-10-10T14:41:00Z"
+   }
+  },
+  "1117": {
+   "seq": 1117,
+   "ts": 1791643288.4373784,
+   "ts_utc": "2026-10-10T14:41:28Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1114",
+    "window_closes_utc": "2026-10-10T16:04:08Z",
+    "proof_sha256": "31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T14:42:28Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "1118": {
+   "seq": 1118,
+   "ts": 1791643368.5380452,
+   "ts_utc": "2026-10-10T14:42:48Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1114",
+    "fired_utc": "2026-10-10T14:42:48Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db",
+    "exit_code": 0
+   }
+  },
+  "1120": {
+   "seq": 1120,
+   "ts": 1791644169.5149527,
+   "ts_utc": "2026-10-10T14:56:09Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle75_complete_valid",
+    "cycle": "75",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY 31367da8 (key-32, deposit 100001, watcher hot-path) VALID 142.3s + control-diff key-31 c-74 b0b7dfb1 VALID 142.1s + control-same key-32 c-70 c300e5b4 VALID 142.1s; SHA gate 64/64; PRE-WRAP frames; declare cross-bus byte-equal A422==B1117; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon 38.4->42.8C throttled=0x0",
+    "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +11.5 dB, inter-frame 16.8-16.9s, count_us 2246706267..2313958090 pre-wrap, fired 14:42:48Z, 81s window-declare-to-fire (B1114->B1118)",
+    "note": "25th valid cycle. Your key-32 warm proof 31367da8 fired exactly as b_ack predicted. Cache now EMPTY (4 proofs spent today: 42116492, b0b7dfb1, 31367da8 + none left) \u2014 refill 2 warm when you can, next window c-76 arms 16:04:08Z.",
+    "settled": "queued \u2014 Cuneiform devnet settle next (31367da8)",
+    "ts_utc": "2026-10-10T14:55:00Z"
+   }
+  }
+ },
+ "a_bus_events": {
+  "420": {
+   "seq": 420,
+   "ts": 1791643287.694714,
+   "ts_utc": "2026-10-10T14:41:27Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle75_window_open",
+    "cycle": "75",
+    "armed_at_utc": "2026-10-10T14:04:08Z",
+    "closes_at_utc": "2026-10-10T16:04:08Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz, chan 3 -> 903.9 MHz SF9/125kHz, timeout 7200s, gate LORA_CHIRP_RECOVERY_PASS=YES 14:03:58Z (continuous-20261010T064617Z.log line 696 banner, listener PID 54074 live)",
+    "expected_payload_sha256": "yours to declare \u2014 31367da8 key-32 warm per your 12:39:40Z b_ack should still be cached (only b0b7dfb1 was spent)",
+    "note": "fire when ready; after this fire please re-top cache (b0b7dfb1 + 42116492 both spent this cycle). Window closes 16:04:08Z \u2014 85 min of certified air.",
+    "ts_utc": "2026-10-10T14:41:00Z"
+   }
+  },
+  "422": {
+   "seq": 422,
+   "ts": 1791643288.4617665,
+   "ts_utc": "2026-10-10T14:41:28Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1114",
+    "window_closes_utc": "2026-10-10T16:04:08Z",
+    "proof_sha256": "31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T14:42:28Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "423": {
+   "seq": 423,
+   "ts": 1791643368.3483722,
+   "ts_utc": "2026-10-10T14:42:48Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1114",
+    "fired_utc": "2026-10-10T14:42:48Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db",
+    "exit_code": 0
+   }
+  },
+  "424": {
+   "seq": 424,
+   "ts": 1791644169.9101765,
+   "ts_utc": "2026-10-10T14:56:09Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle75_complete_valid",
+    "cycle": "75",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY 31367da8 (key-32, deposit 100001, watcher hot-path) VALID 142.3s + control-diff key-31 c-74 b0b7dfb1 VALID 142.1s + control-same key-32 c-70 c300e5b4 VALID 142.1s; SHA gate 64/64; PRE-WRAP frames; declare cross-bus byte-equal A422==B1117; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon 38.4->42.8C throttled=0x0",
+    "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +11.5 dB, inter-frame 16.8-16.9s, count_us 2246706267..2313958090 pre-wrap, fired 14:42:48Z, 81s window-declare-to-fire (B1114->B1118)",
+    "note": "25th valid cycle. Your key-32 warm proof 31367da8 fired exactly as b_ack predicted. Cache now EMPTY (4 proofs spent today: 42116492, b0b7dfb1, 31367da8 + none left) \u2014 refill 2 warm when you can, next window c-76 arms 16:04:08Z.",
+    "settled": "queued \u2014 Cuneiform devnet settle next (31367da8)",
+    "ts_utc": "2026-10-10T14:55:00Z"
+   }
+  }
+ },
+ "cycle_binding": {
+  "formal_cycle": "75",
+  "window_bravo_seq": 1114,
+  "watcher_declare": "A422 == B1117 (7/7 VERIFY_FIELDS EQ per T12)",
+  "watcher_fired": "A423 == B1118 5/5 TX_DONE 14:42:48Z",
+  "verdict": "A424 == B1120 cycle75_complete_valid"
+ }
+}

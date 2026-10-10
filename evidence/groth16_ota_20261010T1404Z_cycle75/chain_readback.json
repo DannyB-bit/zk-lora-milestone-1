@@ -1,0 +1,43 @@
+{
+ "gate": "settle-signature chain-readback + verbatim raw RPC bytes (executed BEFORE evidence commit)",
+ "record_pda": "CmLwYmDYqVLm4PFEXekQ2M8tgD9MAjbsEM5QJbghRDFj",
+ "expected_register_tx": "2aPjUo8jTz8ntNHG2KNNTA75BfSpFBrxApFHcEeDVQZDzXeg6A8iexMooV4veL31m7yEfQnBZ2NtcYKSdAUcWStW",
+ "getSignaturesForAddress_raw": {
+  "jsonrpc": "2.0",
+  "result": [
+   {
+    "blockTime": 1791644177,
+    "confirmationStatus": "finalized",
+    "err": null,
+    "memo": null,
+    "signature": "2aPjUo8jTz8ntNHG2KNNTA75BfSpFBrxApFHcEeDVQZDzXeg6A8iexMooV4veL31m7yEfQnBZ2NtcYKSdAUcWStW",
+    "slot": 509577737,
+    "transactionIndex": 28
+   }
+  ],
+  "id": 1
+ },
+ "getAccountInfo_raw": {
+  "jsonrpc": "2.0",
+  "result": {
+   "context": {
+    "apiVersion": "4.4.0-beta.0",
+    "slot": 509577797
+   },
+   "value": {
+    "data": [
+     "yGn2MBsF5wcA6pKDF24mpks0oupcxMIPdyDnds/lW5cmhpCh1nEyZDMxMzY3ZGE4Y2UyZmQyMWXZORyXYzQxNn2ozi/SHnToDJorU5A3e3q4yKs11bOwNnVkJiG12xFSymoAAAAA/w==",
+     "base64"
+    ],
+    "executable": false,
+    "lamports": 1173480,
+    "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+    "rentEpoch": 18446744073709551615,
+    "space": 103
+   }
+  },
+  "id": 1
+ },
+ "signature_byte_match": true,
+ "checked_utc": "2026-10-10T14:58:00Z"
+}
