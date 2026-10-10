@@ -49,8 +49,8 @@
   "fee_lamports": 100000,
   "tests_passed": 6,
   "tests_failed": 0,
-  "chain_readback": "PASS (getSignaturesForAddress on record PDA: exactly 1 sig, the settle TX, err=null, finalized)",
-  "chain_readback_utc": "2026-10-10T08:31:00Z"
+  "chain_readback": "PASS, re-executed 2026-10-10T09:46:48Z with raw RPC bytes committed to chain_readback.json (getSignaturesForAddress + getAccountInfo + getSlot on the record PDA: exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program 2is5Q…Sccy). HONESTY NOTE (Codex review P1, confirmed): the original 08:31:00Z PASS was asserted after this file was generated (08:30:00Z) and after commit 05a3ff2 (08:30:08Z), and its raw RPC response was not retained — timeline impossible as committed, now remediated with verbatim bytes.",
+  "chain_readback_utc": "2026-10-10T09:46:48Z (re-run; artifact chain_readback.json)"
  },
  "declare_to_fire_s": 80,
  "postboot_context": "B box rebooted 02:46 EDT; first post-reboot session (banner 06:46:35Z) was pre-NTP stale by 115 s vs listener lstart 06:48:30Z — recycled clean at 08:02Z before any declare (c-70 precedent), zero packets lost. Cycle-71 armed on the NTP-locked session, zero drift."

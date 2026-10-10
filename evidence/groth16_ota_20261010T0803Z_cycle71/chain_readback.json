@@ -1,0 +1,49 @@
+{
+ "cycle": 71,
+ "pda": "3RQtm7XHecukhuCeLettUDJdo8eaTfHKPoPmUFkK6GHB",
+ "claimed_register_tx": "2qfaCfUad41innA5DH1bxAxqs8htrnoRZHadXJM3GEMXtAvyDCqRQJ1XXvigxRFS9hR85vsTm5fFDRFB5kp2DEzt",
+ "chain_match": true,
+ "signature_count_on_pda": 1,
+ "err": null,
+ "slot": 509479938,
+ "blockTime": 1791620784,
+ "confirmationStatus": "finalized",
+ "readback_run_utc": "2026-10-10T09:46:48Z",
+ "provenance": "RE-RUN POST-COMMIT. capture_meta.json claimed a readback PASS at 08:31:00Z, but commit 05a3ff2 landed 08:30:08Z and the raw RPC response of that pre-push check was not retained (Codex review P1, confirmed). This file re-executes the readback gate with raw responses committed verbatim below. The settle TX itself is independently verifiable at explorer.solana.com.",
+ "raw_rpc": {
+  "endpoint": "https://api.devnet.solana.com",
+  "getSignaturesForAddress_params": [
+   "3RQtm7XHecukhuCeLettUDJdo8eaTfHKPoPmUFkK6GHB",
+   {
+    "limit": 10
+   }
+  ],
+  "getSignaturesForAddress_response": {
+   "jsonrpc": "2.0",
+   "result": [
+    {
+     "blockTime": 1791620784,
+     "confirmationStatus": "finalized",
+     "err": null,
+     "memo": null,
+     "signature": "2qfaCfUad41innA5DH1bxAxqs8htrnoRZHadXJM3GEMXtAvyDCqRQJ1XXvigxRFS9hR85vsTm5fFDRFB5kp2DEzt",
+     "slot": 509479938,
+     "transactionIndex": 9
+    }
+   ],
+   "id": 1
+  },
+  "getAccountInfo_findings": {
+   "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+   "owner_is_cuneiform_program": true,
+   "lamports": 1173480,
+   "data_len_bytes": 140,
+   "rpc_context_slot": 509500145
+  },
+  "getSlot_finalized_response": {
+   "jsonrpc": "2.0",
+   "result": 509500145,
+   "id": 3
+  }
+ }
+}
