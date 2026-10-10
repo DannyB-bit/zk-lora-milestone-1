@@ -1,0 +1,81 @@
+{
+ "cycle": 70,
+ "generated_utc": "2026-10-09T22:53:39Z",
+ "machine_source": "b_rx_extract.py + t12_battery_template.py + settle_groth16_ota.ts + devnet RPC readback (this turn)",
+ "drill": "groth16_ota",
+ "window": {
+  "bus_seq_bravo": 1040,
+  "bus_seq_alpha": 387,
+  "armed_at_utc": "2026-10-09T19:13:09Z",
+  "closes_at_utc": "2026-10-09T21:13:09Z"
+ },
+ "declare": {
+  "proof_sha256": "c300e5b4adbc7a2fa3130b25b564eafc2f43b2c120ef0e27c8642f9d4b859c48",
+  "payload_bytes": 128,
+  "key_id": 32,
+  "deposit_value": 100001,
+  "source": "watcher_hot_path (no LLM turn), pre-proven cache",
+  "cross_bus_byte_equal": true
+ },
+ "capture": {
+  "crc_ok": 5,
+  "total": 5,
+  "sha256_match": true,
+  "freq_hz": 903900000,
+  "sf": "SF9",
+  "chan": 3,
+  "snr_db": [
+   10.8,
+   10.5
+  ],
+  "crc": "0xFBF4",
+  "count_us_range": [
+   245810682,
+   313063740
+  ],
+  "inter_frame_s": 16.8,
+  "wrap_branch": "pre-wrap (+0s)",
+  "listener_pid": 14193,
+  "gate_streak": 70
+ },
+ "t12_battery": {
+  "run_utc": "2026-10-09T19:28:41Z",
+  "primary": {
+   "sha": "c300e5b4",
+   "key": 32,
+   "verdict": "VALID",
+   "wall_s": 142.1
+  },
+  "control_same_class": {
+   "sha": "5aeabe09",
+   "key": 32,
+   "cycle": 61,
+   "verdict": "VALID"
+  },
+  "control_diff_class": {
+   "sha": "edac7acc",
+   "key": 31,
+   "cycle": 69,
+   "verdict": "VALID"
+  },
+  "sha_gate": "64/64",
+  "guards": "binary a0c74748 / PK 8dda8b79 / VK 7bd5683f unchanged",
+  "soc_temp_c": [
+   41.8,
+   45.2
+  ],
+  "throttled": "0x0"
+ },
+ "settle": {
+  "session_id": "c300e5b4adbc7a2f",
+  "record_pda": "GJzUAxmmzczu8832ybYqM735yPfwktXZr9avChzcuhnf",
+  "register_tx": "qjyfhs3EsE3YfEkHi63YHWbVxbzP42456VQowWzrFEFPhPuqRaXE16p3PgXZLiaemhibtAZZo96i7P2Fna6KLQi",
+  "slot": 509335451,
+  "fee_lamports": 100000,
+  "tests": "6/6",
+  "chain_readback": "PASS (1 signature on fresh PDA, err=null, finalized, byte-confirmed vs result_summary)"
+ },
+ "defects_disclosed": [
+  "NO B-side defect this cycle. NOTE: c-70 evidence PR was staged one tick late (prior tick ended after the battery, before PR/settle) \u2014 disclosed as pipeline latency, not a data defect."
+ ]
+}

@@ -1,0 +1,6 @@
+PASS: captured proof is 128 bytes
+PASS: captured proof SHA == TX-declared SHA (byte-tied to airwave)
+PASS: register_coordinates TX confirmed
+PASS: on-chain coords == on-air proof leading bytes
+PASS: on-chain merkle root == proof SHA256
+PASS: treasury fee collected: 100000 lamports (>= 100k)
