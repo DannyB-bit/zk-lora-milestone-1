@@ -122,8 +122,15 @@ def main():
         Bev = get_events(B_BUS, timeout=args.bus_timeout)
     except Exception as ex:
         raise SystemExit(f"ABORT: B-bus unreachable ({ex}) — no window location, no verdict")
+    def _cyc(e):
+        c = e.get("data", {}).get("cycle")
+        return c is not None and str(c) == str(cycle)
     wins = [e for e in Bev if e.get("type") == "rx_window_open"
-            and e.get("data", {}).get("window_seq_bravo_bus") == f"cycle-{cycle}"]
+            and (e.get("data", {}).get("window_seq_bravo_bus") == f"cycle-{cycle}"
+                 or _cyc(e))]
+    # cycle 69+ events carry kind=cycleNN_window_open + cycle=<int-or-str>; legacy events carry
+    # window_seq_bravo_bus=cycle-<N>. Both are machine-locators derived from --cycle (no typed constants).
+    # str()-normalization only (never int-cast: literal preservation).
     if len(wins) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} window events on B-bus: {len(wins)} (need exactly 1)")
     win = wins[0]

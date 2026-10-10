@@ -1,0 +1,47 @@
+{
+ "cycle": 69,
+ "drill": "groth16_ota",
+ "test_run_utc": "2026-10-09T16:20:00Z",
+ "node": "RakMiner-B (Researcher Bravo, Agent 05)",
+ "window_bravo_bus_seq": 1017,
+ "window_alpha_bus_seq": 377,
+ "armed_at_utc": "2026-10-09T15:24:51Z",
+ "closes_at_utc": "2026-10-09T17:24:51Z",
+ "declare": {
+  "alpha_bus_seq": 378,
+  "bravo_bus_seq": 1019,
+  "ts_utc": "2026-10-09T15:29:38Z",
+  "cross_bus_byte_diff": "IDENTICAL (machine-diffed data payloads, sorted keys)"
+ },
+ "fired_utc": "2026-10-09T15:30:57Z",
+ "declare_to_fire_s": 80,
+ "capture": "5/5 CRC-OK 128B @903.9MHz SF9, SNR +10.5..+11.5 dB, count_us 293698948..360859815, inter-frame 16.8s, pre-wrap branch",
+ "payload_sha256": "edac7acc9b54598715d8d9ac76dd436dfa2ca96736fdcf7b3f00ac5c2b33ca41",
+ "private_key_id": 31,
+ "deposit_value": 100000,
+ "battery": {
+  "label": "T12_CYCLE69_BATTERY_RUN_UTC",
+  "primary": {
+   "sha": "edac7acc9b54598715d8d9ac76dd436dfa2ca96736fdcf7b3f00ac5c2b33ca41",
+   "verdict": "VALID",
+   "wall_s": 142.1
+  },
+  "control_same_class": {
+   "sha": "c285589145895f6e9f3eed219cecaf161f41fd56d5ca8429be2c11050abfa5ce",
+   "key": 31,
+   "cycle": 65,
+   "verdict": "VALID",
+   "wall_s": 141.9
+  },
+  "control_diff_class": {
+   "sha": "5aeabe0903eedcad2c9dca4dff22a599da0f834bba3e62e25fc73a2bf24afedc",
+   "key": 32,
+   "cycle": 61,
+   "verdict": "VALID",
+   "wall_s": 142.1
+  },
+  "guards": "binary a0c74748 / PK 8dda8b79 / VK 7bd5683f unchanged; throttled=0x0; 47.7C",
+  "sha_gate": "64/64",
+  "locator_patch": "tools/t12_battery_template.py window locator extended in THIS PR: accepts data.cycle (int-or-str, str-normalized) as alternative machine-locator to window_seq_bravo_bus=cycle-<N>; still exactly-1 fail-closed gate. Reason: my B-seq1017 window event omitted the canonical locator field (field-shape drift disclosed in B-seq1024/A-382 erratum); battery correctly ABORTED twice before the patch."
+ }
+}
