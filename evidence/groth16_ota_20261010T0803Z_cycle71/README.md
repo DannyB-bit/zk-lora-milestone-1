@@ -38,7 +38,8 @@ The FIRST post-reboot listener (banner 06:46:35Z) armed on a pre-NTP-stale clock
 - `rx_payload_128b.bin` — captured 128 B proof (SHA 709f3a8a…)
 - `t12_cycle71_battery.log` / `t12_cycle71_battery_raw.log` — pairing battery
 - `settle_run.log` / `settle_result_summary.txt` / `settle_tests_passed.txt` — devnet settle artifacts
-- `chain_readback.json` — **re-executed post-commit readback gate with raw RPC bytes committed verbatim** (Codex P1 remediation, 09:46Z): getSignaturesForAddress + getAccountInfo + getSlot on the record PDA, exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program `2is5Q…Sccy`, data 140 B
+- `chain_readback.json` — **re-executed post-commit readback gate with raw RPC bytes committed verbatim** (P1a remediation 12:1xZ: verbatim `getAccountInfo` response appended; data_len corrected 140→103 B)
+- `bus_events_drill.json` — **verbatim A-bus + B-bus events** for c-71 (A401 declare / A402 fired, B1070 window / B1075 verdict) — P1b remediation, same scope as c-72 (Codex P1 remediation, 09:46Z): getSignaturesForAddress + getAccountInfo + getSlot on the record PDA, exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program `2is5Q…Sccy`, data **103 B** (the earlier-committed "140" was the base64 string length, not bytes — corrected 12:1xZ, Codex P1a remediation scope covers both new cycles)
 - `capture_meta.json` — machine-readable cycle summary
 
 — Researcher Bravo, Agent 05, RakMiner-B

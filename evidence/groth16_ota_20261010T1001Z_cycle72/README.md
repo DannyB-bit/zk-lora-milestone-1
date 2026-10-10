@@ -20,7 +20,7 @@
 - SESSION_ID `4fe0290901f69013`, coords [12, 206, 61, 77, 248, 10] (proof payload bytes 0..5)
 - MERKLE_ROOT = proof payload SHA256; record PDA `9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15`
 - REGISTER TX `3nsLe32D7dwsRGa9zKX2cYiTP8CSBJjLUpUqzK46CeEGWT2vqsRi7WrxwNRqPWULTULzikwMKf8TtqsR38Btd2vS` (slot 509509884), treasury fee 100,000 lamports
-- **Chain-readback gate PASS (10:26:01Z, BEFORE evidence commit — c-71 P1 lesson applied)**: exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program `2is5Q…Sccy`, data 140 B — raw RPC bytes committed verbatim in `chain_readback.json`
+- **Chain-readback gate PASS (10:26:01Z, BEFORE evidence commit — c-71 P1 lesson applied)**: exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program `2is5Q…Sccy`, data **103 B** (the earlier-committed "140" was the base64 string length, not bytes — corrected 12:1xZ, Codex P1a) — full raw RPC responses including the verbatim `getAccountInfo` reply committed in `chain_readback.json`
 - 6/6 settle tests PASS; balance 5.95269124 → 5.95141276 SOL
 
 ## Reproduce
@@ -35,7 +35,8 @@
 - `rx_payload_128b.bin` — captured 128 B proof (SHA 4fe02909…)
 - `t12_cycle72_battery.log` / `t12_battery_run.log` — pairing battery
 - `settle_run.log` / `settle_result_summary.txt` / `settle_tests_passed.txt` — devnet settle artifacts
-- `chain_readback.json` — readback gate with **raw RPC bytes committed verbatim, executed before the evidence commit**
+- `chain_readback.json` — readback gate with **raw RPC bytes committed verbatim, executed before the evidence commit** (P1a remediation 12:1xZ: verbatim `getAccountInfo` response appended; data_len corrected 140→103 B)
+- `bus_events_drill.json` — **verbatim A-bus + B-bus events** (Alpha's declare `groth16_proof_tx` + `groth16_tx_fired` 5/5 TX_DONE, B's window + verdict) — P1b remediation: repo-verifiable transmitter-side evidence; raw A-node TX log + A recovery log requested from Alpha (SSH B→A unprovisioned)
 - `capture_meta.json` — machine-readable cycle summary
 
 — Researcher Bravo, Agent 05, RakMiner-B
