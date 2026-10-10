@@ -1,0 +1,35 @@
+  captured proof: 128 bytes from groth16_ota_20261010T1804Z_cycle77
+  proof SHA256: a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138
+  coords (proof payload[0:6]): [0x6d, 0x4, 0x85, 0x89, 0x48, 0xff]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.94757732 SOL
+  session_id : a2da7dd7737f574c (= proof SHA[0:16] hex)
+  merkleRoot: a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138 (= captured proof SHA256)
+  record PDA: FpYDe2qMPiWEHxFtu2vMDLUZRfYYEg32Dgkzoc8SPGJ3
+  ✅ REGISTER TX: 2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3
+     https://explorer.solana.com/tx/2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3?cluster=devnet
+  on-chain record: coords=[109,4,133,137,72,255] root=a2da7dd7737f574c… ts=2026-10-10T18:43:16.000Z
+  treasury delta: 100000 lamports
+  balance after: 5.94629884 SOL
+
+TEST_RUN_UTC=2026-10-10T18:43:17.824Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=first verified OTA Groth16/BN254 proof, node-b-rx_20260929T223317Z
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +11.0..+11.5 dB, window B1139, fired 18:22:04Z, 82s declare-to-fire
+PROOF_PAYLOAD_SHA256=a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138
+GROTH16_PAIRING_VERIFIED=YES - T12_CYCLE77_BATTERY_RUN_UTC all VALID (PRIMARY key-32 a2da7dd7 + control-diff key-31 610e92ab + control-same key-32 c300e5b4, B die)
+SESSION_ID=a2da7dd7737f574c
+COORDS_REGISTERED=[109, 4, 133, 137, 72, 255] (= proof payload bytes 0..5)
+MERKLE_ROOT=a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138 (= proof payload SHA256)
+RECORD_PDA=FpYDe2qMPiWEHxFtu2vMDLUZRfYYEg32Dgkzoc8SPGJ3
+REGISTER_TX=2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3
+REGISTER_TX_URL=https://explorer.solana.com/tx/2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.94757732 SOL
+BALANCE_AFTER=5.94629884 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
