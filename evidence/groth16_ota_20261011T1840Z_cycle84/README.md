@@ -31,11 +31,32 @@ controls** (labeled `diff1`/`diff2`) when the primary is first-of-class, and the
 verdict gate iterates the actual control roles. Selected: key-32 (c-83, 3 h old)
 and key-31 (c-69). The patch rides in this PR (`+29/−4` lines).
 
+## CORRECTION (2026-10-11T21:0xZ) — first-of-class claim was FALSE
+
+A prior **key-33** proof existed: `e6a6b296` (declare B119/A53, 2026-09-30, merged
+PR#10, known-VALID) — same key id, DIFFERENT statement (deposit 100000 vs this
+cycle's 100002; pih[-1] `2261a97c…` vs `8611d46f…`). The battery labeled cycle-84
+"first-of-class key-33" because that payload was absent from the local evidence
+scan — absence treated as first-of-class, exactly the fail-open Codex flagged
+(P1). **Corrected claim: cycle-84 is the first proof of its full statement class
+(key-33 + deposit-100002 public-input vector)** — positively asserted by the
+patched template against complete dual-bus history — NOT the first key-33 proof.
+`e6a6b296` is vendored at `../groth16_ota_20260930T0828Z_control/` and verified in
+attempt 4 as the SAME-KEY different-statement regression control in the same
+battery session. The attempt-3 verdict content (primary + controls VALID) was and
+remains sound; only the first-of-class *label* was wrong. Template hardening riding
+in this PR: statement class = (key id, public-input vector); first-of-class
+requires a positive complete-history assertion; NOT-first-of-class primaries with
+no local same-class payload abort (no silent relabel); bus fetch must equal
+`/health` count; candidate order = bus declare timestamp (not dir names); evidence
+dir renamed `20260111`→`20261011` (Codex P2 mis-stamp; attempt-3 logs preserved
+under `*_attempt3_prelabel_correction.log`).
+
 ## Reproduce
 
 1. Extract: `python3 tools/b_rx_extract.py c84_session_slice.log --expect-sha 4b416048… --min-size 100`
    → `sha256_match: true`, 5/5 CRC-OK (`b_rx_extract_output.json`).
-2. Battery: `python3 tools/t12_battery_template.py --cycle 84 --evidence-dir evidence/groth16_ota_20260111T1840Z_cycle84 --guard-log <newest ~/fleet/logs/rx_standby_continuous_*.log>`
+2. Battery: `python3 tools/t12_battery_template.py --cycle 84 --evidence-dir evidence/groth16_ota_20261011T1840Z_cycle84 --guard-log <newest ~/fleet/logs/rx_standby_continuous_*.log>`
    (pass `--guard-log` explicitly — the frozen default is the c-82 stale-glob trap).
 3. Settle: `settle_groth16_ota.ts` with `SETTLE_RX_BIN=this dir's rx_payload_128b.bin`,
    `SETTLE_EXPECT_SHA=4b416048…`; chain-readback via `getSignaturesForAddress` on the record PDA.
