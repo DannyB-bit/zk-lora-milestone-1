@@ -12,11 +12,14 @@ agent lane → he rebuilt 2 WARM proofs (`aee2816a` key-31, deposit 100000 + `ff
 key-32, deposit 100001, both canon VK 7bd5683f) → his b_ack A454 said **"RELEASE YOUR
 c-80 DECLARE"** → declared same turn. Zero fires burned on a cold cache.
 
-**Fire**: B1186/A455 (01:38:56Z) → Alpha watcher declared in 30 s (B1188/A456,
+**Fire** (bus-stamp derived — corrected per Codex review, see `bus_timing_v2.json`):
+B1186/A455 posted 01:39:25Z → Alpha watcher declared in **1 s** (B1188/A456 01:39:26Z,
 `aee2816a` key-31, deposit 100000 — exactly the warm proof his 00:30:08Z b_ack promised)
-and completed 5/5 TX_DONE at 01:40:46Z: **80 s declare-to-fire — 6th consecutive
-80 s-class hot-path fire (81/81/82/80/79/80 s)**, 6th consecutive watcher-autonomous
-fire, no LLM turn in the loop.
+→ 5/5 TX_DONE 01:40:46Z: **81 s declare-to-fire — 6th consecutive 80 s-class hot-path
+fire (81/81/82/80/79/81 s)**, 6th consecutive watcher-autonomous fire, no LLM turn in
+the loop. The original 80 s figure used the composer *invocation* stamp (01:38:56Z in
+`capture_meta.json`); the bus POST timestamps are the authoritative metric — correction
+recorded in `corrections.md`.
 
 **Proof**: key-31, deposit 100000, 128 B compressed Groth16/BN254
 (A 32B G1 || B 64B G2 || C 32B G1), seed-42 canon PK (PK sha 8dda8b79 / VK sha 7bd5683f),
@@ -37,6 +40,9 @@ watcher hot-path cache pop, full public-input vector declared (4 hashes + gatewa
 
 - PRIMARY cycle-80 captured `aee2816a` (key-31): **VALID**, 142.1 s
 - CONTROL-diff key-32 `c300e5b4` (c-70, different statement class): **VALID**, 142.1 s
+  — the **executed** control (machine-picked by the battery from committed evidence;
+  `ff238e52` was the second warm cache proof, NOT a battery control — the settle_run.log
+  env echo naming it was wrong, corrected per Codex P2, see `corrections.md`)
 - CONTROL-same key-31 `edac7acc` (c-69, same class): **VALID**, 142.0 s
 - SHA gate 64/64; declare cross-bus byte-equal (A456 == B1188, 7 fields EQ); GUARD binary
   a0c74748 / PK 8dda8b79 / VK 7bd5683f unchanged before/after; silicon 40.4 → 45.7 °C,
@@ -47,12 +53,21 @@ watcher hot-path cache pop, full public-input vector declared (4 hashes + gatewa
 - Record PDA: `4VtY6koUbfc5raGD6VnFjKbFrdXuZnGsGGX2FqfKdXVv`
 - REGISTER TX: `4VRiSnzdVBViDHKKdM3784qiAmJcPyHfJELdKuRfvXuTbNNqkGT7CzQB1mSxwhgXULdKjV4oz2sWQgim7czsnb47`
   (slot 509744368, err=null — machine-fetched `getSignaturesForAddress` byte-match)
-- Merkle root = proof payload SHA256 (raw 32 B present in the 103 B program-owned account);
-  coords registered `[132, 182, 56, 35, 123, 217]` (proof payload bytes 0..5)
+- Merkle root = proof payload SHA256 — **raw-32-byte readback PASS** (`chain_readback_v2.json`:
+  `getAccountInfo` → root at Anchor offset 62..94 byte-exact, session ASCII 40..56, coords
+  raw 56..62, slot 509772356). The v1 `chain_readback.json` hex-string probe was structurally
+  void (it searched for the 64-char hex *string* inside raw account bytes; the program stores
+  the root as raw 32 B) — superseded, see `corrections.md`.
+  Coords registered `[132, 182, 56, 35, 123, 217]` (proof payload bytes 0..5)
 - Treasury +100000 lamports; 6/6 settle tests passed; `ZK_RF_TO_CHAIN_LOOP_CLOSED=YES`
 
 ## Honest ledger
 
+- **Corrections this cycle** (Codex review on PR #45, 2026-10-11T02:10Z, all verified
+  against real bytes and fixed in `corrections.md`): (1) hot-path timing re-derived from
+  bus stamps — 81 s, not 80 s; (2) v1 chain readback hex-string probe superseded by a
+  raw-byte `getAccountInfo` readback (PASS — settlement itself was sound); (3) settle
+  metadata named the wrong control (`ff238e52` vs executed `c300e5b4`).
 - No misses, no misfires, no URL corrections this cycle (the c-78 hand-typed-URL defect
   class stays closed — PR URL below is machine-fetched from the API readback).
 - Alpha's cache after this fire: 1 warm (`ff238e52` key-32) — refill ask posted with the
@@ -68,9 +83,14 @@ watcher hot-path cache pop, full public-input vector declared (4 hashes + gatewa
 - `b_rx_extract_output.json` — machine extraction, SHA gate PASS
 - `declare_c80.json` — composer output (window declare payload + cert)
 - `bus_events_drill.json` — c-80 drill events, both buses
+- `bus_timing_v2.json` — **bus-stamp timing derivation (Codex P1 fix)**: window open
+  01:39:25Z → proof declare 01:39:26Z (+1 s) → TX complete 01:40:46Z = 81 s
 - `t12_cycle80_battery.log` — full T12 battery run (post-wrap branch selected)
 - `settle_run.log` — devnet settle output
-- `chain_readback.json` — machine-fetched on-chain signature readback
+- `chain_readback.json` — v1 signature readback (superseded — hex-string probe defect)
+- `chain_readback_v2.json` — **raw-byte account readback (Codex P1 fix)**:
+  session/coords/root byte-exact at Anchor offsets 40/56/62, slot 509772356
+- `corrections.md` — all three Codex findings, verified + remediated, with byte evidence
 - `capture_meta.json`, `result_summary.txt` — machine-derived summary
 - `rx_payload_128b.bin` — the 128 B captured proof payload (byte-exact)
 - `extract_run.log`, `t12_console.log` — raw tool/console output of this cycle
