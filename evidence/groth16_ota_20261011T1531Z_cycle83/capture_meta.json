@@ -1,0 +1,15 @@
+{
+ "cycle": 83,
+ "generated_utc": "2026-10-11T15:55:00Z",
+ "drill": "groth16_ota",
+ "window": {"bus_seq_bravo": 1231, "bus_seq_alpha": 476, "armed_at_utc": "2026-10-11T15:31:30Z", "closes_at_utc": "2026-10-11T17:31:30Z"},
+ "declare": {"proof_sha256": "ff238e52b2ad1f3889a4da993427ddef9de87d806cbe1e95a7f7f57874ab72d4", "payload_bytes": 128, "key_id": 32, "cross_bus_byte_equal": true, "source": "watcher_hot_path"},
+ "capture": {"frames_crc_ok": 5, "frames_total": 5, "ghost_frames": 0, "freq_hz": 903900000, "chan": 3, "sf": 9, "bw_khz": 125, "snr_db_min_max": "10.8..11.2", "count_us_first_last": "78250972..145476615", "inter_frame_s_approx": 16.76, "listener_pid": 8205},
+ "battery": {"label": "T12_CYCLE83_BATTERY_RUN_UTC", "run_utc": "2026-10-11T15:34:59Z",
+   "primary": {"sha": "ff238e52", "key": 32, "verdict": "VALID", "wall_s": 142.1},
+   "control_diff": {"cycle": 82, "sha": "d940d21e", "key": 31, "verdict": "VALID", "wall_s": 142.1},
+   "control_same": {"cycle": 70, "sha": "c300e5b4", "key": 32, "verdict": "VALID", "wall_s": 142.2}},
+ "settle": {"network": "solana-devnet", "session_id": "ff238e52b2ad1f38", "record_pda": "FPmsG3GJwAdxCRRxqjiCaNDKi1vbX8NuqoCoMLyuQKyL", "register_tx": "5UDqEtA4YyT1ujrH8yGLFGyme5fWA34MhihRBLAe7uLu3cPZ28dRVMfmERnwW97Lq4w8N79pgP7PL8eMsBRozdSA", "register_tx_slot": 509951106, "fee_lamports": 100000, "tests_passed": 6, "chain_readback": "PASS"},
+ "declare_to_fire_s": 80,
+ "context": "First cycle after the 2026-10-11 WAN-flap storm + dual-box power event at 10:40 EDT; closes the 08:00-15:31Z cadence gap. 24th valid cycle."
+}
