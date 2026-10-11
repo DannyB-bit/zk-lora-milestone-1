@@ -1,0 +1,10 @@
+{
+ "pda": "FpYDe2qMPiWEHxFtu2vMDLUZRfYYEg32Dgkzoc8SPGJ3",
+ "register_tx": "2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3",
+ "slot": 509634556,
+ "blockTime_utc": "2026-10-10T18:43:17Z",
+ "on_chain": true,
+ "fee_lamports": 5000,
+ "err": null,
+ "verified_utc": "2026-10-10T18:44:25Z"
+}
