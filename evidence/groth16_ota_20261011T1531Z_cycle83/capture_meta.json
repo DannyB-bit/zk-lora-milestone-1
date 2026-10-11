@@ -1,5 +1,5 @@
 {
- "cycle": 83,
+ "cycle": 83, "valid_cycle_count": 32,
  "generated_utc": "2026-10-11T15:55:00Z",
  "drill": "groth16_ota",
  "window": {"bus_seq_bravo": 1231, "bus_seq_alpha": 476, "armed_at_utc": "2026-10-11T15:31:30Z", "closes_at_utc": "2026-10-11T17:31:30Z"},

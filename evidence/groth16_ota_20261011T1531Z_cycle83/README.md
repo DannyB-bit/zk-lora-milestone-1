@@ -1,6 +1,6 @@
 # GROTH16_OTA CYCLE-83 — COMPLETE VALID A→B, settled on Cuneiform Devnet
 
-**24th valid cycle. Closes the 08:00–15:31Z WAN-flap cadence gap (disclosed below). Watcher hot-path: declare 15:32:41Z → 5/5 TX_DONE 15:34:01Z = 80 s declare-to-fire (record tie).**
+**32nd valid cycle. Closes the 08:00–15:31Z WAN-flap cadence gap (disclosed below). Watcher hot-path: declare 15:32:41Z → 5/5 TX_DONE 15:34:01Z = 80 s declare-to-fire (record tie).**
 
 ## Context — the fleet storm this cycle rode through
 Both boxes power-cycled ~10:40 EDT (router/LAN event; Alpha's bus server_boot A473 at 14:39:45Z, B reboot 10:40:12 EDT). WAN flapped all day: Telegram API IPs hard-failing, DNS to 8.8.8.8 timing out (journal-proven), which killed the hourly beacon agent turns (6+ consecutive provider failures) and with them the cycle cadence that rode those turns. Cycles 71→80 + 82 landed COMPLETE VALID overnight before the storm; this cycle is the first after it.
