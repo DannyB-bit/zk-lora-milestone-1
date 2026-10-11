@@ -1,0 +1,35 @@
+{
+ "cycle": 85,
+ "drill": "groth16_ota",
+ "capture_utc_range": "2026-10-11T23:02:43Z .. 2026-10-11T23:03:51Z",
+ "wrap_branch": "pre-wrap (+0s, battery machine-selected; origin = arm banner second 2026-10-11T22:05:47Z)",
+ "session_boot_utc": "2026-10-11T22:05:47Z",
+ "frames_sha_matched": 5,
+ "sends_expected": 5,
+ "payload_sha256": "4f3c0b1906cf35769eae387a5b50802de951013c9e1c91dfde9247e76b0f8323",
+ "sha256_match": true,
+ "freq_hz": 903900000,
+ "datr": "SF9/125kHz",
+ "snr_avg": [
+  "10.8",
+  "10.8",
+  "11.0",
+  "11.0",
+  "10.8"
+ ],
+ "listener_pid": 14768,
+ "armed_at_utc": "2026-10-11T22:05:47Z",
+ "closes_at_utc": "2026-10-12T00:05:47Z",
+ "declare_b_bus_seq": 1269,
+ "proof_tx_b_seq": 1271,
+ "proof_tx_a_seq": 491,
+ "fired_utc": "2026-10-11T23:03:57Z",
+ "declare_to_fire_s": 82,
+ "key_id": "31 (NORMAL mode: 25 B-priors + 26 A-priors \u2014 NOT first-of-class; first live run of the corrected template's NORMAL branch, same-class control c-69 machine-picked)",
+ "battery_verdict_line": "BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID \u2014 cycle-85 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE85_BATTERY_RUN_UTC derived not typed; primary key-31; settle queued (Cuneiform devnet)",
+ "capture_count_us_band": [
+  3416942877,
+  3484013915
+ ],
+ "ts_utc": "2026-10-11T23:22:00Z"
+}
