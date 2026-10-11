@@ -29,6 +29,7 @@ Both boxes power-cycled ~10:40 EDT (router/LAN event; Alpha's bus server_boot A4
 1. Cadence gap 08:00→15:31Z: the beacon agent turns that drive cycle cadence failed 6+ consecutive times on WAN flaps (provider unreachable, Telegram delivery DNS-fail). Pipeline itself never broke — this cycle fired within 3 min of a clean declare.
 2. Pre-NTP stale session (60 s drift) recycled before any declare — never a declare target.
 3. Cycle count: c-81 and c-82 landed 06:5x/07:44Z per bus verdicts; c-83's evidence PR follows this file.
+4. Stale count label (fixed): the settle run's stdout printed `24th valid fleet cycle` before the count was corrected to 32nd (commit 2c7f2a2 fixed README + capture_meta's count field; this follow-up commit fixes the remaining derived summaries — `settle_result_summary.txt`, `capture_meta.json` context). The raw `settle_run.log` line 18 is preserved AS-RUN with the stale label per evidence-integrity law. The count is a local label only — it is NOT registered on-chain (chain data: session_id, coords, merkle root only).
 
 ## Reproduce
 1. `python3 tools/b_rx_extract.py evidence/groth16_ota_20261011T1531Z_cycle83/c83_session_slice.log --expect-sha ff238e52… --min-size 100`

@@ -11,5 +11,5 @@
    "control_same": {"cycle": 70, "sha": "c300e5b4", "key": 32, "verdict": "VALID", "wall_s": 142.2}},
  "settle": {"network": "solana-devnet", "session_id": "ff238e52b2ad1f38", "record_pda": "FPmsG3GJwAdxCRRxqjiCaNDKi1vbX8NuqoCoMLyuQKyL", "register_tx": "5UDqEtA4YyT1ujrH8yGLFGyme5fWA34MhihRBLAe7uLu3cPZ28dRVMfmERnwW97Lq4w8N79pgP7PL8eMsBRozdSA", "register_tx_slot": 509951106, "fee_lamports": 100000, "tests_passed": 6, "chain_readback": "PASS"},
  "declare_to_fire_s": 80,
- "context": "First cycle after the 2026-10-11 WAN-flap storm + dual-box power event at 10:40 EDT; closes the 08:00-15:31Z cadence gap. 24th valid cycle."
+ "context": "First cycle after the 2026-10-11 WAN-flap storm + dual-box power event at 10:40 EDT; closes the 08:00-15:31Z cadence gap. 32nd valid cycle."
 }
