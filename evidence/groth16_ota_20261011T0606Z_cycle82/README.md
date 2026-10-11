@@ -20,6 +20,12 @@
 - **Public inputs (machine-parsed from declare):** identity `cbe1d4d7…`, nullifier `a2624f76…`,
   attestation `8ed4c468…`, ciphertext `2261a97c…`; PK `8dda8b79…`, VK `7bd5683f…` (canon repo keys)
 
+- **Devnet settle (Cuneiform):** register TX `4AKABbewjJDzUMsw3boENrWswDNstk1hV7WnJ3jiwbfYCVbZLzCiRHUcEhu9KrAFo8ED3sFEkiqK8K5JxtLE1P5X`,
+  record PDA `DFsMemSgBe9QTPYjdFUE9bsKrJCeyrxgSowMrk83CaSk`, 6/6 gates PASS, 100k-lamport CPI fee,
+  merkle root = proof SHA256, coords `[42,92,47,226,201,86]` (payload bytes 0..5), ts 2026-10-11T07:42:18Z.
+  **Chain readback v2 (raw-byte): ALL PASS** — account 103 B, owner `2is5Q4r…`, session/coords/merkle-root
+  byte-exact at Anchor layout offsets, slot 509830741 (`chain_readback.json`).
+
 ## Files
 | File | Purpose |
 |---|---|
