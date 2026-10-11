@@ -1,0 +1,9 @@
+result_summary.txt — cycle-80 (machine-derived 2026-10-11T01:58Z)
+==================================================
+RADIO: 5/5 CRC-OK 128B @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, count_us 1328494168..1395645163 (POST-WRAP, +4294.967296s branch machine-selected), inter-frame 16.8s
+SHA GATE: sha256(payload)==aee2816a0a98fc4d... == declare B1188/A456: PASS 64/64
+WINDOW: armed 2026-10-11T00:05:49Z close 2026-10-11T02:05:49Z (declare_rx_window.py v1.0, 83rd consecutive gate PASS, lstart==banner zero drift)
+FIRE: declare B1186/A455 01:38:56Z -> watcher declared +30s -> 5/5 TX_DONE 01:40:46Z = 80s declare-to-fire (6th consecutive 80s-class: 81/81/82/80/79/80)
+T12: PRIMARY aee2816a (key-31) VALID 142.1s + control-diff c300e5b4 (key-32) VALID 142.1s + control-same edac7acc (key-31) VALID 142.0s; SHA gate 64/64; cross-bus declare byte-diff 7 fields EQ; GUARD unchanged (PK 8dda8b79 / VK 7bd5683f); silicon 40.4->45.7C throttled=0x0
+SETTLE: PDA 4VtY6koUbfc5raGD6VnFjKbFrdXuZnGsGGX2FqfKdXVv, TX 4VRiSnzd..., slot 509744368, chain-readback byte-match PASS (sig found, err=null, program-owned 103B account, session+coords+raw 32B root all present), treasury +100000 lamports, 6/6 tests
+VERDICT: COMPLETE VALID — 30th valid fleet cycle
