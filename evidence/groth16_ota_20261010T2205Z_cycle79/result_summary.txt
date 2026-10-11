@@ -7,3 +7,9 @@ FIRE: watcher declared +1s, 5/5 TX_DONE 2026-10-10T22:37:16Z -> 2026-10-10T22:38
 T12: PRIMARY 0241669a (key-32) VALID 142.0s + control-diff 154750eb (key-31) VALID 141.9s + control-same c300e5b4 (key-32) VALID 141.9s; SHA gate 64/64; GUARD unchanged; silicon 39.9->46.2C throttled=0x0
 SETTLE: PDA EVLHYcRumzgBzvHiiNuvUmayimstsNerexgnYKf3UyJA, TX 4Hfer3EM..., slot 509697423, chain-readback byte-match PASS, treasury +100000 lamports, 6/6 tests
 VERDICT: COMPLETE VALID — 29th valid fleet cycle
+
+--- CORRECTIONS (2026-10-11T04:29Z, Codex review remediation — see corrections.md) ---
+FIRE (corrected): bus-stamp derived = 80s declare-to-fire (B1168 22:37:15Z -> B1171 22:38:35Z), not 79s; prior figure mixed composer-invocation and bus-POST stamps. Streak: 81/81/82/80/80. 'Fastest yet' retracted.
+CONTROL (Codex P2 fixed): cycle-78 evidence merged into this branch — CONTROL-diff 154750eb payload + declaration now tracked (stacked: cycle-77 a2da7dd7 too); battery reproduction from clean checkout selects the true control.
+SETTLE (live re-verify): chain_readback_v2.py raw-byte PASS on PDA EVLHYc... (root byte-exact at 62..94, slot 509778660).
+TOOLS: declare_rx_window.py + bus_timing_probe.py + chain_readback_v2.py now tracked on this branch.

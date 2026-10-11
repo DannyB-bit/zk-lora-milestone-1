@@ -6,10 +6,13 @@
 declared by the durable tz-aware composer `declare_rx_window.py v1.0` — `closes_at_utc`
 tz-aware-correct on the first post, zero EDT skew.
 
-**Declare**: B-bus seq 1168 / A-bus seq 447 (22:37:15Z) → Alpha watcher declared in **1 s**
+**Declare** (bus-stamp derived — corrected per Codex review, see `corrections.md`):
+B-bus seq 1168 / A-bus seq 447 (22:37:15Z) → Alpha watcher declared in **1 s**
 (B1169/A448, `0241669a` key-32, deposit 100001 — exactly the warm proof his 18:59:10Z b_ack
-promised) and completed 5/5 TX_DONE at 22:38:35Z: **79 s declare-to-fire — 5th consecutive
-80 s-class hot-path fire (81/81/82/80/79 s)**, no LLM turn in the loop.
+promised) and completed 5/5 TX_DONE at 22:38:35Z: **80 s declare-to-fire — 5th consecutive
+80 s-class hot-path fire (81/81/82/80/80 s)**, no LLM turn in the loop. The original
+79 s figure subtracted stamps from two different planes (composer invocation vs bus
+POST); bus-stamp-to-bus-stamp is the authoritative metric.
 
 **Proof**: key-32, deposit 100001, 128 B compressed Groth16/BN254
 (A 32B G1 || B 64B G2 || C 32B G1), seed-42 canon PK (PK sha 8dda8b79 / VK sha 7bd5683f),
