@@ -7,9 +7,12 @@
 `closes_at_utc` was posted tz-aware-correct on the first try, closing the c-77 +4 h EDT
 `mktime`-skew defect class (proven 2026-10-10 cycle-77, correction event B1142).
 
-**Declare**: B-bus seq 1154 / A-bus seq 440 (20:27:50Z) → Alpha watcher hot-path fired in
-**80 s** (5/5 TX_DONE, first frame +7 s) — 4th consecutive 80 s-class hot-path fire
-(81/81/82/80 s), no LLM turn in the loop.
+**Declare** (bus-stamp derived — corrected per Codex review on PR #43): B-bus seq
+1154 / A-bus seq 440 (20:27:50Z) → Alpha watcher proof-declared in **1 s** (B1155/A441)
+→ 5/5 TX_DONE complete **20:29:10Z** (B1157/A442) = **80 s declare-to-fire, watcher
+react +0 s** — 4th consecutive 80 s-class hot-path fire (81/81/82/80 s), no LLM turn
+in the loop. The earlier `bus_events_drill.json` line `B442` was a bad event ID
+(nonexistent on the B bus) — corrected; see `corrections.md`.
 
 **Proof**: key-31, deposit 100000, 128 B compressed Groth16/BN254
 (A 32B G1 || B 64B G2 || C 32B G1), seed-42 canon PK (PK sha 8dda8b79 / VK sha 7bd5683f),
@@ -36,8 +39,12 @@ watcher hot-path cache pop (refilled by Alpha 18:49Z b_ack: `154750eb` key-31).
 ## Cuneiform Devnet settlement (chain-readback verified)
 
 - Record PDA: `8y8TBKWMT4kJE6X561ih5bbA6tMNznXo6AZwwh2kUWg4`
-- REGISTER TX: `4FzavZgsh1hpQBp2QNMH4qU4oDCRSGjtoPnUJGbH8BkqiWLjX5A7Ja8ssg9pmmWYoeYbVm4PWEVeHQx2B3ZMNiri`
+- REGISTER TX: `4FzavZgsh1hpQBp2QNMH4qU4oDCrSGjtoPnUJGbH8BkqiWLjX5A7Ja8ssg9pmmWYoeYbVm4PWEVeHQx2B3ZMNiri`
   (slot 509665187, err=null — machine-fetched `getSignaturesForAddress` byte-match)
+- Merkle root = proof payload SHA256 — **raw-32-byte readback re-verified live
+  2026-10-11T04:2xZ via `tools/chain_readback_v2.py`: root byte-exact at Anchor offset
+  62..94, session 40..56, coords 56..62 — PASS** (the v1 readback artifact class only
+  proved signature existence; the c-80 review exposed its hex-string probe defect)
 - Merkle root = proof payload SHA256; coords registered `[124, 33, 233, 4, 70, 122]`
 - Treasury +100000 lamports; 6/6 settle tests passed; `ZK_RF_TO_CHAIN_LOOP_CLOSED=YES`
 
