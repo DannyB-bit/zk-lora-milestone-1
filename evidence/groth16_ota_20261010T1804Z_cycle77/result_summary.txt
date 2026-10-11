@@ -1,0 +1,12 @@
+TEST_RUN_UTC=2026-10-10T18:44:00Z
+CYCLE=77 (27th valid fleet cycle)
+DRILL=groth16_ota watcher hot-path A->B
+WINDOW=B1139 armed 18:04:49Z true-close 20:04:49Z (correction B1142: posted close had +4h EDT skew)
+HOT_PATH=82s declare-to-fire (B1139->B1143), 9s declare-to-first-frame
+RADIO=5/5 CRC-OK 128B @903.9MHz SF9 SNR +11.0..+11.5dB pre-wrap count_us 962216655..1029363200
+SHA_GATE=captured==declare a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138 64/64 byte-equal cross-bus A433==B1141
+T12=T12_CYCLE77_BATTERY_RUN_UTC PRIMARY key-32 a2da7dd7 VALID 142.1s + control-diff key-31 610e92ab VALID + control-same key-32 c300e5b4 VALID
+PAIRING_VERIFIED=YES (B die, guards unchanged, throttled=0x0)
+SETTLE=Cuneiform devnet TX 2JbsDY7nm4PkrfznnwAXKcdHqtKNTFzGLhE25krWbUX5VxPCkTNyXYf8UaVkqyBdJaJbNsUE35W4MkGmtUuwrcL3 PDA FpYDe2qMPiWEHxFtu2vMDLUZRfYYEg32Dgkzoc8SPGJ3 slot 509634556 chain-readback PASS
+COORDS=[109,4,133,137,72,255] SESSION=a2da7dd7737f574c
+HONEST_LEDGER=2 owned defects: posted-close +4h skew (corrected B1142, fire inside true window); battery final-log crash from mid-run evidence-dir rename (verdict intact, log rescued via stdout redirect)

@@ -1,0 +1,27 @@
+T12_CYCLE77_BATTERY_RUN_UTC=2026-10-10T18:27:56Z
+invocation: tools/t12_battery_template.py --cycle 77 --evidence-dir evidence/cycle77 --guard-log /home/researcher-bravo/fleet/logs/rx_standby_continuous_20261010T064617Z.log
+mode: primary = machine-located captured burst; controls machine-selected by statement class (same + different), newest-first from prior evidence
+law: zero hand-typed constants (label derived from --cycle that locates the window); burst binding v4 = session-segment + digest-equality; wrap branch machine-selected
+SILICON measure_temp=temp=39.9'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+WINDOW cycle-77 located: B-bus seq 1139 armed=2026-10-10T18:04:49Z closes=2026-10-11T00:04:49Z — label T12_CYCLE77_BATTERY_RUN_UTC derived from THIS event's cycle id
+DECLARE cross-bus byte-diff: public_input_hashes=EQ, gateway_address_hex=EQ, firmware_hash_hex=EQ, deposit_value=EQ, private_key_id=EQ, deposit_commitment=EQ, proof_sha256=EQ
+DECLARE located: A seq433 == B seq1141; key=32 deposit=100001 source=watcher_hot_path (no LLM turn) construction=A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache
+WINDOW armed=2026-10-10T18:04:49+00:00 closes=2026-10-11T00:04:49+00:00 fired_utc=2026-10-10T18:22:04+00:00 (completion stamp)
+SESSION-SEGMENT arm banner line 1065 (guard log lines 1065..1168); count_us origin = banner second 2026-10-10T18:04:49+00:00 (banner-second convention; the SHA gate does not depend on walls)
+BURST: 5 frames, count_us 962216655..1029363200, inter_frame_s=[16.8, 16.8, 16.8, 16.8], SNR 11.5, status 0x10
+SHA GATE: digest(captured)==declare 64/64: a2da7dd7737f574c47b0a8d4aa846603fa7016d48f3c7cf4c82d04109b37d138
+PRIMARY cycle-77 captured a2da7dd7: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+CONTROL-diff groth16_ota_20261010T1604Z_cycle76 (key-31, machine-picked, DIFFERENT class) 610e92ab: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+CONTROL-same groth16_ota_20261009T1913Z_cycle70 (key-32, machine-picked, SAME class) c300e5b4: verdict=VALID exit=0 wall_s=140.9 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=42.8'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-77 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE77_BATTERY_RUN_UTC derived not typed; primary key-32; settle queued (Cuneiform devnet)
+Traceback (most recent call last):
+  File "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/tools/t12_battery_template.py", line 328, in <module>
+    main()
+    ~~~~^^
+  File "/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/tools/t12_battery_template.py", line 323, in main
+    with open(log_path, "w") as fh:
+         ~~~~^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/researcher-bravo/fleet-repos/zk-lora-milestone-1/evidence/cycle77/t12_cycle77_battery.log'

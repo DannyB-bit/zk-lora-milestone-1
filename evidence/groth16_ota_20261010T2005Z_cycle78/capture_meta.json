@@ -1,0 +1,29 @@
+{
+ "cycle": 78,
+ "window_armed_utc": "2026-10-10T20:05:09Z",
+ "window_closes_utc": "2026-10-10T22:05:09Z",
+ "declare_b_seq": 1154,
+ "declare_a_seq": 440,
+ "declare_utc": "2026-10-10T20:27:50Z",
+ "fired_utc": "2026-10-10T20:29:10Z",
+ "hot_path_s": 80,
+ "declare_to_first_frame_s": 7,
+ "payload_sha256": "154750eb50ff6008c582bb830386f3955cdf13ac58c28eec3b91566d5dc6d6a8",
+ "private_key_id": "31",
+ "deposit_value": 100000,
+ "frames": 5,
+ "all_crc_ok": true,
+ "count_us_first": 1368486994,
+ "count_us_last": 1435873897,
+ "snr_range": [
+  10.8,
+  11.5
+ ],
+ "freq_hz": 903900000,
+ "sf": "SF9",
+ "record_pda": "8y8TBKWMT4kJE6X561ih5bbA6tMNznXo6AZwwh2kUWg4",
+ "register_tx": "4FzavZgsh1hpQBp2QNMH4qU4oDCRSGjtoPnUJGbH8BkqiWLjX5A7Ja8ssg9pmmWYoeYbVm4PWEVeHQx2B3ZMNiri",
+ "chain_readback_slot": 509665187,
+ "chain_readback_err": null,
+ "composer": "declare_rx_window.py v1.0 (tz-aware UTC; c-77 +4h EDT-skew class fixed)"
+}

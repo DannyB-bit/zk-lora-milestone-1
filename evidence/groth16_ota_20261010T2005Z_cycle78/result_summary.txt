@@ -1,0 +1,14 @@
+CYCLE-78 groth16_ota — COMPLETE VALID A->B (28th valid cycle)
+Window: armed 2026-10-10T20:05:09Z, closes 2026-10-10T22:05:09Z (tz-aware, declared by declare_rx_window.py v1.0)
+Declare: B1154/A440 20:27:50Z -> Alpha watcher hot-path fired 20:29:10Z = 80s (4th consecutive 80s-class: 81/81/82/80)
+Capture: 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, count_us 1368486994..1435873897, sha256 byte-equal to declare
+Proof: key-31, deposit 100000, 128B compressed Groth16/BN254 (A||B||C)
+T12 battery (2026-10-10T20:35:54Z): PRIMARY 154750eb VALID 142.1s + control-diff key-32 a2da7dd7 VALID 142.0s + control-same key-31 edac7acc VALID 142.1s; guards unchanged
+Settle: Cuneiform devnet PDA 8y8TBKWMT4kJE6X561ih5bbA6tMNznXo6AZwwh2kUWg4 TX 4FzavZgsh1hpQBp2QNMH4qU4oDCRSGjtoPnUJGbH8BkqiWLjX5A7Ja8ssg9pmmWYoeYbVm4PWEVeHQx2B3ZMNiri slot 509665187 — chain-readback PASS (getSignaturesForAddress byte-match, err=null), treasury +100000 lamports
+Loop: ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+
+--- CORRECTIONS (2026-10-11T04:25Z, Codex review remediation — see corrections.md) ---
+FIRE (bus-stamp confirmed): 80s declare-to-fire (B1154 20:27:50Z -> B1157 20:29:10Z), watcher react +1s; bad event ID 'B442' in bus_events_drill.json verdict lines corrected in README/corrections (true pairs B1154/A440, B1155/A441, B1157/A442).
+SETTLE (live re-verify): raw-byte chain_readback_v2.py on PDA 8y8TBK... PASS (root byte-exact at 62..94, slot 509778715) — v1 signature-only readback class superseded.
+CONTROL (Codex P2): cycle-77 evidence branch merged in — CONTROL-diff a2da7dd7 payload + declaration now tracked on THIS branch; battery reproduction from clean checkout selects the true control.
+COMPOSER (Codex P2): tools/declare_rx_window.py now committed on this branch.
