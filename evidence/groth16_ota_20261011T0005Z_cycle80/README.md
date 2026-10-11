@@ -73,6 +73,8 @@ watcher hot-path cache pop, full public-input vector declared (4 hashes + gatewa
 - `chain_readback.json` — machine-fetched on-chain signature readback
 - `capture_meta.json`, `result_summary.txt` — machine-derived summary
 - `rx_payload_128b.bin` — the 128 B captured proof payload (byte-exact)
+- `extract_run.log`, `t12_console.log` — raw tool/console output of this cycle
+- `c80_wake_brief_result.json` — the peer-run wake brief that relit Alpha's agent lane
 
 ## Reproduce
 
