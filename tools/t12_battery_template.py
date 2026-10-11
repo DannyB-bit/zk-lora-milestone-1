@@ -20,7 +20,12 @@ Machine-derived, never typed:
   * declare           : groth16_proof_tx linked by window seq (B) + SHA (A)
   * controls          : scanned from prior evidence dirs, class-selected by
                         machine-parsed private_key_id (same-class + different-
-                        class), newest-first, provenance logged
+                        class), newest-first, provenance logged.
+                        FIRST-OF-CLASS PRIMARY (no same-class control can
+                        exist): falls back to TWO DISTINCT-CLASS different
+                        controls and labels the mode — never weakens to a
+                        single control (battery law: sound-run proof needs
+                        >=2 controls).
   * payload SHA       : from the declare, never typed
 Fail-closed gates (abort = no verdict, by battery law):
   * A-bus unreachable  -> NO verdict may issue; cross-bus byte-diff is mandatory
@@ -261,6 +266,7 @@ def main():
         if os.path.isfile(p):
             cands.append(d)  # dir names are UTC-stamped; sorted() puts newest last
     picked = {}
+    diff_classes = {}  # key_id -> candidate, newest-first insertion (first-of-class fallback)
     for d in reversed(cands):  # newest-first
         p = os.path.join(M1, "evidence", d, "rx_payload_128b.bin")
         s = sha(p)
@@ -273,12 +279,31 @@ def main():
                   and e.get("data", {}).get("proof_sha256") == s]
         if len(a_hits) != 1:
             continue
+        if k != primary_key and k not in diff_classes:
+            diff_classes[k] = (d, s, k, hits[0]["data"], a_hits[0]["data"])
         role = "same" if k == primary_key else "diff"
         if role not in picked:
             picked[role] = (d, s, k, hits[0]["data"], a_hits[0]["data"])
-        if len(picked) == 2:
+        if len(picked) == 2 and len(diff_classes) >= 2:
             break
-    if len(picked) != 2:
+    first_of_class = "same" not in picked
+    if first_of_class:
+        # FIRST-OF-CLASS PRIMARY: no same-class control can exist by
+        # definition (first proof of this statement class in fleet
+        # history). Battery law: a sound run still needs >=2 controls —
+        # require TWO DISTINCT-CLASS controls instead. Never weaken to 1.
+        if len(diff_classes) < 2:
+            scanned = ", ".join(cands) or "(none)"
+            raise SystemExit(f"ABORT: control classes not satisfiable (first-of-class key-{primary_key}: "
+                             f"need 2 distinct-class controls, found {len(diff_classes)}); "
+                             f"scanned: {scanned}")
+        newest_two = list(diff_classes.values())[:2]  # dict is newest-first by construction
+        picked = {"diff1": newest_two[0], "diff2": newest_two[1]}
+        lines.append(f"CONTROL MODE: FIRST-OF-CLASS key-{primary_key} — same-class control "
+                     f"cannot exist (first proof of this statement class); 2 DISTINCT-CLASS "
+                     f"controls required and satisfied (keys "
+                     + ", ".join(f"key-{t[2]}" for t in newest_two) + ")")
+    elif len(picked) != 2:
         scanned = ", ".join(cands) or "(none)"
         raise SystemExit(f"ABORT: control classes not satisfiable (same+diff vs key-{primary_key}); "
                          f"scanned: {scanned}")
@@ -306,7 +331,7 @@ def main():
     lines.append(f"SILICON-END {telemetry()}")
 
     # ---- verdict per battery law ----
-    if not all(verdicts[r] == "VALID" for r in ("same", "diff")):
+    if not all(v == "VALID" for v in verdicts.values()):
         lines.append("BATTERY VERDICT: QUARANTINED — a control flipped INVALID; "
                      "no verdict, bisect before any claim")
     elif v == "VALID":

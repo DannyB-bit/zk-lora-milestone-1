@@ -1,0 +1,29 @@
+{
+ "cycle": 84,
+ "drill": "groth16_ota",
+ "capture_utc_range": "2026-10-11T18:36:39Z .. 2026-10-11T18:37:46Z",
+ "wrap_branch": "pre-wrap (all 5 frames; post-wrap branch scanned, none in fired-gate)",
+ "session_boot_utc": "2026-10-11T17:31:49Z",
+ "frames_sha_matched": 5,
+ "sends_expected": 5,
+ "payload_sha256": "4b4160488a948fa96117efa820065c07bf7cd85fb2cda7def8be6cf4954912c0",
+ "sha256_match": true,
+ "freq_hz": 903900000,
+ "datr": "SF9/125kHz",
+ "snr_avg": [
+  "10.8",
+  "10.8",
+  "11.0",
+  "11.5",
+  "10.8"
+ ],
+ "listener_pid": 21103,
+ "armed_at_utc": "2026-10-11T17:31:50Z",
+ "closes_at_utc": "2026-10-11T19:31:50Z",
+ "declare_b_bus_seq": 1248,
+ "proof_tx_b_seq": 1250,
+ "proof_tx_a_seq": 484,
+ "fired_utc": "2026-10-11T18:37:53Z",
+ "declare_to_fire_s": 80,
+ "key_id": "33 (first key-33 proof in fleet history)"
+}

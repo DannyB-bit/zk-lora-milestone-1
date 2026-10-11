@@ -1,0 +1,119 @@
+2026-10-11T17:31:50Z GATE PASS: ARMING listener window 2026-10-11T17:31:50Z -> +7200s (HOLD_FIRE — standby only)
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 0
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (21106 on READY)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 2568500034
+  size:     117
+  chan:     5
+  status:   0x11
+  datr:     5
+  codr:     1
+  rf_chain  0
+  freq_hz   904300000
+  snr_avg:  -7.0
+  rssi_chan:86.0
+  rssi_sig :79.0
+  crc:      0x1B31
+FF 9A 3F D8 70 73 87 76 8C 90 53 47 9C 2D F1 57 D7 D0 05 3B 3B C0 5F 51 B6 20 3C 17 FF BC 82 43 50 60 62 37 ED BA 20 AE C8 7D AB AD 37 47 66 C5 B4 8F EB 89 0C F0 00 75 E4 11 CB 7A 53 16 AD A8 12 5C 46 98 6C A8 EB 69 DE FA 82 37 DB A4 F7 1E 4A 49 BA 04 2A D9 49 A0 FD 90 CE 97 3C E5 C1 F2 B1 5E 8F C7 CA C4 97 D1 E9 DA A3 5D C1 C7 4C 76 61 CE 36 65 55 
+Received 1 packets (total:0)
+
+----- LoRa packet -----
+  count_us: 3890721941
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x1EC4
+08 63 B5 4C 9D BC CF 8D AB C9 76 64 AC F1 5C 78 DD D4 35 F0 7C 32 E2 5D F8 3D 9F A5 6C 9D 27 2F 80 28 85 18 1A A8 0C F4 45 44 12 A9 9D E4 13 72 57 6C 42 C9 2B 5E F5 0D 17 B2 1D A9 3E 34 D9 26 89 72 09 52 44 97 FB B9 40 86 96 43 04 DE 3C EB CF 60 FC 01 E0 95 D1 A0 E7 0B ED C0 04 69 57 89 EE BD 7C E6 4C 58 C6 C3 9B 65 43 77 B3 32 93 EE 97 BE B3 43 65 56 6C C5 50 AF 83 4E 4D DC 90 17 
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 3907503789
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x1EC4
+08 63 B5 4C 9D BC CF 8D AB C9 76 64 AC F1 5C 78 DD D4 35 F0 7C 32 E2 5D F8 3D 9F A5 6C 9D 27 2F 80 28 85 18 1A A8 0C F4 45 44 12 A9 9D E4 13 72 57 6C 42 C9 2B 5E F5 0D 17 B2 1D A9 3E 34 D9 26 89 72 09 52 44 97 FB B9 40 86 96 43 04 DE 3C EB CF 60 FC 01 E0 95 D1 A0 E7 0B ED C0 04 69 57 89 EE BD 7C E6 4C 58 C6 C3 9B 65 43 77 B3 32 93 EE 97 BE B3 43 65 56 6C C5 50 AF 83 4E 4D DC 90 17 
+Received 1 packets (total:2)
+
+----- LoRa packet -----
+  count_us: 3924277311
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.0
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x1EC4
+08 63 B5 4C 9D BC CF 8D AB C9 76 64 AC F1 5C 78 DD D4 35 F0 7C 32 E2 5D F8 3D 9F A5 6C 9D 27 2F 80 28 85 18 1A A8 0C F4 45 44 12 A9 9D E4 13 72 57 6C 42 C9 2B 5E F5 0D 17 B2 1D A9 3E 34 D9 26 89 72 09 52 44 97 FB B9 40 86 96 43 04 DE 3C EB CF 60 FC 01 E0 95 D1 A0 E7 0B ED C0 04 69 57 89 EE BD 7C E6 4C 58 C6 C3 9B 65 43 77 B3 32 93 EE 97 BE B3 43 65 56 6C C5 50 AF 83 4E 4D DC 90 17 
+Received 1 packets (total:3)
+
+----- LoRa packet -----
+  count_us: 3941044981
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x1EC4
+08 63 B5 4C 9D BC CF 8D AB C9 76 64 AC F1 5C 78 DD D4 35 F0 7C 32 E2 5D F8 3D 9F A5 6C 9D 27 2F 80 28 85 18 1A A8 0C F4 45 44 12 A9 9D E4 13 72 57 6C 42 C9 2B 5E F5 0D 17 B2 1D A9 3E 34 D9 26 89 72 09 52 44 97 FB B9 40 86 96 43 04 DE 3C EB CF 60 FC 01 E0 95 D1 A0 E7 0B ED C0 04 69 57 89 EE BD 7C E6 4C 58 C6 C3 9B 65 43 77 B3 32 93 EE 97 BE B3 43 65 56 6C C5 50 AF 83 4E 4D DC 90 17 
+Received 1 packets (total:4)
+
+----- LoRa packet -----
+  count_us: 3957830332
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x1EC4
+08 63 B5 4C 9D BC CF 8D AB C9 76 64 AC F1 5C 78 DD D4 35 F0 7C 32 E2 5D F8 3D 9F A5 6C 9D 27 2F 80 28 85 18 1A A8 0C F4 45 44 12 A9 9D E4 13 72 57 6C 42 C9 2B 5E F5 0D 17 B2 1D A9 3E 34 D9 26 89 72 09 52 44 97 FB B9 40 86 96 43 04 DE 3C EB CF 60 FC 01 E0 95 D1 A0 E7 0B ED C0 04 69 57 89 EE BD 7C E6 4C 58 C6 C3 9B 65 43 77 B3 32 93 EE 97 BE B3 43 65 56 6C C5 50 AF 83 4E 4D DC 90 17 
+Received 1 packets (total:5)
