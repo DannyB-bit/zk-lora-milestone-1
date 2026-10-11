@@ -43,7 +43,15 @@ from datetime import datetime, timedelta, timezone
 M1 = os.path.expanduser("~/fleet-repos/zk-lora-milestone-1")
 REPO = os.path.expanduser("~/fleet-repos/zk-lorawan")
 BIN = os.path.join(REPO, "target/debug/zk_lorawan_prove")
-DEFAULT_GUARD = os.path.expanduser("~/fleet/logs/rx_standby_continuous_20261003T180951Z.log")
+def _newest_standby_log():
+    # c-82 abort fix (2026-10-11): a frozen default guard log goes stale the moment
+    # the standby service rolls a new log; machine-glob the newest instead.
+    import glob
+    cands = sorted(glob.glob(os.path.expanduser("~/fleet/logs/rx_standby_continuous_*.log")),
+                   key=os.path.getmtime)
+    return cands[-1] if cands else os.path.expanduser("~/fleet/logs/rx_standby_continuous_20261003T180951Z.log")
+
+DEFAULT_GUARD = _newest_standby_log()
 
 B_BUS = "http://192.168.1.220:8643"
 A_BUS = "http://192.168.1.219:8643"

@@ -1,0 +1,43 @@
+{
+  "cycle": "82",
+  "capture_utc": "2026-10-11T07:24:49Z",
+  "window": {
+    "armed_at_utc": "2026-10-11T06:06:50Z",
+    "closes_at_utc": "2026-10-11T08:06:50Z",
+    "declared_b_seq": 1214,
+    "a_mirror_seq": 466
+  },
+  "declare_chain": {
+    "b1214_rx_window_open": "07:23:27Z",
+    "b1216_groth16_proof_tx": "07:23:29Z",
+    "b1217_groth16_tx_fired": "07:24:49Z",
+    "a466": true,
+    "a467": true,
+    "a468": true
+  },
+  "payload_sha256": "d940d21e1280adb1d0d632e48a727c156b0bfe0a12dadbc37b5fbad3552a5bec",
+  "key_id": "31",
+  "deposit": 100000,
+  "crc_ok_packets": 5,
+  "count_us": [
+    310964013,
+    327709058,
+    344473015,
+    361258759,
+    378036496
+  ],
+  "snr_db": [
+    11.0,
+    11.8,
+    11.2,
+    10.8,
+    11.2
+  ],
+  "freq_hz": 903900000,
+  "inter_frame_s": [
+    16.75,
+    16.76,
+    16.79,
+    16.78
+  ]
+}
