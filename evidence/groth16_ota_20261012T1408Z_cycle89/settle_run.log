@@ -1,0 +1,38 @@
+2026-10-12T11:40:21-04:00 Researcher-B systemd[1150]: Started fleet-settle-c89.service - [systemd-run] /usr/bin/bash /home/researcher-bravo/fleet/scripts/settle_cycle89.sh.
+2026-10-12T11:40:21-04:00 Researcher-B bash[123449]: SETTLE_EXPECT_SHA=04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623
+2026-10-12T11:40:21-04:00 Researcher-B bash[123449]: SETTLE_META=2026-10-12T14:56:15.301015Z..2026-10-12T14:57:22.368413Z (pre-wrap (+0s, machine-selected by T12 battery session-segment), window B1343/A515, fired 2026-10-12T14:57:29Z, 82s declare-to-fire (13th consecutive 80s-class)
+2026-10-12T11:40:24-04:00 Researcher-B bash[123477]:   captured proof: 128 bytes from groth16_ota_20261012T1408Z_cycle89
+2026-10-12T11:40:24-04:00 Researcher-B bash[123477]:   proof SHA256: 04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623
+2026-10-12T11:40:24-04:00 Researcher-B bash[123477]:   coords (proof payload[0:6]): [0x8e, 0x39, 0x7b, 0xb8, 0x84, 0x17]
+2026-10-12T11:40:25-04:00 Researcher-B bash[123477]:   authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+2026-10-12T11:40:25-04:00 Researcher-B bash[123477]:   balance before: 5.93351404 SOL
+2026-10-12T11:40:25-04:00 Researcher-B bash[123477]:   session_id : 04b463642ccb7d48 (= proof SHA[0:16] hex)
+2026-10-12T11:40:25-04:00 Researcher-B bash[123477]:   merkleRoot: 04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623 (= captured proof SHA256)
+2026-10-12T11:40:25-04:00 Researcher-B bash[123477]:   record PDA: 5seZBgukkW7XBpcZA26RTVSpuLcQMBNHdaXodnNaQkRZ
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]:   ✅ REGISTER TX: 4tFmUL381Zg4BCEsT1y7Sce5YQjPb1Kuv4vuwSHbmw7qLQ9YbSaHGqStZSbrpVEsVTPn8odFpVbQatcJqStKicoA
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]:      https://explorer.solana.com/tx/4tFmUL381Zg4BCEsT1y7Sce5YQjPb1Kuv4vuwSHbmw7qLQ9YbSaHGqStZSbrpVEsVTPn8odFpVbQatcJqStKicoA?cluster=devnet
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]:   on-chain record: coords=[142,57,123,184,132,23] root=04b463642ccb7d48… ts=2026-10-12T15:40:26.000Z
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]:   treasury delta: 100000 lamports
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]:   balance after: 5.93223556 SOL
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: TEST_RUN_UTC=2026-10-12T15:40:27.525Z
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: NODE=RakMiner-B (Researcher Bravo, Agent 05)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: SETTLED_TRANSFER=cycle-89 OTA Groth16/BN254 proof A->B, node-b-rx 2026-10-12T14:57Z, 38th valid fleet cycle, key-31 statement class (NORMAL mode)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: CAPTURE_META=2026-10-12T14:56:15.301015Z..2026-10-12T14:57:22.368413Z (pre-wrap (+0s, machine-selected by T12 battery session-segment), window B1343/A515, fired 2026-10-12T14:57:29Z, 82s declare-to-fire (13th consecutive 80s-class)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: PROOF_PAYLOAD_SHA256=04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: GROTH16_PAIRING_VERIFIED=YES - T12_CYCLE89_BATTERY_RUN_UTC all VALID (PRIMARY key-31 + control-same c-69 key-31 + control-diff c-88 key-34, B die; PR#48-head template 158c0a5 vendored)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: SESSION_ID=04b463642ccb7d48
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: COORDS_REGISTERED=[142, 57, 123, 184, 132, 23] (= proof payload bytes 0..5)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: MERKLE_ROOT=04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623 (= proof payload SHA256)
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: RECORD_PDA=5seZBgukkW7XBpcZA26RTVSpuLcQMBNHdaXodnNaQkRZ
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: REGISTER_TX=4tFmUL381Zg4BCEsT1y7Sce5YQjPb1Kuv4vuwSHbmw7qLQ9YbSaHGqStZSbrpVEsVTPn8odFpVbQatcJqStKicoA
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: REGISTER_TX_URL=https://explorer.solana.com/tx/4tFmUL381Zg4BCEsT1y7Sce5YQjPb1Kuv4vuwSHbmw7qLQ9YbSaHGqStZSbrpVEsVTPn8odFpVbQatcJqStKicoA?cluster=devnet
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: PROTOCOL_FEE_LAMPORTS=100000
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: BALANCE_BEFORE=5.93351404 SOL
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: BALANCE_AFTER=5.93223556 SOL
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: TESTS_PASSED=6
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: TESTS_FAILED=0
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: FAIL_DETAIL=none
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: GROTH16_OTA_SETTLED_ON_CHAIN=YES
+2026-10-12T11:40:27-04:00 Researcher-B bash[123477]: ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+2026-10-12T11:40:28-04:00 Researcher-B systemd[1150]: fleet-settle-c89.service: Consumed 4.651s CPU time.
