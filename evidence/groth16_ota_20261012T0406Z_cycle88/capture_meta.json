@@ -1,0 +1,44 @@
+{
+ "cycle": 88,
+ "drill": "groth16_ota",
+ "capture_utc_range": "2026-10-12T05:19:34.736978+00:00 .. 2026-10-12T05:20:41.953851+00:00",
+ "wrap_branch": "post-wrap (+4294.967296s, machine-selected by T12 battery; origin = arm banner second 2026-10-12T04:06:48Z; fired stamp 05:20:47Z completion)",
+ "session_boot_utc": "2026-10-12T04:06:48Z",
+ "frames_sha_matched": 5,
+ "sends_expected": 5,
+ "payload_sha256": "81fd764bddb87b7a1bf4e9177690706ce0b2c37dcd40449a843ffc00ada0d1e2",
+ "sha256_match": true,
+ "freq_hz": 903900000,
+ "datr": "SF9/125kHz",
+ "snr_avg": [
+  "11.0",
+  "10.8",
+  "10.8",
+  "11.0",
+  "10.8"
+ ],
+ "count_us_band": [
+  71769682,
+  138986555
+ ],
+ "inter_frame_s": [
+  16.8,
+  16.9,
+  16.8,
+  16.8
+ ],
+ "armed_at_utc": "2026-10-12T04:06:48Z",
+ "closes_at_utc": "2026-10-12T06:06:48Z",
+ "window_seqs": {
+  "bravo_bus": 1306,
+  "alpha_bus_mirror": 506
+ },
+ "declare_seqs": {
+  "bravo_bus": 1308,
+  "alpha_bus": 507,
+  "ts_utc": "2026-10-12T05:19:27Z"
+ },
+ "fired_utc": "2026-10-12T05:20:47Z",
+ "declare_to_fire_s": 80,
+ "battery": "T12_CYCLE88_BATTERY_RUN_UTC=2026-10-12T05:36:48Z FIRST-OF-CLASS mode (positively asserted: key-34 priors B=0 A=0, 5 unclassable declares correctly excluded): PRIMARY 81fd764b (key-34, deposit 100003) VALID 142.1s + CONTROL-diff1 c-87 e703bfd3 (key-33) VALID 141.8s + CONTROL-diff2 c-70 c300e5b4 (key-32) VALID 142.1s; SHA gate 64/64; guards unchanged a0c74748/8dda8b79/7bd5683f; throttled=0x0; 43.3->48.2C"
+}

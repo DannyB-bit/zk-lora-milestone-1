@@ -1,0 +1,12 @@
+{
+ "pda": "FwYNmw6KF3wA9s3JAqDKUDzZTChmnGYRdCufMGvd4upR",
+ "claimed_register_tx": "5Y4WwE8BfgotwVBK8xZMSizvPhvpPWVkgrRcKacasC9oJEKpoMscR4tnj1oJ2uRfgXKbMH1NSLmNQbkdnm33JnYn",
+ "chain_holds_tx": true,
+ "slot": 510165159,
+ "err": null,
+ "blockTime_utc": "2026-10-12T05:55:32.000Z",
+ "account_data_bytes": 103,
+ "merkle_root_in_pda": true,
+ "decode_info_scan": "NONE \u2014 digest-only COMPLIANT",
+ "gate": "PASS"
+}
