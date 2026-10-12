@@ -1,0 +1,11 @@
+[
+ {
+  "role": "same-statement-class control for cycle-91 (key-33)",
+  "sha256": "e703bfd384a2f1d4ca480e8c5fa3702d1a9a526d1319a529678dfe1e0cfd0d24",
+  "bytes": 128,
+  "provenance": "cycle-87 captured payload, byte-exact blob extraction from commit 26e2edc (PR#51 branch head, c-87 evidence commit): evidence/groth16_ota_20261012T0206Z_cycle87/rx_payload_128b.bin",
+  "declare": "B-bus seq 1294 == A-bus seq 501 @2026-10-12T03:18:15Z, key-33, dual-bus",
+  "restored_to": "evidence/groth16_ota_20261012T0206Z_cycle87/rx_payload_128b.bin (original path \u2014 battery scanner locates controls by rx_payload_128b.bin in groth16_ota_* dirs; c-87 precedent restored the c-84 payload identically)",
+  "sha_verified_at_restore": true
+ }
+]

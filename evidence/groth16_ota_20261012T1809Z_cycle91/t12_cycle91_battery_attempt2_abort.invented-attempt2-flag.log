@@ -1,0 +1,7 @@
+usage: t12_battery_template_pr48_158c0a5.py [-h] --cycle CYCLE
+                                            --evidence-dir EVIDENCE_DIR
+                                            [--guard-log GUARD_LOG]
+                                            [--bus-timeout BUS_TIMEOUT]
+t12_battery_template_pr48_158c0a5.py: error: unrecognized arguments: --attempt2
+BATTERY_EXIT=2
+BATTERY_DONE_UTC=2026-10-12T20:17:12Z
