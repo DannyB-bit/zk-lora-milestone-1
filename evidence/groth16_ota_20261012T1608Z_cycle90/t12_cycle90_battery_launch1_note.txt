@@ -1,0 +1,1 @@
+launch1 (prior tick ~17:33Z): 0 bytes. The run was launched from an execute_code kernel (300-s limit) with a buffered stdout pipe — killed mid-pairing before any flush. Relaunch follows the 2026-10-12 law: python3 -u + direct file redirect + terminal background.
