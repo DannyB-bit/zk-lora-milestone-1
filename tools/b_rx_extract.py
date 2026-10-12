@@ -23,9 +23,18 @@ capture, node-b-rx_20260630T012005Z/raw_hal_rx_9039_sf9_125k.log):
     Received N packets (total:M)
 
 Usage:
-    b_rx_extract.py LOG [--expect-sha HEX] [--min-size N]
-Prints a JSON summary; exits 0 iff >=1 CRC-OK packet parsed (match only
-affects the JSON fields, not the exit code — evidence records honesty).
+    b_rx_extract.py LOG [--expect-sha HEX64] [--min-size N]
+Prints a JSON summary.
+
+Exit contract (fail-closed, PR#52 Codex-P2 hardening 2026-10-12):
+    0  >=1 CRC-OK packet parsed; if --expect-sha was given, it is a FULL
+       64-hex digest and at least one CRC-OK packet matches it
+    1  no CRC-OK packets parsed
+    2  --expect-sha is not a full 64-hex digest (abbreviated/truncated
+       digests are REFUSED: they compare false while looking like a check)
+    3  --expect-sha is well-formed and packets parsed, but NONE matches
+       the declared digest — a declare/capture mismatch is a FAILURE,
+       never a footnote with exit 0
 """
 import argparse
 import hashlib
@@ -139,26 +148,51 @@ def parse_log(path: str) -> list:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("log")
-    ap.add_argument("--expect-sha", default=None)
+    ap.add_argument("--expect-sha", default=None,
+                    help="FULL 64-hex sha256 digest of the declared payload; "
+                         "abbreviated digests are refused (exit 2)")
     ap.add_argument("--min-size", type=int, default=1)
     a = ap.parse_args()
+
+    # Codex P2 hardening: a truncated/abbreviated digest (e.g. '81fd764b…a0d1e2')
+    # compares false against every packet while LOOKING like a check — the
+    # recorded claim then 'passes' a command that validated nothing. Refuse it.
+    expect = None
+    if a.expect_sha is not None:
+        expect = a.expect_sha.strip().lower()
+        if re.fullmatch(r"[0-9a-f]{64}", expect) is None:
+            print(json.dumps({
+                "log": a.log,
+                "error": ("--expect-sha must be a FULL 64-hex sha256 digest; abbreviated/"
+                          "truncated digests are refused — they compare false while "
+                          "looking like a check (fail-closed, PR#52 Codex P2)"),
+                "expected_sha256": a.expect_sha,
+            }, indent=2))
+            return 2
 
     pkts = parse_log(a.log)
     crc_ok = [p for p in pkts if p["crc_ok"] and p["actual_bytes"] >= a.min_size]
     match = None
-    if a.expect_sha and crc_ok:
-        match = any(p["sha256"] == a.expect_sha.lower() for p in crc_ok)
+    if expect is not None and crc_ok:
+        match = any(p["sha256"] == expect for p in crc_ok)
 
     print(json.dumps({
         "log": a.log,
         "total_packets": len(pkts),
         "crc_ok_packets": len(crc_ok),
-        "expected_sha256": a.expect_sha,
+        "expected_sha256": expect,
         "sha256_match": match,
         "crc_ok": crc_ok,
         "all_packets": [{k: v for k, v in p.items() if k != "hex"} for p in pkts],
     }, indent=2))
-    return 0 if crc_ok else 1
+
+    if not crc_ok:
+        return 1
+    if expect is not None and not match:
+        # A declared digest that matches NO captured packet is a FAILURE of the
+        # recorded claim — never a JSON footnote with exit 0 (Codex P2).
+        return 3
+    return 0
 
 
 if __name__ == "__main__":

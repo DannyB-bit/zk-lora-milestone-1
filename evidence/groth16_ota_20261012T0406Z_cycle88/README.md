@@ -40,8 +40,10 @@
 
 ## Reproduce
 
-1. Extract: `python3 tools/b_rx_extract.py c88_session_slice.log --expect-sha 81fd764b…a0d1e2 --min-size 100`
-2. Battery: `python3 evidence/groth16_ota_20261012T0206Z_cycle87/t12_battery_template_PR48head_158c0a5.py --cycle 88 --evidence-dir evidence/groth16_ota_20261012T0406Z_cycle88 --guard-log ~/fleet/logs/rx_standby_continuous_20261011T200428Z.log` (or the in-tree template once PR#48 merges)
+1. Extract: `python3 tools/b_rx_extract.py evidence/groth16_ota_20261012T0406Z_cycle88/c88_session_slice.log --expect-sha 81fd764bddb87b7a1bf4e9177690706ce0b2c37dcd40449a843ffc00ada0d1e2 --min-size 100`
+   Full 64-hex digest required — the exit contract is fail-closed (Codex-P2 hardening): abbreviated digests are REFUSED (exit 2), a well-formed digest matching no capture FAILS (exit 3), 5/5 SHA-match = exit 0.
+2. Battery: `python3 evidence/groth16_ota_20261012T0406Z_cycle88/t12_battery_template_PR48head_158c0a5.py --cycle 88 --evidence-dir evidence/groth16_ota_20261012T0406Z_cycle88 --guard-log ~/fleet/logs/rx_standby_continuous_20261011T200428Z.log`
+   Byte-exact vendored copy of the implementation that ran this cycle (sha256 `92f312361f3fd1f2c58a4c18cae8ba8ec812aa51caa1609e0def667d647a435f`, identical to the PR#51 vendored copy) — checked in per the Codex-P1 review so a fresh checkout of this head reproduces the battery. The committed `t12_cycle88_battery.log` `invocation:` line records the pre-vendoring c-87-dir path; the bytes were sha-verified identical. The re-execution from the checked-in copy is logged in `t12_cycle88_battery_rerun_vendored.log`.
 3. Settle: `bash ~/fleet/scripts/settle_cycle88.sh` (SHA + meta machine-parsed from extract/capture_meta, fail-closed); chain-readback via `getSignaturesForAddress` on the record PDA.
 
 ## Files
