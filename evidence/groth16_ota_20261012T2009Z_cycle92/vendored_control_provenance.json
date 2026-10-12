@@ -1,0 +1,9 @@
+{
+ "file": "evidence/groth16_ota_20261012T0406Z_cycle88/rx_payload_128b.bin",
+ "sha256": "81fd764bddb87b7a1bf4e9177690706ce0b2c37dcd40449a843ffc00ada0d1e2",
+ "sha256_source": "dual-bus declare B-bus seq 1308 / A-bus seq 507 (byte-identical, fetched in this turn)",
+ "restored_from": "PR#52 head commit ae664d9 (ref pr52-head) via git cat-file blob -p (binary restore, never text mode)",
+ "restored_utc": "2026-10-12T22:13:05Z",
+ "why": "T12 c-92 battery first run ABORTed fail-closed: NOT first-of-class (prior key-34 same-statement declare B1308/A507 = cycle-88) but no local same-class control payload verifiable - the c-88 payload was stranded on unmerged PR#52 branch. Restored byte-exact to the ORIGINAL dir path per the c-91 restore law.",
+ "verify_cmd": "sha256sum evidence/groth16_ota_20261012T0406Z_cycle88/rx_payload_128b.bin"
+}
