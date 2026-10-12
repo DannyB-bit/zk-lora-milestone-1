@@ -1,0 +1,16 @@
+{
+ "gate": "settle-signature chain-readback (fleet law, c-29 provenance)",
+ "record_pda": "8taRSCF7VmPM9djaPqsNDMN5tCvtDPs7eRvAwcS528A8",
+ "artifact_signature": "5Xi8tY3BfhSje5Lkt7xneNBEpDZZRUjJypvjB3mbbLvAAC4HaxsqagqYrqeXkGcHAn7knLUuNzc7bgF4fsoGRTsc",
+ "chain_signature_byte_match": true,
+ "slot": 510133828,
+ "err": null,
+ "onchain_blocktime_utc": "2026-10-12T03:50:47+00:00",
+ "pda_signatures_recent": [
+  "5Xi8tY3BfhSje5Lkt7xneNBEpDZZRUjJypvjB3mbbLvAAC4HaxsqagqYrqeXkGcHAn7knLUuNzc7bgF4fsoGRTsc"
+ ],
+ "fetched_utc": "2026-10-12T03:52:02.280074+00:00",
+ "pda_data_len": 105,
+ "root_in_pda": true,
+ "decode_info_scan": "NONE"
+}
