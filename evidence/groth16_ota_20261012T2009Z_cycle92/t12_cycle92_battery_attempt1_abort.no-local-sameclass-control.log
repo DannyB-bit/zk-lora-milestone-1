@@ -1,0 +1,3 @@
+ABORT: NOT first-of-class (prior same-statement-class declares exist: B=[1308] A=[507]) but no local same-class control payload is verifiable — vendor the prior same-class payload (see its declare for the sha) and re-run; refusing to relabel as first-of-class (Codex P1: absence-of-evidence is not first-of-class)
+BATTERY_EXIT=1
+BATTERY_DONE_UTC=2026-10-12T22:05:17Z

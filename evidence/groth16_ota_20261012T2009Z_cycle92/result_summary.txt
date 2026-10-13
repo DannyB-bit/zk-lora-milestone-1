@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-12T22:19:38.535Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-92 OTA Groth16/BN254 proof A->B, node-b-rx 2026-10-12T21:53Z, 41st valid fleet cycle, SECOND key-34 statement cycle (first was c-88; corrected from pre-battery draft label, see honest ledger — battery CLASS SCAN: NOT first-of-class, priors B[1308] A[507])
+CAPTURE_META=2026-10-12T21:51:53.217500+00:00..2026-10-12T21:53:00.316243+00:00 (post-wrap (+4294.967296s, machine-selected by T12 battery wrap-branch discriminator), window B1381/A530, fired 2026-10-12T21:53:06Z, 80.0s declare-to-fire (16th consecutive 80s-class)
+PROOF_PAYLOAD_SHA256=79e06d07d6d36a51d05f8b1d4c76898f1f3d9d3cc9ab1f6d22763b33b3cc3f03
+GROTH16_PAIRING_VERIFIED=YES - T12_CYCLE92_BATTERY_RUN_UTC all VALID (key-34 SECOND-of-class primary + machine-picked controls incl restored same-class c-88 81fd764b, B die; PR#48-head template 158c0a5 vendored, sha 92f31236; label corrected from pre-battery draft)
+SESSION_ID=79e06d07d6d36a51
+COORDS_REGISTERED=[91, 122, 82, 152, 243, 239] (= proof payload bytes 0..5)
+MERKLE_ROOT=79e06d07d6d36a51d05f8b1d4c76898f1f3d9d3cc9ab1f6d22763b33b3cc3f03 (= proof payload SHA256)
+RECORD_PDA=6jaL2aFxMZ8L57aCMDWQGc9f6HQjfToNRLaZC1pMS2mE
+REGISTER_TX=sBqpfqp8hGhYgeZAp33nqnpQKzT6osGkAtd5fgopSU4BtztLUrcwkuZCNUwN6W5vnDhQTJw6fmUHBEfeuL4GVF6
+REGISTER_TX_URL=https://explorer.solana.com/tx/sBqpfqp8hGhYgeZAp33nqnpQKzT6osGkAtd5fgopSU4BtztLUrcwkuZCNUwN6W5vnDhQTJw6fmUHBEfeuL4GVF6?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.9296786 SOL
+BALANCE_AFTER=5.92840012 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
