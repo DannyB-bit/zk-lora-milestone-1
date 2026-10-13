@@ -1,0 +1,77 @@
+2026-10-13T09:47:15Z B_ACK_FIRE_BEGIN stamp=20261013T094715Z
+2026-10-13T09:47:15Z STAGED_OK sha256=cc1b77d50ff55ebce120653afcf423fc2eb81c0fd7c8232639470da46a27b131 (23B deterministic stock TX payload)
+2026-10-13T09:47:15Z Stopping fleet-rx-standby.service
+2026-10-13T09:47:19Z SPI bus free
+2026-10-13T09:47:19Z FIRING 23B ack at 903.9 MHz SF9/125kHz 14dBm
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (238930 on READY)
+[rak_gpio] stop: holder released, lines latched (HAT stays powered)
+Sending 1 LoRa packets on 903900000 Hz (BW 125 kHz, SF 9, CR 1, 23 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 14 dBm
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+TX done
+
+Nb packets sent: 1 (1)
+Closing SPI communication interface
+=========== Test End ===========
+2026-10-13T09:47:23Z TX exit_code=0
+2026-10-13T09:47:23Z B_ACK_TX_DONE=YES
+2026-10-13T09:47:23Z Re-certifying chip via lora_chirp_recovery.sh node-b-rx
+2026-10-13T09:47:23Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-10-13T09:47:23Z RECOVERY_LOG=/home/researcher-bravo/fleet/logs/lora_chirp_recovery_node-b-rx_20261013T094715Z.log
+2026-10-13T09:47:23Z Stopping known gateway services so one process owns the concentrator
+2026-10-13T09:47:24Z RUN: sudo systemctl stop helium-gateway
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active helium-gateway
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-10-13T09:47:24Z RUN: sudo systemctl stop packet-forwarder
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active packet-forwarder
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-10-13T09:47:24Z RUN: sudo systemctl stop lora_pkt_fwd
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active lora_pkt_fwd
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-10-13T09:47:24Z RUN: sudo systemctl stop lora-packet-forwarder
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active lora-packet-forwarder
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-10-13T09:47:24Z RUN: sudo systemctl stop sx1302_hal
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active sx1302_hal
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-10-13T09:47:24Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-13T09:47:24Z RUN: sudo systemctl stop miner
+2026-10-13T09:47:24Z EXIT[5]: sudo systemctl stop miner
+2026-10-13T09:47:24Z RUN: sudo systemctl is-active miner
+2026-10-13T09:47:24Z EXIT[4]: sudo systemctl is-active miner
+2026-10-13T09:47:25Z Using reset script: /home/researcher-bravo/sx1302_hal/libloragw/reset_lgw.sh
+2026-10-13T09:47:25Z RUN: sudo ./reset_lgw.sh stop
+2026-10-13T09:47:25Z EXIT[0]: sudo ./reset_lgw.sh stop
+2026-10-13T09:47:26Z RUN: sudo ./reset_lgw.sh start
+2026-10-13T09:47:29Z EXIT[0]: sudo ./reset_lgw.sh start
+2026-10-13T09:47:29Z SPI device exists: /dev/spidev0.0
+2026-10-13T09:47:29Z Trying concentrator verification tool: /home/researcher-bravo/sx1302_hal/util_chip_id/chip_id
+2026-10-13T09:47:29Z RUN: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-13T09:47:33Z EXIT[0]: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-13T09:47:33Z LORA_CHIRP_RECOVERY_PASS=YES
+2026-10-13T09:47:33Z LORA_CHIRP_RECOVERY_END role=node-b-rx
+2026-10-13T09:47:33Z recovery exit=0 pass_line='2026-10-13T09:47:33Z LORA_CHIRP_RECOVERY_PASS=YES' rec_log='/home/researcher-bravo/fleet/logs/lora_chirp_recovery_node-b-rx_20261013T094715Z.log'
+2026-10-13T09:47:33Z Re-arming fleet-rx-standby.service
+2026-10-13T09:47:38Z B_ACK_FIRE_RESULT=FIRED_AND_REARMED
