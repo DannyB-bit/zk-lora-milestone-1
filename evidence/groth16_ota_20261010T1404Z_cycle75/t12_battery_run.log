@@ -1,0 +1,19 @@
+T12_CYCLE75_BATTERY_RUN_UTC=2026-10-10T14:44:04Z
+invocation: tools/t12_battery_template.py --cycle 75 --evidence-dir evidence/groth16_ota_20261010T1404Z_cycle75 --guard-log /home/researcher-bravo/fleet/logs/rx_standby_continuous_20261010T064617Z.log
+mode: primary = machine-located captured burst; controls machine-selected by statement class (same + different), newest-first from prior evidence
+law: zero hand-typed constants (label derived from --cycle that locates the window); burst binding v4 = session-segment + digest-equality; wrap branch machine-selected
+SILICON measure_temp=temp=38.4'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847
+WINDOW cycle-75 located: B-bus seq 1114 armed=2026-10-10T14:04:08Z closes=2026-10-10T16:04:08Z — label T12_CYCLE75_BATTERY_RUN_UTC derived from THIS event's cycle id
+DECLARE cross-bus byte-diff: public_input_hashes=EQ, gateway_address_hex=EQ, firmware_hash_hex=EQ, deposit_value=EQ, private_key_id=EQ, deposit_commitment=EQ, proof_sha256=EQ
+DECLARE located: A seq422 == B seq1117; key=32 deposit=100001 source=watcher_hot_path (no LLM turn) construction=A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache
+WINDOW armed=2026-10-10T14:04:08+00:00 closes=2026-10-10T16:04:08+00:00 fired_utc=2026-10-10T14:42:48+00:00 (completion stamp)
+SESSION-SEGMENT arm banner line 695 (guard log lines 695..798); count_us origin = banner second 2026-10-10T14:04:08+00:00 (banner-second convention; the SHA gate does not depend on walls)
+BURST: 5 frames, count_us 2246706267..2313958090, inter_frame_s=[16.8, 16.8, 16.8, 16.9], SNR 11.5, status 0x10
+SHA GATE: digest(captured)==declare 64/64: 31367da8ce2fd21e74e80c9a2b5390377b7ab8c8ab35d5b3b03675642621b5db
+PRIMARY cycle-75 captured 31367da8: verdict=VALID exit=0 wall_s=142.3 stdout='VALID'
+CONTROL-diff groth16_ota_20261010T1203Z_cycle74 (key-31, machine-picked, DIFFERENT class) b0b7dfb1: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+CONTROL-same groth16_ota_20261009T1913Z_cycle70 (key-32, machine-picked, SAME class) c300e5b4: verdict=VALID exit=0 wall_s=142.1 stdout='VALID'
+GUARD-AFTER binary=a0c74748cdc13506 PK=8dda8b798458bb5b VK=7bd5683f13f35847 — unchanged
+SILICON-END measure_temp=temp=42.8'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-75 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE75_BATTERY_RUN_UTC derived not typed; primary key-32; settle queued (Cuneiform devnet)
