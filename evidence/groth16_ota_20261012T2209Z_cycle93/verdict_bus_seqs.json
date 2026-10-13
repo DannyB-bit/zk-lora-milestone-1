@@ -1,1 +1,7 @@
-{"b_seq": 1400, "a_seq": 538, "posted_utc": "2026-10-13T00:40:00Z"}
+{
+ "b_seq": 1400,
+ "a_seq": 538,
+ "posted_utc": "2026-10-13T00:40:00Z",
+ "pr_notice_b_seq": 1401,
+ "pr_notice_a_seq": 539
+}
