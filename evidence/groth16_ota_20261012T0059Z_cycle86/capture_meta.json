@@ -1,0 +1,40 @@
+{
+ "cycle": 86,
+ "drill": "groth16_ota",
+ "capture_utc_range": "2026-10-12T00:59:11Z .. 2026-10-12T01:00:19Z",
+ "wrap_branch": "pre-wrap (+0s, machine-derived; origin = arm banner second 2026-10-12T00:06:07Z; max count_us 3252098262 < 4294967296)",
+ "session_boot_utc": "2026-10-12T00:06:07Z",
+ "frames_sha_matched": 5,
+ "sends_expected": 5,
+ "payload_sha256": "d658351308ff621b406e46269697b346e4e3f144a9af2f0ed58b57c85838567e",
+ "sha256_match": true,
+ "freq_hz": 903900000,
+ "datr": "SF9/125kHz",
+ "snr_avg": [
+  "11.5",
+  "10.8",
+  "11.5",
+  "11.2",
+  "11.5"
+ ],
+ "count_us_band": [
+  3184875574,
+  3252098262
+ ],
+ "inter_frame_s": [
+  16.9,
+  16.8,
+  16.8,
+  16.8
+ ],
+ "armed_at_utc": "2026-10-12T00:06:07Z",
+ "closes_at_utc": "2026-10-12T02:06:07Z",
+ "declare_b_bus_seq": 1280,
+ "declare_a_bus_mirror_seq": 495,
+ "proof_tx_b_seq": 1282,
+ "proof_tx_a_seq": 496,
+ "fired_utc": "2026-10-12T01:00:25Z",
+ "declare_to_fire_s": 82,
+ "key_id": "32 (per dual-bus declare; class scan by battery)",
+ "ts_utc": "2026-10-12T01:37:00Z"
+}

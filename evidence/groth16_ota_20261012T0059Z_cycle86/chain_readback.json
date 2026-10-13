@@ -1,0 +1,12 @@
+{
+ "probe_utc": "2026-10-12T01:59:04Z",
+ "cluster": "devnet",
+ "record_pda": "FPJbsVpixtiogumAec9soXW71GusxyoFWThJ5iSPVmJq",
+ "register_tx": "49829ksEzH6HSAvx1fSDDRU7uU8Bdr2YBySkKxKup1vXdc2MaSBaszcWuv8ZcCDhbido7AYSrMqbuGS4FkHYNSeb",
+ "signature_byte_match_on_pda": true,
+ "merkle_root_hex": "d658351308ff621b406e46269697b346e4e3f144a9af2f0ed58b57c85838567e",
+ "merkle_root_bytes_in_pda_data": true,
+ "pda_data_len_bytes": 103,
+ "decode_info_scan": "NONE - digest-only, ZK-lawful",
+ "verdict": "PASS"
+}
