@@ -1,0 +1,10 @@
+{
+ "bundle_utc": "2026-10-13T11:11:11Z",
+ "files": {
+  "bus_events_alpha_side.json": "df364afca04f7b877c0512f597858f1f38e6326506e296fa6396612fe5f09b61",
+  "bus_events_bravo_side.json": "bb8b45c5fdc074ca0d521bec933cf8d96f3ae66d2ccfe86d30ea10242b3dca2f",
+  "rx_leg3_b_to_a_capture.log": "a12c06ca0ea17ff6c9693b386a303e4f696c753a426021719b6db58c5dad1bde",
+  "tx_leg2_a_to_b_groth16.log": "c8434d86e07f8f6cef2a4072cfe5f554da0db4ec734bde8a4ba901e95fb59e65"
+ },
+ "notes": "A<->B LoRaWAN conversation 2026-10-13, legs 1-3"
+}
