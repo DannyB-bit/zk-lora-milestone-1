@@ -1,0 +1,20 @@
+{
+ "payload_sha256": "04b463642ccb7d48f47d578fb57316589e39df5a4164854d7d51597e5a1d8623",
+ "capture_utc_range": "2026-10-12T14:56:15.301015Z .. 2026-10-12T14:57:22.368413Z",
+ "wrap_branch": "pre-wrap (+0s, machine-selected by T12 battery session-segment; frames 2867.3s..2934.4s after arm, under the 71.6min wrap horizon)",
+ "window": {
+  "b_seq": "1343",
+  "a_mirror_seq": "515",
+  "armed_at_utc": "2026-10-12T14:08:28Z",
+  "closes_at_utc": "2026-10-12T16:08:28Z"
+ },
+ "fired_utc": "2026-10-12T14:57:29Z",
+ "declare_to_fire_s": 82.0,
+ "frame_count": 5,
+ "count_us_range": "2867301015..2934368413",
+ "snr_range": "11.0..11.5",
+ "count_us_origin_convention": "arm banner second 2026-10-12T14:08:28Z (battery session-segment banner-second convention; serialized from b_rx_extract parse + T12 battery output, never hand-derived)",
+ "consecutive_complete_valid": 13,
+ "private_key_id": "31",
+ "battery_label": "T12_CYCLE89_BATTERY_RUN_UTC"
+}
