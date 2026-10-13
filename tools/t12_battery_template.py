@@ -32,6 +32,9 @@ Machine-derived, never typed:
                         NOT-first-of-class runs require a same-class control
                         payload on disk (vendor it or abort) + 1 different.
   * payload SHA       : from the declare, never typed
+Exit contract (Codex P1, PR#55/56 reviews): 0 = PRIMARY VALID + controls
+  VALID (the only settle-eligible verdict); 3 = QUARANTINED (control flip);
+  4 = PRIMARY INVALID. Launchers gate on this code, never on log prose.
 Fail-closed gates (abort = no verdict, by battery law):
   * A-bus unreachable  -> NO verdict may issue; cross-bus byte-diff is mandatory
   * window not found / not unique -> abort
@@ -50,7 +53,10 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-M1 = os.path.expanduser("~/fleet-repos/zk-lora-milestone-1")
+# Codex P2 remediation (PR#55 inline 4252087658): derive the repo root from THIS
+# file so a fresh checkout anywhere resolves --evidence-dir, the control-scan
+# tree and the guard paths against ITS OWN tree, never a foreign checkout.
+M1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.expanduser("~/fleet-repos/zk-lorawan")
 BIN = os.path.join(REPO, "target/debug/zk_lorawan_prove")
 def _newest_standby_log():
@@ -72,6 +78,12 @@ VERIFY_FIELDS = ("public_input_hashes", "gateway_address_hex", "firmware_hash_he
 
 
 def tok():
+    # Codex P2 remediation (PR#55 inline 4252087658): honor the exported
+    # FLEET_FAST_TOKEN — a fresh machine with a valid exported token but no
+    # Hermes .env must be able to run the documented reproduce command.
+    env_tok = os.environ.get("FLEET_FAST_TOKEN")
+    if env_tok:
+        return env_tok
     for line in open(os.path.expanduser("~/.hermes/.env")):
         if line.strip().startswith("FLEET_FAST_TOKEN"):
             return line.strip().partition("=")[2].strip().strip('"').strip("'")
@@ -299,14 +311,22 @@ def main():
 
     primary_class = declare_class(d_b["data"])
     primary_pih = json.dumps(d_b["data"].get("public_input_hashes"), sort_keys=True)
+    # Codex P1 remediation (PR#56 inline 4252900841, PR#57 4253723476): priors are
+    # declares that PRECEDED the primary on each bus. Filtering only by
+    # "seq != primary" let a LATER same-class declare count as a prior when an
+    # older cycle's battery was re-run (time-travel: c-93 would lose its recorded
+    # first-of-class the moment a future key-35 declare landed). The verdict
+    # recorded at run time must be reproducible forever: seq < primary_seq on
+    # both the class history AND the pih-only guard AND control candidates.
     prior_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
-               and declare_class(e.get("data", {})) == primary_class
-               and e["seq"] != d_b["seq"]]
+               and e["seq"] < d_b["seq"]
+               and declare_class(e.get("data", {})) == primary_class]
     prior_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-               and declare_class(e.get("data", {})) == primary_class
-               and e["seq"] != d_a["seq"]]
-    unclassed = sum(1 for bus in (Bev, Aev) for e in bus
+               and e["seq"] < d_a["seq"]
+               and declare_class(e.get("data", {})) == primary_class]
+    unclassed = sum(1 for bus, dseq in ((Bev, d_b["seq"]), (Aev, d_a["seq"])) for e in bus
                     if e.get("type") == "groth16_proof_tx"
+                    and e["seq"] < dseq
                     and (e.get("data", {}).get("private_key_id") is None
                          or e.get("data", {}).get("public_input_hashes") is None))
     # pih-only prior guard: an UNCLASSED prior declare (missing key id) whose public-
@@ -314,10 +334,10 @@ def main():
     # (same pih => same identity hash => same key in practice). Absence of a legible
     # key id on a prior must BLOCK the first-of-class claim, not enable it.
     prior_pih_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
-                   and e["seq"] != d_b["seq"]
+                   and e["seq"] < d_b["seq"]
                    and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
     prior_pih_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                   and e["seq"] != d_a["seq"]
+                   and e["seq"] < d_a["seq"]
                    and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
     first_of_class = not prior_b and not prior_a and not prior_pih_b and not prior_pih_a
     lines.append(f"CLASS SCAN (complete dual-bus history): statement-class key-{primary_key} "
@@ -337,9 +357,11 @@ def main():
             continue
         s = sha(p)
         hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
+                and e["seq"] < d_b["seq"]
                 and e.get("data", {}).get("proof_sha256") == s]
         a_hits = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                  and e.get("data", {}).get("proof_sha256") == s]
+                 and e["seq"] < d_a["seq"]
+                 and e.get("data", {}).get("proof_sha256") == s]
         if len(hits) != 1 or len(a_hits) != 1 or hits[0]["data"].get("private_key_id") is None:
             skipped += 1
             continue
@@ -425,9 +447,19 @@ def main():
     lines.append(f"SILICON-END {telemetry()}")
 
     # ---- verdict per battery law ----
+    # Codex P1 remediation (PR#56 inline 4252900854, PR#55 4252087640): the
+    # fail-closed contract is exit-coded, not log-prose-only. Quarantine and
+    # primary-INVALID previously fell through to exit 0 — any launcher gating on
+    # BATTERY_EXIT (as the committed run logs record it) could read a failed
+    # gate as success and proceed toward settlement. Contract (asserted by the
+    # unit test): 0 = PRIMARY VALID + all controls VALID (sole settle-eligible
+    # verdict); 3 = QUARANTINED (control flip — no verdict, bisect); 4 =
+    # PRIMARY INVALID (no settle, disclosed, bisect).
+    battery_rc = 0
     if not all(v == "VALID" for v in verdicts.values()):
         lines.append("BATTERY VERDICT: QUARANTINED — a control flipped INVALID; "
                      "no verdict, bisect before any claim")
+        battery_rc = 3
     elif v == "VALID":
         lines.append(f"BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-{cycle} A->B exchange COMPLETE: "
                      f"radio 5/5 SHA MATCH ({wrap_note} frames) + pairing VALID on B die, "
@@ -436,11 +468,13 @@ def main():
     else:
         lines.append("BATTERY VERDICT: PRIMARY INVALID + CONTROLS VALID — captured bytes fail pairing; "
                      "no settle; disclosed; bisect")
+        battery_rc = 4
 
     out = "\n".join(lines)
     print(out)
     with open(log_path, "w") as fh:
         fh.write(out + "\n")
+    return battery_rc
 
 
 if __name__ == "__main__":
