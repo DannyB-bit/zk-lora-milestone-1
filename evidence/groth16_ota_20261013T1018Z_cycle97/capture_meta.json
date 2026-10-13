@@ -1,0 +1,58 @@
+{
+ "cycle": 97,
+ "key_id": "39",
+ "payload_sha256": "741392bdd020c88114701892f4e70420e829690b7bd70aa45dbddd08adce9007",
+ "payload_bytes": 128,
+ "capture_utc_range": "11:26:53.7Z..11:28:00.9Z",
+ "wrap_branch": "pre-wrap (all count_us < 2^32; walls = arm banner 10:18:26Z + count_us/1e6; first frame 11:26:53.7Z = declare +1.3s, causal with fired 11:28:06Z)",
+ "window": {
+  "b_seq": 1481,
+  "a_mirror_seq": 590,
+  "armed_at_utc": "2026-10-13T10:18:26Z",
+  "closes_at_utc": "2026-10-13T12:18:26Z"
+ },
+ "declare": {
+  "b_seq": 1483,
+  "a_seq": 591,
+  "utc": "2026-10-13T11:26:47Z"
+ },
+ "fired_utc": "2026-10-13T11:28:06Z",
+ "declare_to_fire_s": 79,
+ "sends": "5/5 TX_DONE",
+ "crc_ok_frames": 5,
+ "freq_hz": 903900000,
+ "snr_range": "10.5-11.0 dB",
+ "battery_exit": 0,
+ "settle": null,
+ "session_filter_note": "raw listener log spanned TWO bursts (leg-3 key-38 d3ccac4a at 10:20:58-10:22:05Z + cycle-97 key-39 741392bd at 11:26:53-11:28:00Z); session_slice.log band-filtered to the key-39 burst per c-96 chained-session law; a first attempt staged crc[0] (the leg-3 frame) and was caught by bin-SHA check \u2014 deleted, re-staged from a key-39 frame",
+ "battery_run_utc": "2026-10-13T11:41:02Z",
+ "first_of_class": {
+  "statement_class": "key-39",
+  "prior_declares_B": 0,
+  "prior_declares_A": 0,
+  "pih_only_priors_B": 0,
+  "pih_only_priors_A": 0,
+  "unclassable": 5
+ },
+ "controls": [
+  {
+   "dir": "groth16_ota_20261013T0811Z_cycle96",
+   "key": "key-38",
+   "sha_prefix": "d3ccac4a",
+   "verdict": "VALID",
+   "wall_s": 142.0
+  },
+  {
+   "dir": "groth16_ota_20261013T0210Z_cycle94",
+   "key": "key-36",
+   "sha_prefix": "3a333037",
+   "verdict": "VALID",
+   "wall_s": 141.9
+  }
+ ],
+ "primary": {
+  "sha": "741392bd",
+  "verdict": "VALID",
+  "wall_s": 141.9
+ }
+}

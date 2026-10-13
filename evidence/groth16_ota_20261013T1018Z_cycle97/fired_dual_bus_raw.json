@@ -1,0 +1,28 @@
+{
+ "b": {
+  "seq": 1484,
+  "ts": 1791890887.0081854,
+  "ts_utc": "2026-10-13T11:28:07Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1481",
+   "fired_utc": "2026-10-13T11:28:06Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "741392bdd020c88114701892f4e70420e829690b7bd70aa45dbddd08adce9007",
+   "exit_code": 0
+  }
+ },
+ "a": {
+  "seq": 592,
+  "ts": 1791890886.990903,
+  "ts_utc": "2026-10-13T11:28:06Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1481",
+   "fired_utc": "2026-10-13T11:28:06Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "741392bdd020c88114701892f4e70420e829690b7bd70aa45dbddd08adce9007",
+   "exit_code": 0
+  }
+ }
+}
