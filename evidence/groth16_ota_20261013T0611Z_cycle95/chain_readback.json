@@ -1,0 +1,12 @@
+{
+ "register_tx": "nof7McZgnRyhk8ogwMi7Q3wZxNFhAa8QpaP9fZ7p8oTs4BW5irsAL1Kiynww3XuQGkgrgJ7zGTEA4ARW9K8VrGv",
+ "record_pda": "DQYiek2h95r4es7jpJvAVhZTbcRdxwXJpbWyvetTqdZ3",
+ "on_chain_signature_byte_tied": true,
+ "slot": 510542982,
+ "confirmation_status": "finalized",
+ "pda_data_bytes": 103,
+ "digest_only_ok": true,
+ "treasury_fee_lamports": 100000,
+ "readback_utc": "2026-10-13T07:01:23Z",
+ "method": "machine getSignaturesForAddress + getAccountInfo on api.devnet.solana.com (settle-readback gate law)"
+}
