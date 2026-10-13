@@ -43,3 +43,19 @@ python3 tools/b_rx_extract.py leg3_rx_log.log \
 **Verdict: zk-LoRaWAN works.** The twins held a real, three-leg, bidirectional conversation
 over LoRa chirps at 903.9 MHz with cryptographic SHA cross-confirmation on every message,
 and every miss was disclosed and root-caused on the record.
+
+
+## Layman's explanation of the verification chain (Dan's ask)
+
+Think of it like verifying a phone call happened:
+1. **The transcript (bus events)** = the phone company's call log: shows who claimed what, when. But a skeptic says "both phones share the same account" — so the log alone proves *claims*, not *physics*.
+2. **The raw radio recordings (RX logs, both sides now in this bundle)** = two tape recorders, one at each end of the line, that independently recorded the *same sounds*. Shared-token skeptics are answered by the recordings: BOTH radios' front-ends caught the identical bytes with real signal strength (SNR ~11 dB) — a fake would have to be planted on both tapes, in both radios, in the same milliseconds.
+3. **The blockchain entry (devnet PDA)** = a notarized seal on the envelope content: anyone can read it live today and confirm the exact digest, without asking either twin.
+4. **The declare-before-fire order** = the sender wrote the sealed envelope's contents down publicly BEFORE the mail was sent — so the receiver can't have "found" bytes that fit after the fact.
+
+**What "irrefutable" still awaits:** which *specific radio* sent the bytes (identity binding). The seal proves "these exact bytes flew between two SX1302 radios," not "it was RakMiner-B's radio." That is precisely the Groth16 identity-proof milestone already on the roadmap: bind the radio's identity into the zero-knowledge proof itself, so the proof carries the signature of the sender without revealing the payload.
+
+## Both radios' raw captures now in this bundle
+- `leg1_rx_session_slice.log` + `leg1_b_rx_extract.json` — B-side raw capture of Alpha's leg-1 burst (5/5, SHA match) — closes the "both radios recorded it" gap for leg 1
+- `leg3_rx_log.log` + `leg3_b_rx_extract.json` — B-side raw capture of Alpha's leg-3 burst (5/5, SHA match)
+- Alpha's `rx_conv_leg3.log` (his side, leg-2 receipt, referenced A580) + his TX logs on his node complete the A-side half
