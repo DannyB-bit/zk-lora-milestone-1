@@ -1,0 +1,18 @@
+{
+ "derivation_utc": "2026-10-11T04:11:51Z",
+ "tool": "bus_timing_probe.py",
+ "cycle": "80",
+ "metric_definition": "declare-to-fire = ts(rx_window_open) -> ts(groth16_tx_fired), both machine-stamped by the bus server; watcher-react = ts(groth16_proof_tx) - ts(rx_window_open)",
+ "b_bus": {
+  "window_open_seq": 1186,
+  "window_open_ts_utc": "2026-10-11T01:39:25Z",
+  "proof_tx_seq": 1188,
+  "proof_tx_ts_utc": "2026-10-11T01:39:26Z",
+  "tx_fired_seq": 1189,
+  "tx_fired_ts_utc": "2026-10-11T01:40:46Z"
+ },
+ "watcher_react_s": 1.0,
+ "declare_to_fire_s": 81.0,
+ "cross_bus_stamps_agree": true,
+ "verdict": "bus-stamp declare-to-fire = 81s"
+}

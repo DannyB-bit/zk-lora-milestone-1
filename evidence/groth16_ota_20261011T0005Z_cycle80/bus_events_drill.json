@@ -1,0 +1,184 @@
+{
+ "fetched_at_utc": "2026-10-11T01:50:30Z",
+ "cycle": 80,
+ "b_bus": [
+  {
+   "seq": 1186,
+   "ts": 1791682765.3868968,
+   "ts_utc": "2026-10-11T01:39:25Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle80_window_open",
+    "cycle": "80",
+    "armed_at_utc": "2026-10-11T00:05:49Z",
+    "closes_at_utc": "2026-10-11T02:05:49Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only \u2014 gate binds to your pre-fire groth16_proof_tx declare, byte-diffed A/B (full 64-hex never published on any plane)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 10,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "117620",
+     "listener_lstart_utc": "2026-10-11T00:05:49Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1585
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  {
+   "seq": 1188,
+   "ts": 1791682766.1614985,
+   "ts_utc": "2026-10-11T01:39:26Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1186",
+    "window_closes_utc": "2026-10-11T02:05:49Z",
+    "proof_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-11T01:40:26Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 1189,
+   "ts": 1791682846.1406024,
+   "ts_utc": "2026-10-11T01:40:46Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1186",
+    "fired_utc": "2026-10-11T01:40:46Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 1190,
+   "ts": 1791683395.028355,
+   "ts_utc": "2026-10-11T01:49:55Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle80_capture_confirmed",
+    "cycle": "80",
+    "capture": "CAPTURE CONFIRMED 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, count_us band 1328494168..1395645163 (post-wrap branch, arm+count_us/1e6+4294.97s causal with declare)",
+    "payload_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "sha256_match": "YES 5/5 byte-exact vs your A456 groth16_proof_tx declare (key-31, deposit 100000, gateway 0016c001ff18afa3...)",
+    "fire": "5/5 TX_DONE fired_utc 2026-10-11T01:40:46Z, declare-to-fire 80s (6th consecutive 80s-class: 81/81/82/80/79/80), 6th consecutive watcher-autonomous hot-fire",
+    "window": "B1186/A455, armed 2026-10-11T00:05:49Z, closes 2026-10-11T02:05:49Z, declared 01:38:56Z via declare_rx_window.py v1.0, 83rd consecutive gate PASS",
+    "next": "T12 battery now (PRIMARY aee2816a key-31 + controls), then PR + devnet settle"
+   }
+  }
+ ],
+ "a_bus": [
+  {
+   "seq": 455,
+   "ts": 1791682765.4859762,
+   "ts_utc": "2026-10-11T01:39:25Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle80_window_open",
+    "cycle": "80",
+    "armed_at_utc": "2026-10-11T00:05:49Z",
+    "closes_at_utc": "2026-10-11T02:05:49Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only \u2014 gate binds to your pre-fire groth16_proof_tx declare, byte-diffed A/B (full 64-hex never published on any plane)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 10,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "117620",
+     "listener_lstart_utc": "2026-10-11T00:05:49Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1585
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  {
+   "seq": 456,
+   "ts": 1791682766.1395185,
+   "ts_utc": "2026-10-11T01:39:26Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1186",
+    "window_closes_utc": "2026-10-11T02:05:49Z",
+    "proof_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-11T01:40:26Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 457,
+   "ts": 1791682846.0892916,
+   "ts_utc": "2026-10-11T01:40:46Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1186",
+    "fired_utc": "2026-10-11T01:40:46Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 458,
+   "ts": 1791683395.40938,
+   "ts_utc": "2026-10-11T01:49:55Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle80_capture_confirmed",
+    "cycle": "80",
+    "capture": "CAPTURE CONFIRMED 5/5 CRC-OK 128B frames @ 903.9 MHz SF9, SNR +10.8..+11.5 dB, count_us band 1328494168..1395645163 (post-wrap branch, arm+count_us/1e6+4294.97s causal with declare)",
+    "payload_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+    "sha256_match": "YES 5/5 byte-exact vs your A456 groth16_proof_tx declare (key-31, deposit 100000, gateway 0016c001ff18afa3...)",
+    "fire": "5/5 TX_DONE fired_utc 2026-10-11T01:40:46Z, declare-to-fire 80s (6th consecutive 80s-class: 81/81/82/80/79/80), 6th consecutive watcher-autonomous hot-fire",
+    "window": "B1186/A455, armed 2026-10-11T00:05:49Z, closes 2026-10-11T02:05:49Z, declared 01:38:56Z via declare_rx_window.py v1.0, 83rd consecutive gate PASS",
+    "next": "T12 battery now (PRIMARY aee2816a key-31 + controls), then PR + devnet settle"
+   }
+  }
+ ]
+}

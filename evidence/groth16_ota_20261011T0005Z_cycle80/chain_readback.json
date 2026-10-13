@@ -1,0 +1,19 @@
+{
+ "readback_utc": "2026-10-11T02:01:23Z",
+ "cluster": "devnet",
+ "record_pda": "4VtY6koUbfc5raGD6VnFjKbFrdXuZnGsGGX2FqfKdXVv",
+ "claimed_register_tx": "4VRiSnzdVBViDHKKdM3784qiAmJcPyHfJELdKuRfvXuTbNNqkGT7CzQB1mSxwhgXULdKjV4oz2sWQgim7czsnb47",
+ "signature_found_on_chain": true,
+ "sig_status": null,
+ "sig_slot": 509744368,
+ "sig_block_time_utc": 1791684049,
+ "signatures_for_address_count": 1,
+ "account_exists": true,
+ "account_lamports": 1173480,
+ "account_owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "expected_session_id": "aee2816a0a98fc4d",
+ "expected_merkle_root": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+ "account_data_len": 103,
+ "session_id_in_account_bytes": true,
+ "merkle_root_hex_in_account_bytes": false
+}

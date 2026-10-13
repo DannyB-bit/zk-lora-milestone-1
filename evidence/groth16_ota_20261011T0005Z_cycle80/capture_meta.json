@@ -1,0 +1,42 @@
+{
+ "cycle": 80,
+ "window_open_seq": {
+  "B": 1186,
+  "A": 455
+ },
+ "proof_tx_seq": {
+  "B": 1188,
+  "A": 456
+ },
+ "tx_fired_seq": {
+  "B": 1189,
+  "A": 457
+ },
+ "rx_verdict_capture_seq": {
+  "B": 1190,
+  "A": 458
+ },
+ "rx_verdict_valid_seq": {
+  "B": 1192,
+  "A": 459
+ },
+ "armed_at_utc": "2026-10-11T00:05:49Z",
+ "closes_at_utc": "2026-10-11T02:05:49Z",
+ "declare_utc": "2026-10-11T01:38:56Z",
+ "declare_to_fire_s": 80.0,
+ "window_open_to_declare_s": 30.0,
+ "fired_utc": "2026-10-11T01:40:46Z",
+ "proof_sha256": "aee2816a0a98fc4db4ff0e61e29c846a2945f4d50ede9e5e16c030c02223baa8",
+ "payload_bytes": 128,
+ "frames": 5,
+ "crc_ok": 5,
+ "freq_hz": 903900000,
+ "sf": "SF9/125kHz",
+ "count_us_first": 1328494168,
+ "count_us_last": 1395645163,
+ "inter_frame_avg_s": 16.8,
+ "snr_min_db": 10.8,
+ "snr_max_db": 11.5,
+ "sha256_match": true,
+ "wrap_branch": "post-wrap (+4294.967296s), machine-selected by T12 battery"
+}
