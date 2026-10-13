@@ -1,0 +1,16 @@
+{
+ "method": "getSignaturesForAddress",
+ "pda": "EVLHYcRumzgBzvHiiNuvUmayimstsNerexgnYKf3UyJA",
+ "claim_sig": "4Hfer3EMSKykaeybu9mYNYSwXWthsKhEq3zvVmYcRWvH7xNXfeCr9NrAFcZpqiw8cTog23hQpdL9jdYB1U2RhadS",
+ "on_chain_sigs": [
+  "4Hfer3EMSKykaeybu9mYNYSwXWthsKhEq3zvVmYcRWvH7xNXfeCr9NrAFcZpqiw8cTog23hQpdL9jdYB1U2RhadS"
+ ],
+ "byte_match": true,
+ "slot_of_claim": [
+  509697423
+ ],
+ "err_of_claim": [
+  null
+ ],
+ "fetched_utc": "2026-10-10T22:53Z"
+}

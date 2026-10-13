@@ -1,0 +1,33 @@
+{
+ "cycle": 79,
+ "window_open_seq": {
+  "B": 1168,
+  "A": 447
+ },
+ "proof_tx_seq": {
+  "B": 1169,
+  "A": 448
+ },
+ "tx_fired_seq": {
+  "B": 1171,
+  "A": 449
+ },
+ "armed_at_utc": "2026-10-10T22:05:29Z",
+ "closes_at_utc": "2026-10-11T00:05:29Z",
+ "declare_utc": "2026-10-10T22:37:16Z",
+ "fired_utc": "2026-10-10T22:38:35Z",
+ "declare_to_fire_s": 79.0,
+ "window_open_to_declare_s": 1.0,
+ "proof_sha256": "0241669ab1938fe40bff4b7fde44a3d8cad2585425990c90e84071dc101f9030",
+ "payload_bytes": 128,
+ "frames": 5,
+ "crc_ok": 5,
+ "freq_hz": 903900000,
+ "sf": "SF9/125kHz",
+ "count_us_first": 1913645386,
+ "count_us_last": 1980734736,
+ "inter_frame_avg_s": 16.77,
+ "snr_min_db": 10.5,
+ "snr_max_db": 11.5,
+ "sha256_match": true
+}
