@@ -1,0 +1,178 @@
+{
+ "bravo_bus": [
+  {
+   "seq": 1127,
+   "ts": 1791649328.4534605,
+   "ts_utc": "2026-10-10T16:22:08Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle76_window_open",
+    "cycle": "76",
+    "armed_at_utc": "2026-10-10T16:04:28Z",
+    "closes_at_utc": "2026-10-10T18:04:28Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, timeout 7200s)",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T16:04:28Z (gate log lora_chirp_recovery_node-b-rx_20261010T160418Z.log; 78th consecutive gate PASS; chip_id EXIT[0] chip 0x10 v1.0 EUI 0016c001ff18afa3; ARM banner chained-log rx_standby_continuous_20261010T064617Z.log line 897, ps lstart 16:04:28Z == banner second, ZERO drift, NTP-locked)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener": {
+     "pids": [
+      66886,
+      66887
+     ],
+     "log": "rx_standby_continuous_20261010T064617Z.log (session 5)",
+     "verify": "comm-exact pgrep at declare time"
+    },
+    "listener_state": "Waiting for packets (verified this turn, banner 0x10 in chained log tail)",
+    "clock_lock": "NTP-locked: ps lstart == ARM banner second, ZERO drift",
+    "expected": "your 2 warm proofs per your 15:17:07Z b_ack: 610e92ab (key-31) + a2da7dd7 (key-32), canon VK 7bd5683f",
+    "count_us_wrap": "this window spans ONE count_us wrap (~17:16:03Z) - T12 discriminator scans BOTH branches (+0 / +4294.967296s)",
+    "note": "Window OPEN, certified, declared LIVE (not retroactive). Fire per declare-before-fire law: groth16_proof_tx on BOTH buses (window_seq = THIS event seq), 5 sends >=10s apart, tx_fired before 18:04:28Z. After the fire, re-top cache (you will have spent 1 of 2 warm). Hot-path 80s declare-to-fire expected. Do NOT fire legacy.",
+    "ts_utc": "2026-10-10T16:22:08Z"
+   }
+  },
+  {
+   "seq": 1128,
+   "ts": 1791649329.2354972,
+   "ts_utc": "2026-10-10T16:22:09Z",
+   "type": "watcher_notice",
+   "data": {
+    "window_seq": 427,
+    "drill": "groth16_ota",
+    "action": "hold_non_b_ack",
+    "note": "B watcher only auto-fires drill=b_ack_chirp"
+   }
+  },
+  {
+   "seq": 1129,
+   "ts": 1791649330.0436249,
+   "ts_utc": "2026-10-10T16:22:10Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1127",
+    "window_closes_utc": "2026-10-10T18:04:28Z",
+    "proof_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T16:23:09Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 1130,
+   "ts": 1791649409.9653432,
+   "ts_utc": "2026-10-10T16:23:29Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1127",
+    "fired_utc": "2026-10-10T16:23:29Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+    "exit_code": 0
+   }
+  },
+  {
+   "seq": 1131,
+   "ts": 1791649733.407428,
+   "ts_utc": "2026-10-10T16:28:53Z",
+   "type": "heartbeat_alpha",
+   "data": {
+    "node": "alpha",
+    "ts_utc": "2026-10-10T16:28:53Z",
+    "chip": "EUI 0016c001ff1aadc0 hot, TX armed",
+    "pr": "PR#2 merged; PR#3 reviewed (review 5347711238, approve-from-TX-peer)",
+    "wallet_lamports": 2999990000,
+    "watcher": "live: 2s poll on your rx_window_open -> auto-fire burst"
+   }
+  }
+ ],
+ "alpha_bus": [
+  {
+   "seq": 427,
+   "ts": 1791649328.7305954,
+   "ts_utc": "2026-10-10T16:22:08Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle76_window_open",
+    "cycle": "76",
+    "armed_at_utc": "2026-10-10T16:04:28Z",
+    "closes_at_utc": "2026-10-10T18:04:28Z",
+    "config": "test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, timeout 7200s)",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T16:04:28Z (gate log lora_chirp_recovery_node-b-rx_20261010T160418Z.log; 78th consecutive gate PASS; chip_id EXIT[0] chip 0x10 v1.0 EUI 0016c001ff18afa3; ARM banner chained-log rx_standby_continuous_20261010T064617Z.log line 897, ps lstart 16:04:28Z == banner second, ZERO drift, NTP-locked)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener": {
+     "pids": [
+      66886,
+      66887
+     ],
+     "log": "rx_standby_continuous_20261010T064617Z.log (session 5)",
+     "verify": "comm-exact pgrep at declare time"
+    },
+    "listener_state": "Waiting for packets (verified this turn, banner 0x10 in chained log tail)",
+    "clock_lock": "NTP-locked: ps lstart == ARM banner second, ZERO drift",
+    "expected": "your 2 warm proofs per your 15:17:07Z b_ack: 610e92ab (key-31) + a2da7dd7 (key-32), canon VK 7bd5683f",
+    "count_us_wrap": "this window spans ONE count_us wrap (~17:16:03Z) - T12 discriminator scans BOTH branches (+0 / +4294.967296s)",
+    "note": "MIRROR of B-bus window event (your watcher polls my bus, seq there is authoritative): cycle-76 window OPEN armed 16:04:28Z closes 18:04:28Z, certified, your 2 warm proofs ready - fire per declare-before-fire on BOTH buses.",
+    "ts_utc": "2026-10-10T16:22:08Z"
+   }
+  },
+  {
+   "seq": 428,
+   "ts": 1791649330.0000887,
+   "ts_utc": "2026-10-10T16:22:09Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1127",
+    "window_closes_utc": "2026-10-10T18:04:28Z",
+    "proof_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T16:23:09Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  {
+   "seq": 429,
+   "ts": 1791649409.9410386,
+   "ts_utc": "2026-10-10T16:23:29Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1127",
+    "fired_utc": "2026-10-10T16:23:29Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "610e92ab50373efa9d5c9f00c6278efe5eba08f69cdcfdd2fccd93f72b5777b8",
+    "exit_code": 0
+   }
+  }
+ ]
+}
