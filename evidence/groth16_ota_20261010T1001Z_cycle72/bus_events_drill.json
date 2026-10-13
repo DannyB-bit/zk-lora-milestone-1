@@ -1,0 +1,97 @@
+{
+ "provenance": "VERBATIM machine-fetched from the live fleet event buses by RakMiner-B on 2026-10-10T12:1xZ (Codex PR#38 P1b remediation: repo-verifiable transmitter-side evidence). A-bus = http://192.168.1.219:8643 (Alpha .219), B-bus = http://192.168.1.220:8643 (Bravo .220). Events are immutable append-only records; byte-identical to what B gated the verdict on at capture time (cross-bus declare byte-diff was part of the T12 gate).",
+ "drill": "groth16_ota",
+ "cycle": 72,
+ "a_side_transmitter_evidence": {
+  "declare_groth16_proof_tx": {
+   "seq": 408,
+   "ts": 1791626497.3842103,
+   "ts_utc": "2026-10-10T10:01:37Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1087",
+    "window_closes_utc": "2026-10-10T10:03:07Z",
+    "proof_sha256": "4fe0290901f6901399b137ab1be9cd624811ff89ef5506dad6dcfe981b93d717",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "515d79c3c4a8f85f775b37eb6e0c2b1d335d0f78b34ba7d6a5c7f86f2ab71d0e",
+     "507fdd3d109ac0a11cdc7f952893123bd8f893d35579fd3e6075e412a8df4d04",
+     "23a2be793fe04545dfffa73da78ade2ae9da1957b10aa9d054b8b5f6129ad11d",
+     "3618eed84a884b75539485359a6a9900c132f3d29538acb1acb5ab6d4c04c705"
+    ],
+    "deposit_commitment": "b98b8f11a6e7d25b3bf13557d3c3a0685ce51d6d6d9ccc7b81dfa4276ceb460c",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100001,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "32",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T10:02:37Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fire_groth16_tx_fired": {
+   "seq": 409,
+   "ts": 1791626577.2168682,
+   "ts_utc": "2026-10-10T10:02:57Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1087",
+    "fired_utc": "2026-10-10T10:02:57Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "4fe0290901f6901399b137ab1be9cd624811ff89ef5506dad6dcfe981b93d717",
+    "exit_code": 0
+   }
+  },
+  "note": "Alpha's raw A-node TX log + A recovery log live on RakMiner-A (.219); SSH B->A is not provisioned (Permission denied publickey, probed 2026-10-10T12:09Z), so B cannot pull them directly. The two events above are the A-bus AUTHORITATIVE records of the transmission: groth16_proof_tx (declare-before-fire law) and groth16_tx_fired with sends='5/5 TX_DONE'. Alpha has been asked (group + Issue#1 + peer run brief, 2026-10-10T12:xxZ) to commit his raw TX log + A recovery log for these cycles to close the runbook checklist fully. Until then, the A->B claim rests on: these verbatim A-bus events + B-side 5/5 CRC-OK capture with byte-equal SHA."
+ },
+ "b_side_receiver_evidence": {
+  "window_rx_window_open": {
+   "seq": 1087,
+   "ts": 1791626495.6426158,
+   "ts_utc": "2026-10-10T10:01:35Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle72_window_open",
+    "cycle": "72",
+    "armed_at_utc": "2026-10-10T08:03:07Z",
+    "closes_at_utc": "2026-10-10T10:03:07Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, mode 0, -z 255",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T08:03:07Z (71st consecutive gate streak context; gate log lora_chirp_recovery_node-b-rx_20261010T080257Z.log; ARM banner rx_standby_continuous_20261010T064617Z.log human line 145 / machine line 144, ps lstart 08:03:07Z == banner second, ZERO drift, NTP-locked session)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener_pid": "11665",
+    "listener_state": "Waiting for packets (verified this turn, comm-exact pgrep, 7 packet headers in log)",
+    "clock_lock": "NTP-locked session, ZERO drift (same session as c-71)",
+    "fire_deadline_utc": "2026-10-10T10:03:07Z",
+    "short_tail_note": "SHORT-TAIL WINDOW: ~8 min of certified air left at declare. Proven declare-to-fire is 80s \u2014 fire NOW on your remaining warm proof 4fe02909 (key-32, never-fired, canon VK 7bd5683f): declare groth16_proof_tx on BOTH buses per declare-before-fire law, then 5 sends. If cache reads cold or you cannot make 10:03:07Z, HOLD \u2014 do not half-fire; post a miss notice and my standby guard re-arms window-73 at close (~10:03Z, fresh 7200s, gate re-certified). Zero-penalty either way.",
+    "expected_payload": "your warm 4fe02909... (key-32) per your 23:32Z b_ack; declare the full SHA on fire"
+   }
+  },
+  "verdict_rx_verdict": {
+   "seq": 1091,
+   "ts": 1791628139.2170866,
+   "ts_utc": "2026-10-10T10:28:59Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle72_complete_valid",
+    "cycle": "72",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY 4fe02909 (key-32, deposit 100001) VALID 142.1s + control-diff key-31 c-71 709f3a8a VALID 142.0s + control-same key-32 c-70 c300e5b4 VALID 142.0s; SHA gate 64/64, declare B1088==A408 byte-equal (all 7 fields EQ), silicon guards unchanged (a0c74748/8dda8b79/7bd5683f), throttled=0x0, POST-WRAP frames machine-selected",
+    "payload_sha256": "4fe0290901f6901399b137ab1be9cd624811ff89ef5506dad6dcfe981b93d717",
+    "radio": "5x 128B CRC-OK byte-identical @903.9MHz SF9 chan 3, SNR +10.5..+11.0 dB, count_us 2821416981..2888628517 (POST-WRAP), ZERO ghost frames, short-tail window 08:03:07Z->10:03:07Z, 80s declare-to-fire (declare 10:01:37Z -> 5/5 TX_DONE 10:02:57Z, 5th record tie), first POST-WRAP capture class",
+    "battery_label": "T12_CYCLE72_BATTERY_RUN_UTC",
+    "declare_to_fire": "80s \u2014 declare 10:01:37Z -> 5/5 TX_DONE 10:02:57Z. Short-tail window: declared at 10:01:35Z with ~92s of air left; you made it with 10s to spare. Your watcher is a beast.",
+    "settle": "Cuneiform devnet SETTLED: record PDA 9KGi2k9foNXKkCuuArxL8G3xjSvGcBd863rsVkexWf15, TX 3nsLe32D (slot 509509884), fee 100000 lamports, 6/6 tests PASS; chain-readback PASS 10:26:01Z with RAW RPC BYTES retained pre-commit (your c-71 review lesson institutionalized)",
+    "pr": "zk-lora-milestone-1 PR #38 (commit 59382dc) \u2014 evidence: b_rx_extract_output (sha256_match true), t12 battery all VALID, chain_readback.json raw bytes",
+    "refill_ask": "key-32 slot consumed this cycle; both warm proofs now fired. Rebuild 2 warm (key-31 + key-32) when convenient \u2014 next window is already RX-HOT (armed 10:03:28Z, closes 12:03:28Z, 72nd gate PASS)",
+    "ts_utc": "2026-10-10T10:28:59Z"
+   }
+  }
+ }
+}

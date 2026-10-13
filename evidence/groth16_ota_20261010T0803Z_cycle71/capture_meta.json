@@ -1,0 +1,57 @@
+{
+ "cycle": 71,
+ "generated_utc": "2026-10-10T08:30:00Z",
+ "machine_source": "b_rx_extract.py + t12_battery_template.py + settle_groth16_ota.ts + devnet RPC readback (this turn)",
+ "drill": "groth16_ota",
+ "window": {
+  "bus_seq_bravo": 1070,
+  "bus_seq_alpha": 400,
+  "armed_at_utc": "2026-10-10T08:03:07Z",
+  "closes_at_utc": "2026-10-10T10:03:07Z"
+ },
+ "declare": {
+  "proof_sha256": "709f3a8a004744fe00c7468360535e10adf70bf217027faf81325e92e662805a",
+  "payload_bytes": 128,
+  "key_id": 31,
+  "deposit_value": 100000,
+  "source": "watcher_hot_path (no LLM turn), pre-proven cache",
+  "cross_bus_byte_equal": true
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "frames_total": 5,
+  "ghost_frames": 0,
+  "freq_hz": 903900000,
+  "chan": 3,
+  "sf": 9,
+  "bw_khz": 125,
+  "snr_db_min_max": "10.8..11.0",
+  "count_us_first_last": "43822786..110870939",
+  "inter_frame_s_approx": 16.76,
+  "listener_pid": 11665,
+  "recovery_gate_pass_streak": 70
+ },
+ "battery": {
+  "label": "T12_CYCLE71_BATTERY_RUN_UTC",
+  "run_utc": "2026-10-10T08:17:34Z",
+  "primary": {"sha": "709f3a8a", "verdict": "VALID", "wall_s": 142.2},
+  "control_diff": {"cycle": 70, "sha": "c300e5b4", "key": 32, "verdict": "VALID", "wall_s": 142.1},
+  "control_same": {"cycle": 65, "sha": "c2855891", "key": 31, "verdict": "VALID", "wall_s": 142.3}
+ },
+ "settle": {
+  "network": "solana-devnet",
+  "session_id": "709f3a8a004744fe",
+  "merkle_root": "709f3a8a004744fe00c7468360535e10adf70bf217027faf81325e92e662805a",
+  "coords": [66, 80, 29, 223, 30, 6],
+  "record_pda": "3RQtm7XHecukhuCeLettUDJdo8eaTfHKPoPmUFkK6GHB",
+  "register_tx": "2qfaCfUad41innA5DH1bxAxqs8htrnoRZHadXJM3GEMXtAvyDCqRQJ1XXvigxRFS9hR85vsTm5fFDRFB5kp2DEzt",
+  "register_tx_slot": 509479938,
+  "fee_lamports": 100000,
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "chain_readback": "PASS, re-executed 2026-10-10T09:46:48Z with raw RPC bytes committed to chain_readback.json (getSignaturesForAddress + getAccountInfo + getSlot on the record PDA: exactly 1 sig == the settle TX, err=null, finalized, PDA owned by program 2is5Q…Sccy). HONESTY NOTE (Codex review P1, confirmed): the original 08:31:00Z PASS was asserted after this file was generated (08:30:00Z) and after commit 05a3ff2 (08:30:08Z), and its raw RPC response was not retained — timeline impossible as committed, now remediated with verbatim bytes.",
+  "chain_readback_utc": "2026-10-10T09:46:48Z (re-run; artifact chain_readback.json)"
+ },
+ "declare_to_fire_s": 80,
+ "postboot_context": "B box rebooted 02:46 EDT; first post-reboot session (banner 06:46:35Z) was pre-NTP stale by 115 s vs listener lstart 06:48:30Z — recycled clean at 08:02Z before any declare (c-70 precedent), zero packets lost. Cycle-71 armed on the NTP-locked session, zero drift."
+}
