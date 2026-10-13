@@ -1,0 +1,10 @@
+{
+ "record_pda": "9nwzjpnFBNZzybvuq9tdc1kKoN2gctAHcyVpHY1AjGfq",
+ "register_tx": "396HeD4PiqCQgTDPn3b7cxTTz3cWD92BK4DguV25gXXg6V5wfJfzEvjEmg8vG3R2kjJSD6KShka35CTGwiTxrnzt",
+ "signature_on_chain": true,
+ "slot": 510451064,
+ "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "data_len_bytes": 105,
+ "readback_utc": "2026-10-13T00:57:00Z",
+ "method": "getSignaturesForAddress + getAccountInfo via api.devnet.solana.com, machine-fetched; signature byte-compared to settle artifact before commit"
+}
