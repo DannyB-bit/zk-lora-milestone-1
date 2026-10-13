@@ -1,0 +1,19 @@
+{
+ "c84_key33_control": {
+  "vendored_from": "PR#60 head (2a0c47d) evidence/groth16_ota_20261011T1840Z_cycle84/rx_payload_128b.bin (its own provenance chain: refs/pull/48/head 158c0a529a)",
+  "blob_path": "evidence/groth16_ota_20261011T1840Z_cycle84/rx_payload_128b.bin",
+  "sha256": "4b4160488a948fa96117efa820065c07bf7cd85fb2cda7def8be6cf4954912c0",
+  "key_id": "33",
+  "role_in_cycle96": "CONTROL-diff2 (key-33, different statement-class) — restored per the c-91 stranded-restore law (PR#60 unmerged at c-96 branch cut)",
+  "disclosure": "sha-verified against the c-84 dual-bus declare before use; committed in-tree so a fresh checkout of THIS PR reproduces the c-96 battery"
+ },
+ "c94_key36_control": {
+  "vendored_from": "PR#60 head (2a0c47d) evidence/groth16_ota_20261013T0210Z_cycle94/rx_payload_128b.bin (its own provenance chain: PR#59 remote head f8317eeee)",
+  "blob_path": "evidence/groth16_ota_20261013T0210Z_cycle94/rx_payload_128b.bin",
+  "sha256": "3a33303728b85008d54b73942e530e3d9082183aa57f156f5939224d76ca4090",
+  "key_id": "36",
+  "role_in_cycle96": "CONTROL-diff1 (key-36, different statement-class) — restored per the c-91 stranded-restore law (PR#59 unmerged at c-96 branch cut)",
+  "disclosure": "sha-verified against the dual-bus declare (A542==B1426 proof_sha256) before use"
+ },
+ "restored_utc": "2026-10-13T09:12:00Z"
+}
