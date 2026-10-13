@@ -1,0 +1,22 @@
+{
+ "payload_sha256": "6cfc1148c90e3437e90be0b8db59e31f3fa252fdc84a467850e88839fad039cd",
+ "capture_utc_range": "2026-10-13T06:11:31.114485+00:00 .. 2026-10-13T06:12:38.476606+00:00",
+ "wrap_branch": "pre-wrap (+0s, machine-selected by T12 battery wrap-branch discriminator; frames 21.1s..88.5s after arm origin, walls = origin + count_us/1e6 + 0; only the PRE-WRAP branch satisfies the fired-stamp -180..+240 s gate)",
+ "window": {
+  "b_seq": "1424",
+  "a_mirror_seq": "546",
+  "armed_at_utc": "2026-10-13T06:11:10Z",
+  "closes_at_utc": "2026-10-13T08:11:10Z"
+ },
+ "fired_utc": "2026-10-13T06:12:45Z",
+ "declare_to_fire_s": 81.0,
+ "frame_count": 5,
+ "count_us_range": "21114485..88476606",
+ "snr_range": "11.0..11.2",
+ "count_us_origin_convention": "arm banner second 2026-10-13T06:11:10+00:00 (battery session-segment banner-second convention; serialized from b_rx_extract parse + battery wrap discriminator, never hand-derived)",
+ "consecutive_complete_valid": 19,
+ "private_key_id": "37",
+ "battery_label": "T12_CYCLE95_BATTERY_RUN_UTC",
+ "battery_exit": 0,
+ "battery_template": "canonical fixed 6a49d04 (PR#58 head) tools/t12_battery_template_canonical_fixed_6a49d04.py sha256 f2605ea56f181c52917bbb54b504afa6ffc967d5831c65098bb93c2e122497ba (launcher sha-guarded; vendored copy in this evidence dir byte-identical; attempt-1 abort log = honest history: vendored copy invoked from evidence dir double-joined M1)"
+}

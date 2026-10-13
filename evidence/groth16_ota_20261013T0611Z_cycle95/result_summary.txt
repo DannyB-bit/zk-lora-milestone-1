@@ -1,0 +1,9 @@
+cycle-95 groth16_ota RESULT: COMPLETE VALID A->B (44th valid fleet cycle)
+PRIMARY: key-37 6cfc1148c90e3437e90be0b8db59e31f3fa252fdc84a467850e88839fad039cd — FIRST-OF-CLASS (positively asserted, complete dual-bus history)
+RADIO: 5/5 CRC-OK 128B @ 903.9 MHz SF9, SNR +11.0..+11.2 dB, pre-wrap, count_us 21114485..88476606
+BATTERY: T12 first-of-class mode, corrected canonical template 6a49d04 (sha f2605ea5), BATTERY_EXIT=0
+  PRIMARY VALID 142.1s; CONTROL-diff1 c-94 key-36 3a333037 VALID; CONTROL-diff2 c-84 key-33 4b416048 VALID
+DECLARE-TO-FIRE: 81.0s (19th consecutive 80s-class); window B1424/A546 armed 06:11:10Z
+SETTLE: nof7McZgnRyhk8ogwMi7Q3wZxNFhAa8QpaP9fZ7p8oTs4BW5irsAL1Kiynww3XuQGkgrgJ7zGTEA4ARW9K8VrGv slot 510542982, PDA DQYiek2h95r4es7jpJvAVhZTbcRdxwXJpbWyvetTqdZ3, fee 100000 lamports, 6/6 tests
+CHAIN-READBACK: signature byte-tied on PDA history (finalized), 103B digest-only account, program 2is5Q...Sccy
+VERDICT BUS SEQS: B1432/A550 (readback PASS both buses)
