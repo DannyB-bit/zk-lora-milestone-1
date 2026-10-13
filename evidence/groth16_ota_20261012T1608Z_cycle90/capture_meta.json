@@ -1,0 +1,21 @@
+{
+ "payload_sha256": "383ef43799b208287cf4ff4ca7191f7a9a3f96b50affd6903fa3bf388cccd36f",
+ "capture_utc_range": "2026-10-12T17:23:52.710340+00:00 .. 2026-10-12T17:24:59.943251+00:00",
+ "wrap_branch": "post-wrap (+4294.967296s, machine-selected by T12 battery wrap-branch discriminator; frames 4503.7s..4570.9s after arm, past the 71.6min wrap horizon)",
+ "window": {
+  "b_seq": "1356",
+  "a_mirror_seq": "520",
+  "armed_at_utc": "2026-10-12T16:08:49Z",
+  "closes_at_utc": "2026-10-12T18:08:49Z"
+ },
+ "fired_utc": "2026-10-12T17:25:05Z",
+ "declare_to_fire_s": 82.0,
+ "frame_count": 5,
+ "count_us_range": "208743044..275975955",
+ "snr_range": "10.8..11.8",
+ "count_us_origin_convention": "arm banner second 2026-10-12T16:08:49Z (battery session-segment banner-second convention; serialized from b_rx_extract parse + T12 battery output, never hand-derived)",
+ "consecutive_complete_valid": 14,
+ "private_key_id": "32",
+ "battery_label": "T12_CYCLE90_BATTERY_RUN_UTC",
+ "launch1_disclosure": "prior tick's battery launch (execute_code kernel, 300-s limit, buffered stdout pipe) died leaving a 0-byte log; relaunched 19:35:37Z per the proven law (python3 -u + direct redirect + terminal background); both artifacts committed"
+}
