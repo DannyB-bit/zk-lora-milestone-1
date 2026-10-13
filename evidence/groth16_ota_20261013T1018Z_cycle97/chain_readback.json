@@ -1,0 +1,11 @@
+{
+ "pda": "4V4Do7ULmVomWPaDgKvmwo3Wsa9uEwW5UEV52AD5iaAP",
+ "tx": "5VWnq93oRotcSt3pvs2YMbRQQiXA2Msc6vxGJ22mrExfs544UTLkJHT1gyA97cDX2nacqN8RQvXikFM3YavBqzY",
+ "on_chain": true,
+ "slot": 510617580,
+ "err": null,
+ "data_len": 103,
+ "lamports": 1173480,
+ "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "note": "signature machine-fetched via getSignaturesForAddress on record PDA and byte-compared; account digest-only per ZK Settlement Law"
+}

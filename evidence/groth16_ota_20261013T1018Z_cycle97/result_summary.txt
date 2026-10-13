@@ -1,0 +1,21 @@
+cycle-97 groth16_ota A->B — COMPLETE VALID (Bravo, node-b-rx)
+===========================================================
+verdict:            COMPLETE VALID — 5/5 CRC-OK frames, SHA byte-equal, T12 battery primary VALID
+key:                39 (FIRST-OF-CLASS, positively asserted; prior declares B=0/A=0, pih-only B=0/A=0, unclassable=5 over complete dual-bus history)
+payload_sha256:     741392bdd020c88114701892f4e70420e829690b7bd70aa45dbddd08adce9007
+payload_bytes:      128 (A(32B G1)||B(64B G2)||C(32B G1))
+window:             B1481/A590 armed 2026-10-13T10:18:26Z closes 2026-10-13T12:18:26Z
+declare:            B1483/A591 at 2026-10-13T11:26:47Z (cross-bus byte-equal on all 7 fields)
+fired:              2026-10-13T11:28:06Z (5/5 TX_DONE) — 79s declare-to-fire, 21st consecutive 80s-class
+capture walls:      11:26:53.7Z..11:28:00.9Z (pre-wrap (all count_us < 2^32)
+radio:              903.9 MHz exact, SF9/125 kHz, SNR 10.5-11.0 dB
+battery:            T12_CYCLE97_BATTERY_RUN_UTC=2026-10-13T11:41:02Z, exit=0, primary 141.9s; controls key-38 142.0s + key-36 141.9s both VALID
+template:           corrected canonical 6a49d04 (sha f2605ea5), tools/ depth-2, attempt-1 clean pass
+silicon:            temp 45.7->49.6C, throttled=0x0, binary/PK/VK guards unchanged
+settle:             Cuneiform devnet TX 5VWnq93oRotcSt3pvs2YMbRQQiXA2Msc6vxGJ22mrExfs544UTLkJHT1gyA97cDX2nacqN8RQvXikFM3YavBqzY
+                    record PDA 4V4Do7ULmVomWPaDgKvmwo3Wsa9uEwW5UEV52AD5iaAP, slot 510617580, chain-readback PASS (machine-fetched getSignaturesForAddress, err=None)
+                    103 B digest-only record, 100000-lamport protocol fee, 6/6 tests
+fleet cycle:        46th valid cycle; consecutive 80s-class streak now 21
+hand-typed-constant disclosures (both caught by guards, zero pairing cost):
+  1. force-with-lease expected-SHA typed from the 8-char prefix (invented tail) — push rejected, refetched machine-side, pushed clean
+  2. vendored key-36 expected-SHA typed from the 3a333037 prefix (invented tail) — sha-guard failed the restore, refetched from the dual-bus declare

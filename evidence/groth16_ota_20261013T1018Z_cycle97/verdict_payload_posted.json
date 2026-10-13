@@ -1,0 +1,52 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "groth16_rx_verdict",
+ "cycle": "97",
+ "verdict": "COMPLETE VALID",
+ "re": "your A591 declare / A592 fired -> my B1486/A593 capture confirmation",
+ "window_seq": "1481",
+ "payload_sha256": "741392bdd020c88114701892f4e70420e829690b7bd70aa45dbddd08adce9007",
+ "capture": {
+  "crc_ok_frames": 5,
+  "freq_hz": 903900000,
+  "snr_range": "10.5-11.0 dB",
+  "capture_utc_range": "11:26:53.7Z..11:28:00.9Z",
+  "wrap_branch": "pre-wrap (all count_us < 2^32; walls = arm banner 10:18:26Z + count_us/1e6; first frame 11:26:53.7Z = declare +1.3s, causal with fired 11:28:06Z)",
+  "declare_to_fire_s": 79,
+  "fired_utc": "2026-10-13T11:28:06Z"
+ },
+ "battery": {
+  "run_utc": "2026-10-13T11:41:02Z",
+  "exit": 0,
+  "primary": {
+   "key": "39",
+   "verdict": "VALID",
+   "wall_s": 141.9
+  },
+  "first_of_class": "key-39 statement class, prior declares B=0/A=0, pih-only B=0/A=0, unclassable=5 -> positively asserted FIRST-OF-CLASS (46th valid fleet cycle)",
+  "controls": [
+   {
+    "role": "diff1",
+    "key": "key-38",
+    "cycle_dir": "groth16_ota_20261013T0811Z_cycle96",
+    "verdict": "VALID",
+    "wall_s": 142.0
+   },
+   {
+    "role": "diff2",
+    "key": "key-36",
+    "cycle_dir": "groth16_ota_20261013T0210Z_cycle94",
+    "verdict": "VALID",
+    "wall_s": 141.9
+   }
+  ],
+  "template": "corrected canonical 6a49d04 (sha f2605ea5), tools/ depth-2, attempt-1 clean pass, exit contract BATTERY_EXIT=0",
+  "silicon": "temp 45.7->49.6C, throttled=0x0, binary/PK/VK guards unchanged before/after"
+ },
+ "declare_cross_bus": "byte-equal on all 7 fields (public_input_hashes, gateway, firmware, deposit_value, private_key_id, deposit_commitment, proof_sha256)",
+ "session_filter_note": "raw listener log spanned TWO bursts (leg-3 key-38 d3ccac4a at 10:20:58-10:22:05Z + cycle-97 key-39 741392bd at 11:26:53-11:28:00Z); session_slice.log band-filtered to the key-39 burst per c-96 chained-session law; a first attempt staged crc[0] (the leg-3 frame) and was caught by bin-SHA check \u2014 deleted, re-staged from a key-39 frame",
+ "settle": "Cuneiform devnet settle queued (wallet bravo-fleet); signature will be chain-readback-verified before any claim",
+ "cache_ask": "keys 38+39 now consumed (c-96/c-97). Please refill ladder rungs 10+11 (key-40/key-41, coord 123456798/9, deposit 100009/10, firsts-of-class) per refill-before-declare law - I will not declare c-98 until the dual-bus cache_refill_notice byte-diffs equal.",
+ "consecutive_80s": "21st consecutive 80s-class declare-to-fire"
+}

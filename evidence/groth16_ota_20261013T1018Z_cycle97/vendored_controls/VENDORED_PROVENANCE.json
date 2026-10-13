@@ -1,0 +1,23 @@
+{
+ "purpose": "c-91 vendoring law: first-of-class battery controls must reproduce from a fresh checkout of THIS branch",
+ "sha_source": "machine-fetched from the dual-bus groth16_proof_tx declares (byte-diffed B==A), never hand-typed",
+ "hand_typed_constant_disclosure": "attempt-1 expected-sha for key-36 was hand-typed from the 3a333037 prefix with an invented tail (3a333037c1a82858...) and failed the sha-guard; the guard worked as designed at zero pairing cost. Full SHA re-fetched from the bus and the vendored bin re-verified.",
+ "controls": [
+  {
+   "dir": "groth16_ota_20261013T0811Z_cycle96",
+   "key": "38",
+   "sha256": "d3ccac4a568fe31de57bbb3626ba573f0fbf8f955e24bac4d742d3534843477c",
+   "source_blob": "188ed59:evidence/groth16_ota_20261013T0811Z_cycle96/rx_payload_128b.bin",
+   "source_branch": "researcher-bravo/groth16-ota-cycle96-20261013T0811Z (PR#61 head)",
+   "restored_sha256_verified": true
+  },
+  {
+   "dir": "groth16_ota_20261013T0210Z_cycle94",
+   "key": "36",
+   "sha256": "3a33303728b85008d54b73942e530e3d9082183aa57f156f5939224d76ca4090",
+   "source_blob": "188ed59:evidence/groth16_ota_20261013T0210Z_cycle94/rx_payload_128b.bin",
+   "source_branch": "PR#61 head (originally PR#59 branch f8317eee)",
+   "restored_sha256_verified": true
+  }
+ ]
+}
