@@ -19,8 +19,18 @@ Machine-derived, never typed:
   * label + window    : rx_window_open with window_seq_bravo_bus == cycle-<N>
   * declare           : groth16_proof_tx linked by window seq (B) + SHA (A)
   * controls          : scanned from prior evidence dirs, class-selected by
-                        machine-parsed private_key_id (same-class + different-
-                        class), newest-first, provenance logged
+                        machine-parsed STATEMENT class = (private_key_id,
+                        public_input_hashes), newest-declare-first, provenance
+                        logged. FIRST-OF-CLASS requires a POSITIVE assertion
+                        (zero prior declares of this statement class across
+                        COMPLETE dual-bus history; get_events aborts on any
+                        incomplete fetch) — absence of local evidence is
+                        never first-of-class. First-of-class runs verify 2
+                        DISTINCT-statement-class controls; a same-key
+                        different-statement control, when its payload is
+                        locally verifiable, is added as a bonus regression.
+                        NOT-first-of-class runs require a same-class control
+                        payload on disk (vendor it or abort) + 1 different.
   * payload SHA       : from the declare, never typed
 Fail-closed gates (abort = no verdict, by battery law):
   * A-bus unreachable  -> NO verdict may issue; cross-bus byte-diff is mandatory
@@ -69,11 +79,22 @@ def tok():
 
 
 def get_events(url, timeout=15):
-    req = urllib.request.Request(f"{url}/events?since=0&limit=1000&token={tok()}",
+    # Codex P1 remediation (PR#48, 2026-10-11): every class assertion below rests on
+    # COMPLETE bus history. The fetch must return exactly /health's event count or
+    # no assertion may issue from it (fail-closed; no partial-scan inferences).
+    req = urllib.request.Request(f"{url}/events?since=0&token={tok()}",
                                  headers={"User-Agent": "fleet-b"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         d = json.load(r)
-    return d.get("events", d) if isinstance(d, dict) else d
+    evs = d.get("events", d) if isinstance(d, dict) else d
+    hreq = urllib.request.Request(f"{url}/health", headers={"User-Agent": "fleet-b"})
+    with urllib.request.urlopen(hreq, timeout=timeout) as r:
+        h = json.load(r)
+    total = h.get("events") if isinstance(h, dict) else None
+    if total is None or len(evs) != total:
+        raise SystemExit(f"ABORT: bus {url} incomplete fetch: got {len(evs)} of {total} "
+                         f"events — class assertions unavailable; no verdict")
+    return evs
 
 
 def sha(p):
@@ -93,7 +114,7 @@ def telemetry():
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap = argparse.ArgumentParser(description=((__doc__ or "") + "\n").splitlines()[0])
     ap.add_argument("--cycle", type=int, required=True, help="cycle number N (locates window + label)")
     ap.add_argument("--evidence-dir", required=True, help="per-cycle evidence dir (relative to repo root or absolute)")
     ap.add_argument("--guard-log", default=DEFAULT_GUARD, help="RX guard log with arm banners")
@@ -259,37 +280,122 @@ def main():
     v, dt, rc, so = verify(payload, d_b["data"])
     lines.append(f"PRIMARY cycle-{cycle} captured {declared[:8]}: verdict={v} exit={rc} wall_s={dt:.1f} stdout={so!r}")
 
-    # ---- controls: machine-scanned from prior evidence dirs, class-selected by parsed key id ----
+    # ---- controls: statement-class = (private_key_id, public_input_hashes) ----
+    # Codex P1 remediation (PR#48, 2026-10-11). Three defects closed:
+    #   (1) "first-of-class" was INFERRED from absence in a partial local scan; now it
+    #       requires a POSITIVE assertion — zero prior declares of this statement class
+    #       over COMPLETE dual-bus history (get_events aborts on any incomplete fetch).
+    #   (2) class is the full statement class (key id AND public-input vector, per the
+    #       cycle-20 battery law), not key-id alone — "first key-33" and "first of the
+    #       (key-33, pih) statement" are different claims and are logged distinctly.
+    #   (3) a NOT-first-of-class primary with no locally verifiable same-class control
+    #       payload ABORTS (fetch/vendor it); the run is never silently relabeled.
+    # Candidate ordering is by the bus DECLARE TIMESTAMP (newest first) — dir-name
+    # lexicographic order was a Codex P2 defect (a mis-stamped dir reorders the scan).
     primary_key = d_b["data"]["private_key_id"]
-    cands = []
-    for d in sorted(os.listdir(os.path.join(M1, "evidence"))):
+
+    def declare_class(dd):
+        return (str(dd.get("private_key_id")), json.dumps(dd.get("public_input_hashes"), sort_keys=True))
+
+    primary_class = declare_class(d_b["data"])
+    primary_pih = json.dumps(d_b["data"].get("public_input_hashes"), sort_keys=True)
+    prior_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
+               and declare_class(e.get("data", {})) == primary_class
+               and e["seq"] != d_b["seq"]]
+    prior_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
+               and declare_class(e.get("data", {})) == primary_class
+               and e["seq"] != d_a["seq"]]
+    unclassed = sum(1 for bus in (Bev, Aev) for e in bus
+                    if e.get("type") == "groth16_proof_tx"
+                    and (e.get("data", {}).get("private_key_id") is None
+                         or e.get("data", {}).get("public_input_hashes") is None))
+    # pih-only prior guard: an UNCLASSED prior declare (missing key id) whose public-
+    # input vector equals the primary's is treated as a prior of the same statement
+    # (same pih => same identity hash => same key in practice). Absence of a legible
+    # key id on a prior must BLOCK the first-of-class claim, not enable it.
+    prior_pih_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
+                   and e["seq"] != d_b["seq"]
+                   and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
+    prior_pih_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
+                   and e["seq"] != d_a["seq"]
+                   and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
+    first_of_class = not prior_b and not prior_a and not prior_pih_b and not prior_pih_a
+    lines.append(f"CLASS SCAN (complete dual-bus history): statement-class key-{primary_key} "
+                 f"pih[-1]={primary_class[1][-18:-2]} prior-declares B={len(prior_b)} A={len(prior_a)} "
+                 f"pih-only-priors B={len(prior_pih_b)} A={len(prior_pih_a)} "
+                 f"unclassable-declares={unclassed} -> "
+                 + ("FIRST-OF-CLASS (positively asserted)" if first_of_class
+                    else f"NOT first-of-class (priors: B{[e['seq'] for e in prior_b]} A{[e['seq'] for e in prior_a]}"
+                         f" pih-only B{[e['seq'] for e in prior_pih_b]} A{[e['seq'] for e in prior_pih_a]})"))
+
+    cands, skipped = [], 0
+    for d in os.listdir(os.path.join(M1, "evidence")):
         if not d.startswith("groth16_ota_") or f"cycle{cycle}" in d:
             continue
         p = os.path.join(M1, "evidence", d, "rx_payload_128b.bin")
-        if os.path.isfile(p):
-            cands.append(d)  # dir names are UTC-stamped; sorted() puts newest last
-    picked = {}
-    for d in reversed(cands):  # newest-first
-        p = os.path.join(M1, "evidence", d, "rx_payload_128b.bin")
+        if not os.path.isfile(p):
+            continue
         s = sha(p)
         hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
                 and e.get("data", {}).get("proof_sha256") == s]
-        if len(hits) != 1:
-            continue
-        k = hits[0]["data"]["private_key_id"]
         a_hits = [e for e in Aev if e.get("type") == "groth16_proof_tx"
                   and e.get("data", {}).get("proof_sha256") == s]
-        if len(a_hits) != 1:
+        if len(hits) != 1 or len(a_hits) != 1 or hits[0]["data"].get("private_key_id") is None:
+            skipped += 1
             continue
-        role = "same" if k == primary_key else "diff"
-        if role not in picked:
-            picked[role] = (d, s, k, hits[0]["data"], a_hits[0]["data"])
-        if len(picked) == 2:
+        if any(hits[0]["data"].get(f) != a_hits[0]["data"].get(f) for f in VERIFY_FIELDS):
+            skipped += 1  # cross-bus declare mismatch: unusable as a control, logged below
+            continue
+        cands.append((hits[0]["ts_utc"], d, s, str(hits[0]["data"]["private_key_id"]),
+                      hits[0]["data"], a_hits[0]["data"]))
+    cands.sort(key=lambda t: t[0], reverse=True)  # newest declare first
+    lines.append(f"CONTROL CANDIDATES (newest declare first, {len(cands)} usable / {skipped} skipped): "
+                 + "; ".join(f"{d} key-{k} @{ts}" for ts, d, s, k, _, _ in cands))
+
+    same_c, diff_list, seen_cls = None, [], set()
+    for ts, d, s, k, db, da in cands:
+        cls = declare_class(db)
+        if cls == primary_class and same_c is None:
+            same_c = (d, s, k, db, da)
+        elif cls != primary_class and cls not in seen_cls:
+            seen_cls.add(cls)
+            diff_list.append((d, s, k, db, da))
+        if same_c is not None and len(diff_list) >= 2:
             break
-    if len(picked) != 2:
-        scanned = ", ".join(cands) or "(none)"
-        raise SystemExit(f"ABORT: control classes not satisfiable (same+diff vs key-{primary_key}); "
-                         f"scanned: {scanned}")
+
+    if first_of_class:
+        # Same-statement-class control cannot exist (positively asserted above).
+        if len(diff_list) < 2:
+            raise SystemExit(f"ABORT: control classes not satisfiable (first-of-class key-{primary_key}: "
+                             f"need 2 distinct-statement-class controls, found {len(diff_list)}); "
+                             f"candidates: {', '.join(t[1] for t in cands) or '(none)'}")
+        picked = {"diff1": diff_list[0], "diff2": diff_list[1]}
+        lines.append(f"CONTROL MODE: FIRST-OF-CLASS (positive assertion) key-{primary_key} — "
+                     f"2 DISTINCT-statement-class controls (keys "
+                     + ", ".join(f"key-{t[2]}" for t in (diff_list[0], diff_list[1])) + ")")
+        # Regression bonus (not required by the battery law): if a SAME-KEY,
+        # different-statement payload exists locally, verify it too — it exercises
+        # the primary's proving-key compute path in this same session.
+        for ts, d, s, k, db, da in cands:
+            if k == str(primary_key) and declare_class(db) != primary_class:
+                picked["samekey"] = (d, s, k, db, da)
+                lines.append(f"CONTROL MODE: + optional SAME-KEY different-statement control {d} "
+                             f"({s[:8]}) — regression on the key-{primary_key} path")
+                break
+    else:
+        if same_c is None:
+            raise SystemExit(
+                f"ABORT: NOT first-of-class (prior same-statement-class declares exist: "
+                f"B={[e['seq'] for e in prior_b]} A={[e['seq'] for e in prior_a]}) but no local "
+                f"same-class control payload is verifiable — vendor the prior same-class payload "
+                f"(see its declare for the sha) and re-run; refusing to relabel as first-of-class "
+                f"(Codex P1: absence-of-evidence is not first-of-class)")
+        if not diff_list:
+            raise SystemExit(f"ABORT: no different-statement-class control available; "
+                             f"candidates: {', '.join(t[1] for t in cands) or '(none)'}")
+        picked = {"same": same_c, "diff": diff_list[0]}
+        lines.append(f"CONTROL MODE: NORMAL — same-statement-class {same_c[0]} + "
+                     f"different-class {diff_list[0][0]}")
 
     verdicts = {}
     for role, (d, s, k, db, da) in picked.items():
@@ -298,8 +404,13 @@ def main():
                 raise SystemExit(f"ABORT: control {d} declare {field} MISMATCH across buses")
         cv, cdt, crc, cso = verify(open(os.path.join(M1, "evidence", d, "rx_payload_128b.bin"), "rb").read(), db)
         verdicts[role] = cv
-        lines.append(f"CONTROL-{role} {d} (key-{k}, machine-picked, "
-                     f"{'SAME' if k == primary_key else 'DIFFERENT'} class) {s[:8]}: "
+        if declare_class(db) == primary_class:
+            rel = "SAME statement-class"
+        elif k == str(primary_key):
+            rel = "SAME key, DIFFERENT statement"
+        else:
+            rel = "DIFFERENT statement-class"
+        lines.append(f"CONTROL-{role} {d} (key-{k}, machine-picked, {rel}) {s[:8]}: "
                      f"verdict={cv} exit={crc} wall_s={cdt:.1f} stdout={cso!r}")
 
     # ---- guards after ----
@@ -314,7 +425,7 @@ def main():
     lines.append(f"SILICON-END {telemetry()}")
 
     # ---- verdict per battery law ----
-    if not all(verdicts[r] == "VALID" for r in ("same", "diff")):
+    if not all(v == "VALID" for v in verdicts.values()):
         lines.append("BATTERY VERDICT: QUARANTINED — a control flipped INVALID; "
                      "no verdict, bisect before any claim")
     elif v == "VALID":
