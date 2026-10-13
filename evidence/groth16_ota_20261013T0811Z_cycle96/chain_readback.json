@@ -1,0 +1,10 @@
+{
+ "sig": "4j51Tq9FajnbrpBJgQYvfm7vv1rjWiiEobxSaF6eN19G4xmqu18XZL8x85zTEf1nBJ53XFaX7kwQvvVFS9kuT1dq",
+ "slot": 510574526,
+ "err": null,
+ "block_time_utc": 1791882379,
+ "confirmation": "finalized",
+ "pda": "2aR7VdaAPuF5s7LMauwVJmzZjNHhf54Qu7q9KeF2YHpJ",
+ "byte_tied_to_committed": true,
+ "checked_utc": "2026-10-13T09:07:00.515444+00:00"
+}
