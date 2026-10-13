@@ -1,0 +1,7 @@
+# Machine-observed wrapper exit for the re-run battery (2026-10-13T18:53:37Z run)
+# Command tail: ...; echo "BATTERY_EXIT=$?"
+# Captured from the background session log (proc_aab7797f8502) verbatim:
+BATTERY_EXIT=3
+# The battery log file (t12_cycle97_rerun_exit3.log) ends with:
+#   BATTERY VERDICT: QUARANTINED — a control flipped INVALID; no verdict, bisect before any claim
+# Pre-fix template would have exited 0 for this same verdict (battery_rc discarded).

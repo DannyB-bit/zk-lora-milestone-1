@@ -35,6 +35,9 @@ Machine-derived, never typed:
 Exit contract (Codex P1, PR#55/56 reviews): 0 = PRIMARY VALID + controls
   VALID (the only settle-eligible verdict); 3 = QUARANTINED (control flip);
   4 = PRIMARY INVALID. Launchers gate on this code, never on log prose.
+  The CLI entry is sys.exit(main()) — the return value IS the process exit
+  status (PR#58 review blocker: the bare main() call discarded it, so every
+  run exited 0, including QUARANTINE and PRIMARY INVALID).
 Fail-closed gates (abort = no verdict, by battery law):
   * A-bus unreachable  -> NO verdict may issue; cross-bus byte-diff is mandatory
   * window not found / not unique -> abort
@@ -123,6 +126,19 @@ def telemetry():
         except Exception:
             pass
     return " ".join(out)
+
+
+def verdict_exit_code(primary, controls):
+    """Exit-contract mapping (PR#58 review blocker): 0 = PRIMARY VALID + all
+    controls VALID (sole settle-eligible verdict); 3 = QUARANTINED (a control
+    flipped INVALID — no verdict, bisect); 4 = PRIMARY INVALID. Pure function of
+    the verdicts so the unit test can assert the contract without buses or
+    silicon. Callers gate on the return value, never on log prose."""
+    if not all(v == "VALID" for v in controls.values()):
+        return 3
+    if primary == "VALID":
+        return 0
+    return 4
 
 
 def main():
@@ -455,12 +471,11 @@ def main():
     # unit test): 0 = PRIMARY VALID + all controls VALID (sole settle-eligible
     # verdict); 3 = QUARANTINED (control flip — no verdict, bisect); 4 =
     # PRIMARY INVALID (no settle, disclosed, bisect).
-    battery_rc = 0
-    if not all(v == "VALID" for v in verdicts.values()):
+    battery_rc = verdict_exit_code(v, verdicts)
+    if battery_rc == 3:
         lines.append("BATTERY VERDICT: QUARANTINED — a control flipped INVALID; "
                      "no verdict, bisect before any claim")
-        battery_rc = 3
-    elif v == "VALID":
+    elif battery_rc == 0:
         lines.append(f"BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-{cycle} A->B exchange COMPLETE: "
                      f"radio 5/5 SHA MATCH ({wrap_note} frames) + pairing VALID on B die, "
                      f"declare cross-bus byte-equal, machine-located, label {label} derived not typed; "
@@ -468,7 +483,6 @@ def main():
     else:
         lines.append("BATTERY VERDICT: PRIMARY INVALID + CONTROLS VALID — captured bytes fail pairing; "
                      "no settle; disclosed; bisect")
-        battery_rc = 4
 
     out = "\n".join(lines)
     print(out)
@@ -478,4 +492,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
