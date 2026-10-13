@@ -1,0 +1,14 @@
+{
+ "gate": "settle-signature chain-readback (fleet law)",
+ "method": "getSignaturesForAddress(record PDA) + getTransaction + getAccountInfo",
+ "record_pda": "DELQUFTYJnLWQhVPsmmzgWcdQYz5un8G9z3ryRL6tWVx",
+ "register_tx": "3k9Dky4vSxVgBDbPtr19p4piuPHdGz4CgEKgoqQfQDA1iVVC2PWfyo8vMpVDoV8fKjwdoWf3iUGuzF2KZWZ6dbK3",
+ "slot": 510065722,
+ "signature_byte_match": true,
+ "pda_account_index": 2,
+ "merkle_root_bytes_in_pda_data": true,
+ "pda_data_len": 103,
+ "tx_err": null,
+ "verdict": "PASS",
+ "ts_utc": "2026-10-11T23:26:00Z"
+}
