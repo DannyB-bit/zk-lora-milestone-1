@@ -1,0 +1,175 @@
+2026-10-13T02:10:30Z GATE PASS: ARMING listener window 2026-10-13T02:10:30Z -> +7200s (HOLD_FIRE — standby only)
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 0
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (190185 on READY)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 2176116871
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.5
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x7DE5
+AB 3A 57 3D ED EA 8A CF 35 F8 AB D2 B0 4D 35 76 3A 90 D0 2C 8E 31 DE AE BA 32 9A 4C CA 57 47 18 CF A0 93 6D 0C BF 7E 07 0D 40 28 54 3A AB 2B 11 8F AA 1E 98 BC 4F 89 84 C8 91 41 FA E3 2B 62 1D 61 BF EA CC B4 69 8D 4F B8 C1 51 BA 4A B3 C8 93 2D D4 3B BA AA 15 F4 F4 5A 9A AF EC 28 27 44 92 62 E4 37 A0 F6 74 E5 59 8D A8 C1 83 DB 4B B4 82 AC 28 12 B8 30 6D 9C 2A 29 FA 74 E3 22 A2 57 1A 
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 2193031250
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x7DE5
+AB 3A 57 3D ED EA 8A CF 35 F8 AB D2 B0 4D 35 76 3A 90 D0 2C 8E 31 DE AE BA 32 9A 4C CA 57 47 18 CF A0 93 6D 0C BF 7E 07 0D 40 28 54 3A AB 2B 11 8F AA 1E 98 BC 4F 89 84 C8 91 41 FA E3 2B 62 1D 61 BF EA CC B4 69 8D 4F B8 C1 51 BA 4A B3 C8 93 2D D4 3B BA AA 15 F4 F4 5A 9A AF EC 28 27 44 92 62 E4 37 A0 F6 74 E5 59 8D A8 C1 83 DB 4B B4 82 AC 28 12 B8 30 6D 9C 2A 29 FA 74 E3 22 A2 57 1A 
+Received 1 packets (total:2)
+
+----- LoRa packet -----
+  count_us: 2209816344
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x7DE5
+AB 3A 57 3D ED EA 8A CF 35 F8 AB D2 B0 4D 35 76 3A 90 D0 2C 8E 31 DE AE BA 32 9A 4C CA 57 47 18 CF A0 93 6D 0C BF 7E 07 0D 40 28 54 3A AB 2B 11 8F AA 1E 98 BC 4F 89 84 C8 91 41 FA E3 2B 62 1D 61 BF EA CC B4 69 8D 4F B8 C1 51 BA 4A B3 C8 93 2D D4 3B BA AA 15 F4 F4 5A 9A AF EC 28 27 44 92 62 E4 37 A0 F6 74 E5 59 8D A8 C1 83 DB 4B B4 82 AC 28 12 B8 30 6D 9C 2A 29 FA 74 E3 22 A2 57 1A 
+Received 1 packets (total:3)
+
+----- LoRa packet -----
+  count_us: 2226562311
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  10.8
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x7DE5
+AB 3A 57 3D ED EA 8A CF 35 F8 AB D2 B0 4D 35 76 3A 90 D0 2C 8E 31 DE AE BA 32 9A 4C CA 57 47 18 CF A0 93 6D 0C BF 7E 07 0D 40 28 54 3A AB 2B 11 8F AA 1E 98 BC 4F 89 84 C8 91 41 FA E3 2B 62 1D 61 BF EA CC B4 69 8D 4F B8 C1 51 BA 4A B3 C8 93 2D D4 3B BA AA 15 F4 F4 5A 9A AF EC 28 27 44 92 62 E4 37 A0 F6 74 E5 59 8D A8 C1 83 DB 4B B4 82 AC 28 12 B8 30 6D 9C 2A 29 FA 74 E3 22 A2 57 1A 
+Received 1 packets (total:4)
+
+----- LoRa packet -----
+  count_us: 2243340680
+  size:     128
+  chan:     3
+  status:   0x10
+  datr:     9
+  codr:     1
+  rf_chain  0
+  freq_hz   903900000
+  snr_avg:  11.2
+  rssi_chan:198.0
+  rssi_sig :198.0
+  crc:      0x7DE5
+AB 3A 57 3D ED EA 8A CF 35 F8 AB D2 B0 4D 35 76 3A 90 D0 2C 8E 31 DE AE BA 32 9A 4C CA 57 47 18 CF A0 93 6D 0C BF 7E 07 0D 40 28 54 3A AB 2B 11 8F AA 1E 98 BC 4F 89 84 C8 91 41 FA E3 2B 62 1D 61 BF EA CC B4 69 8D 4F B8 C1 51 BA 4A B3 C8 93 2D D4 3B BA AA 15 F4 F4 5A 9A AF EC 28 27 44 92 62 E4 37 A0 F6 74 E5 59 8D A8 C1 83 DB 4B B4 82 AC 28 12 B8 30 6D 9C 2A 29 FA 74 E3 22 A2 57 1A 
+Received 1 packets (total:5)
+
+Nb valid packets received: 5 CRC OK (1)
+Closing SPI communication interface
+[rak_gpio] stop: holder released, lines latched (HAT stays powered)
+=========== Test End ===========
+2026-10-13T04:10:30Z --- listener exit rc=124 (124 = window span complete) ---
+2026-10-13T04:10:40Z --- bus free: running certification gate ---
+2026-10-13T04:10:40Z LORA_CHIRP_RECOVERY_BEGIN role=node-b-rx spi=/dev/spidev0.0
+2026-10-13T04:10:40Z RECOVERY_LOG=./lora_chirp_recovery_node-b-rx_20261013T041040Z.log
+2026-10-13T04:10:40Z Stopping known gateway services so one process owns the concentrator
+2026-10-13T04:10:40Z RUN: sudo systemctl stop helium-gateway
+2026-10-13T04:10:40Z EXIT[5]: sudo systemctl stop helium-gateway
+2026-10-13T04:10:40Z RUN: sudo systemctl is-active helium-gateway
+2026-10-13T04:10:40Z EXIT[4]: sudo systemctl is-active helium-gateway
+2026-10-13T04:10:40Z RUN: sudo systemctl stop packet-forwarder
+2026-10-13T04:10:40Z EXIT[5]: sudo systemctl stop packet-forwarder
+2026-10-13T04:10:40Z RUN: sudo systemctl is-active packet-forwarder
+2026-10-13T04:10:40Z EXIT[4]: sudo systemctl is-active packet-forwarder
+2026-10-13T04:10:40Z RUN: sudo systemctl stop lora_pkt_fwd
+2026-10-13T04:10:41Z EXIT[5]: sudo systemctl stop lora_pkt_fwd
+2026-10-13T04:10:41Z RUN: sudo systemctl is-active lora_pkt_fwd
+2026-10-13T04:10:41Z EXIT[4]: sudo systemctl is-active lora_pkt_fwd
+2026-10-13T04:10:41Z RUN: sudo systemctl stop lora-packet-forwarder
+2026-10-13T04:10:41Z EXIT[5]: sudo systemctl stop lora-packet-forwarder
+2026-10-13T04:10:41Z RUN: sudo systemctl is-active lora-packet-forwarder
+2026-10-13T04:10:41Z EXIT[4]: sudo systemctl is-active lora-packet-forwarder
+2026-10-13T04:10:41Z RUN: sudo systemctl stop sx1302_hal
+2026-10-13T04:10:41Z EXIT[5]: sudo systemctl stop sx1302_hal
+2026-10-13T04:10:41Z RUN: sudo systemctl is-active sx1302_hal
+2026-10-13T04:10:41Z EXIT[4]: sudo systemctl is-active sx1302_hal
+2026-10-13T04:10:41Z RUN: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-13T04:10:41Z EXIT[5]: sudo systemctl stop chirpstack-gateway-bridge
+2026-10-13T04:10:41Z RUN: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-13T04:10:41Z EXIT[4]: sudo systemctl is-active chirpstack-gateway-bridge
+2026-10-13T04:10:41Z RUN: sudo systemctl stop miner
+2026-10-13T04:10:41Z EXIT[5]: sudo systemctl stop miner
+2026-10-13T04:10:41Z RUN: sudo systemctl is-active miner
+2026-10-13T04:10:41Z EXIT[4]: sudo systemctl is-active miner
+2026-10-13T04:10:41Z Using reset script: /home/researcher-bravo/sx1302_hal/libloragw/reset_lgw.sh
+2026-10-13T04:10:41Z RUN: sudo ./reset_lgw.sh stop
+2026-10-13T04:10:41Z EXIT[0]: sudo ./reset_lgw.sh stop
+2026-10-13T04:10:42Z RUN: sudo ./reset_lgw.sh start
+2026-10-13T04:10:46Z EXIT[0]: sudo ./reset_lgw.sh start
+2026-10-13T04:10:46Z SPI device exists: /dev/spidev0.0
+2026-10-13T04:10:46Z Trying concentrator verification tool: /home/researcher-bravo/sx1302_hal/util_chip_id/chip_id
+2026-10-13T04:10:46Z RUN: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-13T04:10:50Z EXIT[0]: sudo bash -c cd '/home/researcher-bravo/sx1302_hal/util_chip_id' && '/home/researcher-bravo/sx1302_hal/util_chip_id/chip_id' -d '/dev/spidev0.0' -r 1250 -k 0
+2026-10-13T04:10:50Z LORA_CHIRP_RECOVERY_PASS=YES
+2026-10-13T04:10:50Z LORA_CHIRP_RECOVERY_END role=node-b-rx
+2026-10-13T04:10:50Z GATE PASS: ARMING listener window 2026-10-13T04:10:50Z -> +7200s (HOLD_FIRE — standby only)
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 255
+INFO: Select channel mode 0
+[1] SX1302 reset: GPIO17 LOW -> HIGH 0.5s -> LOW ...
+[2] SX1261 LBT: GPIO22 LOW 0.1s -> HIGH ...
+[3] firmware-load wait 2.0s ...
+--- probe[post-GPIO17-reset] ---
+  version reg 0x0005 x10 : 00 00 00 00 00 00 00 00 00 00
+  verdict: 0x00 = MISO stuck low / chip unpowered (Gate 2)
+[holder] June-faithful GPIO17/GPIO22 reset sequence complete
+[rak_gpio] holder on: READY (202202 on READY)
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+INFO: no temperature sensor found on port 0x39
+INFO: no temperature sensor found on port 0x3B
+INFO: no temperature sensor found on port 0x38
+WARNING: no temperature sensor found (RAK2287) - continuing without, assuming 25C nominal
+Waiting for packets...

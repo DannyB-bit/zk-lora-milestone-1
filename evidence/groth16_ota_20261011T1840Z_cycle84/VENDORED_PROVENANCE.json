@@ -1,0 +1,11 @@
+{
+ "vendored_from": "refs/pull/48/head (PR#48 branch researcher-bravo/groth16-ota-cycle84-20261011T1925Z, head 158c0a529a)",
+ "blob_path": "evidence/groth16_ota_20261011T1840Z_cycle84/rx_payload_128b.bin",
+ "sha256": "4b4160488a948fa96117efa820065c07bf7cd85fb2cda7def8be6cf4954912c0",
+ "bytes": 128,
+ "key_id": "33",
+ "declare_b_seq": 1250,
+ "declare_a_seq": 484,
+ "role_in_cycle94": "CONTROL-diff1 (key-33, different statement-class) \u2014 vendored per the c-91 stranded-restore law so a fresh checkout of THIS PR reproduces the c-94 first-of-class battery without PR#48 merged",
+ "restored_utc": "2026-10-13T04:35:00Z"
+}

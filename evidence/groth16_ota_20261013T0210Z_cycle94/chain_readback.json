@@ -1,0 +1,10 @@
+{
+ "pda": "TGaGqVced3sTbSwd7LKaZPksyrNVJMvH82uzdPo16Bt",
+ "sig_on_chain": true,
+ "sig": "55LtXDgDuiyr9Vso5T7s9gGY9Hs6qC1B9dNZEp2ZWina4umF5R7gpH5Q7wboP5CCBpWVueySzuAE9WwC7qteRwC9",
+ "slot": 510507941,
+ "owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "data_len": 103,
+ "decode_info_scan": "CLEAN (digest-only)",
+ "readback_utc": "2026-10-13T04:43:00Z"
+}

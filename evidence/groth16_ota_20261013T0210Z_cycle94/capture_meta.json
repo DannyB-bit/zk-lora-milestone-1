@@ -1,0 +1,22 @@
+{
+ "payload_sha256": "3a33303728b85008d54b73942e530e3d9082183aa57f156f5939224d76ca4090",
+ "capture_utc_range": "2026-10-13T03:58:21.084167+00:00 .. 2026-10-13T03:59:28.307976+00:00",
+ "wrap_branch": "post-wrap (+4294.967296s, machine-selected by T12 battery wrap-branch discriminator; frames 2176.1s..2243.3s after arm origin, walls = origin + count_us/1e6 + WRAP; only the POST-WRAP branch satisfies the fired-stamp \u2212180..+240 s gate)",
+ "window": {
+  "b_seq": "1411",
+  "a_mirror_seq": "541",
+  "armed_at_utc": "2026-10-13T02:10:30Z",
+  "closes_at_utc": "2026-10-13T04:10:30Z"
+ },
+ "fired_utc": "2026-10-13T03:59:34Z",
+ "declare_to_fire_s": 80.0,
+ "frame_count": 5,
+ "count_us_range": "2176116871..2243340680",
+ "snr_range": "10.5..11.2",
+ "count_us_origin_convention": "arm banner second 2026-10-13T02:10:30Z (battery session-segment banner-second convention; serialized from b_rx_extract parse + battery wrap discriminator, never hand-derived)",
+ "consecutive_complete_valid": 18,
+ "private_key_id": "36",
+ "battery_label": "T12_CYCLE94_BATTERY_RUN_UTC",
+ "battery_exit": 0,
+ "battery_template": "canonical fixed 6a49d04 (PR#58 head) \u2014 vendored copy sha256 f2605ea56f181c52917bbb54b504afa6ffc967d5831c65098bb93c2e122497ba"
+}
