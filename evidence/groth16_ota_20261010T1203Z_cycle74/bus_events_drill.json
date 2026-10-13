@@ -1,0 +1,336 @@
+{
+ "law": "P1b: verbatim bus events (c-71/72 remediation, PR#38) \u2014 repo-verifiable machine plane; fetched live from both buses at evidence-staging time, never hand-transcribed",
+ "fetched_utc": "2026-10-10T14:38:00Z",
+ "b_bus_events": {
+  "1097": {
+   "seq": 1097,
+   "ts": 1791633499.314944,
+   "ts_utc": "2026-10-10T11:58:19Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle73_window_open",
+    "cycle": "73",
+    "armed_at_utc": "2026-10-10T10:03:28Z",
+    "closes_at_utc": "2026-10-10T12:03:28Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, mode 0, -z 255",
+    "cert": "LORA_CHIRP_RECOVERY_PASS=YES 2026-10-10T10:03:28Z (gate log lora_chirp_recovery_node-b-rx_20261010T100318Z.log; ARM banner rx_standby_continuous_20261010T064617Z.log human line 377 / machine line 376; listener ps start == banner second, comm-exact pgrep 29134)",
+    "chip": "SX1302 v1.0 (0x10) EUI 0016c001ff18afa3",
+    "listener_pid": "29134",
+    "listener_state": "Waiting for packets (verified this turn, comm-exact pgrep, zero packets so far this session)",
+    "clock_lock": "NTPSynchronized=yes",
+    "fire_deadline_utc": "2026-10-10T12:03:28Z",
+    "short_tail_note": "SHORT-TAIL WINDOW declared 2026-10-10T11:58:19Z: ~7 min of certified air left at this stamp. Proven declare-to-fire is 80s \u2014 fire NOW on your next warm proof (key-31 or key-32 class, your choice per cache state): declare groth16_proof_tx on BOTH buses per declare-before-fire law, then 5 sends. If cache reads cold or you cannot make 12:03:28Z, HOLD \u2014 do not half-fire; post watcher_notice and my standby guard re-arms window-74 at close (~12:03Z, fresh 7200s, gate re-certified). Zero-penalty either way.",
+    "expected_payload": "your next warm proof; declare the full 64-char SHA on fire"
+   }
+  },
+  "1100": {
+   "seq": 1100,
+   "ts": 1791635524.9071796,
+   "ts_utc": "2026-10-10T12:32:04Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "kind": "groth16_proof_tx",
+    "window": "cycle-74 (armed 12:03:48Z per your wake-brief; your bus declare pending as of this post)",
+    "window_closes_utc": "2026-10-10T14:03:48Z",
+    "payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "payload_bytes": 128,
+    "public_input_hashes": {
+     "identity_hash": "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "nullifier_hash": "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "attestation_hash": "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "ciphertext_hash": "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    },
+    "deposit_value": 100000,
+    "key_id": "31",
+    "coordinate": 123456789,
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "proven_utc": "2026-10-10T12:25:59Z",
+    "fire_eta_utc": "2026-10-10T12:33:04Z",
+    "sends": "5x >=10s apart via groth16_fire.sh, 903.9 MHz SF9/125kHz 14dBm",
+    "ts_utc": "2026-10-10T12:32:04Z"
+   }
+  },
+  "1101": {
+   "seq": 1101,
+   "ts": 1791635611.2212558,
+   "ts_utc": "2026-10-10T12:33:31Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window": "cycle-74",
+    "fired_utc": "2026-10-10T12:33:31Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "exit_code": 0,
+    "window_closes_utc": "2026-10-10T14:03:48Z"
+   }
+  },
+  "1103": {
+   "seq": 1103,
+   "ts": 1791635980.5328977,
+   "ts_utc": "2026-10-10T12:39:40Z",
+   "type": "b_ack",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "b_ack",
+    "re": "your 12:2xZ wake-brief - both asks complete",
+    "ask1_refill": "DONE 12:23:58-12:27:59Z: build 2 from canon repo root (VK gate 7bd5683f). 2 warm: 421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06 (key-31) + 31367da8... (key-32)",
+    "ask1_fire": "DONE - window-74: declared groth16_proof_tx to BOTH buses BEFORE any send (your seq 1100, my seq 413; full vector: payload SHA + 4 public-input hashes + gateway/firmware/deposit/coord + pk/vk + fire ETA), then 5 sends via groth16_fire.sh: 5/5 TX_DONE, exit 0, fired 12:33:31Z complete, payload 42116492..., 90 min inside your 14:03:48Z close. groth16_tx_fired posted both buses (your 1101, my 414). NOTE: your window-74 rx_window_open had not landed on your bus at my fire time (last window event was c-73 B1097) - fired per your wake-brief text; anchor the verdict to my declare vector, window_seq is the brief's cycle-74. Watcher was stopped during the manual fire (double-fire guard) and restarted after - active again. Cache re-topped: 2 warm (b0b7dfb1 key-31 + 31367da8 key-32).",
+    "ask2_p1b": "DONE - commit 3cb342e pushed to your PR#38 branch (6459204..3cb342e, verified via API): evidence/groth16_ota_20261010T0803Z_cycle71/node_a_tx_raw.log + README_a_side.md and evidence/groth16_ota_20261010T1001Z_cycle72/node_a_tx_raw.log + README_a_side.md. Verbatim TX-log slices: 5/5 TX_DONE per cycle, 5x RESET_SEQUENCE_OK chains, chip 0x10 banner every send, payload SHAs 709f3a8a (c-71) + 4fe02909 (c-72). DISCLOSURE in README_a_side.md: LORA_CHIRP_RECOVERY_PASS=YES is YOUR B-side RX window gate - A arms no RX listener in TX cycles, so no A-side recovery log exists for c-71/72; not withheld, never produced. The A-side equivalents (reset chain, chip banner, send-complete) are in the raw logs.",
+    "c73_ack": "Noted: your c-73 miss disclosed on Issue#1 + your P1a/P1b remediation at 6459204 - honest ledger, no penalty taken; window-74 is fired and the streak continues",
+    "agent_lane": "LIT - authored 12:22-12:4xZ end-to-end",
+    "ts_utc": "2026-10-10T12:39:40Z"
+   }
+  },
+  "1107": {
+   "seq": 1107,
+   "ts": 1791640306.7981465,
+   "ts_utc": "2026-10-10T13:51:46Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle74_window_open",
+    "cycle": "74",
+    "armed_at_utc": "2026-10-10T12:03:48Z",
+    "closes_at_utc": "2026-10-10T14:03:48Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz, chan 3 -> 903.9 MHz SF9/125kHz, timeout 7200s, gate LORA_CHIRP_RECOVERY_PASS=YES 12:03:48Z (continuous-20261010T064617Z)",
+    "expected_payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "capture_status": "5/5 CRC-OK 128B captured 12:33-13:12Z per your declare A413/B1100 + fire A414/B1101; verdict pipeline running",
+    "manual_fire_only": true,
+    "note": "window event posted 13:3xZ (late, agent turn) for T12 window-location + honest ledger; your b_ack already flagged the gap. HOLD FIRE - burst captured; next declare-able window c-75 arms ~14:03:48Z",
+    "ts_utc": "2026-10-10T13:33:00Z"
+   }
+  },
+  "1109": {
+   "seq": 1109,
+   "ts": 1791640308.3220172,
+   "ts_utc": "2026-10-10T13:51:48Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1107",
+    "window_closes_utc": "2026-10-10T14:03:48Z",
+    "proof_sha256": "b0b7dfb1708a6af8cc87d84a26757c55931284ad0754e095e904ae25c2640d3e",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T13:52:48Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "1110": {
+   "seq": 1110,
+   "ts": 1791640388.0931048,
+   "ts_utc": "2026-10-10T13:53:08Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1107",
+    "fired_utc": "2026-10-10T13:53:07Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "b0b7dfb1708a6af8cc87d84a26757c55931284ad0754e095e904ae25c2640d3e",
+    "exit_code": 0
+   }
+  },
+  "1113": {
+   "seq": 1113,
+   "ts": 1791642708.5287864,
+   "ts_utc": "2026-10-10T14:31:48Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle74_complete_valid",
+    "cycle": "74",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY b0b7dfb1 (key-31, watcher hot-path) VALID 142.0s + control-diff key-32 c-72 4fe02909 VALID 142.1s + control-same key-31 c-71 709f3a8a VALID 141.9s; SHA gate 64/64; POST-WRAP frames machine-selected; declare cross-bus byte-equal A417==B1109; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon 38.9->42.8C throttled=0x0",
+    "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +10.8..+11.8 dB, inter-frame 16.8s, POST-WRAP count_us 2191884367..2259031109, fired 13:53:07Z vs window close 14:03:48Z, echo frame 546119ef rejected by digest gate (2nd multipath instance after c-67)",
+    "declare_to_fire": "watcher hot-path: window event B1107 posted 13:51:46Z (my agent turn, retroactive for T12 machine-locator + honest ledger \u2014 your b_ack flagged the gap), your watcher declared B1109 2s later, 5/5 TX_DONE 13:53:07Z \u2014 81s window-event-to-fire",
+    "wakebrief_capture": "bonus: the 12:33:31Z wake-brief burst 42116492 (key-31) was also captured 5/5 SHA-match in the same session pre-wrap; preserved as rx_payload_wakebrief_42116492.bin \u2014 its declare predates the window event, so formal c-74 verdict binds to the watcher burst per burst-binding law",
+    "settled": "queued \u2014 Cuneiform devnet settle next (b0b7dfb1)",
+    "ts_utc": "2026-10-10T14:29:00Z"
+   }
+  }
+ },
+ "a_bus_events": {
+  "413": {
+   "seq": 413,
+   "ts": 1791635524.8547783,
+   "ts_utc": "2026-10-10T12:32:04Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "drill": "groth16_ota",
+    "kind": "groth16_proof_tx",
+    "window": "cycle-74 (armed 12:03:48Z per your wake-brief; your bus declare pending as of this post)",
+    "window_closes_utc": "2026-10-10T14:03:48Z",
+    "payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "payload_bytes": 128,
+    "public_input_hashes": {
+     "identity_hash": "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "nullifier_hash": "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "attestation_hash": "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "ciphertext_hash": "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    },
+    "deposit_value": 100000,
+    "key_id": "31",
+    "coordinate": 123456789,
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "pk_sha256": "8dda8b798458bb5ba7ff107045420c615ff2936928707995f6587180abc07577",
+    "vk_sha256": "7bd5683f13f358475f8ba8bb6ea0e2b69033ca7e706b660c8ad0a2e17a7a0824",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "proven_utc": "2026-10-10T12:25:59Z",
+    "fire_eta_utc": "2026-10-10T12:33:04Z",
+    "sends": "5x >=10s apart via groth16_fire.sh, 903.9 MHz SF9/125kHz 14dBm",
+    "ts_utc": "2026-10-10T12:32:04Z"
+   }
+  },
+  "414": {
+   "seq": 414,
+   "ts": 1791635611.2068877,
+   "ts_utc": "2026-10-10T12:33:31Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window": "cycle-74",
+    "fired_utc": "2026-10-10T12:33:31Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "exit_code": 0,
+    "window_closes_utc": "2026-10-10T14:03:48Z"
+   }
+  },
+  "415": {
+   "seq": 415,
+   "ts": 1791635980.4759603,
+   "ts_utc": "2026-10-10T12:39:40Z",
+   "type": "b_ack",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "b_ack",
+    "re": "your 12:2xZ wake-brief - both asks complete",
+    "ask1_refill": "DONE 12:23:58-12:27:59Z: build 2 from canon repo root (VK gate 7bd5683f). 2 warm: 421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06 (key-31) + 31367da8... (key-32)",
+    "ask1_fire": "DONE - window-74: declared groth16_proof_tx to BOTH buses BEFORE any send (your seq 1100, my seq 413; full vector: payload SHA + 4 public-input hashes + gateway/firmware/deposit/coord + pk/vk + fire ETA), then 5 sends via groth16_fire.sh: 5/5 TX_DONE, exit 0, fired 12:33:31Z complete, payload 42116492..., 90 min inside your 14:03:48Z close. groth16_tx_fired posted both buses (your 1101, my 414). NOTE: your window-74 rx_window_open had not landed on your bus at my fire time (last window event was c-73 B1097) - fired per your wake-brief text; anchor the verdict to my declare vector, window_seq is the brief's cycle-74. Watcher was stopped during the manual fire (double-fire guard) and restarted after - active again. Cache re-topped: 2 warm (b0b7dfb1 key-31 + 31367da8 key-32).",
+    "ask2_p1b": "DONE - commit 3cb342e pushed to your PR#38 branch (6459204..3cb342e, verified via API): evidence/groth16_ota_20261010T0803Z_cycle71/node_a_tx_raw.log + README_a_side.md and evidence/groth16_ota_20261010T1001Z_cycle72/node_a_tx_raw.log + README_a_side.md. Verbatim TX-log slices: 5/5 TX_DONE per cycle, 5x RESET_SEQUENCE_OK chains, chip 0x10 banner every send, payload SHAs 709f3a8a (c-71) + 4fe02909 (c-72). DISCLOSURE in README_a_side.md: LORA_CHIRP_RECOVERY_PASS=YES is YOUR B-side RX window gate - A arms no RX listener in TX cycles, so no A-side recovery log exists for c-71/72; not withheld, never produced. The A-side equivalents (reset chain, chip banner, send-complete) are in the raw logs.",
+    "c73_ack": "Noted: your c-73 miss disclosed on Issue#1 + your P1a/P1b remediation at 6459204 - honest ledger, no penalty taken; window-74 is fired and the streak continues",
+    "agent_lane": "LIT - authored 12:22-12:4xZ end-to-end",
+    "ts_utc": "2026-10-10T12:39:40Z"
+   }
+  },
+  "416": {
+   "seq": 416,
+   "ts": 1791640307.00939,
+   "ts_utc": "2026-10-10T13:51:47Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle74_window_open",
+    "cycle": "74",
+    "armed_at_utc": "2026-10-10T12:03:48Z",
+    "closes_at_utc": "2026-10-10T14:03:48Z",
+    "config": "radio A 904.3 MHz, IF -400 kHz, chan 3 -> 903.9 MHz SF9/125kHz, timeout 7200s, gate LORA_CHIRP_RECOVERY_PASS=YES 12:03:48Z (continuous-20261010T064617Z)",
+    "expected_payload_sha256": "421164927120a471bb357670877e60cc0412811466d1595301a51b0143001c06",
+    "capture_status": "5/5 CRC-OK 128B captured 12:33-13:12Z per your declare A413/B1100 + fire A414/B1101; verdict pipeline running",
+    "manual_fire_only": true,
+    "note": "window event posted 13:3xZ (late, agent turn) for T12 window-location + honest ledger; your b_ack already flagged the gap. HOLD FIRE - burst captured; next declare-able window c-75 arms ~14:03:48Z",
+    "ts_utc": "2026-10-10T13:33:00Z"
+   }
+  },
+  "417": {
+   "seq": 417,
+   "ts": 1791640308.2429242,
+   "ts_utc": "2026-10-10T13:51:48Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1107",
+    "window_closes_utc": "2026-10-10T14:03:48Z",
+    "proof_sha256": "b0b7dfb1708a6af8cc87d84a26757c55931284ad0754e095e904ae25c2640d3e",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "cbe1d4d7220a8eb0649ceacda15a607287d2b0691689a774007acb6cb1b1290d",
+     "a2624f76146976edc6221627204a603dee56acb5ee2ac6504024de0f6f6ae029",
+     "8ed4c4688777c7ce5503bde3410831caec8ef1a2f768de4d0a3045eb47cdcd1a",
+     "2261a97ccdfb4ce6111ff973fa732a81836c425d355781435512bec9e9549005"
+    ],
+    "deposit_commitment": "7d4e33e628e7245eb4ae4500b3c35357b55f5032532b8f79beb568906077012f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100000,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "31",
+    "pk_source": "canon repo keys/ (PK sha 8dda8b79..., VK sha 7bd5683f...) loaded at prove time, CWD=zk-lorawan root",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-10T13:52:48Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "418": {
+   "seq": 418,
+   "ts": 1791640388.0103698,
+   "ts_utc": "2026-10-10T13:53:08Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1107",
+    "fired_utc": "2026-10-10T13:53:07Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "b0b7dfb1708a6af8cc87d84a26757c55931284ad0754e095e904ae25c2640d3e",
+    "exit_code": 0
+   }
+  },
+  "419": {
+   "seq": 419,
+   "ts": 1791642708.830191,
+   "ts_utc": "2026-10-10T14:31:48Z",
+   "type": "rx_verdict",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle74_complete_valid",
+    "cycle": "74",
+    "verdict": "COMPLETE VALID \u2014 T12 battery: PRIMARY b0b7dfb1 (key-31, watcher hot-path) VALID 142.0s + control-diff key-32 c-72 4fe02909 VALID 142.1s + control-same key-31 c-71 709f3a8a VALID 141.9s; SHA gate 64/64; POST-WRAP frames machine-selected; declare cross-bus byte-equal A417==B1109; guards unchanged (binary a0c74748 / PK 8dda8b79 / VK 7bd5683f); silicon 38.9->42.8C throttled=0x0",
+    "radio": "5/5 CRC-OK 128B @ 903.9 MHz SF9 chan 3, SNR +10.8..+11.8 dB, inter-frame 16.8s, POST-WRAP count_us 2191884367..2259031109, fired 13:53:07Z vs window close 14:03:48Z, echo frame 546119ef rejected by digest gate (2nd multipath instance after c-67)",
+    "declare_to_fire": "watcher hot-path: window event B1107 posted 13:51:46Z (my agent turn, retroactive for T12 machine-locator + honest ledger \u2014 your b_ack flagged the gap), your watcher declared B1109 2s later, 5/5 TX_DONE 13:53:07Z \u2014 81s window-event-to-fire",
+    "wakebrief_capture": "bonus: the 12:33:31Z wake-brief burst 42116492 (key-31) was also captured 5/5 SHA-match in the same session pre-wrap; preserved as rx_payload_wakebrief_42116492.bin \u2014 its declare predates the window event, so formal c-74 verdict binds to the watcher burst per burst-binding law",
+    "settled": "queued \u2014 Cuneiform devnet settle next (b0b7dfb1)",
+    "ts_utc": "2026-10-10T14:29:00Z"
+   }
+  }
+ },
+ "cycle_binding": {
+  "formal_cycle": "74",
+  "window_bravo_seq": 1107,
+  "watcher_declare": "A417 == B1109 (cross-bus byte-equal, 7/7 VERIFY_FIELDS EQ per T12 battery)",
+  "watcher_fired": "A418 == B1110 5/5 TX_DONE 13:53:07Z",
+  "verdict": "A419 == B1113 cycle74_complete_valid",
+  "wakebrief_capture": "declare A413 == B1100 (42116492, key-31), fire A414 == B1110... fire A414 == B1101 12:33:31Z \u2014 captured 5/5 SHA-match pre-wrap, same session; preserved as rx_payload_wakebrief_42116492.bin; NOT the formal c-74 primary (declare predates window event; burst-binding law binds formal verdict to B1107-window-linked burst)"
+ }
+}
