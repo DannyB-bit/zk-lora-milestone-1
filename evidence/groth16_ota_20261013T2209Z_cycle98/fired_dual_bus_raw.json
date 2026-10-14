@@ -1,0 +1,29 @@
+{
+ "note": "Alpha 5/5 TX_DONE fired event for window 1536 \u2014 B-bus mirror seq 1539 == A-bus original seq 616",
+ "b_bus": {
+  "seq": 1539,
+  "ts": 1791930101.7233012,
+  "ts_utc": "2026-10-13T22:21:41Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1536",
+   "fired_utc": "2026-10-13T22:21:41Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "exit_code": 0
+  }
+ },
+ "a_bus": {
+  "seq": 616,
+  "ts": 1791930101.697942,
+  "ts_utc": "2026-10-13T22:21:41Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1536",
+   "fired_utc": "2026-10-13T22:21:41Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "exit_code": 0
+  }
+ }
+}

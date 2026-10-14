@@ -1,0 +1,30 @@
+{
+ "cycle": 99,
+ "payload_sha256": "e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd",
+ "sha256_match": true,
+ "crc_ok_frames": 5,
+ "freq_hz": "903900000 (903.9 MHz exact, radio A 904.3 IF -400 kHz)",
+ "sf": "9",
+ "bw_khz": 125,
+ "snr_range_db": [
+  10.5,
+  11.5
+ ],
+ "count_us_range": [
+  1611333374,
+  1678433088
+ ],
+ "inter_frame_s": [
+  16.8,
+  16.8,
+  16.8,
+  16.8
+ ],
+ "wrap_branch": "POST-WRAP (+4294.967296s); walls = arm banner 00:09:32Z + count_us/1e6 + 4294.967296s; frames 01:48:18Z..01:49:05Z, causal with fired 01:49:11Z (completion stamp)",
+ "status": "0x10 STAT_CRC_OK all 5 frames",
+ "armed_at_utc": "2026-10-14T00:09:32Z",
+ "closes_at_utc": "2026-10-14T02:09:32Z",
+ "fired_utc": "2026-10-14T01:49:11Z",
+ "declare_to_fire_s": 80,
+ "extractor": "b_rx_extract.py fail-closed, exit 0, session-slice 00:09:32Z banner segment (guard log lines 585..693)"
+}

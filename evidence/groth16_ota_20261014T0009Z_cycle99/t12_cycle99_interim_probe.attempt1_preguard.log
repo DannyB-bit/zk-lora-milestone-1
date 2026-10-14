@@ -1,0 +1,12 @@
+WINDOW cycle-99 located: B-bus seq 1551 armed=2026-10-14T00:09:32Z closes=2026-10-14T02:09:32Z
+DECLARE located B seq1553 == A seq619 (window_seq join); 9 fields byte-equal incl vk/pk_sha256
+FIRED located: B seq1554 fired_utc=2026-10-14T01:49:11Z sends=5/5 TX_DONE
+GUARD binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92
+ERA-PIN GUARD PASS: on-disk keyset == declare keyset (identity-era VK 78352ffa)
+PAYLOAD staged rx_payload_128b.bin sha256=e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd
+PRIMARY c-99 captured e5e6c439 (key-41): verdict=VALID exit=0 wall_s=159.7 stdout='VALID'
+TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'
+CONTROL era-matched groth16_ota_20261013T2209Z_cycle98 (key-40, declare B seq1538 == A seq615, 62f2019e): verdict=VALID exit=0 wall_s=160.1 stdout='VALID'
+GUARD-AFTER unchanged
+PROBE VERDICT: PRIMARY VALID + TAMPER INVALID + ERA-MATCHED CONTROL VALID (key-41) on B die, identity-era binary+keys, declare dual-bus byte-equal — capture e5e6c439 authenticates; B617 blocker (b) closed on silicon; full T12 satisfiable from cycle-100 (2 era-matched distinct classes)
+PROBE_EXIT=0

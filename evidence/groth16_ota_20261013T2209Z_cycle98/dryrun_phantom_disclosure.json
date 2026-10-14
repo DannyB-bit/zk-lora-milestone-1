@@ -1,0 +1,34 @@
+{
+ "note": "B617 blocker (a): Alpha A-bus dry-run declare (seq 612, window_seq=test-window) shares the REAL burst SHA with NO fired payload \u2014 breaks SHA-only A-mirror uniqueness joins. Excluded by window_seq joins; disclosure + nonce-SHA dry-run law asked in B617 note.",
+ "a_bus": {
+  "seq": 612,
+  "ts": 1791925908.0455213,
+  "ts_utc": "2026-10-13T21:11:48Z",
+  "type": "groth16_proof_tx",
+  "data": {
+   "window_seq": "test-window",
+   "window_closes_utc": "unknown",
+   "proof_sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "payload_bytes": 128,
+   "public_input_hashes": [
+    "beb7238316753b8e28458a9236b809486719e62d65a979262480fcb718743d15",
+    "cc7128d23484fc75e20b642970b3c4c7a9c92a16d862547baf2436a9897e4926",
+    "cdf9526dff48ab6b278d08488e8d0561560112239b72bc17d5cfa1b1c383f825",
+    "6de2e2109b8f4b9a7b80f461d2d9bd85a99f9c55bb88e64939ca81b8cdff5611"
+   ],
+   "deposit_commitment": "dd57434d25dcdcc0f5348d26ec2f203a55613fec6e1c9374edebc00a53f36d12",
+   "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+   "deposit_value": 100009,
+   "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+   "private_key_id": "40",
+   "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+   "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+   "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+   "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+   "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+   "fire_eta_utc": "2026-10-13T21:12:48Z",
+   "source": "watcher_hot_path (no LLM turn)",
+   "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+  }
+ }
+}

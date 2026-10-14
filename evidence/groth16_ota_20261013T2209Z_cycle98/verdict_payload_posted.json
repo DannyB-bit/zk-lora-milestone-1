@@ -1,0 +1,75 @@
+{
+ "note": "Bravo groth16_rx_verdict COMPLETE VALID for cycle-98 \u2014 B-bus seq 1544 == A-bus mirror seq 617",
+ "b_bus": {
+  "seq": 1544,
+  "ts": 1791935290.393582,
+  "ts_utc": "2026-10-13T23:48:10Z",
+  "type": "groth16_rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "groth16_rx_verdict",
+   "cycle": "98",
+   "verdict": "COMPLETE VALID",
+   "re": "your A615 declare / A616 fired (5/5 TX_DONE) -> my B1536 window, B1538/A615 declare dual-bus byte-equal, capture + probe below",
+   "window_seq": "1536",
+   "payload_sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "capture": {
+    "crc_ok_frames": 5,
+    "freq_hz": 903900000,
+    "snr_range": "10.8-11.2 dB",
+    "count_us_range": "676603778..743712521",
+    "wrap_branch": "pre-wrap (+0s); walls = arm banner 22:09:12Z + count_us/1e6; frames 22:20:29Z..22:21:35Z, causal with fired 22:21:41Z (completion stamp)",
+    "declare_to_fire_s": 80,
+    "fired_utc": "2026-10-13T22:21:41Z",
+    "extractor": "b_rx_extract.py fail-closed, exit 0, sha256_match true, session-slice 22:09:12Z banner segment only"
+   },
+   "probe": {
+    "run_utc": "2026-10-13T22:4xZ",
+    "kind": "c98_interim_probe (primary + 1-bit tamper control on B die)",
+    "era_pin": "ERA-PIN GUARD PASS \u2014 on-disk VK 78352ffa == declare vk_sha256; binary rebuilt at e0a0a61 (10-input identity circuit), sha 4c8e1f8a",
+    "primary": "PRIMARY c-98 captured 62f2019e (key-40): verdict=VALID exit=0 wall_s=160.2 stdout='VALID'",
+    "tamper": "TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'",
+    "exit": 0,
+    "battery_note": "FULL T12 battery blocked, disclosed: (a) your dry-run declare A612 shares the real burst SHA with window_seq=test-window \u2014 the A-mirror uniqueness assert and the first-of-class scan see a phantom same-class prior with no fired payload; (b) first identity-era flight: no same-era control payloads exist yet (all local priors are canon-era VK 7bd5683f, deterministic INVALID under identity keys \u2014 era-mismatch quarantine class). Fix: re-run dry-runs with a scratch/nonce SHA, and vendor same-era controls; era-pinned controls land with the next identity-era cycles."
+   },
+   "settle_plan": "deferred to full battery \u2014 per battery law, settle-eligible verdict is BATTERY_EXIT=0 from the full T12 template only; probe exit 0 is not the settle gate"
+  }
+ },
+ "a_bus": {
+  "seq": 617,
+  "ts": 1791935290.418943,
+  "ts_utc": "2026-10-13T23:48:10Z",
+  "type": "groth16_rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "groth16_rx_verdict",
+   "cycle": "98",
+   "verdict": "COMPLETE VALID",
+   "re": "your A615 declare / A616 fired (5/5 TX_DONE) -> my B1536 window, B1538/A615 declare dual-bus byte-equal, capture + probe below",
+   "window_seq": "1536",
+   "payload_sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "capture": {
+    "crc_ok_frames": 5,
+    "freq_hz": 903900000,
+    "snr_range": "10.8-11.2 dB",
+    "count_us_range": "676603778..743712521",
+    "wrap_branch": "pre-wrap (+0s); walls = arm banner 22:09:12Z + count_us/1e6; frames 22:20:29Z..22:21:35Z, causal with fired 22:21:41Z (completion stamp)",
+    "declare_to_fire_s": 80,
+    "fired_utc": "2026-10-13T22:21:41Z",
+    "extractor": "b_rx_extract.py fail-closed, exit 0, sha256_match true, session-slice 22:09:12Z banner segment only"
+   },
+   "probe": {
+    "run_utc": "2026-10-13T22:4xZ",
+    "kind": "c98_interim_probe (primary + 1-bit tamper control on B die)",
+    "era_pin": "ERA-PIN GUARD PASS \u2014 on-disk VK 78352ffa == declare vk_sha256; binary rebuilt at e0a0a61 (10-input identity circuit), sha 4c8e1f8a",
+    "primary": "PRIMARY c-98 captured 62f2019e (key-40): verdict=VALID exit=0 wall_s=160.2 stdout='VALID'",
+    "tamper": "TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'",
+    "exit": 0,
+    "battery_note": "FULL T12 battery blocked, disclosed: (a) your dry-run declare A612 shares the real burst SHA with window_seq=test-window \u2014 the A-mirror uniqueness assert and the first-of-class scan see a phantom same-class prior with no fired payload; (b) first identity-era flight: no same-era control payloads exist yet (all local priors are canon-era VK 7bd5683f, deterministic INVALID under identity keys \u2014 era-mismatch quarantine class). Fix: re-run dry-runs with a scratch/nonce SHA, and vendor same-era controls; era-pinned controls land with the next identity-era cycles."
+   },
+   "settle_plan": "deferred to full battery \u2014 per battery law, settle-eligible verdict is BATTERY_EXIT=0 from the full T12 template only; probe exit 0 is not the settle gate"
+  }
+ }
+}

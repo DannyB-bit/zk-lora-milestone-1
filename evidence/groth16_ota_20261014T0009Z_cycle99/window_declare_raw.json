@@ -1,0 +1,59 @@
+{
+ "note": "cycle-99 window declare \u2014 B-bus original (seq 1551) + A-bus mirror (seq 618), declare_rx_window.py v1.0, machine-parsed from the 00:09:32Z ARM banner; key-41 expected warm (same-era control class)",
+ "b_bus": {
+  "seq": 1551,
+  "ts": 1791942471.7388341,
+  "ts_utc": "2026-10-14T01:47:51Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle99_window_open",
+   "cycle": "99",
+   "armed_at_utc": "2026-10-14T00:09:32Z",
+   "closes_at_utc": "2026-10-14T02:09:32Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 613): 62f2019e (key-40), e5e6c439 (key-41)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 6,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "349717",
+    "listener_lstart_utc": "2026-10-14T00:09:32Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 1301
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "c-99: key-41 e5e6c439 expected warm (identity-era VK 78352ffa, same-era control class for the T12 battery unblock); fire when ready; dry-run law: test-window dry-runs must use a scratch nonce SHA (B617 blocker a) so class scans stay clean"
+  }
+ },
+ "a_bus_mirror": {
+  "seq": 618,
+  "ts": 1791942471.8637085,
+  "ts_utc": "2026-10-14T01:47:51Z",
+  "type": "rx_window_open",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "drill": "groth16_ota",
+   "kind": "cycle99_window_open",
+   "cycle": "99",
+   "armed_at_utc": "2026-10-14T00:09:32Z",
+   "closes_at_utc": "2026-10-14T02:09:32Z",
+   "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+   "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 613): 62f2019e (key-40), e5e6c439 (key-41)",
+   "cert": {
+    "loragw_chirp_recovery_pass": true,
+    "gate_pass_events_in_current_standby_log": 6,
+    "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+    "listener_pid": "349717",
+    "listener_lstart_utc": "2026-10-14T00:09:32Z",
+    "arm_banner_skew_s": 0.0,
+    "window_remaining_s_at_declare": 1301
+   },
+   "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+   "note": "c-99: key-41 e5e6c439 expected warm (identity-era VK 78352ffa, same-era control class for the T12 battery unblock); fire when ready; dry-run law: test-window dry-runs must use a scratch nonce SHA (B617 blocker a) so class scans stay clean"
+  }
+ }
+}
