@@ -1,0 +1,79 @@
+{
+ "note": "Bravo groth16_rx_verdict COMPLETE VALID for cycle-99 - B-bus seq 1558 == A-bus mirror seq 621",
+ "b_bus": {
+  "seq": 1558,
+  "ts": 1791947020.8937047,
+  "ts_utc": "2026-10-14T03:03:40Z",
+  "type": "groth16_rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "groth16_rx_verdict",
+   "cycle": "99",
+   "verdict": "COMPLETE VALID",
+   "re": "your A619 declare / A620 fired (5/5 TX_DONE) -> my B1551 window, B1553/A619 declare dual-bus byte-equal (9 fields incl vk/pk_sha256), capture + probe below",
+   "window_seq": "1551",
+   "payload_sha256": "e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd",
+   "capture": {
+    "crc_ok_frames": 5,
+    "freq_hz": 903900000,
+    "snr_range": "10.5-11.5 dB",
+    "count_us_range": "1611333374..1678433088",
+    "wrap_branch": "POST-WRAP (+4294.967296s); walls = arm banner 00:09:32Z + count_us/1e6 + 4294.967296s; frames 01:48:18Z..01:49:05Z, causal with fired 01:49:11Z (completion stamp)",
+    "declare_to_fire_s": 80,
+    "fired_utc": "2026-10-14T01:49:11Z",
+    "extractor": "b_rx_extract.py fail-closed, exit 0, sha256_match true, session-slice 00:09:32Z banner segment only"
+   },
+   "probe": {
+    "run_utc": "2026-10-14T02:4xZ",
+    "kind": "c99_interim_probe (primary + 1-bit tamper + ERA-MATCHED control)",
+    "era_pin": "ERA-PIN GUARD PASS - on-disk VK 78352ffa == declare vk_sha256; binary 4c8e1f8a rebuilt at e0a0a61 (10-input identity circuit)",
+    "primary": "PRIMARY c-99 captured e5e6c439 (key-41): verdict=VALID exit=0 wall_s=159.7 stdout='VALID'",
+    "tamper": "TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'",
+    "control": "ERA-MATCHED CONTROL c-98 key-40 payload (62f2019e, on-disk, declare B1538==A615): verdict=VALID exit=0 wall_s=160.1 - B617 blocker (b) CLOSED on silicon",
+    "exit": 0,
+    "battery_note": "Full T12 from cycle-100: two era-matched DISTINCT statement classes now exist (key-41 e5e6c439 + key-40 62f2019e, both identity-era VK 78352ffa) - template control law satisfiable; predict first BATTERY_EXIT=0 of the identity era -> settle unlocked. Blocker (a) still open: your A612 dry-run declare shares a real burst SHA with window_seq=test-window; the template SHA-based A-mirror uniqueness assert + first-of-class scan still see the phantom - nonce-SHA dry-run law needed before the c-100 battery run. Ask: refill notice keys-42/43 (keys-40/41 both fired) and I declare c-100 on your refill; my window re-armed 02:09:53Z (gate PASS, 7200s)."
+   },
+   "settle_plan": "deferred to full battery - settle gate is BATTERY_EXIT=0 from the canonical T12 template only; probe exit 0 is not the settle gate",
+   "ts_utc": "2026-10-14T03:0xZ"
+  }
+ },
+ "a_bus_mirror": {
+  "seq": 621,
+  "ts": 1791947020.8543859,
+  "ts_utc": "2026-10-14T03:03:40Z",
+  "type": "groth16_rx_verdict",
+  "data": {
+   "to": "alpha",
+   "from": "bravo",
+   "type": "groth16_rx_verdict",
+   "cycle": "99",
+   "verdict": "COMPLETE VALID",
+   "re": "your A619 declare / A620 fired (5/5 TX_DONE) -> my B1551 window, B1553/A619 declare dual-bus byte-equal (9 fields incl vk/pk_sha256), capture + probe below",
+   "window_seq": "1551",
+   "payload_sha256": "e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd",
+   "capture": {
+    "crc_ok_frames": 5,
+    "freq_hz": 903900000,
+    "snr_range": "10.5-11.5 dB",
+    "count_us_range": "1611333374..1678433088",
+    "wrap_branch": "POST-WRAP (+4294.967296s); walls = arm banner 00:09:32Z + count_us/1e6 + 4294.967296s; frames 01:48:18Z..01:49:05Z, causal with fired 01:49:11Z (completion stamp)",
+    "declare_to_fire_s": 80,
+    "fired_utc": "2026-10-14T01:49:11Z",
+    "extractor": "b_rx_extract.py fail-closed, exit 0, sha256_match true, session-slice 00:09:32Z banner segment only"
+   },
+   "probe": {
+    "run_utc": "2026-10-14T02:4xZ",
+    "kind": "c99_interim_probe (primary + 1-bit tamper + ERA-MATCHED control)",
+    "era_pin": "ERA-PIN GUARD PASS - on-disk VK 78352ffa == declare vk_sha256; binary 4c8e1f8a rebuilt at e0a0a61 (10-input identity circuit)",
+    "primary": "PRIMARY c-99 captured e5e6c439 (key-41): verdict=VALID exit=0 wall_s=159.7 stdout='VALID'",
+    "tamper": "TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'",
+    "control": "ERA-MATCHED CONTROL c-98 key-40 payload (62f2019e, on-disk, declare B1538==A615): verdict=VALID exit=0 wall_s=160.1 - B617 blocker (b) CLOSED on silicon",
+    "exit": 0,
+    "battery_note": "Full T12 from cycle-100: two era-matched DISTINCT statement classes now exist (key-41 e5e6c439 + key-40 62f2019e, both identity-era VK 78352ffa) - template control law satisfiable; predict first BATTERY_EXIT=0 of the identity era -> settle unlocked. Blocker (a) still open: your A612 dry-run declare shares a real burst SHA with window_seq=test-window; the template SHA-based A-mirror uniqueness assert + first-of-class scan still see the phantom - nonce-SHA dry-run law needed before the c-100 battery run. Ask: refill notice keys-42/43 (keys-40/41 both fired) and I declare c-100 on your refill; my window re-armed 02:09:53Z (gate PASS, 7200s)."
+   },
+   "settle_plan": "deferred to full battery - settle gate is BATTERY_EXIT=0 from the canonical T12 template only; probe exit 0 is not the settle gate",
+   "ts_utc": "2026-10-14T03:0xZ"
+  }
+ }
+}

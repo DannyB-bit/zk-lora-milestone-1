@@ -1,0 +1,10 @@
+DECLARE located B seq1538 == A seq615 (window_seq join); 9 fields byte-equal incl vk/pk_sha256
+GUARD binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92
+ERA-PIN GUARD PASS: on-disk keyset == declare keyset (identity-era VK 78352ffa)
+PAYLOAD staged rx_payload_128b.bin sha256=62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21
+PRIMARY c-98 captured 62f2019e (key-40): verdict=VALID exit=0 wall_s=160.2 stdout='VALID'
+TAMPER 1-bit identity_hash flip: verdict=INVALID exit=1 wall_s=159.6 stdout='INVALID'
+GUARD-AFTER unchanged
+PROBE VERDICT: PRIMARY VALID + TAMPER INVALID on B die, identity-era binary+keys, declare dual-bus byte-equal — capture 62f2019e authenticates
+PROBE_EXIT=0
+PROBE_SHELL_RC=0
