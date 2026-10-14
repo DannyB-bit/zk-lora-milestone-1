@@ -203,11 +203,14 @@ def main():
         % (os.path.basename(os.path.dirname(c_path)), c_d["private_key_id"],
            c_ev["seq"], c_a[0]["seq"], c_d["proof_sha256"][:8], cv, crc, cdt, cso))
 
-    # ---- guards after ----
-    if sha(BIN) != bin_sha or sha(os.path.join(REPO, "keys/verifying_key.bin")) != vk:
+    # ---- guards after (Codex P2 on PR#65: must rehash the PROVING key too — a
+    # PK swap mid-probe must fail-closed exactly like a VK swap; the canonical
+    # T12 post-guard checks all three of binary/PK/VK) ----
+    if sha(BIN) != bin_sha or sha(os.path.join(REPO, "keys/proving_key.bin")) != pk \
+            or sha(os.path.join(REPO, "keys/verifying_key.bin")) != vk:
         log("ABORT: binary/keyset changed mid-probe")
         return 9
-    log("GUARD-AFTER unchanged")
+    log("GUARD-AFTER unchanged (binary + PK + VK rehashed)")
 
     # ---- exit contract ----
     if v != "VALID":

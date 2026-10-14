@@ -8,7 +8,7 @@
 | Artifact | Value |
 |---|---|
 | Payload SHA256 | `62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21` |
-| Statement | key-**40**, deposit 100009, coord 123456798 — **first key-40 statement class in fleet history** |
+| Statement | key-**40**, deposit 100009, coord 123456798 — **first FIRED key-40 flight** (NOT first-of-class: the A612 dry-run phantom shares this statement class with no fired payload; corrected per Codex P2 review 2026-10-14 — the positive-assertion law counts it as a prior) |
 | Era | **identity-era keyset VK 78352ffa** (post zk-lorawan PR#7/#8 merge), PK `aea2ed17` |
 | Window | armed 2026-10-13T22:09:12Z → closed 00:09:12Z (7200 s, chirp-recovery gate PASS) |
 | Radio | 903.9 MHz exact, SF9, BW 125 kHz, 5× 128B frames, status 0x10 CRC-OK |
