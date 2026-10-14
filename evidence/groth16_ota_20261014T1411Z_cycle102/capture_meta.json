@@ -1,0 +1,57 @@
+{
+ "cycle": 102,
+ "drill": "groth16_ota",
+ "window": {
+  "armed_at_utc": "2026-10-14T14:11:54Z",
+  "closes_at_utc": "2026-10-14T16:11:54Z",
+  "b_seq": 1618,
+  "a_seq": 642
+ },
+ "declare": {
+  "b_seq": 1620,
+  "a_seq": 643,
+  "proof_sha256": "fa92aa353492e907d86def4e6283f4d6d1dd6af2130322b554afad3e50a7d06c",
+  "private_key_id": "44",
+  "deposit_value": 100013,
+  "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+  "dual_bus_byte_equal": true
+ },
+ "fired": {
+  "b_seq": 1621,
+  "a_seq": 644,
+  "fired_utc": "2026-10-14T16:07:10Z",
+  "sends": "5/5 TX_DONE"
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "size_bytes": 128,
+  "freq_hz": 903900000,
+  "sf": 9,
+  "snr_avg": [
+   "10.8",
+   "11.0",
+   "10.8",
+   "10.5",
+   "10.5"
+  ],
+  "inter_frame_gap_s": [
+   16.8,
+   16.8,
+   16.8,
+   16.9
+  ],
+  "count_us": [
+   2547424724,
+   2564212910,
+   2580983625,
+   2597764685,
+   2614680655
+  ],
+  "wrap_note": "window 7200s contains exactly one count_us wrap (~4294.97s after origin); wrap branch is machine-selected by the T12 battery selector, not hand-labeled (c-101 law)"
+ },
+ "extract": {
+  "rc": 0,
+  "sha256_match": true,
+  "log": "session_slice_cycle102.log"
+ }
+}
