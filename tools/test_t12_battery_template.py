@@ -58,10 +58,18 @@ def main():
            "primary ERROR verdict maps to exit 4 (not VALID, not control flip)")
 
     # --- entry-point contract: the __main__ block sys.exits with main()'s value ---
+    # (2026-10-14: the assert now checks the CONTRACT, not one literal shape —
+    # the abort-transparency wrapper (emit accumulated lines on SystemExit)
+    # changed the entry text while preserving rc == main()'s return.)
     src = open(TPL).read()
-    expect('if __name__ == "__main__":\n    sys.exit(main())' in src,
-           "CLI entry must be sys.exit(main()) — a bare main() call discards "
+    entry_block = src.split('if __name__ == "__main__":')[-1]
+    entry_ok = ('rc = main()' in entry_block and 'sys.exit(rc)' in entry_block) \
+        or 'sys.exit(main())' in entry_block
+    expect(entry_ok,
+           "CLI entry must sys.exit with main()'s value — a bare main() call discards "
            "battery_rc and exits 0 on QUARANTINE (3) and PRIMARY INVALID (4)")
+    expect('    main()\n' not in entry_block,
+           "entry block must not contain a bare main() call that discards battery_rc")
 
     # --- sanity: the mapping the battery logs record is reachable through the
     #     same function main() uses (no shadow re-implementation) ---
