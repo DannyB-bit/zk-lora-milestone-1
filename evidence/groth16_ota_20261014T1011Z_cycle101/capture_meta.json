@@ -1,0 +1,65 @@
+{
+ "cycle": 101,
+ "drill": "groth16_ota",
+ "window": {
+  "armed_at_utc": "2026-10-14T10:11:14Z",
+  "closes_at_utc": "2026-10-14T12:11:14Z",
+  "b_seq": 1596,
+  "a_seq": 633
+ },
+ "declare": {
+  "b_seq": 1598,
+  "a_seq": 634,
+  "proof_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+  "private_key_id": 43,
+  "deposit_value": 100012,
+  "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+  "dual_bus_byte_equal": true,
+  "fields_compared": 18
+ },
+ "fired": {
+  "b_seq": 1599,
+  "a_seq": 635,
+  "fired_utc": "2026-10-14T11:58:15Z",
+  "sends": "5/5 TX_DONE"
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "size_bytes": 128,
+  "freq_hz": 903900000,
+  "sf": 9,
+  "snr_avg": [
+   "11.0",
+   "11.2",
+   "10.5",
+   "12.0",
+   "10.8"
+  ],
+  "inter_frame_gap_s": [
+   16.8,
+   16.9,
+   16.8,
+   16.7
+  ],
+  "count_us": [
+   2053330346,
+   2070101796,
+   2087004737,
+   2103790450,
+   2120505836
+  ],
+  "wrap_branch": "post-wrap",
+  "wrap_recovery_s": 4294.967296,
+  "wall_utc_first": "2026-10-14T11:57:02.297642+00:00",
+  "wall_utc_last": "2026-10-14T11:58:09.473132+00:00",
+  "fired_completion_utc": "2026-10-14T11:58:15+00:00"
+ },
+ "extract": {
+  "tool": "tools/b_rx_extract.py",
+  "expect_sha": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+  "sha256_match": true,
+  "rc": 0,
+  "session_slice": "session_slice_cycle101.log"
+ },
+ "correction": "my B1600/A636 capture-confirm posted \"no wrap in window\" \u2014 WRONG: 7200s window contains exactly one count_us wrap and these frames are POST-WRAP (walls 11:57:03..11:58:10Z, causal with fired_utc 11:58:15Z). Correction posted same-turn on both buses."
+}
