@@ -22,11 +22,12 @@
 ## T12 full battery (canonical template 6a49d04, sha `9c85e6a6`, exit contract)
 - attempt1: **ABORT pre-silicon** — launcher sha-guard refused: on-disk canonical was `f2605ea5` (pre-fix bytes, no `sys.exit(main())`). Root cause: the c-101 tick cut PR#67's branch from origin/main (37d5310), which does NOT contain the 612292c port (that lives on open PR#66's branch) — the branch switch silently reverted `tools/` to origin/main bytes. Guard worked exactly as designed; abort log kept as honest history.
 - Restore (this cycle, c-100 port law): fresh branch off origin/main → byte-exact restore of canonical + unit test from pr66-head (612292c) → non-canonical + unit test from pr58-current (33eefd9) → **unit test PASS** (mapping 7 fixtures + canonical era-pin + phantom-join + entry contracts) → attempt2 relaunch.
-- attempt2: see `t12_cycle102_battery_attempt2.log` — verdict + BATTERY_EXIT line per exit contract (0 = settle-eligible; 3 = quarantine; 4 = primary INVALID).
+- attempt2: ABORT `control classes not satisfiable` — **BATTERY_EXIT=1 propagated** (exit contract WORKED: the pre-fix bytes would have printed 0). Cause: the fresh branch off origin/main dropped the tracked control-payload dirs (c-98/99/100/101 evidence lives on unmerged PR branches — stranded-controls class, c-91 law). Fixed by byte-exact restore + bus-verified provenance (see `control_restore_provenance.json`).
+- attempt3: **BATTERY_EXIT=0** — PRIMARY key-44 `fa92aa35` **VALID 160.1 s**, class-scan **FIRST-OF-CLASS positively asserted** (prior declares B=0 A=0, pih-only B=0 A=0, unclassable 5), CONTROL-diff1 key-43 `d3faf880` VALID 159.7 s + CONTROL-diff2 key-42 `237fad2f` VALID 160.0 s, GUARD-AFTER unchanged, SoC 49.1→53.5 °C throttled=0x0, 45 era-skipped candidates (vk_sha256 pin). Log: `t12_cycle102_battery_attempt3.log`.
 
 ## Settle (Cuneiform devnet, program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy)
-- Gated on attempt2 complete-line `BATTERY_EXIT=0` + "PRIMARY VALID + CONTROLS VALID" + GUARD-AFTER unchanged (fail-closed `settle_cycle102.sh`).
-- See `settle_summary.md` after execution. Chain readback gate: `getSignaturesForAddress` on the record PDA, signature byte-compared before any paste (settle-signature chain-readback gate law).
+- Gated on attempt3 complete-line `BATTERY_EXIT=0` + "PRIMARY VALID + CONTROLS VALID" + GUARD-AFTER unchanged (fail-closed `settle_cycle102.sh`). Executed 18:22Z: **REGISTER TX `2KQtRfz3…` slot 511075799 finalized, err null**, record PDA `5WGAXCnH…`, merkleRoot == captured proof SHA, treasury +100000 lamports, 6/6 tests.
+- Chain readback (settle-signature gate): signature byte-identical via `getSignaturesForAddress` on the PDA; program logs `Instruction: RegisterCoordinates` + `Language-U coordinates registered successfully!` See `settle_summary.md`.
 
 ## Honest ledger
 - attempt1 abort was NOT a silicon or capture defect — a repo-hygiene regression caught by the guard at zero pairing cost.
