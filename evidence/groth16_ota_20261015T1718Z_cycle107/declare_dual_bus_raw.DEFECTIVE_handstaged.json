@@ -1,0 +1,119 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 1750,
+   "ts": 1792085693.3950403,
+   "ts_utc": "2026-10-15T17:34:53Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle107_window_open",
+    "cycle": "107",
+    "armed_at_utc": "2026-10-15T17:18:52Z",
+    "closes_at_utc": "2026-10-15T19:18:52Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 673): dddbd8a7 (key-48), 066908ee (key-49)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 1,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "10504",
+     "listener_lstart_utc": "2026-10-15T17:18:52Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 6240
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  "fired": {
+   "seq": 693,
+   "ts": 1792085775.1699886,
+   "ts_utc": "2026-10-15T17:36:15Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1750",
+    "fired_utc": "2026-10-15T17:36:15Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+    "exit_code": 0
+   }
+  }
+ },
+ "a_bus": {
+  "declare_mirror": {
+   "seq": 691,
+   "ts": 1792085693.458225,
+   "ts_utc": "2026-10-15T17:34:53Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle107_window_open",
+    "cycle": "107",
+    "armed_at_utc": "2026-10-15T17:18:52Z",
+    "closes_at_utc": "2026-10-15T19:18:52Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 673): dddbd8a7 (key-48), 066908ee (key-49)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 1,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "10504",
+     "listener_lstart_utc": "2026-10-15T17:18:52Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 6240
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  "proof_tx": {
+   "seq": 692,
+   "ts": 1792085695.315347,
+   "ts_utc": "2026-10-15T17:34:55Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1750",
+    "window_closes_utc": "2026-10-15T19:18:52Z",
+    "proof_sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "9a410799663ded4f534f737f76b2cd1f40c9ae835a73a09184d970ebbdcf9715",
+     "f883abc3c4c673124b9cc32bf7645ae61f0a6969e4db198c1330949c8cbf360a",
+     "95493d138e8bc6e7f3ec125da6e72a4651a934f8b58181c96c90a9ee5cd0732a",
+     "8936b29d499bea41860030d28d20e1904f44ada0c60f3748632b8c2c0a06401b"
+    ],
+    "deposit_commitment": "95c7be654b7e9206c90f061f39bc586f990468344085280fdd0d5f9f30342c0f",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100018,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "49",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-15T17:35:55Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 693,
+   "ts": 1792085775.1699886,
+   "ts_utc": "2026-10-15T17:36:15Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1750",
+    "fired_utc": "2026-10-15T17:36:15Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+    "exit_code": 0
+   }
+  }
+ }
+}

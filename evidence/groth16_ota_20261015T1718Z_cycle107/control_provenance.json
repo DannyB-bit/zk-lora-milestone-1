@@ -1,0 +1,35 @@
+{
+ "kind": "control-provenance (c-91 law, battery attempt-3)",
+ "primary": {
+  "cycle": "c-107",
+  "key_id": "49",
+  "sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+  "source": "this dir rx_payload_128b.bin (captured on this node, session_slice_cycle107.log)"
+ },
+ "controls": [
+  {
+   "cycle": "c-106",
+   "key_id": "48",
+   "sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+   "source": "local evidence/groth16_ota_20261015T1256Z_cycle106/ (strand: committed on open PR#72 head 0f99bb9, not yet in origin/main)",
+   "declare_sha_check": {
+    "b_bus_seq": "1752 key-48 not in this declare \u2014 see c-106",
+    "note": "key-48 declare was B1718/A679, sha dddbd8a7 matches this bin"
+   }
+  },
+  {
+   "cycle": "c-105",
+   "key_id": "47",
+   "sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+   "source": "local evidence/groth16_ota_20261015T0213Z_cycle105/ (in origin/main)",
+   "declare_sha_check": {
+    "b_bus_seq": "1675",
+    "a_bus_seq": "666",
+    "sha_match": true
+   }
+  }
+ ],
+ "control_mode": "FIRST-OF-CLASS positive assertion \u2014 2 DIFFERENT-statement-class controls per battery log line 17",
+ "battery_log": "t12_cycle107_battery_attempt3.log lines 16-19",
+ "compiled_utc": "2026-10-15T20:56:04Z"
+}

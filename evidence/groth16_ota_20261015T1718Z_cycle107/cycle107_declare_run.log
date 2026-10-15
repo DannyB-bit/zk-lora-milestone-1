@@ -1,0 +1,33 @@
+{
+ "declared": true,
+ "b_bus_seq": 1750,
+ "a_bus_mirror_seq": 691,
+ "b_post_rtt_ms": 6.566,
+ "a_bus_state": "ok",
+ "armed_at_utc": "2026-10-15T17:18:52Z",
+ "closes_at_utc": "2026-10-15T19:18:52Z",
+ "standby_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T171837Z.log",
+ "arm_banner_line": 48,
+ "event": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle107_window_open",
+  "cycle": "107",
+  "armed_at_utc": "2026-10-15T17:18:52Z",
+  "closes_at_utc": "2026-10-15T19:18:52Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 673): dddbd8a7 (key-48), 066908ee (key-49)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 1,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "10504",
+   "listener_lstart_utc": "2026-10-15T17:18:52Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 6240
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": ""
+ }
+}
