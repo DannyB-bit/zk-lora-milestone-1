@@ -1,0 +1,28 @@
+{
+ "b_bus": {
+  "seq": 1599,
+  "ts": 1791979095.5159926,
+  "ts_utc": "2026-10-14T11:58:15Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1596",
+   "fired_utc": "2026-10-14T11:58:15Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+   "exit_code": 0
+  }
+ },
+ "a_bus": {
+  "seq": 635,
+  "ts": 1791979095.3584743,
+  "ts_utc": "2026-10-14T11:58:15Z",
+  "type": "groth16_tx_fired",
+  "data": {
+   "window_seq": "1596",
+   "fired_utc": "2026-10-14T11:58:15Z",
+   "sends": "5/5 TX_DONE",
+   "payload_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+   "exit_code": 0
+  }
+ }
+}

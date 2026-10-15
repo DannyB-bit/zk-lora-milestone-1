@@ -1,0 +1,43 @@
+{
+ "what": "stranded-control restore for c-105 key-47 first-of-class battery + PR reproducibility (c-91/c-100 law)",
+ "restored": [
+  {
+   "path": "evidence/groth16_ota_20261014T0810Z_cycle100/",
+   "sha256_rx_payload": "237fad2f1b986b3e5302c028002fb8debdbe6d346c23dd4297d66ae5bebff83d",
+   "label": "key-42 c-100",
+   "restored_from": "c0763eb (pr66-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1011Z_cycle101/",
+   "sha256_rx_payload": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+   "label": "key-43 c-101",
+   "restored_from": "5f58518 (pr67-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1411Z_cycle102/",
+   "sha256_rx_payload": "fa92aa353492e907d86def4e6283f4c6d1dd6af2130322b554afad3e50a7d06c",
+   "label": "key-44 c-102",
+   "restored_from": "a0868b8 (pr68-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1812Z_cycle103/",
+   "sha256_rx_payload": "1470c41cbb516914bdfba27b0b307729fdef658fef57ef1c8c12ca3cf8e02766",
+   "label": "key-45 c-103",
+   "restored_from": "8597fcc (pr69-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T2213Z_cycle104/rx_payload_128b.bin",
+   "sha256_rx_payload": "c661f2e1c869036c48a2be62aaaa5c588d953b0ed829f87aa8ef5d5f8c772205",
+   "label": "key-46 c-104 (CONTROL-diff1 in the c-105 battery)",
+   "restored_from": "8f1d98d (pr70-head, open PR#70)",
+   "note": "control payload only — the full c-104 evidence dir lives on open PR#70's branch; vendored here so a fresh checkout of THIS head reproduces the c-105 battery (c-91 law)"
+  },
+  {
+   "path": "tools/t12_battery_template.py + tools/test_t12_battery_template.py + tools/t12_battery_template_canonical_fixed_6a49d04.py",
+   "canonical_sha256": "9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0",
+   "restored_from": "8597fcc (pr69-head)",
+   "note": "canonical tools ride the unmerged PR#69 head; fresh branch off origin/main (37d5310) drops them"
+  }
+ ],
+ "note": "Fresh branch cut from origin/main (37d5310) strands these evidence dirs + canonical tools (c-102 law). Controls restored byte-exact from the PR#66/#67/#68/#69 head refs — the exact bytes the c-104 battery verified VALID on this die in the same session (CONTROL-diff1 key-46 c661f2e1 / CONTROL-diff2 key-45 1470c41c per t12_cycle105_battery_attempt1.log). c-104's own evidence dir is NOT stranded: it lives on open PR#70's branch and stays in the worktree."
+}

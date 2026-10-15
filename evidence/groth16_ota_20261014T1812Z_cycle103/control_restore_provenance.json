@@ -1,0 +1,18 @@
+{
+ "what": "stranded-control restore for c-103 key-45 first-of-class battery (c-91/c-100 law)",
+ "restored": [
+  {
+   "path": "evidence/groth16_ota_20261014T1411Z_cycle102/rx_payload_128b.bin",
+   "sha256": "fa92aa353492e907d86def4e6283f4d6d1dd6af2130322b554afad3e50a7d06c",
+   "label": "key-44 c-102",
+   "restored_from": "a0868b8 (pr68-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1011Z_cycle101/rx_payload_128b.bin",
+   "sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+   "label": "key-43 c-101",
+   "restored_from": "a0868b8 (pr68-head)"
+  }
+ ],
+ "note": "Fresh branch cut from origin/main (37d5310) strands these evidence dirs (c-102 law). Controls restored byte-exact from PR#68 head a0868b8 \u2014 the exact bytes the c-103 battery verified VALID on this die in the same session (CONTROL-diff1 fa92aa35 / CONTROL-diff2 d3faf880 per t12_cycle103_battery_attempt1.log)."
+}
