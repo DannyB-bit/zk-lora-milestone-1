@@ -26,6 +26,13 @@
    "restored_from": "8597fcc (pr69-head)"
   },
   {
+   "path": "evidence/groth16_ota_20261014T2213Z_cycle104/rx_payload_128b.bin",
+   "sha256_rx_payload": "c661f2e1c869036c48a2be62aaaa5c588d953b0ed829f87aa8ef5d5f8c772205",
+   "label": "key-46 c-104 (CONTROL-diff1 in the c-105 battery)",
+   "restored_from": "8f1d98d (pr70-head, open PR#70)",
+   "note": "control payload only — the full c-104 evidence dir lives on open PR#70's branch; vendored here so a fresh checkout of THIS head reproduces the c-105 battery (c-91 law)"
+  },
+  {
    "path": "tools/t12_battery_template.py + tools/test_t12_battery_template.py + tools/t12_battery_template_canonical_fixed_6a49d04.py",
    "canonical_sha256": "9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0",
    "restored_from": "8597fcc (pr69-head)",
