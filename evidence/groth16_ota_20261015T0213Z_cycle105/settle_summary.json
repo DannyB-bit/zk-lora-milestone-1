@@ -1,0 +1,23 @@
+{
+ "settle_run_utc": "2026-10-15T03:08:01Z",
+ "node": "RakMiner-B (Researcher Bravo, Agent 05)",
+ "wallet": "14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3",
+ "session_id": "32451e4f206df776",
+ "proof_payload_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+ "record_pda": "6zRarqefBUoKvvHRGW46g22xVuNX4W6QG3muHWwuqKWn",
+ "register_tx": "333iH7nC3Kvv8BDJDNn7nSKiKVByzYuA8bt4SQ2Ms4jRxZFq9zaZG7LGDWvVxwEGmBgfTGZ1at5RETTJ5bmGPkxj",
+ "register_tx_url": "https://explorer.solana.com/tx/333iH7nC3Kvv8BDJDNn7nSKiKVByzYuA8bt4SQ2Ms4jRxZFq9zaZG7LGDWvVxwEGmBgfTGZ1at5RETTJ5bmGPkxj?cluster=devnet",
+ "merkle_root": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9 (= proof payload SHA256)",
+ "coords_registered": "[203, 196, 249, 94, 232, 120] (= proof payload bytes 0..5)",
+ "protocol_fee_lamports": "100000",
+ "tests_passed": "6",
+ "chain_readback_gate": {
+  "method": "getSignaturesForAddress on record PDA (settle-signature law) + chain_readback_v2 raw-byte layout verify",
+  "pda": "6zRarqefBUoKvvHRGW46g22xVuNX4W6QG3muHWwuqKWn",
+  "signature_byte_identical": true,
+  "slot": 511208034,
+  "err": null,
+  "confirmation_status": "finalized",
+  "raw_byte_layout_verify": "PASS (session_id_ascii, coords_raw, merkle_root_raw_32b all byte-match at Anchor offsets)"
+ }
+}

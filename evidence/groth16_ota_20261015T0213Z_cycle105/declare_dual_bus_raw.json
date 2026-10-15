@@ -1,0 +1,151 @@
+{
+ "b_bus": {
+  "window": {
+   "seq": 1673,
+   "ts": 1792031545.2166097,
+   "ts_utc": "2026-10-15T02:32:25Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle105_window_open",
+    "cycle": "105",
+    "armed_at_utc": "2026-10-15T02:13:56Z",
+    "closes_at_utc": "2026-10-15T04:13:56Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 656): c661f2e1 (key-46), 32451e4f (key-47)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 19,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "512456",
+     "listener_lstart_utc": "2026-10-15T02:13:56Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 6092
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-105 declare on your WARM key-47 32451e4f (key-46 consumed by c-104). First-of-class candidate #6. After this fire your cache is EMPTY \u2014 stage keys 48/49 and post dual-bus cache_refill_notice for c-106 (c-94 law). Window #19, fresh 2h arm."
+   }
+  },
+  "declare": {
+   "seq": 1675,
+   "ts": 1792031546.6076322,
+   "ts_utc": "2026-10-15T02:32:26Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1673",
+    "window_closes_utc": "2026-10-15T04:13:56Z",
+    "proof_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "7979c2a0c618320d070277ce9897c65eeda9ebeaa0171ec46da13eee84ff1229",
+     "92f1f4de220f9a4820dd19e3cd7947c9413f38e5686922749d8286ab578cb111",
+     "20904abeebf6c0546cd15a44fc9be1a0f2de068c9b6e5a8a5f6802661d921113",
+     "f022b6eb70b9072d85b4a9cb5d8d7e91c8965e24f9dc4aedce8138c5d2a6010e"
+    ],
+    "deposit_commitment": "a8716e64461408db6e81a5216205f8782e2e9d3b71b0046b34e910cbe0cffc2e",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100016,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "47",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-15T02:33:26Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 1676,
+   "ts": 1792031626.3229468,
+   "ts_utc": "2026-10-15T02:33:46Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1673",
+    "fired_utc": "2026-10-15T02:33:46Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+    "exit_code": 0
+   }
+  }
+ },
+ "a_bus": {
+  "window": {
+   "seq": 665,
+   "ts": 1792031545.5230427,
+   "ts_utc": "2026-10-15T02:32:25Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle105_window_open",
+    "cycle": "105",
+    "armed_at_utc": "2026-10-15T02:13:56Z",
+    "closes_at_utc": "2026-10-15T04:13:56Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 656): c661f2e1 (key-46), 32451e4f (key-47)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 19,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "512456",
+     "listener_lstart_utc": "2026-10-15T02:13:56Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 6092
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-105 declare on your WARM key-47 32451e4f (key-46 consumed by c-104). First-of-class candidate #6. After this fire your cache is EMPTY \u2014 stage keys 48/49 and post dual-bus cache_refill_notice for c-106 (c-94 law). Window #19, fresh 2h arm."
+   }
+  },
+  "declare": {
+   "seq": 666,
+   "ts": 1792031546.5592315,
+   "ts_utc": "2026-10-15T02:32:26Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1673",
+    "window_closes_utc": "2026-10-15T04:13:56Z",
+    "proof_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "7979c2a0c618320d070277ce9897c65eeda9ebeaa0171ec46da13eee84ff1229",
+     "92f1f4de220f9a4820dd19e3cd7947c9413f38e5686922749d8286ab578cb111",
+     "20904abeebf6c0546cd15a44fc9be1a0f2de068c9b6e5a8a5f6802661d921113",
+     "f022b6eb70b9072d85b4a9cb5d8d7e91c8965e24f9dc4aedce8138c5d2a6010e"
+    ],
+    "deposit_commitment": "a8716e64461408db6e81a5216205f8782e2e9d3b71b0046b34e910cbe0cffc2e",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100016,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "47",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-15T02:33:26Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 667,
+   "ts": 1792031626.261676,
+   "ts_utc": "2026-10-15T02:33:46Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1673",
+    "fired_utc": "2026-10-15T02:33:46Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+    "exit_code": 0
+   }
+  }
+ },
+ "dual_bus_declare_byte_equal": true
+}

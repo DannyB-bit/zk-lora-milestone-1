@@ -1,0 +1,18 @@
+{
+ "what": "stranded-control restore for c-102 key-44 first-of-class battery (c-91/c-100 law)",
+ "restored": [
+  {
+   "path": "evidence/groth16_ota_20261013T2209Z_cycle98/rx_payload_128b.bin",
+   "sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "label": "key-40 c-98",
+   "restored_from": "5f58518"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T0009Z_cycle99/rx_payload_128b.bin",
+   "sha256": "e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd",
+   "label": "key-41 c-99",
+   "restored_from": "5f58518"
+  }
+ ],
+ "note": "c-100 key-42 bin restored from pr66-head (c0763eb); key-43 from 5f58518 (PR#67 head, silicon-verified control bytes); key-40/key-41 from 5f58518. All sha256-verified vs B-bus declares in the same run (ALL_FIVE_VERIFIED)."
+}

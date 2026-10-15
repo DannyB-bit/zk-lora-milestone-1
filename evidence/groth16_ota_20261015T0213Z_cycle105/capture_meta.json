@@ -1,0 +1,57 @@
+{
+ "cycle": 105,
+ "drill": "groth16_ota",
+ "window": {
+  "armed_at_utc": "2026-10-15T02:13:56Z",
+  "closes_at_utc": "2026-10-15T04:13:56Z",
+  "b_seq": 1673,
+  "a_seq": 665
+ },
+ "declare": {
+  "b_seq": 1675,
+  "a_seq": 666,
+  "proof_sha256": "32451e4f206df7765b38c6804522387173e825511418b90af0b6b66ac12247f9",
+  "private_key_id": "47",
+  "deposit_value": 100016,
+  "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+  "dual_bus_byte_equal": true
+ },
+ "fired": {
+  "b_seq": 1676,
+  "a_seq": 667,
+  "fired_utc": "2026-10-15T02:33:46Z",
+  "sends": "5/5 TX_DONE"
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "size_bytes": 128,
+  "freq_hz": 903900000,
+  "sf": 9,
+  "snr_avg": [
+   "11.2",
+   "11.8",
+   "11.2",
+   "10.8",
+   "11.0"
+  ],
+  "inter_frame_gap_s": [
+   16.8,
+   16.7,
+   16.8,
+   16.8
+  ],
+  "count_us": [
+   1117145232,
+   1133923884,
+   1150659359,
+   1167449302,
+   1184218659
+  ],
+  "wrap_note": "window 7200s contains exactly one count_us wrap; wrap branch machine-selected by the T12 battery selector, never hand-labeled (c-101 law)"
+ },
+ "extract": {
+  "rc": 0,
+  "sha256_match": true,
+  "log": "session_slice_cycle105.log"
+ }
+}
