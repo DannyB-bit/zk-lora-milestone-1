@@ -1,0 +1,1 @@
+ATTEMPT3 KILLED 2026-10-15T14:0xZ: launcher run in Hermes FOREGROUND terminal; 420s cap killed the python child mid-pairing before any output flushed (canonical template buffers until completion, c-96 law). Log left 0-byte. No pairing completed, no verdict. Honest-history note; relaunch = attempt4 via background launcher.
