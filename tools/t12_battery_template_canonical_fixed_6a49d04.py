@@ -340,7 +340,7 @@ def main():
                     else f"NOT first-of-class (priors: B{[e['seq'] for e in prior_b]} A{[e['seq'] for e in prior_a]}"
                          f" pih-only B{[e['seq'] for e in prior_pih_b]} A{[e['seq'] for e in prior_pih_a]})"))
 
-    cands, skipped = [], 0
+    cands, skipped, skipped_era = [], 0, 0
     for d in os.listdir(os.path.join(M1, "evidence")):
         if not d.startswith("groth16_ota_") or f"cycle{cycle}" in d:
             continue
@@ -351,9 +351,26 @@ def main():
         hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
                 and e["seq"] < d_b["seq"]
                 and e.get("data", {}).get("proof_sha256") == s]
+        if not hits:
+            skipped += 1  # payload with no matching B-bus declare: unusable, counted
+            continue
+        # Era-pin (c-96 law, proven c-100 silicon 2026-10-14): a canon-era
+        # payload (VK 7bd5683f) verifies deterministically INVALID under the
+        # identity keyset — a KNOWN quarantine class, never a control. Pin
+        # every candidate to the PRIMARY's own vk_sha256, machine-read from
+        # the primary declare; count skips, never silently drop them.
+        if hits[0]["data"].get("vk_sha256") != d_b["data"].get("vk_sha256"):
+            skipped_era += 1
+            continue
+        # Phantom-proof A-mirror join (B617 blocker a, proven c-99): A-bus
+        # declare mirrors join on window_seq+SHA — NEVER SHA alone. The c-98
+        # key-40 payload SHA was shared by dry-run A612 (window_seq=test-window,
+        # no fired payload) and the SHA-only join skipped a usable control.
+        ws = hits[0]["data"].get("window_seq")
         a_hits = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                 and e["seq"] < d_a["seq"]
-                 and e.get("data", {}).get("proof_sha256") == s]
+                  and e["seq"] < d_a["seq"]
+                  and e.get("data", {}).get("proof_sha256") == s
+                  and e.get("data", {}).get("window_seq") == ws]
         if len(hits) != 1 or len(a_hits) != 1 or hits[0]["data"].get("private_key_id") is None:
             skipped += 1
             continue
@@ -363,7 +380,8 @@ def main():
         cands.append((hits[0]["ts_utc"], d, s, str(hits[0]["data"]["private_key_id"]),
                       hits[0]["data"], a_hits[0]["data"]))
     cands.sort(key=lambda t: t[0], reverse=True)  # newest declare first
-    lines.append(f"CONTROL CANDIDATES (newest declare first, {len(cands)} usable / {skipped} skipped): "
+    lines.append(f"CONTROL CANDIDATES (newest declare first, {len(cands)} usable / {skipped} skipped / "
+                 f"{skipped_era} skipped-era-mismatch [vk_sha256 pin, c-96 law]): "
                  + "; ".join(f"{d} key-{k} @{ts}" for ts, d, s, k, _, _ in cands))
 
     same_c, diff_list, seen_cls = None, [], set()
@@ -470,4 +488,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Exit contract (Codex P1, PR#55/56; c-100 silicon finding 2026-10-14): the
+    # process exit status MUST be battery_rc. The bare main() call discarded it —
+    # a QUARANTINED run (battery_rc=3) exited 0, and any launcher gating on
+    # BATTERY_EXIT could read a failed gate as settle-eligible success.
+    sys.exit(main())

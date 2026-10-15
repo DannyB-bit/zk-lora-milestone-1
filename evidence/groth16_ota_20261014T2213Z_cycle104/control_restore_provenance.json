@@ -1,0 +1,39 @@
+{
+ "what": "stranded-control restore for c-104 key-46 first-of-class battery (c-91/c-100 law)",
+ "restored": [
+  {
+   "path": "evidence/groth16_ota_20261014T1812Z_cycle103/rx_payload_128b.bin",
+   "sha256": "1470c41cbb516914bdfba27b0b307729fdef658fef57ef1c8c12ca3cf8e02766",
+   "label": "key-45 c-103",
+   "restored_from": "8597fcc (pr69-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1411Z_cycle102/rx_payload_128b.bin",
+   "sha256": "fa92aa353492e907d86def4e6283f4d6d1dd6af2130322b554afad3e50a7d06c",
+   "label": "key-44 c-102",
+   "restored_from": "8597fcc (pr69-head)"
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T1011Z_cycle101/rx_payload_128b.bin",
+   "sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+   "label": "key-43 c-101",
+   "restored_from": "8597fcc (pr69-head)"
+  },
+  {
+   "path": "tools/t12_battery_template.py",
+   "restored_from": "8597fcc (pr69-head)",
+   "note": "canonical tools ride the PR#69 head; fresh branch off origin/main (37d5310) drops them"
+  },
+  {
+   "path": "tools/test_t12_battery_template.py",
+   "restored_from": "8597fcc (pr69-head)"
+  },
+  {
+   "path": "tools/t12_battery_template_canonical_fixed_6a49d04.py",
+   "sha256": "9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0",
+   "restored_from": "8597fcc (pr69-head)",
+   "note": "sha-verified == launcher EXPECT_TPL_SHA guard"
+  }
+ ],
+ "note": "Fresh branch cut from origin/main (37d5310) strands these evidence dirs + canonical tools (c-102 law). Controls restored byte-exact from PR#69 head 8597fcc — the exact bytes the c-103 battery verified VALID on this die in the same session (CONTROL-diff1 1470c41c / CONTROL-diff2 fa92aa35 per t12_cycle104_battery_attempt1.log)."
+}
