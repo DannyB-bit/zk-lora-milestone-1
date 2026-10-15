@@ -1,0 +1,15 @@
+{
+ "kind": "stranded-control-restore (c-91 law)",
+ "key_id": "46",
+ "cycle": "c-104",
+ "restored_from": "refs/pull/71/head (head 13034582cf5d00840af36f447c5e246824b7074c)",
+ "method": "git cat-file blob <ref>:<path> via binary subprocess, then byte-verify",
+ "restored_sha256": "c661f2e1c869036c48a2be62aaaa5c588d953b0ed829f87aa8ef5d5f8c772205",
+ "restored_utc": "2026-10-15T13:44:47Z",
+ "why": "c-106 attempt1 QUARANTINED on era mismatch: c-96/97 (keys 38/39, canon-era VK 7bd5683f, proven pre identity-era merge 2026-10-13T17:24Z) flipped INVALID under identity-era disk keys; stranded-by-main class (PRs #66..#71 open) left no identity-era controls in the local tree; restoring key-46/47 (identity era VK 78352ffa) from PR#71 head per c-91.",
+ "declare_sha_check": {
+  "b_bus_seq": "1658",
+  "a_bus_seq": "658",
+  "sha_match": true
+ }
+}

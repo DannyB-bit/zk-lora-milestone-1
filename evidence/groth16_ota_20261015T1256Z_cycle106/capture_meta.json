@@ -1,0 +1,63 @@
+{
+ "cycle": 106,
+ "extract_rc": 0,
+ "total_packets": 5,
+ "crc_ok_packets": 5,
+ "sha256_match": true,
+ "expected_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+ "count_us": [
+  105508468,
+  122295492,
+  139062903,
+  155968785,
+  172752133
+ ],
+ "snr_avg": [
+  "11.0",
+  "11.5",
+  "11.2",
+  "11.2",
+  "11.8"
+ ],
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size_bytes": 128,
+ "session_log": "rx_standby_continuous_20261015T125608Z.log",
+ "armed_at_utc": "2026-10-15T12:56:23Z",
+ "closes_at_utc": "2026-10-15T14:56:23Z",
+ "fired_utc": "2026-10-15T12:59:21Z",
+ "declare_seq": {
+  "b": 1718,
+  "a": 679
+ },
+ "fired_seq": {
+  "b": 1719,
+  "a": 680
+ },
+ "window_seq": {
+  "b": 1716,
+  "a": 678
+ },
+ "guard_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T125608Z.log",
+ "extract_utc": "2026-10-15T13:05Z",
+ "note": "count_us origin = listener process boot ~12:56:22Z; wrap-branch selection deferred to battery (machine-selected)",
+ "window": {
+  "b_seq": 1716,
+  "a_seq": 678,
+  "armed_at_utc": "2026-10-15T12:56:23Z",
+  "closes_at_utc": "2026-10-15T14:56:23Z",
+  "window_seq": {
+   "b": 1716,
+   "a": 678
+  },
+  "declare_seq": {
+   "b": 1718,
+   "a": 679
+  },
+  "fired_seq": {
+   "b": 1719,
+   "a": 680
+  },
+  "window_event_ts_utc": "2026-10-15T12:57:59Z"
+ }
+}
