@@ -1,0 +1,16 @@
+{
+ "kind": "settle chain readback (settle-signature chain-readback law)",
+ "cycle": "c-108",
+ "key_id": "50",
+ "proof_payload_sha256": "3c8e5475a6ffaa9a0417a859868018974abf617563288a408cd4cccdb239636d",
+ "register_tx": "2xZmRetAwHauEVDHHBVwAgbBxAePr2XuZ6kZXfcpy8yBRkXYZCjT6H6ykg7A1yWW46duH45oBpizbpApGZqAQiMD",
+ "slot": 511488848,
+ "confirmation_status": "finalized",
+ "tx_err": null,
+ "record_pda": "4GDPdkp5mHhLjeMz4bhUYPdqU2wapBLvvxgF3CGrFqo1",
+ "pda_owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "merkle_root_bytes_in_record": true,
+ "latest_pda_signature_matches_tx": true,
+ "readback_utc": "2026-10-15T21:44:38Z",
+ "rpc": "https://api.devnet.solana.com"
+}
