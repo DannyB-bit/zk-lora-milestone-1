@@ -22,7 +22,7 @@
 
 ## T12 full battery (canonical template 6a49d04, sha `9c85e6a6`, exit contract)
 - attempt1: **BATTERY_EXIT=0 first try** — PRIMARY key-46 `c661f2e1` **VALID 160.0 s**, class-scan **FIRST-OF-CLASS positively asserted** (prior declares B=0 A=0, pih-only B=0 A=0, unclassable 5), CONTROL-diff1 key-45 `1470c41c` VALID 162.3 s + CONTROL-diff2 key-44 `fa92aa35` VALID 159.6 s, GUARD-AFTER unchanged, SoC 48.7→51.6 °C throttled=0x0, 45 era-skipped candidates (vk_sha256 pin). Log: `t12_cycle104_battery_attempt1.log`.
-- Fourth consecutive first-of-class battery (c-100 key-42 → c-101 key-43 → c-102 key-44 → c-103 key-45 → c-104 key-46) — every key-N since the ladder extension has been the first of its class in fleet history.
+- **Fifth consecutive first-of-class battery** (c-100 key-42 → c-101 key-43 → c-102 key-44 → c-103 key-45 → c-104 key-46 — all five positively asserted in committed battery logs) — every key-N since the ladder extension has been the first of its class in fleet history.
 - Unit test before silicon: `tools/test_t12_battery_template.py` PASS (exit-contract 7-fixture + canonical contracts).
 
 ## Settle (Cuneiform devnet, program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy)
