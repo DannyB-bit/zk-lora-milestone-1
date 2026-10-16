@@ -1,0 +1,37 @@
+SETTLE_EXPECT_SHA=ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89
+SETTLE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, inter-frame 16.8s uniform, window B1799 armed 2026-10-16T01:20:13Z, fired 2026-10-16T02:39:12Z, ~80s declare-to-fire, key-52 deposit 100021, identity era VK 78352ffa
+  captured proof: 128 bytes from groth16_ota_20261016T0237Z_cycle110
+  proof SHA256: ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89
+  coords (proof payload[0:6]): [0x5a, 0x53, 0x35, 0xcb, 0x31, 0x92]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.90794444 SOL
+  session_id : ef950ce3a9dc9a37 (= proof SHA[0:16] hex)
+  merkleRoot: ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89 (= captured proof SHA256)
+  record PDA: 98CjwSKhuhz7ttkPBLRrdwwQ8MNUm63at4LPJWTDyodZ
+  ✅ REGISTER TX: UtdWpJkrxZUjruahgBswPUrr2uuyk1MNrW4yXF6N4QH86wn1QM2UZhy9Jo4zxehCNLVJiMvKL8fkXogVV9aoLAJ
+     https://explorer.solana.com/tx/UtdWpJkrxZUjruahgBswPUrr2uuyk1MNrW4yXF6N4QH86wn1QM2UZhy9Jo4zxehCNLVJiMvKL8fkXogVV9aoLAJ?cluster=devnet
+  on-chain record: coords=[90,83,53,203,49,146] root=ef950ce3a9dc9a37… ts=2026-10-16T03:21:22.000Z
+  treasury delta: 100000 lamports
+  balance after: 5.90666596 SOL
+
+TEST_RUN_UTC=2026-10-16T03:21:26.576Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-110 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0), key-52 identity era, class scan per battery log (c-92 law)
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, inter-frame 16.8s uniform, window B1799 armed 2026-10-16T01:20:13Z, fired 2026-10-16T02:39:12Z, ~80s declare-to-fire, key-52 deposit 100021, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-52 pih[-1]=43179b1763ddb81c prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=ef950ce3a9dc9a37
+COORDS_REGISTERED=[90, 83, 53, 203, 49, 146] (= proof payload bytes 0..5)
+MERKLE_ROOT=ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89 (= proof payload SHA256)
+RECORD_PDA=98CjwSKhuhz7ttkPBLRrdwwQ8MNUm63at4LPJWTDyodZ
+REGISTER_TX=UtdWpJkrxZUjruahgBswPUrr2uuyk1MNrW4yXF6N4QH86wn1QM2UZhy9Jo4zxehCNLVJiMvKL8fkXogVV9aoLAJ
+REGISTER_TX_URL=https://explorer.solana.com/tx/UtdWpJkrxZUjruahgBswPUrr2uuyk1MNrW4yXF6N4QH86wn1QM2UZhy9Jo4zxehCNLVJiMvKL8fkXogVV9aoLAJ?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.90794444 SOL
+BALANCE_AFTER=5.90666596 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
