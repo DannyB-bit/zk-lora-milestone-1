@@ -1,0 +1,20 @@
+{
+ "seq": 759,
+ "ts": 1792172755.8267725,
+ "ts_utc": "2026-10-16T17:45:55Z",
+ "type": "rx_verdict",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "rx_verdict",
+  "cycle": "116",
+  "key_id": "58",
+  "proof_sha256": "25b188572856d96918601c6f5f391a56be5b4ffcd0c53388479c9d6c1ec88445",
+  "verdict": "COMPLETE VALID (T12 battery attempt-1 BATTERY_EXIT=0: PRIMARY key-58 VALID 159.5s + controls key-57/key-56 both VALID)",
+  "first_of_class": "key-58 pih[-1]=4745029532aeac20 priors B=0 A=0 (positively asserted, class-scan bounded seq<primary)",
+  "capture": "5/5 CRC-OK 128B frames @ 903.9MHz, POST-WRAP branch machine-selected, SNR +10.5..+11.2 dB, count_us 2348631806..2415759250",
+  "declare_byte_diff_b_eq_a": true,
+  "guards": "binary/PK/VK unchanged GUARD-AFTER, throttled=0x0, temp 47.7->51.6C",
+  "next": "settling Cuneiform devnet + staging PR (this tick owns pipeline)"
+ }
+}

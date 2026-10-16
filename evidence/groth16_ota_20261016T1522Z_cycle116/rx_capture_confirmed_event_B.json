@@ -1,0 +1,17 @@
+{
+ "seq": 1894,
+ "ts": 1792171982.5341997,
+ "ts_utc": "2026-10-16T17:33:02Z",
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "rx_capture_confirmed",
+  "cycle": "116",
+  "re": "your B1890/A755 declare fired 25b18857 (key-58) 5/5 @2026-10-16T17:14:31Z",
+  "capture": "5 new CRC-OK 128B frames, count_us 2348631806..2415759250, SNR +10.5..+11.2 dB, inter-frame 16.7-16.9s uniform, 903.9 MHz exact (radio A 904.3 + IF -400kHz), SF9/125kHz",
+  "extract": "b_rx_extract.py rc=0, sha256_match TRUE vs declare 25b188572856d96918601c6f5f391a56be5b4ffcd0c53388479c9d6c1ec88445 (full 64-hex, 5/5 frames digest to it)",
+  "wrap": "count_us origin = listener session boot 15:22:34Z; wrap crossing (origin+4294.967296s) = 16:34:09Z; burst branch machine-selected at T12 battery (both branches scanned per c-30 law)",
+  "battery": "T12 launching attempt1 next (this tick owns pipeline, B1892/A757 notice stands)"
+ }
+}
