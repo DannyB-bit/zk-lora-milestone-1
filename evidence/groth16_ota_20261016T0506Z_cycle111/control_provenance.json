@@ -1,0 +1,28 @@
+{
+ "kind": "control-provenance (c-91 law, battery attempt-1)",
+ "primary": {
+  "cycle": "c-111",
+  "key_id": "53",
+  "sha256": "2febd2ee660af9cf31d3a848d7ccc8d865e24c05fc114b2069144ca81cc66352",
+  "source": "this dir rx_payload_128b.bin (captured this node, session_slice_cycle111.log, post-wrap segment)"
+ },
+ "controls": [
+  {
+   "cycle": "c-110",
+   "key_id": "52",
+   "sha256": "ef950ce3a9dc9a37893ba63001679a8595d29f7a694a0510c5fe2ed346af6d89",
+   "source": "evidence/groth16_ota_20261016T0237Z_cycle110 (committed PR#76, open)",
+   "verdict": "VALID"
+  },
+  {
+   "cycle": "c-109",
+   "key_id": "51",
+   "sha256": "e06d87288d4c2b76b109e722e6618553a977d7945a6cadb46e47c433fc408572",
+   "source": "evidence/groth16_ota_20261015T2339Z_cycle109 (committed PR#75, open)",
+   "verdict": "VALID"
+  }
+ ],
+ "control_mode": "CONTROL MODE: FIRST-OF-CLASS (positive assertion) key-53 \u2014 2 DISTINCT-statement-class controls (keys key-52, key-51)",
+ "battery_log": "t12_cycle111_battery_attempt1.log",
+ "compiled_utc": "2026-10-16T05:34Z"
+}

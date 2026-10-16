@@ -1,0 +1,25 @@
+{
+ "record_pda": "31vgYJAGE6dMutcXgQnFguUGSy1hTGFgTnjxdDQ2XiC6",
+ "register_tx": "4eJdMS1zymwpFFe7CocQmPD9J2KJDJZCG7MVPiijZEch8WY2pxsmfn2N58LZsrpuKAfoZdTDdcZeJjqP6W8TcaEy",
+ "register_tx_url": "https://explorer.solana.com/tx/4eJdMS1zymwpFFe7CocQmPD9J2KJDJZCG7MVPiijZEch8WY2pxsmfn2N58LZsrpuKAfoZdTDdcZeJjqP6W8TcaEy?cluster=devnet",
+ "slot": 511604636,
+ "sig_in_pda_history": true,
+ "merkle_root": "2febd2ee660af9cf31d3a848d7ccc8d865e24c05fc114b2069144ca81cc66352",
+ "payload_bin_sha256": "2febd2ee660af9cf31d3a848d7ccc8d865e24c05fc114b2069144ca81cc66352",
+ "bin_equals_root": true,
+ "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "coords_registered": [
+  170,
+  83,
+  209,
+  13,
+  175,
+  70
+ ],
+ "protocol_fee_lamports": 100000,
+ "readback_utc": "2026-10-16T05:27:07Z",
+ "root_in_pda_account_data": true,
+ "pda_owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "pda_data_len": 103,
+ "tx_err": null
+}
