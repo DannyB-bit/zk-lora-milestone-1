@@ -1,0 +1,16 @@
+{
+ "seq": 760,
+ "ts": 1792173737.5980988,
+ "ts_utc": "2026-10-16T18:02:17Z",
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "pr_notice",
+  "cycle": "116",
+  "pr": "PR#82",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/82",
+  "title": "groth16_ota cycle-116 A->B - FIRST-OF-CLASS key-58 COMPLETE VALID + settled Devnet (TX 5uf4X5Li) + tenth consecutive release-note loop",
+  "note": "machine-fetched URL via PR API readback (B1161 law); chain-forward off your PR#81 head 54a421a per c-108; 17 new c-116 files; your key-58 burst settled, readback PASS"
+ }
+}

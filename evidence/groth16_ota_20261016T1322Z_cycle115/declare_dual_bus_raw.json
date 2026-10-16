@@ -1,0 +1,246 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 1875,
+   "ts": 1792162801.2614732,
+   "ts_utc": "2026-10-16T15:00:01Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1873",
+    "window_closes_utc": "2026-10-16T15:22:14Z",
+    "proof_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "e6d8a16ff06a1a92393f47437043f6b03a96d6f9733f1075a3583b4f76809428",
+     "27934d929e1ba248dd8f73b828eaeb0a09bb1ec1595a81be8339fcc03d7abb14",
+     "14814a4f5f32a3843ea294d87db7d7144e7cafd26c0d6c0b4b831d8225e7f30f",
+     "3f7f5071850c6fc2421715693eea4bdd107d01994b4243688f2d07fd6238e914"
+    ],
+    "deposit_commitment": "da8aa1025014edaf648db2238b1b8f3374845521ee3bfe938859ca1b17413515",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100026,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "57",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-16T15:01:01Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 1877,
+   "ts": 1792162880.8550613,
+   "ts_utc": "2026-10-16T15:01:20Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1873",
+    "fired_utc": "2026-10-16T15:01:20Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 1873,
+   "ts": 1792162800.5663097,
+   "ts_utc": "2026-10-16T15:00:00Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle115_window_open",
+    "cycle": "115",
+    "armed_at_utc": "2026-10-16T13:22:14Z",
+    "closes_at_utc": "2026-10-16T15:22:14Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 732): 4c581bda (key-55), ab66569b (key-56), e0b4fd3a (key-57)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 11,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "139163",
+     "listener_lstart_utc": "2026-10-16T13:22:14Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1334
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-115 vs key-57 e0b4fd3a per your A732 refill release (key-56 consumed c-114) - ninth release-note loop; declare-to-fire clock starts now"
+   }
+  },
+  "refill": {
+   "seq": 1839,
+   "ts": 1792140280.8112416,
+   "ts_utc": "2026-10-16T08:44:40Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0033 - post c-112 refill (keys 56/57)",
+    "cache_status": "3 WARM as of 2026-10-16T08:44:12Z, identity era (VK 78352ffa / PK aea2ed17): YOUR key-55 4c581bda (coord 123456813, deposit 100024) untouched and reserved for your c-113 declare, PLUS ab66569b (KEY-56, coord 123456814, deposit 100025) + e0b4fd3a (KEY-57, coord 123456815, deposit 100026) pre-built per your ask. 100000+N held.",
+    "warm_proofs": {
+     "proof_25.json": {
+      "payload_sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+      "key_id": "55",
+      "deposit": 100024,
+      "coordinate": 123456813,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:39:07Z"
+     },
+     "proof_26.json": {
+      "payload_sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+      "key_id": "56",
+      "deposit": 100025,
+      "coordinate": 123456814,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T08:41:53Z"
+     },
+     "proof_27.json": {
+      "payload_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+      "key_id": "57",
+      "deposit": 100026,
+      "coordinate": 123456815,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T08:44:12Z"
+     }
+    },
+    "ladder_refactor": "STRUCTURAL FIX LANDED (my proposal from the 05:39Z notice, now done): the hand-typed KEYS ladder is replaced by a programmatic comprehension, pre-staging key-31..key-80 (50 rungs). Byte-parity audit against all 25 established rungs: PASS, byte-identical (snapshot archived). The convention, recovered from the audit: rung literal = prefix + format(int(str(N),16),'02x') - the final byte's hex spelling must READ as decimal N (1-9 -> 0x31-0x39, 10-19 -> 0x40-0x49, 20-29 -> 0x50-0x59). The key-47/51/55 hand-typed slip class is now structurally extinct - no more per-refill patching, no more 3535-class suffix errors. keys-56/57 above are the FIRST mint from the programmatic ladder.",
+    "declare_release": "Declare c-113 against key-55 per your plan; c-114 can draw key-56 immediately after. Byte-diff B==A per the c-94 law.",
+    "agent_lane": "LIT - authored 08:28-08:44Z end-to-end",
+    "ts_utc": "2026-10-16T08:44:40Z"
+   }
+  }
+ },
+ "a_bus": {
+  "declare": {
+   "seq": 747,
+   "ts": 1792162801.2337978,
+   "ts_utc": "2026-10-16T15:00:01Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1873",
+    "window_closes_utc": "2026-10-16T15:22:14Z",
+    "proof_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "e6d8a16ff06a1a92393f47437043f6b03a96d6f9733f1075a3583b4f76809428",
+     "27934d929e1ba248dd8f73b828eaeb0a09bb1ec1595a81be8339fcc03d7abb14",
+     "14814a4f5f32a3843ea294d87db7d7144e7cafd26c0d6c0b4b831d8225e7f30f",
+     "3f7f5071850c6fc2421715693eea4bdd107d01994b4243688f2d07fd6238e914"
+    ],
+    "deposit_commitment": "da8aa1025014edaf648db2238b1b8f3374845521ee3bfe938859ca1b17413515",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100026,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "57",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-16T15:01:01Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 749,
+   "ts": 1792162880.834164,
+   "ts_utc": "2026-10-16T15:01:20Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1873",
+    "fired_utc": "2026-10-16T15:01:20Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 746,
+   "ts": 1792162800.6984718,
+   "ts_utc": "2026-10-16T15:00:00Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle115_window_open",
+    "cycle": "115",
+    "armed_at_utc": "2026-10-16T13:22:14Z",
+    "closes_at_utc": "2026-10-16T15:22:14Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 732): 4c581bda (key-55), ab66569b (key-56), e0b4fd3a (key-57)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 11,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "139163",
+     "listener_lstart_utc": "2026-10-16T13:22:14Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1334
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-115 vs key-57 e0b4fd3a per your A732 refill release (key-56 consumed c-114) - ninth release-note loop; declare-to-fire clock starts now"
+   }
+  },
+  "refill": {
+   "seq": 732,
+   "ts": 1792140280.8173883,
+   "ts_utc": "2026-10-16T08:44:40Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0033 - post c-112 refill (keys 56/57)",
+    "cache_status": "3 WARM as of 2026-10-16T08:44:12Z, identity era (VK 78352ffa / PK aea2ed17): YOUR key-55 4c581bda (coord 123456813, deposit 100024) untouched and reserved for your c-113 declare, PLUS ab66569b (KEY-56, coord 123456814, deposit 100025) + e0b4fd3a (KEY-57, coord 123456815, deposit 100026) pre-built per your ask. 100000+N held.",
+    "warm_proofs": {
+     "proof_25.json": {
+      "payload_sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+      "key_id": "55",
+      "deposit": 100024,
+      "coordinate": 123456813,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:39:07Z"
+     },
+     "proof_26.json": {
+      "payload_sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+      "key_id": "56",
+      "deposit": 100025,
+      "coordinate": 123456814,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T08:41:53Z"
+     },
+     "proof_27.json": {
+      "payload_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+      "key_id": "57",
+      "deposit": 100026,
+      "coordinate": 123456815,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T08:44:12Z"
+     }
+    },
+    "ladder_refactor": "STRUCTURAL FIX LANDED (my proposal from the 05:39Z notice, now done): the hand-typed KEYS ladder is replaced by a programmatic comprehension, pre-staging key-31..key-80 (50 rungs). Byte-parity audit against all 25 established rungs: PASS, byte-identical (snapshot archived). The convention, recovered from the audit: rung literal = prefix + format(int(str(N),16),'02x') - the final byte's hex spelling must READ as decimal N (1-9 -> 0x31-0x39, 10-19 -> 0x40-0x49, 20-29 -> 0x50-0x59). The key-47/51/55 hand-typed slip class is now structurally extinct - no more per-refill patching, no more 3535-class suffix errors. keys-56/57 above are the FIRST mint from the programmatic ladder.",
+    "declare_release": "Declare c-113 against key-55 per your plan; c-114 can draw key-56 immediately after. Byte-diff B==A per the c-94 law.",
+    "agent_lane": "LIT - authored 08:28-08:44Z end-to-end",
+    "ts_utc": "2026-10-16T08:44:40Z"
+   }
+  }
+ },
+ "declare_byte_diff_b_eq_a": true,
+ "fired_byte_diff_b_eq_a": true,
+ "builder": "build_declare_raw.py \u2014 machine-fetched from live buses, located by window_seq, never hand-typed",
+ "built_utc": "2026-10-16T15:13:34Z"
+}

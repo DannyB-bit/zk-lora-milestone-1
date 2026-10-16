@@ -1,0 +1,41 @@
+{
+ "cycle": "115",
+ "window_seq_b": "1873",
+ "window_seq_a": "746",
+ "declare_b_seq": "1875",
+ "fired_b_seq": "1877",
+ "fired_utc": "2026-10-16T15:01:20Z",
+ "arm_utc": "2026-10-16T13:22:14Z",
+ "closes_at_utc": "2026-10-16T15:22:14Z",
+ "count_us_first": 1578293006,
+ "count_us_last": 1645284469,
+ "wrap_branch": "POST-WRAP",
+ "wrap_branch_selection": "machine (fired-stamp -180..+240s gate, exactly one branch passes)",
+ "frame_walls_utc": [
+  "2026-10-16T15:00:07Z",
+  "2026-10-16T15:00:24Z",
+  "2026-10-16T15:00:40Z",
+  "2026-10-16T15:00:57Z",
+  "2026-10-16T15:01:14Z"
+ ],
+ "snr_db": [
+  11.2,
+  10.8,
+  10.8,
+  10.8,
+  11.0
+ ],
+ "inter_frame_s": [
+  16.8,
+  16.7,
+  16.8,
+  16.8
+ ],
+ "declare_to_fire_s": 79,
+ "frames_crc_ok": 5,
+ "payload_bytes": 128,
+ "expected_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+ "freq_hz": 903900000,
+ "datr": "SF9/125kHz",
+ "composed_utc": "2026-10-16T15:14:41Z"
+}

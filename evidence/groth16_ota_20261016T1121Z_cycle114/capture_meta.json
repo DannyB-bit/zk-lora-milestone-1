@@ -1,0 +1,28 @@
+{
+ "cycle": "114",
+ "window_seq_b": 1857,
+ "window_seq_a": 739,
+ "armed_at_utc": "2026-10-16T11:21:54Z",
+ "closes_at_utc": "2026-10-16T13:21:54Z",
+ "fired_utc": "2026-10-16T12:22:05Z",
+ "sends": "5/5 TX_DONE",
+ "proof_sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+ "key_id": "56",
+ "frames": 5,
+ "count_us_first": 3537678465,
+ "count_us_last": 3604882011,
+ "inter_frame_gaps_s": [
+  16.9,
+  16.8,
+  16.8,
+  16.7
+ ],
+ "snr_db": [
+  "11.2",
+  "11.0",
+  "11.0",
+  "11.0",
+  "11.2"
+ ],
+ "rf": "903.9 MHz (IF -400 kHz), SF9/125 kHz, CRC-OK 128B frames"
+}

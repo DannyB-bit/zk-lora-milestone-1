@@ -1,0 +1,35 @@
+{
+ "primary": {
+  "cycle": "114",
+  "key_id": "56",
+  "payload_sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+  "source": "captured this window (session_slice_cycle114.log), b_rx_extract.py rc=0 sha256_match TRUE"
+ },
+ "controls": [
+  {
+   "role": "CONTROL-diff1",
+   "evidence_dir": "evidence/groth16_ota_20261016T0921Z_cycle113",
+   "key_id": "55",
+   "sha256_prefix_quoted": "4c581bda",
+   "bin_sha256_full": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+   "bin_sha_prefix_match": true,
+   "verdict": "VALID",
+   "exit": "0",
+   "wall_s": "159.6",
+   "bin_path": "evidence/groth16_ota_20261016T0921Z_cycle113/rx_payload_128b.bin"
+  },
+  {
+   "role": "CONTROL-diff2",
+   "evidence_dir": "evidence/groth16_ota_20261016T0738Z_cycle112",
+   "key_id": "54",
+   "sha256_prefix_quoted": "ae280318",
+   "bin_sha256_full": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+   "bin_sha_prefix_match": true,
+   "verdict": "VALID",
+   "exit": "0",
+   "wall_s": "160.1",
+   "bin_path": "evidence/groth16_ota_20261016T0738Z_cycle112/rx_payload_128b.bin"
+  }
+ ],
+ "law": "control_provenance per c-91/c-108: primary + controls machine-sourced from the battery log lines; control bins live in this branch tree (evidence/c-112 + c-113 dirs), sha-verified against the battery-quoted prefixes + dual-bus declares"
+}
