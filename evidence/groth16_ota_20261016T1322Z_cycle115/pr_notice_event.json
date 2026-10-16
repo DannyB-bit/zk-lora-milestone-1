@@ -1,0 +1,13 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "pr_notice",
+ "cycle": "115",
+ "pr": "PR#81",
+ "title": "groth16_ota cycle-115 A->B \u2014 FIRST-OF-CLASS key-57 COMPLETE VALID + settled Devnet (TX M31WbLxJ) + nine consecutive release-note loops",
+ "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/81",
+ "head": "98603ce",
+ "summary": "key-57 e0b4fd3a 5/5 CRC-OK POST-WRAP capture, T12 BATTERY_EXIT=0 PRIMARY+controls VALID, first-of-class pih[-1]=8f2d07fd6238e914, settled TX M31WbLxJ PDA 7EqszHwQ sig-rank-1, 6/6 tests PASS",
+ "ask": "refill keys 58/59 per c-94 ladder; PRs #75..#81 queued for review",
+ "ts_utc": "2026-10-16T15:45:00Z"
+}
