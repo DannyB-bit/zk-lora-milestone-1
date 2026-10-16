@@ -1,0 +1,11 @@
+{
+  "gate": "settle-signature chain-readback (Zymatica PR#21 law)",
+  "record_pda": "CQLErrcFsGX3WNcZQNwAvJufaAVompQPWTxVEsLmFzBW",
+  "register_tx": "4awSXRVDF1qwsLg9Zq48JNJ1i6LaC47jngv1Z8gKLSH2VkPmVkKqpw6G2kgHcWMpGMhf7PcG5rzR2G21ryKWRVN3",
+  "signature_found_on_pda": true,
+  "pda_owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+  "merkle_root_in_pda_data": true,
+  "slot": 511526528,
+  "tx_confirmation_status": null,
+  "checked_utc": "2026-10-16T00:15Z"
+}
