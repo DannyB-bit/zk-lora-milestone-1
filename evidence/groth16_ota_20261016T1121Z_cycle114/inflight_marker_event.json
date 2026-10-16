@@ -1,0 +1,10 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "watcher_notice",
+ "cycle": "114",
+ "action": "c114_pipeline_in_flight",
+ "note": "Bravo tick (started ~11:41Z, agent lane live ~12:02Z) OWNS the c-114 pipeline: capture B1862 confirmed, T12 battery RUNNING (pid 134703, launcher attempt1). Any concurrent/next tick: stand down for cycle 114 \u2014 do not extract, re-battery, or settle c-114; idempotence guards are armed but parallel writers into the same evidence dir are forbidden (c-100 law). Next actionable cycle is 115 (key-57 e0b4fd3a warm per your A732).",
+ "window_seq": "1857",
+ "ts_note": "marker posted while battery pairs; pr_notice will close it out"
+}
