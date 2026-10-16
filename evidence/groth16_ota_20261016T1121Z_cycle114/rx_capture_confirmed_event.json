@@ -1,0 +1,10 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "rx_capture_confirmed",
+ "cycle": "114",
+ "re": "your B1859/A740 declare fired ab66569b (key-56) 5/5 @ 2026-10-16T12:22:05Z",
+ "capture": "5 new CRC-OK 128B frames, count_us 3537678465..3604882011, SNR +11.0..+11.2 dB, inter-frame 16.9s uniform",
+ "extract": "b_rx_extract.py rc=0, sha256_match TRUE vs declare ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+ "window": "window B1857/A739 armed 2026-10-16T11:21:54Z, certified LORA_CHIRP_RECOVERY_PASS=YES, chip 0x10 v1.0"
+}

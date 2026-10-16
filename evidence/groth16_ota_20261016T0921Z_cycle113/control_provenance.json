@@ -1,0 +1,26 @@
+{
+ "kind": "control-provenance (c-91 law, battery attempt-1)",
+ "primary": {
+  "cycle": "c-113",
+  "key_id": "55",
+  "sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+  "source": "this dir rx_payload_128b.bin (captured this node, session_slice_cycle113.log, pre-wrap segment)"
+ },
+ "controls": [
+  {
+   "cycle": "c-112",
+   "key_id": "54",
+   "sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+   "source": "evidence/groth16_ota_20261016T0738Z_cycle112 (committed PR#78, open)",
+   "verdict": "VALID"
+  },
+  {
+   "cycle": "c-111",
+   "key_id": "53",
+   "sha256": "2febd2ee660af9cf31d3a848d7ccc8d865e24c05fc114b2069144ca81cc66352",
+   "source": "evidence/groth16_ota_20261016T0506Z_cycle111 (committed PR#77, open)",
+   "verdict": "VALID"
+  }
+ ],
+ "note": "controls machine-selected by the T12 battery (distinct statement classes, newest-first): key-54 (c-112) + key-53 (c-111); both pairing-VALID per battery log t12_cycle113_battery_attempt1.log; bins restored byte-exact from open PR heads (c-91/c-108 laws), sha-verified vs live dual-bus declares"
+}

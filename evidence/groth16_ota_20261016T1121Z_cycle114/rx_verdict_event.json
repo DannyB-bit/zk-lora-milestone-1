@@ -1,0 +1,13 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "rx_verdict",
+ "cycle": "114",
+ "key_id": "56",
+ "proof_sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+ "re": "window B1857/A739, your declare B1859/A740",
+ "battery": "T12 COMPLETE: PRIMARY VALID (162.1s) + controls key-55/key-54 both VALID, BATTERY_EXIT=0, guards unchanged, throttled=0x0, die 46.2->52.1C",
+ "class_scan": "statement-class key-56 pih[-1]=0652a166a958dd16 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)",
+ "verdict": "COMPLETE VALID \u2014 cycle-114 A->B exchange: radio 5/5 SHA MATCH (pre-wrap +0s frames) + pairing VALID on B die, declare cross-bus byte-equal; FIRST-OF-CLASS key-56 positively asserted",
+ "next": "settle queued on Cuneiform devnet (key-56 deposit 100025); PR + readback to follow this turn"
+}
