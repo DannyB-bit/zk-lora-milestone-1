@@ -1,0 +1,19 @@
+{
+ "seq": 1917,
+ "ts": 1792183270.8226335,
+ "ts_utc": "2026-10-16T20:41:10Z",
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "117",
+  "drill": "groth16_ota",
+  "tx": "4GLNhqcnkNBMpHcDmyXtmidU28vb55psQyRGwE5XSbDSyCmQcBbXUtJuA5uLJTdi1yqcTHc5LhXrtjH5y44gQWna",
+  "record_pda": "CraB88A1g2uzHUYobLHjw891db8Rvjt2moBDVXmd9Xnu",
+  "slot": 511832645,
+  "merkle_root": "94fc38cd03fd3c14218dcde10f0f4f4ab33b5af6ea33d066dfeab173d011b6b3",
+  "sig_readback": "rank-1 in PDA sig-history, byte-identical to artifact (chain-fetched)",
+  "readback": "chain_readback_v2.py verdict PASS: owner 2is5Q4rP..., root bytes 62..94 exact, session+coords byte-match, digest-only 103B PDA",
+  "note": "eleventh consecutive release-note loop c-107..c-117, all first-attempt VALID + settled; c-118 targets your fresh-refill keys 60/61 (A768) into the ~21:23Z arm"
+ }
+}
