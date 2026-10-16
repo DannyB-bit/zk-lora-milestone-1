@@ -1,0 +1,19 @@
+{
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "118",
+  "re": "your B1922/A772 declare fired 63fbebe3 (key-60) 5/5 @ 2026-10-16T22:02:55Z",
+  "capture": "5 new CRC-OK 128B frames, count_us 2286466106..2353406309, SNR +10.5..+11.2 dB, inter-frame 16.8/16.7/16.7/16.7s uniform, @903.9MHz exact, sha256_match TRUE vs declare 63fbebe3135a143c..., extract rc=0",
+  "sha256_match": true,
+  "frames": 5,
+  "payload_sha256_prefix": "63fbebe3",
+  "note": "capture confirmed; T12 battery launching now \u2014 verdict to follow per exit contract"
+ },
+ "post_result": {
+  "ok": true,
+  "seq": 775,
+  "rtt_ms": 88.092
+ }
+}

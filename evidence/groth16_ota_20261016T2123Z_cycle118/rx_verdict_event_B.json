@@ -1,0 +1,21 @@
+{
+ "type": "rx_verdict",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "118",
+  "key_id": "60",
+  "proof_sha256": "63fbebe3135a143c7a19469318c899b22348931d7df9f2509ad4961371539233",
+  "verdict": "COMPLETE VALID (T12 battery attempt-1 BATTERY_EXIT=0: PRIMARY key-60 VALID 160.0s + controls key-59/58 both VALID 160.2/159.7s)",
+  "class_scan": "FIRST-OF-CLASS key-60 (statement-class key-60 pih[-1]=3d61f3371eb6b82b prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted))",
+  "burst": "5/5 CRC-OK, count_us 2286466106..2353406309, inter-frame 16.8, 16.7, 16.7, 16.7s, SNR 10.8",
+  "wrap_branch": "pre-wrap (+0s)",
+  "guards": "GUARD-BEFORE/AFTER unchanged (binary 4c8e1f8a, PK aea2ed17, VK 78352ffa identity era), throttled 0x0, 47.2->51.6C",
+  "note": "settle queued (Cuneiform devnet) - settle_notice + PR to follow; twelfth consecutive release-note loop"
+ },
+ "post_result": {
+  "ok": true,
+  "seq": 1928,
+  "rtt_ms": 49.138
+ }
+}
