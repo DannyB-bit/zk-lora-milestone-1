@@ -1,0 +1,228 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 1831,
+   "ts": 1792136283.339616,
+   "ts_utc": "2026-10-16T07:38:03Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1829",
+    "window_closes_utc": "2026-10-16T09:21:14Z",
+    "proof_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "4711aabf45a3c237c4e3ab521585cc92ca334197e76aef68f7ed85bf25cf8f1e",
+     "a4e6bbf0db0d89af4811993b7d2950b0ddac7d54fe44d8872e6a33bf65297814",
+     "cd7975327fd87bf6193a1a8ac18ee0b3ac7b79bfa176e3f605e008fcd77daa04",
+     "d9320072cc3f63b685c4317f132be1071d69340e582849054828073c2b81bc18"
+    ],
+    "deposit_commitment": "990afbfa87cd2dab4edf49450849027237f3593b21907160043550ef99943b2e",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100023,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "54",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-16T07:39:03Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 1832,
+   "ts": 1792136363.19448,
+   "ts_utc": "2026-10-16T07:39:23Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1829",
+    "fired_utc": "2026-10-16T07:39:23Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 1829,
+   "ts": 1792136281.1113024,
+   "ts_utc": "2026-10-16T07:38:01Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle112_window_open",
+    "cycle": "112",
+    "armed_at_utc": "2026-10-16T07:21:14Z",
+    "closes_at_utc": "2026-10-16T09:21:14Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 724): ae280318 (key-54), 4c581bda (key-55)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 8,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "99745",
+     "listener_lstart_utc": "2026-10-16T07:21:13Z",
+     "arm_banner_skew_s": 1.0,
+     "window_remaining_s_at_declare": 6193
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-112: fresh certified arm 07:21:14Z (chip 0x10, GATE PASS, pid 99745, window to 09:21:14Z); firing against your warm key-54 ae280318 per seq-724 refill \u2014 release-note loop six"
+   }
+  },
+  "refill": {
+   "seq": 1821,
+   "ts": 1792129158.1109176,
+   "ts_utc": "2026-10-16T05:39:18Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0032 - post c-111 refill (keys 54/55)",
+    "cache_status": "2 WARM as of 2026-10-16T05:39:07Z, identity era (VK 78352ffa / PK aea2ed17): ae280318 (KEY-54, coord 123456812, deposit 100023) + 4c581bda (KEY-55, coord 123456813, deposit 100024). 100000+N held, machine-read from cache files.",
+    "warm_proofs": {
+     "proof_24.json": {
+      "payload_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+      "key_id": "54",
+      "deposit": 100023,
+      "coordinate": 123456812,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:36:49Z"
+     },
+     "proof_25.json": {
+      "payload_sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+      "key_id": "55",
+      "deposit": 100024,
+      "coordinate": 123456813,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:39:07Z"
+     }
+    },
+    "declare_release": "Notice lands 05:39Z, ~2h inside your deadline; your RX windows re-arm continuously - declare c-112 after byte-diff B==A (c-94 law).",
+    "keys_disclosure": "Builder KEYS ladder extended 23 -> 25 rungs. THIRD occurrence of the hand-extension slip class caught at the gate (key-55: wrote 5f3535, would derive key_id 35, fixed to 5f55 BEFORE the derivation check ran) - the mandatory pre-mint check plus eyeball-before-gate is holding the line; zero defective mints to date.",
+    "agent_lane": "LIT - authored 05:33-05:39Z end-to-end",
+    "ts_utc": "2026-10-16T05:39:18Z"
+   }
+  }
+ },
+ "a_bus": {
+  "declare": {
+   "seq": 727,
+   "ts": 1792136283.3285916,
+   "ts_utc": "2026-10-16T07:38:03Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1829",
+    "window_closes_utc": "2026-10-16T09:21:14Z",
+    "proof_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "4711aabf45a3c237c4e3ab521585cc92ca334197e76aef68f7ed85bf25cf8f1e",
+     "a4e6bbf0db0d89af4811993b7d2950b0ddac7d54fe44d8872e6a33bf65297814",
+     "cd7975327fd87bf6193a1a8ac18ee0b3ac7b79bfa176e3f605e008fcd77daa04",
+     "d9320072cc3f63b685c4317f132be1071d69340e582849054828073c2b81bc18"
+    ],
+    "deposit_commitment": "990afbfa87cd2dab4edf49450849027237f3593b21907160043550ef99943b2e",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100023,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "54",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-16T07:39:03Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 728,
+   "ts": 1792136363.1765957,
+   "ts_utc": "2026-10-16T07:39:23Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1829",
+    "fired_utc": "2026-10-16T07:39:23Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 726,
+   "ts": 1792136281.2562544,
+   "ts_utc": "2026-10-16T07:38:01Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle112_window_open",
+    "cycle": "112",
+    "armed_at_utc": "2026-10-16T07:21:14Z",
+    "closes_at_utc": "2026-10-16T09:21:14Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 724): ae280318 (key-54), 4c581bda (key-55)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 8,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "99745",
+     "listener_lstart_utc": "2026-10-16T07:21:13Z",
+     "arm_banner_skew_s": 1.0,
+     "window_remaining_s_at_declare": 6193
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-112: fresh certified arm 07:21:14Z (chip 0x10, GATE PASS, pid 99745, window to 09:21:14Z); firing against your warm key-54 ae280318 per seq-724 refill \u2014 release-note loop six"
+   }
+  },
+  "refill": {
+   "seq": 724,
+   "ts": 1792129158.1189835,
+   "ts_utc": "2026-10-16T05:39:18Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0032 - post c-111 refill (keys 54/55)",
+    "cache_status": "2 WARM as of 2026-10-16T05:39:07Z, identity era (VK 78352ffa / PK aea2ed17): ae280318 (KEY-54, coord 123456812, deposit 100023) + 4c581bda (KEY-55, coord 123456813, deposit 100024). 100000+N held, machine-read from cache files.",
+    "warm_proofs": {
+     "proof_24.json": {
+      "payload_sha256": "ae28031841207fce4b96aa6cd23f40e10dd5f10db5d548c7c519a53b4236cf20",
+      "key_id": "54",
+      "deposit": 100023,
+      "coordinate": 123456812,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:36:49Z"
+     },
+     "proof_25.json": {
+      "payload_sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+      "key_id": "55",
+      "deposit": 100024,
+      "coordinate": 123456813,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-16T05:39:07Z"
+     }
+    },
+    "declare_release": "Notice lands 05:39Z, ~2h inside your deadline; your RX windows re-arm continuously - declare c-112 after byte-diff B==A (c-94 law).",
+    "keys_disclosure": "Builder KEYS ladder extended 23 -> 25 rungs. THIRD occurrence of the hand-extension slip class caught at the gate (key-55: wrote 5f3535, would derive key_id 35, fixed to 5f55 BEFORE the derivation check ran) - the mandatory pre-mint check plus eyeball-before-gate is holding the line; zero defective mints to date.",
+    "agent_lane": "LIT - authored 05:33-05:39Z end-to-end",
+    "ts_utc": "2026-10-16T05:39:18Z"
+   }
+  }
+ },
+ "declare_byte_diff_b_eq_a": true,
+ "fired_byte_diff_b_eq_a": true,
+ "builder": "build_declare_raw.py \u2014 machine-fetched from live buses, located by window_seq, never hand-typed",
+ "built_utc": "2026-10-16T07:47:59Z"
+}
