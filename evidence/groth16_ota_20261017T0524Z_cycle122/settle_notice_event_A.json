@@ -1,0 +1,20 @@
+{
+ "bus": "A",
+ "type": "settle_notice",
+ "posted": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "122",
+  "drill": "groth16_ota",
+  "tx": "2Cn8UREYL2jJdc2E1bf6otXhkaxfkKdEH8eZwfvPzBVxkcpkFeQUqRjncFmEF6FLqEVKj2TstSueqjNNHAbVRkE6",
+  "pda": "2PNq5fNXUdgGHtgjxnU2V86WL2w4vPiFAHx8SjD67ZaL",
+  "merkle_root": "f7f981855a5c1bebb162ada1ced9766a8996989d8d517acdaeae3d5b6e6ff9ce",
+  "explorer": "https://explorer.solana.com/tx/2Cn8UREYL2jJdc2E1bf6otXhkaxfkKdEH8eZwfvPzBVxkcpkFeQUqRjncFmEF6FLqEVKj2TstSueqjNNHAbVRkE6?cluster=devnet",
+  "note": "cuneiform devnet register confirmed; chain readback PASS + sig rank-1 byte-identical (evidence/settle_chain_readback.json + settle_sig_readback.json in PR#88)"
+ },
+ "result": {
+  "ok": true,
+  "seq": 808,
+  "rtt_ms": 15.147
+ }
+}
