@@ -1,0 +1,22 @@
+T12_CYCLE124_BATTERY_RUN_UTC=2026-10-17T15:01:46Z
+invocation: tools/t12_battery_template_canonical_fixed_6a49d04.py --cycle 124 --evidence-dir evidence/groth16_ota_20261017T1454Z_cycle124 --guard-log /home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T171837Z.log
+mode: primary = machine-located captured burst; controls machine-selected by statement class (same + different), newest-first from prior evidence
+law: zero hand-typed constants (label derived from --cycle that locates the window); burst binding v4 = session-segment + digest-equality; wrap branch machine-selected
+SILICON measure_temp=temp=41.3'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92
+WINDOW cycle-124 located: B-bus seq 2022 armed=2026-10-17T13:26:17Z closes=2026-10-17T15:26:17Z — label T12_CYCLE124_BATTERY_RUN_UTC derived from THIS event's cycle id
+DECLARE cross-bus byte-diff: public_input_hashes=EQ, gateway_address_hex=EQ, firmware_hash_hex=EQ, deposit_value=EQ, private_key_id=EQ, deposit_commitment=EQ, proof_sha256=EQ
+DECLARE located: A seq819 == B seq2024; key=66 deposit=100035 source=watcher_hot_path (no LLM turn) construction=A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache
+WINDOW armed=2026-10-17T13:26:17+00:00 closes=2026-10-17T15:26:17+00:00 fired_utc=2026-10-17T14:53:42+00:00 (completion stamp)
+SESSION-SEGMENT arm banner line 3379 (guard log lines 3379..3513); count_us origin = banner second 2026-10-17T13:26:17+00:00 (banner-second convention; the SHA gate does not depend on walls)
+BURST: 5 frames, count_us 877291888..944265050, inter_frame_s=[16.7, 16.8, 16.7, 16.7], SNR 11.0, status 0x10
+SHA GATE: digest(captured)==declare 64/64: 874adee4721ca3b79ca9b66d4743115f109c837c8857b189eeb53cdb978b580a
+PRIMARY cycle-124 captured 874adee4: verdict=VALID exit=0 wall_s=160.0 stdout='VALID'
+CLASS SCAN (complete dual-bus history): statement-class key-66 pih[-1]=026f2a49c55c4524 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)
+CONTROL CANDIDATES (newest declare first, 9 usable / 0 skipped / 45 skipped-era-mismatch [vk_sha256 pin, c-96 law]): groth16_ota_20261017T0725Z_cycle123 key-65 @2026-10-17T08:30:17Z; groth16_ota_20260117T0524Z_cycle122 key-64 @2026-10-17T06:20:36Z; groth16_ota_20261017T0324Z_cycle121 key-63 @2026-10-17T04:18:58Z; groth16_ota_20261017T0124Z_cycle120 key-62 @2026-10-17T02:06:50Z; groth16_ota_20261016T2323Z_cycle119 key-61 @2026-10-17T00:01:20Z; groth16_ota_20261015T2339Z_cycle109 key-51 @2026-10-15T23:39:03Z; groth16_ota_20261015T1256Z_cycle106 key-48 @2026-10-15T12:58:02Z; groth16_ota_20261015T0213Z_cycle105 key-47 @2026-10-15T02:32:26Z; groth16_ota_20261014T2213Z_cycle104 key-46 @2026-10-14T23:34:57Z
+CONTROL MODE: FIRST-OF-CLASS (positive assertion) key-66 — 2 DISTINCT-statement-class controls (keys key-65, key-64)
+CONTROL-diff1 groth16_ota_20261017T0725Z_cycle123 (key-65, machine-picked, DIFFERENT statement-class) a5b1554d: verdict=VALID exit=0 wall_s=160.0 stdout='VALID'
+CONTROL-diff2 groth16_ota_20260117T0524Z_cycle122 (key-64, machine-picked, DIFFERENT statement-class) f7f98185: verdict=VALID exit=0 wall_s=159.8 stdout='VALID'
+GUARD-AFTER binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92 — unchanged
+SILICON-END measure_temp=temp=46.7'C get_throttled=throttled=0x0
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-124 A->B exchange COMPLETE: radio 5/5 SHA MATCH (POST-WRAP (+4294.967296s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE124_BATTERY_RUN_UTC derived not typed; primary key-66; settle queued (Cuneiform devnet)
