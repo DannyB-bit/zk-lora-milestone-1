@@ -1,0 +1,20 @@
+{
+ "cycle": "121",
+ "capture_utc": "2026-10-17T04:20:12Z",
+ "fired_utc": "2026-10-17T04:20:18Z",
+ "frame_walls_first_utc": "2026-10-17T04:19:05Z",
+ "frame_walls_last_utc": "2026-10-17T04:20:12Z",
+ "frames": 5,
+ "sha256": "9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+ "count_us_first": 3269298338,
+ "count_us_last": 3336375061,
+ "snr_min": 10.5,
+ "snr_max": 11.0,
+ "freq_hz": "903900000",
+ "wrap_branch": "pre-wrap (+0s)",
+ "window_b_seq": 1965,
+ "window_armed_utc": "2026-10-17T03:24:36Z",
+ "declare_to_fire_s": 80,
+ "note": "serialized from b_rx_extract parse + declare_dual_bus_raw machine values; walls = origin + count_us/1e6",
+ "wrap_branch_source": "machine-selected by T12 battery wrap-branch assert-selector; serialized from battery log verdict line (c-82 law)"
+}

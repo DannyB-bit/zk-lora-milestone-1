@@ -1,0 +1,10 @@
+{
+ "check_utc": "2026-10-17T04:40:01Z",
+ "pda": "D23VUEMyXJ1BTxqFofcVMsSmZ4ChtNA7h63CshvbEpPY",
+ "register_tx_artifact": "uyXLfURBSZUxwVxwDBpQNSQn1TNKPwRG5RHAYsjkpVEGHhzuTYh2U84FDACZGorJwx9bnRGvBSTZnjKa9y1Q2yQ",
+ "rank1_signature": "uyXLfURBSZUxwVxwDBpQNSQn1TNKPwRG5RHAYsjkpVEGHhzuTYh2U84FDACZGorJwx9bnRGvBSTZnjKa9y1Q2yQ",
+ "rank1_slot": 511955075,
+ "rank1_err": null,
+ "byte_identical_rank1": true,
+ "signature_count_fetched": 1
+}
