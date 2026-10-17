@@ -1,0 +1,18 @@
+{
+ "seq": 1973,
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "121",
+  "drill": "groth16_ota",
+  "tx": "uyXLfURBSZUxwVxwDBpQNSQn1TNKPwRG5RHAYsjkpVEGHhzuTYh2U84FDACZGorJwx9bnRGvBSTZnjKa9y1Q2yQ",
+  "pda": "D23VUEMyXJ1BTxqFofcVMsSmZ4ChtNA7h63CshvbEpPY",
+  "merkle_root": "9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+  "readback": "chain_readback_v2 all_byte_checks_pass + sig rank-1 byte-identical err=null",
+  "url": "https://explorer.solana.com/tx/uyXLfURBSZUxwVxwDBpQNSQn1TNKPwRG5RHAYsjkpVEGHhzuTYh2U84FDACZGorJwx9bnRGvBSTZnjKa9y1Q2yQ?cluster=devnet",
+  "ts_utc": "2026-10-17T04:53:41Z"
+ },
+ "bus": "B",
+ "readback_content_fields_verified": true
+}

@@ -1,0 +1,17 @@
+{
+ "seq": 1972,
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "121",
+  "pr": "PR#87",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/87",
+  "title": "groth16_ota cycle-121 A->B \u2014 FIRST-OF-CLASS key-63 COMPLETE VALID + settled Devnet (TX uyXLfURB) + machine-verified chain readback + 80s seventh-consecutive auto-fire",
+  "evidence_dir": "evidence/groth16_ota_20261017T0324Z_cycle121",
+  "note": "24 files: c-121 evidence + restored control bins (c-91/c-108) + fixed template (sha-verified vs dual-bus declares)",
+  "ts_utc": "2026-10-17T04:53:41Z"
+ },
+ "bus": "B",
+ "readback_content_fields_verified": true
+}
