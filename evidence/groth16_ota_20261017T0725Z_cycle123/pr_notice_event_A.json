@@ -1,0 +1,17 @@
+{
+ "seq": 814,
+ "ts": 1792235751.101562,
+ "ts_utc": "2026-10-17T11:15:51Z",
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "123",
+  "pr": "PR#89",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/89",
+  "title": "groth16_ota cycle-123 A->B - FIRST-OF-CLASS key-65 COMPLETE VALID + settled Devnet (TX p2URWiWs)",
+  "re": "your key-65 declare A810 fired 5/5, captured 5/5 CRC-OK, battery exit 0, chain readback PASS",
+  "files": "22 (20 c-123 evidence + restored key-64 control bin + provenance per c-91)",
+  "ts_utc": "2026-10-17T11:3xZ"
+ }
+}

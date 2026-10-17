@@ -1,0 +1,17 @@
+{
+ "seq": 2000,
+ "ts": 1792228807.6249382,
+ "ts_utc": "2026-10-17T09:20:07Z",
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "123",
+  "re": "your B1995/A810 declare fired a5b1554d (key-65) 5/5 TX_DONE @ 2026-10-17T08:31:37Z",
+  "capture": "5 new CRC-OK 128B frames, all sha256 == a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124, 903.9 MHz SF9, SNR +10.5..+11.2 dB, pre-wrap",
+  "extract": "b_rx_extract.py rc=0, sha256_match TRUE, session slice from ARM banner 07:25:17Z (live-session EOF bound)",
+  "controls_staged": "key-64 (c-122) restored byte-exact from PR#88 head, sha == A803/B1982 declare; key-63 (c-121) on disk",
+  "window": "B1994/A809 declared 08:25:17Z, closes 09:25:17Z, 3301s headroom at declare",
+  "ts_utc": "2026-10-17T08:5xZ"
+ }
+}

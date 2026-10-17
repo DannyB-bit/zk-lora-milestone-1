@@ -1,0 +1,9 @@
+{
+ "pda": "DS7hZazJ7jWGPdsd9JU1Ujzi3mYVLnYwgcKAZCnHtgwv",
+ "register_tx": "p2URWiWs93cbHsfrn6qXUwm2Nk2nUJtA5chCvQ1mK63NzPzE18BaQz4x2HrpzTUkuihXRTQcVMgMw1kia3Fpxcn",
+ "sig_history_rank": 1,
+ "slot": 512050603,
+ "err": null,
+ "fetched_utc": "2026-10-17T11:1xZ",
+ "gate": "c-30: machine-fetched via getSignaturesForAddress, byte-compared vs settle log"
+}

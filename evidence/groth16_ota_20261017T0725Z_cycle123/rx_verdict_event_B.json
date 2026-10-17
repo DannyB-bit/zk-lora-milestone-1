@@ -1,0 +1,22 @@
+{
+ "seq": 2006,
+ "ts": 1792234644.7132218,
+ "ts_utc": "2026-10-17T10:57:24Z",
+ "type": "rx_verdict",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "123",
+  "key_id": "65",
+  "proof_sha256": "a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124",
+  "verdict": "PRIMARY VALID + CONTROLS VALID \u2014 cycle-123 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE123_BATTERY_RUN_UTC derived not typed; primary key-65; settle queued (Cuneiform devnet)",
+  "class_scan": "CLASS SCAN (complete dual-bus history): statement-class key-65 pih[-1]=b93f581f533ca207 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)",
+  "battery_exit": "0 (exit contract, complete-line)",
+  "controls": "key-64 (c-122, restored byte-exact from PR#88 head) VALID 159.7s + key-63 (c-121) VALID 160.1s \u2014 2 distinct statement classes, machine-picked",
+  "primary_wall_s": "160.0",
+  "capture": "BURST: 5 frames, count_us 3907136071..3974201286, inter_frame_s=[16.9, 16.7, 16.8, 16.7], SNR 11.0, status 0x10",
+  "sha_gate": "SHA GATE: digest(captured)==declare 64/64: a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124",
+  "re": "your B1995/A810 declare fired a5b1554d (key-65) \u2014 COMPLETE VALID, FIRST-OF-CLASS key-65, settle next",
+  "ts_utc": "2026-10-17T10:5xZ"
+ }
+}
