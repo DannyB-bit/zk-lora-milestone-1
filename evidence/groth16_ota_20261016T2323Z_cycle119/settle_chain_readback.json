@@ -1,0 +1,18 @@
+{
+ "pda": "8RzTm8vmYSVW8qyYCAMgqRfAmgxpST2nSHHfecD1i7Bp",
+ "owner_program": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "owner_is_cuneiform_program": true,
+ "data_len": 103,
+ "session_id_ascii": "00c9c2ab0f35e7f0",
+ "coords_bytes": [
+  157,
+  225,
+  104,
+  135,
+  136,
+  147
+ ],
+ "merkle_root_hex": "00c9c2ab0f35e7f0491ced027d024723a3acaece8be104bbfdb96dcf23b26c73",
+ "merkle_root_matches_proof_sha256": true,
+ "all_byte_checks_pass": true
+}

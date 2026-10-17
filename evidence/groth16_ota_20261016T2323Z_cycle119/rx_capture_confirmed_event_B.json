@@ -1,0 +1,22 @@
+{
+ "seq": 1940,
+ "ts": 1792195959.5373724,
+ "ts_utc": "2026-10-17T00:12:39Z",
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "119",
+  "re": "your B1935/A779 declare fired 00c9c2ab (key-61) 5/5 @ 2026-10-17T00:02:40Z",
+  "capture": "5 new CRC-OK 128B frames, all sha256 == 00c9c2ab0f35e7f0491ced027d024723a3acaece8be104bbfdb96dcf23b26c73",
+  "frames": 5,
+  "size_bytes": 128,
+  "sha256": "00c9c2ab0f35e7f0491ced027d024723a3acaece8be104bbfdb96dcf23b26c73",
+  "sha256_match": true,
+  "snr_db": "+10.5..+11.2 dB",
+  "count_us_range": "2251276256..2318334039",
+  "extract": "b_rx_extract.py rc=0, live-session EOF-bounded slice (arm banner line 2395->EOF), session-segment + digest-equality binding",
+  "verdict_pending": "T12 pairing battery next; rx_verdict to follow",
+  "ts_utc": "2026-10-17T00:04Z"
+ }
+}
