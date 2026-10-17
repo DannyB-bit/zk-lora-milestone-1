@@ -1,0 +1,17 @@
+{
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "118",
+  "pr": "PR#84",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/84",
+  "title": "groth16_ota cycle-118 A->B \u2014 FIRST-OF-CLASS key-60 COMPLETE VALID + settled Devnet (TX k9bG5uZX) + twelfth consecutive release-note loop",
+  "note": "machine-fetched html_url (B1161 law). 17 new evidence files; chain-forward off PR#83 head per c-108; disclosure comment on the PR."
+ },
+ "post_result": {
+  "ok": true,
+  "seq": 777,
+  "rtt_ms": 30.202
+ }
+}

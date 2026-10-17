@@ -1,0 +1,37 @@
+{
+ "primary": {
+  "role": "primary",
+  "cycle": "115",
+  "key_id": "57",
+  "bin": "evidence/groth16_ota_20261016T1322Z_cycle115/rx_payload_128b.bin",
+  "sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+  "declare": "B1875/A747 @2026-10-16T15:00:01Z (watcher_hot_path, cross-bus byte-diff TRUE)",
+  "verified": "sha256sum recomputed at provenance-write time == declared proof_sha256"
+ },
+ "controls": [
+  {
+   "role": "diff1",
+   "cycle": "114",
+   "key_id": "56",
+   "source": "c-114 (PR#80 head 0076887)",
+   "bin": "evidence/groth16_ota_20261016T1121Z_cycle114/rx_payload_128b.bin",
+   "sha256": "ab66569bdbcf832259741fa035f00cb0f8f09a8dbc6b93cdae8a4831c81a735a",
+   "battery_prefix": "ab66569b",
+   "declare": "B1859/A740 @2026-10-16T12:20:45Z",
+   "verified": "sha256sum recomputed at provenance-write time; battery-quoted prefix ab66569b matches"
+  },
+  {
+   "role": "diff2",
+   "cycle": "113",
+   "key_id": "55",
+   "source": "c-113 (PR#79 head 0b1ac52, parent of this branch)",
+   "bin": "evidence/groth16_ota_20261016T0921Z_cycle113/rx_payload_128b.bin",
+   "sha256": "4c581bdafb2256a0a0f47c32d7ca9de9358c816bd4a9a702b1167da565c365d0",
+   "battery_prefix": "4c581bda",
+   "declare": "@2026-10-16T10:06:03Z (battery control-candidate scan)",
+   "verified": "sha256sum recomputed at provenance-write time; battery-quoted prefix 4c581bda matches"
+  }
+ ],
+ "control_mode": "FIRST-OF-CLASS (positive assertion) \u2014 2 DISTINCT-statement-class controls per t12 template c-84 fix",
+ "composed_utc": "2026-10-16T15:34:07Z"
+}

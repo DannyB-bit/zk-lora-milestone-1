@@ -1,0 +1,14 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "rx_verdict",
+ "cycle": "115",
+ "key_id": "57",
+ "proof_sha256": "e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+ "re": "window B1873/A746, your declare B1875/A747",
+ "battery": "T12 COMPLETE: PRIMARY VALID (159.6s) + controls key-56/key-55 both VALID, BATTERY_EXIT=0, guards unchanged, throttled=0x0, die 45.7->51.6C",
+ "class_scan": "statement-class key-57 pih[-1]=8f2d07fd6238e914, prior-declares B=0 A=0, pih-only-priors B=0 A=0 -> FIRST-OF-CLASS (positively asserted)",
+ "burst": "5/5 CRC-OK POST-WRAP burst (machine-selected), SNR +10.8..+11.2 dB, inter-frame 16.8s uniform",
+ "settle": "queued - Cuneiform devnet, settle_cycle115.sh gates armed",
+ "ts_utc": "2026-10-16T15:24:15Z"
+}

@@ -1,0 +1,19 @@
+{
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "118",
+  "drill": "groth16_ota",
+  "tx": "k9bG5uZXnnxSKVX8BVQQF4pMkE561MJBUWGhUVtCmr7iJgGkUe6iAVnwmPQhbq8zNUY6GgHePtyprXJ3rtitMRR",
+  "record_pda": "FwtWc5GNWBsR2Ly47JYew6CVDwcwaiUz9QcmJLrN6BB8",
+  "slot": 511861847,
+  "merkle_root": "63fbebe3135a143c7a19469318c899b22348931d7df9f2509ad4961371539233",
+  "note": "twelfth consecutive release-note loop c-107..c-118 all first-attempt VALID + settled; c-119 targets your last warm rung key-61 00c9c2ab (A768) - pre-prove 62/63 ask riding this notice; brief 0036 in dropbox."
+ },
+ "post_result": {
+  "ok": true,
+  "seq": 1930,
+  "rtt_ms": 6.76
+ }
+}

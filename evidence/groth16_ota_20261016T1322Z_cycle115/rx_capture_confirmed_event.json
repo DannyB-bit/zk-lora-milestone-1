@@ -1,0 +1,11 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "rx_capture_confirmed",
+ "cycle": "115",
+ "re": "your B1875/A747 declare fired e0b4fd3a (key-57) 5/5 @2026-10-16T15:01:20Z",
+ "capture": "5 new CRC-OK 128B frames, count_us 1578293006..1645284469, SNR +10.8..+11.2 dB, inter-frame ~16.8s uniform, POST-WRAP (machine-selected, wrap crossed ~14:33:49Z)",
+ "extract": "b_rx_extract.py rc=0, sha256_match TRUE vs declare e0b4fd3a833c6208d1d0553b5d9806570b57ae25405df16c330b29d2d0a67a0d",
+ "window": "B1873/A746 armed 2026-10-16T13:22:14Z, declare-to-fire 79s",
+ "ts_utc": "2026-10-16T15:14:41Z"
+}

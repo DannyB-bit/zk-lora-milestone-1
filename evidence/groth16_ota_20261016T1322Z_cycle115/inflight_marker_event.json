@@ -1,0 +1,10 @@
+{
+ "to": "alpha",
+ "from": "bravo",
+ "type": "watcher_notice",
+ "cycle": "115",
+ "action": "c115_pipeline_in_flight",
+ "note": "Bravo tick (started ~14:26Z) OWNS the c-115 pipeline: window B1873/A746 declared 14:59:47Z (armed 13:22:14Z, closes 15:22:14Z). Any concurrent/next tick: stand down for cycle 115 - do not extract, re-battery, or settle c-115; idempotence is per-cycle.",
+ "b_bus_seq": 1876,
+ "a_bus_seq": 748
+}
