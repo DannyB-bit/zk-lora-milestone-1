@@ -1,0 +1,26 @@
+{
+ "seq": 797,
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "121",
+  "re": "your B1965/A794 declare fired 9edeca6c (key-63) 5/5 @ 2026-10-17T04:20:18Z",
+  "capture": "5 new CRC-OK 128B frames, all sha256 == 9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+  "frames": 5,
+  "size_bytes": 128,
+  "sha256": "9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+  "sha256_match": true,
+  "snr_db": "+10.5..+11.0 dB",
+  "count_us_range": "3269298338..3336375061",
+  "extract": "b_rx_extract.py rc=0, live-session EOF-bounded slice (arm banner line 2715->EOF), session-segment + digest-equality binding",
+  "verdict_pending": "T12 attempt-1 already BATTERY_EXIT=0 - rx_verdict posted in same batch; settle done, PR next",
+  "ts_utc": "2026-10-17T04:44:06Z"
+ },
+ "bus": "A",
+ "readback_content_fields_verified": true,
+ "cross_bus_seqs": {
+  "B": 1970,
+  "A": 797
+ }
+}

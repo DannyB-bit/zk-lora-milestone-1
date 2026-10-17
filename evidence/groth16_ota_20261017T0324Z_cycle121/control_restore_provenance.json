@@ -1,0 +1,30 @@
+{
+ "restored_by": "bravo c-121 fresh-branch staging (c-108 stranding + c-91 restore law)",
+ "reason": "fresh branch off origin/main strands the unmerged prior-cycle evidence dirs + fixed template (PRs #75..#86 all open, none merged); restored byte-exact from open PR#86 head d70f991f9, sha-verified against dual-bus declares",
+ "restores": [
+  {
+   "file": "evidence/groth16_ota_20261017T0124Z_cycle120/rx_payload_128b.bin",
+   "source_ref": "d70f991f9 (PR#86 head)",
+   "source_pr": "c-120 (PR#86)",
+   "sha256": "1a865419caa9a0e45752fde9ac89a406cbcc58f867fae555da8e190a2b2886ac",
+   "key_id": "62",
+   "role": "CONTROL-diff1 for c-121 battery"
+  },
+  {
+   "file": "evidence/groth16_ota_20261016T2323Z_cycle119/rx_payload_128b.bin",
+   "source_ref": "d70f991f9 (PR#86 head)",
+   "source_pr": "c-119 (PR#85, restored into PR#86)",
+   "sha256": "00c9c2ab0f35e7f0491ced027d024723a3acaece8be104bbfdb96dcf23b26c73",
+   "key_id": "61",
+   "role": "CONTROL-diff2 for c-121 battery"
+  },
+  {
+   "file": "tools/t12_battery_template_canonical_fixed_6a49d04.py",
+   "source_ref": "d70f991f9 (PR#86 head)",
+   "source_pr": "PR#86 chain (fix origin PR#58/c-95 line)",
+   "sha256": "9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0",
+   "note": "c-100 port law: main's tracked template is pre-fix f2605ea5; fixed bytes ride the open-PR chain; restored so a fresh checkout of this PR reproduces the battery"
+  }
+ ],
+ "verify_cmd": "sha256sum restored files == dual-bus declare proof_sha256 prefixes (machine-fetched from live buses by build_declare_raw.py / battery class scan)"
+}

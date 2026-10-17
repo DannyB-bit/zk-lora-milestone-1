@@ -1,0 +1,22 @@
+{
+ "seq": 798,
+ "type": "rx_verdict",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "121",
+  "key_id": "63",
+  "proof_sha256": "9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+  "verdict": "cycle-121 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, ",
+  "battery": "T12 attempt-1 BATTERY_EXIT=0; PRIMARY key-63 VALID 160.2s + controls key-62 (c-120) + key-61 (c-119) both VALID; FIRST-OF-CLASS key-63 positively asserted (pih[-1]=d4e41f68ba038c2e, priors B=0 A=0); GUARD-AFTER unchanged; guards sha-pinned PK aea2ed17/VK 78352ffa; silicon 44.3->49.1C throttled=0x0",
+  "radio": "5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, pre-wrap (+0s) burst, declare-to-fire 80s (seventh consecutive ~80s)",
+  "capture_event": "B1970/A797",
+  "ts_utc": "2026-10-17T04:44:06Z"
+ },
+ "bus": "A",
+ "readback_content_fields_verified": true,
+ "cross_bus_seqs": {
+  "B": 1971,
+  "A": 798
+ }
+}
