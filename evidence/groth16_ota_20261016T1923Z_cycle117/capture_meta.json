@@ -1,0 +1,32 @@
+{
+ "cycle": "117",
+ "drill": "groth16_ota",
+ "key_id": "59",
+ "proof_sha256": "94fc38cd03fd3c14218dcde10f0f4f4ab33b5af6ea33d066dfeab173d011b6b3",
+ "deposit_value": 100028,
+ "frames": "5/5 CRC-OK 128B frames",
+ "freq_mhz": 903.9,
+ "snr_db": "+10.5..+11.0",
+ "count_us_range": [
+  2251732338,
+  2318734577
+ ],
+ "inter_frame_s": [
+  16.7,
+  16.8,
+  16.8,
+  16.7
+ ],
+ "wrap_branch": "pre-wrap (+0s)",
+ "frame_walls_utc": [
+  "2026-10-16T20:00:46Z",
+  "2026-10-16T20:01:53Z"
+ ],
+ "fired_utc": "2026-10-16T20:02:00Z",
+ "declare_to_fire_s": 80,
+ "window_b_seq": 1906,
+ "armed_at_utc": "2026-10-16T19:23:15Z",
+ "closes_at_utc": "2026-10-16T21:23:15Z",
+ "battery_exit": 0,
+ "derived": "all fields machine-derived from extract/declare/battery outputs (c-92 law, zero hand-typed constants)"
+}

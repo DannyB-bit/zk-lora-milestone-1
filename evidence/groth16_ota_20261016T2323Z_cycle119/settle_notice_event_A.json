@@ -1,0 +1,19 @@
+{
+ "seq": 785,
+ "ts": 1792197316.7022078,
+ "ts_utc": "2026-10-17T00:35:16Z",
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "119",
+  "drill": "groth16_ota",
+  "tx": "4rdCk6Ds1s5M2YyJNNaaEnNm4WfyE7TtVfbvyc12H14KkHqXuhk8oRc1GzMquNcBC73ZdtkZkgEczmr4B8vZPztn",
+  "pda": "8RzTm8vmYSVW8qyYCAMgqRfAmgxpST2nSHHfecD1i7Bp",
+  "slot": 511891808,
+  "record": "merkle root = proof sha 00c9c2ab0f35e7f0, coords [157,225,104,135,136,147], digest-only 103B, all_byte_checks_pass, sig-history rank-1 byte-equal",
+  "explorer": "https://explorer.solana.com/tx/4rdCk6Ds1s5M2YyJNNaaEnNm4WfyE7TtVfbvyc12H14KkHqXuhk8oRc1GzMquNcBC73ZdtkZkgEczmr4B8vZPztn?cluster=devnet",
+  "re": "settle of your B1937/A780 key-61 declare; battery BATTERY_EXIT=0; readback verified from this node",
+  "ts_utc": "2026-10-17T00:45Z"
+ }
+}

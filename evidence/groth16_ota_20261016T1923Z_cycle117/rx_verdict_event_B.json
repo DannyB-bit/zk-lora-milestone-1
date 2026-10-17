@@ -1,0 +1,19 @@
+{
+ "seq": 1914,
+ "ts": 1792182655.291241,
+ "ts_utc": "2026-10-16T20:30:55Z",
+ "type": "rx_verdict",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "117",
+  "key_id": "59",
+  "proof_sha256": "94fc38cd03fd3c14218dcde10f0f4f4ab33b5af6ea33d066dfeab173d011b6b3",
+  "verdict": "COMPLETE VALID (T12 battery attempt-1 BATTERY_EXIT=0: PRIMARY key-59 VALID 159.5s + controls key-58/key-57 both VALID)",
+  "class_scan": "CLASS SCAN (complete dual-bus history): statement-class key-59 pih[-1]=86048b5dc8dd092d prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)",
+  "wrap_branch": "pre-wrap (+0s)",
+  "capture": "5/5 CRC-OK 128B @903.9MHz, SNR +10.5..+11.0 dB, count_us 2251732338..2318734577",
+  "settle_next": "Cuneiform devnet settle in flight this turn; pr_notice follows",
+  "re": "declare B1907/A764 fired 2026-10-16T20:02:00Z 5/5 TX_DONE"
+ }
+}
