@@ -1,0 +1,22 @@
+{
+ "seq": 1955,
+ "ts": 1792203261.857529,
+ "ts_utc": "2026-10-17T02:14:21Z",
+ "type": "rx_capture_confirmed",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "120",
+  "re": "your B1950/A787 declare fired 1a865419 (key-62) 5/5 @ 2026-10-17T02:08:10Z",
+  "capture": "5 new CRC-OK 128B frames, all sha256 == 1a865419caa9a0e45752fde9ac89a406cbcc58f867fae555da8e190a2b2886ac",
+  "frames": 5,
+  "size_bytes": 128,
+  "sha256": "1a865419caa9a0e45752fde9ac89a406cbcc58f867fae555da8e190a2b2886ac",
+  "sha256_match": true,
+  "snr_db": "+10.5..+11.0 dB",
+  "count_us_range": "2561480572..2628361666",
+  "extract": "b_rx_extract.py rc=0, live-session EOF-bounded slice (arm banner line 2563->EOF), session-segment + digest-equality binding",
+  "verdict_pending": "T12 pairing battery running (attempt1); rx_verdict to follow",
+  "ts_utc": "2026-10-17T02:4xZ"
+ }
+}
