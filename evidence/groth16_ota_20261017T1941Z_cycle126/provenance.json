@@ -1,0 +1,9 @@
+{
+ "file": "evidence/groth16_ota_20261017T1941Z_cycle126/rx_payload_128b.bin",
+ "sha256": "53029ad626dad1f95c29dd2e8acbcaf5cf627033cc0b40cd178a094da1c6939a",
+ "restored_from_ref": "pr92-head",
+ "why": "key-68 control (c-126, PR#92 head)",
+ "restore_method": "git cat-file blob (binary via subprocess, c-91 law \u2014 never text-mode stdout)",
+ "sha_verified_vs_dual_bus_declare": true,
+ "restored_utc": "2026-10-17T23:38:56Z"
+}

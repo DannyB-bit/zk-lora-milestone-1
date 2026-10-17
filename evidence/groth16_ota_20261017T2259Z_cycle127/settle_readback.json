@@ -1,0 +1,10 @@
+{
+ "pda": "Drz8UNbwnR7bWLUvCokt1VkcYSvQ94jiFqLjUpXAyFVQ",
+ "claimed_register_tx": "5CRjqaEFT4fbnk2ZVEAg6ZoajpmNU8LcELDkcq4PmCvjEUzfMzTQvorAu91ob1PXX3pk8W2kZ4kgoosc3KhccDF1",
+ "onchain_signatures": [
+  "5CRjqaEFT4fbnk2ZVEAg6ZoajpmNU8LcELDkcq4PmCvjEUzfMzTQvorAu91ob1PXX3pk8W2kZ4kgoosc3KhccDF1"
+ ],
+ "sig_byte_match": true,
+ "fetched_utc": "2026-10-17T23:29:31Z",
+ "method": "live RPC getSignaturesForAddress on record PDA (settle-signature chain-readback gate)"
+}
