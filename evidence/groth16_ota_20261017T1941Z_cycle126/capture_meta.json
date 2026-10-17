@@ -1,0 +1,40 @@
+{
+ "drill": "groth16_ota",
+ "cycle": 126,
+ "key_id": 68,
+ "window": {
+  "armed_at_utc": "2026-10-17T19:27:18Z",
+  "closes_at_utc": "2026-10-17T21:27:18Z",
+  "declared_utc": "2026-10-17T19:40:28Z",
+  "b_bus_seq": 2060,
+  "a_bus_mirror_seq": 840
+ },
+ "fire": {
+  "fired_utc": "2026-10-17T19:41:50Z",
+  "sends": "5/5 TX_DONE",
+  "a_bus_seq": 842,
+  "proof_sha256": "53029ad626dad1f95c29dd2e8acbcaf5cf627033cc0b40cd178a094da1c6939a",
+  "declare_to_fire_s": 80
+ },
+ "capture": {
+  "frames_crc_ok": 5,
+  "freq_hz": 903900000,
+  "snr": [
+   "11.0",
+   "10.8",
+   "10.8",
+   "11.0",
+   "11.2"
+  ],
+  "count_us": [
+   798755281,
+   815529182,
+   832313858,
+   849035562,
+   865936586
+  ],
+  "crc_bad_dropped": 1,
+  "payload_sha256": "53029ad626dad1f95c29dd2e8acbcaf5cf627033cc0b40cd178a094da1c6939a"
+ },
+ "sources": "machine-parsed: B-bus + A-bus events, b_rx_extract.py, standby guard log"
+}
