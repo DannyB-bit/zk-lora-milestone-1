@@ -1,0 +1,27 @@
+T12 c-125 battery attempt-1 — SHA-GUARD ABORT (honest history, zero pairing cost)
+===============================================================================
+Provenance: launcher stdout captured by the Hermes background process manager
+(proc_bfe162a9d61e, `bash ~/fleet/scripts/launch_t12_cycle125.sh attempt1`).
+The sha-guard abort prints to stdout and exits 9 BEFORE the log redirect opens,
+so no t12_cycle125_battery_attempt1.log file was created by the launcher itself.
+
+Launcher output verbatim:
+-------------------------
+SHA-GUARD ABORT: canonical template bytes changed (f2605ea56f181c52917bbb54b504afa6ffc967d5831c65098bb93c2e122497ba != 9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0)
+-------------------------
+
+Diagnosis: c-108 branch-cut stranding law, instance #3 on B. The c-125 evidence
+branch was freshly cut off origin/main; main does not contain the fixed template
+bytes (they ride open PR#72), so the checkout reset tools/ to pre-fix bytes
+(f2605ea5 = pre-c-96-era-pin, pre-exit-contract canonical). The launcher's
+EXPECT_TPL_SHA guard (9c85e6a6) caught it fail-closed at zero pairing cost —
+exactly the guard's designed behavior.
+
+Recovery (same turn, per c-91/c-108 law): byte-exact restore of BOTH templates
+from open PR#72 head via `git cat-file blob pr72-head:<machine-derived path>`
+(c-123 law), sha-verified (8a9bf41f plain / 9c85e6a6 canonical), unit test
+executed on this silicon (PASS rc=0), and COMMITTED into this PR branch so a
+fresh checkout of the PR head reproduces the battery with no local restore step.
+Attempt-2 launches from the checked-in bytes.
+
+This abort is not re-numbered away; attempt-2 will be the settle-eligible run.
