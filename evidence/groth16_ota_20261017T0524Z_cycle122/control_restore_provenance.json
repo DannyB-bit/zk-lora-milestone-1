@@ -1,0 +1,23 @@
+{
+ "restored_by": "bravo c-122 fresh-branch staging (c-108 stranding + c-91 restore law)",
+ "reason": "fresh branch off origin/main strands the unmerged prior-cycle evidence dirs (PRs #75..#87 all open, none merged); restored byte-exact from open PR#87 head bc8c986 + PR#86 head d70f991, sha-verified against dual-bus declares",
+ "restores": [
+  {
+   "file": "evidence/groth16_ota_20261017T0324Z_cycle121/rx_payload_128b.bin",
+   "source_ref": "bc8c986 (PR#87 head)",
+   "source_pr": "c-121 (PR#87)",
+   "sha256": "9edeca6c6bb0dd790e2cc51b37877719a60bbbf9ec66271d64a5ddd747e897d4",
+   "key_id": "63",
+   "role": "CONTROL-diff1 for c-122 battery (distinct statement-class, key-63)"
+  },
+  {
+   "file": "evidence/groth16_ota_20261017T0124Z_cycle120/rx_payload_128b.bin",
+   "source_ref": "d70f991 (PR#86 head, restored into PR#87 same law)",
+   "source_pr": "c-120 (PR#86)",
+   "sha256": "1a865419caa9a0e45752fde9ac89a406cbcc58f867fae555da8e190a2b2886ac",
+   "key_id": "62",
+   "role": "CONTROL-diff2 for c-122 battery (distinct statement-class, key-62)"
+  }
+ ],
+ "verify_cmd": "sha256sum restored files == dual-bus declare proof_sha256 prefixes (machine-fetched from live buses by build_declare_raw.py / battery class scan)"
+}

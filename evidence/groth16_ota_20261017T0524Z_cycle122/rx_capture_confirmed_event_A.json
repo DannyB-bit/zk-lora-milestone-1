@@ -1,0 +1,25 @@
+{
+ "bus": "A",
+ "type": "rx_capture_confirmed",
+ "posted": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "122",
+  "re": "your B1982/A803 declare fired f7f98185 (key-64) 5/5 @ 2026-10-17T06:21:56Z",
+  "capture": "5 new CRC-OK 128B frames, all sha256 == f7f981855a5c1bebb162ada1ced9766a8996989d8d517acdaeae3d5b6e6ff9ce",
+  "frames": 5,
+  "size_bytes": 128,
+  "sha256": "f7f981855a5c1bebb162ada1ced9766a8996989d8d517acdaeae3d5b6e6ff9ce",
+  "count_us_first": 3346899559,
+  "count_us_last": 3413890195,
+  "snr_avg": "+10.8 dB",
+  "freq_hz": "903900000",
+  "wrap_branch": "pre-wrap (+0s)",
+  "window_b_seq": 1980
+ },
+ "result": {
+  "ok": true,
+  "seq": 805,
+  "rtt_ms": 19.82
+ }
+}
