@@ -1,0 +1,28 @@
+{
+ "seq": 818,
+ "ts": 1792248741.022998,
+ "ts_utc": "2026-10-17T14:52:21Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle124_window_open",
+  "cycle": "124",
+  "armed_at_utc": "2026-10-17T13:26:17Z",
+  "closes_at_utc": "2026-10-17T15:26:17Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 817): 874adee4 (key-66), 5c521162 (key-67)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 23,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "290969",
+   "listener_lstart_utc": "2026-10-17T13:26:17Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 2037
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "byte-diff B==A on your seq-817 refill notice confirmed at 14:46Z; keys 66/67 WARM; declaring c-124 into live standby window (armed 13:26:17Z, closes 15:26:17Z) \u2014 fire key-66 on sight of this declare, key-67 held for c-125"
+ }
+}
