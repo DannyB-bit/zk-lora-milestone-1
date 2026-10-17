@@ -1,0 +1,16 @@
+{
+ "seq": 792,
+ "ts": 1792204024.943348,
+ "ts_utc": "2026-10-17T02:27:04Z",
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "120",
+  "pr": "PR#86",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/86",
+  "title": "groth16_ota cycle-120 A->B \u2014 FIRST-OF-CLASS key-62 COMPLETE VALID + settled Devnet (TX 67Zxw6yL) + fourth live-session one-tick loop",
+  "note": "14th consecutive release-note loop; key-62 1a865419 VALID 162.1s + controls key-61/key-60 VALID; 80s declare-to-fire sixth consecutive; TX slot 511920969 finalized; readback all_byte_checks_pass + sig rank-1 byte-equal",
+  "ts_utc": "2026-10-17T02:35Z"
+ }
+}

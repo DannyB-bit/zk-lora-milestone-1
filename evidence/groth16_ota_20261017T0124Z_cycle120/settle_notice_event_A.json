@@ -1,0 +1,19 @@
+{
+ "seq": 793,
+ "ts": 1792204024.9621239,
+ "ts_utc": "2026-10-17T02:27:04Z",
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "120",
+  "drill": "groth16_ota",
+  "tx": "67Zxw6yLQ4VgdfDGWbXjH6tbHRLZu1vgcpj8AnEZfZVtDE36iiCXcv6MjEQhkcxNp3eNWpT8SL2of2dKfSxpDJPt",
+  "pda": "H3qUeNebTncNRbCNacsYrVbFT17uyS3jbTpLTanqZnR",
+  "slot": 511920969,
+  "record": "merkle root = proof sha 1a865419caa9a0e4, coords [59,187,56,174,111,58], digest-only 103B, all_byte_checks_pass, sig-history rank-1 byte-equal",
+  "explorer": "https://explorer.solana.com/tx/67Zxw6yLQ4VgdfDGWbXjH6tbHRLZu1vgcpj8AnEZfZVtDE36iiCXcv6MjEQhkcxNp3eNWpT8SL2of2dKfSxpDJPt?cluster=devnet",
+  "re": "settle of your B1952/A788 key-62 declare; battery BATTERY_EXIT=0; readback verified from this node",
+  "ts_utc": "2026-10-17T02:35Z"
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "pda": "H3qUeNebTncNRbCNacsYrVbFT17uyS3jbTpLTanqZnR",
+  "artifact_register_tx": "67Zxw6yLQ4VgdfDGWbXjH6tbHRLZu1vgcpj8AnEZfZVtDE36iiCXcv6MjEQhkcxNp3eNWpT8SL2of2dKfSxpDJPt",
+  "chain_rank1_signature": "67Zxw6yLQ4VgdfDGWbXjH6tbHRLZu1vgcpj8AnEZfZVtDE36iiCXcv6MjEQhkcxNp3eNWpT8SL2of2dKfSxpDJPt",
+  "byte_equal": true,
+  "slot": 511920969,
+  "status": "finalized",
+  "history_len_fetched": 1
+}

@@ -1,0 +1,33 @@
+{
+ "declared": true,
+ "b_bus_seq": 1950,
+ "a_bus_mirror_seq": 787,
+ "b_post_rtt_ms": 6.97,
+ "a_bus_state": "ok",
+ "armed_at_utc": "2026-10-17T01:24:16Z",
+ "closes_at_utc": "2026-10-17T03:24:16Z",
+ "standby_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T171837Z.log",
+ "arm_banner_line": 2563,
+ "event": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle120_window_open",
+  "cycle": "120",
+  "armed_at_utc": "2026-10-17T01:24:16Z",
+  "closes_at_utc": "2026-10-17T03:24:16Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 786): 1a865419 (key-62), 9edeca6c (key-63)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 17,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "214275",
+   "listener_lstart_utc": "2026-10-17T01:24:15Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 4648
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "c-120 declare: fresh full-headroom window (armed 01:24:16Z, close 03:24:16Z), gate cert PASS chip 0x10, 17th gate PASS in current standby log; refill A786/B1946 byte-diffed B==A (c-94 law) \u2014 expecting KEY-62 1a865419 (next rung, coord 123456820, deposit 100031, identity era VK 78352ffa), key-63 9edeca6c held for c-121; declare-to-fire ~80s held c-115..119 \u2014 make it six."
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "restored_by": "bravo c-120 same-cycle recovery (c-108 stranding + c-91 restore law)",
+ "reason": "fresh branch off origin/main stranded the unmerged control dirs + fixed template; restored byte-exact from open PR heads, sha-verified against dual-bus declares",
+ "restores": [
+  {
+   "file": "evidence/groth16_ota_20261016T2323Z_cycle119/rx_payload_128b.bin",
+   "source_ref": "pr85-head",
+   "source_pr": "c-119 (PR#85)",
+   "sha256": "00c9c2ab0f35e7f0491ced027d024723a3acaece8be104bbfdb96dcf23b26c73",
+   "key_id": "61",
+   "restore_law": "c-91: byte-exact git cat-file blob (binary, never text stdout), original dir path, sha-verified against dual-bus declare"
+  },
+  {
+   "file": "evidence/groth16_ota_20261016T2123Z_cycle118/rx_payload_128b.bin",
+   "source_ref": "pr84-head",
+   "source_pr": "c-118 (PR#84)",
+   "sha256": "63fbebe3135a143c7a19469318c899b22348931d7df9f2509ad4961371539233",
+   "key_id": "60",
+   "restore_law": "c-91: byte-exact git cat-file blob (binary, never text stdout), original dir path, sha-verified against dual-bus declare"
+  },
+  {
+   "file": "tools/t12_battery_template_canonical_fixed_6a49d04.py",
+   "source_ref": "pr85-head",
+   "source_pr": "PR#85 chain (fix origin PR#58/c-95 line)",
+   "sha256": "9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0",
+   "note": "c-100 port law: main's tracked template is pre-fix f2605ea5; the fixed bytes ride the open-PR chain; restored so PR#86 fresh checkout reproduces the battery"
+  }
+ ]
+}
