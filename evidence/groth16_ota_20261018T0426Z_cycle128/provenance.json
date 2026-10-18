@@ -1,0 +1,7 @@
+{
+ "source": "vendored byte-exact from open PR#94 head (worktree /tmp/m1-c129 at e41d967) evidence/groth16_ota_20261018T0426Z_cycle128/rx_payload_128b.bin",
+ "role": "control-diff2 for cycle-130 battery (key-70, DIFFERENT statement-class than key-72 primary)",
+ "payload_sha256": "29464987041faf98e48ee7e142bd709b800644d98f8127436a474728c179984a",
+ "verified_against": "dual-bus groth16_proof_tx declares (A seq 865 / B seq 2113), byte-equal",
+ "restored_utc": "2026-10-18T11:07:30Z"
+}
