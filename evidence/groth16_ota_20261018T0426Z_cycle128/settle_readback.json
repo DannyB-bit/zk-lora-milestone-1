@@ -1,0 +1,14 @@
+{
+ "pda": "99DZEwR14pQ5kXaUJBoXXE1Epigek5PZ93MZoaJqdtsx",
+ "claimed_register_tx": "58oSgxmub4K6WtZVkPQVwEhk4y7oUEHeTfCcp7F2Lm6t9b3JbNvR3XzpbRcEEHgtJwiezWbSzk7U6ergSQEbC9y2",
+ "onchain_signatures": [
+  "58oSgxmub4K6WtZVkPQVwEhk4y7oUEHeTfCcp7F2Lm6t9b3JbNvR3XzpbRcEEHgtJwiezWbSzk7U6ergSQEbC9y2"
+ ],
+ "sig_byte_match": true,
+ "fetched_utc": "2026-10-18T04:58:48Z",
+ "method": "live RPC getSignaturesForAddress + getTransaction on record PDA (settle-signature chain-readback gate)",
+ "tx_sig": "58oSgxmub4K6WtZVkPQVwEhk4y7oUEHeTfCcp7F2Lm6t9b3JbNvR3XzpbRcEEHgtJwiezWbSzk7U6ergSQEbC9y2",
+ "slot": 512322184,
+ "err": null,
+ "readback": "live RPC getTransaction err=null; RegisterCoordinates invoked; protocol fee 5000 lamports collected; Language-U coords [11, 4, 185, 155, 44, 178] = payload[0:6]; chain_readback_v2 all_byte_checks_pass=true (session+coords+root) context_slot 512322184"
+}

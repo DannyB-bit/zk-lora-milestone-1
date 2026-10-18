@@ -1,0 +1,9 @@
+{
+ "file": "evidence/groth16_ota_20261017T2259Z_cycle127/rx_payload_128b.bin",
+ "sha256": "d78f43cd0f3b0d2b7e076872f14ce8ac9a470b904c7e83649fadc9c251934049",
+ "restored_from_ref": "pr93-head",
+ "why": "key-69 control (c-127, PR#93 head)",
+ "restore_method": "local bytes byte-identical to PR head (c-91 law: sha-verified vs dual-bus declares, binary)",
+ "sha_verified_vs_dual_bus_declare": true,
+ "restored_utc": "2026-10-18T05:12:01Z"
+}
