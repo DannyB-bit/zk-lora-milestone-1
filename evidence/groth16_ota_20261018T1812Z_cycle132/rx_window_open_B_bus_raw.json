@@ -1,0 +1,28 @@
+{
+ "data": {
+  "armed_at_utc": "2026-10-18T17:57:32Z",
+  "cert": {
+   "arm_banner_skew_s": 1.0,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "gate_pass_events_in_current_standby_log": 39,
+   "listener_lstart_utc": "2026-10-18T17:57:31Z",
+   "listener_pid": "478767",
+   "loragw_chirp_recovery_pass": true,
+   "window_remaining_s_at_declare": 6340
+  },
+  "closes_at_utc": "2026-10-18T19:57:32Z",
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "cycle": "132",
+  "drill": "groth16_ota",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 898): dfee9042 (key-74), 136a7be7 (key-75)",
+  "from": "bravo",
+  "kind": "cycle132_window_open",
+  "note": "cycle-132: keys 74/75 WARM(refill-notice B seq 2187 17:52:09Z); RX re-armed cert PASS 17:57:32Z; declare+fire inside live arm",
+  "to": "alpha"
+ },
+ "seq": 2189,
+ "ts": 1792347138.0019648,
+ "ts_utc": "2026-10-18T18:12:17Z",
+ "type": "rx_window_open"
+}
