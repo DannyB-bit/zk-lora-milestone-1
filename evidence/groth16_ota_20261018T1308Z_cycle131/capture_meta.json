@@ -1,0 +1,41 @@
+{
+ "drill": "groth16_ota",
+ "cycle": 131,
+ "key_id": "73",
+ "window": {
+  "armed_at_utc": "2026-10-18T11:30:00Z",
+  "closes_at_utc": "2026-10-18T13:30:00Z",
+  "declared_utc": "2026-10-18T13:06:54Z",
+  "b_bus_seq": 2162,
+  "a_bus_mirror_seq": 888
+ },
+ "fire": {
+  "fired_utc": "2026-10-18T13:08:16Z",
+  "sends": "5/5 TX_DONE",
+  "a_bus_seq": 890,
+  "proof_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+  "declare_to_fire_s": 80
+ },
+ "capture": {
+  "crc_ok_frames": 5,
+  "total_packets": 5,
+  "snr_db": [
+   "10.8",
+   "10.5",
+   "11.0",
+   "11.8",
+   "11.0"
+  ],
+  "count_us_range": [
+   1528031246,
+   1595214712
+  ],
+  "sha256_match": true
+ },
+ "dual_bus_byte_equal": {
+  "declare": true,
+  "fired": true,
+  "window": true
+ },
+ "sources": "machine-parsed: B-bus + A-bus events (build_declare_raw.py companion), c-82 serialization law"
+}
