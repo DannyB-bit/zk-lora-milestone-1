@@ -1,0 +1,13 @@
+{
+ "data": {
+  "exit_code": 0,
+  "fired_utc": "2026-10-18T18:13:47Z",
+  "payload_sha256": "dfee90424c8d79822c4c9b5a5ff00d84e2fad076fc8a8c99bc479e04a74bf451",
+  "sends": "5/5 TX_DONE",
+  "window_seq": "2189"
+ },
+ "seq": 901,
+ "ts": 1792347227.9107409,
+ "ts_utc": "2026-10-18T18:13:47Z",
+ "type": "groth16_tx_fired"
+}
