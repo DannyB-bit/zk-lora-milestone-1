@@ -1,0 +1,33 @@
+{
+ "declared": true,
+ "b_bus_seq": 2280,
+ "a_bus_mirror_seq": 935,
+ "b_post_rtt_ms": 7.641,
+ "a_bus_state": "ok",
+ "armed_at_utc": "2026-10-19T12:00:34Z",
+ "closes_at_utc": "2026-10-19T14:00:34Z",
+ "standby_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T171837Z.log",
+ "arm_banner_line": 6531,
+ "event": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle136_window_open",
+  "cycle": "136",
+  "armed_at_utc": "2026-10-19T12:00:34Z",
+  "closes_at_utc": "2026-10-19T14:00:34Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 926): e7361bfe (key-77), b9d789bf (key-78), ffc0909c (key-79)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 48,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "595024",
+   "listener_lstart_utc": "2026-10-19T12:00:34Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 5578
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "c-136 (BUS 14th / PR-body 30th) - hardset key-78 (b9d789bf); keys 78/79 warm per dual-bus cache_refill_notice (A seq 926, identity era VK 78352ffa / PK aea2ed17, self-verified @133s); fresh certified arm 12:00:34Z (+7200s, closes 14:00:34Z) after supervisor rotation MID-GATHER disclosed per tick-lag law (pre-run pgrep 11:52Z stale: old listener 581893 closed 12:00:14Z, gate PASS #48 re-armed 12:00:34Z); watcher hot-path proven live c-135 fired 10:12:03Z; 30th loop - squeeze recovered into post-rotation window"
+ }
+}
