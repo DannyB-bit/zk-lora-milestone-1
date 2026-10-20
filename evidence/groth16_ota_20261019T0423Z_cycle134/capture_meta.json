@@ -1,0 +1,30 @@
+{
+ "cycle": "134",
+ "key_id": "76",
+ "window_seq": "2238",
+ "declare_sha256": "78910fc8745af74416a761f8767902b773e9757a841e5ac08212d8825c8b7362",
+ "payload_sha256": "78910fc8745af74416a761f8767902b773e9757a841e5ac08212d8825c8b7362",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "11.8",
+ "inter_frame_s": [
+  16.78,
+  16.75,
+  16.71,
+  16.79
+ ],
+ "first_count_us": 1343266570,
+ "last_count_us": 1410294233,
+ "armed_at_utc": "2026-10-19T03:59:13Z",
+ "closes_at_utc": "2026-10-19T05:59:13Z",
+ "declare_ts_utc": "2026-10-19T04:21:30Z",
+ "fired_utc": "2026-10-19T04:22:49Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "pre-wrap (+0s) branch, count_us origin=listener process boot (banner 2026-10-19T03:59:13Z); extract-before-close per c-117; declare-to-fire 79s computed from bus timestamps"
+}
