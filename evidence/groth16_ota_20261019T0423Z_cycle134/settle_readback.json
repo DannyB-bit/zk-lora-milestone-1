@@ -1,0 +1,11 @@
+{
+ "pda": "889z7ub9DptwWoNKbeCYNMGvY9Rm5STGwUgwK9mRefre",
+ "tx_sig": "krQgTuS5eNK8JhQkK8mDgSzuMbv7LEdbzPfFaMrEgJTdQv6qSWJX2MhfKjXWFARDX4Zd2zvrj2N2A2ASze63KTS",
+ "on_chain_sigs": [
+  "krQgTuS5eNK8JhQkK8mDgSzuMbv7LEdbzPfFaMrEgJTdQv6qSWJX2MhfKjXWFARDX4Zd2zvrj2N2A2ASze63KTS"
+ ],
+ "match": true,
+ "verified_note": "signature machine-read from result_summary.txt and byte-matched against live getSignaturesForAddress; the first hand-typed compare cell failed on a hand-copy typo (disclosed per hand-typed-constant law)",
+ "slot": 512679030,
+ "err": null
+}
