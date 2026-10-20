@@ -1,0 +1,30 @@
+{
+ "cycle": "139",
+ "key_id": "81",
+ "window_seq": "2328",
+ "declare_sha256": "c7a825d4179371cd79a4d9706aa22df805247d173434109c39d3bc5f6c35dc2c",
+ "payload_sha256": "c7a825d4179371cd79a4d9706aa22df805247d173434109c39d3bc5f6c35dc2c",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "11.8",
+ "inter_frame_s": [
+  16.71,
+  16.79,
+  16.79,
+  16.93
+ ],
+ "first_count_us": 2163384187,
+ "last_count_us": 2230606428,
+ "armed_at_utc": "2026-10-19T20:01:55Z",
+ "closes_at_utc": "2026-10-19T22:01:55Z",
+ "declare_ts_utc": "2026-10-19T20:37:52Z",
+ "fired_utc": "2026-10-19T20:39:12Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-19T20:01:55Z); extract-before-close per c-117; declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate)"
+}
