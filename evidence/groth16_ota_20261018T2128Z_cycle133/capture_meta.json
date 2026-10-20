@@ -1,0 +1,30 @@
+{
+ "cycle": "133",
+ "key_id": "75",
+ "window_seq": "2204",
+ "declare_sha256": "136a7be73bdf3896c8360a522999bd3d3a7cddb6a653b0a07706efc4131e7328",
+ "payload_sha256": "136a7be73bdf3896c8360a522999bd3d3a7cddb6a653b0a07706efc4131e7328",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "11.2",
+ "inter_frame_s": [
+  16.71,
+  16.78,
+  16.75,
+  16.78
+ ],
+ "first_count_us": 1163373484,
+ "last_count_us": 1230394947,
+ "armed_at_utc": "2026-10-18T19:57:52Z",
+ "closes_at_utc": "2026-10-18T21:57:52Z",
+ "fired_utc": "2026-10-18T21:30:03Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 1,
+ "note": "watcher fired ~1s after declare hit A-bus (A905 21:28:43Z, declare A904 21:28:42Z); post-wrap branch (+4294.967296s count_us origin=banner second 19:57:52Z); extract-before-close per c-117",
+ "bundle_utc": "2026-10-18T21:3xZ"
+}
