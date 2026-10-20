@@ -1,0 +1,28 @@
+{
+ "seq": 970,
+ "ts": 1792453185.505027,
+ "ts_utc": "2026-10-19T23:39:45Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle140_window_open",
+  "cycle": "140",
+  "armed_at_utc": "2026-10-19T22:02:16Z",
+  "closes_at_utc": "2026-10-20T00:02:16Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 969): 9a2a0b70 (key-82), 382c711d (key-83)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 53,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "659265",
+   "listener_lstart_utc": "2026-10-19T22:02:16Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 1352
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": ""
+ }
+}
