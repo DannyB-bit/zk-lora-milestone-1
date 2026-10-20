@@ -1,0 +1,36 @@
+{
+ "readback_utc": "2026-10-20T20:14:03Z",
+ "tool": "chain_readback_v2.py",
+ "cluster_rpc": "https://api.devnet.solana.com",
+ "record_pda": "B7DKMScoUtCYryooBHbHMwXAF3fM1u5wDtxMis9o1fjZ",
+ "account_exists": true,
+ "account_data_len": 103,
+ "account_owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "account_lamports": 1173480,
+ "context_slot": 513277505,
+ "anchor_layout": {
+  "discriminator": "0..8",
+  "authority": "8..40",
+  "session_id_ascii": "40..56",
+  "coords_raw": "56..62",
+  "merkle_root_raw_32b": "62..94",
+  "tail_9b": "94..103 (space/bump, not interpreted)"
+ },
+ "on_chain_session_id_ascii": "102a0f366c2078df",
+ "on_chain_coords": [
+  10,
+  222,
+  72,
+  7,
+  21,
+  135
+ ],
+ "on_chain_merkle_root_hex": "102a0f366c2078df3b1d247d8e3887d0b7b433e12599cc7baf7730d1ab39aa95",
+ "expected_merkle_root_hex": "102a0f366c2078df3b1d247d8e3887d0b7b433e12599cc7baf7730d1ab39aa95",
+ "session_id_ascii_match": true,
+ "coords_byte_match": true,
+ "merkle_root_raw_byte_match": true,
+ "authority_match": true,
+ "all_byte_checks_pass": true,
+ "verdict": "PASS"
+}

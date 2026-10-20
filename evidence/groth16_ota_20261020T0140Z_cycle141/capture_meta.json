@@ -1,0 +1,30 @@
+{
+ "cycle": "141",
+ "key_id": "83",
+ "window_seq": "2367",
+ "declare_sha256": "382c711d557b102d0f2187491c8491ce2471cfcd23c97c0c9c17451cc4999a26",
+ "payload_sha256": "382c711d557b102d0f2187491c8491ce2471cfcd23c97c0c9c17451cc4999a26",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.5",
+ "snr_max": "11.2",
+ "inter_frame_s": [
+  16.75,
+  16.9,
+  16.79,
+  16.74
+ ],
+ "first_count_us": 1523588759,
+ "last_count_us": 1590769383,
+ "armed_at_utc": "2026-10-20T00:02:37Z",
+ "closes_at_utc": "2026-10-20T02:02:37Z",
+ "declare_ts_utc": "2026-10-20T01:39:28Z",
+ "fired_utc": "2026-10-20T01:40:48Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T00:02:37Z); the window CLOSED on schedule 2026-10-20T02:02:37Z (listener exit rc=124) with the burst captured in-window \u2014 extract ran post-close this tick on the intact session segment; declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate)"
+}
