@@ -1,0 +1,30 @@
+{
+ "cycle": "146",
+ "key_id": "87",
+ "window_seq": "2439",
+ "declare_sha256": "4e8698263e50cf0e34d7e0d64b14c3a8e8fbafe755bb174ab726e9a8a37f2ddd",
+ "payload_sha256": "4e8698263e50cf0e34d7e0d64b14c3a8e8fbafe755bb174ab726e9a8a37f2ddd",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "11.2",
+ "inter_frame_s": [
+  16.84,
+  16.78,
+  16.75,
+  16.74
+ ],
+ "first_count_us": 1070942828,
+ "last_count_us": 1138044990,
+ "armed_at_utc": "2026-10-20T12:04:38Z",
+ "closes_at_utc": "2026-10-20T14:04:38Z",
+ "declare_ts_utc": "2026-10-20T12:22:22Z",
+ "fired_utc": "2026-10-20T12:23:42Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T12:04:38Z); burst captured IN-WINDOW (armed 2026-10-20T12:04:38Z, fired 2026-10-20T12:23:42Z \u2014 all 5 sends before the scheduled close 2026-10-20T14:04:38Z); extract ran MID-WINDOW this tick on the live session segment (true mid-window: extract executed while the listener still holds the bus; window closes 2026-10-20T14:04:38Z; c-117 precedent); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). CYCLE-145 MISS owned on the record: standby window armed 2026-10-20T10:04:18Z was never declared (tick wall-clock lag \u2014 the declaring turn ran after its close) and closed 12:04:18Z rc=124 with 0 CRC OK; no fire, no evidence, no cycle consumed. c-146 is the next flown cycle."
+}
