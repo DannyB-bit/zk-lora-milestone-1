@@ -1,0 +1,3 @@
+ABORT: control classes not satisfiable (first-of-class key-72: need 2 distinct-statement-class controls, found 0); candidates: (none)
+BATTERY_EXIT=1
+BATTERY_DONE_UTC=2026-10-18T11:04:12Z
