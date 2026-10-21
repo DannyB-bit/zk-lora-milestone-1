@@ -1,0 +1,14 @@
+{
+ "pda": "BysCTWpeWe1Mhc4CbvKQ39Myk7wEosdWG1rkF4fneWzH",
+ "claimed_register_tx": "2feejdAZ3AsqeTJhwdECjKRR8ahJbkMouyZGyBdhjwqmMHHtsiVSLNBgAh4viAwKT5vgroi5eLn8iJz7LFo5wSgz",
+ "onchain_signatures": [
+  "2feejdAZ3AsqeTJhwdECjKRR8ahJbkMouyZGyBdhjwqmMHHtsiVSLNBgAh4viAwKT5vgroi5eLn8iJz7LFo5wSgz"
+ ],
+ "sig_byte_match": true,
+ "fetched_utc": "2026-10-18T11:21:16Z",
+ "method": "live RPC getSignaturesForAddress + getTransaction on record PDA (settle-signature chain-readback gate)",
+ "tx_sig": "2feejdAZ3AsqeTJhwdECjKRR8ahJbkMouyZGyBdhjwqmMHHtsiVSLNBgAh4viAwKT5vgroi5eLn8iJz7LFo5wSgz",
+ "slot": 512418578,
+ "err": null,
+ "readback": "live RPC getTransaction err=None; fee 5000 lamports; Language-U coords [12,153,146,143,198,126] = payload[0:6]; chain_readback PASS"
+}

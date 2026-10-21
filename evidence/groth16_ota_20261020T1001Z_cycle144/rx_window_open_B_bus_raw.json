@@ -1,0 +1,28 @@
+{
+ "seq": 2422,
+ "ts": 1792490391.484958,
+ "ts_utc": "2026-10-20T09:59:51Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle144_window_open",
+  "cycle": "144",
+  "armed_at_utc": "2026-10-20T08:03:58Z",
+  "closes_at_utc": "2026-10-20T10:03:58Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1002): bf8db886 (key-86), 4e869826 (key-87), 840d64b8 (key-88), 563402ca (key-89)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 58,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "723552",
+   "listener_lstart_utc": "2026-10-20T08:03:57Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 248
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "hourly tick 09:4xZ: c-144 one-tick loop into post-close rotation window; keys 88/89 warm from Alpha's 08:10Z refill"
+ }
+}

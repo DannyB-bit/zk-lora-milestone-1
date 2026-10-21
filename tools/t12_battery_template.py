@@ -32,6 +32,12 @@ Machine-derived, never typed:
                         NOT-first-of-class runs require a same-class control
                         payload on disk (vendor it or abort) + 1 different.
   * payload SHA       : from the declare, never typed
+Exit contract (Codex P1, PR#55/56 reviews): 0 = PRIMARY VALID + controls
+  VALID (the only settle-eligible verdict); 3 = QUARANTINED (control flip);
+  4 = PRIMARY INVALID. Launchers gate on this code, never on log prose.
+  The CLI entry is sys.exit(main()) — the return value IS the process exit
+  status (PR#58 review blocker: the bare main() call discarded it, so every
+  run exited 0, including QUARANTINE and PRIMARY INVALID).
 Fail-closed gates (abort = no verdict, by battery law):
   * A-bus unreachable  -> NO verdict may issue; cross-bus byte-diff is mandatory
   * window not found / not unique -> abort
@@ -50,7 +56,10 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-M1 = os.path.expanduser("~/fleet-repos/zk-lora-milestone-1")
+# Codex P2 remediation (PR#55 inline 4252087658): derive the repo root from THIS
+# file so a fresh checkout anywhere resolves --evidence-dir, the control-scan
+# tree and the guard paths against ITS OWN tree, never a foreign checkout.
+M1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.expanduser("~/fleet-repos/zk-lorawan")
 BIN = os.path.join(REPO, "target/debug/zk_lorawan_prove")
 def _newest_standby_log():
@@ -71,7 +80,18 @@ VERIFY_FIELDS = ("public_input_hashes", "gateway_address_hex", "firmware_hash_he
                  "deposit_value", "private_key_id", "deposit_commitment", "proof_sha256")
 
 
+LINES: list = []  # module-level: main() rebinds via `global LINES`; the __main__
+#                 abort wrapper reads it so a pre-verdict ABORT still emits the
+#                 accumulated class-scan/candidate/guard lines (abort transparency).
+
+
 def tok():
+    # Codex P2 remediation (PR#55 inline 4252087658): honor the exported
+    # FLEET_FAST_TOKEN — a fresh machine with a valid exported token but no
+    # Hermes .env must be able to run the documented reproduce command.
+    env_tok = os.environ.get("FLEET_FAST_TOKEN")
+    if env_tok:
+        return env_tok
     for line in open(os.path.expanduser("~/.hermes/.env")):
         if line.strip().startswith("FLEET_FAST_TOKEN"):
             return line.strip().partition("=")[2].strip().strip('"').strip("'")
@@ -101,6 +121,28 @@ def sha(p):
     return hashlib.sha256(open(p, "rb").read()).hexdigest()
 
 
+def a_mirror_hits(Aev, sha256_hex, window_seq, before_seq=None):
+    """Locate the A-bus mirror of a declare by window_seq + SHA — NEVER SHA
+    alone (B617 blocker a / Codex P2 on PR#65, proven c-99): a dry-run declare
+    (window_seq='test-window') can share the REAL burst SHA with no fired
+    payload, and a SHA-only join then sees a phantom mirror and aborts a
+    perfectly good cycle (or silently skips a legitimate control candidate).
+    window_seq is machine-carried from the B-side declare; str()-normalized
+    only (literal preservation law). before_seq bounds the scan to declares
+    that PRECEDED the primary (time-travel law); None = unbounded (primary
+    join, where the window_seq itself is the unique locator)."""
+    out = []
+    for e in Aev:
+        if e.get("type") != "groth16_proof_tx":
+            continue
+        if before_seq is not None and e["seq"] >= before_seq:
+            continue
+        d = e.get("data", {})
+        if d.get("proof_sha256") == sha256_hex and str(d.get("window_seq")) == str(window_seq):
+            out.append(e)
+    return out
+
+
 def telemetry():
     out = []
     for cmd in (["vcgencmd", "measure_temp"], ["vcgencmd", "get_throttled"]):
@@ -111,6 +153,19 @@ def telemetry():
         except Exception:
             pass
     return " ".join(out)
+
+
+def verdict_exit_code(primary, controls):
+    """Exit-contract mapping (PR#58 review blocker): 0 = PRIMARY VALID + all
+    controls VALID (sole settle-eligible verdict); 3 = QUARANTINED (a control
+    flipped INVALID — no verdict, bisect); 4 = PRIMARY INVALID. Pure function of
+    the verdicts so the unit test can assert the contract without buses or
+    silicon. Callers gate on the return value, never on log prose."""
+    if not all(v == "VALID" for v in controls.values()):
+        return 3
+    if primary == "VALID":
+        return 0
+    return 4
 
 
 def main():
@@ -131,6 +186,8 @@ def main():
     log_path = os.path.join(evid, f"t12_cycle{cycle}_battery.log")
 
     lines = []
+    global LINES
+    LINES = lines  # abort-path transparency: __main__ emits these on SystemExit
     label = f"T12_CYCLE{cycle}_BATTERY_RUN_UTC"  # DERIVED from the arg that locates the window
     lines.append(f"{label}={time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}")
     lines.append(f"invocation: {' '.join(sys.argv)}")
@@ -176,15 +233,19 @@ def main():
                          f"NO VERDICT MAY ISSUE. Re-run when the twin box is live. "
                          f"(Fail-closed by design; there is no --allow-dark override.)")
 
-    # ---- primary declare: linked by window seq on B, by SHA on A; all fields byte-equal ----
+    # ---- primary declare: linked by window seq on B, by window_seq+SHA on A ----
+    # (SHA-only A-join retired: dry-run declares with window_seq='test-window'
+    # share the real burst SHA — phantom mirrors. window_seq+SHA is unique
+    # across both buses for every FIRED cycle to date; the join is also
+    # asserted unique at runtime, so a future naming collision ABORTs rather
+    # than silently picking a wrong mirror.)
     d_b_hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
                 and e.get("data", {}).get("window_seq") == wsid]
     if len(d_b_hits) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} declares on B-bus: {len(d_b_hits)} (need exactly 1)")
     d_b = d_b_hits[0]
     declared = d_b["data"]["proof_sha256"]
-    d_a_hits = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                and e.get("data", {}).get("proof_sha256") == declared]
+    d_a_hits = a_mirror_hits(Aev, declared, wsid, before_seq=None)
     if len(d_a_hits) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} declare mirrors on A-bus: {len(d_a_hits)} (need exactly 1)")
     d_a = d_a_hits[0]
@@ -299,14 +360,22 @@ def main():
 
     primary_class = declare_class(d_b["data"])
     primary_pih = json.dumps(d_b["data"].get("public_input_hashes"), sort_keys=True)
+    # Codex P1 remediation (PR#56 inline 4252900841, PR#57 4253723476): priors are
+    # declares that PRECEDED the primary on each bus. Filtering only by
+    # "seq != primary" let a LATER same-class declare count as a prior when an
+    # older cycle's battery was re-run (time-travel: c-93 would lose its recorded
+    # first-of-class the moment a future key-35 declare landed). The verdict
+    # recorded at run time must be reproducible forever: seq < primary_seq on
+    # both the class history AND the pih-only guard AND control candidates.
     prior_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
-               and declare_class(e.get("data", {})) == primary_class
-               and e["seq"] != d_b["seq"]]
+               and e["seq"] < d_b["seq"]
+               and declare_class(e.get("data", {})) == primary_class]
     prior_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-               and declare_class(e.get("data", {})) == primary_class
-               and e["seq"] != d_a["seq"]]
-    unclassed = sum(1 for bus in (Bev, Aev) for e in bus
+               and e["seq"] < d_a["seq"]
+               and declare_class(e.get("data", {})) == primary_class]
+    unclassed = sum(1 for bus, dseq in ((Bev, d_b["seq"]), (Aev, d_a["seq"])) for e in bus
                     if e.get("type") == "groth16_proof_tx"
+                    and e["seq"] < dseq
                     and (e.get("data", {}).get("private_key_id") is None
                          or e.get("data", {}).get("public_input_hashes") is None))
     # pih-only prior guard: an UNCLASSED prior declare (missing key id) whose public-
@@ -314,10 +383,10 @@ def main():
     # (same pih => same identity hash => same key in practice). Absence of a legible
     # key id on a prior must BLOCK the first-of-class claim, not enable it.
     prior_pih_b = [e for e in Bev if e.get("type") == "groth16_proof_tx"
-                   and e["seq"] != d_b["seq"]
+                   and e["seq"] < d_b["seq"]
                    and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
     prior_pih_a = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                   and e["seq"] != d_a["seq"]
+                   and e["seq"] < d_a["seq"]
                    and json.dumps(e.get("data", {}).get("public_input_hashes"), sort_keys=True) == primary_pih]
     first_of_class = not prior_b and not prior_a and not prior_pih_b and not prior_pih_a
     lines.append(f"CLASS SCAN (complete dual-bus history): statement-class key-{primary_key} "
@@ -328,7 +397,7 @@ def main():
                     else f"NOT first-of-class (priors: B{[e['seq'] for e in prior_b]} A{[e['seq'] for e in prior_a]}"
                          f" pih-only B{[e['seq'] for e in prior_pih_b]} A{[e['seq'] for e in prior_pih_a]})"))
 
-    cands, skipped = [], 0
+    cands, skipped, skipped_era = [], 0, 0
     for d in os.listdir(os.path.join(M1, "evidence")):
         if not d.startswith("groth16_ota_") or f"cycle{cycle}" in d:
             continue
@@ -337,10 +406,23 @@ def main():
             continue
         s = sha(p)
         hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
+                and e["seq"] < d_b["seq"]
                 and e.get("data", {}).get("proof_sha256") == s]
-        a_hits = [e for e in Aev if e.get("type") == "groth16_proof_tx"
-                  and e.get("data", {}).get("proof_sha256") == s]
-        if len(hits) != 1 or len(a_hits) != 1 or hits[0]["data"].get("private_key_id") is None:
+        if len(hits) != 1 or hits[0]["data"].get("private_key_id") is None:
+            skipped += 1
+            continue
+        # era pin (c-96 law, proven 2026-10-13): a control payload from another
+        # keyset era verifies deterministically INVALID under the on-disk keys —
+        # a KNOWN quarantine class, never a control. Pin candidates on the
+        # PRIMARY's own vk_sha256 (machine-read from the primary declare).
+        if hits[0]["data"].get("vk_sha256") != d_b["data"].get("vk_sha256"):
+            skipped_era += 1
+            continue
+        # A-mirror join: window_seq + SHA (phantom-proof), time-travel bounded
+        # to declares that PRECEDED the primary on the A bus (Codex P1 class law).
+        a_hits = a_mirror_hits(Aev, s, hits[0]["data"].get("window_seq"),
+                               before_seq=d_a["seq"])
+        if len(a_hits) != 1:
             skipped += 1
             continue
         if any(hits[0]["data"].get(f) != a_hits[0]["data"].get(f) for f in VERIFY_FIELDS):
@@ -349,7 +431,8 @@ def main():
         cands.append((hits[0]["ts_utc"], d, s, str(hits[0]["data"]["private_key_id"]),
                       hits[0]["data"], a_hits[0]["data"]))
     cands.sort(key=lambda t: t[0], reverse=True)  # newest declare first
-    lines.append(f"CONTROL CANDIDATES (newest declare first, {len(cands)} usable / {skipped} skipped): "
+    lines.append(f"CONTROL CANDIDATES (newest declare first, {len(cands)} usable / {skipped} skipped / "
+                 f"{skipped_era} skipped-era-mismatch [vk_sha256 pin, c-96 law]): "
                  + "; ".join(f"{d} key-{k} @{ts}" for ts, d, s, k, _, _ in cands))
 
     same_c, diff_list, seen_cls = None, [], set()
@@ -425,10 +508,19 @@ def main():
     lines.append(f"SILICON-END {telemetry()}")
 
     # ---- verdict per battery law ----
-    if not all(v == "VALID" for v in verdicts.values()):
+    # Codex P1 remediation (PR#56 inline 4252900854, PR#55 4252087640): the
+    # fail-closed contract is exit-coded, not log-prose-only. Quarantine and
+    # primary-INVALID previously fell through to exit 0 — any launcher gating on
+    # BATTERY_EXIT (as the committed run logs record it) could read a failed
+    # gate as success and proceed toward settlement. Contract (asserted by the
+    # unit test): 0 = PRIMARY VALID + all controls VALID (sole settle-eligible
+    # verdict); 3 = QUARANTINED (control flip — no verdict, bisect); 4 =
+    # PRIMARY INVALID (no settle, disclosed, bisect).
+    battery_rc = verdict_exit_code(v, verdicts)
+    if battery_rc == 3:
         lines.append("BATTERY VERDICT: QUARANTINED — a control flipped INVALID; "
                      "no verdict, bisect before any claim")
-    elif v == "VALID":
+    elif battery_rc == 0:
         lines.append(f"BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-{cycle} A->B exchange COMPLETE: "
                      f"radio 5/5 SHA MATCH ({wrap_note} frames) + pairing VALID on B die, "
                      f"declare cross-bus byte-equal, machine-located, label {label} derived not typed; "
@@ -441,7 +533,22 @@ def main():
     print(out)
     with open(log_path, "w") as fh:
         fh.write(out + "\n")
+    return battery_rc
 
 
 if __name__ == "__main__":
-    main()
+    # Abort-path transparency (c-100 prep, 2026-10-14): every ABORT raised the
+    # accumulated diagnostic lines (class scan, control candidates, guards)
+    # were LOST — printed nowhere, log file never written (it is written only
+    # on success). A launcher reading only stdout got a bare ABORT message with
+    # zero context. The wrapper emits everything accumulated before re-raising,
+    # so an abort log is shippable as honest history (per-attempt log law) and
+    # the exit contract is preserved: rc comes from main() (or 1 on abort).
+    try:
+        rc = main()
+    except SystemExit as ex:
+        if LINES:
+            print("\n".join(LINES))
+        print(f"BATTERY_ABORT: {ex.code}", flush=True)
+        raise
+    sys.exit(rc)
