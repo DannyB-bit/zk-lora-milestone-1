@@ -1,0 +1,30 @@
+{
+ "cycle": "142",
+ "key_id": "84",
+ "window_seq": "2389",
+ "declare_sha256": "9c1c7f6abe7c2d86610d5d5f1975c98532945bd854278baa43d55b58b75a951b",
+ "payload_sha256": "9c1c7f6abe7c2d86610d5d5f1975c98532945bd854278baa43d55b58b75a951b",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.0",
+ "snr_max": "11.5",
+ "inter_frame_s": [
+  16.72,
+  16.78,
+  16.72,
+  16.75
+ ],
+ "first_count_us": 1241880915,
+ "last_count_us": 1308846293,
+ "armed_at_utc": "2026-10-20T04:03:17Z",
+ "closes_at_utc": "2026-10-20T06:03:17Z",
+ "declare_ts_utc": "2026-10-20T05:35:27Z",
+ "fired_utc": "2026-10-20T05:36:47Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T04:03:17Z); burst captured IN-WINDOW (armed 2026-10-20T04:03:17Z, fired 2026-10-20T05:36:47Z); extract ran MID-WINDOW this tick on the live session segment while the listener was still hot \u2014 the window closed on schedule 2026-10-20T06:03:17Z (listener exit rc=124) AFTER the extract landed; declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate)"
+}
