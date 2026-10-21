@@ -1,0 +1,30 @@
+{
+ "cycle": "150",
+ "key_id": "91",
+ "window_seq": "2506",
+ "declare_sha256": "8d64ff9498f9de8f2313ac534dcafd3dd11cbc21af74a76647c5c8122f1b3a71",
+ "payload_sha256": "8d64ff9498f9de8f2313ac534dcafd3dd11cbc21af74a76647c5c8122f1b3a71",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.5",
+ "snr_max": "12.0",
+ "inter_frame_s": [
+  16.89,
+  16.75,
+  16.74,
+  16.78
+ ],
+ "first_count_us": 680179248,
+ "last_count_us": 747342694,
+ "armed_at_utc": "2026-10-20T20:05:59Z",
+ "closes_at_utc": "2026-10-20T22:05:59Z",
+ "declare_ts_utc": "2026-10-20T21:28:48Z",
+ "fired_utc": "2026-10-20T21:30:07Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T20:05:59Z); burst captured IN-WINDOW (armed 2026-10-20T20:05:59Z, declared AT TICK START 2026-10-20T21:28:48Z, fired 2026-10-20T21:30:07Z \u2014 all 5 sends before the scheduled close 2026-10-20T22:05:59Z); extract ran PRE-CLOSE on the live session segment (slice banner->EOF of the live session \u2014 no exit line exists yet; c-117 extract-before-close law; window closes 2026-10-20T22:05:59Z); declare-to-fire 79s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-149) was a one-tick landing (declared/fired in the 19:38Z tick, landed the same tick as its fire); c-150 repeats the early-declare fix AT TICK START (2233s remaining) into the supervisor's post-close rotation window armed 2026-10-20T20:05:59Z."
+}
