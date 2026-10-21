@@ -1,0 +1,30 @@
+{
+ "cycle": "155",
+ "key_id": "96",
+ "window_seq": "2584",
+ "declare_sha256": "370c9edd44fce6d178c6963ac27d06b4bcb59e512c89a3e801aa5678baf78005",
+ "payload_sha256": "370c9edd44fce6d178c6963ac27d06b4bcb59e512c89a3e801aa5678baf78005",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.2",
+ "snr_max": "11.5",
+ "inter_frame_s": [
+  16.79,
+  16.72,
+  16.88,
+  16.78
+ ],
+ "first_count_us": 3398166606,
+ "last_count_us": 3465336080,
+ "armed_at_utc": "2026-10-21T08:08:00Z",
+ "closes_at_utc": "2026-10-21T10:08:00Z",
+ "declare_ts_utc": "2026-10-21T09:04:31Z",
+ "fired_utc": "2026-10-21T09:05:51Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-21T08:08:00Z); burst captured IN-WINDOW (armed 2026-10-21T08:08:00Z, declared at the 09:0xZ tick 2026-10-21T09:04:31Z, fired 2026-10-21T09:05:51Z \u2014 all 5 sends before the scheduled close 2026-10-21T10:08:00Z); the window then closed on schedule 2026-10-21T10:08:00Z rc=124 and the extract ran POST-CLOSE on the CLOSED session segment (slice banner->first 'listener exit rc=124' line \u2014 post-close slice law; two-tick declare-to-land: declare+fire rode the 09:0xZ tick, battery+settle+PR ride the landing tick); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-154) landed one-tick at PR#119 (forty-seventh loop); c-155 repeated the early-declare fix (~80s to first fire) and lands THIS tick post-close."
+}

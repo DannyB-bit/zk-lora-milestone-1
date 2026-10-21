@@ -1,0 +1,9 @@
+{
+ "tx_sig": "5kWMa2NV5A7HkjKvNVvP5HXha44SWQRgSJQhkmPh5gcnM4EPzr9QjPXdu4x3iVQbA7EhW1tvy9CcNTS7Tu2sC55Q",
+ "pda": "GNbWKZksaHRkKspfGCfruyiZECNT54oABSAd6As6FvML",
+ "slot": 513584332,
+ "err": null,
+ "confirmation_status": "finalized",
+ "merkle_root": "b2b3139fafeb6e2eb65dcf2c8a2eeb7c99f0bfa6d8d44d0c31549b4eecc3ca5b",
+ "readback_note": "live RPC getSignaturesForAddress on record PDA; settle TX machine-located by signature equality with result_summary.txt REGISTER_TX"
+}

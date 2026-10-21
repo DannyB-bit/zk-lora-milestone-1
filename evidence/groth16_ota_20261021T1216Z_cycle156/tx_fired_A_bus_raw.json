@@ -1,0 +1,13 @@
+{
+ "seq": 1110,
+ "ts": 1792584968.9347253,
+ "ts_utc": "2026-10-21T12:16:08Z",
+ "type": "groth16_tx_fired",
+ "data": {
+  "window_seq": "2603",
+  "fired_utc": "2026-10-21T12:16:08Z",
+  "sends": "5/5 TX_DONE",
+  "payload_sha256": "b2b3139fafeb6e2eb65dcf2c8a2eeb7c99f0bfa6d8d44d0c31549b4eecc3ca5b",
+  "exit_code": 0
+ }
+}
