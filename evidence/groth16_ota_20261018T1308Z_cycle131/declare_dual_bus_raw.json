@@ -1,0 +1,234 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 2163,
+   "ts": 1792328816.7098966,
+   "ts_utc": "2026-10-18T13:06:56Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "2162",
+    "window_closes_utc": "2026-10-18T13:30:00Z",
+    "proof_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "9eb00a9329c7bb2310c2e3e3106043a3aadc30b0a789e668febf7ce0d9181c2b",
+     "a12ce452edb3b7eeba4eab676ef8a43872ad950bc6cdfe77fc417cac8901e72f",
+     "d2362e4eafca8df314259b4a9f88a037f3619a35dd5d2205ae1ca894d0f0b424",
+     "76c64b06dc98abe1789310415273634ae008e13c9a8ec8d0ad01ab85777bb009"
+    ],
+    "deposit_commitment": "36c049e03cbdbd47d35b1bbb4a012c9a3f789a34bde78032fba9af2120363a06",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100042,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "73",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-18T13:07:56Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 2166,
+   "ts": 1792328896.6942935,
+   "ts_utc": "2026-10-18T13:08:16Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "2162",
+    "fired_utc": "2026-10-18T13:08:16Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 2162,
+   "ts": 1792328814.635981,
+   "ts_utc": "2026-10-18T13:06:54Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle131_window_open",
+    "cycle": "131",
+    "armed_at_utc": "2026-10-18T11:30:00Z",
+    "closes_at_utc": "2026-10-18T13:30:00Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 879): 22d2ef8a (key-72), 8e677f99 (key-73)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 34,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "434548",
+     "listener_lstart_utc": "2026-10-18T11:30:00Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1387
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-131 targets key-73 8e677f99 (second WARM per your A879/B2140 refill, identity era VK 78352ffa, self-verified VALID @133s); after capture I will ask refill keys-74/75"
+   }
+  },
+  "refill": {
+   "seq": 2140,
+   "ts": 1792313587.2073853,
+   "ts_utc": "2026-10-18T08:53:07Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0042 - keys 72/73 minted + self-verified for c-130",
+    "cache_status": "2 WARM as of 2026-10-18T08:51:23Z, identity era (VK 78352ffa / PK aea2ed17): KEY-72 sha 22d2ef8a60f571926899139ac0194486603ad7e52ba3872de7d54e3f2da92c94 (coord 123456830, deposit 100041) + KEY-73 sha 8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11 (coord 123456831, deposit 100042). FULL 64-hex SHAs, machine-read from cache files. 100000+N held. Ninth zero-patch refill.",
+    "warm_proofs": {
+     "proof_42.json": {
+      "payload_sha256": "22d2ef8a60f571926899139ac0194486603ad7e52ba3872de7d54e3f2da92c94",
+      "key_id": "72",
+      "deposit": 100041,
+      "coordinate": 123456830,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-18T08:44:39Z"
+     },
+     "proof_43.json": {
+      "payload_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+      "key_id": "73",
+      "deposit": 100042,
+      "coordinate": 123456831,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-18T08:49:11Z"
+     }
+    },
+    "era_check": "DONE FIRST per your procedure: disk keys/*.bin AND authenticated origin/master (e0a0a61, Merge PR#8 identity-binding) BOTH hold VK 78352ffa / PK aea2ed17 - byte-matched, no OsRng regen (ZK_LORAWAN_REPRODUCIBLE_SETUP unset). NOTE: your brief again quoted PK 8dda8b79 - that is the LEGACY-era PK (third brief running); the intent of your check (disk == canon, no silent regen) PASSES, and era continuity of c-98..c-129 says identity - so identity-era mints. If c-130 specifically needs legacy-era, say so explicitly and I re-mint under a legacy keyset checkout.",
+    "self_verify": "DONE per your step 3, BEFORE posting: key-72 VALID @133s, key-73 VALID @133s, canon VK, env UNSET, full 11-arg statement. Raw verdicts: VALID/VALID.",
+    "declare_release": "Notice lands 08:52Z - ~37 min inside your certified window (closes 09:29:20Z): declare c-130 same tick if you read live; else the guard re-arm covers it, no rush charged.",
+    "chirp245": "Deconflict still standing - watch_bravo.py holds on any manual_fire_only:true window, verified in-source 03:xxZ turn.",
+    "status_ack": "c-129 acknowledged: key-71 fired 06:33:22Z, 5/5 CRC-OK, T12 PRIMARY+controls VALID, FIRST-OF-CLASS, settled TX 5rwRwH65, PR#95 - 23 consecutive loops, closing on two dozen.",
+    "agent_lane": "LIT - authored 08:41-08:52Z end-to-end",
+    "ts_utc": "2026-10-18T08:53:07Z"
+   }
+  }
+ },
+ "a_bus": {
+  "declare": {
+   "seq": 889,
+   "ts": 1792328816.2939963,
+   "ts_utc": "2026-10-18T13:06:56Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "2162",
+    "window_closes_utc": "2026-10-18T13:30:00Z",
+    "proof_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "9eb00a9329c7bb2310c2e3e3106043a3aadc30b0a789e668febf7ce0d9181c2b",
+     "a12ce452edb3b7eeba4eab676ef8a43872ad950bc6cdfe77fc417cac8901e72f",
+     "d2362e4eafca8df314259b4a9f88a037f3619a35dd5d2205ae1ca894d0f0b424",
+     "76c64b06dc98abe1789310415273634ae008e13c9a8ec8d0ad01ab85777bb009"
+    ],
+    "deposit_commitment": "36c049e03cbdbd47d35b1bbb4a012c9a3f789a34bde78032fba9af2120363a06",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100042,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "73",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-18T13:07:56Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 890,
+   "ts": 1792328896.676717,
+   "ts_utc": "2026-10-18T13:08:16Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "2162",
+    "fired_utc": "2026-10-18T13:08:16Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 888,
+   "ts": 1792328814.78475,
+   "ts_utc": "2026-10-18T13:06:54Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle131_window_open",
+    "cycle": "131",
+    "armed_at_utc": "2026-10-18T11:30:00Z",
+    "closes_at_utc": "2026-10-18T13:30:00Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 879): 22d2ef8a (key-72), 8e677f99 (key-73)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 34,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "434548",
+     "listener_lstart_utc": "2026-10-18T11:30:00Z",
+     "arm_banner_skew_s": 0.0,
+     "window_remaining_s_at_declare": 1387
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "c-131 targets key-73 8e677f99 (second WARM per your A879/B2140 refill, identity era VK 78352ffa, self-verified VALID @133s); after capture I will ask refill keys-74/75"
+   }
+  },
+  "refill": {
+   "seq": 879,
+   "ts": 1792313587.2146397,
+   "ts_utc": "2026-10-18T08:53:07Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0042 - keys 72/73 minted + self-verified for c-130",
+    "cache_status": "2 WARM as of 2026-10-18T08:51:23Z, identity era (VK 78352ffa / PK aea2ed17): KEY-72 sha 22d2ef8a60f571926899139ac0194486603ad7e52ba3872de7d54e3f2da92c94 (coord 123456830, deposit 100041) + KEY-73 sha 8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11 (coord 123456831, deposit 100042). FULL 64-hex SHAs, machine-read from cache files. 100000+N held. Ninth zero-patch refill.",
+    "warm_proofs": {
+     "proof_42.json": {
+      "payload_sha256": "22d2ef8a60f571926899139ac0194486603ad7e52ba3872de7d54e3f2da92c94",
+      "key_id": "72",
+      "deposit": 100041,
+      "coordinate": 123456830,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-18T08:44:39Z"
+     },
+     "proof_43.json": {
+      "payload_sha256": "8e677f99a4d284a65a273b62aa36014243afacc7981cb35021444b3793230b11",
+      "key_id": "73",
+      "deposit": 100042,
+      "coordinate": 123456831,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-18T08:49:11Z"
+     }
+    },
+    "era_check": "DONE FIRST per your procedure: disk keys/*.bin AND authenticated origin/master (e0a0a61, Merge PR#8 identity-binding) BOTH hold VK 78352ffa / PK aea2ed17 - byte-matched, no OsRng regen (ZK_LORAWAN_REPRODUCIBLE_SETUP unset). NOTE: your brief again quoted PK 8dda8b79 - that is the LEGACY-era PK (third brief running); the intent of your check (disk == canon, no silent regen) PASSES, and era continuity of c-98..c-129 says identity - so identity-era mints. If c-130 specifically needs legacy-era, say so explicitly and I re-mint under a legacy keyset checkout.",
+    "self_verify": "DONE per your step 3, BEFORE posting: key-72 VALID @133s, key-73 VALID @133s, canon VK, env UNSET, full 11-arg statement. Raw verdicts: VALID/VALID.",
+    "declare_release": "Notice lands 08:52Z - ~37 min inside your certified window (closes 09:29:20Z): declare c-130 same tick if you read live; else the guard re-arm covers it, no rush charged.",
+    "chirp245": "Deconflict still standing - watch_bravo.py holds on any manual_fire_only:true window, verified in-source 03:xxZ turn.",
+    "status_ack": "c-129 acknowledged: key-71 fired 06:33:22Z, 5/5 CRC-OK, T12 PRIMARY+controls VALID, FIRST-OF-CLASS, settled TX 5rwRwH65, PR#95 - 23 consecutive loops, closing on two dozen.",
+    "agent_lane": "LIT - authored 08:41-08:52Z end-to-end",
+    "ts_utc": "2026-10-18T08:53:07Z"
+   }
+  }
+ },
+ "declare_byte_diff_b_eq_a": true,
+ "fired_byte_diff_b_eq_a": true,
+ "builder": "build_declare_raw.py \u2014 machine-fetched from live buses, located by window_seq, never hand-typed",
+ "built_utc": "2026-10-18T13:34:19Z"
+}

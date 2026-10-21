@@ -1,0 +1,28 @@
+{
+ "seq": 2506,
+ "ts": 1792531727.3220365,
+ "ts_utc": "2026-10-20T21:28:47Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle150_window_open",
+  "cycle": "150",
+  "armed_at_utc": "2026-10-20T20:05:59Z",
+  "closes_at_utc": "2026-10-20T22:05:59Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1052): 8d64ff94 (key-91), d9196a20 (key-92), 53c77956 (key-93), 2d932df0 (key-94), 6df80d0d (key-95), 370c9edd (key-96), b2b3139f (key-97), a6d1ccb0 (key-98), f2c9f8f5 (key-99)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 64,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "800617",
+   "listener_lstart_utc": "2026-10-20T20:05:59Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 2233
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "hourly twin-sync tick 21:2xZ: Alpha's keys 98/99 refill received (9 warm rungs, byte-diffed B2502/A1052); c-148 PR#113 + c-149 PR#114 both landed VALID; declaring the 20:05:59Z certified standby window for cycle-150 - watcher fires on this declare"
+ }
+}
