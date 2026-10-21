@@ -1,0 +1,14 @@
+{
+ "pda": "6eFAqA6AmbH1niy4WxvNiYXxgy5EP65rT2mYSXuTWfT4",
+ "claimed_register_tx": "FaQjGi1cH7Qc1jfdqhaJvHo1uTUtXCsKdaNsCqSiqR3oUpt2wBx35Ebm8R1TSMb6su3xtvLaV1Wo1umKpx8LG7A",
+ "onchain_signatures": [
+  "FaQjGi1cH7Qc1jfdqhaJvHo1uTUtXCsKdaNsCqSiqR3oUpt2wBx35Ebm8R1TSMb6su3xtvLaV1Wo1umKpx8LG7A"
+ ],
+ "sig_byte_match": true,
+ "fetched_utc": "2026-10-18T13:42:30Z",
+ "method": "live RPC getSignaturesForAddress on record PDA (settle-signature chain-readback gate)",
+ "tx_sig": "FaQjGi1cH7Qc1jfdqhaJvHo1uTUtXCsKdaNsCqSiqR3oUpt2wBx35Ebm8R1TSMb6su3xtvLaV1Wo1umKpx8LG7A",
+ "slot": 512452847,
+ "err": null,
+ "block_time_utc": "2026-10-18T13:36:07+00:00"
+}
