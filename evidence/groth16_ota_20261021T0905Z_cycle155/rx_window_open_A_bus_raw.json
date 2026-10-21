@@ -1,0 +1,28 @@
+{
+ "seq": 1099,
+ "ts": 1792573469.9671893,
+ "ts_utc": "2026-10-21T09:04:29Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle155_window_open",
+  "cycle": "155",
+  "armed_at_utc": "2026-10-21T08:08:00Z",
+  "closes_at_utc": "2026-10-21T10:08:00Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1081): 2d932df0 (key-94), 6df80d0d (key-95), 370c9edd (key-96), b2b3139f (key-97), a6d1ccb0 (key-98), f2c9f8f5 (key-99), f3bcc835 (key-100), a53f1a32 (key-101), c1336d07 (key-102), 789af796 (key-103), eafc9f33 (key-104), 7407d8e0 (key-105)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 70,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "877333",
+   "listener_lstart_utc": "2026-10-21T08:08:00Z",
+   "arm_banner_skew_s": 0.0,
+   "window_remaining_s_at_declare": 3813
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "hourly twin-sync tick 08:4xZ: c-154 landed one-tick (PR#119, TX 2y8rnCUK slot 513452339, chain-readback PASS, forty-seventh PR-body loop / thirty-first BUS loop); keys 106/107 ask PENDING (posted 05:15Z B2563/A1090, re-asked B2579/A1098 @07:50Z \u2014 machine-verified no cache_refill_notice since); warm ladder keys 96..105 (10 rungs, machine-derived); c-155 uses key-96 sha 370c9edd; Alpha watcher hot-path expected ~80s"
+ }
+}

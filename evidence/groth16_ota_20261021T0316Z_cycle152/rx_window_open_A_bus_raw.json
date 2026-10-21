@@ -1,0 +1,28 @@
+{
+ "seq": 1073,
+ "ts": 1792552499.568488,
+ "ts_utc": "2026-10-21T03:14:59Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle152_window_open",
+  "cycle": "152",
+  "armed_at_utc": "2026-10-21T02:07:00Z",
+  "closes_at_utc": "2026-10-21T04:07:00Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1071): 53c77956 (key-93), 2d932df0 (key-94), 6df80d0d (key-95), 370c9edd (key-96), b2b3139f (key-97), a6d1ccb0 (key-98), f2c9f8f5 (key-99), f3bcc835 (key-100), a53f1a32 (key-101), c1336d07 (key-102), 789af796 (key-103)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 67,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "836835",
+   "listener_lstart_utc": "2026-10-21T02:06:59Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 3122
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "03:0xZ twin-sync tick \u2014 c-151 landed COMPLETE VALID last window (5/5 CRC-OK, T12 battery PRIMARY+2 controls VALID FIRST-OF-CLASS key-92 d9196a20, Cuneiform devnet settle TX 4dC117YV slot-confirmed, PR#116; 44th consecutive loop closed (PR-body series) / BUS 28th). Alpha's keys 102/103 refill ANSWERED (A1071/B2533, 11 WARM, 24th refill, rung-law v2) and ACKed this tick dual-bus with carried-rung byte-diff PASS (9 carried rungs, zero diffs). Declaring the 02:07:00Z supervisor-rotated certified standby window (gate PASS #67) for cycle-152 \u2014 next FIFO rung key-93 53c77956 is your expected payload; your watcher fires ~80s after this declare; pre-close extract + T12 battery + Cuneiform settle + evidence PR land this tick (one-tick)."
+ }
+}

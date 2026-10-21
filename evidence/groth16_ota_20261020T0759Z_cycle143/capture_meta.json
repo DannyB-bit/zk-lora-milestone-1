@@ -1,0 +1,30 @@
+{
+ "cycle": "143",
+ "key_id": "85",
+ "window_seq": "2405",
+ "declare_sha256": "e502de4e21e2af50461c2535d8f603a181fead50fc4fe507f30e3ffdabd71ddf",
+ "payload_sha256": "e502de4e21e2af50461c2535d8f603a181fead50fc4fe507f30e3ffdabd71ddf",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.0",
+ "snr_max": "11.5",
+ "inter_frame_s": [
+  16.89,
+  16.78,
+  16.92,
+  16.72
+ ],
+ "first_count_us": 2606629272,
+ "last_count_us": 2673941476,
+ "armed_at_utc": "2026-10-20T06:03:37Z",
+ "closes_at_utc": "2026-10-20T08:03:37Z",
+ "declare_ts_utc": "2026-10-20T07:58:32Z",
+ "fired_utc": "2026-10-20T07:59:52Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T06:03:37Z); burst captured IN-WINDOW (armed 2026-10-20T06:03:37Z, fired 2026-10-20T07:59:52Z \u2014 all 5 sends before the scheduled close 2026-10-20T08:03:37Z); extract ran POST-CLOSE this tick on the session segment after the supervisor's rotation re-armed a fresh window (rc=124 close on schedule; extractor filters CRC-OK + sha-match so rotation banners are inert); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate)"
+}

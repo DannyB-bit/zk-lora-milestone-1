@@ -1,0 +1,22 @@
+{
+ "cycle": 132,
+ "declare": {
+  "declare_to_fire_s": 80,
+  "fired_utc": "2026-10-18T18:13:47Z",
+  "sends": "5/5 TX_DONE",
+  "sha256": "dfee90424c8d79822c4c9b5a5ff00d84e2fad076fc8a8c99bc479e04a74bf451",
+  "window_seq": "2189"
+ },
+ "drill": "groth16_ota",
+ "key_id": 74,
+ "key_sha256": "dfee90424c8d79822c4c9b5a5ff00d84e2fad076fc8a8c99bc479e04a74bf451",
+ "note": "keys 74/75 warm via cache_refill_notice B2187/A898 (17:52:09Z); watcher process confirmed (Alpha PID 20570 post-dates disk copy); arm cert PASS 17:57:32Z gate 38? at 17:57Z",
+ "window": {
+  "a_bus_mirror_seq": 899,
+  "armed_at_utc": "2026-10-18T17:57:32Z",
+  "b_bus_seq": 2189,
+  "closes_at_utc": "2026-10-18T19:57:32Z",
+  "declared_utc": "2026-10-18T18:12:17Z",
+  "standby_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261015T171837Z.log"
+ }
+}
