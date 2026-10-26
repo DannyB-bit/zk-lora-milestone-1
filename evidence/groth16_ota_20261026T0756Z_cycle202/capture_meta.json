@@ -1,0 +1,30 @@
+{
+ "cycle": "202",
+ "key_id": "110",
+ "window_seq": "2853",
+ "declare_sha256": "18a652b609ae9323c7eadbbf4a49efe1597fce71267454ef84f50423fb253251",
+ "payload_sha256": "18a652b609ae9323c7eadbbf4a49efe1597fce71267454ef84f50423fb253251",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.0",
+ "snr_max": "11.2",
+ "inter_frame_s": [
+  16.78,
+  16.89,
+  16.78,
+  16.76
+ ],
+ "first_count_us": 1705239393,
+ "last_count_us": 1772444016,
+ "armed_at_utc": "2026-10-26T07:26:31Z",
+ "closes_at_utc": "2026-10-26T09:26:31Z",
+ "declare_ts_utc": "2026-10-26T07:54:49Z",
+ "fired_utc": "2026-10-26T07:56:09Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-26T07:26:31Z); burst captured IN-WINDOW (armed 2026-10-26T07:26:31Z, declared at the 07:5xZ tick 2026-10-26T07:54:49Z, fired 2026-10-26T07:56:09Z \u2014 all 5 sends before the scheduled close 2026-10-26T09:26:31Z); the extract ran POST-CLOSE on the FROZEN session segment (slice banner->first listener exit line \u2014 c-141/c-155 post-close law; the window closed on schedule rc=124); ONE-TICK POST-CLOSE landing: declare+fire rode the 07:5xZ hour, close rode the 09:2xZ hour, extract rode the 10:0xZ tick, bundle+battery+settle+PR ride THIS 11:1xZ tick); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-201) landed 2026-10-26 @ PR#126 (fifty-fourth loop, BUS 38th, TX 4pj6Qtef, slot 515212784) as a ONE-TICK POST-CLOSE landing on the WATCHER HOT PATH; c-202 repeats the same pattern \u2014 his lane stayed lit, cache warm with key-110/key-111 from the 28th refill (ACK mirrored B2858/A1206), so the watcher auto-fired the warm key-110 rung without any agent intervention."
+}
