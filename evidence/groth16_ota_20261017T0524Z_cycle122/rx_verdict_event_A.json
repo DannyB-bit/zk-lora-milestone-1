@@ -1,0 +1,19 @@
+{
+ "bus": "A",
+ "type": "rx_verdict",
+ "posted": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "122",
+  "key_id": "64",
+  "proof_sha256": "f7f981855a5c1bebb162ada1ced9766a8996989d8d517acdaeae3d5b6e6ff9ce",
+  "verdict": "cycle-122 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, statement-class key-64 pih[-1]=03186832ea24981c prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)",
+  "battery_exit": 0,
+  "primary_wall_s": 159.9
+ },
+ "result": {
+  "ok": true,
+  "seq": 806,
+  "rtt_ms": 11.788
+ }
+}
