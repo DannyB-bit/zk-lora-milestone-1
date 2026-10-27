@@ -1,0 +1,6 @@
+SHA-GUARD ABORT (launcher, pre-template): canonical template bytes on disk were f2605ea56f181c52917bbb54b504afa6ffc967d5831c65098bb93c2e122497ba != expected 9c85e6a6a9901147a0bd560a42d1683cdca8ee6660dceeb34988f8d9edec22e0.
+Root cause: the PR#73 branch cut (checkout -B off origin/main) reset the worktree to origin/main's pre-fix canonical — the fixed bytes live on open PR#72 head (0f99bb9), not yet merged. Launcher rc=9, template never invoked, no silicon time consumed.
+Recovery: restored tools/t12_battery_template_canonical_fixed_6a49d04.py + tools/test_t12_battery_template.py + tools/t12_battery_template.py byte-exact from 0f99bb9 (sha verified 9c85e6a6 / 2caf14fb), unit test PASS (exit-contract + era-pin + phantom-join contracts). Rerun as attempt2.
+GUARD_ABORT_UTC=2026-10-15T21:1xZ (recorded 2026-10-15T21:23:11Z)
+BATTERY_EXIT=9
+BATTERY_DONE_UTC=2026-10-15T21:23:11Z

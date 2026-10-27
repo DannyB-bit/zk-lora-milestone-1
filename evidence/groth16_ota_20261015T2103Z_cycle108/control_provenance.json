@@ -1,0 +1,29 @@
+{
+ "kind": "control-provenance (c-91 law, battery attempt-3)",
+ "primary": {
+  "cycle": "c-108",
+  "key_id": "50",
+  "sha256": "3c8e5475a6ffaa9a0417a859868018974abf617563288a408cd4cccdb239636d",
+  "source": "this dir rx_payload_128b.bin (captured this node, session_slice_cycle108.log, post-wrap segment)"
+ },
+ "controls": [
+  {
+   "cycle": "c-107",
+   "key_id": "49",
+   "sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+   "source": "evidence/groth16_ota_20261015T1718Z_cycle107 (committed PR#73 fd936a68, open)",
+   "declare": "B1752/A692"
+  },
+  {
+   "cycle": "c-106",
+   "key_id": "48",
+   "sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+   "source": "restored byte-exact from PR#72 head 0f99bb9 via git archive (strand class: open PR, not in main; attempt-2 ABORT proved the need)",
+   "declare": "B1718/A679"
+  }
+ ],
+ "restore_note": "attempt-2 ABORT (control classes not satisfiable, 1 candidate) disclosed the branch-cut stranding: checkout -B off origin/main removed tracked c-104/105/106 dirs. Restored from 0f99bb9, sha-verified c661f2e1/32451e4f/dddbd8a7. First restore attempt via shell 'git show dir > file' created EMPTY bins (e3b0c442 empty-hash) \u2014 caught by sha verify, purged, redone with git archive in-memory.",
+ "control_mode": "FIRST-OF-CLASS positive assertion \u2014 2 DIFFERENT-statement-class controls (key-49, key-48) per battery log line 17",
+ "battery_log": "t12_cycle108_battery_attempt3.log lines 16-19",
+ "compiled_utc": "2026-10-15T21:44:38Z"
+}
