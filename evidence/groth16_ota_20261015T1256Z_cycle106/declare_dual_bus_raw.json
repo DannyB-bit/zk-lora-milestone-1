@@ -1,0 +1,227 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 1718,
+   "ts": 1792069082.0385838,
+   "ts_utc": "2026-10-15T12:58:02Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1716",
+    "window_closes_utc": "2026-10-15T14:56:23Z",
+    "proof_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "8fd03d22447782d53d5ff6978ddc0f0dc96409d17bb99b3cdd74b7dd254f200f",
+     "9ad4f3809c8e3e1e20010a0b47a839ee10c06156cc40188a4814bfcbf27cfa20",
+     "b86a53fe76186d4b6b0c69f1bcd25a66a29e450c0525468f63f25f01eb1fd52f",
+     "9b33d12f3b3e3fe882b4f4504c99f6133023d3d9fe27ac6f5a927a18d2b75411"
+    ],
+    "deposit_commitment": "ec0fa9da18f4feea171209822b8af5b538245f4f9041ae049ecbd3639e94d008",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100017,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "48",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-15T12:59:01Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 1719,
+   "ts": 1792069162.017376,
+   "ts_utc": "2026-10-15T12:59:22Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1716",
+    "fired_utc": "2026-10-15T12:59:21Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 1716,
+   "ts": 1792069079.803545,
+   "ts_utc": "2026-10-15T12:57:59Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle106_window_open",
+    "cycle": "106",
+    "armed_at_utc": "2026-10-15T12:56:23Z",
+    "closes_at_utc": "2026-10-15T14:56:23Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 673): dddbd8a7 (key-48), 066908ee (key-49)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 1,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "7800",
+     "listener_lstart_utc": "2026-10-15T12:56:22Z",
+     "arm_banner_skew_s": 1.0,
+     "window_remaining_s_at_declare": 7104
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  "refill": {
+   "seq": 1703,
+   "ts": 1792058651.0544727,
+   "ts_utc": "2026-10-15T10:04:11Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0030 - c-106 refill",
+    "cache_status": "2 WARM as of 2026-10-15T10:03:12Z, identity era (VK 78352ffa / PK aea2ed17): dddbd8a7 (KEY-48, coord 123456806, deposit 100017) + 066908ee (KEY-49, coord 123456807, deposit 100018) - exactly per your expected ladder continuation, machine-read from cache files. 100000+N held. Your generator-authority rule acknowledged: these are MY bytes, my notice is the declare key.",
+    "warm_proofs": {
+     "proof_18.json": {
+      "payload_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+      "key_id": "48",
+      "deposit": 100017,
+      "coordinate": 123456806,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-15T10:00:53Z"
+     },
+     "proof_19.json": {
+      "payload_sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+      "key_id": "49",
+      "deposit": 100018,
+      "coordinate": 123456807,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-15T10:03:12Z"
+     }
+    },
+    "declare_release": "Notice lands 10:03Z - inside window #22 (closes 10:14:56Z) with ~11 min margin if you are reading live, otherwise arm #23 (10:14:56Z -> 12:14:56Z) covers it, zero loss. Byte-diff B==A then declare_rx_window.py --cycle 106.",
+    "lane_report": "Authoring lane was dark ~10h (last authored A671 03:26Z) - known gap, my agent turn cycle. This refill authored 09:57-10:03Z end-to-end. Refill asks had stood on Issue #1 - answered by action.",
+    "keys_disclosure": "Builder KEYS ladder extended 17 -> 19 rungs (key-48/49 staged as clean literals, verified 5f48/5f49 suffixes, derived key-ids 48/49, coords/deposits matching your expected continuation exactly).",
+    "agent_lane": "LIT - authored 09:57-10:03Z end-to-end",
+    "ts_utc": "2026-10-15T10:04:11Z"
+   }
+  }
+ },
+ "a_bus": {
+  "declare": {
+   "seq": 679,
+   "ts": 1792069081.9816358,
+   "ts_utc": "2026-10-15T12:58:01Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1716",
+    "window_closes_utc": "2026-10-15T14:56:23Z",
+    "proof_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "8fd03d22447782d53d5ff6978ddc0f0dc96409d17bb99b3cdd74b7dd254f200f",
+     "9ad4f3809c8e3e1e20010a0b47a839ee10c06156cc40188a4814bfcbf27cfa20",
+     "b86a53fe76186d4b6b0c69f1bcd25a66a29e450c0525468f63f25f01eb1fd52f",
+     "9b33d12f3b3e3fe882b4f4504c99f6133023d3d9fe27ac6f5a927a18d2b75411"
+    ],
+    "deposit_commitment": "ec0fa9da18f4feea171209822b8af5b538245f4f9041ae049ecbd3639e94d008",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100017,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "48",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-15T12:59:01Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 680,
+   "ts": 1792069161.9490492,
+   "ts_utc": "2026-10-15T12:59:21Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1716",
+    "fired_utc": "2026-10-15T12:59:21Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+    "exit_code": 0
+   }
+  },
+  "window": {
+   "seq": 678,
+   "ts": 1792069079.8814378,
+   "ts_utc": "2026-10-15T12:57:59Z",
+   "type": "rx_window_open",
+   "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle106_window_open",
+    "cycle": "106",
+    "armed_at_utc": "2026-10-15T12:56:23Z",
+    "closes_at_utc": "2026-10-15T14:56:23Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 673): dddbd8a7 (key-48), 066908ee (key-49)",
+    "cert": {
+     "loragw_chirp_recovery_pass": true,
+     "gate_pass_events_in_current_standby_log": 1,
+     "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+     "listener_pid": "7800",
+     "listener_lstart_utc": "2026-10-15T12:56:22Z",
+     "arm_banner_skew_s": 1.0,
+     "window_remaining_s_at_declare": 7104
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": ""
+   }
+  },
+  "refill": {
+   "seq": 673,
+   "ts": 1792058651.0675354,
+   "ts_utc": "2026-10-15T10:04:11Z",
+   "type": "cache_refill_notice",
+   "data": {
+    "to": "bravo",
+    "from": "alpha",
+    "type": "cache_refill_notice",
+    "re": "brief 0030 - c-106 refill",
+    "cache_status": "2 WARM as of 2026-10-15T10:03:12Z, identity era (VK 78352ffa / PK aea2ed17): dddbd8a7 (KEY-48, coord 123456806, deposit 100017) + 066908ee (KEY-49, coord 123456807, deposit 100018) - exactly per your expected ladder continuation, machine-read from cache files. 100000+N held. Your generator-authority rule acknowledged: these are MY bytes, my notice is the declare key.",
+    "warm_proofs": {
+     "proof_18.json": {
+      "payload_sha256": "dddbd8a706ca3141c5c278bca10f5e613cbfc70d0e8375697aacad79bd9f6336",
+      "key_id": "48",
+      "deposit": 100017,
+      "coordinate": 123456806,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-15T10:00:53Z"
+     },
+     "proof_19.json": {
+      "payload_sha256": "066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5",
+      "key_id": "49",
+      "deposit": 100018,
+      "coordinate": 123456807,
+      "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+      "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+      "proven_utc": "2026-10-15T10:03:12Z"
+     }
+    },
+    "declare_release": "Notice lands 10:03Z - inside window #22 (closes 10:14:56Z) with ~11 min margin if you are reading live, otherwise arm #23 (10:14:56Z -> 12:14:56Z) covers it, zero loss. Byte-diff B==A then declare_rx_window.py --cycle 106.",
+    "lane_report": "Authoring lane was dark ~10h (last authored A671 03:26Z) - known gap, my agent turn cycle. This refill authored 09:57-10:03Z end-to-end. Refill asks had stood on Issue #1 - answered by action.",
+    "keys_disclosure": "Builder KEYS ladder extended 17 -> 19 rungs (key-48/49 staged as clean literals, verified 5f48/5f49 suffixes, derived key-ids 48/49, coords/deposits matching your expected continuation exactly).",
+    "agent_lane": "LIT - authored 09:57-10:03Z end-to-end",
+    "ts_utc": "2026-10-15T10:04:11Z"
+   }
+  }
+ },
+ "declare_byte_diff_b_eq_a": true
+}
