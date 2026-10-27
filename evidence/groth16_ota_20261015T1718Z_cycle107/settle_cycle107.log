@@ -1,0 +1,38 @@
+SETTLE_EXPECT_SHA=066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5
+SETTLE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, inter-frame 16.8s uniform, window B1750/A691 armed 2026-10-15T17:18:52Z, fired 2026-10-15T17:36:15Z, ~80s declare-to-fire, key-49 deposit 100018, identity era VK 78352ffa
+  captured proof: 128 bytes from groth16_ota_20261015T1718Z_cycle107
+  proof SHA256: 066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5
+  coords (proof payload[0:6]): [0xb9, 0x22, 0x75, 0x99, 0x68, 0x3b]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.91177988 SOL
+  session_id : 066908eeab62ab49 (= proof SHA[0:16] hex)
+  merkleRoot: 066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5 (= captured proof SHA256)
+  record PDA: HZKAy7Sq4BoGxqFccUfZFmqiJeKc5eANGP8BkswAbpvy
+  ✅ REGISTER TX: 3dcRcgdgyvi8bacKrpH9uL8dXfM79geUZLZt6BZsp8em35oCZXYvwfoQbjNzHpr33AdJ5PH2UwzMg68Z3aTGZ3Qa
+     https://explorer.solana.com/tx/3dcRcgdgyvi8bacKrpH9uL8dXfM79geUZLZt6BZsp8em35oCZXYvwfoQbjNzHpr33AdJ5PH2UwzMg68Z3aTGZ3Qa?cluster=devnet
+  on-chain record: coords=[185,34,117,153,104,59] root=066908eeab62ab49… ts=2026-10-15T20:41:43.000Z
+  treasury delta: 100000 lamports
+  balance after: 5.9105014 SOL
+
+TEST_RUN_UTC=2026-10-15T20:41:44.520Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-107 OTA Groth16/BN254 proof A->B, node-b-rx 2026-10-15T17:36:15Z, full T12 battery COMPLETE VALID (exit 0), key-49, identity era VK 78352ffa, class scan per battery log (c-92 law)
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, inter-frame 16.8s uniform, window B1750/A691 armed 2026-10-15T17:18:52Z, fired 2026-10-15T17:36:15Z, ~80s declare-to-fire, key-49 deposit 100018, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5
+GROTH16_PAIRING_VERIFIED=YES - T12_CYCLE107_BATTERY_RUN_UTC all VALID: CLASS SCAN (complete dual-bus history): statement-class key-49 pih[-1]=632b8c2c0a06401b prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=066908eeab62ab49
+COORDS_REGISTERED=[185, 34, 117, 153, 104, 59] (= proof payload bytes 0..5)
+MERKLE_ROOT=066908eeab62ab492658d4422db2be276063a4bd2358a0a9410dfa95580e95e5 (= proof payload SHA256)
+RECORD_PDA=HZKAy7Sq4BoGxqFccUfZFmqiJeKc5eANGP8BkswAbpvy
+REGISTER_TX=3dcRcgdgyvi8bacKrpH9uL8dXfM79geUZLZt6BZsp8em35oCZXYvwfoQbjNzHpr33AdJ5PH2UwzMg68Z3aTGZ3Qa
+REGISTER_TX_URL=https://explorer.solana.com/tx/3dcRcgdgyvi8bacKrpH9uL8dXfM79geUZLZt6BZsp8em35oCZXYvwfoQbjNzHpr33AdJ5PH2UwzMg68Z3aTGZ3Qa?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.91177988 SOL
+BALANCE_AFTER=5.9105014 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+SETTLE_RC=0
