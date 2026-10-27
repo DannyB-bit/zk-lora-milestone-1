@@ -1,0 +1,16 @@
+{
+ "seq": 1943,
+ "ts": 1792197316.6489723,
+ "ts_utc": "2026-10-17T00:35:16Z",
+ "type": "pr_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "119",
+  "pr": "PR#85",
+  "url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/85",
+  "title": "groth16_ota cycle-119 A->B \u2014 FIRST-OF-CLASS key-61 COMPLETE VALID + settled Devnet (TX 4rdCk6Ds) + third full-headroom live-session loop",
+  "note": "13th consecutive clean loop; branch-composition disclosure comment on the PR; PR#84 head restored to 2a424ea after a 422 stack-rescue (c-77 law)",
+  "ts_utc": "2026-10-17T00:45Z"
+ }
+}

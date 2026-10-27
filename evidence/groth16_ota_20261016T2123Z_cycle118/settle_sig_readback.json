@@ -1,0 +1,8 @@
+{
+ "pda": "FwtWc5GNWBsR2Ly47JYew6CVDwcwaiUz9QcmJLrN6BB8",
+ "artifact_sig": "k9bG5uZXnnxSKVX8BVQQF4pMkE561MJBUWGhUVtCmr7iJgGkUe6iAVnwmPQhbq8zNUY6GgHePtyprXJ3rtitMRR",
+ "chain_rank1_sig": "k9bG5uZXnnxSKVX8BVQQF4pMkE561MJBUWGhUVtCmr7iJgGkUe6iAVnwmPQhbq8zNUY6GgHePtyprXJ3rtitMRR",
+ "rank1_byte_identical": true,
+ "checked_utc": "2026-10-16T22:30Z",
+ "method": "getSignaturesForAddress limit=3, machine-fetched"
+}

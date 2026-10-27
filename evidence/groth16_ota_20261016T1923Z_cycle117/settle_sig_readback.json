@@ -1,0 +1,10 @@
+{
+ "gate": "settle-signature chain-readback (PR#21/c-29 law) + TX status",
+ "pda": "CraB88A1g2uzHUYobLHjw891db8Rvjt2moBDVXmd9Xnu",
+ "sig_artifact": "4GLNhqcnkNBMpHcDmyXtmidU28vb55psQyRGwE5XSbDSyCmQcBbXUtJuA5uLJTdi1yqcTHc5LhXrtjH5y44gQWna",
+ "sig_chain_rank1": "4GLNhqcnkNBMpHcDmyXtmidU28vb55psQyRGwE5XSbDSyCmQcBbXUtJuA5uLJTdi1yqcTHc5LhXrtjH5y44gQWna",
+ "sig_byte_match": true,
+ "sig_history_count": 1,
+ "tx_err": null,
+ "verified_utc": "2026-10-16T20:34:07Z"
+}
