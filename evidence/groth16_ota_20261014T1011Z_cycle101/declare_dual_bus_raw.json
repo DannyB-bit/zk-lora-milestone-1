@@ -1,0 +1,94 @@
+{
+ "b_bus": {
+  "declare": {
+   "seq": 1598,
+   "ts": 1791979015.7278695,
+   "ts_utc": "2026-10-14T11:56:55Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1596",
+    "window_closes_utc": "2026-10-14T12:11:14Z",
+    "proof_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "035964fb8654db382e58148c0af1c382752ef2c6ca26d596e84b7dd114c0f828",
+     "7e10ccb11e75cb275fdbb4554358d1053c3f61a521c87931cea2a2fe8154ab08",
+     "fdf2dce8118cea52b416f855af16bd83f0b9a1c9b991f2250238662e2eb38f07",
+     "da89368b832859afe1c3b08fa4ea5af323fd0cd9939711dc2fddb2c0e10f3c0f"
+    ],
+    "deposit_commitment": "3fe9fe33dc26594e91170def74aa3c550a16241bdd8017f22d5d14b165a38e26",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100012,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "43",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-14T11:57:55Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 1599,
+   "ts": 1791979095.5159926,
+   "ts_utc": "2026-10-14T11:58:15Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1596",
+    "fired_utc": "2026-10-14T11:58:15Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+    "exit_code": 0
+   }
+  }
+ },
+ "a_bus": {
+  "declare": {
+   "seq": 634,
+   "ts": 1791979015.5161352,
+   "ts_utc": "2026-10-14T11:56:55Z",
+   "type": "groth16_proof_tx",
+   "data": {
+    "window_seq": "1596",
+    "window_closes_utc": "2026-10-14T12:11:14Z",
+    "proof_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+    "payload_bytes": 128,
+    "public_input_hashes": [
+     "035964fb8654db382e58148c0af1c382752ef2c6ca26d596e84b7dd114c0f828",
+     "7e10ccb11e75cb275fdbb4554358d1053c3f61a521c87931cea2a2fe8154ab08",
+     "fdf2dce8118cea52b416f855af16bd83f0b9a1c9b991f2250238662e2eb38f07",
+     "da89368b832859afe1c3b08fa4ea5af323fd0cd9939711dc2fddb2c0e10f3c0f"
+    ],
+    "deposit_commitment": "3fe9fe33dc26594e91170def74aa3c550a16241bdd8017f22d5d14b165a38e26",
+    "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+    "deposit_value": 100012,
+    "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+    "private_key_id": "43",
+    "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+    "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+    "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+    "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+    "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+    "fire_eta_utc": "2026-10-14T11:57:55Z",
+    "source": "watcher_hot_path (no LLM turn)",
+    "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+   }
+  },
+  "fired": {
+   "seq": 635,
+   "ts": 1791979095.3584743,
+   "ts_utc": "2026-10-14T11:58:15Z",
+   "type": "groth16_tx_fired",
+   "data": {
+    "window_seq": "1596",
+    "fired_utc": "2026-10-14T11:58:15Z",
+    "sends": "5/5 TX_DONE",
+    "payload_sha256": "d3faf880f5a392c0c81f0fa86028e041ed301e454cde35f13f51ed74999a70f0",
+    "exit_code": 0
+   }
+  }
+ }
+}

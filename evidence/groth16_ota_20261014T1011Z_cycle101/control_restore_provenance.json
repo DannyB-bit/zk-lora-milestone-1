@@ -1,0 +1,18 @@
+{
+ "what": "stranded-control restore for c-101 first-of-class battery (c-91 law)",
+ "restored": [
+  {
+   "path": "evidence/groth16_ota_20261013T2209Z_cycle98/rx_payload_128b.bin",
+   "sha256": "62f2019e84123354a52299c34bf2c0756bb1ef963a31ce3fafc6a65a9de36c21",
+   "restored_from": "pr65-head (open PR#65 branch)",
+   "verified_vs_dual_bus_declare": true
+  },
+  {
+   "path": "evidence/groth16_ota_20261014T0009Z_cycle99/rx_payload_128b.bin",
+   "sha256": "e5e6c4394e2b7166c4971342f63ae9412b0591a4b20873fefa1465387a6cabcd",
+   "restored_from": "pr65-head (open PR#65 branch)",
+   "verified_vs_dual_bus_declare": true
+  }
+ ],
+ "note": "key-40 (c-98) + key-41 (c-99) payload bins restored byte-exact from pr65-head refs/pull/65/head; sha256-verified against the dual-bus declares A615/B1538 and A619/B1553; restored so the c-101 key-43 first-of-class T12 battery can pick 2 distinct-statement-class controls."
+}
