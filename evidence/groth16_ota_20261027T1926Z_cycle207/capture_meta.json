@@ -1,0 +1,30 @@
+{
+ "cycle": "207",
+ "key_id": "115",
+ "window_seq": "3005",
+ "declare_sha256": "3a566df806ded97a082f501d3620b4fd6027d22e2b27c5e80a0ee0134f89e297",
+ "payload_sha256": "3a566df806ded97a082f501d3620b4fd6027d22e2b27c5e80a0ee0134f89e297",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "12.0",
+ "inter_frame_s": [
+  16.75,
+  16.88,
+  16.78,
+  16.71
+ ],
+ "first_count_us": 2474410251,
+ "last_count_us": 2541534482,
+ "armed_at_utc": "2026-10-27T17:32:15Z",
+ "closes_at_utc": "2026-10-27T19:32:15Z",
+ "declare_ts_utc": "2026-10-27T19:24:58Z",
+ "fired_utc": "2026-10-27T19:26:17Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-27T17:32:15Z); burst captured IN-WINDOW (armed 2026-10-27T17:32:15Z, declared at the 19:2xZ tick 2026-10-27T19:24:58Z with 441s remaining \u2014 LATE DECLARE disclosure per the c-145 lesson \u2014 fired 2026-10-27T19:26:17Z, all 5 sends before the scheduled close 2026-10-27T19:32:15Z); the extract ran POST-CLOSE on the FROZEN session segment (slice banner line 3868 -> first listener exit line 3976 \u2014 c-141/c-155 post-close law; the window closed on schedule rc=124 19:32:15Z, supervisor re-armed 19:32:35Z HOLD_FIRE); SAME-TICK landing (declare+fire+close rode the 19:2xZ hour; extract+bundle+battery+settle+PR ride the 19:4xZ tick); declare-to-fire 79s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-206) fired key-114 cad4fd87 from the 30th refill's first rung and landed at the 16:4xZ tick (PR#131, TX 62WNAZaV); both c-206 and c-207 fired on the WATCHER HOT PATH with zero agent intervention; the keys 116/117 ask follows this landing."
+}
