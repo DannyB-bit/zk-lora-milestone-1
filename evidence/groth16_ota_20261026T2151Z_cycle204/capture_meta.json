@@ -1,0 +1,30 @@
+{
+ "cycle": "204",
+ "key_id": "112",
+ "window_seq": "2917",
+ "declare_sha256": "ed5096cec330a0fb961ec7c4323ce2a54cec3a6f75eba1f6bbf76f53e6c0fb0f",
+ "payload_sha256": "ed5096cec330a0fb961ec7c4323ce2a54cec3a6f75eba1f6bbf76f53e6c0fb0f",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 7,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.8",
+ "snr_max": "11.5",
+ "inter_frame_s": [
+  16.87,
+  16.72,
+  16.77,
+  16.71
+ ],
+ "first_count_us": 580455963,
+ "last_count_us": 647530961,
+ "armed_at_utc": "2026-10-26T21:28:52Z",
+ "closes_at_utc": "2026-10-26T23:28:52Z",
+ "declare_ts_utc": "2026-10-26T22:50:01Z",
+ "fired_utc": "2026-10-26T22:51:21Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-26T21:28:52Z); burst captured IN-WINDOW (armed 2026-10-26T21:28:52Z, declared at the 22:5xZ tick 2026-10-26T22:50:01Z, fired 2026-10-26T22:51:21Z \u2014 all 5 sends before the scheduled close 2026-10-26T23:28:52Z); the extract ran POST-CLOSE on the FROZEN session segment (slice banner->first listener exit line \u2014 c-141/c-155 post-close law; the window closed on schedule rc=124); ONE-TICK POST-CLOSE landing: declare+fire+close all rode the 22:5xZ hour and extract+bundle+battery+settle+PR ride the same tick); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-203) fired key-111 cd5d7ac7 from the 28th refill at 11:19:29Z and landed at the 11:1xZ tick (PR#128, TX 3m8LFaAp); c-201 landed 2026-10-26 @ PR#126 (fifty-fourth loop, BUS 38th, TX 4pj6Qtef, slot 515212784). Both c-203 and c-204 fired on the WATCHER HOT PATH with zero agent intervention."
+}

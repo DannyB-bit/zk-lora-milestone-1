@@ -1,0 +1,30 @@
+{
+ "cycle": "159",
+ "key_id": "100",
+ "window_seq": "2660",
+ "declare_sha256": "f3bcc835e23cc95e2298c52fc348279b915998d0f0351db14ecd03f4706aa984",
+ "payload_sha256": "f3bcc835e23cc95e2298c52fc348279b915998d0f0351db14ecd03f4706aa984",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.5",
+ "snr_max": "11.8",
+ "inter_frame_s": [
+  16.71,
+  16.74,
+  16.77,
+  16.71
+ ],
+ "first_count_us": 286906868,
+ "last_count_us": 353841512,
+ "armed_at_utc": "2026-10-21T22:10:22Z",
+ "closes_at_utc": "2026-10-22T00:10:22Z",
+ "declare_ts_utc": "2026-10-21T22:15:02Z",
+ "fired_utc": "2026-10-21T22:16:21Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-21T22:10:22Z); burst captured IN-WINDOW (armed 2026-10-21T22:10:22Z, declared at the 22:1xZ tick 2026-10-21T22:15:02Z, fired 2026-10-21T22:16:21Z \u2014 all 5 sends before the scheduled close 2026-10-22T00:10:22Z); the capture was certified in-window at the declare tick (rx_capture_confirmed B2670/A1137) and the T12 battery rode attempt1 FIRST TRY (BATTERY_DONE_UTC=2026-10-22T00:20:48Z); the window closed on schedule 2026-10-22T00:10:22Z rc=124 and the landing stalled pre-settle during Alpha's node-dark outage, so this TWO-TICK POST-CLOSE re-run (2026-10-25) extracts on the intact session segment (slice banner->first exit line, c-141/c-155 post-close law); declare-to-fire 79s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate, battery log carries pre-wrap (+0s)). Context: the prior cycle (c-158) landed post-close at PR#123 (fifty-first loop); c-159 repeated the early-declare fix (~79s to first fire) and completes its landing POST-CLOSE at this tick."
+}

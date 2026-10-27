@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-10-20T06:24:24.361Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-142 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0), key-84 identity era, class scan per battery log (c-92 law)
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +11.0..+11.5 dB, inter-frame 16.7s uniform, POST-WRAP (+4294.967296s) burst, window B2389 armed 2026-10-20T04:03:17Z, fired 2026-10-20T05:36:47Z, ~80s declare-to-fire, key-84 deposit 100053, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=9c1c7f6abe7c2d86610d5d5f1975c98532945bd854278baa43d55b58b75a951b
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-84 pih[-1]=9eb714c2d0a86e11 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=9c1c7f6abe7c2d86
+COORDS_REGISTERED=[226, 55, 174, 121, 73, 238] (= proof payload bytes 0..5)
+MERKLE_ROOT=9c1c7f6abe7c2d86610d5d5f1975c98532945bd854278baa43d55b58b75a951b (= proof payload SHA256)
+RECORD_PDA=EDsYMAof6tGEAKUZRBRWxh2MNQgV1wsy4jpJ3gdWrWx1
+REGISTER_TX=2gKjofwhXkRct7rA964u9xnPomBLvfUrH8iUgM6HJgTfKfB1W1ZWRfTiMW4E5PZBo9XZC6fFyjhaVoSf7fNiegjK
+REGISTER_TX_URL=https://explorer.solana.com/tx/2gKjofwhXkRct7rA964u9xnPomBLvfUrH8iUgM6HJgTfKfB1W1ZWRfTiMW4E5PZBo9XZC6fFyjhaVoSf7fNiegjK?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.86703308 SOL
+BALANCE_AFTER=5.8657546 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES

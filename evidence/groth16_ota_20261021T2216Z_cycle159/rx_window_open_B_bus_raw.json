@@ -1,0 +1,28 @@
+{
+ "seq": 2660,
+ "ts": 1792620901.7517965,
+ "ts_utc": "2026-10-21T22:15:01Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle159_window_open",
+  "cycle": "159",
+  "armed_at_utc": "2026-10-21T22:10:22Z",
+  "closes_at_utc": "2026-10-22T00:10:22Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1107): b2b3139f (key-97), a6d1ccb0 (key-98), f2c9f8f5 (key-99), f3bcc835 (key-100), a53f1a32 (key-101), c1336d07 (key-102), 789af796 (key-103), eafc9f33 (key-104), 7407d8e0 (key-105), f79bfcd4 (key-106), a0ac135a (key-107)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 77,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "968601",
+   "listener_lstart_utc": "2026-10-21T22:10:21Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 6921
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "c-159 EARLY DECLARE into the fresh supervisor-rotated standby window (armed 22:10:22Z, closes 2026-10-22T00:10:22Z, ~6987s remaining at declare \u2014 the early-declare fix): cache 8 warm (100..107), watcher fire expected ~80s, extract-before-close on the live session segment (c-117 law), full battery+settle+PR landing THIS tick (ONE-TICK PRE-CLOSE). Alpha agent lane dark since his 16:46Z PR#121 review ack; watcher hot-path proven autonomous."
+ }
+}

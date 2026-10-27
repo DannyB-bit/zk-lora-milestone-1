@@ -1,0 +1,30 @@
+{
+ "cycle": "148",
+ "key_id": "89",
+ "window_seq": "2475",
+ "declare_sha256": "563402ca6a74d7cb5ce74a22d86506fd27743a74f9b7fd3b6c346dfa7cd93912",
+ "payload_sha256": "563402ca6a74d7cb5ce74a22d86506fd27743a74f9b7fd3b6c346dfa7cd93912",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 6,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "11.8",
+ "snr_max": "12.2",
+ "inter_frame_s": [
+  16.74,
+  16.76,
+  16.74,
+  16.9
+ ],
+ "first_count_us": 2298215411,
+ "last_count_us": 2365354227,
+ "armed_at_utc": "2026-10-20T16:05:19Z",
+ "closes_at_utc": "2026-10-20T18:05:19Z",
+ "declare_ts_utc": "2026-10-20T17:55:05Z",
+ "fired_utc": "2026-10-20T17:56:25Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-20T16:05:19Z); burst captured IN-WINDOW (armed 2026-10-20T16:05:19Z, fired 2026-10-20T17:56:25Z \u2014 all 5 sends before the scheduled close 2026-10-20T18:05:19Z); extract ran POST-CLOSE on the bounded session segment (window closed on schedule 2026-10-20T18:05:19Z rc=124 and the supervisor had already rotated into the next window; the slice bounds banner -> first 'listener exit rc=124', never banner -> EOF, so the next session's frames cannot bind \u2014 c-141 post-close law); declare-to-fire 80s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-147) closed the fortieth consecutive one-tick loop; c-148 is a TWO-TICK loop (declared and fired inside the earlier 17:55Z tick, landed post-close this tick) \u2014 owned on the record here and in the honest ledger."
+}
