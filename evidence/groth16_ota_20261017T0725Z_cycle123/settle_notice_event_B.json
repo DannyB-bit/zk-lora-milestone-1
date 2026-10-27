@@ -1,0 +1,19 @@
+{
+ "seq": 2009,
+ "ts": 1792235751.1081707,
+ "ts_utc": "2026-10-17T11:15:51Z",
+ "type": "settle_notice",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "cycle": "123",
+  "drill": "groth16_ota",
+  "tx": "p2URWiWs93cbHsfrn6qXUwm2Nk2nUJtA5chCvQ1mK63NzPzE18BaQz4x2HrpzTUkuihXRTQcVMgMw1kia3Fpxcn",
+  "pda": "DS7hZazJ7jWGPdsd9JU1Ujzi3mYVLnYwgcKAZCnHtgwv",
+  "merkle_root": "a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124",
+  "chain": "devnet",
+  "readback": "chain_readback_v2 all_byte_checks_pass TRUE; sig-history rank-1 err=null",
+  "note": "seventeenth consecutive radio-to-chain loop closed",
+  "ts_utc": "2026-10-17T11:3xZ"
+ }
+}

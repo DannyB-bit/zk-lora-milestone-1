@@ -1,0 +1,9 @@
+GUARD-BEFORE binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92
+SHA GATE: digest(captured)==declare 64/64: a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124
+PRIMARY cycle-123 captured a5b1554d: verdict=VALID exit=0 wall_s=160.0 stdout='VALID'
+CLASS SCAN (complete dual-bus history): statement-class key-65 pih[-1]=b93f581f533ca207 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted)
+CONTROL-diff1 groth16_ota_20260117T0524Z_cycle122 (key-64, machine-picked, DIFFERENT statement-class) f7f98185: verdict=VALID exit=0 wall_s=159.7 stdout='VALID'
+CONTROL-diff2 groth16_ota_20261017T0324Z_cycle121 (key-63, machine-picked, DIFFERENT statement-class) 9edeca6c: verdict=VALID exit=0 wall_s=160.1 stdout='VALID'
+GUARD-AFTER binary=4c8e1f8a46952c1b PK=aea2ed17290f3294 VK=78352ffa2d0bfe92 — unchanged
+BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-123 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE123_BATTERY_RUN_UTC derived not typed; primary key-65; settle queued (Cuneiform devnet)
+BATTERY_EXIT=0

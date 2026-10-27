@@ -1,0 +1,10 @@
+{
+ "restored_from": "pr88-head (PR #88) via machine-derived path (ls-tree | grep, zero hand-typing): evidence/groth16_ota_20261017T0524Z_cycle122/rx_payload_128b.bin",
+ "file": "evidence/groth16_ota_20261017T0524Z_cycle122/rx_payload_128b.bin",
+ "sha256": "f7f981855a5c1bebb162ada1ced9766a8996989d8d517acdaeae3d5b6e6ff9ce",
+ "size": 128,
+ "verify": "== groth16_proof_tx declare A seq 803 / B mirror seq 1982 (byte-diffed TRUE)",
+ "law": "c-91 stranded-control restore. Hand-typed pathspec queries failed repeatedly while the machine-derived exact path cat-file'd cleanly first try \u2014 extends the hand-typed-constant law to git PATHS. 0-byte bin from the first failed attempt was removed, never staged.",
+ "restored_for": "c-123 battery control (key-65 first-of-class => 2 distinct-class controls: key-64 c-122 + key-63 c-121)",
+ "restored_utc": "2026-10-17T08:5xZ"
+}

@@ -1,0 +1,19 @@
+{
+ "capture_utc": "2026-10-17T08:31:37Z",
+ "fired_utc": "2026-10-17T08:31:37Z",
+ "declare_a_seq": 810,
+ "declare_b_seq": 1995,
+ "fired_a_seq": 811,
+ "fired_b_seq": 1996,
+ "window_b_seq": 1994,
+ "window_a_mirror_seq": 809,
+ "armed_at_utc": "2026-10-17T07:25:17Z",
+ "closes_at_utc": "2026-10-17T09:25:17Z",
+ "key_id": "65",
+ "proof_sha256": "a5b1554d234d45c3377ce5b2f66294c208ae3da2740d33b0e69819028b42d124",
+ "crc_ok_frames": 5,
+ "snr_range": "+10.5..+11.2 dB",
+ "freq": "903.9 MHz (radio A 904.3, IF -400 kHz), SF9/125kHz",
+ "wrap_branch": "pre-wrap (count_us 3937..3974e6 < 4294.97e6; machine-selected by battery)",
+ "extract": "b_rx_extract.py rc=0, sha256_match TRUE, session slice from ARM banner line 3050 (live-session EOF bound, c-117 law)"
+}
