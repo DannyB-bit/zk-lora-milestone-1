@@ -1,0 +1,14 @@
+{
+  "drill": "chirp245_sealed_frame",
+  "type": "chirp245_tx_re_fired",
+  "payload_sha256": "6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4",
+  "payload_bytes": 245,
+  "n_coords": 81,
+  "sends": "5/5",
+  "status": "TX_DONE",
+  "re_fired_utc": "2026-10-30T16:36:08Z",
+  "rf": {"freq_mhz": 903.9, "sf": 9, "bw_khz": 125, "power_dbm": 14},
+  "bus_seq": 1296,
+  "ts_utc": "2026-10-30T16:36:08Z",
+  "note": "Alpha re-fired identical 245B sealed frame into B's armed RX window (closes 17:18:09Z). B captured 5/5 CRC-OK; SHA matches declaration."
+}

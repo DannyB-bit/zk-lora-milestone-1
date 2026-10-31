@@ -1,0 +1,13 @@
+chirp245 sealed-frame capture — cycle 161 (M1 evidence)
+======================================================
+Drill:        chirp245_sealed_frame (81 Cuneiform-U coords, X25519 + ChaCha20-Poly1305 sealed frame)
+Window:       armed 2026-10-30T15:18:09Z -> closes 2026-10-30T17:18:09Z (7200s)
+Capture:      5/5 CRC-OK 245B @ 903.900 MHz SF9/125kHz, SNR +10.2..+10.8 dB
+Payload SHA:  6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4
+Declared SHA: 6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4 (bus seq 1288 chirp245_declare)
+Verdict:      SHA MATCH 64/64 — capture == declaration
+Fire:         Alpha re-fired 2026-10-30T16:36:08Z (bus seq 1296); first fire 01:57:58Z preceded B arm (missed)
+Session:      c161_session_slice.log lines 189-297, listener exit rc=124 at 17:18:10Z
+Chip:         SX1302 v1.0, HAL banner 0x10, LORA_CHIRP_RECOVERY_PASS=YES
+Status:       CAPTURED + VERIFIED. Seal-open pending (on-disk chirp245_bravo_sk.key, never posted).
+Posted:       Issue #1 comments 6538284471, 6538306009 (@EnzuLivesbot routed group report this tick)

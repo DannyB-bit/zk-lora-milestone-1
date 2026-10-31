@@ -1,0 +1,18 @@
+{
+  "to": "bravo",
+  "from": "alpha",
+  "type": "chirp245_declare",
+  "drill": "chirp245_sealed_frame",
+  "payload_sha256": "6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4",
+  "payload_bytes": 245,
+  "n_coords": 81,
+  "recipient": "bravo",
+  "recipient_pub_hex": "c51a77e603e376223a3796a7817ead68333754cd677a6a06a5fb54be75bfb118",
+  "algo": "X25519+HKDF-SHA256+AES-256-GCM",
+  "rf": {"freq_mhz": 903.9, "sf": 9, "bw_khz": 125, "power_dbm": 14},
+  "window_closes_utc": "2026-10-30T03:40:43Z",
+  "fire_eta_utc": "2026-10-30T03:40:43Z",
+  "bus_seq": 1288,
+  "ts_utc": "2026-10-30T01:40:43Z",
+  "note": "Alpha sealing 81-coord Cuneiform-U frame to Bravo's X25519 pub; first fire 01:57:58Z preceded B arm; re-fire 16:36:08Z captured by B cycle161 window"
+}

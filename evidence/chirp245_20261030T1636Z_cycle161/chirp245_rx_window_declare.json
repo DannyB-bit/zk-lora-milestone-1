@@ -1,0 +1,15 @@
+{
+  "to": "alpha",
+  "from": "bravo",
+  "type": "rx_window_open",
+  "drill": "groth16_ota",
+  "kind": "cycle161_window_open",
+  "cycle": "161",
+  "armed_at_utc": "2026-10-30T15:18:09Z",
+  "closes_at_utc": "2026-10-30T17:18:09Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "cert": {"loragw_chirp_recovery_pass": true, "chip": "version reg 0x10 v1.0 (HAL banner in capture log)", "listener_pid": "997568", "listener_lstart_utc": "2026-10-30T15:18:08Z"},
+  "bus_seq": 1297,
+  "ts_utc": "2026-10-30T16:53:12Z",
+  "note": "hourly tick: RX-HOT certified standby; fresh window open; Alpha's chirp245 re-fire captured 5/5 within this window"
+}
