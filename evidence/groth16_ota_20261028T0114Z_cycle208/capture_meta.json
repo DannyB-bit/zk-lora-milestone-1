@@ -1,0 +1,30 @@
+{
+ "cycle": "208",
+ "key_id": "116",
+ "window_seq": "3034",
+ "declare_sha256": "fae1e3b8baec67e4ca863448840f43c35bad16471c97efbde2a49ee7c4db871f",
+ "payload_sha256": "fae1e3b8baec67e4ca863448840f43c35bad16471c97efbde2a49ee7c4db871f",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 5,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": "10.5",
+ "snr_max": "11.2",
+ "inter_frame_s": [
+  16.71,
+  16.71,
+  16.74,
+  16.75
+ ],
+ "first_count_us": 1696939126,
+ "last_count_us": 1763860224,
+ "armed_at_utc": "2026-10-27T23:33:16Z",
+ "closes_at_utc": "2026-10-28T01:33:16Z",
+ "declare_ts_utc": "2026-10-28T01:13:01Z",
+ "fired_utc": "2026-10-28T01:14:20Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-10-27T23:33:16Z); burst captured IN-WINDOW (armed 2026-10-27T23:33:16Z, declared at the 01:1xZ tick 2026-10-28T01:13:01Z with 1218s remaining \u2014 EARLY declare per the c-146 law, strictly dominating waiting \u2014 fired 2026-10-28T01:14:20Z, all 5 sends before the scheduled close 2026-10-28T01:33:16Z); the extract ran POST-CLOSE on the FROZEN session segment (slice banner->FIRST listener exit line, c-141/c-155 post-close law \u2014 line numbers machine-derived by extract_c208.sh; the window closed on schedule rc=124 01:33:16Z and the supervisor rotated a fresh HOLD_FIRE standby); POST-CLOSE landing (declare+fire+close rode the 01:1x-01:3xZ hour; extract+bundle+battery+settle+PR ride the post-close 01:3xZ tick); declare-to-fire 79s computed from bus timestamps; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122 exactly-one gate). Context: the prior cycle (c-207) fired key-115 3a566df8 from the 31st refill and landed same-tick post-close (PR#132, TX 5F3tT3sN); both c-207 and c-208 fired on the WATCHER HOT PATH with zero agent intervention; the keys 118/119 ask follows this landing (key-117 stays warm)."
+}
