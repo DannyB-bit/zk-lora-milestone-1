@@ -1,0 +1,10 @@
+{
+ "tx_sig": "28XpYx7mZnWHEAPrwNtop48gAjtQ9BLYvhRe8V9qP1ssEQp8TwJ35A1hH5hM3QWdBwh1wLBX6AREwZE9gKCwk6ZW",
+ "pda": "66tZQvfkNhHJuCFD54NoPsQHaKmvP8S7ojUxehgvbxZe",
+ "slot": 519445968,
+ "err": null,
+ "confirmation_status": "finalized",
+ "merkle_root": "a0a2c9d7a8199b0979b39240620c4b1f2bc0740669f6a011f9c08748ccf6ce75",
+ "fee_lamports": 100000,
+ "readback_note": "live RPC getSignaturesForAddress on record PDA; the PDA's history holds exactly ONE signature (machine-asserted len==1) = the register TX; coords/fee confirmed from the TX's own logs; session a0a2c9d7a8199b09; PDA merkle root at offset 62..94 == sha256(rx_payload_128b.bin) 64/64 (chain_readback PASS)"
+}

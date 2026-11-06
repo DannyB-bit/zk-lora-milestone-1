@@ -1,0 +1,32 @@
+{
+ "cycle": "165",
+ "key_id": "122",
+ "window_seq": "3615",
+ "declare_sha256": "a0a2c9d7a8199b0979b39240620c4b1f2bc0740669f6a011f9c08748ccf6ce75",
+ "payload_sha256": "a0a2c9d7a8199b0979b39240620c4b1f2bc0740669f6a011f9c08748ccf6ce75",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 65,
+ "ambient_crc_ok_excluded": 45,
+ "gate": "burst selected by size==128 + datr==9 + freq 903900000 + sha256==declared 64/64; 24B/datr10 ambient CRC-OK traps excluded and counted",
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": 10.5,
+ "snr_max": 11.2,
+ "inter_frame_s": [
+  16.72,
+  16.71,
+  16.75,
+  16.74
+ ],
+ "first_count_us": 2370864669,
+ "last_count_us": 2437787445,
+ "armed_at_utc": "2026-11-06T19:32:08Z",
+ "closes_at_utc": "2026-11-06T21:32:08Z",
+ "declare_ts_utc": "2026-11-06T21:23:07Z",
+ "fired_utc": "2026-11-06T21:24:26Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-11-06T19:32:08Z); burst captured IN-WINDOW (armed 2026-11-06T19:32:08Z, declared 2026-11-06T21:23:07Z on the LIVE banner with ~544s remaining \u2014 declare per the refill-timing law; fired 2026-11-06T21:24:26Z, all 5 sends before the scheduled close 2026-11-06T21:32:08Z); extract on the CONTINUOUS standby session segment (slice banner->first listener exit line, c-141/c-155 post-close law); ONE-TICK landing (declare+fire+capture+bundle+battery+settle ride the 21:2xZ hour, c-164 pattern); declare-to-fire 79s computed from bus timestamps \u2014 1s to the proof_tx post, 80s to 5/5 TX_DONE; wrap branch NOT labeled at bundle time \u2014 battery-selected in the T12 run (c-122/c-137 laws); context: c-164 consumed key-121 and c-165 fired key-122 from Alpha's 33rd refill (cache_refill_notice A1328 @2026-11-06T20:39:03Z, keys 122/123 machine-verified on my side), the WATCHER HOT PATH firing unattended with zero agent intervention; key-123 stands warm."
+}
