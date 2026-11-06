@@ -1,0 +1,33 @@
+TEST_RUN_UTC=2026-11-06T22:15:47.189Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-165 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, WATCHER HOT-PATH auto-fire while Alpha agent lane dark): window armed 2026-11-06T19:32:08Z (declared 21:23:06Z B3615/A1330, ~544s remaining, LIVE banner), proof declare 21:23:07Z (B3616/A1331, key-122, deposit 100091, identity-era VK 78352ffa, 1s after the declare — beat the proven 2s), fired 5/5 TX_DONE 21:24:26Z 79s declare-to-fire, burst captured IN-WINDOW 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.5..+11.2dB inter-frame 16.71..16.75s uniform (continuous-standby session: 45 24B/datr10 ambient CRC-OK traps excluded by the size+digest gate, total_packets=65), sha a0a2c9d7 64/64, window closes 2026-11-06T21:32:08Z; key-122 from Alpha's 33rd refill A1328/B3611 (keys 122/123 byte-field-verified PASS on my side)
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.2 dB, inter-frame 16.7s uniform, POST-WRAP (+4294.967296s) burst, window B3615 armed 2026-11-06T19:32:08Z, fired 2026-11-06T21:24:26Z, ~79s prove-declare-to-fire, key-122 deposit 100091, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=a0a2c9d7a8199b0979b39240620c4b1f2bc0740669f6a011f9c08748ccf6ce75
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-122 pih[-1]=dda5b9d54e49a516 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=a0a2c9d7a8199b09
+COORDS_REGISTERED=[67, 39, 78, 79, 107, 152] (= proof payload bytes 0..5)
+MERKLE_ROOT=a0a2c9d7a8199b0979b39240620c4b1f2bc0740669f6a011f9c08748ccf6ce75 (= proof payload SHA256)
+RECORD_PDA=66tZQvfkNhHJuCFD54NoPsQHaKmvP8S7ojUxehgvbxZe
+REGISTER_TX=28XpYx7mZnWHEAPrwNtop48gAjtQ9BLYvhRe8V9qP1ssEQp8TwJ35A1hH5hM3QWdBwh1wLBX6AREwZE9gKCwk6ZW
+REGISTER_TX_URL=https://explorer.solana.com/tx/28XpYx7mZnWHEAPrwNtop48gAjtQ9BLYvhRe8V9qP1ssEQp8TwJ35A1hH5hM3QWdBwh1wLBX6AREwZE9gKCwk6ZW?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.82612172 SOL
+BALANCE_AFTER=5.82612172 SOL
+TESTS_PASSED=6
+TESTS_FAILED=1
+FAIL_DETAIL=(disclosed, run #2 only) duplicate register attempt 'Allocate: account 66tZQvfkNhHJuCFD54NoPsQHaKmvP8S7ojUxehgvbxZe already in use' — run #1 had ALREADY landed this register (TX machine-located in the PDA's single-signature history, slot 519445968, fee 100000 lamports CPI-collected, chain_readback_v2 verdict PASS); the duplicate collision is the register's non-idempotence, NOT a settle failure; run #2's clobber of this file was restored from chain truth by build_c165_readbacks.py
+Message: Transaction simulation failed: Error processing Instruction 0: custom program error: 0x0. 
+Logs: 
+[
+  "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy invoke [1]",
+  "Program log: Instruction: RegisterCoordinates",
+  "Program 11111111111111111111111111111111 invoke [2]",
+  "Allocate: account Address { address: 66tZQvfkNhHJuCFD54NoPsQHaKmvP8S7ojUxehgvbxZe, base: None } already in use",
+  "Program 11111111111111111111111111111111 failed: custom program error: 0x0",
+  "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy consumed 7219 of 200000 compute units",
+  "Program 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy failed: custom program error: 0x0"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details. | fee delta 0
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
