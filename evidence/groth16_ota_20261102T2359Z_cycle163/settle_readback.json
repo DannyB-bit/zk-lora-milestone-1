@@ -1,0 +1,13 @@
+{
+ "cycle": "163",
+ "register_tx": "UNuAAqK8bRFR7jHTjniG9KH4Xu1NpHKcexZBxjPNEtCqRjMDEztiNeCApNmcgyy1cq5L3ynjvvqnNwWgiqro6iH",
+ "record_pda": "6ZjuRXFrKYDcdW3qXPVvg8dNFt8gXVfGbntiywuuvwJR",
+ "signature_matches_pda_history": true,
+ "slot": 519242551,
+ "err": null,
+ "confirmation": "finalized",
+ "fee_lamports": 5000,
+ "pda_in_logs": false,
+ "note": "pda_in_logs=false because the register ix builds the PDA in-program (CPI-free derive); the PDA-history signature match (getSignaturesForAddress first sig == REGISTER_TX) is the on-chain binding.",
+ "readback_utc": "2026-11-06T08:4xZ"
+}
