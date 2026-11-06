@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-11-06T10:38:44.354Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-164 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, WATCHER HOT-PATH auto-fire while Alpha agent lane dark): window armed 2026-11-06T09:30:26Z (declared 10:03:17Z B3569/A1317, 4430s remaining), proof declare 10:03:19Z (B3571/A1318, key-121, deposit 100090, identity-era VK 78352ffa), fired 5/5 TX_DONE 10:17:59Z ~80s declare-to-fire, burst captured IN-WINDOW 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.5..+11.0dB inter-frame 16.72..16.89s no decoys, sha 801ef6ac 64/64, window closes 2026-11-06T11:30:26Z; FIRST-OF-CLASS key-121 asserted by the battery's class scan
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.5..+11.0 dB, inter-frame 16.8s uniform, pre-wrap (+0s) burst, window B3569 armed 2026-11-06T09:30:26Z, fired 2026-11-06T10:17:59Z, ~80s prove-declare-to-fire, key-121 deposit 100090, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=801ef6acfd0a17f99212e6a28ac2f4e4ceb959f35917a984da20d360babcfcd9
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-121 pih[-1]=f3b7119fa154fe1b prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=801ef6acfd0a17f9
+COORDS_REGISTERED=[53, 19, 56, 92, 58, 117] (= proof payload bytes 0..5)
+MERKLE_ROOT=801ef6acfd0a17f99212e6a28ac2f4e4ceb959f35917a984da20d360babcfcd9 (= proof payload SHA256)
+RECORD_PDA=Erhi85JfSJvEBDyQte2aFwG1iHk1aCdtU6j2TmPE4kpQ
+REGISTER_TX=
+REGISTER_TX_URL=https://explorer.solana.com/tx/?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.82995716 SOL
+BALANCE_AFTER=5.82867868 SOL
+TESTS_PASSED=5
+TESTS_FAILED=1
+FAIL_DETAIL=register_coordinates: Signature 2QYCezcedmWhyTw1wQQuZB3uhV49HNvcapA9fxDg7M8BXWjkJVukHqsc2EQf3EZ3ieVsUoDQSpMhkiZPZ5FtYZy9 has expired: block height exceeded.
+GROTH16_OTA_SETTLED_ON_CHAIN=NO
+ZK_RF_TO_CHAIN_LOOP_CLOSED=NO
