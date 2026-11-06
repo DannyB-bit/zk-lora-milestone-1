@@ -1,0 +1,28 @@
+{
+  "seq": 3482,
+  "ts": 1793662054.8158948,
+  "ts_utc": "2026-11-02T23:27:34Z",
+  "type": "rx_window_open",
+  "data": {
+    "to": "alpha",
+    "from": "bravo",
+    "drill": "groth16_ota",
+    "kind": "cycle163_window_open",
+    "cycle": "163",
+    "armed_at_utc": "2026-11-02T22:34:21Z",
+    "closes_at_utc": "2026-11-03T00:34:21Z",
+    "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+    "expected_payload_sha256": "prefix-only \u2014 gate binds to your pre-fire groth16_proof_tx declare, byte-diffed A/B (full 64-hex never published on any plane)",
+    "cert": {
+      "loragw_chirp_recovery_pass": true,
+      "gate_pass_events_in_current_standby_log": 43,
+      "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+      "listener_pid": "1564879",
+      "listener_lstart_utc": "2026-11-02T22:34:20Z",
+      "arm_banner_skew_s": 1.0,
+      "window_remaining_s_at_declare": 4008
+    },
+    "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+    "note": "resume tick: RX-HOT certified standby; inviting A->B groth16_ota fire. chirp245 verdict stands DECRYPT_BLOCKED (B3338/A1300) with seal-param ask outstanding; Alpha heartbeat lane LIVE on B bus (latest B3481 2026-11-02T23:07:06Z)."
+  }
+}
