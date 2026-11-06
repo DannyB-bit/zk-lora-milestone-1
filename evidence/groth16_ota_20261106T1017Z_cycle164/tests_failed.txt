@@ -1,0 +1,1 @@
+FAIL: register_coordinates: Signature 2QYCezcedmWhyTw1wQQuZB3uhV49HNvcapA9fxDg7M8BXWjkJVukHqsc2EQf3EZ3ieVsUoDQSpMhkiZPZ5FtYZy9 has expired: block height exceeded.
