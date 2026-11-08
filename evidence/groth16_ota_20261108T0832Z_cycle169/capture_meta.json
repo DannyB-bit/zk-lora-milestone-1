@@ -1,0 +1,40 @@
+{
+ "payload_sha256": "2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d",
+ "armed_at_utc": "2026-11-08T07:38:12Z",
+ "closes_at_utc": "2026-11-08T09:38:12Z",
+ "window_seq_b_bus": 3751,
+ "window_seq_a_bus": 1361,
+ "frames": 5,
+ "crc_ok": 5,
+ "freq_hz": 903900000,
+ "sf": "SF9/125kHz",
+ "snr_db": [
+  10.8,
+  11.5
+ ],
+ "inter_frame_s": [
+  16.7,
+  16.7,
+  16.7,
+  16.7
+ ],
+ "count_us_range": [
+  3193655658,
+  3260545090
+ ],
+ "wrap_branch": "pre-wrap (+0s)",
+ "declared_sha256": "2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d",
+ "extractor_sha256_match": true,
+ "fired_utc": "2026-11-08T08:32:38Z",
+ "declare_utc": "2026-11-08T08:31:19Z",
+ "key_id": "126",
+ "deposit": 100095,
+ "coords_payload_first6": [
+  216,
+  1,
+  212,
+  195,
+  162,
+  145
+ ]
+}

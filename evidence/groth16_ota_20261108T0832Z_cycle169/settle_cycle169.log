@@ -1,0 +1,36 @@
+  captured proof: 128 bytes from groth16_ota_20261108T0832Z_cycle169 (key-126)
+  proof SHA256: 2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d
+  coords (proof payload[0:6]): [0xd8, 0x01, 0xd4, 0xc3, 0xa2, 0x91]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.822286280 SOL
+  session_id : 2d1a1db001772b8d (= proof SHA[0:16] hex)
+  merkleRoot: 2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d (= captured proof SHA256)
+  record PDA: 7M8cQ7Av5GhZgCsKrC59hTiGZpoghF8U9HMac9RQFv9h
+  ✅ REGISTER TX: 5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa
+     https://explorer.solana.com/tx/5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa?cluster=devnet
+     slot 520138576, blockTime 2026-11-08T20:17:47Z, err=None, computed 19510/200000 CU
+  on-chain record: coords=[216,1,212,195,162,145] root=2d1a1db001772b8d… (merkle-root bytes == sha256(rx_payload_128b.bin) read back from PDA data offset 62); TX log line "Coordinates: Domain=216, Subdomain=1, Modality=212, Polarity=195, Strength=162, Depth=145"
+  treasury delta: 100000 lamports (program log "Collected protocol fee: 100000 lamports"; treasury 10024630000 -> 10024730000)
+  balance after: 5.821007800 SOL (delta 0.001278480 SOL = 100000 fee + 1173480 PDA rent + tx fees)
+
+TEST_RUN_UTC=2026-11-08T20:17:48Z (settler clock, solana-cuneiform-milestone1 artifacts; chain blockTime 2026-11-08T20:17:47Z) — settle verification for this tick executed 2026-11-08T23:2xZ from the captured bin + devnet RPC readback
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-169 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0): window armed 2026-11-08T07:38:12Z (declared B3751/A1361), proof declare 08:31:19Z (A1362==B3753, key-126, deposit 100095, watcher_hot_path), fired 5/5 TX_DONE 08:32:38Z, captured 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.8..+11.5dB inter-frame 16.7s uniform, sha 2d1a1db0 64/64, window closes 09:38:12Z; FIRST-OF-CLASS key-126 asserted by the battery class scan over complete dual-bus history
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.8..+11.5 dB, inter-frame 16.7s, window B3751/A1361 armed 2026-11-08T07:38:12Z closes 09:38:12Z; Alpha watcher_hot_path declare 08:31:19Z -> fired 5/5 TX_DONE 08:32:38Z; sha 2d1a1db0 64/64; battery pre-wrap (+0s) branch; decoys excluded by size+digest gate
+PROOF_PAYLOAD_SHA256=2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d
+GROTH16_PAIRING_VERIFIED=YES - Groth16 pairing VALID on B die (t12_cycle169_battery.log): PRIMARY key-126 VALID + FIRST-OF-CLASS (positively asserted) + controls key-125/key-119 distinct-class VALID, GUARD-AFTER binary/PK/VK unchanged, BATTERY_EXIT=0
+SESSION_ID=2d1a1db001772b8d
+COORDS_REGISTERED=[216, 1, 212, 195, 162, 145] (= proof payload bytes 0..5)
+MERKLE_ROOT=2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d (= proof payload SHA256)
+RECORD_PDA=7M8cQ7Av5GhZgCsKrC59hTiGZpoghF8U9HMac9RQFv9h
+REGISTER_TX=5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa
+REGISTER_TX_URL=https://explorer.solana.com/tx/5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.822286280 SOL
+BALANCE_AFTER=5.821007800 SOL
+TESTS_PASSED=5
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES

@@ -1,0 +1,12 @@
+cycle-169 Cuneiform devnet settlement — RESULT
+TX: 5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa
+URL: https://explorer.solana.com/tx/5cQ6a6wvqJ9nDVLCRVR5LVw1mdktmu7ZhpZd76aFPB9LBy9zN26D1aBouG8WdegkyRjsRFmVWJ8zLsHkoXWZmPsa?cluster=devnet
+Slot: 520138576 | blockTime 2026-11-08T20:17:47Z | err None
+Program: 2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy (RegisterCoordinates)
+Session: 2d1a1db001772b8d (= sha256(rx proof)[0:16])
+Record PDA: 7M8cQ7Av5GhZgCsKrC59hTiGZpoghF8U9HMac9RQFv9h (owner=Cuneiform program, 103B, rent 1173480 lamports)
+Coords: [216, 1, 212, 195, 162, 145] (= captured on-air proof payload bytes 0..5)
+Merkle root: 2d1a1db001772b8d483ee90ce17cf1be836f73f62a579f9541c6851697ab179d (= sha256 of the on-air proof, byte-equal in PDA data)
+Fee: 100000 lamports -> treasury CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ
+Wallet: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3 | 5.822286280 -> 5.821007800 SOL
+Status: LANDED (settle was only "queued" by the battery; this tick verified wallet history, found no prior TX for this session, then confirmed the register landed and read it back from chain)
