@@ -1,0 +1,9 @@
+T12_CYCLE163_BATTERY_RUN_UTC=2026-11-05T00:41:55Z
+invocation: tools/t12_battery_template.py --cycle 163 --evidence-dir evidence/groth16_ota_20261102T2359Z_cycle163
+mode: primary = machine-located captured burst; controls machine-selected by statement class (same + different), newest-first from prior evidence
+law: zero hand-typed constants (label derived from --cycle that locates the window); burst binding v4 = session-segment + digest-equality; wrap branch machine-selected
+SILICON measure_temp=temp=48.7'C get_throttled=throttled=0x0
+GUARD-BEFORE binary=6e12c42de5d333fd PK=aea2ed17290f3294 VK=78352ffa2d0bfe92
+BATTERY_ABORT: ABORT: cycle-163 window events on B-bus: 2 (need exactly 1)
+ABORT: cycle-163 window events on B-bus: 2 (need exactly 1)
+BATTERY_EXIT=1
