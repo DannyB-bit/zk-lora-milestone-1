@@ -130,7 +130,16 @@ def a_mirror_hits(Aev, sha256_hex, window_seq, before_seq=None):
     window_seq is machine-carried from the B-side declare; str()-normalized
     only (literal preservation law). before_seq bounds the scan to declares
     that PRECEDED the primary (time-travel law); None = unbounded (primary
-    join, where the window_seq itself is the unique locator)."""
+    join, where the window_seq itself is the unique locator).
+
+    Dual-seq era (observed 2026-11-02, cycle-163): B-bus declares may carry the
+    A-BUS window seq while the window itself lives on the B bus under its own
+    seq (canon window pairing "A<seq>==B<seq>" — the A seq travels on B events).
+    window_seq may therefore be a single locator OR the machine-resolved set of
+    the window's paired seqs; every uniqueness assertion on the join remains
+    unchanged (still exactly one mirror must hit)."""
+    seqs = window_seq if isinstance(window_seq, (set, frozenset, list, tuple)) else {str(window_seq)}
+    want = {str(s) for s in seqs}
     out = []
     for e in Aev:
         if e.get("type") != "groth16_proof_tx":
@@ -138,7 +147,7 @@ def a_mirror_hits(Aev, sha256_hex, window_seq, before_seq=None):
         if before_seq is not None and e["seq"] >= before_seq:
             continue
         d = e.get("data", {})
-        if d.get("proof_sha256") == sha256_hex and str(d.get("window_seq")) == str(window_seq):
+        if d.get("proof_sha256") == sha256_hex and str(d.get("window_seq")) in want:
             out.append(e)
     return out
 
@@ -174,6 +183,12 @@ def main():
     ap.add_argument("--evidence-dir", required=True, help="per-cycle evidence dir (relative to repo root or absolute)")
     ap.add_argument("--guard-log", default=DEFAULT_GUARD, help="RX guard log with arm banners")
     ap.add_argument("--bus-timeout", type=int, default=15, help="per-bus HTTP timeout (s)")
+    ap.add_argument("--window-seq", default=None,
+                    help="B-bus seq of the era's rx_window_open when the cycle number was "
+                         "re-declared (several complete fired eras). LOCATOR ONLY: it must "
+                         "select exactly one located window; every downstream guard "
+                         "(cross-bus byte-diff, session-segment burst binding to the SHA "
+                         "declare, wrap branch, controls, exit contract) is unchanged.")
     args = ap.parse_args()
 
     cycle = args.cycle
@@ -217,21 +232,71 @@ def main():
     # cycle 69+ events carry kind=cycleNN_window_open + cycle=<int-or-str>; legacy events carry
     # window_seq_bravo_bus=cycle-<N>. Both are machine-locators derived from --cycle (no typed constants).
     # str()-normalization only (never int-cast: literal preservation).
-    if len(wins) != 1:
-        raise SystemExit(f"ABORT: cycle-{cycle} window events on B-bus: {len(wins)} (need exactly 1)")
-    win = wins[0]
-    wsid = str(win["seq"])
-    lines.append(f"WINDOW cycle-{cycle} located: B-bus seq {wsid} armed={win['data']['armed_at_utc']} "
-                 f"closes={win['data']['closes_at_utc']} — label {label} derived from THIS event's cycle id")
+    if not wins:
+        raise SystemExit(f"ABORT: cycle-{cycle} window events on B-bus: 0 (need exactly 1 fired)")
 
     # ---- A-bus gate: cross-bus byte-diff is mandatory for any verdict (battery law) ----
     try:
-        Aev = get_events(A_BUS, timeout=args.bus_timeout)
+        Aev0 = get_events(A_BUS, timeout=args.bus_timeout)
     except Exception as ex:
         print("\n".join(lines))
-        raise SystemExit(f"ABORT: A-bus unreachable ({ex}) — cross-bus declare byte-diff UNAVAILABLE; "
-                         f"NO VERDICT MAY ISSUE. Re-run when the twin box is live. "
+        raise SystemExit(f"ABORT: A-bus unreachable ({ex}) — window pairing + cross-bus declare byte-diff "
+                         f"UNAVAILABLE; NO VERDICT MAY ISSUE. Re-run when the twin box is live. "
                          f"(Fail-closed by design; there is no --allow-dark override.)")
+
+    # Era locator override (added 2026-11-06 tick): a re-declared cycle number can
+    # carry SEVERAL complete fired eras — observed cycle-163 = Oct-22-era key-104
+    # window (B seq 2678, declare eafc9f33) + live Nov-2 key-120 window (B seq 3482,
+    # declare 7af005fd), each with a complete declare+fire pair of matching SHAs.
+    # Auto-resolution stays refused by law; the agent MAY supply the era's B-bus
+    # window seq as a pure LOCATOR (machine-carried from the evidence dir's window
+    # declare b_bus_seq — never hand-remembered). Uniqueness below is unchanged,
+    # and the burst binding (session segment bound to THIS window's armed_at banner
+    # + 5 digest-equal 128B frames whose sha EQUALS the declare sha) independently
+    # rejects any wrong-era choice — the locator can only select, never fabricate.
+    if args.window_seq is not None:
+        wins = [w for w in wins if str(w["seq"]) == str(args.window_seq)]
+        if not wins:
+            raise SystemExit(f"ABORT: --window-seq {args.window_seq} matches no cycle-{cycle} "
+                             f"window on B-bus")
+
+    # Dual-seq era resolution (observed 2026-11-02, cycle-163): a cycle number can be
+    # re-declared across eras (the Oct-22 stale re-declare and the live Nov-2 window both
+    # carry cycle=163; bus history is immutable and NEVER edited to disambiguate). The
+    # unique fired window is located by its COMPLETE declare+fire pair, and a window's
+    # locator set is its own B seq plus the paired A-bus seq (canon "A<seq>==B<seq>"
+    # pairing, joined by same cycle + same armed_at_utc) — B-bus declares of the era
+    # carry the A seq. Uniqueness is asserted on every join below, unchanged; only the
+    # LOCATOR is broadened, never a guard.
+    def _paired_seqs(win):
+        seqs = {str(win["seq"])}
+        for e in Aev0:
+            if (e.get("type") == "rx_window_open"
+                    and str(e.get("data", {}).get("cycle")) == str(cycle)
+                    and e.get("data", {}).get("armed_at_utc") == win["data"].get("armed_at_utc")):
+                seqs.add(str(e["seq"]))
+        return seqs
+
+    resolved = []
+    for w in wins:
+        seqs = _paired_seqs(w)
+        d_hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
+                  and str(e.get("data", {}).get("window_seq")) in seqs]
+        f_hits = [e for e in Bev if e.get("type") == "groth16_tx_fired"
+                  and str(e.get("data", {}).get("window_seq")) in seqs]
+        if (len(d_hits) == 1 and len(f_hits) == 1
+                and d_hits[0]["data"].get("proof_sha256") == f_hits[0]["data"].get("payload_sha256")):
+            resolved.append((w, seqs))
+    if len(resolved) != 1:
+        raise SystemExit(f"ABORT: cycle-{cycle} windows with exactly one complete declare+fire pair: "
+                         f"{len(resolved)} (need exactly 1) — re-declared cycle eras are not auto-resolvable; "
+                         f"no verdict")
+    win, ok_seqs = resolved[0]
+    wsid = str(win["seq"])
+    lines.append(f"WINDOW cycle-{cycle} located: B-bus seq {wsid} (paired seqs {sorted(ok_seqs)}) "
+                 f"armed={win['data']['armed_at_utc']} closes={win['data']['closes_at_utc']} — "
+                 f"unique fired window; label {label} derived from THIS event's cycle id")
+    Aev = Aev0
 
     # ---- primary declare: linked by window seq on B, by window_seq+SHA on A ----
     # (SHA-only A-join retired: dry-run declares with window_seq='test-window'
@@ -239,13 +304,18 @@ def main():
     # across both buses for every FIRED cycle to date; the join is also
     # asserted unique at runtime, so a future naming collision ABORTs rather
     # than silently picking a wrong mirror.)
+    # Primary declare join: dual-seq era — the B-bus declare may carry the PAIRED
+    # A-bus seq rather than the window's own B seq (observed cycle-163: window B
+    # seq 3482, declare seq 3487 carries window_seq 1304). Join on the resolved
+    # locator SET (own B seq + paired A seqs); the exactly-one assertion below is
+    # unchanged.
     d_b_hits = [e for e in Bev if e.get("type") == "groth16_proof_tx"
-                and e.get("data", {}).get("window_seq") == wsid]
+                and str(e.get("data", {}).get("window_seq")) in ok_seqs]
     if len(d_b_hits) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} declares on B-bus: {len(d_b_hits)} (need exactly 1)")
     d_b = d_b_hits[0]
     declared = d_b["data"]["proof_sha256"]
-    d_a_hits = a_mirror_hits(Aev, declared, wsid, before_seq=None)
+    d_a_hits = a_mirror_hits(Aev, declared, ok_seqs, before_seq=None)
     if len(d_a_hits) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} declare mirrors on A-bus: {len(d_a_hits)} (need exactly 1)")
     d_a = d_a_hits[0]
@@ -256,7 +326,7 @@ def main():
             raise SystemExit(f"ABORT: declare {field} MISMATCH across buses")
     lines.append("DECLARE cross-bus byte-diff: " + ", ".join(f"{f}=EQ" for f in VERIFY_FIELDS))
     f_hits = [e for e in Bev if e.get("type") == "groth16_tx_fired"
-              and e.get("data", {}).get("window_seq") == wsid]
+              and str(e.get("data", {}).get("window_seq")) in ok_seqs]
     if len(f_hits) != 1:
         raise SystemExit(f"ABORT: cycle-{cycle} fired events on B-bus: {len(f_hits)} (need exactly 1)")
     f_ev = f_hits[0]

@@ -1,0 +1,51 @@
+{
+ "state": "complete_settled",
+ "cycle": "167",
+ "key_id": "124",
+ "declare": {
+  "b_bus_seq": 3715,
+  "a_bus_mirror_seq": 1344,
+  "ts_utc": "2026-11-08T02:43:16Z"
+ },
+ "fired": {
+  "ts_utc": "2026-11-08T02:44:36Z",
+  "sends": "5/5 TX_DONE",
+  "sha": "9a5284c085714f02f789e80a1d59fd9d3037845c085d3fd66706b37943ac4976"
+ },
+ "declare_to_fire_s": 4045,
+ "armed_at_utc": "2026-11-08T01:37:11Z",
+ "closes_at_utc": "2026-11-08T03:37:11Z",
+ "capture": {
+  "frames": "5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.8..+11.2dB",
+  "sha_gate": "64/64",
+  "pre_wrap": true
+ },
+ "battery": {
+  "primary": "VALID",
+  "first_of_class": "key-124",
+  "controls": [
+   "key-119 VALID 160.9s",
+   "key-118 VALID 161.4s"
+  ],
+  "exit": 0,
+  "attempts": 3,
+  "attempt_note": "attempt1 ABORT (dual-era bus: 2 cycle-167 windows); attempt2 ABORT (my hand-rolled extract schema, KeyError count_us); attempt3 PASS after restoring canonical extractor + dual-era --window-seq template locator"
+ },
+ "settle": {
+  "register_tx": "4hs41XNZQWUAzADfsNYSAR2eQXyjgs6bbJaYjLRq8p8mMHVxSqind6AJLm8MizEBD1u55Gx6KuYm2u5JmKzcqLoV",
+  "pda": "45V2gMjtuWVHR6pW6pptpwjN7ZEPuKvMR2cAgghc3L6W",
+  "session_id": "9a5284c085714f02",
+  "coords": [
+   90,
+   139,
+   119,
+   182,
+   54,
+   190
+  ],
+  "merkle_root": "9a5284c085714f02f789e80a1d59fd9d3037845c085d3fd66706b37943ac4976",
+  "fee_lamports": 100000,
+  "tests": "6/6 PASS, 0 fail",
+  "groth16_ota_settled_on_chain": "YES"
+ }
+}
