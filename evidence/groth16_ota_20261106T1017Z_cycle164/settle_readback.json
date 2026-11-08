@@ -1,0 +1,24 @@
+{
+ "pda": "Erhi85JfSJvEBDyQte2aFwG1iHk1aCdtU6j2TmPE4kpQ",
+ "register_tx": "2QYCezcedmWhyTw1wQQuZB3uhV49HNvcapA9fxDg7M8BXWjkJVukHqsc2EQf3EZ3ieVsUoDQSpMhkiZPZ5FtYZy9",
+ "register_slot": 519271473,
+ "on_chain_err": null,
+ "session_id": "801ef6acfd0a17f9",
+ "coords": [
+  53,
+  19,
+  56,
+  92,
+  58,
+  117
+ ],
+ "merkle_root": "801ef6acfd0a17f99212e6a28ac2f4e4ceb959f35917a984da20d360babcfcd9",
+ "authority": "14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3",
+ "protocol_fee_lamports": 100000,
+ "balance_before_sol": 5.82995716,
+ "balance_after_sol": 5.82867868,
+ "chain_readback_verdict": "PASS",
+ "signature_source": "getSignaturesForAddress on the record PDA (machine-fetched) \u2014 exactly 1 signature, slot 519271473, err=null",
+ "correction": "result_summary.txt recorded GROTH16_OTA_SETTLED_ON_CHAIN=NO + FAIL 'block height exceeded' from a confirmation race; the on-chain readback proves the SAME signature landed OK at slot 519271473 and chain_readback_v2 PASSes all byte checks. The app's settle flag is corrected to YES by this machine readback (chain > app flag), disclosed on every plane.",
+ "corrected_settled_on_chain": true
+}

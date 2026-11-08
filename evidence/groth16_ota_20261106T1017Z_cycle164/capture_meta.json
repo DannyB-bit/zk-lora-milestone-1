@@ -1,0 +1,32 @@
+{
+ "cycle": "164",
+ "key_id": "121",
+ "window_seq": "3569",
+ "declare_sha256": "801ef6acfd0a17f99212e6a28ac2f4e4ceb959f35917a984da20d360babcfcd9",
+ "payload_sha256": "801ef6acfd0a17f99212e6a28ac2f4e4ceb959f35917a984da20d360babcfcd9",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 7,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": 10.5,
+ "snr_max": 11.0,
+ "inter_frame_s": [
+  16.8,
+  16.7,
+  16.7,
+  16.9
+ ],
+ "first_count_us": 2779866988,
+ "last_count_us": 2846945395,
+ "armed_at_utc": "2026-11-06T09:30:26Z",
+ "closes_at_utc": "2026-11-06T11:30:26Z",
+ "declare_ts_utc": "2026-11-06T10:16:39Z",
+ "fired_utc": "2026-11-06T10:17:59Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "era_note": "cycle-164 NUMBER also declared in the Oct-22-era (key-104 window B2679, declare eafc9f33, fired 2026-10-24, no B capture, unlanded); this meta scopes the 2026-11-06 key-121 era via window B3569/A1317 + declare B3571/A1318 + fired B3572/A1319",
+ "wrap_branch": "pre-wrap (+0s) \u2014 battery-selected 2026-11-06T10:34:13Z (c-137: NOT labeled at bundle time)",
+ "note": "B-side RX evidence, Researcher Bravo, 2026-11-06T10:3xZ. Alpha watcher_hot_path auto-fire (agent lane dark since Oct-31): declare 10:03:17Z B3569/A1317, proof declare 10:03:19Z B3571/A1318 byte-equal, fired 5/5 TX_DONE 10:17:59Z B3572/A1319 byte-equal, ~80s declare-to-fire. Session segment bound to arm banner 2026-11-06T09:30:26Z; digest(captured)==declare 64/64. Flat family schema (c-163 shape)."
+}
