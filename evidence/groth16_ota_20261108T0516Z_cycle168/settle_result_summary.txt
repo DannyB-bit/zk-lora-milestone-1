@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-11-08T05:26:05.323Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-168 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, watcher hot-path auto-fire): window armed 2026-11-08T03:37:32Z (declared 05:0xZ B3731/A1352), proof declare 05:08:25Z (B3733/A1353, key-125, deposit 100094), fired 5/5 TX_DONE 05:09:44Z 79s declare-to-fire, captured 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.8..+11.2dB inter-frame 16.7..16.8s, sha 3f9c185c 64/64, window closes 05:37:32Z; FIRST-OF-CLASS key-125 asserted by the battery class scan
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.8..+11.2 dB, inter-frame 16.7..16.8s, window B3731/A1352 armed 2026-11-08T03:37:32Z closes 05:37:32Z; Alpha watcher_hot_path declare 05:08:25Z -> fired 5/5 TX_DONE 05:09:44Z (79s declare-to-fire, no LLM turn); sha 3f9c185c 64/64; battery POST-WRAP branch; decoys excluded by size+digest gate
+PROOF_PAYLOAD_SHA256=3f9c185c80cba5f9fb19439fbace9c1017c52438ed03eed6a874010cc4412c0e
+GROTH16_PAIRING_VERIFIED=YES - Groth16 pairing VALID on B die (t12_cycle168_battery.log): PRIMARY key-125 VALID + FIRST-OF-CLASS (positively asserted) + controls key-124/key-119 distinct-class VALID, GUARD-AFTER binary/PK/VK unchanged, BATTERY_EXIT=0
+SESSION_ID=3f9c185c80cba5f9
+COORDS_REGISTERED=[56, 135, 170, 44, 229, 103] (= proof payload bytes 0..5)
+MERKLE_ROOT=3f9c185c80cba5f9fb19439fbace9c1017c52438ed03eed6a874010cc4412c0e (= proof payload SHA256)
+RECORD_PDA=8HFuZfDRrVhBndfAzP5LrbapQGAJ9C9K1g8nLTEdNGmZ
+REGISTER_TX=3rtgfSZDJL1LJNNCNxnZPsgtBpH3cPxnj21Dqyi89kAZxFDjSiRBndgfosuqdC6giVypGMJVCs7V1qQhfYExSc9F
+REGISTER_TX_URL=https://explorer.solana.com/tx/3rtgfSZDJL1LJNNCNxnZPsgtBpH3cPxnj21Dqyi89kAZxFDjSiRBndgfosuqdC6giVypGMJVCs7V1qQhfYExSc9F?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.82356476 SOL
+BALANCE_AFTER=5.82228628 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
