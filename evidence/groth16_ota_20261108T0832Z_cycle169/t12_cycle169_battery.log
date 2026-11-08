@@ -20,3 +20,4 @@ CONTROL-diff2 groth16_ota_20261028T1354Z_cycle211 (key-119, machine-picked, DIFF
 GUARD-AFTER binary=6e12c42de5d333fd PK=aea2ed17290f3294 VK=78352ffa2d0bfe92 — unchanged
 SILICON-END measure_temp=temp=48.2'C get_throttled=throttled=0x0
 BATTERY VERDICT: PRIMARY VALID + CONTROLS VALID — cycle-169 A->B exchange COMPLETE: radio 5/5 SHA MATCH (pre-wrap (+0s) frames) + pairing VALID on B die, declare cross-bus byte-equal, machine-located, label T12_CYCLE169_BATTERY_RUN_UTC derived not typed; primary key-126; settle queued (Cuneiform devnet)
+EXIT=0
