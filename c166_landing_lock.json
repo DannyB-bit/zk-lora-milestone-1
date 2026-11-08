@@ -1,0 +1,37 @@
+{
+ "state": "complete_settled",
+ "cycle": "166",
+ "key_id": "123",
+ "declare": {
+  "b_bus_seq": 3641,
+  "a_bus_mirror_seq": 1341,
+  "ts_utc": "2026-11-07T02:07:55Z"
+ },
+ "fired": {
+  "ts_utc": "2026-11-07T02:09:18Z",
+  "sends": "5/5 TX_DONE",
+  "sha": "7a6785503e5b39b5db5ea96099ccb2e93f1d16375a1d8424f5dd61ac4ce3b6e1"
+ },
+ "declare_to_fire_s": 83,
+ "armed_at_utc": "2026-11-07T01:33:08Z",
+ "closes_at_utc": "2026-11-07T03:33:08Z",
+ "settle": {
+  "tx": "3GusZJfTamckyaY1WxqF5e4QBjFNSLuD82Ze1LWXH14TRAVPvwi8hcQxYikfJV52c58cSyfvM5a3tZAZpCVm8HrQ",
+  "pda": "iajXdtgmyeuZbYX3sMLgZEjSbJ45uzD6vcvZqH2Riy1",
+  "slot_era": "2026-11-08T02:19:49Z",
+  "merkle_root": "7a6785503e5b39b5db5ea96099ccb2e93f1d16375a1d8424f5dd61ac4ce3b6e1",
+  "session_id": "7a6785503e5b39b5",
+  "coords": [
+   141,
+   158,
+   125,
+   235,
+   245,
+   29
+  ],
+  "fee_lamports": 100000,
+  "tests": "6/6 PASS, 0 fail",
+  "pairing": "VALID on B die (t12_cycle166_battery_attempt1.log, BATTERY_EXIT=0, controls key-122/key-119 VALID)",
+  "groth16_ota_settled_on_chain": "YES"
+ }
+}
