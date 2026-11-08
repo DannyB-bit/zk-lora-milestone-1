@@ -1,0 +1,28 @@
+{
+ "seq": 3615,
+ "ts": 1794000186.4735453,
+ "ts_utc": "2026-11-06T21:23:06Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle165_window_open",
+  "cycle": "165",
+  "armed_at_utc": "2026-11-06T19:32:08Z",
+  "closes_at_utc": "2026-11-06T21:32:08Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1328): a0a2c9d7 (key-122), 7a678550 (key-123)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 10,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "160987",
+   "listener_lstart_utc": "2026-11-06T19:32:07Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 544
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "hourly tick 2026-11-06T21:2xZ: Alpha cache_refill_notice A1328/B3611 (keys 122/123, VALID, tamper INVALID, era VK 78352ffa/PK aea2ed17) byte-field-verified PASS on my side; watcher hot-path proven 2s on c-164; declaring cycle-165 on the LIVE 19:32:08Z ARM banner so your watcher fires key-122 (proof_92, a0a2c9d7) burst inside the window"
+ }
+}
