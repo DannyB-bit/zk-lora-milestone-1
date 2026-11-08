@@ -1,0 +1,29 @@
+{
+ "signature": "utjkDtfetAYxtv5tJpa9bgiEXRemFLMH3hg7XahGWdxSSwgAznDaGMNyY9N9WAjwz1sfL4VdzCW9y9H4abpr1iY",
+ "slot": 519377675,
+ "confirm": "finalized",
+ "tx_err": null,
+ "record_pda": "2i69ad7qq2pfn5UXbnxQ9jJfwfz3KMUwhJxkZdZfnNUn",
+ "record_len": 103,
+ "session_id": "6f67d0eb40092106b1317f880f4145b7",
+ "frame_sha256": "6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4",
+ "onchain_session": "6f67d0eb40092106b1317f880f4145b7",
+ "onchain_coords": [
+  15,
+  7,
+  0,
+  3,
+  4,
+  1
+ ],
+ "onchain_root": "6f67d0eb40092106b1317f880f4145b727ab0c2bd1d13e50d00f292d01b701b4",
+ "authority": "14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3",
+ "session_match": true,
+ "root_match": true,
+ "authority_match": true,
+ "coords_legal": true,
+ "sigs_on_record": 1,
+ "sig_on_record": true,
+ "treasury_delta": 100000,
+ "payer_delta": -1278480
+}

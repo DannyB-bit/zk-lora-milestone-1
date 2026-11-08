@@ -1,0 +1,12 @@
+chirp245 acceptance gates
+  PASS G1_coord_law_bijective (0.1s) 5000 random 6D coords bijective
+  PASS G2_max_capacity_roundtrip (0.0s) 81 coords -> 183B -> bit-exact
+  PASS G3_chirp_build_open_exact (0.0s) build->open 81 coords exact, 245B frame
+  PASS G4_tamper_rejected (0.0s) single-bit tamper rejected by AES-GCM
+  PASS G5_wrong_key_rejected (0.0s) wrong-key rejected
+  PASS G6_ephemeral_freshness (0.0s) fresh ephemeral key + nonce per chirp (non-deterministic ct)
+  PASS G7_onchain_coords_legal (0.0s) derived coords [11, 16, 6, 5, 0, 0] all legal dims
+  PASS G8_solana_devnet_register (0.0s) SKIPPED (no devnet keyfile)
+
+======================================================
+chirp245: 8 PASS, 0 FAIL
