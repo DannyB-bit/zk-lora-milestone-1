@@ -1,0 +1,82 @@
+{
+ "cycle": "170",
+ "readback_utc": "2026-11-09T20:41:39.249Z",
+ "register_tx": "23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN",
+ "pda": "56KAJUTYq1tbxyYBfBoWS3QxFkz6HMpoisjKF2UAjsCf",
+ "proof_sha256": "99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf",
+ "checks": [
+  {
+   "name": "captured proof is 128 bytes",
+   "pass": true,
+   "detail": "len=128"
+  },
+  {
+   "name": "captured sha == declared 99794ea3",
+   "pass": true,
+   "detail": "99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf"
+  },
+  {
+   "name": "register TX retrievable",
+   "pass": true,
+   "detail": "false"
+  },
+  {
+   "name": "register TX err null",
+   "pass": true,
+   "detail": "null"
+  },
+  {
+   "name": "TX log carries Coordinates line",
+   "pass": true,
+   "detail": "11 logs"
+  },
+  {
+   "name": "TX log carries protocol fee",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "TX invokes Cuneiform program",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "PDA exists",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "PDA owner == Cuneiform program",
+   "pass": true,
+   "detail": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy"
+  },
+  {
+   "name": "PDA datalen == 103",
+   "pass": true,
+   "detail": "len=103"
+  },
+  {
+   "name": "PDA authority == B wallet",
+   "pass": true,
+   "detail": "14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3"
+  },
+  {
+   "name": "PDA session == sha[0:16]",
+   "pass": true,
+   "detail": "99794ea32b1b7ba0"
+  },
+  {
+   "name": "on-chain coords == payload bytes 0..5",
+   "pass": true,
+   "detail": "[171,200,211,200,152,64] vs [171,200,211,200,152,64]"
+  },
+  {
+   "name": "on-chain merkle root == sha256(on-air proof) 64/64",
+   "pass": true,
+   "detail": "99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf"
+  }
+ ],
+ "tests_passed": 14,
+ "tests_failed": 0,
+ "settled_on_chain": true
+}

@@ -1,0 +1,63 @@
+  captured proof: 128 bytes from groth16_ota_20261109T0131Z_cycle170 (key-127)
+  proof SHA256: 99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf
+  coords (proof payload[0:6]): [0xab, 0xc8, 0xd3, 0xc8, 0x98, 0x40]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.821007800 SOL
+  session_id : 99794ea32b1b7ba0 (= proof SHA[0:16] hex)
+  merkleRoot: 99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf (= captured proof SHA256)
+  record PDA: 56KAJUTYq1tbxyYBfBoWS3QxFkz6HMpoisjKF2UAjsCf
+  [RECONSTRUCTED 2026-11-09 from on-disk artifacts: settler stdout was not captured to this dir at fire time;
+   every line below is read back from settle_result_summary.txt + settle_chain_readback.json + the devnet RPC]
+  ✅ REGISTER TX: 23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN
+     https://explorer.solana.com/tx/23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN?cluster=devnet
+     slot 520318573, blockTime 2026-11-09T08:15:49Z, err=None, computed 19514/200000 CU
+  on-chain record: coords=[171,200,211,200,152,64] root=99794ea32b1b7ba0… (merkle-root bytes == sha256(rx_payload_128b.bin) read back from PDA data offset 62); TX log line "Coordinates: Domain=171, Subdomain=200, Modality=211, Polarity=200, Strength=152, Depth=64"
+  treasury delta: 100000 lamports (program log "Collected protocol fee: 100000 lamports"; treasury 10024730000 -> 10024830000)
+  balance after: 5.81972932 SOL (delta 0.00127848 SOL = 100000 fee + 1173480 PDA rent + tx fees)
+
+TEST_RUN_UTC=2026-11-09T08:15:49.986Z (settler clock, solana-cuneiform-milestone1 artifacts; chain blockTime 2026-11-09T08:15:49Z)
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-170 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0): key-127 FIRST-OF-CLASS, SHA 99794ea3 64/64, cross-bus byte-equal A1367==B3807, controls key-126/key-125 VALID
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, window B3805/A1366 armed 2026-11-08T23:40:54Z closes 2026-11-09T01:40:54Z, fired 5/5 TX_DONE 01:31:29Z (watcher hot-path, no LLM turn), inter-frame 16.7s, battery POST-WRAP (+4294.967296s) branch
+PROOF_PAYLOAD_SHA256=99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf
+GROTH16_PAIRING_VERIFIED=YES - Groth16 pairing VALID on B die (t12_cycle170_battery.log): PRIMARY key-127 VALID 161.7s + FIRST-OF-CLASS positively asserted + controls key-126/key-125 distinct-class VALID, GUARD-AFTER binary/PK/VK unchanged, BATTERY_EXIT=0
+SESSION_ID=99794ea32b1b7ba0
+COORDS_REGISTERED=[171, 200, 211, 200, 152, 64] (= proof payload bytes 0..5)
+MERKLE_ROOT=99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf (= proof payload SHA256)
+RECORD_PDA=56KAJUTYq1tbxyYBfBoWS3QxFkz6HMpoisjKF2UAjsCf
+REGISTER_TX=23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN
+REGISTER_TX_URL=https://explorer.solana.com/tx/23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.821007800 SOL
+BALANCE_AFTER=5.819729320 SOL
+READBACK_UTC=2026-11-09T20:0xZ (independent re-verification from devnet RPC: TX fetch + PDA decode + coords/root/session equality + treasury delta)
+READBACK_TESTS=14 PASS / 0 FAIL (settle_chain_readback.json)
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
+
+### settler result_summary.txt (verbatim on-disk artifact)
+TEST_RUN_UTC=2026-11-09T08:15:49.986Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-170 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0): key-127 FIRST-OF-CLASS, SHA 99794ea3 64/64, cross-bus byte-equal A1367==B3807, controls key-126/key-125 VALID
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, window B3805/A1366 armed 23:40:54Z closes 01:40:54Z, fired 01:31:29Z, inter-frame 16.7s, battery EXIT=0 POST-WRAP
+PROOF_PAYLOAD_SHA256=99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf
+GROTH16_PAIRING_VERIFIED=YES - t12_cycle170_battery.log PRIMARY key-127 VALID + FIRST-OF-CLASS positively asserted + controls key-126, key-125 distinct-class VALID, GUARD-AFTER unchanged, POST-WRAP frames
+SESSION_ID=99794ea32b1b7ba0
+COORDS_REGISTERED=[171, 200, 211, 200, 152, 64] (= proof payload bytes 0..5)
+MERKLE_ROOT=99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf (= proof payload SHA256)
+RECORD_PDA=56KAJUTYq1tbxyYBfBoWS3QxFkz6HMpoisjKF2UAjsCf
+REGISTER_TX=23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN
+REGISTER_TX_URL=https://explorer.solana.com/tx/23tuthbXKZVU15M1wusdx1hmJ8PNuY9hsHDJyGKRd61hmLdfrj6VosEbL1SY4ViFBpBpyGu6w7xRW1bSByUp5tsN?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.8210078 SOL
+BALANCE_AFTER=5.81972932 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
