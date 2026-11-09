@@ -1,0 +1,5 @@
+captured proof is 128 bytes
+captured proof SHA == TX-declared SHA (byte-tied to airwave): 2d1a1db0 64/64
+on-chain record readback: coords [216,1,212,195,162,145] == captured payload bytes 0..5
+on-chain merkle root == sha256(rx_payload_128b.bin) (PDA data offset 62, byte-equal)
+protocol fee 100000 lamports CPI-collected to treasury CotbUcSMqaqn69YSmh2YgYZjKfE7cZk4fTsEmE3kfWJ (balance delta 10024630000 -> 10024730000)
