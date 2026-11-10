@@ -1,0 +1,41 @@
+{
+ "payload_sha256": "99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf",
+ "armed_at_utc": "2026-11-08T23:40:54Z",
+ "closes_at_utc": "2026-11-09T01:40:54Z",
+ "window_seq_b_bus": 3805,
+ "window_seq_a_bus": 1366,
+ "frames": 5,
+ "crc_ok": 5,
+ "freq_hz": 903900000,
+ "sf": "SF9/125kHz",
+ "snr_db": [
+  10.8,
+  11.2
+ ],
+ "inter_frame_s": [
+  16.71,
+  16.88,
+  16.72,
+  16.78
+ ],
+ "count_us_range": [
+  2267311406,
+  2334409761
+ ],
+ "wrap_branch": "pre-wrap (+0s)",
+ "declared_sha256": "99794ea32b1b7ba03069b9bb246fca2ce0afd64fefe6bfd794313f668ebd85bf",
+ "extractor_sha256_match": true,
+ "fired_utc": "2026-11-09T01:31:29Z",
+ "declare_utc": "2026-11-09T01:30:09Z",
+ "key_id": "127",
+ "deposit": 100096,
+ "coords_payload_first6": [
+  171,
+  200,
+  211,
+  200,
+  152,
+  64
+ ],
+ "crc_bad_excluded": "see extractor: 2x status 0x11 chan6 -10.5dB decoys excluded by CRC gate"
+}
