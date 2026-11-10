@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-11-10T00:12:47.043Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-171 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, WATCHER HOT-PATH auto-fire ~81s after declare, no LLM turn): window declared 2026-11-09T23:39:37Z (B3879/A1376, armed 21:44:36Z closes 23:44:36Z, key-128 warm rung from Alpha 22:46Z cache refill A1374 keys 128/129 minted + battery PASS on A72), proof declare 23:39:38Z (key-128, deposit 100097, identity-era VK 78352ffa, same second as declare mirror), fired 5/5 TX_DONE 23:40:58Z, burst captured IN-WINDOW 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.8..+11.5dB inter-frame 16.7s uniform, sha 42554e70 64/64
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.8..+11.5 dB, inter-frame 16.7s uniform, POST-WRAP (+4294.967296s) burst, window B3879 armed 2026-11-09T21:44:36Z, fired 2026-11-09T23:40:58Z, ~80s prove-declare-to-fire, key-128 deposit 100097, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=42554e708fc682e6c073870565d42b767df9903c8f1fad65d088845ef5050eaf
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-128 pih[-1]=7419ef7cbd45e917 prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=42554e708fc682e6
+COORDS_REGISTERED=[31, 131, 93, 89, 159, 176] (= proof payload bytes 0..5)
+MERKLE_ROOT=42554e708fc682e6c073870565d42b767df9903c8f1fad65d088845ef5050eaf (= proof payload SHA256)
+RECORD_PDA=SwSbnj5seZuRpiTSCevbTWfm4HtXggHwzgwB86Ume7W
+REGISTER_TX=5b61iRfxA94JuY34JGUDYpfNRHByfx18tjVXqaE98Z66wLcsFu6pKCznJ2nBgErM2RLn1EW76zkBiNJh8dqizh2t
+REGISTER_TX_URL=https://explorer.solana.com/tx/5b61iRfxA94JuY34JGUDYpfNRHByfx18tjVXqaE98Z66wLcsFu6pKCznJ2nBgErM2RLn1EW76zkBiNJh8dqizh2t?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.81972932 SOL
+BALANCE_AFTER=5.81845084 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
