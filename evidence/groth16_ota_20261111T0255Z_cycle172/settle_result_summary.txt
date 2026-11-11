@@ -1,0 +1,21 @@
+TEST_RUN_UTC=2026-11-11T03:59:08.683Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-172 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, WATCHER HOT-PATH auto-fire ~80s after declare, no LLM turn): window declared 2026-11-11T02:54:33Z (B3964/A1382, armed 01:49:22Z closes 03:49:22Z, 3290s remaining at declare per the c-146 early-declare law; key-129 warm rung = LAST of Alpha's cache refill notice A1374/B3875 @2026-11-09T22:46:29Z keys 128/129 minted + battery PASS on A72), proof declare 02:54:34Z (key-129, deposit 100098, identity-era VK 78352ffa), fired 5/5 TX_DONE 02:55:54Z, burst captured IN-WINDOW 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.8..+11.2dB inter-frame 16.8s uniform, sha cb186efb 64/64. TX proof ladder stands at ZERO warm rungs after this cycle - standing keys 130/131 refill ask B3887/A1381 (2026-11-10T00:18:30Z) still unanswered; a re-ask rides stage-2.
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.8..+11.2 dB, inter-frame 16.8s uniform, pre-wrap (+0s) burst, window B3964 armed 2026-11-11T01:49:22Z, fired 2026-11-11T02:55:54Z, ~80s prove-declare-to-fire, key-129 deposit 100098, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=cb186efbbbc6db12ee73c7bd5813a955f3f009176ab615e15060d91a88d458cf
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-129 pih[-1]=c8248ac81038bf2d prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=cb186efbbbc6db12
+COORDS_REGISTERED=[238, 99, 228, 71, 25, 146] (= proof payload bytes 0..5)
+MERKLE_ROOT=cb186efbbbc6db12ee73c7bd5813a955f3f009176ab615e15060d91a88d458cf (= proof payload SHA256)
+RECORD_PDA=Cou52q3y5oByzZmzUKpU2fBFuSAbDCCzKaNKCmdpdsWE
+REGISTER_TX=cjLJTKRXyr7t5uzx8TX4ghu9PTcV5KhyrTxMkvW7wXoEiV78u752gFGAQhhzgLM38C31ZSWbhPEtE4dcHkbQ6n5
+REGISTER_TX_URL=https://explorer.solana.com/tx/cjLJTKRXyr7t5uzx8TX4ghu9PTcV5KhyrTxMkvW7wXoEiV78u752gFGAQhhzgLM38C31ZSWbhPEtE4dcHkbQ6n5?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.81845084 SOL
+BALANCE_AFTER=5.81717236 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES
