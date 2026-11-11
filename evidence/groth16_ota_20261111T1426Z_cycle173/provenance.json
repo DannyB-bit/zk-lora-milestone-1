@@ -1,0 +1,12 @@
+{
+ "cycle": "173",
+ "key_id": "130",
+ "payload_sha256": "5b31402b99c9160bdbe027d1224d4cf18701a2fe555c7dd413f81e40b84a82cb",
+ "source": "b_rx_extract.py rc=0 on c173_session_slice.log (5/5 CRC-OK 128B, 903.9 MHz, SF9)",
+ "refill_notice": {
+  "a_bus_seq": 1389,
+  "b_bus_seq": 3993,
+  "key": "130"
+ },
+ "declare_json": "cycle173_window_declare.json"
+}
