@@ -1,0 +1,31 @@
+{
+ "cycle": "174",
+ "key_id": "131",
+ "window_seq": "4036",
+ "declare_sha256": "b286ab0d77552a487139f384709ca81b6899c5cd0b714adeead17034f779488b",
+ "payload_sha256": "b286ab0d77552a487139f384709ca81b6899c5cd0b714adeead17034f779488b",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 13,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": 10.5,
+ "snr_max": 11.0,
+ "inter_frame_s": [
+  16.72,
+  16.71,
+  16.75,
+  16.74
+ ],
+ "first_count_us": 3239531800,
+ "last_count_us": 3306456497,
+ "armed_at_utc": "2026-11-11T21:52:44Z",
+ "closes_at_utc": "2026-11-11T23:52:44Z",
+ "declare_ts_utc": "2026-11-11T22:46:36Z",
+ "fired_utc": "2026-11-11T22:47:56Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 80,
+ "ambient_crc_ok_excluded": 6,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-11-11T21:52:44Z); burst captured IN-WINDOW (armed 2026-11-11T21:52:44Z, declared 2026-11-11T22:46:36Z with 3968s remaining - EARLY declare per the c-146 law - fired 2026-11-11T22:47:56Z, all 5 sends before the scheduled close 2026-11-11T23:52:44Z); extract ran on the CLOSED session segment (slice banner->exit line, rc=124 window span complete at 2026-11-11T23:52:44Z); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle (c-171/c-172/c-173 pattern: no rx_capture_confirmed); declare-to-fire 80s computed from bus timestamps; wrap branch battery-selected in the T12 run (c-122/c-137 laws); key-131 = LAST warm rung of Alpha's refill pair (A1389/B3993 @2026-11-11T10:23:13Z, keys 130/131) - TX proof cache DRAINS to 0 warm after this cycle; WATCHER HOT PATH fired unattended ~80s after declare, no LLM turn."
+}
