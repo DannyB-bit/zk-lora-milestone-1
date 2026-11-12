@@ -1,0 +1,31 @@
+{
+ "seq": 1405,
+ "ts": 1794495059.9876895,
+ "ts_utc": "2026-11-12T14:50:59Z",
+ "type": "groth16_proof_tx",
+ "data": {
+  "window_seq": "4092",
+  "window_closes_utc": "2026-11-12T15:55:26Z",
+  "proof_sha256": "6136f036db4e637f5417f7cf6cf596962b0f93b3e600219ea70fdba68db29fdb",
+  "payload_bytes": 128,
+  "public_input_hashes": [
+   "9f8f27afe79ecfb3df6b9a367166d6e0b8e490b89f9653c7c75551d3958d7c23",
+   "86d7388e318cf2b186d76741813c1233dfa77490f46ad96e4af3fa4cba1fd701",
+   "25e0e3ca46153f69ce6dc4d88478d247c944385f6988855b449858721ce9932a",
+   "e9f9dc1c595c3cb1956bfa3b8e29ff433f13d44816c2f9519cbdb3129c02e106"
+  ],
+  "deposit_commitment": "033f34eb467ea05dc1ed1ebbcf17c9c59fed669944db581259c1f1c3ed555508",
+  "gateway_address_hex": "0016c001ff18afa3903900000000000000000000000000000000000000000000",
+  "deposit_value": 100101,
+  "firmware_hash_hex": "656e636c6176652d6669726d776172652d76657273696f6e2d76312e302e32",
+  "private_key_id": "132",
+  "pk_source": "canon repo keys/ (PK sha aea2ed17..., VK sha 78352ffa...) loaded at prove time, CWD=zk-lorawan root",
+  "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+  "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+  "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+  "construction": "A(32B G1)||B(64B G2)||C(32B G1), seed-42 canon PK, pre-proven cache",
+  "fire_eta_utc": "2026-11-12T14:51:59Z",
+  "source": "watcher_hot_path (no LLM turn)",
+  "spec": "groth16_proof_tx v2 \u2014 full public input vector"
+ }
+}

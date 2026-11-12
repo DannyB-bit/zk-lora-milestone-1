@@ -1,0 +1,10 @@
+{
+ "pda": "33ZuX4pRgzFhrw6SLbThQTKLTCZdxtD6bPy7p22BsauT",
+ "signature": "NMmYTAEGguYTt5tbjqKEbBMYiz6adyo9uS1ioqH1FWgzVxciSz9N8S6pqSYxFXckYzA9yAE3iS1N7jkJW2KH4MF",
+ "slot": 521571724,
+ "block_time_utc": "2026-11-12T19:41:57Z",
+ "err": null,
+ "signature_count": 1,
+ "matches_result_summary_REGISTER_TX": true,
+ "verdict": "PASS \u2014 exactly one settle sig, err null, matches artifact"
+}

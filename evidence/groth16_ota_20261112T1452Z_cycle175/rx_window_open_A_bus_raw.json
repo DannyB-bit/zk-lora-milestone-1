@@ -1,0 +1,28 @@
+{
+ "seq": 1404,
+ "ts": 1794495059.7607918,
+ "ts_utc": "2026-11-12T14:50:59Z",
+ "type": "rx_window_open",
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "drill": "groth16_ota",
+  "kind": "cycle175_window_open",
+  "cycle": "175",
+  "armed_at_utc": "2026-11-12T13:55:26Z",
+  "closes_at_utc": "2026-11-12T15:55:26Z",
+  "config": "./test_loragw_hal_rx -d /dev/spidev0.0 -r 1250 -a 904.3 -b 905.0 -k 0 -m 0 -j -z 255 -n 0 (radio A 904.3 MHz, IF -400 kHz => 903.9 MHz exact, SF9/125kHz, listener span 7200s)",
+  "expected_payload_sha256": "prefix-only (full 64-hex never published) \u2014 cache expected warm per your latest cache_refill_notice (A seq 1403): 6136f036 (key-132), 38b9e402 (key-133)",
+  "cert": {
+   "loragw_chirp_recovery_pass": true,
+   "gate_pass_events_in_current_standby_log": 79,
+   "chip": "version reg 0x10 v1.0 (HAL banner in capture log)",
+   "listener_pid": "1365554",
+   "listener_lstart_utc": "2026-11-12T13:55:25Z",
+   "arm_banner_skew_s": 1.0,
+   "window_remaining_s_at_declare": 3868
+  },
+  "composer": "declare_rx_window.py v1.0 \u2014 tz-aware UTC close arithmetic (fixes the c-77 +4h EDT mktime-skew class); all fields machine-parsed",
+  "note": "c-175 UNBLOCKED: Alpha cache_refill_notice A1403 @2026-11-12T12:56:07Z (keys 132/133, cache warm=2, front proof_102.json key-132) LANDED and byte-diffed. Era VERIFIED on my die: local VK sha 78352ffa... == notice vk_sha256, local PK sha aea2ed17... == notice pk_sha256 \u2014 same identity-era keyset, fail-closed gate passes. Ladder range 31..133 self-verified VALID on A (133.0s/133.2s full 11-arg) + tamper control INVALID (single-hex flip, rc=1). RX-HOT CERTIFIED this session: LORA_CHIRP_RECOVERY_PASS=YES @13:55:26Z, listener PID 1365554 lstart 13:55:25Z, skew 1.0s, 'Waiting for packets' reached, chip v1.0 0x10. Declaring IMMEDIATELY per your timing note \u2014 watcher auto-fire armed."
+ }
+}
