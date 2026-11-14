@@ -68,25 +68,29 @@
       "battery": {"primary_s": 160.5, "controls_s": [161.0, 161.3], "exit_code": 0, "verdict": "VALID"},
       "tests": {"passed": 6, "failed": 0},
       "evidence": "evidence/groth16_ota_20261112T1452Z_cycle175/",
+      "stage2_bus": {"landed": {"b": 4200, "a": 1413}, "stage2": {"b": 4201, "a": 1414}, "cross_bus": "byte-equal"},
       "second_signature": "Researcher A cross-verification + APPROVE on PR #147 (2026-11-13T00:30:07Z)",
-      "note": "Codex review on PR #147 failed with an infrastructure error (no code findings)."
+      "note": "Codex review on PR #147 failed with an infrastructure error (no code findings). capture_meta.json carried a copy-pasted cache line claiming key-132 was the LAST warm rung of pair 130/131; corrected in place (original preserved + marked) and disclosed in the stage-2 event and commit 8ea5f25.",
+      "open_items": ["PR #147 awaiting operator merge"]
     },
     {
       "cycle": "c212",
       "proof_key": "key-133",
-      "status": "settled-pr-pending",
-      "pr": null,
+      "status": "settled-pr-open",
+      "pr": 149,
       "tx": "26axTNbLGdUqbGpPpNndodao2GGc59HyXGYfBw7yusNeHp5YRc8TYtY9PSs6gKvG8YsKiZe7TeVkgZF3aubKCZT6",
       "pda": "2Q4WUyaCyMQnJaVk6KbgSK2t7ecdZRvRPNPjXQX4BUzT",
-      "slot": 521624329,
+      "slot": 521624597,
+      "settle_slot": 521624329,
       "sha256_prefix": "38b9e402",
       "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.2"},
-      "battery": {"exit_code": 0, "verdict": "VALID"},
+      "battery": {"exit_code": 0, "verdict": "VALID", "first_of_class": "key-133"},
+      "tests": {"passed": 6, "failed": 0},
       "evidence": "evidence/groth16_ota_20261112T1555Z_cycle212/",
+      "stage2_bus": {"landed": {"b": 4204, "a": 1415}, "stage2": {"b": 4205, "a": 1416}, "chirp245_verdict_correction": {"b": 4206, "a": 1417}, "cross_bus": "byte-equal"},
       "open_items": [
-        "PR not yet opened",
-        "stage-2 bus readback not yet posted",
-        "chirp245 sealed-frame replay claim unsupported: no 245-byte frame was captured in the c212 window (0 matches in the standby log and the c212 session slice); the DECRYPT_OK event re-reported the 2026-11-12T12:21Z re-run of the 2026-11-06 capture"
+        "PR #149 awaiting operator merge",
+        "chirp245_sealed_frame drill remains OPEN: bus event B4108/A1411 reported DECRYPT_OK for a frame that was never transmitted in the c212 window (0 x 245-byte frames in the c212 slice and in the standby logs; decrypt artifact regenerated 2026-11-12T17:21:59Z from the archived 2026-11-06 capture). Correction posted as B4206/A1417; the groth16_ota half of c212 is unaffected and remains VALID."
       ]
     }
   ],

@@ -19,25 +19,22 @@
 
 ### What's In Progress
 
-- [ ] c175 stage-2 bus readback (landed + stage2, byte-equal dual-bus) → commit raw into `evidence/groth16_ota_20261112T1452Z_cycle175/` and push to PR #147
+- [ ] Nothing in flight — the two closing loops below are done; next work is the next cycle (keys 134/135 warm) or the operator's merges.
   - Blockers: none
-- [ ] c212 landing: evidence commit + README + PR (no PR exists yet for c212)
-  - Blockers: none
-- [ ] chirp245 correction: the `chirp245_rx_verdict DECRYPT_OK` event posted 2026-11-12T17:23:16Z re-reported the 12:21Z decrypt artifact — **zero 245-byte frames exist** in the standby log or the c212 session slice, so no sealed frame re-flew in the c212 window. Post a corrective bus note and disclose in the c212 PR body + README.
 
 ### What's Next
 
-1. Post c175 + c212 stage-2 bus events (dual-post, byte-diff readback, raw JSON committed).
-2. Push c175 stage-2 commit to PR #147 branch; open c212 PR off `origin/main`.
-3. Post the chirp245 verdict correction on both buses.
-4. Update `cycle_registry.json` statuses to `settled-pr-open` / `settled-pr-open` + the correction note.
-5. Consider the next cycle: key cache — keys 134/135 minted proactively by Alpha (A1412/B4111, 2026-11-12T16:19:04Z); c175 consumed 132, c212 consumed 133.
+1. Operator merges **PR #147** (c175 evidence + stage-2), **PR #149** (c212 evidence + stage-2 + chirp245 correction), **PR #148** (this harness pack).
+2. **chirp245 sealed-frame drill stays OPEN** — next cycle must transmit a real 245 B frame inside a declared window, keep the RF capture artifact (245-byte frame in the session slice + digest match), and publish `DECRYPT_OK` only after that artifact exists.
+3. Next cycle: keys 134/135 are warm (Alpha proactive mint A1412/B4111). Window declaration is single-path: `python3 tools/declare_rx_window.py --cycle N`.
+4. Propagate the harness pack to the other fleet repos (`zk-lorawan`, `solana-cuneiform-milestone1`) once this PR lands.
 
 ## Blockers / Risks
 
 - [ ] **Codex review on PR #147 reports infrastructure failure, not findings** (`We couldn't complete this review`), so no automated second opinion on c175 — Alpha's manual cross-verification + APPROVE comment is the second signature.
-- [ ] **chirp245 sealed-frame drill was never actually re-flown** — the decrypt artifact is from the 2026-11-06 capture re-run at 12:21Z on 11-12. Any claim of a "live replay" is unsupported until a 245B frame is captured over the air.
-- [ ] **Repo-root harness was absent until 2026-11-13** — previous cycles relied on chat/bus state, which is why the stage-2 gap for c175 and the missing c212 PR were possible.
+- [ ] **chirp245 sealed-frame drill was never actually re-flown** — the decrypt artifact was regenerated 2026-11-12T17:21:59Z from the **archived 2026-11-06 frame** (frame sha identical, 0 × 245-byte frames in the c212 slice and in the standby logs). Correction posted on both buses (B4206/A1417) and disclosed in PR #149 + the EV README. The drill stays **OPEN** until a 245 B frame is transmitted and captured over the air.
+- [ ] **Repo-root harness was absent until 2026-11-13** — previous cycles relied on chat/bus state, which is why the stage-2 gap for c175 and the missing c212 PR were possible. Now enforced by `init.sh` + `cycle_registry.json` + `AGENTS.md` MUST/MUST NOT rules.
+- [ ] **PR #147** (c175), **#149** (c212) and **#148** (harness pack) await the operator's merge — fleet law: agents open PRs, the operator merges.
 
 ## Decisions Made
 
