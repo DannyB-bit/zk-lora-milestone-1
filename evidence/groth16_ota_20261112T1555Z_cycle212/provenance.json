@@ -1,0 +1,12 @@
+{
+ "cycle": "212",
+ "key_id": "133",
+ "payload_sha256": "38b9e402d2417a93133da2ea903b8502439c2141cd09b2ad00c2bb404729236b",
+ "source": "b_rx_extract.py rc=0 on c212_session_slice.log (5/5 CRC-OK 128B, 903.9 MHz, SF9)",
+ "refill_notice": {
+  "a_bus_seq": 1403,
+  "b_bus_seq": 4085,
+  "key": "133"
+ },
+ "declare_json": "cycle212_window_declare.json"
+}

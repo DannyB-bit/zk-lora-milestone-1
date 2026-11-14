@@ -1,0 +1,31 @@
+{
+ "cycle": "212",
+ "key_id": "133",
+ "window_seq": "4100",
+ "declare_sha256": "38b9e402d2417a93133da2ea903b8502439c2141cd09b2ad00c2bb404729236b",
+ "payload_sha256": "38b9e402d2417a93133da2ea903b8502439c2141cd09b2ad00c2bb404729236b",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 13,
+ "freq_hz": 903900000,
+ "datr": "9",
+ "size": 128,
+ "snr_min": 10.5,
+ "snr_max": 11.2,
+ "inter_frame_s": [
+  16.73,
+  16.74,
+  16.71,
+  16.75
+ ],
+ "first_count_us": 1377505187,
+ "last_count_us": 1444434323,
+ "armed_at_utc": "2026-11-12T15:55:46Z",
+ "closes_at_utc": "2026-11-12T17:55:46Z",
+ "declare_ts_utc": "2026-11-12T16:18:37Z",
+ "fired_utc": "2026-11-12T16:19:56Z",
+ "sends": "5/5 TX_DONE",
+ "declare_to_fire_s": 79,
+ "ambient_crc_ok_excluded": 7,
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-11-12T15:55:46Z); burst captured IN-WINDOW (armed 2026-11-12T15:55:46Z, declared 2026-11-12T16:18:37Z with 5829s remaining - EARLY declare per the c-146 law - fired 2026-11-12T16:19:56Z, all 5 sends before the scheduled close 2026-11-12T17:55:46Z); extract ran on the CLOSED session segment (slice banner->exit line); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle; declare-to-fire 79s computed from bus timestamps; wrap branch battery-selected in the T12 run; key-133 = SECOND warm rung of the c-175 refill pair (A1403/B4085 keys 132/133) - TX proof cache DRAINS to 0 warm after this cycle; Alpha ALREADY minted proactive keys 134/135 (A1412/B4111 @2026-11-12T17:52:24Z); WATCHER HOT PATH fired unattended ~79s after declare, no LLM turn. NOTE: the same c-212 window also carried the chirp245_sealed_frame drill (B_ARMED_FOR_SEALED_FRAME_REPLAY, DECRYPT_OK @2026-11-12T17:23:16Z) - independent of this groth16_ota burst."
+}
