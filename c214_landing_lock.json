@@ -1,0 +1,11 @@
+{
+ "cycle": 214,
+ "state": "stage2_posting",
+ "updated_utc": "2026-11-14T09:30:00Z",
+ "extra": {
+  "evidence_dir": "evidence/groth16_ota_20261114T0802Z_cycle214",
+  "pr_url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/151",
+  "poster": "~/fleet/scripts/post_c214_stage2.py",
+  "note": "stage-2 landed+stage2 bus posts PLUS cache_refill_ask (c-139 0-warm law FIRED: key-135 was the last ladder rung, cache is EMPTY). Requested key ids are machine-derived (max+1/max+2). Guard against double-post: this lock is checked before running the poster."
+ }
+}

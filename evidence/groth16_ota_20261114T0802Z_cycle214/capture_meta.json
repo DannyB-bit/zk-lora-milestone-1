@@ -1,0 +1,45 @@
+{
+ "cycle": "214",
+ "key_id": 135,
+ "window_seq": 4237,
+ "window_a_mirror_seq": 1426,
+ "declare_sha256": "6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58",
+ "payload_sha256": "6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 12,
+ "freq_hz": 903900000,
+ "datr": 9,
+ "size": 128,
+ "snr_min": 10.2,
+ "snr_max": 11.0,
+ "inter_frame_s": [
+  16.75,
+  16.72,
+  16.72,
+  16.73
+ ],
+ "first_count_us": 3596002053,
+ "last_count_us": 3662914826,
+ "armed_at_utc": "2026-11-14T08:02:32Z",
+ "closes_at_utc": "2026-11-14T10:02:32Z",
+ "window_remaining_s_at_declare": 3614,
+ "declare_ts_utc": "2026-11-14T09:02:21Z",
+ "fired_utc": "2026-11-14T09:03:41Z",
+ "sends": "5/5 TX_DONE",
+ "fire_eta_utc": "2026-11-14T09:03:21Z",
+ "deposit_value": 100104,
+ "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+ "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+ "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+ "source": "watcher_hot_path (no LLM turn)",
+ "cache": {
+  "newest_notice_seq": 1412,
+  "key_ids": [
+   134,
+   135
+  ],
+  "warm_rungs": []
+ },
+ "note": "FINAL cycle of the current proof-key chain. burst binding v4 = session-segment + digest-equality; count_us origin = listener process boot (arm banner 2026-11-14T08:02:32Z); burst captured IN-WINDOW (armed 2026-11-14T08:02:32Z, declared with 3614s remaining \u2014 EARLY declare per the c-146 law \u2014 fired 2026-11-14T09:03:41Z, all 5/5 TX_DONE sends before the scheduled close 2026-11-14T10:02:32Z); extract ran on the session segment (slice banner->exit, rc=124 window span complete); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle; key-135 = NEXT rung of Alpha's refill pair (notice seq 1412, keys [134, 135]); after this cycle the warm rungs are [] \u2014 the cache is at 0 warm; a refill ask IS required for the next cycle; WATCHER HOT PATH fired unattended (source=watcher_hot_path, no LLM turn). This cycle is the project-finalization cycle: the groth16_ota RF->chain loop is exercised end to end on the last warm key, and the chirp245 drill is already CLOSED with a real RF artifact from cycle-213."
+}
