@@ -1,0 +1,20 @@
+{
+ "cycle": 175,
+ "state": "stage2_posted_pr_pushed",
+ "updated_utc": "2026-11-13T00:42:30Z",
+ "extra": {
+  "evidence_dir": "evidence/groth16_ota_20261112T1452Z_cycle175",
+  "pr_url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/147",
+  "poster": "~/fleet/scripts/post_c175_stage2.py",
+  "note": "stage-2 landed+stage2 bus posts; NO cache_refill_ask (cache warm with keys 134/135 per Alpha notice A1412/B4111). Guard against double-post: this lock is checked before running the poster.",
+  "landed_seq": {
+   "b": 4200,
+   "a": 1413
+  },
+  "stage2_seq": {
+   "b": 4201,
+   "a": 1414
+  },
+  "capture_meta_corrected": true
+ }
+}

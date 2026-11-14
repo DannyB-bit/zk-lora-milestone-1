@@ -1,0 +1,12 @@
+{
+ "cycle": "175",
+ "key_id": "132",
+ "payload_sha256": "6136f036db4e637f5417f7cf6cf596962b0f93b3e600219ea70fdba68db29fdb",
+ "source": "b_rx_extract.py rc=0 on c175_session_slice.log (5/5 CRC-OK 128B, 903.9 MHz, SF9)",
+ "refill_notice": {
+  "a_bus_seq": 1403,
+  "b_bus_seq": 4085,
+  "key": "132"
+ },
+ "declare_json": "cycle175_window_declare.json"
+}
