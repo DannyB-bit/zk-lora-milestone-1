@@ -1,0 +1,102 @@
+{
+  "registry_version": "1.0",
+  "repo": "DannyB-bit/zk-lora-milestone-1",
+  "cluster": "devnet",
+  "program_id": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+  "owner": "researcher-bravo (Agent 05)",
+  "counterpart": "researcher-a (Agent 04)",
+  "radio": {
+    "hardware": "RAK Miner v2 (SX1302/SX1303)",
+    "frequency_mhz": 903.9,
+    "spreading_factor": 9,
+    "bandwidth_khz": 125,
+    "payload_bytes": 128
+  },
+  "status_vocabulary": [
+    "settled-merged",
+    "settled-pr-open",
+    "settled-pr-pending",
+    "blocked"
+  ],
+  "cycles": [
+    {
+      "cycle": "c165-c172",
+      "proof_key": "key-126..key-129",
+      "status": "settled-merged",
+      "pr": [141, 144],
+      "tx": null,
+      "pda": null,
+      "slot": null,
+      "evidence": "evidence/groth16_ota_*_cycle1{65..72}/",
+      "note": "Batched landing PRs #141-#144; per-cycle TX/PDA recorded in each PR body and evidence dir, not transcribed here to avoid hand-typed values."
+    },
+    {
+      "cycle": "c173",
+      "proof_key": "key-130",
+      "status": "settled-merged",
+      "pr": 145,
+      "tx_prefix": "cPwWEdx95raUmnsBWk5K",
+      "pda": "GDZiEsoYufo31TG6SChyw1oZHtMDPPCDXGcaxAfYrPps",
+      "slot": 521150175,
+      "session_id_ascii": "5b31402b99c9",
+      "evidence": "evidence/groth16_ota_20261111T1426Z_cycle173/",
+      "note": "Full TX signature lives in merge commit 538c90d / PR #145 body; registry stores the verified prefix only."
+    },
+    {
+      "cycle": "c174",
+      "proof_key": "key-131",
+      "status": "settled-merged",
+      "pr": 146,
+      "tx": "4RdXPTQnZMFAB1R2QXHi1D452mSgYcqPYkjQV36TpXpcfVffTPHkiqnwtAwzmqu6zjFugPxnqgHd4Jz4uEXnAonm",
+      "pda": "2TZVNnetqeSLPTkJpGdoMSDG4sZi8ENqB9nYxt5Na6Tu",
+      "slot": 521337788,
+      "coords": [98, 221, 138, 5, 44, 122],
+      "evidence": "evidence/groth16_ota_20261111T2247Z_cycle174/",
+      "merged_commit": "e169bb1"
+    },
+    {
+      "cycle": "c175",
+      "proof_key": "key-132",
+      "status": "settled-pr-open",
+      "pr": 147,
+      "tx": "NMmYTAEGguYTt5tbjqKEbBMYiz6adyo9uS1ioqH1FWgzVxciSz9N8S6pqSYxFXckYzA9yAE3iS1N7jkJW2KH4MF",
+      "pda": "33ZuX4pRgzFhrw6SLbThQTKLTCZdxtD6bPy7p22BsauT",
+      "slot": 521571815,
+      "sha256_prefix": "6136f036",
+      "coords": [122, 153, 56, 209, 70, 102],
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.0", "inter_frame_s": 16.7},
+      "battery": {"primary_s": 160.5, "controls_s": [161.0, 161.3], "exit_code": 0, "verdict": "VALID"},
+      "tests": {"passed": 6, "failed": 0},
+      "evidence": "evidence/groth16_ota_20261112T1452Z_cycle175/",
+      "second_signature": "Researcher A cross-verification + APPROVE on PR #147 (2026-11-13T00:30:07Z)",
+      "note": "Codex review on PR #147 failed with an infrastructure error (no code findings)."
+    },
+    {
+      "cycle": "c212",
+      "proof_key": "key-133",
+      "status": "settled-pr-pending",
+      "pr": null,
+      "tx": "26axTNbLGdUqbGpPpNndodao2GGc59HyXGYfBw7yusNeHp5YRc8TYtY9PSs6gKvG8YsKiZe7TeVkgZF3aubKCZT6",
+      "pda": "2Q4WUyaCyMQnJaVk6KbgSK2t7ecdZRvRPNPjXQX4BUzT",
+      "slot": 521624329,
+      "sha256_prefix": "38b9e402",
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.2"},
+      "battery": {"exit_code": 0, "verdict": "VALID"},
+      "evidence": "evidence/groth16_ota_20261112T1555Z_cycle212/",
+      "open_items": [
+        "PR not yet opened",
+        "stage-2 bus readback not yet posted",
+        "chirp245 sealed-frame replay claim unsupported: no 245-byte frame was captured in the c212 window (0 matches in the standby log and the c212 session slice); the DECRYPT_OK event re-reported the 2026-11-12T12:21Z re-run of the 2026-11-06 capture"
+      ]
+    }
+  ],
+  "proof_cache": {
+    "consumed": ["key-130", "key-131", "key-132", "key-133"],
+    "warm": ["key-134", "key-135"],
+    "warm_source": "Researcher A proactive mint (A1412/B4111 @ 2026-11-12T16:19:04Z)"
+  },
+  "next_cycle": {
+    "status": "ready",
+    "note": "Window declaration is single-path: python3 tools/declare_rx_window.py --cycle N"
+  }
+}

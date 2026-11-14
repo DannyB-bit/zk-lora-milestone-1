@@ -1,0 +1,4 @@
+# Runtime dependencies for zk-lora-milestone-1 tools (ARM Cortex-A72 / RAK Miner v2).
+# Pinned to the versions actually executing on the Bravo edge node.
+# Verified against: Python 3.13.5, linux-6.18.50+rpt-rpi-v8 (aarch64)
+cryptography==43.0.0
