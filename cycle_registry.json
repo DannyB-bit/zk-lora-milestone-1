@@ -1,0 +1,134 @@
+{
+  "registry_version": "1.0",
+  "repo": "DannyB-bit/zk-lora-milestone-1",
+  "cluster": "devnet",
+  "program_id": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+  "owner": "researcher-bravo (Agent 05)",
+  "counterpart": "researcher-a (Agent 04)",
+  "radio": {
+    "hardware": "RAK Miner v2 (SX1302/SX1303)",
+    "frequency_mhz": 903.9,
+    "spreading_factor": 9,
+    "bandwidth_khz": 125,
+    "payload_bytes": 128
+  },
+  "status_vocabulary": [
+    "settled-merged",
+    "settled-pr-open",
+    "settled-pr-pending",
+    "blocked"
+  ],
+  "cycles": [
+    {
+      "cycle": "c165-c172",
+      "proof_key": "key-126..key-129",
+      "status": "settled-merged",
+      "pr": [141, 144],
+      "tx": null,
+      "pda": null,
+      "slot": null,
+      "evidence": "evidence/groth16_ota_*_cycle1{65..72}/",
+      "note": "Batched landing PRs #141-#144; per-cycle TX/PDA recorded in each PR body and evidence dir, not transcribed here to avoid hand-typed values."
+    },
+    {
+      "cycle": "c173",
+      "proof_key": "key-130",
+      "status": "settled-merged",
+      "pr": 145,
+      "tx_prefix": "cPwWEdx95raUmnsBWk5K",
+      "pda": "GDZiEsoYufo31TG6SChyw1oZHtMDPPCDXGcaxAfYrPps",
+      "slot": 521150175,
+      "session_id_ascii": "5b31402b99c9",
+      "evidence": "evidence/groth16_ota_20261111T1426Z_cycle173/",
+      "note": "Full TX signature lives in merge commit 538c90d / PR #145 body; registry stores the verified prefix only."
+    },
+    {
+      "cycle": "c174",
+      "proof_key": "key-131",
+      "status": "settled-merged",
+      "pr": 146,
+      "tx": "4RdXPTQnZMFAB1R2QXHi1D452mSgYcqPYkjQV36TpXpcfVffTPHkiqnwtAwzmqu6zjFugPxnqgHd4Jz4uEXnAonm",
+      "pda": "2TZVNnetqeSLPTkJpGdoMSDG4sZi8ENqB9nYxt5Na6Tu",
+      "slot": 521337788,
+      "coords": [98, 221, 138, 5, 44, 122],
+      "evidence": "evidence/groth16_ota_20261111T2247Z_cycle174/",
+      "merged_commit": "e169bb1"
+    },
+    {
+      "cycle": "c175",
+      "proof_key": "key-132",
+      "status": "settled-pr-open",
+      "pr": 147,
+      "tx": "NMmYTAEGguYTt5tbjqKEbBMYiz6adyo9uS1ioqH1FWgzVxciSz9N8S6pqSYxFXckYzA9yAE3iS1N7jkJW2KH4MF",
+      "pda": "33ZuX4pRgzFhrw6SLbThQTKLTCZdxtD6bPy7p22BsauT",
+      "slot": 521571815,
+      "sha256_prefix": "6136f036",
+      "coords": [122, 153, 56, 209, 70, 102],
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.0", "inter_frame_s": 16.7},
+      "battery": {"primary_s": 160.5, "controls_s": [161.0, 161.3], "exit_code": 0, "verdict": "VALID"},
+      "tests": {"passed": 6, "failed": 0},
+      "evidence": "evidence/groth16_ota_20261112T1452Z_cycle175/",
+      "stage2_bus": {"landed": {"b": 4200, "a": 1413}, "stage2": {"b": 4201, "a": 1414}, "cross_bus": "byte-equal"},
+      "second_signature": "Researcher A cross-verification + APPROVE on PR #147 (2026-11-13T00:30:07Z)",
+      "note": "Codex review on PR #147 failed with an infrastructure error (no code findings). capture_meta.json carried a copy-pasted cache line claiming key-132 was the LAST warm rung of pair 130/131; corrected in place (original preserved + marked) and disclosed in the stage-2 event and commit 8ea5f25.",
+      "open_items": ["PR #147 awaiting operator merge"]
+    },
+    {
+      "cycle": "c212",
+      "proof_key": "key-133",
+      "status": "settled-pr-open",
+      "pr": 149,
+      "tx": "26axTNbLGdUqbGpPpNndodao2GGc59HyXGYfBw7yusNeHp5YRc8TYtY9PSs6gKvG8YsKiZe7TeVkgZF3aubKCZT6",
+      "pda": "2Q4WUyaCyMQnJaVk6KbgSK2t7ecdZRvRPNPjXQX4BUzT",
+      "slot": 521624597,
+      "settle_slot": 521624329,
+      "sha256_prefix": "38b9e402",
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.2"},
+      "battery": {"exit_code": 0, "verdict": "VALID", "first_of_class": "key-133"},
+      "tests": {"passed": 6, "failed": 0},
+      "evidence": "evidence/groth16_ota_20261112T1555Z_cycle212/",
+      "stage2_bus": {"landed": {"b": 4204, "a": 1415}, "stage2": {"b": 4205, "a": 1416}, "chirp245_verdict_correction": {"b": 4206, "a": 1417}, "cross_bus": "byte-equal"},
+      "open_items": [
+        "PR #149 awaiting operator merge",
+        "chirp245_sealed_frame drill CLOSED in cycle-213 with a real RF capture (PR #150): bus event B4108/A1411 had reported DECRYPT_OK for a frame that was never transmitted in the c212 window (0 x 245-byte frames in the c212 slice and in the standby logs; decrypt artifact regenerated 2026-11-12T17:21:59Z from the archived 2026-11-06 capture). Correction posted as B4206/A1417; the groth16_ota half of c212 was unaffected and remains VALID."
+      ]
+    },
+    {
+      "cycle": "c213",
+      "proof_key": "key-134",
+      "status": "settled-pr-open",
+      "pr": 150,
+      "tx": "4RVswoLCDsH8JALNBihBui9H8cDziAL1AyFEoiFTUg9PSRWqAjC6LDKwtSMe9seFZRM6oiB1Atpc9iEe3YMjPs8V",
+      "pda": "EktpjR3tiMPDfKDpGvgwJisUHyWD6tABjKUN7FMT9hMT",
+      "slot": 522119697,
+      "sha256_prefix": "9a35251f",
+      "coords": [5, 110, 149, 83, 89, 56],
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.2", "inter_frame_s": [16.73, 16.74, 16.78, 16.71]},
+      "battery": {"primary_s": 161.8, "controls_s": [161.5, 161.0], "exit_code": 0, "verdict": "VALID",
+                  "first_of_class": "key-134",
+                  "attempts": ["attempt1 (direct invocation; exit code captured by the tracked wrapper)",
+                               "attempt2 (launcher, main worktree, BATTERY_EXIT=0 inline for the settle gate)"],
+                  "note": "both attempts produced the same verdict and the same wall-clock branch timings"},
+      "tests": {"passed": 6, "failed": 0},
+      "evidence": "evidence/groth16_ota_20261114T0602Z_cycle213/",
+      "stage2_bus": {"landed": {"b": 4233, "a": 1424}, "stage2": {"b": 4234, "a": 1425}, "cross_bus": "byte-equal"},
+      "chirp245": {"drill": "chirp245_sealed_frame", "status": "CLOSED - first verdict backed by an RF capture",
+                   "frames_captured": 5, "frame_bytes": 245, "frame_sha256": "135476e3293c2564d38c5309861b1ab95fa9891ddac264634e5af8b27f88c3c4",
+                   "n_coords_decrypted": 81, "verdict_event": {"b": 4227, "a": 1423},
+                   "tx_event": {"b": 4226, "a": 1422}, "payload_event": {"b": 4224, "a": 1421},
+                   "aead": "AES-256-GCM (canonical tool), HKDF-SHA256 salt=zk-lora-chirp245-v1 info=chirp245-aead-key",
+                   "provenance": "ciphertext sealed on B (sealing needs only B's public key); RF transmit by Alpha",
+                   "disclosure": "Alpha's chirp245_tx_fired event states '>=10s apart'; the measured capture spacing is ~2.2s — capture is 5/5 valid, that spacing claim does not match the RF measurement"},
+      "open_items": ["PR #150 awaiting operator merge"]
+    }
+  ],
+  "proof_cache": {
+    "consumed": ["key-130", "key-131", "key-132", "key-133", "key-134"],
+    "warm": ["key-135"],
+    "warm_source": "Researcher A proactive mint (A1412/B4111 @ 2026-11-12T16:19:04Z)"
+  },
+  "next_cycle": {
+    "status": "ready",
+    "note": "Window declaration is single-path: python3 tools/declare_rx_window.py --cycle N"
+  }
+}
