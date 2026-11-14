@@ -4,7 +4,7 @@
 
 **Last Updated:** 2026-11-13 (UTC, machine-verified)
 **Branch:** `researcher-b/harness-pack-m1` (cut from `origin/main` @ `e169bb1`)
-**Last commit:** `e169bb1` — Merge PR #146 (cycle-174 evidence) | **Verification:** `./init.sh` → passing | unit suites: 2/2 PASS | cycle-174 chain readback: PASS (slot 521337788)
+**Last commit:** `13a62e4` — harness pack + post-c175/c212 state refresh | **Verification:** `./init.sh` → exit 0 (all PASS, both fleet buses healthy) | unit suites: 2/2 PASS | cycle-174 chain readback: PASS (slot 521337788) | walkinglabs audit: 7/7 CRITICAL PASS, exit 0
 **Active work:** harness pack scaffold → c175 stage-2 + c212 landing close-out
 
 ## Status
