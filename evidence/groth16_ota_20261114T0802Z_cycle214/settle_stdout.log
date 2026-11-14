@@ -1,0 +1,35 @@
+  captured proof: 128 bytes from groth16_ota_20261114T0802Z_cycle214
+  proof SHA256: 6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58
+  coords (proof payload[0:6]): [0x5c, 0xd6, 0x20, 0x7, 0x39, 0xbd]
+  authority: 14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+  balance before: 5.81077996 SOL
+  session_id : 6005c219048e1b2b (= proof SHA[0:16] hex)
+  merkleRoot: 6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58 (= captured proof SHA256)
+  record PDA: 3aF5JGtUVRud5avvvb8u2Ub8gWTdPwKZTgkGQPqnyUm1
+  ✅ REGISTER TX: 26bYHQNRRuoVkWb7kvQM97t8xDtrY2DCFfa93cXMN9mA1aF6vb855qQaPzJsiYNxZxqyVaDHR7kxUAnQrFj3Vfkp
+     https://explorer.solana.com/tx/26bYHQNRRuoVkWb7kvQM97t8xDtrY2DCFfa93cXMN9mA1aF6vb855qQaPzJsiYNxZxqyVaDHR7kxUAnQrFj3Vfkp?cluster=devnet
+  on-chain record: coords=[92,214,32,7,57,189] root=6005c219048e1b2b… ts=2026-11-14T09:23:18.000Z
+  treasury delta: 100000 lamports
+  balance after: 5.80950148 SOL
+
+TEST_RUN_UTC=2026-11-14T09:23:19.886Z
+NODE=RakMiner-B (Researcher Bravo, Agent 05)
+WALLET=14aTW9ypTLuQPTUfes8aExkn6dG2ESsHUYuhpvziaMa3
+SETTLED_TRANSFER=cycle-214 OTA Groth16/BN254 proof A->B, node-b-rx, full T12 battery COMPLETE VALID (exit 0, WATCHER HOT-PATH auto-fire ~80s after declare, no LLM turn): window declared 2026-11-14T09:02:21Z (B4237/1426, armed 2026-11-14T08:02:32Z closes 2026-11-14T10:02:32Z, 3614s remaining at declare per the c-146 early-declare law; key-135 = rung of Alpha's cache refill notice seq 1412 (keys [134, 135]), proof declare B4239/A1427 (key-135, deposit 100104, identity-era VK 78352ffa), fired 5/5 TX_DONE 2026-11-14T09:03:41Z, burst captured IN-WINDOW 5/5 CRC-OK 128B @903.9MHz SF9 SNR +10.2..+11.0dB inter-frame 16.8s uniform, sha 6005c219 64/64. After this cycle the warm rungs are [] (cache at 0 warm — a refill ask IS required for the next cycle). FINAL cycle of the current proof-key chain; the chirp245_sealed_frame drill was already CLOSED with a real RF artifact in cycle-213 (5 x 245B captured over the air + canonical-tool decrypt).
+CAPTURE_META=5/5 CRC-OK 128B @ 903.9MHz SF9, SNR +10.2..+11.0 dB, inter-frame 16.8s uniform, pre-wrap (+0s) burst, window B4237 armed 2026-11-14T08:02:32Z, fired 2026-11-14T09:03:41Z, ~80s prove-declare-to-fire, key-135 deposit 100104, identity era VK 78352ffa
+PROOF_PAYLOAD_SHA256=6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58
+GROTH16_PAIRING_VERIFIED=YES - CLASS SCAN (complete dual-bus history): statement-class key-135 pih[-1]=9c255419e8037e2f prior-declares B=0 A=0 pih-only-priors B=0 A=0 unclassable-declares=5 -> FIRST-OF-CLASS (positively asserted) ; BATTERY_EXIT=0 via exit contract
+SESSION_ID=6005c219048e1b2b
+COORDS_REGISTERED=[92, 214, 32, 7, 57, 189] (= proof payload bytes 0..5)
+MERKLE_ROOT=6005c219048e1b2b3652aff2ef2ff4a66168e1ba3242ac3920178cafde64ed58 (= proof payload SHA256)
+RECORD_PDA=3aF5JGtUVRud5avvvb8u2Ub8gWTdPwKZTgkGQPqnyUm1
+REGISTER_TX=26bYHQNRRuoVkWb7kvQM97t8xDtrY2DCFfa93cXMN9mA1aF6vb855qQaPzJsiYNxZxqyVaDHR7kxUAnQrFj3Vfkp
+REGISTER_TX_URL=https://explorer.solana.com/tx/26bYHQNRRuoVkWb7kvQM97t8xDtrY2DCFfa93cXMN9mA1aF6vb855qQaPzJsiYNxZxqyVaDHR7kxUAnQrFj3Vfkp?cluster=devnet
+PROTOCOL_FEE_LAMPORTS=100000
+BALANCE_BEFORE=5.81077996 SOL
+BALANCE_AFTER=5.80950148 SOL
+TESTS_PASSED=6
+TESTS_FAILED=0
+FAIL_DETAIL=none
+GROTH16_OTA_SETTLED_ON_CHAIN=YES
+ZK_RF_TO_CHAIN_LOOP_CLOSED=YES

@@ -1,0 +1,47 @@
+{
+ "cycle": "214",
+ "pr_url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/151",
+ "landed": {
+  "b": 4243,
+  "a": null,
+  "cross_bus": "ALPHA MIRROR PENDING"
+ },
+ "stage2": {
+  "b": 4244,
+  "a": null,
+  "cross_bus": "ALPHA MIRROR PENDING"
+ },
+ "cache_refill_ask": {
+  "b": 4245,
+  "a": null,
+  "cross_bus": "ALPHA MIRROR PENDING",
+  "requested_key_ids": [
+   136,
+   137
+  ]
+ },
+ "cache_state": {
+  "newest_notice_seq": 1412,
+  "key_ids": [
+   134,
+   135
+  ],
+  "warm_rungs": []
+ },
+ "pending_alpha_mirrors": [
+  {
+   "event": "groth16_ota_cycle_landed",
+   "b_seq": 4243
+  },
+  {
+   "event": "groth16_ota_cycle_landed_stage2",
+   "b_seq": 4244
+  },
+  {
+   "event": "cache_refill_ask",
+   "b_seq": 4245
+  }
+ ],
+ "alpha_bus_defect": "Alpha's bus server: /health reports a counter ahead of the number of events /events serves, and POSTs die with RemoteDisconnected after a seq is assigned (Bravo's c214 landed post returned 1431 and never committed). Alpha's agent has been briefed to repair its own bus; Bravo will re-mirror idempotently afterwards.",
+ "recorded_utc": "2026-11-14T09:36:40Z"
+}
