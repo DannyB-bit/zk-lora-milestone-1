@@ -90,13 +90,41 @@
       "stage2_bus": {"landed": {"b": 4204, "a": 1415}, "stage2": {"b": 4205, "a": 1416}, "chirp245_verdict_correction": {"b": 4206, "a": 1417}, "cross_bus": "byte-equal"},
       "open_items": [
         "PR #149 awaiting operator merge",
-        "chirp245_sealed_frame drill remains OPEN: bus event B4108/A1411 reported DECRYPT_OK for a frame that was never transmitted in the c212 window (0 x 245-byte frames in the c212 slice and in the standby logs; decrypt artifact regenerated 2026-11-12T17:21:59Z from the archived 2026-11-06 capture). Correction posted as B4206/A1417; the groth16_ota half of c212 is unaffected and remains VALID."
+        "chirp245_sealed_frame drill CLOSED in cycle-213 with a real RF capture (PR #150): bus event B4108/A1411 had reported DECRYPT_OK for a frame that was never transmitted in the c212 window (0 x 245-byte frames in the c212 slice and in the standby logs; decrypt artifact regenerated 2026-11-12T17:21:59Z from the archived 2026-11-06 capture). Correction posted as B4206/A1417; the groth16_ota half of c212 was unaffected and remains VALID."
       ]
+    },
+    {
+      "cycle": "c213",
+      "proof_key": "key-134",
+      "status": "settled-pr-open",
+      "pr": 150,
+      "tx": "4RVswoLCDsH8JALNBihBui9H8cDziAL1AyFEoiFTUg9PSRWqAjC6LDKwtSMe9seFZRM6oiB1Atpc9iEe3YMjPs8V",
+      "pda": "EktpjR3tiMPDfKDpGvgwJisUHyWD6tABjKUN7FMT9hMT",
+      "slot": 522119697,
+      "sha256_prefix": "9a35251f",
+      "coords": [5, 110, 149, 83, 89, 56],
+      "rx": {"crc_ok_frames": 5, "snr_db": "+10.5..+11.2", "inter_frame_s": [16.73, 16.74, 16.78, 16.71]},
+      "battery": {"primary_s": 161.8, "controls_s": [161.5, 161.0], "exit_code": 0, "verdict": "VALID",
+                  "first_of_class": "key-134",
+                  "attempts": ["attempt1 (direct invocation; exit code captured by the tracked wrapper)",
+                               "attempt2 (launcher, main worktree, BATTERY_EXIT=0 inline for the settle gate)"],
+                  "note": "both attempts produced the same verdict and the same wall-clock branch timings"},
+      "tests": {"passed": 6, "failed": 0},
+      "evidence": "evidence/groth16_ota_20261114T0602Z_cycle213/",
+      "stage2_bus": {"landed": {"b": 4233, "a": 1424}, "stage2": {"b": 4234, "a": 1425}, "cross_bus": "byte-equal"},
+      "chirp245": {"drill": "chirp245_sealed_frame", "status": "CLOSED - first verdict backed by an RF capture",
+                   "frames_captured": 5, "frame_bytes": 245, "frame_sha256": "135476e3293c2564d38c5309861b1ab95fa9891ddac264634e5af8b27f88c3c4",
+                   "n_coords_decrypted": 81, "verdict_event": {"b": 4227, "a": 1423},
+                   "tx_event": {"b": 4226, "a": 1422}, "payload_event": {"b": 4224, "a": 1421},
+                   "aead": "AES-256-GCM (canonical tool), HKDF-SHA256 salt=zk-lora-chirp245-v1 info=chirp245-aead-key",
+                   "provenance": "ciphertext sealed on B (sealing needs only B's public key); RF transmit by Alpha",
+                   "disclosure": "Alpha's chirp245_tx_fired event states '>=10s apart'; the measured capture spacing is ~2.2s — capture is 5/5 valid, that spacing claim does not match the RF measurement"},
+      "open_items": ["PR #150 awaiting operator merge"]
     }
   ],
   "proof_cache": {
-    "consumed": ["key-130", "key-131", "key-132", "key-133"],
-    "warm": ["key-134", "key-135"],
+    "consumed": ["key-130", "key-131", "key-132", "key-133", "key-134"],
+    "warm": ["key-135"],
     "warm_source": "Researcher A proactive mint (A1412/B4111 @ 2026-11-12T16:19:04Z)"
   },
   "next_cycle": {
