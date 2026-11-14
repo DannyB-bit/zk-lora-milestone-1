@@ -27,5 +27,13 @@
  "sends": "5/5 TX_DONE",
  "declare_to_fire_s": 79,
  "ambient_crc_ok_excluded": 0,
- "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-11-12T13:55:26Z); burst captured IN-WINDOW (armed 2026-11-12T13:55:26Z, declared 2026-11-12T14:51:00Z with 3866s remaining - EARLY declare per the c-146 law - fired 2026-11-12T14:52:19Z, all 5 sends before the scheduled close 2026-11-12T15:55:26Z); extract ran on the CLOSED session segment (slice banner->exit line, rc=124 window span complete at 2026-11-12T15:55:26Z); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle (c-171..c-174 pattern: no rx_capture_confirmed); declare-to-fire 79s computed from bus timestamps; wrap branch battery-selected in the T12 run (c-122/c-137 laws); key-132 = LAST warm rung of Alpha's refill pair (A1389/B3993 @2026-11-11T10:23:13Z, keys 130/131) - TX proof cache DRAINS to 0 warm after this cycle; WATCHER HOT PATH fired unattended ~79s after declare, no LLM turn."
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin=listener process boot (banner 2026-11-12T13:55:26Z); burst captured IN-WINDOW (armed 2026-11-12T13:55:26Z, declared 2026-11-12T14:51:00Z with 3866s remaining - EARLY declare per the c-146 law - fired 2026-11-12T14:52:19Z, all 5 sends before the scheduled close 2026-11-12T15:55:26Z); extract ran on the CLOSED session segment (slice banner->exit line, rc=124 window span complete at 2026-11-12T15:55:26Z); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle (c-171..c-174 pattern: no rx_capture_confirmed); declare-to-fire 79s computed from bus timestamps; wrap branch battery-selected in the T12 run (c-122/c-137 laws); key-132 = LAST warm rung of Alpha's refill pair (A1389/B3993 @2026-11-11T10:23:13Z, keys 130/131) - TX proof cache DRAINS to 0 warm after this cycle [CORRECTION 2026-11-13T00:42:01Z] THIS LINE WAS WRONG (copy-pasted from cycle-174) \u2014 key-132 is the FIRST rung of Alpha's refill pair A1403/B4085 (keys 132/133), NOT the last rung of pair 130/131; the TX proof cache did NOT drain to 0 warm at cycle-175.; WATCHER HOT PATH fired unattended ~79s after declare, no LLM turn.",
+ "note_correction": {
+  "corrected_utc": "2026-11-14T00:42:01Z",
+  "field": "note",
+  "wrong_claim": "key-132 = LAST warm rung of Alpha's refill pair (A1389/B3993 @2026-11-11T10:23:13Z, keys 130/131) - TX proof cache DRAINS to 0 warm after this cycle",
+  "truth": "key-132 = FIRST rung of Alpha's refill pair A1403/B4085 (keys 132/133, notice @2026-11-12T10:19:14Z). Cache did not drain to 0 warm at cycle-175.",
+  "authority": "evidence/groth16_ota_20261112T1452Z_cycle175/settle_result_summary.txt (settler-written)",
+  "disclosed_in": "groth16_ota_cycle_landed_stage2 bus event (B4201/A1414) + PR #147 commit history"
+ }
 }
