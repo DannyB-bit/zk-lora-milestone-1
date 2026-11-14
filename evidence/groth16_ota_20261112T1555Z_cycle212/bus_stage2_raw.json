@@ -1,0 +1,28 @@
+{
+ "cycle": "212",
+ "pr_url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/149",
+ "landed": {
+  "b": 4204,
+  "a": 1415
+ },
+ "stage2": {
+  "b": 4205,
+  "a": 1416
+ },
+ "chirp245_verdict_correction": {
+  "b": 4206,
+  "a": 1417
+ },
+ "cache_state": {
+  "newest_notice_seq": 1412,
+  "key_ids": [
+   134,
+   135
+  ],
+  "warm_rungs": [
+   134,
+   135
+  ]
+ },
+ "no_refill_ask": "cache not at 0 warm (keys 134/135) \u2014 c-139 0-warm law not triggered"
+}

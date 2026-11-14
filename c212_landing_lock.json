@@ -1,0 +1,23 @@
+{
+ "cycle": 212,
+ "state": "stage2_posted_pr_pushed",
+ "updated_utc": "2026-11-13T01:00:00Z",
+ "extra": {
+  "evidence_dir": "evidence/groth16_ota_20261112T1555Z_cycle212",
+  "pr_url": "https://github.com/DannyB-bit/zk-lora-milestone-1/pull/149",
+  "poster": "~/fleet/scripts/post_c212_stage2.py",
+  "note": "stage-2 landed+stage2 bus posts PLUS a chirp245_verdict_correction event (the sealed-frame drill was NOT re-flown in the c212 window \u2014 machine-verified). NO cache_refill_ask (cache warm with keys 134/135 per Alpha notice A1412/B4111). Guard against double-post: this lock is checked before running the poster.",
+  "landed_seq": {
+   "b": 4204,
+   "a": 1415
+  },
+  "stage2_seq": {
+   "b": 4205,
+   "a": 1416
+  },
+  "chirp245_correction_seq": {
+   "b": 4206,
+   "a": 1417
+  }
+ }
+}
