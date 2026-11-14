@@ -1,0 +1,16 @@
+{
+ "declare": {
+  "b_seq": 4221,
+  "a_seq": 1419,
+  "byte_equal": true
+ },
+ "fired": {
+  "b_seq": 4223,
+  "a_seq": 1420,
+  "byte_equal": true
+ },
+ "window": {
+  "b_seq": 4220,
+  "a_seq": 1418
+ }
+}

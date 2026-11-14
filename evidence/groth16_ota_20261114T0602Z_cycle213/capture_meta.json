@@ -1,0 +1,55 @@
+{
+ "cycle": "213",
+ "key_id": 134,
+ "window_seq": 4220,
+ "window_a_mirror_seq": 1418,
+ "declare_sha256": "9a35251f3712f1141693907a56cd64a079e4d2c348416b4380212ff0c08fafdc",
+ "payload_sha256": "9a35251f3712f1141693907a56cd64a079e4d2c348416b4380212ff0c08fafdc",
+ "sha256_match": true,
+ "crc_ok": 5,
+ "total_packets": 7,
+ "freq_hz": 903900000,
+ "datr": 9,
+ "size": 128,
+ "snr_min": 10.5,
+ "snr_max": 11.2,
+ "inter_frame_s": [
+  16.73,
+  16.74,
+  16.78,
+  16.71
+ ],
+ "first_count_us": 93687548,
+ "last_count_us": 160644077,
+ "armed_at_utc": "2026-11-14T06:02:11Z",
+ "closes_at_utc": "2026-11-14T08:02:11Z",
+ "window_remaining_s_at_declare": 7115,
+ "declare_ts_utc": null,
+ "fired_utc": "2026-11-14T06:04:58Z",
+ "sends": "5/5 TX_DONE",
+ "fire_eta_utc": "2026-11-14T06:04:38Z",
+ "deposit_value": 100103,
+ "vk_sha256": "78352ffa2d0bfe921a49d3016de378263fd1621e65da361dc270b80fab7e88c0",
+ "pk_sha256": "aea2ed17290f329434133ba4b6dd889888b2eb35ebb0af14494b8ffdc400095c",
+ "era_note": "identity-era keyset (VK 78352ffa) after zk-lorawan PR#7/#8 merge; legacy-era declares carried VK 7bd5683f",
+ "source": "watcher_hot_path (no LLM turn)",
+ "chirp245": {
+  "frames_captured": 5,
+  "frame_bytes": 245,
+  "frame_sha256": "135476e3293c2564d38c5309861b1ab95fa9891ddac264634e5af8b27f88c3c4",
+  "sha256_match": true,
+  "n_coords_decrypted": 81,
+  "note": "REAL 245B sealed frame captured over the air in this same window and decrypted with the canonical tool (AES-256-GCM, HKDF-SHA256 salt=zk-lora-chirp245-v1 info=chirp245-aead-key). First chirp245 drill verdict backed by an actual RF capture \u2014 supersedes the retracted B4108/A1411 claim."
+ },
+ "cache": {
+  "newest_notice_seq": 1412,
+  "key_ids": [
+   134,
+   135
+  ],
+  "warm_rungs": [
+   135
+  ]
+ },
+ "note": "burst binding v4 = session-segment + digest-equality; count_us origin = listener process boot (arm banner 2026-11-14T06:02:11Z); burst captured IN-WINDOW (armed 2026-11-14T06:02:11Z, declared with 7115s remaining \u2014 EARLY declare per the c-146 law \u2014 fired 2026-11-14T06:04:58Z, all 5/5 TX_DONE sends before the scheduled close 2026-11-14T08:02:11Z); extract ran on the CLOSED session segment (slice banner->exit, rc=124 window span complete); stage-1-equivalent is the groth16_ota_cycle_landed event riding stage-2 AFTER settle (c-171..c-174 pattern: no rx_capture_confirmed); key-134 = FIRST rung of Alpha's refill pair (notice seq 1412, keys [134, 135]); after this cycle the warm rungs are [135] \u2014 the cache is NOT at 0 warm, so no refill ask is posted; WATCHER HOT PATH fired unattended (source=watcher_hot_path, no LLM turn). This cycle ALSO carries the first chirp245 drill with a real 245B RF capture (see chirp245 sub-object)."
+}

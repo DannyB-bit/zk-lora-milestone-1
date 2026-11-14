@@ -1,0 +1,60 @@
+{
+ "cycle": "213",
+ "built_utc": "2026-11-14T07:29:14Z",
+ "window": {
+  "b_seq": 4220,
+  "a_seq": 1418,
+  "armed_at_utc": "2026-11-14T06:02:11Z",
+  "closes_at_utc": "2026-11-14T08:02:11Z"
+ },
+ "declare": {
+  "b_seq": 4221,
+  "a_seq": 1419,
+  "byte_equal": true,
+  "key_id": 134,
+  "proof_sha256": "9a35251f3712f1141693907a56cd64a079e4d2c348416b4380212ff0c08fafdc"
+ },
+ "fired": {
+  "b_seq": 4223,
+  "a_seq": 1420,
+  "byte_equal": true,
+  "sends": "5/5 TX_DONE",
+  "fire_eta_utc": "2026-11-14T06:04:38Z"
+ },
+ "rx": {
+  "matched_frames": 5,
+  "sha256_match": true,
+  "payload_bytes": 128,
+  "snr_min": 10.5,
+  "snr_max": 11.2,
+  "inter_frame_s": [
+   16.73,
+   16.74,
+   16.78,
+   16.71
+  ]
+ },
+ "chirp245": {
+  "captured_245b_frames": 5,
+  "decrypted_n_coords": 81,
+  "frame_sha256": "135476e3293c2564d38c5309861b1ab95fa9891ddac264634e5af8b27f88c3c4"
+ },
+ "cache": {
+  "newest_notice_seq": 1412,
+  "key_ids": [
+   134,
+   135
+  ],
+  "warm_rungs": [
+   135
+  ]
+ },
+ "source_artifacts": [
+  "cycle213_window_declare.json",
+  "b_rx_extract_output.json",
+  "rx_payload_128b.bin",
+  "chirp245_extract_output.json",
+  "chirp245_decrypt_result.json",
+  "t12_cycle213_battery.log"
+ ]
+}

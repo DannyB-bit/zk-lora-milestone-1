@@ -1,0 +1,12 @@
+{
+ "pda": "EktpjR3tiMPDfKDpGvgwJisUHyWD6tABjKUN7FMT9hMT",
+ "signature": "4RVswoLCDsH8JALNBihBui9H8cDziAL1AyFEoiFTUg9PSRWqAjC6LDKwtSMe9seFZRM6oiB1Atpc9iEe3YMjPs8V",
+ "slot": 522119697,
+ "block_time_utc": "2026-11-14T08:06:49Z",
+ "err": null,
+ "signature_count": 1,
+ "matches_result_summary_REGISTER_TX": true,
+ "account_exists": true,
+ "account_owner": "2is5Q4rPBpZa2RUCXP7FFdHJUYSVNcW5iTxNuf5mSccy",
+ "verdict": "PASS \u2014 exactly one settle sig, err null, matches artifact"
+}
