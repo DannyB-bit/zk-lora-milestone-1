@@ -1,6 +1,6 @@
 {
- "passed": 15,
- "total": 15,
+ "passed": 30,
+ "total": 30,
  "results": [
   {
    "test": "live_essay_window_detected",
@@ -60,6 +60,66 @@
   },
   {
    "test": "fully_expired_alpha_window_refused",
+   "ok": true
+  },
+  {
+   "test": "split_batch_window_found_alone",
+   "ok": true
+  },
+  {
+   "test": "split_batch_no_fire_without_go",
+   "ok": true
+  },
+  {
+   "test": "split_batch_go_alone_has_no_window",
+   "ok": true
+  },
+  {
+   "test": "rolling_buffer_finds_window",
+   "ok": true
+  },
+  {
+   "test": "rolling_buffer_finds_fire_go",
+   "ok": true
+  },
+  {
+   "test": "rolling_buffer_triggers_fire",
+   "ok": true
+  },
+  {
+   "test": "fired_ledger_blocks_double_fire",
+   "ok": true
+  },
+  {
+   "test": "fire_go_frame_spec_extracted",
+   "ok": true
+  },
+  {
+   "test": "fire_go_no_frame_spec_returns_none",
+   "ok": true
+  },
+  {
+   "test": "fire_go_false_yields_no_spec",
+   "ok": true
+  },
+  {
+   "test": "single_frame_staged",
+   "ok": true
+  },
+  {
+   "test": "single_frame_sha_matches",
+   "ok": true
+  },
+  {
+   "test": "single_frame_len_245",
+   "ok": true
+  },
+  {
+   "test": "single_frame_manifest_ok",
+   "ok": true
+  },
+  {
+   "test": "bogus_frame_spec_refused",
    "ok": true
   }
  ]

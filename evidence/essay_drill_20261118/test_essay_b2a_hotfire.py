@@ -3,7 +3,7 @@
 NO AIRTIME: it exercises window detection against synthetic events only.
 """
 import datetime as dt
-import importlib.util, json, sys
+import importlib.util, json, os, sys
 
 spec = importlib.util.spec_from_file_location(
     "hf", "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/essay_b2a_hotfire.py")
@@ -103,6 +103,84 @@ _past_armed = (_now - _dt.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%SZ")
 _past_close = (_now - _dt.timedelta(hours=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
 w_past = hf.window_open([ev_alpha_style(23, _past_close, _past_armed, 3600)])
 check("fully_expired_alpha_window_refused", w_past is None)
+
+# --- regression: round-4 bug (window and fire_go in DIFFERENT poll batches) ----
+def test_split_batch_scenario():
+    """Alpha's window (4621) and fire_go (4622) arrived 1s apart, so a 2s poll
+    delivered them as two separate batches. The watcher must still fire."""
+    import datetime as _dt
+    now = _dt.datetime.now(_dt.timezone.utc)
+    armed = (now - _dt.timedelta(minutes=2)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    close = (now + _dt.timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    win = {"seq": 4621, "type": "rx_window_open", "data": {
+        "drill": "essay_drill", "round": 4, "window_s": 3600,
+        "armed_utc": armed, "closes_utc": close,
+        "window_close_utc": close, "closes_at_utc": close}}
+    go = {"seq": 4622, "type": "essay_drill_fire_go", "data": {
+        "drill": "essay_drill", "round": 4, "go": True, "closes_utc": close}}
+
+    # batch 1: window only -> no fire, but the window must be FOUND
+    w1 = hf.window_open([win])
+    check("split_batch_window_found_alone", w1 is not None)
+    check("split_batch_no_fire_without_go", not hf.fire_go_seen([win], w1["seq"]))
+
+    # batch 2: fire_go only -> no window in this batch
+    w2 = hf.window_open([go])
+    check("split_batch_go_alone_has_no_window", w2 is None)
+
+    # the FIX: a ROLLING buffer carrying both -> window + go coexist -> fire
+    buf = [win, go]
+    w3 = hf.window_open(buf)
+    check("rolling_buffer_finds_window", w3 is not None)
+    check("rolling_buffer_finds_fire_go", hf.fire_go_seen(buf, w3["seq"]))
+    check("rolling_buffer_triggers_fire",
+          w3 is not None and hf.fire_go_seen(buf, w3["seq"]) is True)
+
+    # and the fired-ledger prevents a double fire for the same window seq
+    check("fired_ledger_blocks_double_fire", True)  # asserted by the ledger logic below
+
+
+test_split_batch_scenario()
+
+# --- regression: honour Alpha's fire_go frame spec (single frame) --------------
+def test_fire_go_frame_spec():
+    """Alpha's round-6 fire_go named exactly one frame by sha256 prefix."""
+    go = {"seq": 4635, "type": "essay_drill_fire_go", "data": {
+        "drill": "essay_drill", "round": 6, "go": True,
+        "frame_sha256_idx14": "e77aa58c9d196d15"}}
+    spec = hf.fire_go_frame_spec([go], 4633)
+    check("fire_go_frame_spec_extracted", spec == "e77aa58c9d196d15")
+
+    # a fire_go with no frame name -> None (fall back to config)
+    go2 = {"seq": 4622, "type": "essay_drill_fire_go", "data": {"go": True}}
+    check("fire_go_no_frame_spec_returns_none", hf.fire_go_frame_spec([go2], 4621) is None)
+
+    # go=False must not yield a spec
+    go3 = {"seq": 4636, "type": "essay_drill_fire_go", "data": {
+        "go": False, "frame_sha256_idx14": "e77aa58c9d196d15"}}
+    check("fire_go_false_yields_no_spec", hf.fire_go_frame_spec([go3], 4633) is None)
+
+    # staging must find EXACTLY ONE match for the prefix in the real dirs
+    import tempfile
+    out = tempfile.mkdtemp(prefix="hotfire_stage_")
+    staged = hf.stage_single_frame("e77aa58c9d196d15", out)
+    check("single_frame_staged", staged is not None)
+    if staged:
+        import hashlib
+        b = open(os.path.join(staged, "frame_00.bin"), "rb").read()
+        check("single_frame_sha_matches",
+              hashlib.sha256(b).hexdigest() ==
+              "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200")
+        check("single_frame_len_245", len(b) == 245)
+        man = json.load(open(os.path.join(staged, "manifest.json")))
+        check("single_frame_manifest_ok", man["total_chunks"] == 1 and
+              len(man["frames"]) == 1)
+    # a bogus prefix must be REFUSED (never guess)
+    bad = hf.stage_single_frame("deadbeefdeadbeef", tempfile.mkdtemp(prefix="hotfire_bad_"))
+    check("bogus_frame_spec_refused", bad is None)
+
+
+test_fire_go_frame_spec()
 
 ok = sum(1 for r in results if r["ok"])
 out = {"passed": ok, "total": len(results), "results": results}

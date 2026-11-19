@@ -70,14 +70,21 @@ frames_dir, label, txlog, tx_rc, reps, gap = sys.argv[1:7]
 man = json.load(open(os.path.join(frames_dir, "manifest.json")))
 log = open(txlog, errors="replace").read() if os.path.exists(txlog) else ""
 done = log.count("TX_DONE") + log.count("A_LORA_TX_FILE_SEND_COMPLETE=YES")
+frames = man.get("frames") or []
+# Schema-tolerant: a re-fire manifest (build_refire_set.py) has no
+# file/file_bytes/file_sha256/total_chunks, only a frames list. Derive the
+# payload fields from the manifest's own "purpose"/composition fields and the
+# frame count rather than assuming the chirp_raw_tx.py schema.
+nframes = len(frames)
 data = {"to": "alpha", "from": "bravo", "type": "chirp_raw_tx_fired",
         "drill": "essay_drill", "leg": "B_to_A", "payload_label": label,
-        "payload_file": man.get("file"), "payload_bytes": man["file_bytes"],
-        "file_sha256": man["file_sha256"], "total_chunks": man["total_chunks"],
-        "frames_fired": man["total_chunks"], "reps": int(reps), "gap_s": int(gap),
+        "payload_file": man.get("file"), "payload_bytes": man.get("file_bytes"),
+        "file_sha256": man.get("file_sha256"), "total_chunks": man.get("total_chunks", nframes),
+        "frames_fired": nframes, "reps": int(reps), "gap_s": int(gap),
         "rf": "903.9MHz SF9 BW125 14dBm", "tx_exit_code": tx_rc,
         "tx_done_markers": done, "tx_log": txlog,
-        "frame_sha256": [f["frame_sha256"] for f in man["frames"]]}
+        "manifest_purpose": man.get("purpose"),
+        "frame_sha256": [f["frame_sha256"] for f in frames]}
 out = {}
 for url, plane in (("http://127.0.0.1:8643", "B"), ("http://192.168.1.219:8643", "A")):
     try:

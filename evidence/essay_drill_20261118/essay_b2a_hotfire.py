@@ -19,7 +19,7 @@ Safety rails:
 
 Usage: essay_b2a_hotfire.py --once | --watch
 """
-import argparse, json, os, subprocess, sys, time, urllib.request
+import argparse, json, os, shutil, subprocess, sys, time, urllib.request
 
 B = os.environ.get("BRAVO_URL", "http://127.0.0.1:8643")
 TOKEN = os.environ["FLEET_FAST_TOKEN"]
@@ -27,11 +27,33 @@ EV = "/home/researcher-bravo/fleet/evidence/essay_drill_20261118"
 FIRE = f"{EV}/essay_b2a_fire.sh"
 STATE = os.path.expanduser("~/.hermes/essay_b2a_hotfire.state")
 POLL_S = float(os.environ.get("POLL_S", "2"))
+# Rolling buffer of recent bus events. Alpha's rx_window_open and fire_go can
+# arrive 1s apart and therefore land in DIFFERENT poll batches -- both must be
+# visible at the same time for the fire to trigger.
+BUFFER_MAX = int(os.environ.get("BUFFER_MAX", "400"))
+# Ledger of window seqs already fired, so a restart can never double-fire.
+FIRED_LEDGER = os.path.expanduser("~/.hermes/essay_b2a_hotfire.fired.json")
 
-BURSTS = [
-    ("echo_a2b_frames", "echo_alpha_essay", 1, 1),
-    ("my_essay_frames", "bravo_essay_md", 1, 1),
-]
+# Burst list is DATA, not code: each round can change payload set / reps / gap by
+# editing the config file, with no watcher code change and no agent turn in the path.
+# The pre-fire SHA gate in essay_b2a_fire.sh still validates every staged frame.
+BURST_CONFIG = os.path.join(EV, "refire_bursts.json")
+
+
+def load_bursts():
+    try:
+        cfg = json.loads(open(BURST_CONFIG).read())
+        bursts = cfg.get("bursts") or []
+        if bursts:
+            return [(b["dir"], b["label"], int(b.get("reps", 1)), int(b.get("gap_s", 1)))
+                    for b in bursts]
+    except Exception as e:
+        print(f"[hotfire] burst config unreadable ({e}) — falling back to default",
+              flush=True)
+    return [
+        ("echo_a2b_frames", "echo_alpha_essay", 1, 1),
+        ("my_essay_frames", "bravo_essay_md", 1, 1),
+    ]
 
 
 def fetch(since):
@@ -51,7 +73,15 @@ def save_state(v):
 
 
 def window_open(events):
-    """Return the newest live essay window (dict) or None."""
+    """Return the newest live essay window (dict) or None.
+
+    NOTE (2026-11-19 round-4 bug): Alpha's rx_window_open and essay_drill_fire_go
+    arrived 1 SECOND apart (22:56:11 / 22:56:12). A 2s poll split them into two
+    separate batches, so scanning only the CURRENT batch meant the window was
+    seen alone (no fire_go) and the fire_go was later seen alone (no window) --
+    and the fire never happened. Callers must therefore pass a ROLLING buffer of
+    recent events, not just the newest batch.
+    """
     best = None
     for e in events:
         if e.get("type") != "rx_window_open":
@@ -113,9 +143,86 @@ def fire_go_seen(events, window_seq):
     return False
 
 
-def do_fire(window, tag):
+def fire_go_frame_spec(events, window_seq):
+    """If Alpha's fire_go names an exact frame (sha256 or prefix), honour it.
+
+    Alpha's fire_go may carry e.g. "frame_sha256_idx14": "<sha or prefix>".
+    When present we stage EXACTLY that frame and fire it alone, which is both
+    what he asked for and the lowest-airtime correct action. Falls back to the
+    configured burst list when no frame is named.
+    """
+    for e in events:
+        if e.get("type") != "essay_drill_fire_go":
+            continue
+        d = e.get("data", {})
+        if not d.get("go"):
+            continue
+        for k, v in d.items():
+            if not str(k).startswith("frame_sha256"):
+                continue
+            if not isinstance(v, str) or len(v) < 8:
+                continue
+            return v.strip().lower()
+    return None
+
+
+def stage_single_frame(sha_hint, out_dir):
+    """Stage the single frame matching sha_hint (full sha or prefix) from the
+    known sealed burst dirs. Verifies every candidate's sha256. Returns the
+    staged dir or None."""
+    import hashlib as _h
+    srcs = [os.path.join(EV, d) for d in
+            ("echo_a2b_frames", "my_essay_frames", "refire_missing_frames")]
+    hits = []
+    for sd in srcs:
+        if not os.path.isdir(sd):
+            continue
+        for fn in sorted(os.listdir(sd)):
+            if not (fn.startswith("frame_") and fn.endswith(".bin")):
+                continue
+            p = os.path.join(sd, fn)
+            b = open(p, "rb").read()
+            sha = _h.sha256(b).hexdigest()
+            if sha.startswith(sha_hint):
+                hits.append((p, b, sha))
+    # Dedupe by CONTENT, not by path: the same sealed frame legitimately exists in
+    # more than one staged dir (e.g. my_essay_frames and refire_missing_frames).
+    # Refuse only when the spec matches frames with DIFFERENT content.
+    by_sha = {}
+    for p, b, sha in hits:
+        by_sha.setdefault(sha, (p, b))
+    if len(by_sha) != 1:
+        print(f"[hotfire] frame spec {sha_hint[:16]}... matched {len(by_sha)} "
+              f"distinct frames — refusing to guess", flush=True)
+        return None
+    sha, (src, b) = next(iter(by_sha.items()))
+    os.makedirs(out_dir, exist_ok=True)
+    for fn in os.listdir(out_dir):
+        if fn.startswith("frame_") and fn.endswith(".bin"):
+            os.unlink(os.path.join(out_dir, fn))
+    shutil.copy2(src, os.path.join(out_dir, "frame_00.bin"))
+    json.dump({"purpose": f"auto-staged single frame per Alpha fire_go ({sha_hint})",
+               "file": f"single frame {sha[:16]}",
+               "file_bytes": len(b), "total_chunks": 1, "file_sha256": sha,
+               "chunk_max": 180, "source_frame": src,
+               "frames": [{"idx": 0, "frame_sha256": sha, "bytes": len(b)}]},
+              open(os.path.join(out_dir, "manifest.json"), "w"), indent=1)
+    print(f"[hotfire] staged single frame {sha[:16]} from {src}", flush=True)
+    return out_dir
+
+
+def do_fire(window, tag, events=None):
     results = []
-    for subdir, label, reps, gap in BURSTS:
+    spec = fire_go_frame_spec(events or [], window.get("seq"))
+    if spec:
+        single = os.path.join(EV, "auto_single_frame")
+        if stage_single_frame(spec, single):
+            bursts = [(os.path.basename(single), "fire_go_named_single_frame", 3, 3)]
+        else:
+            bursts = load_bursts()
+    else:
+        bursts = load_bursts()
+    for subdir, label, reps, gap in bursts:
         fd = os.path.join(EV, subdir)
         print(f"[hotfire] firing {label} from {fd} reps={reps} gap={gap}", flush=True)
         p = subprocess.run(["bash", FIRE, fd, str(reps), str(gap), tag, label],
@@ -128,6 +235,17 @@ def do_fire(window, tag):
     return results
 
 
+def load_fired():
+    try:
+        return set(json.loads(open(FIRED_LEDGER).read()))
+    except Exception:
+        return set()
+
+
+def save_fired(seqs):
+    open(FIRED_LEDGER, "w").write(json.dumps(sorted(seqs)))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--once", action="store_true")
@@ -135,23 +253,36 @@ def main():
     args = ap.parse_args()
     since = load_state()
     print(f"[hotfire] up; since={since} bus={B}", flush=True)
+    # Rolling buffer of recent events: the window and the fire_go may land in
+    # DIFFERENT poll batches (they arrived 1s apart in round 4), so both must be
+    # visible together. Also survives a service restart via the persisted window.
+    buf = []
+    fired = load_fired()
     while True:
         try:
             events = fetch(since)
             for ev in events:
                 since = max(since, ev["seq"])
+                buf.append(ev)
             save_state(since)
+            if len(buf) > BUFFER_MAX:
+                buf = buf[-BUFFER_MAX:]
             if events:
-                w = window_open(events)
-                if w and fire_go_seen(events, w["seq"]):
+                w = window_open(buf)
+                if w and fire_go_seen(buf, w["seq"]) and w["seq"] not in fired:
                     tag = f"r{w['seq']}"
                     print(f"[hotfire] window seq={w['seq']} close={w['close']} "
                           f"fire_go=YES -> firing", flush=True)
-                    res = do_fire(w, tag)
+                    fired.add(w["seq"])
+                    save_fired(fired)
+                    res = do_fire(w, tag, buf)
                     print(f"[hotfire] done: {json.dumps(res)}", flush=True)
                     save_state(since)
                     if args.once:
                         return 0
+                elif w and w["seq"] in fired:
+                    print(f"[hotfire] window seq={w['seq']} already fired -- skip",
+                          flush=True)
         except Exception as e:
             print(f"[hotfire] poll error: {type(e).__name__}: {e}", flush=True)
             time.sleep(5)

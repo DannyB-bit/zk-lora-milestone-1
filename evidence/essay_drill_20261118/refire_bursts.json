@@ -1,0 +1,16 @@
+{
+  "round": 7,
+  "purpose": "Targeted SINGLE-frame re-fire: bravo_essay_md chunk idx 14 only (Alpha round-6 fire_go A1507/B4635)",
+  "diagnosis": "Round-3 loss was a clean 50% duty-cycle pattern: every frame that arrived was CRC-OK 0x10 AND AES-256-GCM DECRYPT_OK (zero corrupted), while the missing set alternated perfectly. A 245B SF9/BW125 payload occupies ~2.05s of airtime; a 1s gap gave the receiver no re-arm time. Widening gap 1s -> 3s and reps 1 -> 2 fixed it: rounds 4-5 with gap=3s captured 75/80 then 79/80, and the union across rounds 3-5 is 150/150 unique frames DECRYPT_OK with the echo leg reassembled to 24322B sha256 1aaa4e16... EXACT MATCH (Alpha verdict A1508).",
+  "bursts": [
+    {
+      "dir": "refire_single_idx14",
+      "label": "refire_idx14_only",
+      "reps": 3,
+      "gap_s": 3,
+      "frames": 1,
+      "composition": "bravo_essay_md chunk idx 14 ONLY (frame_sha256 e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200)",
+      "sha_source": "Alpha's fire_go A1507 (16-hex prefix) cross-checked against Alpha's own B4616/A1494 receipt frame_sha256 list -> exact match; 1/1 SHA gate PASS"
+    }
+  ]
+}

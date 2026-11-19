@@ -1,0 +1,654 @@
+{
+ "purpose": "round-4 targeted re-fire of ONLY Alpha's missing frames (A1496)",
+ "source_verdict_seq": null,
+ "source_verdict_missing_count": 80,
+ "staged_count": 80,
+ "problems": [],
+ "frames": [
+  {
+   "idx": 0,
+   "frame_sha256": "f4071372f6de6319cca1e8f8e8a61ced77093876bfe7a9a3d7f69d939033f8ad",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_00.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 0
+  },
+  {
+   "idx": 1,
+   "frame_sha256": "99aece950d8184c8191c1a00e05c62ab354159240d8d39845eb1fc3a48971273",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_02.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 2
+  },
+  {
+   "idx": 2,
+   "frame_sha256": "e4e1e027ceb1051c9ab34722a54ba4fd8246894acf5a5770b497bd2b72682d39",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_04.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 4
+  },
+  {
+   "idx": 3,
+   "frame_sha256": "9af31145b4e876074dd5a13e0a4246ab7c8aa5ea15b14f5ed35d579e0968756f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_05.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 5
+  },
+  {
+   "idx": 4,
+   "frame_sha256": "6d826d083901fc58ec22362c46548240fcbcc10f0723ad7d3d432ce1eadf0d7b",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_07.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 7
+  },
+  {
+   "idx": 5,
+   "frame_sha256": "3d128104bbaed57590f10ad881b00e81d4bfa9ed06938df42b92b1fc476fc5b8",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_09.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 9
+  },
+  {
+   "idx": 6,
+   "frame_sha256": "a40f5f3b8f7761b2d371ab499207b61c3ff17a27760c1a698db15fdd39643ceb",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_11.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 11
+  },
+  {
+   "idx": 7,
+   "frame_sha256": "09794b0694f76403f622066531a105ba722e9357883f36a3737405047e120784",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_13.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 13
+  },
+  {
+   "idx": 8,
+   "frame_sha256": "e9879b4f8fc330d4ae501d2de132a408ef13187815ecce10d7f4ea7a6139fc5d",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_16.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 16
+  },
+  {
+   "idx": 9,
+   "frame_sha256": "fdd41644d72be13f6c2f282c4cdeea2659d3534d77df64da07a3cf48a763645c",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_18.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 18
+  },
+  {
+   "idx": 10,
+   "frame_sha256": "aa16edbdf73dbf6483709bbef6e548565e4fe950aa9d02e43f8b0e825b3499c6",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_20.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 20
+  },
+  {
+   "idx": 11,
+   "frame_sha256": "263d0545e000c71e46abd23b5a81d781a7d6313bb0757ce184dad42bb6a064df",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_21.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 21
+  },
+  {
+   "idx": 12,
+   "frame_sha256": "c95bf014f15e39476cc18bf0284aa8073ff60e5e5ab4eaf6fa09d64f16d01fbe",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_22.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 22
+  },
+  {
+   "idx": 13,
+   "frame_sha256": "234b2fb3f7c5cb0035511371f47fca2766e0105883ba6135aa67ef96a66296a6",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_24.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 24
+  },
+  {
+   "idx": 14,
+   "frame_sha256": "41c257a5af517a75d3ba56cf4a3a7048c385402c09ad9e4769966b9434a93f3b",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_25.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 25
+  },
+  {
+   "idx": 15,
+   "frame_sha256": "03ab73e38c20ba482330e089797c04fd1061aff0d9278dff296472cd2bc26b01",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_27.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 27
+  },
+  {
+   "idx": 16,
+   "frame_sha256": "d5b70c2a6fc3f1520aa3618c72e808a54f08a8af806aceba247e383d41af6b06",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_28.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 28
+  },
+  {
+   "idx": 17,
+   "frame_sha256": "4b95489e8f2fb10976b1aa4c393418d19ab75e41f918ab0a5a5a5f42aab3eb2a",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_30.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 30
+  },
+  {
+   "idx": 18,
+   "frame_sha256": "f96119cc055fdba4ac7f320cf5f7ec432f01f3e6a7b56175d4c50b7515083e20",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_33.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 33
+  },
+  {
+   "idx": 19,
+   "frame_sha256": "5d4d65e369b5ea72c0c64ed8f7dc0fb9af034ee342fc4baf2fab33306520506f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_34.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 34
+  },
+  {
+   "idx": 20,
+   "frame_sha256": "0f94b93dc2223dd4b4c995a6fa3ff0e8491b08e15e4a16176e526751efa2c0f1",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_36.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 36
+  },
+  {
+   "idx": 21,
+   "frame_sha256": "dc1d9d065eeba4cf9e97131cd28525acaa3ded1ed66efac6bd4ce9ca0f95a5eb",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_37.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 37
+  },
+  {
+   "idx": 22,
+   "frame_sha256": "f61bd72849aa4e9c4d34380a7b49343191dac3537620b87990b376ecae0517df",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_39.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 39
+  },
+  {
+   "idx": 23,
+   "frame_sha256": "d5a04f344382c6b20c55c2673f137b25d4cdfcaff3337ed5bb415edc9f2ceb38",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_41.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 41
+  },
+  {
+   "idx": 24,
+   "frame_sha256": "a104ff89020a0229148568451e8e179a3bc34949390c253a1d4f879b6a4c6b15",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_43.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 43
+  },
+  {
+   "idx": 25,
+   "frame_sha256": "75411f1d26baae09b7a9247b5cbb67a9ce303100e2b2d4d39eb4b6a1fa87f591",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_44.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 44
+  },
+  {
+   "idx": 26,
+   "frame_sha256": "274e8fbb67060a162c863a9f444eb7fe703c597af99b22ef7c9fd92c98bb5a65",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_46.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 46
+  },
+  {
+   "idx": 27,
+   "frame_sha256": "ab7ff85dbce9047019d5945fc0f8f37e79fff8eadc27f7c18fe8eb9390c9a939",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_48.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 48
+  },
+  {
+   "idx": 28,
+   "frame_sha256": "0a56c8ba7ebb6400ce2311403509e3458e49f0d958b0b2a4e1d8c2a2f94cd1ac",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_50.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 50
+  },
+  {
+   "idx": 29,
+   "frame_sha256": "9c09535e79692663803d233b94913bd9ecda3afcf658d39bd61cad0e776dc299",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_52.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 52
+  },
+  {
+   "idx": 30,
+   "frame_sha256": "e9b0e34bd6c18e15d037f220ac9bfb52b3ead056d0437b1fb72430067e097e4f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_54.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 54
+  },
+  {
+   "idx": 31,
+   "frame_sha256": "19a01af39633a7ad1cca107a9e7a38f0343bfe3d6bce00cfc740cc72a6f9c6c5",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_56.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 56
+  },
+  {
+   "idx": 32,
+   "frame_sha256": "518d97267c3ec1599a9e307ea5790349c6bf7e8f3ed4ca9df1fc78c73abb4bd0",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_57.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 57
+  },
+  {
+   "idx": 33,
+   "frame_sha256": "aed9083057ac4f3c30321dbabee657ca8bdcd7be3921ba015d462dee4aa32a9e",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_59.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 59
+  },
+  {
+   "idx": 34,
+   "frame_sha256": "c0fb73a5c81dd2630daa2b5ae0ae7c54e723e7c5f5395df4a3abd18a273f17da",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_61.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 61
+  },
+  {
+   "idx": 35,
+   "frame_sha256": "302b56bd3beda6cc351489553aa29a2f17ece3f7a030870b4f9cd275aeaa6d8d",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_63.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 63
+  },
+  {
+   "idx": 36,
+   "frame_sha256": "a9d2be7bb096f8263548e4dacfde70be4346336b71e20a50432637c4d95712f9",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_65.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 65
+  },
+  {
+   "idx": 37,
+   "frame_sha256": "efce6e549e8f46cfff097bbcb70f131833c315ecb20ee104d84726626a4453f9",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_67.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 67
+  },
+  {
+   "idx": 38,
+   "frame_sha256": "72434fdb92111887ef9b8c6491ad67f7193886bde449de1d4f756f4b94c0ca9c",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_69.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 69
+  },
+  {
+   "idx": 39,
+   "frame_sha256": "ab038f09f5cab3f0b3c74662e19d14bee3dc930acefdaee8d33218d4fbe6ac89",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_72.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 72
+  },
+  {
+   "idx": 40,
+   "frame_sha256": "cffdddb9f279c531708654ef526ea33861319d112b3a0ca3837e37eed1bddb30",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_74.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 74
+  },
+  {
+   "idx": 41,
+   "frame_sha256": "46a60d195758e353e5ee3f8bc775837fcc459149e379832558b6c070a4d70e37",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_76.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 76
+  },
+  {
+   "idx": 42,
+   "frame_sha256": "c808a19e263c17b23fb579dda0d848ed40a2beb35567bb50effc4839b8cb0337",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_78.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 78
+  },
+  {
+   "idx": 43,
+   "frame_sha256": "59917b4c913f5d3236dd88110530f3e1ac735d5cbc3ed11fca5b1eb1b80d0cba",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_80.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 80
+  },
+  {
+   "idx": 44,
+   "frame_sha256": "a70cfe43768f91b99eedc5062a895bed020a2369ae55673e538697e4728be7c7",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_82.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 82
+  },
+  {
+   "idx": 45,
+   "frame_sha256": "a855b3ea786f5624f7e674b02a1ff2d4a4125c4629b6dcff20071898573b55ec",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_84.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 84
+  },
+  {
+   "idx": 46,
+   "frame_sha256": "cd16da8a3330958c4ac2cedbcd9f2040a1d8ae51a5458455fc493e8906ca7f46",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_86.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 86
+  },
+  {
+   "idx": 47,
+   "frame_sha256": "6c7acd58a8f63fd62f339236fb3540aa8e4fcfde5ffe85c7794233cbc59b7518",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_88.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 88
+  },
+  {
+   "idx": 48,
+   "frame_sha256": "49371cc987962c78e844bea8c0609c39fe27a5047c319a390d3d85a395ecfe06",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_90.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 90
+  },
+  {
+   "idx": 49,
+   "frame_sha256": "efddfd19a8587589bf1cda2fd84410788efb48f89f083683acbd8100c1e75645",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_92.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 92
+  },
+  {
+   "idx": 50,
+   "frame_sha256": "1857fda8637808760d02ab5c61efa1c5f41f209524980cc72f17f6085763ea69",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_94.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 94
+  },
+  {
+   "idx": 51,
+   "frame_sha256": "81ecca3a7efca00b95d8ebe512bd4d46ae857b2493f6bfb8748ca1fc31b64603",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_96.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 96
+  },
+  {
+   "idx": 52,
+   "frame_sha256": "9266d529419f70554b546b631679a633b5ef63532a7a38823cbf9e00d2e58915",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_98.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 98
+  },
+  {
+   "idx": 53,
+   "frame_sha256": "8983fe634164e135a13b6d2dc7a0478d54b51c73795d340abdfb660ea03f8e58",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_100.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 100
+  },
+  {
+   "idx": 54,
+   "frame_sha256": "a524d4c563b312100886ce534116c15ebf696a09f3e8a4887689029f6cadafd4",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_102.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 102
+  },
+  {
+   "idx": 55,
+   "frame_sha256": "5327c77d671dc871356ba155db75b8e901f4c3a2f4ee87a4ceb051d0597af1b3",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_104.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 104
+  },
+  {
+   "idx": 56,
+   "frame_sha256": "3c077f20e894ca6126b6a7030fc2453c7d4696f4881362cd846710acb795ab80",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_106.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 106
+  },
+  {
+   "idx": 57,
+   "frame_sha256": "97255673c7776a95e950a531f986262d6b5ea68d309578ccd9d24579cf1b7ef2",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_108.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 108
+  },
+  {
+   "idx": 58,
+   "frame_sha256": "1cc4f7eee77bf36aefba5000595e48fdc79f819c3a0ce2def704584bdbcd1e3f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_110.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 110
+  },
+  {
+   "idx": 59,
+   "frame_sha256": "22b86931c86bcc49747870e8b2706603567af5621c4de280fd7f8848c5f56fe5",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_112.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 112
+  },
+  {
+   "idx": 60,
+   "frame_sha256": "47da99cfaf0ea0b474878020f34152c1768c97170e92a840f76b901c1e1f3972",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_114.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 114
+  },
+  {
+   "idx": 61,
+   "frame_sha256": "6a7054b229176d4c3e40b7a18b01e786a7d1700f52028a40baa13068d266fa9c",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_116.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 116
+  },
+  {
+   "idx": 62,
+   "frame_sha256": "81f6dce8518fee5e0c7a0bf0b8b07661ceff4065ab68f9f2b51206f876af9c6f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_120.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 120
+  },
+  {
+   "idx": 63,
+   "frame_sha256": "b68556938d3a6e661e828523739b67c75c1730ce31074a5681f3af3bad71ebe8",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_122.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 122
+  },
+  {
+   "idx": 64,
+   "frame_sha256": "34dca9d0f9e87228961f089f23a80f49717e9adaca47f686f8bfcaf361e02e60",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_125.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 125
+  },
+  {
+   "idx": 65,
+   "frame_sha256": "ad7759a0aee00580e3ec6587176d21b0da433afe63a9e1ae5d0307040856e360",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_127.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 127
+  },
+  {
+   "idx": 66,
+   "frame_sha256": "8c3e34fa43f070750376bdd65e08f6ad5538f31c9644cde0b2a468ce6b91789f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_129.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 129
+  },
+  {
+   "idx": 67,
+   "frame_sha256": "4536530b29ab8701fd45c94f76750b5aeb5de03214bdc642bd1c033026e76fc8",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_131.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 131
+  },
+  {
+   "idx": 68,
+   "frame_sha256": "848e7c4aa01f0e3cd24e3cb9db2be331853aff4780d40efddf25be64fc8ae9e9",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_133.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 133
+  },
+  {
+   "idx": 69,
+   "frame_sha256": "6d8bc27098a23fd4e0109a2c0509182d9453aed6ed32f374e1191d7625b70f07",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames/frame_135.bin",
+   "origin_payload": "echo_alpha_essay",
+   "origin_chunk_idx": 135
+  },
+  {
+   "idx": 70,
+   "frame_sha256": "bb6376c3dbef1e8a5d0c16f24ad71ad12816eb03fe3750ba520526e8e8a737e8",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_01.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 1
+  },
+  {
+   "idx": 71,
+   "frame_sha256": "4f7592e70a27a54fe815b7b3bbb630eda99193c6d7b8708670e243d27702ea25",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_03.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 3
+  },
+  {
+   "idx": 72,
+   "frame_sha256": "47ab1650613f200735f5f2a1a1e536013b3e09c5acccf4897f5d87d751f4287e",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_05.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 5
+  },
+  {
+   "idx": 73,
+   "frame_sha256": "7a74d8a4d6c74043e0221d6644d3ff565afac543c7ab7492008805742e438817",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_07.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 7
+  },
+  {
+   "idx": 74,
+   "frame_sha256": "8e722719c1fcf8049adf56c13c7f57f8e08e2ef9a61f1b423e290fef25aacc95",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_09.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 9
+  },
+  {
+   "idx": 75,
+   "frame_sha256": "6543d3f78239b406af80343610293db5e98b624dc2ebc8fd5e79cb288766bb8f",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_10.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 10
+  },
+  {
+   "idx": 76,
+   "frame_sha256": "8c1f16cda3d0533f7ceee204625488b65073514b1429eab418969fe8581d412b",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_11.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 11
+  },
+  {
+   "idx": 77,
+   "frame_sha256": "5ad15ea4f8ce26aba3b02e0884fece4dce0f520de3a97059136b2e06b8733130",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_12.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 12
+  },
+  {
+   "idx": 78,
+   "frame_sha256": "01b1109fb8442be7bacaeb24bc78000b81372717d8e9f81a3ec36b472abdf7b2",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_13.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 13
+  },
+  {
+   "idx": 79,
+   "frame_sha256": "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200",
+   "bytes": 245,
+   "source_file": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_14.bin",
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 14
+  }
+ ],
+ "file": "refire_missing_80 (80 frames: 70 echo_alpha_essay + 10 bravo_essay_md)",
+ "file_bytes": 19600,
+ "total_chunks": 80,
+ "file_sha256": "MIXED \u2014 see per-frame frame_sha256 list (targeted re-fire set, not a single file)",
+ "chunk_max": 180
+}
