@@ -1,0 +1,12 @@
+[Unit]
+Description=Bravo essay_drill B->A hot-fire watcher (no LLM in the TX path)
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/fleet/evidence/essay_drill_20261118/essay_b2a_hotfire.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

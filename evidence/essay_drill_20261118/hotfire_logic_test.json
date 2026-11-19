@@ -1,0 +1,66 @@
+{
+ "passed": 15,
+ "total": 15,
+ "results": [
+  {
+   "test": "live_essay_window_detected",
+   "ok": true
+  },
+  {
+   "test": "expired_window_refused",
+   "ok": true
+  },
+  {
+   "test": "near_close_window_refused",
+   "ok": true
+  },
+  {
+   "test": "manual_fire_only_refused",
+   "ok": true
+  },
+  {
+   "test": "other_drill_ignored",
+   "ok": true
+  },
+  {
+   "test": "missing_close_time_refused",
+   "ok": true
+  },
+  {
+   "test": "newest_window_wins",
+   "ok": true
+  },
+  {
+   "test": "fire_go_detected",
+   "ok": true
+  },
+  {
+   "test": "no_fire_go_not_detected",
+   "ok": true
+  },
+  {
+   "test": "fire_go_false_ignored",
+   "ok": true
+  },
+  {
+   "test": "alpha_closes_utc_field_parsed",
+   "ok": true
+  },
+  {
+   "test": "skewed_close_rebuilt_from_armed_plus_span",
+   "ok": true
+  },
+  {
+   "test": "closes_utc_used_directly",
+   "ok": true
+  },
+  {
+   "test": "closes_at_utc_still_works",
+   "ok": true
+  },
+  {
+   "test": "fully_expired_alpha_window_refused",
+   "ok": true
+  }
+ ]
+}

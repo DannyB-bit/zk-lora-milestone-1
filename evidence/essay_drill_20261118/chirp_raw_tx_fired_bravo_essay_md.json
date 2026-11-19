@@ -1,0 +1,50 @@
+{
+ "post": {
+  "B": {
+   "ok": true,
+   "seq": 4616,
+   "rtt_ms": 54.029
+  },
+  "A": {
+   "ok": true,
+   "seq": 1494,
+   "rtt_ms": 24.427
+  }
+ },
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "chirp_raw_tx_fired",
+  "drill": "essay_drill",
+  "leg": "B_to_A",
+  "payload_label": "bravo_essay_md",
+  "payload_file": "/home/researcher-bravo/fleet/essay-drill/essay.md",
+  "payload_bytes": 2641,
+  "file_sha256": "b991268877bbfe691dd085a8994fe9dc83934e14faafc3b63e03c7ffd45460a6",
+  "total_chunks": 15,
+  "frames_fired": 15,
+  "reps": 1,
+  "gap_s": 1,
+  "rf": "903.9MHz SF9 BW125 14dBm",
+  "tx_exit_code": "0",
+  "tx_done_markers": 15,
+  "tx_log": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/b2a_tx_r3mine.log",
+  "frame_sha256": [
+   "e46800602d5580809e3f30b160a3e266f4f1eafa89536f71fa2b7a15d54a609e",
+   "bb6376c3dbef1e8a5d0c16f24ad71ad12816eb03fe3750ba520526e8e8a737e8",
+   "b61863e80586afa66b2a841a55ba617ec856badda1c1cd0b35062b51a03180f7",
+   "4f7592e70a27a54fe815b7b3bbb630eda99193c6d7b8708670e243d27702ea25",
+   "79190c80da978ac456c4517a6a3e05bbf96f2e0e6e6b5d8417206050cec6ac2c",
+   "47ab1650613f200735f5f2a1a1e536013b3e09c5acccf4897f5d87d751f4287e",
+   "cd57a81c494052cdce78ed7575b451186ca11443fd1f31d9bc136473e1cbd572",
+   "7a74d8a4d6c74043e0221d6644d3ff565afac543c7ab7492008805742e438817",
+   "f47c4fbf51f5eb33183814e83055e538451bf50743fc778431785351b21c237d",
+   "8e722719c1fcf8049adf56c13c7f57f8e08e2ef9a61f1b423e290fef25aacc95",
+   "6543d3f78239b406af80343610293db5e98b624dc2ebc8fd5e79cb288766bb8f",
+   "8c1f16cda3d0533f7ceee204625488b65073514b1429eab418969fe8581d412b",
+   "5ad15ea4f8ce26aba3b02e0884fece4dce0f520de3a97059136b2e06b8733130",
+   "01b1109fb8442be7bacaeb24bc78000b81372717d8e9f81a3ec36b472abdf7b2",
+   "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200"
+  ]
+ }
+}
