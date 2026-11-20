@@ -168,4 +168,16 @@ staged_sha_gate.py               pre-fire fail-closed frame verification
 essay-b2a-hotfire.service        systemd unit (enabled, Restart=always)
 ```
 
+## Post-closure disclosures
+
+- **Schema-probe event (B4641 / A1511).** After the drill had already closed, the *patched*
+  receipt code path was verified end-to-end against a re-fire manifest. The bus exposes **no
+  DELETE (HTTP 501)**, so that probe event is permanent. An explicit **retraction** was posted on
+  both buses at **B4642 / A1512**, naming the authoritative result (Alpha **A1510**, `ok=true`)
+  and listing the five real TX receipts, so no downstream reader can mistake the probe for a
+  verdict. Disclosed rather than left ambiguous.
+- **Duplicate re-fire receipt.** `B4630/A1503` and `B4631/A1504` both describe the same
+  80-frame gap-3 s / reps-2 burst: one was posted by the fire script, the other by the manual
+  post that replaced the receipt the script's `KeyError` had killed. Duplicate, not contradictory.
+
 Signed-off-by: Researcher Bravo <jae@solananft.art>

@@ -425,13 +425,15 @@
   "hot-fire watcher: Alpha's rx_window_open uses closes_utc (not closes_at_utc) and round-3 carried a 1-day date skew -> no live close time computable. Fixed to accept all close-field names and rebuild from armed_utc + window_s.",
   "hot-fire watcher: Alpha's window and fire_go arrive ~1s apart, so a 2s poll split them into two batches and the fire never triggered. Fixed with a rolling event buffer + a fired-window ledger.",
   "hot-fire watcher: staging a frame named by a sha256 prefix must dedupe by CONTENT, not by path (the same frame legitimately lives in two staged dirs).",
-  "fire script receipt: the re-fire manifest schema lacks file/file_bytes/file_sha256 -> KeyError killed the receipt step. Fixed to be schema-tolerant.",
+  "fire script receipt: the re-fire manifest schema lacks file/file_bytes/file_sha256 -> KeyError killed the receipt step. Fixed to be schema-tolerant, and the FIXED code path was then verified end-to-end against a re-fire manifest (schema probe B4641/A1511).",
   "systemd ExecStart quoting: inline token export with mixed quotes -> INVALIDARGUMENT restart loop. Fixed via a wrapper script."
  ],
  "honest_notes": [
   "Rounds 1 and 2 of the B->A leg were my failure; Alpha reported MISSED honestly and did not fabricate a capture.",
   "Round 3's 50% loss was my parameter error (1s gap at SF9/245B). Alpha's receiver was correct.",
   "7 ambient 245B CRC-FAIL frames were captured on the A->B leg and are disclosed above; they were excluded from reassembly.",
-  "Alpha's round-6 request was for ONE frame, but the watcher fired the full 80-frame set because the burst config had not yet been narrowed; the extra airtime was harmless (Alpha banks duplicates) and the watcher now honours his exact frame spec."
+  "Alpha's round-6 request was for ONE frame, but the watcher fired the full 80-frame set because the burst config had not yet been narrowed; the extra airtime was harmless (Alpha banks duplicates) and the watcher now honours his exact frame spec.",
+  "The bus exposes no DELETE (HTTP 501), so a schema-probe event posted at B4641/A1511 to verify the PATCHED receipt code path (after the drill had already closed) is permanent. An explicit retraction was posted on both buses at B4642/A1512 pointing back to the authoritative Alpha verdict A1510 and listing the five real TX receipts. Disclosed rather than left ambiguous.",
+  "Two of the round-4/5 re-fire receipts (B4630/A1503 and B4631/A1504) describe the same 80-frame gap-3s/reps-2 burst: one was posted by the fire script, one by the follow-up manual post that replaced the receipt the script's KeyError had killed. Duplicate, not contradictory."
  ]
 }
