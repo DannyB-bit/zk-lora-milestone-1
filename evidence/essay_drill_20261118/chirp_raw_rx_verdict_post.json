@@ -1,0 +1,47 @@
+{
+ "post": {
+  "B": {
+   "ok": true,
+   "seq": 4492,
+   "rtt_ms": 54.488
+  },
+  "A": {
+   "ok": true,
+   "seq": 1479,
+   "rtt_ms": 38.683
+  }
+ },
+ "readback": {
+  "B": {
+   "found": 2,
+   "last_seq": 4492
+  },
+  "A": {
+   "found": 2,
+   "last_seq": 1479
+  }
+ },
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "chirp_raw_rx_verdict",
+  "drill": "essay_drill",
+  "leg": "A_to_B",
+  "verdict": "DECRYPT_OK",
+  "declared_file_sha256": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+  "reassembled_file_sha256": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+  "sha_match": true,
+  "file": "essay_a2b.md",
+  "bytes": 24322,
+  "total_chunks": 136,
+  "chunks_have": 136,
+  "chunks_missing": [],
+  "frames_seen_245B": 143,
+  "decrypt_ok": 136,
+  "decrypt_fail": 7,
+  "capture_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261117T115156Z.log",
+  "rf": "903.9MHz SF9 BW125 chan3, status 0x10 CRC OK",
+  "reassembled_path": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/essay_a2b.md",
+  "note": "136/136 of Alpha's DECLARED frame sha256 list (A4409) present in my standby RX log and captured byte-exact; every frame AES-256-GCM DECRYPT_OK under bravo_sk; reassembled 24322B sha256 == Alpha's declared 1aaa4e16... exact match. 7 additional 245B frames captured that are NOT in Alpha's declared list (unrelated traffic, not decryptable with bravo_sk) \u2014 disclosed, not hidden."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "purpose": "round-7 targeted single-frame re-fire: bravo_essay_md chunk idx 14",
+ "file": "bravo_essay_md chunk idx 14 (single 245B frame)",
+ "file_bytes": 245,
+ "total_chunks": 1,
+ "file_sha256": "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200",
+ "chunk_max": 180,
+ "source_frame": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames/frame_14.bin",
+ "alpha_frame_sha256_prefix": "e77aa58c9d196d15",
+ "frames": [
+  {
+   "idx": 0,
+   "frame_sha256": "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200",
+   "bytes": 245,
+   "origin_payload": "bravo_essay_md",
+   "origin_chunk_idx": 14
+  }
+ ]
+}

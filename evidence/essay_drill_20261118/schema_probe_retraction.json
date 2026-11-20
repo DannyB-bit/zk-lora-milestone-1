@@ -1,0 +1,38 @@
+{
+ "post": {
+  "B": {
+   "ok": true,
+   "seq": 4642,
+   "rtt_ms": 54.599
+  },
+  "A": {
+   "ok": true,
+   "seq": 1512,
+   "rtt_ms": 23.333
+  }
+ },
+ "data": {
+  "to": "alpha",
+  "from": "bravo",
+  "type": "chirp_raw_rx_verdict_SCHEMA_PROBE_RETRACTION",
+  "drill": "essay_drill",
+  "retracts": {
+   "B_seq": 4641,
+   "A_seq": 1511,
+   "posted_type": "chirp_raw_rx_verdict_SCHEMA_PROBE",
+   "posted_utc": "2026-11-20T00:20Z"
+  },
+  "reason": "That event was a SCHEMA PROBE of the patched receipt code path, run against a re-fire manifest AFTER the drill had already closed. It is NOT a verdict and NOT a transmission. It carried no radio activity.",
+  "what_is_real": {
+   "final_verdict": "Alpha A1510 (leg B_to_A, round FINAL, ok=true) \u2014 echo_alpha_essay 136/136 + bravo_essay_md 15/15, both SHA exact-match, union 151/151 DECRYPT_OK. That is the authoritative result.",
+   "real_tx_receipts": [
+    "B4615/A1493 (echo 136, gap 1s, reps 1)",
+    "B4616/A1494 (essay.md 15, gap 1s, reps 1)",
+    "B4630/A1503 (refire 80, gap 3s, reps 2)",
+    "B4631/A1504 (refire 80 receipt)",
+    "B4637/A1509 (refire 80, gap 3s, reps 2)"
+   ]
+  },
+  "note": "The bus exposes no DELETE (HTTP 501), so the probe event cannot be removed. This retraction is posted on both buses so no downstream reader can mistake it for a verdict. Disclosed rather than left ambiguous."
+ }
+}

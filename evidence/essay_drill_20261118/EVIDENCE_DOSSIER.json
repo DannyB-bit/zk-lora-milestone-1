@@ -1,0 +1,439 @@
+{
+ "drill": "essay_drill",
+ "status": "COMPLETE \u2014 both legs over real RF, both payloads SHA exact-match, cross-confirmed by Alpha (FINAL verdict A1510 ok=true)",
+ "final_verdict": {
+  "source": "Alpha chirp_raw_rx_verdict A1510 (leg B_to_A, round FINAL, ok=true)",
+  "ok": true,
+  "verdict": "DECRYPT_OK - B->A leg COMPLETE over real RF. Both payloads reassembled from over-the-air 245B frames with exact sha256 match.",
+  "echo_alpha_essay": {
+   "frames": "136/136",
+   "file_bytes": 24322,
+   "sha256": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+   "sha_match": true,
+   "reassembled": "leg_b2a_rx_a/reassembled_echo_alpha_essay.bin"
+  },
+  "bravo_essay_md": {
+   "frames": "15/15",
+   "file_bytes": 2641,
+   "sha256": "b991268877bbfe691dd085a8994fe9dc83934e14faafc3b63e03c7ffd45460a6",
+   "sha_match": true,
+   "reassembled": "leg_b2a_rx_a/essay_md_received.md"
+  },
+  "rf": "903.9MHz SF9 BW125 14dBm, all captured frames CRC-OK status 0x10, all AES-256-GCM DECRYPT_OK under alpha_sk (HKDF-SHA256 salt=zk-lora-chirp245-v1 info=chirp245-aead-key), 151/151 unique frames decrypt_ok, 0 unknown frames, 0 CRC failures among declared frames",
+  "union": {
+   "unique_frames": 151,
+   "decrypt_ok": 151,
+   "declared": 151
+  },
+  "rounds": {
+   "r3": {
+    "window": {
+     "a": 1489,
+     "b": 4610
+    },
+    "unique_245B": 71,
+    "decrypt_ok": 71
+   },
+   "r4": {
+    "window": {
+     "a": 1498,
+     "b": 4621
+    },
+    "unique_245B": 75,
+    "decrypt_ok": 75,
+    "gap_fix": "3s gap + 2 reps"
+   },
+   "r5": {
+    "window": {
+     "a": 1500,
+     "b": 4627
+    },
+    "unique_245B": 79,
+    "decrypt_ok": 79
+   },
+   "r6": {
+    "window": {
+     "a": 1505,
+     "b": 4633
+    },
+    "single_frame": "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200 (essay.md idx 14), 2 reps captured, DECRYPT_OK"
+   }
+  }
+ },
+ "mission_verbatim": "now for zk lorawan i want you to write a essay send it and the receiver must confirm what it is exactly and then send the sender a summary confirming",
+ "second_order_verbatim": "you create a essay use zk lorawan send through zk lorawan to b and b needs to send you back the exact essay you wrote with a confirmation it's what he received; log all evidence; goal: prove we can pack a lot of data into zk-lorawan",
+ "node": {
+  "role": "Researcher Bravo (Agent 05)",
+  "hardware": "RAK Miner v2 (Raspberry Pi 4 B, SX1302/SX1303)",
+  "host": "Researcher-B"
+ },
+ "rf": {
+  "freq_mhz": 903.9,
+  "sf": 9,
+  "bw_khz": 125,
+  "power_dbm": 14,
+  "frame_bytes": 245,
+  "payload_bytes_per_chirp": 180,
+  "envelope": "ver(1)|n(1)|nonce(12)|eph_x25519_pub(32)|AES-256-GCM ct(183)|tag(16)",
+  "kdf": "HKDF-SHA256 salt=zk-lora-chirp245-v1 info=chirp245-aead-key len=32"
+ },
+ "leg_A_to_B": {
+  "status": "COMPLETE \u2014 cross-confirmed by Alpha (A1510)",
+  "alpha_refire": "2026-11-19 04:41:24Z -> 05:00:13Z (18m49s), 136/136 A_LORA_TX_FILE_SEND_COMPLETE=YES",
+  "capture_log": "/home/researcher-bravo/fleet/logs/rx_standby_continuous_20261117T115156Z.log",
+  "packets_parsed": 151,
+  "crc_ok_packets": 139,
+  "unique_245B_frames_captured": 143,
+  "alpha_declared_frame_sha_count": 136,
+  "alpha_declared_frames_present_in_capture": 136,
+  "alpha_declared_frames_missing": 0,
+  "decrypt_ok": 136,
+  "decrypt_fail": 7,
+  "chunks_have": 136,
+  "chunks_missing": [],
+  "reassembled_bytes": 24322,
+  "declared_sha256": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+  "reassembled_sha256": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+  "sha_match": true,
+  "reassembled_file_sha256_verified": "1aaa4e16ff1d1e5102a7895b8e2a4bf8c567031949a4fd9572a35109f3250854",
+  "reassembled_path": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/essay_a2b.md",
+  "bus_verdict": {
+   "B_seq": 4492,
+   "A_seq": 1479,
+   "verdict": "DECRYPT_OK"
+  },
+  "disclosure_extra_245B_frames": {
+   "count": 7,
+   "sha256": [
+    "28e8e2a4c780e042ae63ad73efc7872214fb7c415d41285ccd6fd0b2398891f0",
+    "34db7c0f594d1767dfa7a18c9ea405edb89cfacaacd65a682fbf3088ba24bc3d",
+    "5dc18fee47ea6134cbb7db3c2ea5044657dc772028bfbc676b574ce012cd3046",
+    "7d0e9500989e55c36b2b22ca6b3b7c456b5a4d0aeced51488595e7100c33f0b3",
+    "95a604ae4e15adc754122afc0e7675fbd985dfaa8610eccb3bb08315f97931d6",
+    "9b2b0c1dd5292fc701f8689715b9cf7f2e6b0c8ed156db0275b41dc3232811f4",
+    "ea910456b280b961c3edbf9548d94f381db6e3b07513fc9edc374efabfa494d6"
+   ],
+   "why": "captured on 904.3/904.5 MHz with HAL status 0x11 (CRC FAIL), SNR -8.5..-12.0 dB. NOT in Alpha's declared frame-sha list and NOT decryptable with bravo_sk. Unrelated ambient traffic; excluded from reassembly and disclosed, not hidden."
+  }
+ },
+ "leg_B_to_A": {
+  "status": "COMPLETE \u2014 Alpha FINAL verdict ok=true, both payloads SHA exact-match (A1510)",
+  "rounds_1_2": {
+   "result": "MISSED 0/151 (Alpha verdict A1488/B4509, ok=false)",
+   "root_cause": "BRAVO FAILURE, not Alpha's. Alpha opened both windows and issued fire-go (A1481/A1482 armed 08:06:58Z; A1485/A1487 armed 09:18:24Z) but Bravo's agent turn was parked on an unrelated peer-run wait and never executed the transmit. Alpha's receiver was correct; Bravo drew zero airtime.",
+   "lesson_applied": "LLM removed from the transmit path: a systemd hot-fire watcher now polls the bus and fires inside the declared window with no agent turn involved."
+  },
+  "round_3_partial": {
+   "result": "PARTIAL 71/151 (Alpha verdict A1496/B4619, ok=false) \u2014 80 frames never arrived on air",
+   "diagnosis": "Clean 50% DUTY-CYCLE loss, not an RF link problem. Every frame that DID arrive was CRC-OK 0x10 AND AES-256-GCM DECRYPT_OK (zero corrupted among mine), while the missing set alternated perfectly (essay.md captured 0,2,4,6,8 / missed 1,3,5,7,9-14). A 245B payload at SF9/BW125 occupies ~2.05s of airtime; round 3 used a 1s gap, so the receiver could not re-arm between frames. The parameter error was Bravo's.",
+   "fix": "gap 1s -> 3s and reps 1 -> 2",
+   "targeted_refire": {
+    "requested": 80,
+    "staged": 80,
+    "problems": 0,
+    "sha_reverified_against_alpha_list": true,
+    "ciphertext_resealed": false,
+    "staged_dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/refire_missing_frames"
+   }
+  },
+  "round_6_single_frame": {
+   "target": "bravo_essay_md chunk idx 14 only",
+   "frame_sha256": "e77aa58c9d196d15d4cedf9619d081ff45e093b5641119ab29a204c539da9200",
+   "sha_gate": "1/1 STAGED_SHA_OK=YES",
+   "alpha_confirmed": "2 reps captured, DECRYPT_OK (Alpha A1510 rounds.r6)"
+  },
+  "tx_bursts": {
+   "r3_echo_alpha_essay": {
+    "present": true,
+    "frames_ok": 136,
+    "frames_total": 136,
+    "sends_ok": 136,
+    "tx_done_lines": 136,
+    "complete_marker": true,
+    "log_sha256": "8643311ccc5dee8ab6753393be85a70e0bed7670361c991ba127fcac1f06b079",
+    "log_bytes": 10371,
+    "tx_params": {
+     "dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/echo_a2b_frames",
+     "frames": 136,
+     "freq": "903.9MHz",
+     "sf": 9,
+     "bw_khz": 125,
+     "dbm": 14,
+     "reps": 1,
+     "gap_s": 1
+    },
+    "receipt": {
+     "B_seq": 4615,
+     "A_seq": 1493,
+     "tx_done": 136
+    }
+   },
+   "r3_bravo_essay_md": {
+    "present": true,
+    "frames_ok": 15,
+    "frames_total": 15,
+    "sends_ok": 15,
+    "tx_done_lines": 15,
+    "complete_marker": true,
+    "log_sha256": "5b8cef83fd1fd141a8504d8e068229b4f179b7bf00afad4cdccd37fed0c74443",
+    "log_bytes": 2066,
+    "tx_params": {
+     "dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/my_essay_frames",
+     "frames": 15,
+     "freq": "903.9MHz",
+     "sf": 9,
+     "bw_khz": 125,
+     "dbm": 14,
+     "reps": 1,
+     "gap_s": 1
+    },
+    "receipt": {
+     "B_seq": 4616,
+     "A_seq": 1494,
+     "tx_done": 15
+    }
+   },
+   "r4_refire_80_manual": {
+    "present": true,
+    "frames_ok": 80,
+    "frames_total": 80,
+    "sends_ok": 160,
+    "tx_done_lines": 160,
+    "complete_marker": true,
+    "log_sha256": "05ea7df0b4fb91199eae66cd3ea80da047bb5537a163be75ad8c61a7d5358e5a",
+    "log_bytes": 9684,
+    "tx_params": {
+     "dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/refire_missing_frames",
+     "frames": 80,
+     "freq": "903.9MHz",
+     "sf": 9,
+     "bw_khz": 125,
+     "dbm": 14,
+     "reps": 2,
+     "gap_s": 3
+    },
+    "receipt": {
+     "B_seq": 4631,
+     "A_seq": 1504,
+     "tx_done": 160
+    }
+   },
+   "r5_refire_80_watcher": {
+    "present": true,
+    "frames_ok": 80,
+    "frames_total": 80,
+    "sends_ok": 160,
+    "tx_done_lines": 160,
+    "complete_marker": true,
+    "log_sha256": "161d5d8f83c934d5d60e52b8538bc055e2e128b6ea9fb7923fcec25dbe86af4d",
+    "log_bytes": 9684,
+    "tx_params": {
+     "dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/refire_missing_frames",
+     "frames": 80,
+     "freq": "903.9MHz",
+     "sf": 9,
+     "bw_khz": 125,
+     "dbm": 14,
+     "reps": 2,
+     "gap_s": 3
+    },
+    "receipt": {
+     "note": "posted by the hot-fire watcher (no agent turn)"
+    }
+   },
+   "r6_refire_80_watcher": {
+    "present": true,
+    "frames_ok": 80,
+    "frames_total": 80,
+    "sends_ok": 160,
+    "tx_done_lines": 160,
+    "complete_marker": true,
+    "log_sha256": "482c2a43f422e76ed8c89c28227c0c4cdc345170b01e3b4b40327409edc66960",
+    "log_bytes": 9684,
+    "tx_params": {
+     "dir": "/home/researcher-bravo/fleet/evidence/essay_drill_20261118/refire_missing_frames",
+     "frames": 80,
+     "freq": "903.9MHz",
+     "sf": 9,
+     "bw_khz": 125,
+     "dbm": 14,
+     "reps": 2,
+     "gap_s": 3
+    },
+    "receipt": {
+     "note": "posted by the hot-fire watcher (no agent turn)"
+    }
+   }
+  },
+  "totals": {
+   "declared_frames": 151,
+   "union_unique_frames": 151,
+   "union_decrypt_ok": 151,
+   "crc_failures_among_declared": 0,
+   "unknown_frames": 0,
+   "bytes_over_the_air": 36995,
+   "reassembled_payload_bytes": 26963,
+   "payload_sha256_match": {
+    "echo_alpha_essay": true,
+    "bravo_essay_md": true
+   }
+  },
+  "preflight_gate": "staged_sha_gate.py \u2014 every frame length=245 and sha256 == manifest (136/136 + 15/15 + 80/80 + 1/1 OK)",
+  "post_tx_recertification": "lora_chirp_recovery.sh LORA_CHIRP_RECOVERY_PASS=YES on every burst",
+  "rx_standby_rearmed": true
+ },
+ "tooling_added": {
+  "essay_capture_extract.py": "HAL RX log -> 245B frame extractor (durable, sha-keyed dedupe)",
+  "essay_decrypt_reassemble.py": "canonical chirp245 AEAD decrypt + RAW-mode chunk reassembly + sha verify",
+  "build_refire_set.py": "stage ONLY Alpha's missing frames, sha-verified against his own published list",
+  "essay_b2a_fire.sh": "fail-closed B->A fire: SHA gate -> free SPI -> TX -> re-certify -> re-arm -> bus receipt",
+  "essay_b2a_hotfire.py": "hot-path auto-fire watcher (no LLM in the TX path); honours Alpha's fire_go frame spec",
+  "essay_b2a_hotfire.sh": "systemd wrapper that loads the fleet token",
+  "test_essay_b2a_hotfire.py": "window/fire-go/frame-spec logic tests (no airtime)",
+  "staged_sha_gate.py": "pre-fire fail-closed frame verification",
+  "systemd_unit": "~/.config/systemd/user/essay-b2a-hotfire.service (enabled, Restart=always)"
+ },
+ "hotfire_logic_test": {
+  "passed": 30,
+  "total": 30,
+  "results": [
+   {
+    "test": "live_essay_window_detected",
+    "ok": true
+   },
+   {
+    "test": "expired_window_refused",
+    "ok": true
+   },
+   {
+    "test": "near_close_window_refused",
+    "ok": true
+   },
+   {
+    "test": "manual_fire_only_refused",
+    "ok": true
+   },
+   {
+    "test": "other_drill_ignored",
+    "ok": true
+   },
+   {
+    "test": "missing_close_time_refused",
+    "ok": true
+   },
+   {
+    "test": "newest_window_wins",
+    "ok": true
+   },
+   {
+    "test": "fire_go_detected",
+    "ok": true
+   },
+   {
+    "test": "no_fire_go_not_detected",
+    "ok": true
+   },
+   {
+    "test": "fire_go_false_ignored",
+    "ok": true
+   },
+   {
+    "test": "alpha_closes_utc_field_parsed",
+    "ok": true
+   },
+   {
+    "test": "skewed_close_rebuilt_from_armed_plus_span",
+    "ok": true
+   },
+   {
+    "test": "closes_utc_used_directly",
+    "ok": true
+   },
+   {
+    "test": "closes_at_utc_still_works",
+    "ok": true
+   },
+   {
+    "test": "fully_expired_alpha_window_refused",
+    "ok": true
+   },
+   {
+    "test": "split_batch_window_found_alone",
+    "ok": true
+   },
+   {
+    "test": "split_batch_no_fire_without_go",
+    "ok": true
+   },
+   {
+    "test": "split_batch_go_alone_has_no_window",
+    "ok": true
+   },
+   {
+    "test": "rolling_buffer_finds_window",
+    "ok": true
+   },
+   {
+    "test": "rolling_buffer_finds_fire_go",
+    "ok": true
+   },
+   {
+    "test": "rolling_buffer_triggers_fire",
+    "ok": true
+   },
+   {
+    "test": "fired_ledger_blocks_double_fire",
+    "ok": true
+   },
+   {
+    "test": "fire_go_frame_spec_extracted",
+    "ok": true
+   },
+   {
+    "test": "fire_go_no_frame_spec_returns_none",
+    "ok": true
+   },
+   {
+    "test": "fire_go_false_yields_no_spec",
+    "ok": true
+   },
+   {
+    "test": "single_frame_staged",
+    "ok": true
+   },
+   {
+    "test": "single_frame_sha_matches",
+    "ok": true
+   },
+   {
+    "test": "single_frame_len_245",
+    "ok": true
+   },
+   {
+    "test": "single_frame_manifest_ok",
+    "ok": true
+   },
+   {
+    "test": "bogus_frame_spec_refused",
+    "ok": true
+   }
+  ]
+ },
+ "bugs_found_and_fixed_in_own_tooling": [
+  "HAL RX parser: 'rf_chain  0' has no colon and was ending each packet block early -> 0 frames parsed. Fixed with a colon-optional field regex.",
+  "decrypt tool: X25519PublicKey was not imported -> NameError on every frame. Fixed.",
+  "hot-fire watcher: Alpha's rx_window_open uses closes_utc (not closes_at_utc) and round-3 carried a 1-day date skew -> no live close time computable. Fixed to accept all close-field names and rebuild from armed_utc + window_s.",
+  "hot-fire watcher: Alpha's window and fire_go arrive ~1s apart, so a 2s poll split them into two batches and the fire never triggered. Fixed with a rolling event buffer + a fired-window ledger.",
+  "hot-fire watcher: staging a frame named by a sha256 prefix must dedupe by CONTENT, not by path (the same frame legitimately lives in two staged dirs).",
+  "fire script receipt: the re-fire manifest schema lacks file/file_bytes/file_sha256 -> KeyError killed the receipt step. Fixed to be schema-tolerant, and the FIXED code path was then verified end-to-end against a re-fire manifest (schema probe B4641/A1511).",
+  "systemd ExecStart quoting: inline token export with mixed quotes -> INVALIDARGUMENT restart loop. Fixed via a wrapper script."
+ ],
+ "honest_notes": [
+  "Rounds 1 and 2 of the B->A leg were my failure; Alpha reported MISSED honestly and did not fabricate a capture.",
+  "Round 3's 50% loss was my parameter error (1s gap at SF9/245B). Alpha's receiver was correct.",
+  "7 ambient 245B CRC-FAIL frames were captured on the A->B leg and are disclosed above; they were excluded from reassembly.",
+  "Alpha's round-6 request was for ONE frame, but the watcher fired the full 80-frame set because the burst config had not yet been narrowed; the extra airtime was harmless (Alpha banks duplicates) and the watcher now honours his exact frame spec.",
+  "The bus exposes no DELETE (HTTP 501), so a schema-probe event posted at B4641/A1511 to verify the PATCHED receipt code path (after the drill had already closed) is permanent. An explicit retraction was posted on both buses at B4642/A1512 pointing back to the authoritative Alpha verdict A1510 and listing the five real TX receipts. Disclosed rather than left ambiguous.",
+  "Two of the round-4/5 re-fire receipts (B4630/A1503 and B4631/A1504) describe the same 80-frame gap-3s/reps-2 burst: one was posted by the fire script, one by the follow-up manual post that replaced the receipt the script's KeyError had killed. Duplicate, not contradictory."
+ ]
+}
